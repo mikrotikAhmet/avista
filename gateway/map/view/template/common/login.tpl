@@ -1,8 +1,8 @@
 <?php echo $header?>
 <div class="wrapper">
     <h1>
-        <a href="index-2.html">
-            <img src="map/view/img/logo-big.png" alt="" class='retina-ready' width="59" height="49">FLAT</a>
+        <a href="<?php echo $home?>">
+            <img src="map/view/img/avclogo.png" alt="" class='retina-ready' width="59" height="49">AVISTA</a>
     </h1>
     <div class="login-body">
         <h2><?php echo $text_login; ?></h2>

@@ -59,6 +59,8 @@ class ControllerCommonLogin extends Controller {
 
         $data['button_login'] = $this->language->get('button_login');
 
+        $data['home'] = $this->url->link('common/login', '', 'SSL');
+
         if ((isset($this->session->data['token']) && !isset($this->request->get['token'])) || ((isset($this->request->get['token']) && (isset($this->session->data['token']) && ($this->request->get['token'] != $this->session->data['token']))))) {
             $this->error['warning'] = $this->language->get('error_token');
         }

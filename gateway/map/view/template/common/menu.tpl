@@ -1,6 +1,6 @@
 <div id="navigation">
     <div class="container-fluid">
-        <a href="#" id="brand">FLAT</a>
+        <a href="<?php echo $home?>" id="brand">AVISTA</a>
         <ul class='main-nav'>
             <li id="dashboard">
                 <a href="<?php echo $home?>">
