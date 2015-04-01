@@ -19,11 +19,11 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li id="application">
-                        <a href="#"><?php echo $text_application?></a>
+                        <a href="<?php echo $setting?>"><?php echo $text_application?></a>
                     </li>
-                    <li id="gateway">
+                    <!--li id="gateway">
                         <a href="#"><?php echo $text_gateway?></a>
-                    </li>
+                    </li-->
                     <li id="user" class='dropdown-submenu'>
                         <a href="#" data-toggle="dropdown" class='dropdown-toggle'><?php echo $text_user?></a>
                         <ul class="dropdown-menu">

@@ -39,6 +39,7 @@ class ControllerCommonMenu extends Controller {
         $data['user'] = $this->url->link('user/user', 'token=' . $this->session->data['token'], 'SSL');
         $data['user_group'] = $this->url->link('user/user_permission', 'token=' . $this->session->data['token'], 'SSL');
         $data['api'] = $this->url->link('user/api', 'token=' . $this->session->data['token'], 'SSL');
+        $data['setting'] = $this->url->link('setting/application', 'token=' . $this->session->data['token'], 'SSL');
         $data['logout'] = $this->url->link('common/logout', 'token=' . $this->session->data['token'], 'SSL');
 
         $this->load->model('user/user');

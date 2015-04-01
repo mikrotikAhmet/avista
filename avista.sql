@@ -160,7 +160,7 @@ CREATE TABLE `engine4_currency` (
 
 LOCK TABLES `engine4_currency` WRITE;
 /*!40000 ALTER TABLE `engine4_currency` DISABLE KEYS */;
-INSERT INTO `engine4_currency` VALUES (1,'Pound Sterling','GBP','£','','2',0.61250001,1,'2014-09-25 14:40:00'),(2,'US Dollar','USD','$','','2',1.00000000,1,'2014-09-25 14:40:00'),(3,'Euro','EUR','','€','2',0.78460002,1,'2014-09-25 14:40:00');
+INSERT INTO `engine4_currency` VALUES (1,'Pound Sterling','GBP','£','','2',0.67699999,1,'2015-04-01 11:40:36'),(2,'US Dollar','USD','$','','2',1.00000000,1,'2015-04-01 11:42:43'),(3,'Euro','EUR','','€','2',0.93000001,1,'2015-04-01 11:40:36');
 /*!40000 ALTER TABLE `engine4_currency` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -342,6 +342,114 @@ LOCK TABLES `engine4_language` WRITE;
 /*!40000 ALTER TABLE `engine4_language` DISABLE KEYS */;
 INSERT INTO `engine4_language` VALUES (1,'English','en','en_US.UTF-8,en_US,en-gb,english','gb.png','english',1,1);
 /*!40000 ALTER TABLE `engine4_language` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `engine4_layout`
+--
+
+DROP TABLE IF EXISTS `engine4_layout`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_layout` (
+  `layout_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(64) NOT NULL,
+  PRIMARY KEY (`layout_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_layout`
+--
+
+LOCK TABLES `engine4_layout` WRITE;
+/*!40000 ALTER TABLE `engine4_layout` DISABLE KEYS */;
+INSERT INTO `engine4_layout` VALUES (1,'Home'),(2,'Product'),(3,'Category'),(4,'Default'),(5,'Manufacturer'),(6,'Account'),(7,'Checkout'),(8,'Contact'),(9,'Sitemap'),(10,'Affiliate'),(11,'Information'),(12,'Compare'),(13,'Search');
+/*!40000 ALTER TABLE `engine4_layout` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `engine4_layout_module`
+--
+
+DROP TABLE IF EXISTS `engine4_layout_module`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_layout_module` (
+  `layout_module_id` int(11) NOT NULL AUTO_INCREMENT,
+  `layout_id` int(11) NOT NULL,
+  `code` varchar(64) NOT NULL,
+  `position` varchar(14) NOT NULL,
+  `sort_order` int(3) NOT NULL,
+  PRIMARY KEY (`layout_module_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=74 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_layout_module`
+--
+
+LOCK TABLES `engine4_layout_module` WRITE;
+/*!40000 ALTER TABLE `engine4_layout_module` DISABLE KEYS */;
+INSERT INTO `engine4_layout_module` VALUES (2,4,'0','content_top',0),(3,4,'0','content_top',1),(20,5,'0','column_left',2),(69,10,'affiliate','column_right',1),(68,6,'account','column_right',1),(67,1,'carousel.29','content_top',3),(66,1,'slideshow.27','content_top',1),(65,1,'featured.28','content_top',2),(72,3,'category','column_left',1),(73,3,'banner.30','column_left',2);
+/*!40000 ALTER TABLE `engine4_layout_module` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `engine4_layout_route`
+--
+
+DROP TABLE IF EXISTS `engine4_layout_route`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_layout_route` (
+  `layout_route_id` int(11) NOT NULL AUTO_INCREMENT,
+  `layout_id` int(11) NOT NULL,
+  `store_id` int(11) NOT NULL,
+  `route` varchar(255) NOT NULL,
+  PRIMARY KEY (`layout_route_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=54 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_layout_route`
+--
+
+LOCK TABLES `engine4_layout_route` WRITE;
+/*!40000 ALTER TABLE `engine4_layout_route` DISABLE KEYS */;
+INSERT INTO `engine4_layout_route` VALUES (38,6,0,'account/%'),(17,10,0,'affiliate/%'),(44,3,0,'product/category'),(42,1,0,'common/home'),(20,2,0,'product/product'),(24,11,0,'information/information'),(23,7,0,'checkout/%'),(31,8,0,'information/contact'),(32,9,0,'information/sitemap'),(34,4,0,''),(45,5,0,'product/manufacturer'),(52,12,0,'product/compare'),(53,13,0,'product/search');
+/*!40000 ALTER TABLE `engine4_layout_route` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `engine4_location`
+--
+
+DROP TABLE IF EXISTS `engine4_location`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_location` (
+  `location_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(32) NOT NULL,
+  `address` text NOT NULL,
+  `telephone` varchar(32) NOT NULL,
+  `fax` varchar(32) NOT NULL,
+  `geocode` varchar(32) NOT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `open` text NOT NULL,
+  `comment` text NOT NULL,
+  PRIMARY KEY (`location_id`),
+  KEY `name` (`name`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_location`
+--
+
+LOCK TABLES `engine4_location` WRITE;
+/*!40000 ALTER TABLE `engine4_location` DISABLE KEYS */;
+/*!40000 ALTER TABLE `engine4_location` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -650,6 +758,432 @@ LOCK TABLES `engine4_merchant_transaction` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `engine4_order`
+--
+
+DROP TABLE IF EXISTS `engine4_order`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_order` (
+  `order_id` int(11) NOT NULL AUTO_INCREMENT,
+  `invoice_no` int(11) NOT NULL DEFAULT '0',
+  `invoice_prefix` varchar(26) NOT NULL,
+  `application_id` int(11) NOT NULL DEFAULT '0',
+  `application_name` varchar(64) NOT NULL,
+  `application_url` varchar(255) NOT NULL,
+  `merchant_id` int(11) NOT NULL DEFAULT '0',
+  `merchant_group_id` int(11) NOT NULL DEFAULT '0',
+  `firstname` varchar(32) NOT NULL,
+  `lastname` varchar(32) NOT NULL,
+  `email` varchar(96) NOT NULL,
+  `telephone` varchar(32) NOT NULL,
+  `fax` varchar(32) NOT NULL,
+  `custom_field` text NOT NULL,
+  `payment_firstname` varchar(32) NOT NULL,
+  `payment_lastname` varchar(32) NOT NULL,
+  `payment_company` varchar(40) NOT NULL,
+  `payment_address_1` varchar(128) NOT NULL,
+  `payment_address_2` varchar(128) NOT NULL,
+  `payment_city` varchar(128) NOT NULL,
+  `payment_postcode` varchar(10) NOT NULL,
+  `payment_country` varchar(128) NOT NULL,
+  `payment_country_id` int(11) NOT NULL,
+  `payment_zone` varchar(128) NOT NULL,
+  `payment_zone_id` int(11) NOT NULL,
+  `payment_address_format` text NOT NULL,
+  `payment_custom_field` text NOT NULL,
+  `payment_method` varchar(128) NOT NULL,
+  `payment_code` varchar(128) NOT NULL,
+  `shipping_firstname` varchar(32) NOT NULL,
+  `shipping_lastname` varchar(32) NOT NULL,
+  `shipping_company` varchar(40) NOT NULL,
+  `shipping_address_1` varchar(128) NOT NULL,
+  `shipping_address_2` varchar(128) NOT NULL,
+  `shipping_city` varchar(128) NOT NULL,
+  `shipping_postcode` varchar(10) NOT NULL,
+  `shipping_country` varchar(128) NOT NULL,
+  `shipping_country_id` int(11) NOT NULL,
+  `shipping_zone` varchar(128) NOT NULL,
+  `shipping_zone_id` int(11) NOT NULL,
+  `shipping_address_format` text NOT NULL,
+  `shipping_custom_field` text NOT NULL,
+  `shipping_method` varchar(128) NOT NULL,
+  `shipping_code` varchar(128) NOT NULL,
+  `comment` text NOT NULL,
+  `total` decimal(15,4) NOT NULL DEFAULT '0.0000',
+  `order_status_id` int(11) NOT NULL DEFAULT '0',
+  `affiliate_id` int(11) NOT NULL,
+  `commission` decimal(15,4) NOT NULL,
+  `marketing_id` int(11) NOT NULL,
+  `tracking` varchar(64) NOT NULL,
+  `language_id` int(11) NOT NULL,
+  `currency_id` int(11) NOT NULL,
+  `currency_code` varchar(3) NOT NULL,
+  `currency_value` decimal(15,8) NOT NULL DEFAULT '1.00000000',
+  `ip` varchar(40) NOT NULL,
+  `forwarded_ip` varchar(40) NOT NULL,
+  `user_agent` varchar(255) NOT NULL,
+  `accept_language` varchar(255) NOT NULL,
+  `date_added` datetime NOT NULL,
+  `date_modified` datetime NOT NULL,
+  PRIMARY KEY (`order_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_order`
+--
+
+LOCK TABLES `engine4_order` WRITE;
+/*!40000 ALTER TABLE `engine4_order` DISABLE KEYS */;
+/*!40000 ALTER TABLE `engine4_order` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `engine4_order_custom_field`
+--
+
+DROP TABLE IF EXISTS `engine4_order_custom_field`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_order_custom_field` (
+  `order_custom_field_id` int(11) NOT NULL AUTO_INCREMENT,
+  `order_id` int(11) NOT NULL,
+  `custom_field_id` int(11) NOT NULL,
+  `custom_field_value_id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `value` text NOT NULL,
+  `type` varchar(32) NOT NULL,
+  `location` varchar(16) NOT NULL,
+  PRIMARY KEY (`order_custom_field_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_order_custom_field`
+--
+
+LOCK TABLES `engine4_order_custom_field` WRITE;
+/*!40000 ALTER TABLE `engine4_order_custom_field` DISABLE KEYS */;
+/*!40000 ALTER TABLE `engine4_order_custom_field` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `engine4_order_fraud`
+--
+
+DROP TABLE IF EXISTS `engine4_order_fraud`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_order_fraud` (
+  `order_id` int(11) NOT NULL,
+  `merchant_id` int(11) NOT NULL,
+  `country_match` varchar(3) NOT NULL,
+  `country_code` varchar(2) NOT NULL,
+  `high_risk_country` varchar(3) NOT NULL,
+  `distance` int(11) NOT NULL,
+  `ip_region` varchar(255) NOT NULL,
+  `ip_city` varchar(255) NOT NULL,
+  `ip_latitude` decimal(10,6) NOT NULL,
+  `ip_longitude` decimal(10,6) NOT NULL,
+  `ip_isp` varchar(255) NOT NULL,
+  `ip_org` varchar(255) NOT NULL,
+  `ip_asnum` int(11) NOT NULL,
+  `ip_user_type` varchar(255) NOT NULL,
+  `ip_country_confidence` varchar(3) NOT NULL,
+  `ip_region_confidence` varchar(3) NOT NULL,
+  `ip_city_confidence` varchar(3) NOT NULL,
+  `ip_postal_confidence` varchar(3) NOT NULL,
+  `ip_postal_code` varchar(10) NOT NULL,
+  `ip_accuracy_radius` int(11) NOT NULL,
+  `ip_net_speed_cell` varchar(255) NOT NULL,
+  `ip_metro_code` int(3) NOT NULL,
+  `ip_area_code` int(3) NOT NULL,
+  `ip_time_zone` varchar(255) NOT NULL,
+  `ip_region_name` varchar(255) NOT NULL,
+  `ip_domain` varchar(255) NOT NULL,
+  `ip_country_name` varchar(255) NOT NULL,
+  `ip_continent_code` varchar(2) NOT NULL,
+  `ip_corporate_proxy` varchar(3) NOT NULL,
+  `anonymous_proxy` varchar(3) NOT NULL,
+  `proxy_score` int(3) NOT NULL,
+  `is_trans_proxy` varchar(3) NOT NULL,
+  `free_mail` varchar(3) NOT NULL,
+  `carder_email` varchar(3) NOT NULL,
+  `high_risk_username` varchar(3) NOT NULL,
+  `high_risk_password` varchar(3) NOT NULL,
+  `bin_match` varchar(10) NOT NULL,
+  `bin_country` varchar(2) NOT NULL,
+  `bin_name_match` varchar(3) NOT NULL,
+  `bin_name` varchar(255) NOT NULL,
+  `bin_phone_match` varchar(3) NOT NULL,
+  `bin_phone` varchar(32) NOT NULL,
+  `merchant_phone_in_billing_location` varchar(8) NOT NULL,
+  `ship_forward` varchar(3) NOT NULL,
+  `city_postal_match` varchar(3) NOT NULL,
+  `ship_city_postal_match` varchar(3) NOT NULL,
+  `score` decimal(10,5) NOT NULL,
+  `explanation` text NOT NULL,
+  `risk_score` decimal(10,5) NOT NULL,
+  `queries_remaining` int(11) NOT NULL,
+  `maxmind_id` varchar(8) NOT NULL,
+  `error` text NOT NULL,
+  `date_added` datetime NOT NULL,
+  PRIMARY KEY (`order_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_order_fraud`
+--
+
+LOCK TABLES `engine4_order_fraud` WRITE;
+/*!40000 ALTER TABLE `engine4_order_fraud` DISABLE KEYS */;
+/*!40000 ALTER TABLE `engine4_order_fraud` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `engine4_order_history`
+--
+
+DROP TABLE IF EXISTS `engine4_order_history`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_order_history` (
+  `order_history_id` int(11) NOT NULL AUTO_INCREMENT,
+  `order_id` int(11) NOT NULL,
+  `order_status_id` int(5) NOT NULL,
+  `notify` tinyint(1) NOT NULL DEFAULT '0',
+  `comment` text NOT NULL,
+  `date_added` datetime NOT NULL,
+  PRIMARY KEY (`order_history_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_order_history`
+--
+
+LOCK TABLES `engine4_order_history` WRITE;
+/*!40000 ALTER TABLE `engine4_order_history` DISABLE KEYS */;
+/*!40000 ALTER TABLE `engine4_order_history` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `engine4_order_option`
+--
+
+DROP TABLE IF EXISTS `engine4_order_option`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_order_option` (
+  `order_option_id` int(11) NOT NULL AUTO_INCREMENT,
+  `order_id` int(11) NOT NULL,
+  `order_product_id` int(11) NOT NULL,
+  `product_option_id` int(11) NOT NULL,
+  `product_option_value_id` int(11) NOT NULL DEFAULT '0',
+  `name` varchar(255) NOT NULL,
+  `value` text NOT NULL,
+  `type` varchar(32) NOT NULL,
+  PRIMARY KEY (`order_option_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_order_option`
+--
+
+LOCK TABLES `engine4_order_option` WRITE;
+/*!40000 ALTER TABLE `engine4_order_option` DISABLE KEYS */;
+/*!40000 ALTER TABLE `engine4_order_option` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `engine4_order_product`
+--
+
+DROP TABLE IF EXISTS `engine4_order_product`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_order_product` (
+  `order_product_id` int(11) NOT NULL AUTO_INCREMENT,
+  `order_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `model` varchar(64) NOT NULL,
+  `quantity` int(4) NOT NULL,
+  `price` decimal(15,4) NOT NULL DEFAULT '0.0000',
+  `total` decimal(15,4) NOT NULL DEFAULT '0.0000',
+  `tax` decimal(15,4) NOT NULL DEFAULT '0.0000',
+  `reward` int(8) NOT NULL,
+  PRIMARY KEY (`order_product_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_order_product`
+--
+
+LOCK TABLES `engine4_order_product` WRITE;
+/*!40000 ALTER TABLE `engine4_order_product` DISABLE KEYS */;
+/*!40000 ALTER TABLE `engine4_order_product` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `engine4_order_recurring`
+--
+
+DROP TABLE IF EXISTS `engine4_order_recurring`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_order_recurring` (
+  `order_recurring_id` int(11) NOT NULL AUTO_INCREMENT,
+  `order_id` int(11) NOT NULL,
+  `reference` varchar(255) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `product_name` varchar(255) NOT NULL,
+  `product_quantity` int(11) NOT NULL,
+  `recurring_id` int(11) NOT NULL,
+  `recurring_name` varchar(255) NOT NULL,
+  `recurring_description` varchar(255) NOT NULL,
+  `recurring_frequency` varchar(25) NOT NULL,
+  `recurring_cycle` smallint(6) NOT NULL,
+  `recurring_duration` smallint(6) NOT NULL,
+  `recurring_price` decimal(10,4) NOT NULL,
+  `trial` tinyint(1) NOT NULL,
+  `trial_frequency` varchar(25) NOT NULL,
+  `trial_cycle` smallint(6) NOT NULL,
+  `trial_duration` smallint(6) NOT NULL,
+  `trial_price` decimal(10,4) NOT NULL,
+  `status` tinyint(4) NOT NULL,
+  `date_added` datetime NOT NULL,
+  PRIMARY KEY (`order_recurring_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_order_recurring`
+--
+
+LOCK TABLES `engine4_order_recurring` WRITE;
+/*!40000 ALTER TABLE `engine4_order_recurring` DISABLE KEYS */;
+/*!40000 ALTER TABLE `engine4_order_recurring` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `engine4_order_recurring_transaction`
+--
+
+DROP TABLE IF EXISTS `engine4_order_recurring_transaction`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_order_recurring_transaction` (
+  `order_recurring_transaction_id` int(11) NOT NULL AUTO_INCREMENT,
+  `order_recurring_id` int(11) NOT NULL,
+  `reference` varchar(255) NOT NULL,
+  `type` varchar(255) NOT NULL,
+  `amount` decimal(10,4) NOT NULL,
+  `date_added` datetime NOT NULL,
+  PRIMARY KEY (`order_recurring_transaction_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_order_recurring_transaction`
+--
+
+LOCK TABLES `engine4_order_recurring_transaction` WRITE;
+/*!40000 ALTER TABLE `engine4_order_recurring_transaction` DISABLE KEYS */;
+/*!40000 ALTER TABLE `engine4_order_recurring_transaction` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `engine4_order_status`
+--
+
+DROP TABLE IF EXISTS `engine4_order_status`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_order_status` (
+  `order_status_id` int(11) NOT NULL AUTO_INCREMENT,
+  `language_id` int(11) NOT NULL,
+  `name` varchar(32) NOT NULL,
+  PRIMARY KEY (`order_status_id`,`language_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_order_status`
+--
+
+LOCK TABLES `engine4_order_status` WRITE;
+/*!40000 ALTER TABLE `engine4_order_status` DISABLE KEYS */;
+INSERT INTO `engine4_order_status` VALUES (2,1,'Processing'),(3,1,'Shipped'),(7,1,'Canceled'),(5,1,'Complete'),(8,1,'Denied'),(9,1,'Canceled Reversal'),(10,1,'Failed'),(11,1,'Refunded'),(12,1,'Reversed'),(13,1,'Chargeback'),(1,1,'Pending'),(16,1,'Voided'),(15,1,'Processed'),(14,1,'Expired');
+/*!40000 ALTER TABLE `engine4_order_status` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `engine4_order_total`
+--
+
+DROP TABLE IF EXISTS `engine4_order_total`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_order_total` (
+  `order_total_id` int(10) NOT NULL AUTO_INCREMENT,
+  `order_id` int(11) NOT NULL,
+  `code` varchar(32) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `value` decimal(15,4) NOT NULL DEFAULT '0.0000',
+  `sort_order` int(3) NOT NULL,
+  PRIMARY KEY (`order_total_id`),
+  KEY `order_id` (`order_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_order_total`
+--
+
+LOCK TABLES `engine4_order_total` WRITE;
+/*!40000 ALTER TABLE `engine4_order_total` DISABLE KEYS */;
+/*!40000 ALTER TABLE `engine4_order_total` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `engine4_order_voucher`
+--
+
+DROP TABLE IF EXISTS `engine4_order_voucher`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_order_voucher` (
+  `order_voucher_id` int(11) NOT NULL AUTO_INCREMENT,
+  `order_id` int(11) NOT NULL,
+  `voucher_id` int(11) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `code` varchar(10) NOT NULL,
+  `from_name` varchar(64) NOT NULL,
+  `from_email` varchar(96) NOT NULL,
+  `to_name` varchar(64) NOT NULL,
+  `to_email` varchar(96) NOT NULL,
+  `voucher_theme_id` int(11) NOT NULL,
+  `message` text NOT NULL,
+  `amount` decimal(15,4) NOT NULL,
+  PRIMARY KEY (`order_voucher_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_order_voucher`
+--
+
+LOCK TABLES `engine4_order_voucher` WRITE;
+/*!40000 ALTER TABLE `engine4_order_voucher` DISABLE KEYS */;
+/*!40000 ALTER TABLE `engine4_order_voucher` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `engine4_setting`
 --
 
@@ -664,7 +1198,7 @@ CREATE TABLE `engine4_setting` (
   `value` text NOT NULL,
   `serialized` tinyint(1) NOT NULL,
   PRIMARY KEY (`setting_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=498 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -673,7 +1207,7 @@ CREATE TABLE `engine4_setting` (
 
 LOCK TABLES `engine4_setting` WRITE;
 /*!40000 ALTER TABLE `engine4_setting` DISABLE KEYS */;
-INSERT INTO `engine4_setting` VALUES (13,0,'config','config_secure','0',0),(14,0,'config','config_error_filename','error.log',0),(15,0,'config','config_error_display','1',0),(16,0,'config','config_error_log','0',0),(17,0,'config','config_admin_language','en',0),(18,0,'config','config_limit_admin','20',0),(19,0,'config','config_currency','USD',0);
+INSERT INTO `engine4_setting` VALUES (496,0,'config','config_error_filename','error.log',0),(495,0,'config','config_error_log','0',0),(494,0,'config','config_error_display','1',0),(493,0,'config','config_compression','',0),(492,0,'config','config_encryption','f42898ec41938bd417096625223dc4fa',0),(491,0,'config','config_password','0',0),(490,0,'config','config_maintenance','0',0),(489,0,'config','config_file_mime_allowed','text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/vnd.microsoft.icon\r\nimage/tiff\r\nimage/svg+xml\r\napplication/zip\r\napplication/x-rar-compressed\r\napplication/x-msdownload\r\napplication/vnd.ms-cab-compressed\r\naudio/mpeg\r\nvideo/quicktime\r\napplication/pdf\r\nimage/vnd.adobe.photoshop\r\napplication/postscript\r\napplication/msword\r\napplication/rtf\r\napplication/vnd.ms-excel\r\napplication/vnd.ms-powerpoint\r\napplication/vnd.oasis.opendocument.text\r\napplication/vnd.oasis.opendocument.spreadsheet',0),(488,0,'config','config_file_ext_allowed','txt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc\r\nrtf\r\nxls\r\nppt\r\nodt\r\nods',0),(487,0,'config','config_file_max_size','300000',0),(486,0,'config','config_seo_url','0',0),(434,0,'config','config_account_id','0',0),(435,0,'config','config_account_mail','1',0),(436,0,'config','config_invoice_prefix','INV-2015-00',0),(478,0,'config','config_mail_alert','',0),(479,0,'config','config_fraud_detection','0',0),(480,0,'config','config_fraud_key','',0),(481,0,'config','config_fraud_score','',0),(482,0,'config','config_fraud_status_id','7',0),(483,0,'config','config_secure','0',0),(484,0,'config','config_shared','0',0),(485,0,'config','config_robots','abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai\'hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg',0),(474,0,'config','config_ftp_password','',0),(475,0,'config','config_ftp_root','',0),(476,0,'config','config_ftp_status','0',0),(477,0,'config','config_mail','a:7:{s:8:\"protocol\";s:4:\"mail\";s:9:\"parameter\";s:0:\"\";s:13:\"smtp_hostname\";s:0:\"\";s:13:\"smtp_username\";s:0:\"\";s:13:\"smtp_password\";s:0:\"\";s:9:\"smtp_port\";s:2:\"25\";s:12:\"smtp_timeout\";s:1:\"5\";}',1),(473,0,'config','config_ftp_username','',0),(439,0,'config','config_checkout_id','0',0),(440,0,'config','config_order_status_id','1',0),(441,0,'config','config_processing_status','a:1:{i:0;s:1:\"2\";}',1),(442,0,'config','config_complete_status','a:1:{i:0;s:1:\"5\";}',1),(443,0,'config','config_order_mail','1',0),(444,0,'config','config_affiliate_approval','0',0),(445,0,'config','config_affiliate_auto','0',0),(446,0,'config','config_affiliate_commission','5.00',0),(447,0,'config','config_affiliate_id','0',0),(448,0,'config','config_affiliate_mail','0',0),(449,0,'config','config_logo','catalog/Avista/avclogo.png',0),(450,0,'config','config_icon','catalog/Avista/avclogo.png',0),(451,0,'config','config_image_category_width','80',0),(452,0,'config','config_image_category_height','80',0),(453,0,'config','config_image_thumb_width','228',0),(454,0,'config','config_image_thumb_height','228',0),(455,0,'config','config_image_popup_width','500',0),(456,0,'config','config_image_popup_height','500',0),(457,0,'config','config_image_product_width','228',0),(458,0,'config','config_image_product_height','228',0),(459,0,'config','config_image_additional_width','74',0),(460,0,'config','config_image_additional_height','74',0),(461,0,'config','config_image_related_width','80',0),(462,0,'config','config_image_related_height','80',0),(463,0,'config','config_image_compare_width','90',0),(464,0,'config','config_image_compare_height','90',0),(465,0,'config','config_image_wishlist_width','47',0),(466,0,'config','config_image_wishlist_height','47',0),(467,0,'config','config_image_cart_width','47',0),(468,0,'config','config_image_cart_height','47',0),(469,0,'config','config_image_location_width','268',0),(470,0,'config','config_image_location_height','180',0),(471,0,'config','config_ftp_hostname','map.avista.com',0),(472,0,'config','config_ftp_port','21',0),(438,0,'config','config_checkout_guest','0',0),(437,0,'config','config_api_id','0',0),(433,0,'config','config_login_attempts','5',0),(432,0,'config','config_merchant_price','0',0),(431,0,'config','config_merchant_group_display','a:1:{i:0;s:1:\"1\";}',1),(430,0,'config','config_merchant_group_id','1',0),(429,0,'config','config_merchant_online','0',0),(428,0,'config','config_review_mail','0',0),(427,0,'config','config_review_guest','0',0),(426,0,'config','config_review_status','0',0),(425,0,'config','config_limit_admin','20',0),(423,0,'config','config_product_limit','15',0),(424,0,'config','config_product_description_length','100',0),(422,0,'config','config_product_count','0',0),(420,0,'config','config_currency','USD',0),(421,0,'config','config_currency_auto','1',0),(419,0,'config','config_admin_language','en',0),(418,0,'config','config_language','en',0),(417,0,'config','config_zone_id','3994',0),(416,0,'config','config_country_id','243',0),(415,0,'config','config_layout_id','6',0),(414,0,'config','config_meta_keyword','',0),(413,0,'config','config_meta_description','',0),(412,0,'config','config_meta_title','Semite LLC',0),(411,0,'config','config_comment','',0),(410,0,'config','config_open','',0),(409,0,'config','config_image','catalog/Avista/avclogo.png',0),(408,0,'config','config_fax','',0),(407,0,'config','config_telephone','(381) 656-7289 72',0),(406,0,'config','config_email','ahmet.gudenoglu@semitepayment.com',0),(405,0,'config','config_geocode','RS',0),(404,0,'config','config_address','Kaludjerica Karadjordjeva 45',0),(403,0,'config','config_owner','Semite LLC',0),(402,0,'config','config_name','Semite LLC',0),(497,0,'config','config_google_analytics','',0);
 /*!40000 ALTER TABLE `engine4_setting` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -733,7 +1267,7 @@ CREATE TABLE `engine4_user_group` (
 
 LOCK TABLES `engine4_user_group` WRITE;
 /*!40000 ALTER TABLE `engine4_user_group` DISABLE KEYS */;
-INSERT INTO `engine4_user_group` VALUES (1,'Administrator','a:2:{s:6:\"access\";a:9:{i:0;s:20:\"account/custom_field\";i:1;s:16:\"account/merchant\";i:2;s:23:\"account/merchant_ban_ip\";i:3;s:22:\"account/merchant_group\";i:4;s:18:\"common/filemanager\";i:5;s:11:\"common/menu\";i:6;s:8:\"user/api\";i:7;s:9:\"user/user\";i:8;s:20:\"user/user_permission\";}s:6:\"modify\";a:9:{i:0;s:20:\"account/custom_field\";i:1;s:16:\"account/merchant\";i:2;s:23:\"account/merchant_ban_ip\";i:3;s:22:\"account/merchant_group\";i:4;s:18:\"common/filemanager\";i:5;s:11:\"common/menu\";i:6;s:8:\"user/api\";i:7;s:9:\"user/user\";i:8;s:20:\"user/user_permission\";}}'),(10,'Demonstration','a:1:{s:6:\"access\";a:9:{i:0;s:20:\"account/custom_field\";i:1;s:16:\"account/merchant\";i:2;s:23:\"account/merchant_ban_ip\";i:3;s:22:\"account/merchant_group\";i:4;s:18:\"common/filemanager\";i:5;s:11:\"common/menu\";i:6;s:8:\"user/api\";i:7;s:9:\"user/user\";i:8;s:20:\"user/user_permission\";}}');
+INSERT INTO `engine4_user_group` VALUES (1,'Administrator','a:2:{s:6:\"access\";a:11:{i:0;s:20:\"account/custom_field\";i:1;s:16:\"account/merchant\";i:2;s:23:\"account/merchant_ban_ip\";i:3;s:22:\"account/merchant_group\";i:4;s:18:\"common/filemanager\";i:5;s:11:\"common/menu\";i:6;s:19:\"setting/application\";i:7;s:15:\"setting/setting\";i:8;s:8:\"user/api\";i:9;s:9:\"user/user\";i:10;s:20:\"user/user_permission\";}s:6:\"modify\";a:11:{i:0;s:20:\"account/custom_field\";i:1;s:16:\"account/merchant\";i:2;s:23:\"account/merchant_ban_ip\";i:3;s:22:\"account/merchant_group\";i:4;s:18:\"common/filemanager\";i:5;s:11:\"common/menu\";i:6;s:19:\"setting/application\";i:7;s:15:\"setting/setting\";i:8;s:8:\"user/api\";i:9;s:9:\"user/user\";i:10;s:20:\"user/user_permission\";}}'),(10,'Demonstration','a:1:{s:6:\"access\";a:9:{i:0;s:20:\"account/custom_field\";i:1;s:16:\"account/merchant\";i:2;s:23:\"account/merchant_ban_ip\";i:3;s:22:\"account/merchant_group\";i:4;s:18:\"common/filemanager\";i:5;s:11:\"common/menu\";i:6;s:8:\"user/api\";i:7;s:9:\"user/user\";i:8;s:20:\"user/user_permission\";}}');
 /*!40000 ALTER TABLE `engine4_user_group` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -773,4 +1307,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-04-01 10:45:16
+-- Dump completed on 2015-04-01 14:25:43

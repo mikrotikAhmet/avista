@@ -15,10 +15,12 @@
 
 // HTTP
 define('HTTP_SERVER', 'http://'.$_SERVER['HTTP_HOST'].'/');
+define('HTTP_PORTAL', 'http://'.$_SERVER['HTTP_HOST'].'/');
 define('HTTP_IMAGE', 'http://'.$_SERVER['HTTP_HOST'].'/map/');
 
 // HTTPS
 define('HTTPS_SERVER', 'https://'.$_SERVER['HTTP_HOST'].'/');
+define('HTTPS_PORTAL', 'https://'.$_SERVER['HTTP_HOST'].'/');
 define('HTTPS_IMAGE', 'https://'.$_SERVER['HTTP_HOST'].'/map/');
 
 // DIR
@@ -32,6 +34,7 @@ define('DIR_CACHE', APPLICATION_PATH_COR.'map/system/cache/');
 define('DIR_DOCUMENT', APPLICATION_PATH_COR.'map/system/document/');
 define('DIR_LOGS', APPLICATION_PATH_COR.'map/system/logs/');
 define('DIR_MODIFICATION', APPLICATION_PATH_COR.'system/modification/');
+define('DIR_PORTAL', APPLICATION_PATH_COR.'portal/');
 
 // DB
 define('DB_DRIVER', 'mysqli');
