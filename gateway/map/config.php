@@ -33,7 +33,7 @@ define('DIR_IMAGE', APPLICATION_PATH_COR.'map/image/');
 define('DIR_CACHE', APPLICATION_PATH_COR.'map/system/cache/');
 define('DIR_DOCUMENT', APPLICATION_PATH_COR.'map/system/document/');
 define('DIR_LOGS', APPLICATION_PATH_COR.'map/system/logs/');
-define('DIR_MODIFICATION', APPLICATION_PATH_COR.'system/modification/');
+define('DIR_MODIFICATION', APPLICATION_PATH_COR.'map/system/modification/');
 define('DIR_PORTAL', APPLICATION_PATH_COR.'portal/');
 
 // DB
