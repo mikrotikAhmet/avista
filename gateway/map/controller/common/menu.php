@@ -52,7 +52,7 @@ class ControllerCommonMenu extends Controller {
             $data['lastname'] = strtoupper($user_info['lastname']);
             $data['username'] = $user_info['username'];
 
-            $data['user_group'] = $user_info['user_group'] ;
+//            $data['user_group'] = $user_info['user_group'] ;
 
             if (is_file(DIR_IMAGE . $user_info['image'])) {
                 $data['image'] = $this->model_tool_image->resize($user_info['image'], 27, 27);
