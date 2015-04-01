@@ -411,7 +411,7 @@ $(document).ready(function () {
 				}
 
 				if (dateformat === undefined) {
-					dateformat = 'mm/dd/yy';
+					dateformat = 'yy-mm-dd';
 				}
 
 				dataTable_options.initComplete = function () {

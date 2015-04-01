@@ -184,8 +184,8 @@
                 </li>
             </ul>
             <div class="dropdown">
-                <a href="#" class='dropdown-toggle' data-toggle="dropdown">John Doe
-                    <img src="map/view/img/demo/user-avatar.jpg" alt="">
+                <a href="#" class='dropdown-toggle' data-toggle="dropdown"><?php echo $firstname.' '.$lastname?>
+                    <img src="<?php echo $image ?>" alt="">
                 </a>
                 <ul class="dropdown-menu pull-right">
                     <li>

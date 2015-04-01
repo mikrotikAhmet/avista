@@ -24,5 +24,6 @@ $_['text_users']                       = 'Users';
 $_['text_api']                        = 'API';
 $_['text_user_group']                  = 'User Groups';
 $_['text_logout']          = 'Logout';
+$_['text_logged'] = '%s';
 
 //End of file menu.php 
