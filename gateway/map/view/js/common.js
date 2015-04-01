@@ -287,52 +287,52 @@ $(document).ready(function() {
             }
 
             // Response
-            //this.response = function(json) {
-            //    html = '';
-            //
-            //    if (json.length) {
-            //        for (i = 0; i < json.length; i++) {
-            //            this.items[json[i]['value']] = json[i];
-            //        }
-            //
-            //        for (i = 0; i < json.length; i++) {
-            //            if (!json[i]['category']) {
-            //                html += '<li data-value="' + json[i]['value'] + '"><a href="#">' + json[i]['label'] + '</a></li>';
-            //            }
-            //        }
-            //
-            //        // Get all the ones with a categories
-            //        var category = new Array();
-            //
-            //        for (i = 0; i < json.length; i++) {
-            //            if (json[i]['category']) {
-            //                if (!category[json[i]['category']]) {
-            //                    category[json[i]['category']] = new Array();
-            //                    category[json[i]['category']]['name'] = json[i]['category'];
-            //                    category[json[i]['category']]['item'] = new Array();
-            //                }
-            //
-            //                category[json[i]['category']]['item'].push(json[i]);
-            //            }
-            //        }
-            //
-            //        for (i in category) {
-            //            html += '<li class="dropdown-header">' + category[i]['name'] + '</li>';
-            //
-            //            for (j = 0; j < category[i]['item'].length; j++) {
-            //                html += '<li data-value="' + category[i]['item'][j]['value'] + '"><a href="#">&nbsp;&nbsp;&nbsp;' + category[i]['item'][j]['label'] + '</a></li>';
-            //            }
-            //        }
-            //    }
-            //
-            //    if (html) {
-            //        this.show();
-            //    } else {
-            //        this.hide();
-            //    }
-            //
-            //    $(this).siblings('ul.dropdown-menu').html(html);
-            //}
+            this.response = function(json) {
+                html = '';
+
+                if (json.length) {
+                    for (i = 0; i < json.length; i++) {
+                        this.items[json[i]['value']] = json[i];
+                    }
+
+                    for (i = 0; i < json.length; i++) {
+                        if (!json[i]['category']) {
+                            html += '<li data-value="' + json[i]['value'] + '"><a href="#">' + json[i]['label'] + '</a></li>';
+                        }
+                    }
+
+                    // Get all the ones with a categories
+                    var category = new Array();
+
+                    for (i = 0; i < json.length; i++) {
+                        if (json[i]['category']) {
+                            if (!category[json[i]['category']]) {
+                                category[json[i]['category']] = new Array();
+                                category[json[i]['category']]['name'] = json[i]['category'];
+                                category[json[i]['category']]['item'] = new Array();
+                            }
+
+                            category[json[i]['category']]['item'].push(json[i]);
+                        }
+                    }
+
+                    for (i in category) {
+                        html += '<li class="dropdown-header">' + category[i]['name'] + '</li>';
+
+                        for (j = 0; j < category[i]['item'].length; j++) {
+                            html += '<li data-value="' + category[i]['item'][j]['value'] + '"><a href="#">&nbsp;&nbsp;&nbsp;' + category[i]['item'][j]['label'] + '</a></li>';
+                        }
+                    }
+                }
+
+                if (html) {
+                    this.show();
+                } else {
+                    this.hide();
+                }
+
+                $(this).siblings('ul.dropdown-menu').html(html);
+            }
 
             $(this).after('<ul class="dropdown-menu"></ul>');
             $(this).siblings('ul.dropdown-menu').delegate('a', 'click', $.proxy(this.click, this));

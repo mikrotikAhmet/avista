@@ -24,7 +24,38 @@
     <favorites_list name="gateway" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="merchant.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/map/controller/account/merchant.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-18.916666" vertical-offset="22481" max-vertical-offset="24405">
+              <caret line="1529" column="66" selection-start-line="1529" selection-start-column="66" selection-end-line="1529" selection-end-column="66" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="merchant_list.tpl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/map/view/template/account/merchant_list.tpl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="81.708336" vertical-offset="3821" max-vertical-offset="4830">
+              <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="common.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/map/view/js/common.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.7557503" vertical-offset="4275" max-vertical-offset="5205">
+              <caret line="331" column="17" selection-start-line="331" selection-start-column="17" selection-end-line="331" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -41,7 +72,6 @@
         <option value="$PROJECT_DIR$/map/view/template/common/login.tpl" />
         <option value="$PROJECT_DIR$/map/controller/common/login.php" />
         <option value="$PROJECT_DIR$/map/controller/common/header.php" />
-        <option value="$PROJECT_DIR$/map/view/js/common.js" />
         <option value="$PROJECT_DIR$/map/language/english/account/merchant.php" />
         <option value="$PROJECT_DIR$/map/language/english/account/merchant_ban_ip.php" />
         <option value="$PROJECT_DIR$/map/language/english/account/merchant_group.php" />
@@ -55,7 +85,6 @@
         <option value="$PROJECT_DIR$/map/view/js/demonstration.min.js" />
         <option value="$PROJECT_DIR$/map/view/js/plugins/jquery-ui/jquery-ui.js" />
         <option value="$PROJECT_DIR$/map/view/js/eakroko.js" />
-        <option value="$PROJECT_DIR$/map/controller/account/merchant.php" />
         <option value="$PROJECT_DIR$/map/view/template/account/merchant_list.tpl" />
         <option value="$PROJECT_DIR$/map/model/localisation/country.php" />
         <option value="$PROJECT_DIR$/map/model/localisation/zone.php" />
@@ -85,6 +114,8 @@
         <option value="$PROJECT_DIR$/map/controller/setting/application.php" />
         <option value="$PROJECT_DIR$/map/view/template/setting/application_form.tpl" />
         <option value="$PROJECT_DIR$/map/view/template/common/menu.tpl" />
+        <option value="$PROJECT_DIR$/map/controller/account/merchant.php" />
+        <option value="$PROJECT_DIR$/map/view/js/common.js" />
       </list>
     </option>
   </component>
@@ -196,7 +227,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
+              <option name="myItemId" value="account" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gateway" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gateway" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="map" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -254,7 +307,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="setting" />
+              <option name="myItemId" value="account" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -324,10 +377,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24739583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24739583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -378,16 +431,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/map/language/english/account/custom_field.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8669623" vertical-offset="148" max-vertical-offset="1050">
-          <caret line="62" column="88" selection-start-line="62" selection-start-column="88" selection-end-line="62" selection-end-column="88" />
-          <folding>
-            <element signature="e#6#361#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/map/model/account/merchant.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.38655463" vertical-offset="818" max-vertical-offset="8280">
@@ -584,14 +627,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/map/view/js/application.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="10436" max-vertical-offset="14775">
-          <caret line="709" column="27" selection-start-line="709" selection-start-column="27" selection-end-line="709" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/map/view/js/demonstration.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33222038" vertical-offset="2126" max-vertical-offset="23355">
@@ -629,22 +664,6 @@
           <folding>
             <marker date="1427874914039" expanded="false" signature="-1:-1" placeholder="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/controller/account/merchant.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-28.125" vertical-offset="7650" max-vertical-offset="24405">
-          <caret line="555" column="61" selection-start-line="555" selection-start-column="61" selection-end-line="555" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/view/template/account/merchant_list.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52755904" vertical-offset="1391" max-vertical-offset="4830">
-          <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -914,8 +933,8 @@
         <state vertical-scroll-proportion="1.2784222" vertical-offset="20363" max-vertical-offset="21570">
           <caret line="1431" column="18" selection-start-line="1431" selection-start-column="18" selection-end-line="1431" selection-end-column="18" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#5;n#fieldset#3;n#div#3;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#6;n#fieldset#3;n#div#3;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#5;n#fieldset#3;n#div#3;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#6;n#fieldset#3;n#div#3;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1020,6 +1039,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.37804878" vertical-offset="4" max-vertical-offset="3135">
           <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/controller/account/merchant.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.916666" vertical-offset="22481" max-vertical-offset="24405">
+          <caret line="1529" column="66" selection-start-line="1529" selection-start-column="66" selection-end-line="1529" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/view/js/application.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21796276" vertical-offset="10436" max-vertical-offset="14775">
+          <caret line="709" column="27" selection-start-line="709" selection-start-column="27" selection-end-line="709" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/view/template/account/merchant_list.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="81.708336" vertical-offset="3821" max-vertical-offset="4830">
+          <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/view/js/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7557503" vertical-offset="4275" max-vertical-offset="5205">
+          <caret line="331" column="17" selection-start-line="331" selection-start-column="17" selection-end-line="331" selection-end-column="17" />
           <folding />
         </state>
       </provider>
