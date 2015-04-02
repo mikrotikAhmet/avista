@@ -50,6 +50,141 @@ LOCK TABLES `engine4_address` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `engine4_affiliate`
+--
+
+DROP TABLE IF EXISTS `engine4_affiliate`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_affiliate` (
+  `affiliate_id` int(11) NOT NULL AUTO_INCREMENT,
+  `firstname` varchar(32) NOT NULL,
+  `lastname` varchar(32) NOT NULL,
+  `email` varchar(96) NOT NULL,
+  `telephone` varchar(32) NOT NULL,
+  `fax` varchar(32) NOT NULL,
+  `password` varchar(40) NOT NULL,
+  `salt` varchar(9) NOT NULL,
+  `company` varchar(40) NOT NULL,
+  `website` varchar(255) NOT NULL,
+  `address_1` varchar(128) NOT NULL,
+  `address_2` varchar(128) NOT NULL,
+  `city` varchar(128) NOT NULL,
+  `postcode` varchar(10) NOT NULL,
+  `country_id` int(11) NOT NULL,
+  `zone_id` int(11) NOT NULL,
+  `code` varchar(64) NOT NULL,
+  `commission` decimal(4,2) NOT NULL DEFAULT '0.00',
+  `tax` varchar(64) NOT NULL,
+  `payment` varchar(6) NOT NULL,
+  `cheque` varchar(100) NOT NULL,
+  `paypal` varchar(64) NOT NULL,
+  `bank_name` varchar(64) NOT NULL,
+  `bank_branch_number` varchar(64) NOT NULL,
+  `bank_swift_code` varchar(64) NOT NULL,
+  `bank_account_name` varchar(64) NOT NULL,
+  `bank_account_number` varchar(64) NOT NULL,
+  `ip` varchar(40) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `approved` tinyint(1) NOT NULL,
+  `date_added` datetime NOT NULL,
+  PRIMARY KEY (`affiliate_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_affiliate`
+--
+
+LOCK TABLES `engine4_affiliate` WRITE;
+/*!40000 ALTER TABLE `engine4_affiliate` DISABLE KEYS */;
+/*!40000 ALTER TABLE `engine4_affiliate` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `engine4_affiliate_activity`
+--
+
+DROP TABLE IF EXISTS `engine4_affiliate_activity`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_affiliate_activity` (
+  `activity_id` int(11) NOT NULL AUTO_INCREMENT,
+  `affiliate_id` int(11) NOT NULL,
+  `key` varchar(64) NOT NULL,
+  `data` text NOT NULL,
+  `ip` varchar(40) NOT NULL,
+  `date_added` datetime NOT NULL,
+  PRIMARY KEY (`activity_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_affiliate_activity`
+--
+
+LOCK TABLES `engine4_affiliate_activity` WRITE;
+/*!40000 ALTER TABLE `engine4_affiliate_activity` DISABLE KEYS */;
+/*!40000 ALTER TABLE `engine4_affiliate_activity` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `engine4_affiliate_login`
+--
+
+DROP TABLE IF EXISTS `engine4_affiliate_login`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_affiliate_login` (
+  `affiliate_login_id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(96) NOT NULL,
+  `ip` varchar(40) NOT NULL,
+  `total` int(4) NOT NULL,
+  `date_added` datetime NOT NULL,
+  `date_modified` datetime NOT NULL,
+  PRIMARY KEY (`affiliate_login_id`),
+  KEY `email` (`email`),
+  KEY `ip` (`ip`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_affiliate_login`
+--
+
+LOCK TABLES `engine4_affiliate_login` WRITE;
+/*!40000 ALTER TABLE `engine4_affiliate_login` DISABLE KEYS */;
+/*!40000 ALTER TABLE `engine4_affiliate_login` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `engine4_affiliate_transaction`
+--
+
+DROP TABLE IF EXISTS `engine4_affiliate_transaction`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_affiliate_transaction` (
+  `affiliate_transaction_id` int(11) NOT NULL AUTO_INCREMENT,
+  `affiliate_id` int(11) NOT NULL,
+  `order_id` int(11) NOT NULL,
+  `description` text NOT NULL,
+  `amount` decimal(15,4) NOT NULL,
+  `date_added` datetime NOT NULL,
+  PRIMARY KEY (`affiliate_transaction_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_affiliate_transaction`
+--
+
+LOCK TABLES `engine4_affiliate_transaction` WRITE;
+/*!40000 ALTER TABLE `engine4_affiliate_transaction` DISABLE KEYS */;
+/*!40000 ALTER TABLE `engine4_affiliate_transaction` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `engine4_api`
 --
 
@@ -454,6 +589,33 @@ LOCK TABLES `engine4_location` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `engine4_marketing`
+--
+
+DROP TABLE IF EXISTS `engine4_marketing`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_marketing` (
+  `marketing_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(32) NOT NULL,
+  `description` text NOT NULL,
+  `code` varchar(64) NOT NULL,
+  `clicks` int(5) NOT NULL DEFAULT '0',
+  `date_added` datetime NOT NULL,
+  PRIMARY KEY (`marketing_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_marketing`
+--
+
+LOCK TABLES `engine4_marketing` WRITE;
+/*!40000 ALTER TABLE `engine4_marketing` DISABLE KEYS */;
+/*!40000 ALTER TABLE `engine4_marketing` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `engine4_merchant`
 --
 
@@ -756,6 +918,36 @@ CREATE TABLE `engine4_merchant_transaction` (
 LOCK TABLES `engine4_merchant_transaction` WRITE;
 /*!40000 ALTER TABLE `engine4_merchant_transaction` DISABLE KEYS */;
 /*!40000 ALTER TABLE `engine4_merchant_transaction` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `engine4_modification`
+--
+
+DROP TABLE IF EXISTS `engine4_modification`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_modification` (
+  `modification_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(64) NOT NULL,
+  `code` varchar(64) NOT NULL,
+  `author` varchar(64) NOT NULL,
+  `version` varchar(32) NOT NULL,
+  `link` varchar(255) NOT NULL,
+  `xml` text NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `date_added` datetime NOT NULL,
+  PRIMARY KEY (`modification_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_modification`
+--
+
+LOCK TABLES `engine4_modification` WRITE;
+/*!40000 ALTER TABLE `engine4_modification` DISABLE KEYS */;
+/*!40000 ALTER TABLE `engine4_modification` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1308,4 +1500,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-04-01 15:51:11
+-- Dump completed on 2015-04-02 14:56:01
