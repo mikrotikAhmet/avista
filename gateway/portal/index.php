@@ -208,9 +208,72 @@ $registry->set('language', $language);
 // Document
 $registry->set('document', new Document());
 
+// Merchant
+$merchant = new Merchant($registry);
+$registry->set('merchant', $merchant);
 
-echo '<pre>';
-print_r($config);
+// Customer Group
+if ($merchant->isLogged()) {
+    $config->set('config_merchant_group_id', $merchant->getGroupId());
+} elseif (isset($session->data['merchant']) && isset($session->data['merchant']['merchant_group_id'])) {
+    // For API calls
+    $config->set('config_merchant_group_id', $session->data['merchant']['merchant_group_id']);
+} elseif (isset($session->data['guest']) && isset($session->data['guest']['merchant_group_id'])) {
+    $config->set('config_merchant_group_id', $session->data['guest']['merchant_group_id']);
+}
+
+// Tracking Code
+if (isset($request->get['tracking'])) {
+    setcookie('tracking', $request->get['tracking'], time() + 3600 * 24 * 1000, '/');
+
+    $db->query("UPDATE `" . DB_PREFIX . "marketing` SET clicks = (clicks + 1) WHERE code = '" . $db->escape($request->get['tracking']) . "'");
+}
+
+// Affiliate
+$registry->set('affiliate', new Affiliate($registry));
+
+// Currency
+$registry->set('currency', new Currency($registry));
+
+// Cart
+$registry->set('cart', new Cart($registry));
+
+// Encryption
+$registry->set('encryption', new Encryption($config->get('config_encryption')));
+
+
+// Event
+$event = new Event($registry);
+$registry->set('event', $event);
+
+$query = $db->query("SELECT * FROM " . DB_PREFIX . "event");
+
+foreach ($query->rows as $result) {
+    $event->register($result['trigger'], $result['action']);
+}
+
+// Front Controller
+$controller = new Front($registry);
+
+// Maintenance Mode
+//$controller->addPreAction(new Action('common/maintenance'));
+
+// SEO URL's
+//$controller->addPreAction(new Action('common/seo_url'));
+
+// Router
+if (isset($request->get['route'])) {
+    $action = new Action($request->get['route']);
+} else {
+    $action = new Action('common/dashboard');
+}
+
+// Dispatch
+$controller->dispatch($action, new Action('error/not_found'));
+
+// Output
+$response->output();
+
 
 
 //End of file index.php
