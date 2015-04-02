@@ -21,6 +21,11 @@ if (!defined('DIR_APPLICATION'))
 class ControllerCommonDashboard extends Controller {
 
     public function index() {
+
+	    if (!$this->merchant->isLogged()) {
+		    $this->response->redirect($this->url->link('account/login', '', 'SSL'));
+	    }
+
         $this->document->setTitle($this->config->get('config_meta_title'));
         $this->document->setDescription($this->config->get('config_meta_description'));
         $this->document->setKeywords($this->config->get('config_meta_keyword'));
@@ -29,7 +34,8 @@ class ControllerCommonDashboard extends Controller {
             $this->document->addLink(HTTP_SERVER, 'canonical');
         }
 
-//        $data['footer'] = $this->load->controller('common/footer');
+	    $data['left_column'] = $this->load->controller('common/left_column');
+        $data['footer'] = $this->load->controller('common/footer');
         $data['header'] = $this->load->controller('common/header');
 
         if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/dashboard.tpl')) {

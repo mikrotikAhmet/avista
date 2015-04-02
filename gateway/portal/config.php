@@ -16,10 +16,12 @@
 // HTTP
 define('HTTP_SERVER', 'http://'.$_SERVER['HTTP_HOST'].'/');
 define('HTTP_IMAGE', 'http://'.$_SERVER['HTTP_HOST'].'/image/');
+define('HTTP_MAP', 'http://map.avista.com/map/');
 
 // HTTPS
 define('HTTPS_SERVER', 'https://'.$_SERVER['HTTP_HOST'].'/');
-define('HTTPS_IMAGE', 'http://'.$_SERVER['HTTP_HOST'].'/image/');
+define('HTTPS_IMAGE', 'https://'.$_SERVER['HTTP_HOST'].'/image/');
+define('HTTPS_MAP', 'https://map.avista.com/map/');
 
 // DIR
 define('DIR_APPLICATION', APPLICATION_PATH_COR.'portal/');

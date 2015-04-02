@@ -25,8 +25,10 @@ class ControllerCommonHeader extends Controller {
 
         if ($this->request->server['HTTPS']) {
             $server = $this->config->get('config_ssl');
+	        $map_server = HTTPS_MAP;
         } else {
             $server = $this->config->get('config_url');
+	        $map_server = HTTP_MAP;
         }
 
         $data['base'] = $server;
@@ -41,12 +43,12 @@ class ControllerCommonHeader extends Controller {
         $data['name'] = $this->config->get('config_name');
 
         if (is_file(DIR_IMAGE . $this->config->get('config_icon'))) {
-            $data['icon'] = 'http://map.avista.com/map/image/' . $this->config->get('config_icon');
+            $data['icon'] = $map_server.'image/' . $this->config->get('config_icon');
         } else {
             $data['icon'] = '';
         }
         if (is_file(DIR_IMAGE . $this->config->get('config_logo'))) {
-            $data['logo'] = 'http://map.avista.com/map/image/' . $this->config->get('config_logo');
+            $data['logo'] = $map_server.'image/' . $this->config->get('config_logo');
         } else {
             $data['logo'] = '';
         }
@@ -81,21 +83,11 @@ class ControllerCommonHeader extends Controller {
 //        $data['cart'] = $this->load->controller('common/cart');
 
         // For page specific css
-//        if (isset($this->request->get['route'])) {
-//            if (isset($this->request->get['product_id'])) {
-//                $class = '-' . $this->request->get['product_id'];
-//            } elseif (isset($this->request->get['path'])) {
-//                $class = '-' . $this->request->get['path'];
-//            } elseif (isset($this->request->get['manufacturer_id'])) {
-//                $class = '-' . $this->request->get['manufacturer_id'];
-//            } else {
-//                $class = '';
-//            }
-//
-//            $data['class'] = str_replace('/', '-', $this->request->get['route']) . $class;
-//        } else {
+	    if (!$this->merchant->isLogged()) {
+		    $data['class'] = 'login';
+        } else {
             $data['class'] = 'common-home';
-//        }
+        }
 
         if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/header.tpl')) {
             return $this->load->view($this->config->get('config_template') . '/template/common/header.tpl', $data);

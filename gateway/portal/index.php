@@ -256,10 +256,10 @@ foreach ($query->rows as $result) {
 $controller = new Front($registry);
 
 // Maintenance Mode
-//$controller->addPreAction(new Action('common/maintenance'));
+$controller->addPreAction(new Action('common/maintenance'));
 
 // SEO URL's
-//$controller->addPreAction(new Action('common/seo_url'));
+$controller->addPreAction(new Action('account/login/check'));
 
 // Router
 if (isset($request->get['route'])) {
