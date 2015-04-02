@@ -29,7 +29,7 @@ define('DIR_DATABASE', APPLICATION_PATH_COR.'portal/system/database/');
 define('DIR_LANGUAGE', APPLICATION_PATH_COR.'portal/language/');
 define('DIR_TEMPLATE', APPLICATION_PATH_COR.'portal/view/theme/');
 define('DIR_CONFIG', APPLICATION_PATH_COR.'portal/system/library/config/');
-define('DIR_IMAGE', APPLICATION_PATH_COR.'portal/image/');
+define('DIR_IMAGE', APPLICATION_PATH_COR.'map/image/');
 define('DIR_CACHE', APPLICATION_PATH_COR.'portal/system/cache/');
 define('DIR_DOWNLOAD', APPLICATION_PATH_COR.'portal/download/');
 define('DIR_MODIFICATION', APPLICATION_PATH_COR.'portal/system/modification/');
