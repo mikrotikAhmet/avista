@@ -56,12 +56,12 @@ class ControllerAccountLogin extends Controller {
 
                 $this->event->trigger('post.customer.login');
 
-                $this->response->redirect($this->url->link('account/account', '', 'SSL'));
+                $this->response->redirect($this->url->link('common/dashboard', '', 'SSL'));
             }
         }
 
         if ($this->customer->isLogged()) {
-            $this->response->redirect($this->url->link('account/account', '', 'SSL'));
+            $this->response->redirect($this->url->link('common/dashboard', '', 'SSL'));
         }
 
         $this->load->language('account/login');
@@ -96,26 +96,9 @@ class ControllerAccountLogin extends Controller {
             if (isset($this->request->post['redirect']) && (strpos($this->request->post['redirect'], $this->config->get('config_url')) !== false || strpos($this->request->post['redirect'], $this->config->get('config_ssl')) !== false)) {
                 $this->response->redirect(str_replace('&amp;', '&', $this->request->post['redirect']));
             } else {
-                $this->response->redirect($this->url->link('account/account', '', 'SSL'));
+                $this->response->redirect($this->url->link('common/dashboard', '', 'SSL'));
             }
         }
-
-        $data['breadcrumbs'] = array();
-
-        $data['breadcrumbs'][] = array(
-            'text' => $this->language->get('text_home'),
-            'href' => $this->url->link('common/home')
-        );
-
-        $data['breadcrumbs'][] = array(
-            'text' => $this->language->get('text_account'),
-            'href' => $this->url->link('account/account', '', 'SSL')
-        );
-
-        $data['breadcrumbs'][] = array(
-            'text' => $this->language->get('text_login'),
-            'href' => $this->url->link('account/login', '', 'SSL')
-        );
 
         $data['heading_title'] = $this->language->get('heading_title');
 
@@ -192,11 +175,11 @@ class ControllerAccountLogin extends Controller {
         }
 
         // Check if customer has been approved.
-        $customer_info = $this->model_account_customer->getCustomerByEmail($this->request->post['email']);
-
-        if ($customer_info && !$customer_info['approved']) {
-            $this->error['warning'] = $this->language->get('error_approved');
-        }
+//        $customer_info = $this->model_account_customer->getCustomerByEmail($this->request->post['email']);
+//
+//        if ($customer_info && !$customer_info['approved']) {
+//            $this->error['warning'] = $this->language->get('error_approved');
+//        }
 
         if (!$this->error) {
             if (!$this->customer->login($this->request->post['email'], $this->request->post['password'])) {

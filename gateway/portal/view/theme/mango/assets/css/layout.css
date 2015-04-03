@@ -1581,6 +1581,11 @@ footer > span {
 	margin: 0 auto;
 }
 
+#login .register {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 #login .box .actions {
 	padding: 8px 15px;
 }

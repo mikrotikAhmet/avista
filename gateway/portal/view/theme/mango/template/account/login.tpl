@@ -28,7 +28,6 @@
         </div>
 
         <div class="content">
-
             <!-- Login messages -->
             <div class="login-messages">
                 <?php if ($error_warning) { ?>
@@ -38,10 +37,8 @@
                 <?php } ?>
                 <div class="message failure">Invalid credentials.</div>
             </div>
-
             <!-- The form -->
             <div class="form-box">
-
                 <div class="row">
                     <label for="login_name">
                         <strong><?php echo $entry_email; ?></strong>
@@ -50,7 +47,6 @@
                         <input tabindex=1 type="text" value="<?php echo $email; ?>" class="required" placeholder="<?php echo $entry_email; ?>" name="email" id=login_name />
                     </div>
                 </div>
-
                 <div class="row">
                     <label for="login_pw">
                         <strong><?php echo $entry_password; ?></strong>
@@ -60,11 +56,8 @@
                         <input tabindex=2 type="password" class="required" value="<?php echo $password; ?>" name="password" id=login_pw placeholder="<?php echo $entry_password; ?>"/>
                     </div>
                 </div>
-
             </div><!-- End of .form-box -->
-
         </div><!-- End of .content -->
-
         <div class="actions">
             <div class="left">
                 <div class="rememberme">
@@ -79,6 +72,5 @@
         <input type="hidden" name="redirect" value="<?php echo $redirect; ?>" />
         <?php } ?>
     </form><!-- End of form -->
-
 </section>
 <?php echo $footer?>

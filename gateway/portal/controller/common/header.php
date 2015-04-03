@@ -55,7 +55,8 @@ class ControllerCommonHeader extends Controller {
         $this->load->language('common/header');
 
         $data['text_home'] = $this->language->get('text_home');
-        $data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', 'SSL'), $this->customer->getFirstName(), $this->url->link('account/logout', '', 'SSL'));
+        $data['text_lock_screen'] = $this->language->get('text_lock_screen');
+        $data['text_logout'] = $this->language->get('text_logout');
 
         $data['text_all'] = $this->language->get('text_all');
 
