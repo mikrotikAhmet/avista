@@ -12,7 +12,6 @@
  */
 // ------------------------------------------------------------------------
 
-
 // Heading
 $_['heading_title']                    = 'Applications';
 
@@ -137,5 +136,6 @@ $_['error_image_cart']                 = 'Cart Image Size dimensions required!';
 $_['error_image_location']             = 'Application Image Size dimensions required!';
 $_['error_default']                    = 'Warning: You can not delete your default application!';
 $_['error_application']                      = 'Warning: This Application cannot be deleted as it is currently assigned to %s orders!';
+
 
 //End of file application.php 

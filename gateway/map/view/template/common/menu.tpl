@@ -7,10 +7,22 @@
                     <span><?php echo $text_dashboard?></span>
                 </a>
             </li>
-            <li id="board">
-                <a href="<?php echo $merchant?>">
-                    <span><?php echo $text_boarding?></span>
+            <li id="sale">
+                <a href="#" data-toggle="dropdown" class='dropdown-toggle'>
+                    <span><?php echo $text_sale?></span>
+                    <span class="caret"></span>
                 </a>
+                <ul class="dropdown-menu">
+                    <li id="sale" class='dropdown-submenu'>
+                        <a href="#" data-toggle="dropdown" class='dropdown-toggle'><?php echo $text_customer?></a>
+                        <ul class="dropdown-menu">
+                            <li id="customer"><a href="<?php echo $customer; ?>"><?php echo $text_customer; ?></a></li>
+                            <li id="customer_group"><a href="<?php echo $customer_group; ?>"><?php echo $text_customer_group; ?></a></li>
+                            <li id="custom_field"><a href="<?php echo $custom_field; ?>"><?php echo $text_custom_field; ?></a></li>
+                            <li id="customer_ban_ip"><a href="<?php echo $customer_ban_ip; ?>"><?php echo $text_customer_ban_ip; ?></a></li>
+                        </ul>
+                    </li>
+                </ul>
             </li>
             <li id="system">
                 <a href="#" data-toggle="dropdown" class='dropdown-toggle'>
@@ -21,9 +33,6 @@
                     <li id="application">
                         <a href="<?php echo $setting?>"><?php echo $text_application?></a>
                     </li>
-                    <!--li id="gateway">
-                        <a href="#"><?php echo $text_gateway?></a>
-                    </li-->
                     <li id="user" class='dropdown-submenu'>
                         <a href="#" data-toggle="dropdown" class='dropdown-toggle'><?php echo $text_user?></a>
                         <ul class="dropdown-menu">

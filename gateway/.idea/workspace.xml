@@ -34,49 +34,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/map/model/account/merchant_group.php" />
-        <option value="$PROJECT_DIR$/map/model/account/custom_field.php" />
-        <option value="$PROJECT_DIR$/map/model/setting/application.php" />
-        <option value="$PROJECT_DIR$/map/view/js/application.min.js" />
-        <option value="$PROJECT_DIR$/map/view/js/demonstration.min.js" />
-        <option value="$PROJECT_DIR$/map/view/js/plugins/jquery-ui/jquery-ui.js" />
-        <option value="$PROJECT_DIR$/map/view/js/eakroko.js" />
-        <option value="$PROJECT_DIR$/map/view/template/account/merchant_list.tpl" />
-        <option value="$PROJECT_DIR$/map/model/localisation/country.php" />
-        <option value="$PROJECT_DIR$/map/model/localisation/zone.php" />
-        <option value="$PROJECT_DIR$/map/view/template/account/merchant_form.tpl" />
-        <option value="$PROJECT_DIR$/map/view/css/style.css" />
-        <option value="$PROJECT_DIR$/map/view/template/account/merchant_history.tpl" />
-        <option value="$PROJECT_DIR$/map/model/localisation/currency.php" />
-        <option value="$PROJECT_DIR$/map/view/template/account/merchant_transaction.tpl" />
-        <option value="$PROJECT_DIR$/map/view/template/account/merchant_reward.tpl" />
-        <option value="$PROJECT_DIR$/map/view/template/account/customer_ip.tpl" />
-        <option value="$PROJECT_DIR$/map/language/english/common/menu.php" />
-        <option value="$PROJECT_DIR$/map/language/english/setting/setting.php" />
-        <option value="$PROJECT_DIR$/map/model/setting/settin.php" />
-        <option value="$PROJECT_DIR$/map/model/localisation/location.php" />
-        <option value="$PROJECT_DIR$/map/model/design/layout.php" />
-        <option value="$PROJECT_DIR$/map/model/localisation/language.php" />
-        <option value="$PROJECT_DIR$/map/controller/common/menu.php" />
-        <option value="$PROJECT_DIR$/map/view/template/setting/application_list.tpl" />
-        <option value="$PROJECT_DIR$/map/language/english/setting/application.php" />
-        <option value="$PROJECT_DIR$/map/language/english/default.php" />
-        <option value="$PROJECT_DIR$/map/model/localisation/geo_zone.php" />
-        <option value="$PROJECT_DIR$/map/model/localisation/order_status.php" />
-        <option value="$PROJECT_DIR$/map/controller/setting/setting.php" />
-        <option value="$PROJECT_DIR$/map/model/setting/setting.php" />
-        <option value="$PROJECT_DIR$/map/view/template/setting/setting.tpl" />
-        <option value="$PROJECT_DIR$/map/controller/setting/application.php" />
-        <option value="$PROJECT_DIR$/map/view/template/setting/application_form.tpl" />
-        <option value="$PROJECT_DIR$/map/view/template/common/menu.tpl" />
-        <option value="$PROJECT_DIR$/map/controller/account/merchant.php" />
-        <option value="$PROJECT_DIR$/map/view/js/common.js" />
-        <option value="$PROJECT_DIR$/map/config.php" />
-        <option value="$PROJECT_DIR$/portal/system/library/cache.php" />
-        <option value="$PROJECT_DIR$/portal/system/library/merchant.php" />
-        <option value="$PROJECT_DIR$/portal/system/library/affiliate.php" />
-        <option value="$PROJECT_DIR$/portal/system/library/cart.php" />
-        <option value="$PROJECT_DIR$/portal/index.php" />
         <option value="$PROJECT_DIR$/portal/controller/common/dashboard.php" />
         <option value="$PROJECT_DIR$/portal/language/english/default.php" />
         <option value="$PROJECT_DIR$/portal/view/theme/mango/template/common/dashboard.tpl" />
@@ -85,6 +42,49 @@
         <option value="$PROJECT_DIR$/portal/config.php" />
         <option value="$PROJECT_DIR$/portal/controller/common/header.php" />
         <option value="$PROJECT_DIR$/portal/view/theme/mango/template/common/header.tpl" />
+        <option value="$PROJECT_DIR$/map/controller/common/menu.php" />
+        <option value="$PROJECT_DIR$/map/language/english/common/menu.php" />
+        <option value="$PROJECT_DIR$/map/controller/sale/order.php" />
+        <option value="$PROJECT_DIR$/map/language/english/sale/customer.php" />
+        <option value="$PROJECT_DIR$/map/language/english/sale/customer_ban_ip.php" />
+        <option value="$PROJECT_DIR$/map/language/english/sale/customer_group.php" />
+        <option value="$PROJECT_DIR$/map/language/english/sale/custom_field.php" />
+        <option value="$PROJECT_DIR$/map/language/english/sale/order.php" />
+        <option value="$PROJECT_DIR$/map/model/sale/customer_ban_ip.php" />
+        <option value="$PROJECT_DIR$/map/model/sale/customer_group.php" />
+        <option value="$PROJECT_DIR$/map/model/sale/custom_field.php" />
+        <option value="$PROJECT_DIR$/map/model/sale/fraud.php" />
+        <option value="$PROJECT_DIR$/map/model/sale/order.php" />
+        <option value="$PROJECT_DIR$/map/model/setting/application.php" />
+        <option value="$PROJECT_DIR$/map/model/setting/setting.php" />
+        <option value="$PROJECT_DIR$/map/view/template/sale/customer_form.tpl" />
+        <option value="$PROJECT_DIR$/map/controller/sale/customer.php" />
+        <option value="$PROJECT_DIR$/map/view/template/sale/customer_group_list.tpl" />
+        <option value="$PROJECT_DIR$/map/view/template/sale/customer_list.tpl" />
+        <option value="$PROJECT_DIR$/map/controller/sale/customer_group.php" />
+        <option value="$PROJECT_DIR$/map/view/template/sale/customer_group_form.tpl" />
+        <option value="$PROJECT_DIR$/map/controller/sale/custom_field.php" />
+        <option value="$PROJECT_DIR$/map/view/template/sale/custom_field_list.tpl" />
+        <option value="$PROJECT_DIR$/map/view/template/sale/custom_field_form.tpl" />
+        <option value="$PROJECT_DIR$/map/controller/sale/customer_ban_ip.php" />
+        <option value="$PROJECT_DIR$/map/view/template/sale/customer_ban_ip_list.tpl" />
+        <option value="$PROJECT_DIR$/map/view/template/common/menu.tpl" />
+        <option value="$PROJECT_DIR$/map/view/template/sale/customer_history.tpl" />
+        <option value="$PROJECT_DIR$/map/view/template/sale/customer_transaction.tpl" />
+        <option value="$PROJECT_DIR$/map/view/template/sale/customer_reward.tpl" />
+        <option value="$PROJECT_DIR$/map/view/template/sale/customer_ip.tpl" />
+        <option value="$PROJECT_DIR$/map/system/library/mail.php" />
+        <option value="$PROJECT_DIR$/map/view/template/mail/welcome_mail.tpl" />
+        <option value="$PROJECT_DIR$/map/model/sale/customer.php" />
+        <option value="$PROJECT_DIR$/map/language/english/mail/customer.php" />
+        <option value="$PROJECT_DIR$/usefull/mail_function" />
+        <option value="$PROJECT_DIR$/map/controller/setting/application.php" />
+        <option value="$PROJECT_DIR$/map/view/template/setting/application_list.tpl" />
+        <option value="$PROJECT_DIR$/map/language/english/setting/application.php" />
+        <option value="$PROJECT_DIR$/map/language/english/setting/setting.php" />
+        <option value="$PROJECT_DIR$/map/model/catalog/information.php" />
+        <option value="$PROJECT_DIR$/map/controller/setting/setting.php" />
+        <option value="$PROJECT_DIR$/map/view/template/setting/setting.tpl" />
       </list>
     </option>
   </component>
@@ -203,7 +203,6 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32948583" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -215,6 +214,7 @@
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328594" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32948583" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -237,429 +237,647 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/map/model/setting/setting.php</url>
-          <line>61</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/map/view/template/account/merchant_reward.tpl">
+    <entry file="file://$PROJECT_DIR$/portal/config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2660754" vertical-offset="0" max-vertical-offset="902">
-          <caret line="16" column="68" selection-start-line="14" selection-start-column="12" selection-end-line="16" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/system/library/currency.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0144124" vertical-offset="180" max-vertical-offset="3105">
-          <caret line="73" column="47" selection-start-line="73" selection-start-column="47" selection-end-line="73" selection-end-column="58" />
+        <state vertical-scroll-proportion="0.18292683" vertical-offset="0" max-vertical-offset="902">
+          <caret line="21" column="55" selection-start-line="21" selection-start-column="55" selection-end-line="21" selection-end-column="55" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/map/language/english/common/menu.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="360">
-          <caret line="19" column="20" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/language/english/setting/setting.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7478992" vertical-offset="2947" max-vertical-offset="3780">
-          <caret line="238" column="53" selection-start-line="238" selection-start-column="53" selection-end-line="238" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/model/design/layout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.7907761" vertical-offset="493" max-vertical-offset="2190">
-          <caret line="139" column="1" selection-start-line="139" selection-start-column="1" selection-end-line="139" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/model/localisation/location.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9808774" vertical-offset="343" max-vertical-offset="1320">
-          <caret line="81" column="1" selection-start-line="81" selection-start-column="1" selection-end-line="81" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/model/localisation/language.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.53061223" vertical-offset="1387" max-vertical-offset="2220">
-          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/controller/common/menu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5266075" vertical-offset="140" max-vertical-offset="1155">
-          <caret line="41" column="64" selection-start-line="41" selection-start-column="64" selection-end-line="41" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/view/template/user/api_list.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47244096" vertical-offset="0" max-vertical-offset="1665">
-          <caret line="28" column="33" selection-start-line="0" selection-start-column="0" selection-end-line="105" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/view/template/setting/application_list.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.78391355" vertical-offset="562" max-vertical-offset="1395">
-          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/language/english/setting/application.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1507312" vertical-offset="1047" max-vertical-offset="2190">
-          <caret line="138" column="21" selection-start-line="138" selection-start-column="21" selection-end-line="138" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/view/template/setting/setting.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2784222" vertical-offset="20363" max-vertical-offset="21570">
-          <caret line="1431" column="18" selection-start-line="1431" selection-start-column="18" selection-end-line="1431" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/language/english/default.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61751664" vertical-offset="1288" max-vertical-offset="2415">
-          <caret line="133" column="56" selection-start-line="133" selection-start-column="56" selection-end-line="133" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/model/localisation/order_status.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9808774" vertical-offset="868" max-vertical-offset="1845">
-          <caret line="116" column="1" selection-start-line="116" selection-start-column="1" selection-end-line="116" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/model/localisation/geo_zone.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9808774" vertical-offset="1258" max-vertical-offset="2235">
-          <caret line="142" column="1" selection-start-line="142" selection-start-column="1" selection-end-line="142" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/model/setting/setting.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2785114" vertical-offset="83" max-vertical-offset="1035">
-          <caret line="21" column="60" selection-start-line="21" selection-start-column="60" selection-end-line="21" selection-end-column="60" />
+        <state vertical-scroll-proportion="0.18292683" vertical-offset="0" max-vertical-offset="902">
+          <caret line="21" column="57" selection-start-line="21" selection-start-column="57" selection-end-line="21" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/map/controller/setting/setting.php">
+    <entry file="file://$PROJECT_DIR$/map/controller/sale/order.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31560284" vertical-offset="19098" max-vertical-offset="21450">
-          <caret line="1291" column="0" selection-start-line="1291" selection-start-column="0" selection-end-line="1291" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/view/template/user/api_form.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4490022" vertical-offset="0" max-vertical-offset="1575">
-          <caret line="27" column="35" selection-start-line="0" selection-start-column="0" selection-end-line="99" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/view/template/setting/application_form.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.017401392" vertical-offset="6660" max-vertical-offset="9900">
-          <caret line="445" column="24" selection-start-line="445" selection-start-column="24" selection-end-line="445" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/view/template/common/menu.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37804878" vertical-offset="4" max-vertical-offset="3135">
-          <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/view/js/application.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21796276" vertical-offset="10436" max-vertical-offset="14775">
-          <caret line="709" column="27" selection-start-line="709" selection-start-column="27" selection-end-line="709" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/view/js/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7557503" vertical-offset="4275" max-vertical-offset="5205">
-          <caret line="331" column="17" selection-start-line="331" selection-start-column="17" selection-end-line="331" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/view/template/account/merchant_list.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.2058492" vertical-offset="3821" max-vertical-offset="4830">
-          <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/controller/account/merchant.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51068616" vertical-offset="22481" max-vertical-offset="24405">
-          <caret line="1529" column="66" selection-start-line="1529" selection-start-column="66" selection-end-line="1529" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/controller/setting/application.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33257142" vertical-offset="9234" max-vertical-offset="17790">
-          <caret line="635" column="36" selection-start-line="635" selection-start-column="36" selection-end-line="635" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.625" vertical-offset="0" max-vertical-offset="630">
-          <caret line="35" column="53" selection-start-line="35" selection-start-column="53" selection-end-line="35" selection-end-column="53" />
+        <state vertical-scroll-proportion="0.9808774" vertical-offset="36673" max-vertical-offset="37650">
+          <caret line="2503" column="1" selection-start-line="2503" selection-start-column="1" selection-end-line="2503" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/portal/system/logs/error.log">
+    <entry file="file://$PROJECT_DIR$/map/language/english/sale/customer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="926">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/system/library/cache/mem.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="926">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/system/library/cache/file.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1455">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/system/library/cache/apc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="926">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/system/library/cache.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.25" vertical-offset="0" max-vertical-offset="735">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.710643" vertical-offset="1543" max-vertical-offset="2805">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/system/library/merchant.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.8907562" vertical-offset="0" max-vertical-offset="2670">
-          <caret line="105" column="181" selection-start-line="105" selection-start-column="181" selection-end-line="105" selection-end-column="181" />
-          <folding>
-            <marker date="1427958153918" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXmerchant..." />
-            <marker date="1427958153918" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXmerchant_ip..." />
-            <marker date="1427958153918" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1427958153918" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXmerchant..." />
-            <marker date="1427958153918" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXmerchant..." />
-            <marker date="1427958153918" expanded="true" signature="-1:-1" placeholder="SELECT SUM(a..DB_PREFIXmerchant_transaction..." />
-            <marker date="1427958153918" expanded="true" signature="-1:-1" placeholder="SELECT SUM(p..DB_PREFIXmerchant_reward..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/system/library/affiliate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-70.625" vertical-offset="45" max-vertical-offset="1845">
-          <caret line="116" column="1" selection-start-line="116" selection-start-column="1" selection-end-line="116" selection-end-column="1" />
-          <folding>
-            <marker date="1427979072524" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXaffiliate..." />
-            <marker date="1427979072524" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXaffiliate..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/system/library/cart.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="5.6524186" vertical-offset="1935" max-vertical-offset="7065">
-          <caret line="464" column="1" selection-start-line="464" selection-start-column="1" selection-end-line="464" selection-end-column="1" />
-          <folding>
-            <marker date="1427979271117" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXproduct..." />
-            <marker date="1427979271117" expanded="true" signature="-1:-1" placeholder="SELECT po.pr..DB_PREFIXproduct_option..." />
-            <marker date="1427979271117" expanded="true" signature="-1:-1" placeholder="SELECT pov.o..DB_PREFIXproduct_option_value..." />
-            <marker date="1427979271117" expanded="true" signature="-1:-1" placeholder="SELECT pov.o..DB_PREFIXproduct_option_value..." />
-            <marker date="1427979271117" expanded="true" signature="-1:-1" placeholder="SELECT price..DB_PREFIXproduct_discount..." />
-            <marker date="1427979271117" expanded="true" signature="-1:-1" placeholder="SELECT price..DB_PREFIXproduct_special..." />
-            <marker date="1427979271117" expanded="true" signature="-1:-1" placeholder="SELECT point..DB_PREFIXproduct_reward..." />
-            <marker date="1427979271117" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXproduct_to_download..." />
-            <marker date="1427979271117" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.60384154" vertical-offset="3382" max-vertical-offset="4260">
-          <caret line="259" column="0" selection-start-line="259" selection-start-column="0" selection-end-line="259" selection-end-column="0" />
-          <folding>
-            <element signature="e#6#361#0#PHP" expanded="true" />
-            <marker date="1427979290332" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXapplication..." />
-            <marker date="1427979290332" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXapplication..." />
-            <marker date="1427979290332" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-            <marker date="1427979290332" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-            <marker date="1427979290332" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXevent..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/language/english/default.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5321508" vertical-offset="0" max-vertical-offset="902">
-          <caret line="32" column="43" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.8742857" vertical-offset="0" max-vertical-offset="1485">
+          <caret line="51" column="37" selection-start-line="51" selection-start-column="37" selection-end-line="51" selection-end-column="37" />
           <folding>
             <element signature="e#6#361#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/portal/view/theme/mango/assets/js/libs/require-2.0.6.min.js">
+    <entry file="file://$PROJECT_DIR$/map/language/english/sale/customer_ban_ip.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="913">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.5654102" vertical-offset="0" max-vertical-offset="902">
+          <caret line="34" column="67" selection-start-line="34" selection-start-column="67" selection-end-line="34" selection-end-column="67" />
           <folding>
-            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#6#361#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/portal/view/theme/mango/assets/css/layout.css">
+    <entry file="file://$PROJECT_DIR$/map/language/english/sale/customer_group.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.8698554" vertical-offset="3001" max-vertical-offset="24945">
-          <caret line="88" column="28" selection-start-line="88" selection-start-column="24" selection-end-line="88" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.7446808" vertical-offset="0" max-vertical-offset="846">
+          <caret line="42" column="126" selection-start-line="42" selection-start-column="126" selection-end-line="42" selection-end-column="126" />
           <folding>
-            <element signature="e#486#639#2" expanded="false" />
+            <element signature="e#6#361#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/portal/view/theme/mango/assets/css/print-invoice.css">
+    <entry file="file://$PROJECT_DIR$/map/language/english/sale/custom_field.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="926">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/view/theme/mango/assets/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33295712" vertical-offset="1430" max-vertical-offset="4410">
-          <caret line="115" column="3" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/view/theme/mango/assets/css/typographics.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33295712" vertical-offset="18125" max-vertical-offset="19980">
-          <caret line="1228" column="42" selection-start-line="1228" selection-start-column="39" selection-end-line="1228" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/controller/common/dashboard.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5487805" vertical-offset="0" max-vertical-offset="902">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/view/theme/mango/template/common/dashboard.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="902">
-          <caret line="0" column="20" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/view/theme/mango/assets/js/plugins.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33295712" vertical-offset="6860" max-vertical-offset="66780">
-          <caret line="477" column="59" selection-start-line="477" selection-start-column="59" selection-end-line="477" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/view/theme/mango/assets/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="926">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/view/theme/mango/assets/js/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33295712" vertical-offset="13565" max-vertical-offset="33285">
-          <caret line="924" column="29" selection-start-line="924" selection-start-column="26" selection-end-line="924" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/view/theme/mango/assets/extras/dataTables.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="960">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/view/theme/mango/template/common/header.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3374578" vertical-offset="7965" max-vertical-offset="18210">
-          <caret line="551" column="85" selection-start-line="551" selection-start-column="85" selection-end-line="551" selection-end-column="85" />
+        <state vertical-scroll-proportion="0.89361703" vertical-offset="204" max-vertical-offset="1050">
+          <caret line="64" column="19" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="19" />
           <folding>
-            <element signature="n#style#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#6#361#0#PHP" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/language/english/sale/order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.332533" vertical-offset="2033" max-vertical-offset="3885">
+          <caret line="154" column="66" selection-start-line="154" selection-start-column="66" selection-end-line="154" selection-end-column="66" />
+          <folding>
+            <element signature="e#6#361#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/model/sale/custom_field.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9808774" vertical-offset="2488" max-vertical-offset="3465">
+          <caret line="224" column="1" selection-start-line="224" selection-start-column="1" selection-end-line="224" selection-end-column="1" />
+          <folding>
+            <marker date="1428044223834" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428044223834" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428044223834" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428044223834" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428044223834" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428044223834" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1428044223834" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428044223834" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1428044223834" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428044223834" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1428044223834" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1428044223834" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428044223834" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428044223834" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428044223834" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1428044223834" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1428044223834" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1428044223834" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1428044223834" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1428044223834" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1428044223834" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1428044223834" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustom_field_customer_group..." />
+            <marker date="1428044223834" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustom_field_description..." />
+            <marker date="1428044223834" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustom_field_value..." />
+            <marker date="1428044223834" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustom_field_value..." />
+            <marker date="1428044223834" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1428044223834" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustom_field_value..." />
+            <marker date="1428044223834" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustom_field_value_description..." />
+            <marker date="1428044223834" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/model/sale/order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.332533" vertical-offset="4763" max-vertical-offset="7050">
+          <caret line="336" column="47" selection-start-line="336" selection-start-column="47" selection-end-line="336" selection-end-column="47" />
+          <folding>
+            <marker date="1428044312367" expanded="true" signature="-1:-1" placeholder="SELECT *, (S..." />
+            <marker date="1428044312367" expanded="true" signature="-1:-1" placeholder="SELECT CONCA..DB_PREFIXcustomer..." />
+            <marker date="1428044312367" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXorder_product..." />
+            <marker date="1428044312367" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1428044312367" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1428044312367" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1428044312367" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1428044312367" expanded="true" signature="-1:-1" placeholder="SELECT o.ord..." />
+            <marker date="1428044312367" expanded="true" signature="-1:-1" placeholder="SELECT os.na..DB_PREFIXorder_status..." />
+            <marker date="1428044312367" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXorder_product..." />
+            <marker date="1428044312367" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXorder_option..." />
+            <marker date="1428044312367" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXorder_option..." />
+            <marker date="1428044312367" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXorder_voucher..." />
+            <marker date="1428044312367" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1428044312367" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXorder_total..." />
+            <marker date="1428044312367" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1428044312367" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1428044312367" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1428044312367" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1428044312367" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1428044312367" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1428044312367" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1428044312367" expanded="true" signature="-1:-1" placeholder="SELECT MAX(i..." />
+            <marker date="1428044312367" expanded="true" signature="-1:-1" placeholder="SELECT oh.da..DB_PREFIXorder_history..." />
+            <marker date="1428044312367" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXorder_history..." />
+            <marker date="1428044312367" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXorder_history..." />
+            <marker date="1428044312367" expanded="true" signature="-1:-1" placeholder="SELECT DISTI..." />
+            <marker date="1428044312367" expanded="true" signature="-1:-1" placeholder="SELECT DISTI..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/model/sale/fraud.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4323725" vertical-offset="0" max-vertical-offset="902">
+          <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+          <folding>
+            <marker date="1428044238869" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/model/sale/customer_ban_ip.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.89361703" vertical-offset="339" max-vertical-offset="1185">
+          <caret line="73" column="19" selection-start-line="73" selection-start-column="16" selection-end-line="73" selection-end-column="19" />
+          <folding>
+            <marker date="1428044180125" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428044180125" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1428044180125" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1428044180125" expanded="true" signature="-1:-1" placeholder="SELECT *, (S..." />
+            <marker date="1428044180125" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1428044180125" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/model/sale/customer_group.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5138055" vertical-offset="952" max-vertical-offset="1785">
+          <caret line="92" column="28" selection-start-line="92" selection-start-column="25" selection-end-line="92" selection-end-column="28" />
+          <folding>
+            <marker date="1428044204109" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428044204109" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428044204109" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1428044204109" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428044204109" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1428044204109" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1428044204109" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1428044204109" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1428044204109" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1428044204109" expanded="true" signature="-1:-1" placeholder="SELECT DISTI..DB_PREFIXcustomer_group..." />
+            <marker date="1428044204109" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustomer_group..." />
+            <marker date="1428044204109" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustomer_group_description..." />
+            <marker date="1428044204109" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXcustomer_group..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/model/setting/application.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.367347" vertical-offset="23" max-vertical-offset="2175">
+          <caret line="133" column="39" selection-start-line="133" selection-start-column="39" selection-end-line="133" selection-end-column="39" />
+          <folding>
+            <marker date="1428044532436" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428044532436" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXlayout_route..." />
+            <marker date="1428044532436" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428044532436" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1428044532436" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1428044532436" expanded="true" signature="-1:-1" placeholder="SELECT DISTI..DB_PREFIXapplication..." />
+            <marker date="1428044532436" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXapplication..." />
+            <marker date="1428044532436" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXapplication..." />
+            <marker date="1428044532436" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXsetting..." />
+            <marker date="1428044532436" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXsetting..." />
+            <marker date="1428044532436" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXsetting..." />
+            <marker date="1428044532436" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXsetting..." />
+            <marker date="1428044532436" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXsetting..." />
+            <marker date="1428044532436" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXsetting..." />
+            <marker date="1428044532436" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXsetting..." />
+            <marker date="1428044532436" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXsetting..." />
+            <marker date="1428044532436" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXsetting..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/model/setting/setting.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0168067" vertical-offset="38" max-vertical-offset="1035">
+          <caret line="59" column="280" selection-start-line="59" selection-start-column="280" selection-end-line="59" selection-end-column="280" />
+          <folding>
+            <marker date="1428044560829" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXsetting..." />
+            <marker date="1428044560829" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1428044560829" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428044560829" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428044560829" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/view/template/sale/customer_form.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.96625423" vertical-offset="16856" max-vertical-offset="17820">
+          <caret line="1181" column="18" selection-start-line="1181" selection-start-column="18" selection-end-line="1181" selection-end-column="18" />
+          <folding>
+            <marker date="1428045602857" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/view/template/sale/customer_list.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.67106843" vertical-offset="1901" max-vertical-offset="4920">
+          <caret line="164" column="92" selection-start-line="133" selection-start-column="36" selection-end-line="164" selection-end-column="93" />
+          <folding>
+            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/controller/sale/customer_group.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37570304" vertical-offset="4706" max-vertical-offset="6525">
+          <caret line="336" column="18" selection-start-line="336" selection-start-column="18" selection-end-line="336" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/view/template/sale/custom_field_list.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5318127" vertical-offset="667" max-vertical-offset="1755">
+          <caret line="74" column="92" selection-start-line="53" selection-start-column="36" selection-end-line="74" selection-end-column="93" />
+          <folding>
+            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/view/template/sale/customer_group_form.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.424072" vertical-offset="568" max-vertical-offset="1665">
+          <caret line="63" column="64" selection-start-line="0" selection-start-column="0" selection-end-line="105" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/view/template/sale/custom_field_form.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6693736" vertical-offset="3728" max-vertical-offset="4590">
+          <caret line="287" column="73" selection-start-line="287" selection-start-column="73" selection-end-line="287" selection-end-column="73" />
+          <folding>
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <marker date="1428046495677" expanded="false" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/controller/sale/custom_field.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40494937" vertical-offset="5595" max-vertical-offset="8550">
+          <caret line="397" column="39" selection-start-line="397" selection-start-column="39" selection-end-line="397" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/view/template/sale/customer_group_list.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43082115" vertical-offset="487" max-vertical-offset="1575">
+          <caret line="58" column="55" selection-start-line="0" selection-start-column="0" selection-end-line="99" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/view/template/common/menu.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33259425" vertical-offset="0" max-vertical-offset="3270">
+          <caret line="20" column="48" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/view/template/sale/customer_ban_ip_list.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49579832" vertical-offset="487" max-vertical-offset="1575">
+          <caret line="60" column="92" selection-start-line="53" selection-start-column="36" selection-end-line="60" selection-end-column="93" />
+          <folding>
+            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/controller/sale/customer_ban_ip.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4431946" vertical-offset="4541" max-vertical-offset="5775">
+          <caret line="329" column="23" selection-start-line="329" selection-start-column="23" selection-end-line="329" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/view/template/sale/customer_reward.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28368795" vertical-offset="0" max-vertical-offset="846">
+          <caret line="16" column="68" selection-start-line="14" selection-start-column="12" selection-end-line="16" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/view/template/sale/customer_transaction.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28368795" vertical-offset="0" max-vertical-offset="846">
+          <caret line="16" column="68" selection-start-line="14" selection-start-column="12" selection-end-line="16" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/view/template/sale/customer_history.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24822696" vertical-offset="0" max-vertical-offset="846">
+          <caret line="14" column="64" selection-start-line="13" selection-start-column="8" selection-end-line="14" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/view/template/sale/customer_ip.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12605043" vertical-offset="0" max-vertical-offset="833">
+          <caret line="7" column="68" selection-start-line="4" selection-start-column="12" selection-end-line="7" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/system/library/mail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.96674055" vertical-offset="6028" max-vertical-offset="7005">
+          <caret line="460" column="1" selection-start-line="460" selection-start-column="1" selection-end-line="460" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/controller/sale/customer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33294663" vertical-offset="538" max-vertical-offset="24360">
+          <caret line="55" column="55" selection-start-line="55" selection-start-column="51" selection-end-line="55" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_defines.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34146342" vertical-offset="3412" max-vertical-offset="20355">
+          <caret line="248" column="8" selection-start-line="248" selection-start-column="8" selection-end-line="248" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/view/emails/email-blue.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43869516" vertical-offset="0" max-vertical-offset="3165">
+          <caret line="26" column="30" selection-start-line="0" selection-start-column="0" selection-end-line="205" selection-end-column="7" />
+          <folding>
+            <marker date="1427804812756" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1427804812756" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/controller/common/menu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8503326" vertical-offset="388" max-vertical-offset="1290">
+          <caret line="77" column="8" selection-start-line="77" selection-start-column="8" selection-end-line="77" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/controller/common/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1230">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/controller/common/dashboard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1200">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/portal/controller/common/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3712036" vertical-offset="315" max-vertical-offset="1680">
-          <caret line="43" column="55" selection-start-line="43" selection-start-column="55" selection-end-line="43" selection-end-column="55" />
+        <state vertical-scroll-proportion="0.5399325" vertical-offset="225" max-vertical-offset="1680">
+          <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="51" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/portal/config.php">
+    <entry file="file://$PROJECT_DIR$/map/view/template/mail/welcome_mail.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18292683" vertical-offset="0" max-vertical-offset="902">
-          <caret line="21" column="55" selection-start-line="21" selection-start-column="55" selection-end-line="21" selection-end-column="55" />
+        <state vertical-scroll-proportion="0.43869516" vertical-offset="1575" max-vertical-offset="3180">
+          <caret line="131" column="0" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#center#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#td#0;n#tr#0;n#table#0;n#center#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#center#0;n#td#0;n#tr#0;n#table#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#td#0;n#tr#0;n#table#0;n#center#0;n#td#0;n#tr#0;n#table#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#td#0;n#tr#0;n#table#0;n#center#0;n#td#0;n#tr#0;n#table#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#td#0;n#tr#0;n#table#0;n#center#0;n#td#0;n#tr#0;n#table#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#center#0;n#td#0;n#tr#0;n#table#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#td#0;n#tr#0;n#table#0;n#center#0;n#td#0;n#tr#0;n#table#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#td#0;n#tr#0;n#table#0;n#center#0;n#td#0;n#tr#0;n#table#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#td#0;n#tr#0;n#table#0;n#center#0;n#td#0;n#tr#0;n#table#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#center#0;n#td#0;n#tr#0;n#table#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#center#0;n#td#0;n#tr#0;n#table#0;n#center#0;n#td#0;n#tr#0;n#table#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#p#0;n#center#0;n#td#0;n#tr#0;n#table#0;n#center#0;n#td#0;n#tr#0;n#table#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1428051636838" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1428051636838" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/language/english/mail/customer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23281597" vertical-offset="0" max-vertical-offset="902">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="e#6#361#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/model/sale/customer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6231721" vertical-offset="6376" max-vertical-offset="8265">
+          <caret line="462" column="96" selection-start-line="462" selection-start-column="96" selection-end-line="463" selection-end-column="112" />
+          <folding>
+            <marker date="1428051807121" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428051807121" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428051807121" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1428051807121" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428051807121" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1428051807121" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1428051807121" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1428051807121" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1428051807121" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1428051807121" expanded="true" signature="-1:-1" placeholder="SELECT DISTI..DB_PREFIXcustomer..." />
+            <marker date="1428051807121" expanded="true" signature="-1:-1" placeholder="SELECT DISTI..DB_PREFIXcustomer..." />
+            <marker date="1428051807121" expanded="true" signature="-1:-1" placeholder="SELECT *, CO..DB_PREFIXcustomer..." />
+            <marker date="1428051807121" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXaddress..." />
+            <marker date="1428051807121" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1428051807121" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1428051807121" expanded="true" signature="-1:-1" placeholder="SELECT addre..DB_PREFIXaddress..." />
+            <marker date="1428051807121" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXcustomer..." />
+            <marker date="1428051807121" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXcustomer..." />
+            <marker date="1428051807121" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXaddress..." />
+            <marker date="1428051807121" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXaddress..." />
+            <marker date="1428051807121" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXaddress..." />
+            <marker date="1428051807121" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXcustomer..." />
+            <marker date="1428051807121" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428051807121" expanded="true" signature="-1:-1" placeholder="SELECT comme..DB_PREFIXcustomer_history..." />
+            <marker date="1428051807121" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXcustomer_history..." />
+            <marker date="1428051807121" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428051807121" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1428051807121" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustomer_transaction..." />
+            <marker date="1428051807121" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXcustomer_transaction..." />
+            <marker date="1428051807121" expanded="true" signature="-1:-1" placeholder="SELECT SUM(a..DB_PREFIXcustomer_transaction..." />
+            <marker date="1428051807121" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXcustomer_transaction..." />
+            <marker date="1428051807121" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428051807121" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1428051807121" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustomer_reward..." />
+            <marker date="1428051807121" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXcustomer_reward..." />
+            <marker date="1428051807121" expanded="true" signature="-1:-1" placeholder="SELECT SUM(p..DB_PREFIXcustomer_reward..." />
+            <marker date="1428051807121" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXcustomer_reward..." />
+            <marker date="1428051807121" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustomer_ip..." />
+            <marker date="1428051807121" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXcustomer_ip..." />
+            <marker date="1428051807121" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXcustomer_ip..." />
+            <marker date="1428051807121" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428051807121" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1428051807121" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1428051807121" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1428051807121" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/usefull/mail_function">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17818575" vertical-offset="0" max-vertical-offset="926">
+          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/view/template/user/api_list.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45556805" vertical-offset="0" max-vertical-offset="1665">
+          <caret line="27" column="35" selection-start-line="0" selection-start-column="0" selection-end-line="105" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/language/english/setting/application.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.83793515" vertical-offset="1357" max-vertical-offset="2190">
+          <caret line="137" column="73" selection-start-line="137" selection-start-column="73" selection-end-line="137" selection-end-column="73" />
+          <folding>
+            <element signature="e#6#361#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/controller/setting/application.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41241685" vertical-offset="1413" max-vertical-offset="17730">
+          <caret line="119" column="18" selection-start-line="119" selection-start-column="18" selection-end-line="119" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/view/template/setting/application_list.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3337335" vertical-offset="562" max-vertical-offset="1395">
+          <caret line="56" column="92" selection-start-line="53" selection-start-column="36" selection-end-line="56" selection-end-column="93" />
+          <folding>
+            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/language/english/setting/setting.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7637795" vertical-offset="2891" max-vertical-offset="3780">
+          <caret line="238" column="53" selection-start-line="238" selection-start-column="53" selection-end-line="238" selection-end-column="53" />
+          <folding>
+            <element signature="e#6#361#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/model/catalog/information.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.332533" vertical-offset="2453" max-vertical-offset="3360">
+          <caret line="182" column="45" selection-start-line="182" selection-start-column="45" selection-end-line="182" selection-end-column="45" />
+          <folding>
+            <marker date="1428052431976" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428052431976" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428052431976" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428052431976" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428052431976" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428052431976" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1428052431976" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428052431976" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1428052431976" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428052431976" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1428052431976" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428052431976" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1428052431976" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428052431976" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1428052431976" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1428052431976" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1428052431976" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1428052431976" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1428052431976" expanded="true" signature="-1:-1" placeholder="SELECT DISTI..DB_PREFIXinformation..." />
+            <marker date="1428052431976" expanded="true" signature="-1:-1" placeholder="SELECT keywo..DB_PREFIXurl_alias..." />
+            <marker date="1428052431976" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXinformation..." />
+            <marker date="1428052431976" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXinformation..." />
+            <marker date="1428052431976" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXinformation_description..." />
+            <marker date="1428052431976" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXinformation_to_application..." />
+            <marker date="1428052431976" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXinformation_to_layout..." />
+            <marker date="1428052431976" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXinformation..." />
+            <marker date="1428052431976" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXinformation_to_layout..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/view/template/user/api_form.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41574278" vertical-offset="0" max-vertical-offset="1575">
+          <caret line="25" column="14" selection-start-line="0" selection-start-column="0" selection-end-line="99" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/view/template/setting/setting.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.29411766" vertical-offset="12000" max-vertical-offset="23160">
+          <caret line="801" column="35" selection-start-line="801" selection-start-column="35" selection-end-line="801" selection-end-column="35" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#6;n#fieldset#5;n#div#3;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#7;n#fieldset#5;n#div#3;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/controller/setting/setting.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43348116" vertical-offset="20684" max-vertical-offset="21615">
+          <caret line="1405" column="54" selection-start-line="1405" selection-start-column="54" selection-end-line="1405" selection-end-column="54" />
           <folding />
         </state>
       </provider>

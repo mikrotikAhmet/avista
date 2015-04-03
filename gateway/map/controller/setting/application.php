@@ -228,10 +228,10 @@ class ControllerSettingApplication extends Controller {
         $data['entry_product_description_length'] = $this->language->get('entry_product_description_length');
         $data['entry_tax'] = $this->language->get('entry_tax');
         $data['entry_tax_default'] = $this->language->get('entry_tax_default');
-        $data['entry_tax_merchant'] = $this->language->get('entry_tax_merchant');
-        $data['entry_merchant_group'] = $this->language->get('entry_merchant_group');
-        $data['entry_merchant_group_display'] = $this->language->get('entry_merchant_group_display');
-        $data['entry_merchant_price'] = $this->language->get('entry_merchant_price');
+        $data['entry_tax_customer'] = $this->language->get('entry_tax_customer');
+        $data['entry_customer_group'] = $this->language->get('entry_customer_group');
+        $data['entry_customer_group_display'] = $this->language->get('entry_customer_group_display');
+        $data['entry_customer_price'] = $this->language->get('entry_customer_price');
         $data['entry_account'] = $this->language->get('entry_account');
         $data['entry_cart_weight'] = $this->language->get('entry_cart_weight');
         $data['entry_checkout_guest'] = $this->language->get('entry_checkout_guest');
@@ -266,10 +266,10 @@ class ControllerSettingApplication extends Controller {
         $data['help_product_limit'] = $this->language->get('help_product_limit');
         $data['help_product_description_length'] = $this->language->get('help_product_description_length');
         $data['help_tax_default'] = $this->language->get('help_tax_default');
-        $data['help_tax_merchant'] = $this->language->get('help_tax_merchant');
-        $data['help_merchant_group'] = $this->language->get('help_merchant_group');
-        $data['help_merchant_group_display'] = $this->language->get('help_merchant_group_display');
-        $data['help_merchant_price'] = $this->language->get('help_merchant_price');
+        $data['help_tax_customer'] = $this->language->get('help_tax_customer');
+        $data['help_customer_group'] = $this->language->get('help_customer_group');
+        $data['help_customer_group_display'] = $this->language->get('help_customer_group_display');
+        $data['help_customer_price'] = $this->language->get('help_customer_price');
         $data['help_account'] = $this->language->get('help_account');
         $data['help_checkout_guest'] = $this->language->get('help_checkout_guest');
         $data['help_checkout'] = $this->language->get('help_checkout');
@@ -337,10 +337,10 @@ class ControllerSettingApplication extends Controller {
             $data['error_meta_title'] = '';
         }
 
-        if (isset($this->error['merchant_group_display'])) {
-            $data['error_merchant_group_display'] = $this->error['merchant_group_display'];
+        if (isset($this->error['customer_group_display'])) {
+            $data['error_customer_group_display'] = $this->error['customer_group_display'];
         } else {
-            $data['error_merchant_group_display'] = '';
+            $data['error_customer_group_display'] = '';
         }
 
         if (isset($this->error['image_category'])) {
@@ -419,27 +419,23 @@ class ControllerSettingApplication extends Controller {
 
         $data['breadcrumbs'][] = array(
             'text' => $this->language->get('text_home'),
-            'href' => $this->url->link('common/dashboard', 'token=' . $this->session->data['token'], 'SSL'),
-            'sp'=>true
+            'href' => $this->url->link('common/dashboard', 'token=' . $this->session->data['token'], 'SSL')
         );
 
         $data['breadcrumbs'][] = array(
             'text' => $this->language->get('heading_title'),
-            'href' => $this->url->link('setting/application', 'token=' . $this->session->data['token'], 'SSL'),
-            'sp'=>true
+            'href' => $this->url->link('setting/application', 'token=' . $this->session->data['token'], 'SSL')
         );
 
         if (!isset($this->request->get['application_id'])) {
             $data['breadcrumbs'][] = array(
                 'text' => $this->language->get('text_settings'),
-                'href' => $this->url->link('setting/application/add', 'token=' . $this->session->data['token'], 'SSL'),
-                'sp'=>false
+                'href' => $this->url->link('setting/application/add', 'token=' . $this->session->data['token'], 'SSL')
             );
         } else {
             $data['breadcrumbs'][] = array(
                 'text' => $this->language->get('text_settings'),
-                'href' => $this->url->link('setting/application/edit', 'token=' . $this->session->data['token'] . '&application_id=' . $this->request->get['application_id'], 'SSL'),
-                'sp'=>false
+                'href' => $this->url->link('setting/application/edit', 'token=' . $this->session->data['token'] . '&application_id=' . $this->request->get['application_id'], 'SSL')
             );
         }
 
@@ -715,40 +711,40 @@ class ControllerSettingApplication extends Controller {
             $data['config_tax_default'] = '';
         }
 
-        if (isset($this->request->post['config_tax_merchant'])) {
-            $data['config_tax_merchant'] = $this->request->post['config_tax_merchant'];
-        } elseif (isset($application_info['config_tax_merchant'])) {
-            $data['config_tax_merchant'] = $application_info['config_tax_merchant'];
+        if (isset($this->request->post['config_tax_customer'])) {
+            $data['config_tax_customer'] = $this->request->post['config_tax_customer'];
+        } elseif (isset($application_info['config_tax_customer'])) {
+            $data['config_tax_customer'] = $application_info['config_tax_customer'];
         } else {
-            $data['config_tax_merchant'] = '';
+            $data['config_tax_customer'] = '';
         }
 
-        if (isset($this->request->post['config_merchant_group_id'])) {
-            $data['config_merchant_group_id'] = $this->request->post['config_merchant_group_id'];
-        } elseif (isset($application_info['config_merchant_group_id'])) {
-            $data['config_merchant_group_id'] = $application_info['config_merchant_group_id'];
+        if (isset($this->request->post['config_customer_group_id'])) {
+            $data['config_customer_group_id'] = $this->request->post['config_customer_group_id'];
+        } elseif (isset($application_info['config_customer_group_id'])) {
+            $data['config_customer_group_id'] = $application_info['config_customer_group_id'];
         } else {
-            $data['config_merchant_group_id'] = '';
+            $data['config_customer_group_id'] = '';
         }
 
-        $this->load->model('account/merchant_group');
+        $this->load->model('sale/customer_group');
 
-        $data['merchant_groups'] = $this->model_account_merchant_group->getMerchantGroups();
+        $data['customer_groups'] = $this->model_sale_customer_group->getCustomerGroups();
 
-        if (isset($this->request->post['config_merchant_group_display'])) {
-            $data['config_merchant_group_display'] = $this->request->post['config_merchant_group_display'];
-        } elseif (isset($application_info['config_merchant_group_display'])) {
-            $data['config_merchant_group_display'] = $application_info['config_merchant_group_display'];
+        if (isset($this->request->post['config_customer_group_display'])) {
+            $data['config_customer_group_display'] = $this->request->post['config_customer_group_display'];
+        } elseif (isset($application_info['config_customer_group_display'])) {
+            $data['config_customer_group_display'] = $application_info['config_customer_group_display'];
         } else {
-            $data['config_merchant_group_display'] = array();
+            $data['config_customer_group_display'] = array();
         }
 
-        if (isset($this->request->post['config_merchant_price'])) {
-            $data['config_merchant_price'] = $this->request->post['config_merchant_price'];
-        } elseif (isset($application_info['config_merchant_price'])) {
-            $data['config_merchant_price'] = $application_info['config_merchant_price'];
+        if (isset($this->request->post['config_customer_price'])) {
+            $data['config_customer_price'] = $this->request->post['config_customer_price'];
+        } elseif (isset($application_info['config_customer_price'])) {
+            $data['config_customer_price'] = $application_info['config_customer_price'];
         } else {
-            $data['config_merchant_price'] = '';
+            $data['config_customer_price'] = '';
         }
 
         if (isset($this->request->post['config_account_id'])) {
@@ -759,9 +755,9 @@ class ControllerSettingApplication extends Controller {
             $data['config_account_id'] = '';
         }
 
-//        $this->load->model('catalog/information');
-//
-//        $data['informations'] = $this->model_catalog_information->getInformations();
+        $this->load->model('catalog/information');
+
+        $data['informations'] = $this->model_catalog_information->getInformations();
 
         if (isset($this->request->post['config_cart_weight'])) {
             $data['config_cart_weight'] = $this->request->post['config_cart_weight'];
@@ -1057,8 +1053,8 @@ class ControllerSettingApplication extends Controller {
             $this->error['meta_title'] = $this->language->get('error_meta_title');
         }
 
-        if (!empty($this->request->post['config_merchant_group_display']) && !in_array($this->request->post['config_merchant_group_id'], $this->request->post['config_merchant_group_display'])) {
-            $this->error['merchant_group_display'] = $this->language->get('error_merchant_group_display');
+        if (!empty($this->request->post['config_customer_group_display']) && !in_array($this->request->post['config_customer_group_id'], $this->request->post['config_customer_group_display'])) {
+            $this->error['customer_group_display'] = $this->language->get('error_customer_group_display');
         }
 
         if (!$this->request->post['config_image_category_width'] || !$this->request->post['config_image_category_height']) {

@@ -33,7 +33,7 @@
                         </h3>
                         <div class="pull-right">
                             <a href="<?php echo $add; ?>" data-toggle="tooltip" title="<?php echo $button_add; ?>" class="btn btn-primary"><i class="fa fa-plus"></i></a>
-                            <button type="button" data-toggle="tooltip" title="<?php echo $button_delete; ?>" class="btn btn-danger" onclick="confirm('<?php echo $text_confirm; ?>') ? $('#form-merchant').submit() : false;"><i class="fa fa-trash-o"></i></button>
+                            <button type="button" data-toggle="tooltip" title="<?php echo $button_delete; ?>" class="btn btn-danger" onclick="confirm('<?php echo $text_confirm; ?>') ? $('#form-user').submit() : false;"><i class="fa fa-trash-o"></i></button>
                         </div>
                     </div>
                     <div class="box-content">
@@ -61,14 +61,14 @@
                                 </div>
                                 <div class="col-sm-3">
                                     <div class="form-group">
-                                        <label class="control-label" for="input-merchant-group"><?php echo $entry_merchant_group; ?></label>
-                                        <select name="filter_merchant_group_id" id="input-merchant-group" class="form-control">
+                                        <label class="control-label" for="input-customer-group"><?php echo $entry_customer_group; ?></label>
+                                        <select name="filter_customer_group_id" id="input-customer-group" class="form-control">
                                             <option value="*"></option>
-                                            <?php foreach ($merchant_groups as $merchant_group) { ?>
-                                            <?php if ($merchant_group['merchant_group_id'] == $filter_merchant_group_id) { ?>
-                                            <option value="<?php echo $merchant_group['merchant_group_id']; ?>" selected="selected"><?php echo $merchant_group['name']; ?></option>
+                                            <?php foreach ($customer_groups as $customer_group) { ?>
+                                            <?php if ($customer_group['customer_group_id'] == $filter_customer_group_id) { ?>
+                                            <option value="<?php echo $customer_group['customer_group_id']; ?>" selected="selected"><?php echo $customer_group['name']; ?></option>
                                             <?php } else { ?>
-                                            <option value="<?php echo $merchant_group['merchant_group_id']; ?>"><?php echo $merchant_group['name']; ?></option>
+                                            <option value="<?php echo $customer_group['customer_group_id']; ?>"><?php echo $customer_group['name']; ?></option>
                                             <?php } ?>
                                             <?php } ?>
                                         </select>
@@ -116,8 +116,10 @@
                                     <div class="form-group">
                                         <label class="control-label" for="input-date-added"><?php echo $entry_date_added; ?></label>
                                         <div class="input-group date">
-                                            <input type="text" name="filter_date_added" value="<?php echo $filter_date_added; ?>" placeholder="<?php echo $entry_date_added; ?>" id="input-date-added" data-date-format="yyyy-mm-dd" class="form-control datepick" />
-
+                                            <input type="text" name="filter_date_added" value="<?php echo $filter_date_added; ?>" placeholder="<?php echo $entry_date_added; ?>" data-date-format="yyyy-mm-dd" id="input-date-added" class="form-control datepick" />
+                                              <span class="input-group-btn">
+                                              <button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button>
+                                              </span>
                                         </div>
                                     </div>
                                     <button type="button" id="button-refresh" class="btn btn-default pull-right"><i class="fa fa-refresh"></i> <?php echo $button_refresh; ?></button>
@@ -125,7 +127,7 @@
                                 </div>
                             </div>
                         </div>
-                        <form action="<?php echo $delete; ?>" method="post" enctype="multipart/form-data" id="form-merchant">
+                        <form action="<?php echo $delete; ?>" method="post" enctype="multipart/form-data" id="form-user">
                             <table class="table table-hover table-nomargin">
                                 <thead>
                                 <tr>
@@ -140,10 +142,10 @@
                                         <?php } else { ?>
                                         <a href="<?php echo $sort_email; ?>"><?php echo $column_email; ?></a>
                                         <?php } ?></th>
-                                    <th class="text-left"><?php if ($sort == 'merchant_group') { ?>
-                                        <a href="<?php echo $sort_merchant_group; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_merchant_group; ?></a>
+                                    <th class="text-left"><?php if ($sort == 'customer_group') { ?>
+                                        <a href="<?php echo $sort_customer_group; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_customer_group; ?></a>
                                         <?php } else { ?>
-                                        <a href="<?php echo $sort_merchant_group; ?>"><?php echo $column_merchant_group; ?></a>
+                                        <a href="<?php echo $sort_customer_group; ?>"><?php echo $column_customer_group; ?></a>
                                         <?php } ?></th>
                                     <th class="text-left"><?php if ($sort == 'c.status') { ?>
                                         <a href="<?php echo $sort_status; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_status; ?></a>
@@ -164,40 +166,40 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <?php if ($merchants) { ?>
-                                <?php foreach ($merchants as $merchant) { ?>
+                                <?php if ($customers) { ?>
+                                <?php foreach ($customers as $customer) { ?>
                                 <tr>
-                                    <td class="text-center"><?php if (in_array($merchant['merchant_id'], $selected)) { ?>
-                                        <input type="checkbox" name="selected[]" value="<?php echo $merchant['merchant_id']; ?>" checked="checked" />
+                                    <td class="text-center"><?php if (in_array($customer['customer_id'], $selected)) { ?>
+                                        <input type="checkbox" name="selected[]" value="<?php echo $customer['customer_id']; ?>" checked="checked" />
                                         <?php } else { ?>
-                                        <input type="checkbox" name="selected[]" value="<?php echo $merchant['merchant_id']; ?>" />
+                                        <input type="checkbox" name="selected[]" value="<?php echo $customer['customer_id']; ?>" />
                                         <?php } ?></td>
-                                    <td class="text-left"><?php echo $merchant['name']; ?></td>
-                                    <td class="text-left"><?php echo $merchant['email']; ?></td>
-                                    <td class="text-left"><?php echo $merchant['merchant_group']; ?></td>
-                                    <td class="text-left"><?php echo $merchant['status']; ?></td>
-                                    <td class="text-left"><?php echo $merchant['ip']; ?></td>
-                                    <td class="text-left"><?php echo $merchant['date_added']; ?></td>
-                                    <td class="text-right"><?php if ($merchant['approve']) { ?>
-                                        <a href="<?php echo $merchant['approve']; ?>" data-toggle="tooltip" title="<?php echo $button_approve; ?>" class="btn btn-success"><i class="fa fa-thumbs-o-up"></i></a>
+                                    <td class="text-left"><?php echo $customer['name']; ?></td>
+                                    <td class="text-left"><?php echo $customer['email']; ?></td>
+                                    <td class="text-left"><?php echo $customer['customer_group']; ?></td>
+                                    <td class="text-left"><?php echo $customer['status']; ?></td>
+                                    <td class="text-left"><?php echo $customer['ip']; ?></td>
+                                    <td class="text-left"><?php echo $customer['date_added']; ?></td>
+                                    <td class="text-right"><?php if ($customer['approve']) { ?>
+                                        <a href="<?php echo $customer['approve']; ?>" data-toggle="tooltip" title="<?php echo $button_approve; ?>" class="btn btn-success"><i class="fa fa-thumbs-o-up"></i></a>
                                         <?php } else { ?>
                                         <button type="button" class="btn btn-success" disabled><i class="fa fa-thumbs-o-up"></i></button>
                                         <?php } ?>
                                         <div class="btn-group" data-toggle="tooltip" title="<?php echo $button_login; ?>">
                                             <button type="button" data-toggle="dropdown" class="btn btn-info dropdown-toggle"><i class="fa fa-lock"></i></button>
                                             <ul class="dropdown-menu pull-right">
-                                                <li><a href="index.php?route=sale/merchant/login&token=<?php echo $token; ?>&merchant_id=<?php echo $merchant['merchant_id']; ?>&application_id=0" target="_blank"><?php echo $text_default; ?></a></li>
+                                                <li><a href="index.php?route=sale/customer/login&token=<?php echo $token; ?>&customer_id=<?php echo $customer['customer_id']; ?>&application_id=0" target="_blank"><?php echo $text_default; ?></a></li>
                                                 <?php foreach ($applications as $application) { ?>
-                                                <li><a href="index.php?route=sale/merchant/login&token=<?php echo $token; ?>&merchant_id=<?php echo $merchant['merchant_id']; ?>&application_id=<?php echo $application['application_id']; ?>" target="_blank"><?php echo $application['name']; ?></a></li>
+                                                <li><a href="index.php?route=sale/customer/login&token=<?php echo $token; ?>&customer_id=<?php echo $customer['customer_id']; ?>&application_id=<?php echo $application['application_id']; ?>" target="_blank"><?php echo $application['name']; ?></a></li>
                                                 <?php } ?>
                                             </ul>
                                         </div>
-                                        <?php if ($merchant['unlock']) { ?>
-                                        <a href="<?php echo $merchant['unlock']; ?>" data-toggle="tooltip" title="<?php echo $button_unlock; ?>" class="btn btn-warning"><i class="fa fa-unlock"></i></a>
+                                        <?php if ($customer['unlock']) { ?>
+                                        <a href="<?php echo $customer['unlock']; ?>" data-toggle="tooltip" title="<?php echo $button_unlock; ?>" class="btn btn-warning"><i class="fa fa-unlock"></i></a>
                                         <?php } else { ?>
                                         <button type="button" class="btn btn-warning" disabled><i class="fa fa-unlock"></i></button>
                                         <?php } ?>
-                                        <a href="<?php echo $merchant['edit']; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
+                                        <a href="<?php echo $customer['edit']; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
                                 </tr>
                                 <?php } ?>
                                 <?php } else { ?>
@@ -220,7 +222,7 @@
 </div>
 <script type="text/javascript"><!--
     $('#button-filter').on('click', function() {
-        url = 'index.php?route=account/merchant&token=<?php echo $token; ?>';
+        url = 'index.php?route=sale/customer&token=<?php echo $token; ?>';
 
         var filter_name = $('input[name=\'filter_name\']').val();
 
@@ -234,10 +236,10 @@
             url += '&filter_email=' + encodeURIComponent(filter_email);
         }
 
-        var filter_merchant_group_id = $('select[name=\'filter_merchant_group_id\']').val();
+        var filter_customer_group_id = $('select[name=\'filter_customer_group_id\']').val();
 
-        if (filter_merchant_group_id != '*') {
-            url += '&filter_merchant_group_id=' + encodeURIComponent(filter_merchant_group_id);
+        if (filter_customer_group_id != '*') {
+            url += '&filter_customer_group_id=' + encodeURIComponent(filter_customer_group_id);
         }
 
         var filter_status = $('select[name=\'filter_status\']').val();
@@ -266,9 +268,8 @@
 
         location = url;
     });
-
     $('#button-refresh').on('click', function() {
-        url = 'index.php?route=account/merchant&token=<?php echo $token; ?>';
+        url = 'index.php?route=sale/customer&token=<?php echo $token; ?>';
 
         location = url;
     });
@@ -277,13 +278,13 @@
     $('input[name=\'filter_name\']').autocomplete({
         'source': function(request, response) {
             $.ajax({
-                url: 'index.php?route=account/merchant/autocomplete&token=<?php echo $token; ?>&filter_name=' +  encodeURIComponent(request),
+                url: 'index.php?route=sale/customer/autocomplete&token=<?php echo $token; ?>&filter_name=' +  encodeURIComponent(request),
                 dataType: 'json',
                 success: function(json) {
                     response($.map(json, function(item) {
                         return {
                             label: item['name'],
-                            value: item['merchant_id']
+                            value: item['customer_id']
                         }
                     }));
                 }
@@ -297,13 +298,13 @@
     $('input[name=\'filter_email\']').autocomplete({
         'source': function(request, response) {
             $.ajax({
-                url: 'index.php?route=account/merchant/autocomplete&token=<?php echo $token; ?>&filter_email=' +  encodeURIComponent(request),
+                url: 'index.php?route=sale/customer/autocomplete&token=<?php echo $token; ?>&filter_email=' +  encodeURIComponent(request),
                 dataType: 'json',
                 success: function(json) {
                     response($.map(json, function(item) {
                         return {
                             label: item['email'],
-                            value: item['merchant_id']
+                            value: item['customer_id']
                         }
                     }));
                 }
@@ -312,6 +313,11 @@
         'select': function(item) {
             $('input[name=\'filter_email\']').val(item['label']);
         }
+    });
+    //--></script>
+<script type="text/javascript"><!--
+    $('.date').datetimepicker({
+        pickTime: false
     });
     //--></script>
 <?php echo $footer?>

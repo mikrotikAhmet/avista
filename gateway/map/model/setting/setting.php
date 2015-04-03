@@ -61,4 +61,4 @@ class ModelSettingSetting extends Model {
         }
     }
 }
-//End of file settin.php 
+//End of file setting.php 

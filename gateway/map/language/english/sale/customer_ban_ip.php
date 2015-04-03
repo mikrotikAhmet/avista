@@ -24,7 +24,7 @@ $_['text_edit']        = 'Edit Banned IP';
 
 // Column
 $_['column_ip']        = 'IP';
-$_['column_customer']  = 'Merchants';
+$_['column_customer']  = 'Customers';
 $_['column_action']    = 'Action';
 
 // Entry
@@ -34,5 +34,4 @@ $_['entry_ip']         = 'IP';
 $_['error_permission'] = 'Warning: You do not have permission to modify customer banned IPs!';
 $_['error_ip']         = 'IP must be between 1 and 40 characters!';
 
-
-//End of file merchant_ban_ip.php 
+//End of file customer_ban_ip.php 

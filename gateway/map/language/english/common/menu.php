@@ -15,7 +15,11 @@
 
 // Text
 $_['text_dashboard']                   = 'Dashboard';
-$_['text_boarding']                   = 'Merchant Onboarding';
+$_['text_sale']                   = 'Sales';
+$_['text_customer']                    = 'Customers';
+$_['text_customer_group']              = 'Customer Groups';
+$_['text_customer_ban_ip']             = 'Banned IP';
+$_['text_custom_field']                = 'Custom Fields';
 $_['text_system']                   = 'System';
 $_['text_application']                   = 'Application Settings';
 $_['text_gateway']                   = 'Gateway Settings';

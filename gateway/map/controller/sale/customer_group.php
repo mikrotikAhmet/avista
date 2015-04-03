@@ -18,28 +18,28 @@ if (!defined('DIR_APPLICATION'))
  */
 // ------------------------------------------------------------------------
 
-class ControllerAccountMerchantGroup extends Controller {
+class ControllerSaleCustomerGroup extends Controller {
     private $error = array();
 
     public function index() {
-        $this->load->language('account/merchant_group');
+        $this->load->language('sale/customer_group');
 
         $this->document->setTitle($this->language->get('heading_title'));
 
-        $this->load->model('account/merchant_group');
+        $this->load->model('sale/customer_group');
 
         $this->getList();
     }
 
     public function add() {
-        $this->load->language('account/merchant_group');
+        $this->load->language('sale/customer_group');
 
         $this->document->setTitle($this->language->get('heading_title'));
 
-        $this->load->model('account/merchant_group');
+        $this->load->model('sale/customer_group');
 
         if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validateForm()) {
-            $this->model_account_merchant_group->addMerchantGroup($this->request->post);
+            $this->model_sale_customer_group->addCustomerGroup($this->request->post);
 
             $this->session->data['success'] = $this->language->get('text_success');
 
@@ -57,21 +57,21 @@ class ControllerAccountMerchantGroup extends Controller {
                 $url .= '&page=' . $this->request->get['page'];
             }
 
-            $this->response->redirect($this->url->link('account/merchant_group', 'token=' . $this->session->data['token'] . $url, 'SSL'));
+            $this->response->redirect($this->url->link('sale/customer_group', 'token=' . $this->session->data['token'] . $url, 'SSL'));
         }
 
         $this->getForm();
     }
 
     public function edit() {
-        $this->load->language('account/merchant_group');
+        $this->load->language('sale/customer_group');
 
         $this->document->setTitle($this->language->get('heading_title'));
 
-        $this->load->model('account/merchant_group');
+        $this->load->model('sale/customer_group');
 
         if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validateForm()) {
-            $this->model_account_merchant_group->editMerchantGroup($this->request->get['merchant_group_id'], $this->request->post);
+            $this->model_sale_customer_group->editCustomerGroup($this->request->get['customer_group_id'], $this->request->post);
 
             $this->session->data['success'] = $this->language->get('text_success');
 
@@ -89,22 +89,22 @@ class ControllerAccountMerchantGroup extends Controller {
                 $url .= '&page=' . $this->request->get['page'];
             }
 
-            $this->response->redirect($this->url->link('account/merchant_group', 'token=' . $this->session->data['token'] . $url, 'SSL'));
+            $this->response->redirect($this->url->link('sale/customer_group', 'token=' . $this->session->data['token'] . $url, 'SSL'));
         }
 
         $this->getForm();
     }
 
     public function delete() {
-        $this->load->language('account/merchant_group');
+        $this->load->language('sale/customer_group');
 
         $this->document->setTitle($this->language->get('heading_title'));
 
-        $this->load->model('account/merchant_group');
+        $this->load->model('sale/customer_group');
 
         if (isset($this->request->post['selected']) && $this->validateDelete()) {
-            foreach ($this->request->post['selected'] as $merchant_group_id) {
-                $this->model_account_merchant_group->deleteMerchantGroup($merchant_group_id);
+            foreach ($this->request->post['selected'] as $customer_group_id) {
+                $this->model_sale_customer_group->deleteCustomerGroup($customer_group_id);
             }
 
             $this->session->data['success'] = $this->language->get('text_success');
@@ -123,7 +123,7 @@ class ControllerAccountMerchantGroup extends Controller {
                 $url .= '&page=' . $this->request->get['page'];
             }
 
-            $this->response->redirect($this->url->link('account/merchant_group', 'token=' . $this->session->data['token'] . $url, 'SSL'));
+            $this->response->redirect($this->url->link('sale/customer_group', 'token=' . $this->session->data['token'] . $url, 'SSL'));
         }
 
         $this->getList();
@@ -166,18 +166,20 @@ class ControllerAccountMerchantGroup extends Controller {
 
         $data['breadcrumbs'][] = array(
             'text' => $this->language->get('text_home'),
-            'href' => $this->url->link('common/dashboard', 'token=' . $this->session->data['token'], 'SSL')
+            'href' => $this->url->link('common/dashboard', 'token=' . $this->session->data['token'], 'SSL'),
+            'sp'=>true
         );
 
         $data['breadcrumbs'][] = array(
             'text' => $this->language->get('heading_title'),
-            'href' => $this->url->link('account/merchant_group', 'token=' . $this->session->data['token'] . $url, 'SSL')
+            'href' => $this->url->link('sale/customer_group', 'token=' . $this->session->data['token'] . $url, 'SSL'),
+            'sp'=>false
         );
 
-        $data['add'] = $this->url->link('account/merchant_group/add', 'token=' . $this->session->data['token'] . $url, 'SSL');
-        $data['delete'] = $this->url->link('account/merchant_group/delete', 'token=' . $this->session->data['token'] . $url, 'SSL');
+        $data['add'] = $this->url->link('sale/customer_group/add', 'token=' . $this->session->data['token'] . $url, 'SSL');
+        $data['delete'] = $this->url->link('sale/customer_group/delete', 'token=' . $this->session->data['token'] . $url, 'SSL');
 
-        $data['merchant_groups'] = array();
+        $data['customer_groups'] = array();
 
         $filter_data = array(
             'sort'  => $sort,
@@ -186,16 +188,16 @@ class ControllerAccountMerchantGroup extends Controller {
             'limit' => $this->config->get('config_limit_admin')
         );
 
-        $merchant_group_total = $this->model_account_merchant_group->getTotalMerchantGroups();
+        $customer_group_total = $this->model_sale_customer_group->getTotalCustomerGroups();
 
-        $results = $this->model_account_merchant_group->getMerchantGroups($filter_data);
+        $results = $this->model_sale_customer_group->getCustomerGroups($filter_data);
 
         foreach ($results as $result) {
-            $data['merchant_groups'][] = array(
-                'merchant_group_id' => $result['merchant_group_id'],
-                'name'              => $result['name'] . (($result['merchant_group_id'] == $this->config->get('config_merchant_group_id')) ? $this->language->get('text_default') : null),
+            $data['customer_groups'][] = array(
+                'customer_group_id' => $result['customer_group_id'],
+                'name'              => $result['name'] . (($result['customer_group_id'] == $this->config->get('config_customer_group_id')) ? $this->language->get('text_default') : null),
                 'sort_order'        => $result['sort_order'],
-                'edit'              => $this->url->link('account/merchant_group/edit', 'token=' . $this->session->data['token'] . '&merchant_group_id=' . $result['merchant_group_id'] . $url, 'SSL')
+                'edit'              => $this->url->link('sale/customer_group/edit', 'token=' . $this->session->data['token'] . '&customer_group_id=' . $result['customer_group_id'] . $url, 'SSL')
             );
         }
 
@@ -245,8 +247,8 @@ class ControllerAccountMerchantGroup extends Controller {
             $url .= '&page=' . $this->request->get['page'];
         }
 
-        $data['sort_name'] = $this->url->link('account/merchant_group', 'token=' . $this->session->data['token'] . '&sort=cgd.name' . $url, 'SSL');
-        $data['sort_sort_order'] = $this->url->link('account/merchant_group', 'token=' . $this->session->data['token'] . '&sort=cg.sort_order' . $url, 'SSL');
+        $data['sort_name'] = $this->url->link('sale/customer_group', 'token=' . $this->session->data['token'] . '&sort=cgd.name' . $url, 'SSL');
+        $data['sort_sort_order'] = $this->url->link('sale/customer_group', 'token=' . $this->session->data['token'] . '&sort=cg.sort_order' . $url, 'SSL');
 
         $url = '';
 
@@ -259,14 +261,14 @@ class ControllerAccountMerchantGroup extends Controller {
         }
 
         $pagination = new Pagination();
-        $pagination->total = $merchant_group_total;
+        $pagination->total = $customer_group_total;
         $pagination->page = $page;
         $pagination->limit = $this->config->get('config_limit_admin');
-        $pagination->url = $this->url->link('account/merchant_group', 'token=' . $this->session->data['token'] . $url . '&page={page}', 'SSL');
+        $pagination->url = $this->url->link('sale/customer_group', 'token=' . $this->session->data['token'] . $url . '&page={page}', 'SSL');
 
         $data['pagination'] = $pagination->render();
 
-        $data['results'] = sprintf($this->language->get('text_pagination'), ($merchant_group_total) ? (($page - 1) * $this->config->get('config_limit_admin')) + 1 : 0, ((($page - 1) * $this->config->get('config_limit_admin')) > ($merchant_group_total - $this->config->get('config_limit_admin'))) ? $merchant_group_total : ((($page - 1) * $this->config->get('config_limit_admin')) + $this->config->get('config_limit_admin')), $merchant_group_total, ceil($merchant_group_total / $this->config->get('config_limit_admin')));
+        $data['results'] = sprintf($this->language->get('text_pagination'), ($customer_group_total) ? (($page - 1) * $this->config->get('config_limit_admin')) + 1 : 0, ((($page - 1) * $this->config->get('config_limit_admin')) > ($customer_group_total - $this->config->get('config_limit_admin'))) ? $customer_group_total : ((($page - 1) * $this->config->get('config_limit_admin')) + $this->config->get('config_limit_admin')), $customer_group_total, ceil($customer_group_total / $this->config->get('config_limit_admin')));
 
         $data['sort'] = $sort;
         $data['order'] = $order;
@@ -275,13 +277,13 @@ class ControllerAccountMerchantGroup extends Controller {
         $data['column_left'] = $this->load->controller('common/column_left');
         $data['footer'] = $this->load->controller('common/footer');
 
-        $this->response->setOutput($this->load->view('account/merchant_group_list.tpl', $data));
+        $this->response->setOutput($this->load->view('sale/customer_group_list.tpl', $data));
     }
 
     protected function getForm() {
         $data['heading_title'] = $this->language->get('heading_title');
 
-        $data['text_form'] = !isset($this->request->get['merchant_group_id']) ? $this->language->get('text_add') : $this->language->get('text_edit');
+        $data['text_form'] = !isset($this->request->get['customer_group_id']) ? $this->language->get('text_add') : $this->language->get('text_edit');
         $data['text_yes'] = $this->language->get('text_yes');
         $data['text_no'] = $this->language->get('text_no');
 
@@ -325,50 +327,52 @@ class ControllerAccountMerchantGroup extends Controller {
 
         $data['breadcrumbs'][] = array(
             'text' => $this->language->get('text_home'),
-            'href' => $this->url->link('common/dashboard', 'token=' . $this->session->data['token'], 'SSL')
+            'href' => $this->url->link('common/dashboard', 'token=' . $this->session->data['token'], 'SSL'),
+            'sp'=>true
         );
 
         $data['breadcrumbs'][] = array(
             'text' => $this->language->get('heading_title'),
-            'href' => $this->url->link('account/merchant_group', 'token=' . $this->session->data['token'] . $url, 'SSL')
+            'href' => $this->url->link('sale/customer_group', 'token=' . $this->session->data['token'] . $url, 'SSL'),
+            'sp'=>false
         );
 
-        if (!isset($this->request->get['merchant_group_id'])) {
-            $data['action'] = $this->url->link('account/merchant_group/add', 'token=' . $this->session->data['token'] . $url, 'SSL');
+        if (!isset($this->request->get['customer_group_id'])) {
+            $data['action'] = $this->url->link('sale/customer_group/add', 'token=' . $this->session->data['token'] . $url, 'SSL');
         } else {
-            $data['action'] = $this->url->link('account/merchant_group/edit', 'token=' . $this->session->data['token'] . '&merchant_group_id=' . $this->request->get['merchant_group_id'] . $url, 'SSL');
+            $data['action'] = $this->url->link('sale/customer_group/edit', 'token=' . $this->session->data['token'] . '&customer_group_id=' . $this->request->get['customer_group_id'] . $url, 'SSL');
         }
 
-        $data['cancel'] = $this->url->link('account/merchant_group', 'token=' . $this->session->data['token'] . $url, 'SSL');
+        $data['cancel'] = $this->url->link('sale/customer_group', 'token=' . $this->session->data['token'] . $url, 'SSL');
 
-        if (isset($this->request->get['merchant_group_id']) && ($this->request->server['REQUEST_METHOD'] != 'POST')) {
-            $merchant_group_info = $this->model_account_merchant_group->getMerchantGroup($this->request->get['merchant_group_id']);
+        if (isset($this->request->get['customer_group_id']) && ($this->request->server['REQUEST_METHOD'] != 'POST')) {
+            $customer_group_info = $this->model_sale_customer_group->getCustomerGroup($this->request->get['customer_group_id']);
         }
 
         $this->load->model('localisation/language');
 
         $data['languages'] = $this->model_localisation_language->getLanguages();
 
-        if (isset($this->request->post['merchant_group_description'])) {
-            $data['merchant_group_description'] = $this->request->post['merchant_group_description'];
-        } elseif (isset($this->request->get['merchant_group_id'])) {
-            $data['merchant_group_description'] = $this->model_account_merchant_group->getMerchantGroupDescriptions($this->request->get['merchant_group_id']);
+        if (isset($this->request->post['customer_group_description'])) {
+            $data['customer_group_description'] = $this->request->post['customer_group_description'];
+        } elseif (isset($this->request->get['customer_group_id'])) {
+            $data['customer_group_description'] = $this->model_sale_customer_group->getCustomerGroupDescriptions($this->request->get['customer_group_id']);
         } else {
-            $data['merchant_group_description'] = array();
+            $data['customer_group_description'] = array();
         }
 
         if (isset($this->request->post['approval'])) {
             $data['approval'] = $this->request->post['approval'];
-        } elseif (!empty($merchant_group_info)) {
-            $data['approval'] = $merchant_group_info['approval'];
+        } elseif (!empty($customer_group_info)) {
+            $data['approval'] = $customer_group_info['approval'];
         } else {
             $data['approval'] = '';
         }
 
         if (isset($this->request->post['sort_order'])) {
             $data['sort_order'] = $this->request->post['sort_order'];
-        } elseif (!empty($merchant_group_info)) {
-            $data['sort_order'] = $merchant_group_info['sort_order'];
+        } elseif (!empty($customer_group_info)) {
+            $data['sort_order'] = $customer_group_info['sort_order'];
         } else {
             $data['sort_order'] = '';
         }
@@ -377,15 +381,15 @@ class ControllerAccountMerchantGroup extends Controller {
         $data['column_left'] = $this->load->controller('common/column_left');
         $data['footer'] = $this->load->controller('common/footer');
 
-        $this->response->setOutput($this->load->view('account/merchant_group_form.tpl', $data));
+        $this->response->setOutput($this->load->view('sale/customer_group_form.tpl', $data));
     }
 
     protected function validateForm() {
-        if (!$this->user->hasPermission('modify', 'account/merchant_group')) {
+        if (!$this->user->hasPermission('modify', 'sale/customer_group')) {
             $this->error['warning'] = $this->language->get('error_permission');
         }
 
-        foreach ($this->request->post['merchant_group_description'] as $language_id => $value) {
+        foreach ($this->request->post['customer_group_description'] as $language_id => $value) {
             if ((utf8_strlen($value['name']) < 3) || (utf8_strlen($value['name']) > 32)) {
                 $this->error['name'][$language_id] = $this->language->get('error_name');
             }
@@ -395,32 +399,32 @@ class ControllerAccountMerchantGroup extends Controller {
     }
 
     protected function validateDelete() {
-        if (!$this->user->hasPermission('modify', 'account/merchant_group')) {
+        if (!$this->user->hasPermission('modify', 'sale/customer_group')) {
             $this->error['warning'] = $this->language->get('error_permission');
         }
 
         $this->load->model('setting/store');
-        $this->load->model('account/merchant');
+        $this->load->model('sale/customer');
 
-        foreach ($this->request->post['selected'] as $merchant_group_id) {
-            if ($this->config->get('config_merchant_group_id') == $merchant_group_id) {
+        foreach ($this->request->post['selected'] as $customer_group_id) {
+            if ($this->config->get('config_customer_group_id') == $customer_group_id) {
                 $this->error['warning'] = $this->language->get('error_default');
             }
 
-            $store_total = $this->model_setting_store->getTotalStoresByMerchantGroupId($merchant_group_id);
+            $store_total = $this->model_setting_store->getTotalStoresByCustomerGroupId($customer_group_id);
 
             if ($store_total) {
                 $this->error['warning'] = sprintf($this->language->get('error_store'), $store_total);
             }
 
-            $merchant_total = $this->model_account_merchant->getTotalMerchantsByMerchantGroupId($merchant_group_id);
+            $customer_total = $this->model_sale_customer->getTotalCustomersByCustomerGroupId($customer_group_id);
 
-            if ($merchant_total) {
-                $this->error['warning'] = sprintf($this->language->get('error_merchant'), $merchant_total);
+            if ($customer_total) {
+                $this->error['warning'] = sprintf($this->language->get('error_customer'), $customer_total);
             }
         }
 
         return !$this->error;
     }
 }
-//End of file merchant_group.php 
+//End of file customer_group.php 

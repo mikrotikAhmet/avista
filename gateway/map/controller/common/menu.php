@@ -23,7 +23,12 @@ class ControllerCommonMenu extends Controller {
         $this->load->language('common/menu');
 
         $data['text_dashboard'] = $this->language->get('text_dashboard');
-        $data['text_boarding'] = $this->language->get('text_boarding');
+        $data['text_sale'] = $this->language->get('text_sale');
+        $data['text_customer'] = $this->language->get('text_customer');
+        $data['text_customer_group'] = $this->language->get('text_customer_group');
+        $data['text_customer_field'] = $this->language->get('text_customer_field');
+        $data['text_customer_ban_ip'] = $this->language->get('text_customer_ban_ip');
+        $data['text_custom_field'] = $this->language->get('text_custom_field');
         $data['text_system'] = $this->language->get('text_system');
         $data['text_application'] = $this->language->get('text_application');
         $data['text_gateway'] = $this->language->get('text_gateway');
@@ -35,7 +40,11 @@ class ControllerCommonMenu extends Controller {
 
 
         $data['home'] = $this->url->link('common/dashboard', 'token=' . $this->session->data['token'], 'SSL');
-        $data['merchant'] = $this->url->link('account/merchant', 'token=' . $this->session->data['token'], 'SSL');
+        $data['customer'] = $this->url->link('sale/customer', 'token=' . $this->session->data['token'], 'SSL');
+        $data['customer_fields'] = $this->url->link('sale/customer_field', 'token=' . $this->session->data['token'], 'SSL');
+        $data['customer_group'] = $this->url->link('sale/customer_group', 'token=' . $this->session->data['token'], 'SSL');
+        $data['customer_ban_ip'] = $this->url->link('sale/customer_ban_ip', 'token=' . $this->session->data['token'], 'SSL');
+        $data['custom_field'] = $this->url->link('sale/custom_field', 'token=' . $this->session->data['token'], 'SSL');
         $data['user'] = $this->url->link('user/user', 'token=' . $this->session->data['token'], 'SSL');
         $data['user_group'] = $this->url->link('user/user_permission', 'token=' . $this->session->data['token'], 'SSL');
         $data['api'] = $this->url->link('user/api', 'token=' . $this->session->data['token'], 'SSL');

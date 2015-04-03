@@ -18,28 +18,28 @@ if (!defined('DIR_APPLICATION'))
  */
 // ------------------------------------------------------------------------
 
-class ControllerAccountMerchantBanIp extends Controller {
+class ControllerSaleCustomerBanIp extends Controller {
     private $error = array();
 
     public function index() {
-        $this->load->language('account/merchant_ban_ip');
+        $this->load->language('sale/customer_ban_ip');
 
         $this->document->setTitle($this->language->get('heading_title'));
 
-        $this->load->model('account/merchant_ban_ip');
+        $this->load->model('sale/customer_ban_ip');
 
         $this->getList();
     }
 
     public function add() {
-        $this->load->language('account/merchant_ban_ip');
+        $this->load->language('sale/customer_ban_ip');
 
         $this->document->setTitle($this->language->get('heading_title'));
 
-        $this->load->model('account/merchant_ban_ip');
+        $this->load->model('sale/customer_ban_ip');
 
         if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validateForm()) {
-            $this->model_account_merchant_ban_ip->addMerchantBanIp($this->request->post);
+            $this->model_sale_customer_ban_ip->addCustomerBanIp($this->request->post);
 
             $this->session->data['success'] = $this->language->get('text_success');
 
@@ -57,21 +57,21 @@ class ControllerAccountMerchantBanIp extends Controller {
                 $url .= '&page=' . $this->request->get['page'];
             }
 
-            $this->response->redirect($this->url->link('account/merchant_ban_ip', 'token=' . $this->session->data['token'] . $url, 'SSL'));
+            $this->response->redirect($this->url->link('sale/customer_ban_ip', 'token=' . $this->session->data['token'] . $url, 'SSL'));
         }
 
         $this->getForm();
     }
 
     public function edit() {
-        $this->load->language('account/merchant_ban_ip');
+        $this->load->language('sale/customer_ban_ip');
 
         $this->document->setTitle($this->language->get('heading_title'));
 
-        $this->load->model('account/merchant_ban_ip');
+        $this->load->model('sale/customer_ban_ip');
 
         if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validateForm()) {
-            $this->model_account_merchant_ban_ip->editMerchantBanIp($this->request->get['merchant_ban_ip_id'], $this->request->post);
+            $this->model_sale_customer_ban_ip->editCustomerBanIp($this->request->get['customer_ban_ip_id'], $this->request->post);
 
             $this->session->data['success'] = $this->language->get('text_success');
 
@@ -89,22 +89,22 @@ class ControllerAccountMerchantBanIp extends Controller {
                 $url .= '&page=' . $this->request->get['page'];
             }
 
-            $this->response->redirect($this->url->link('account/merchant_ban_ip', 'token=' . $this->session->data['token'] . $url, 'SSL'));
+            $this->response->redirect($this->url->link('sale/customer_ban_ip', 'token=' . $this->session->data['token'] . $url, 'SSL'));
         }
 
         $this->getForm();
     }
 
     public function delete() {
-        $this->load->language('account/merchant_ban_ip');
+        $this->load->language('sale/customer_ban_ip');
 
         $this->document->setTitle($this->language->get('heading_title'));
 
-        $this->load->model('account/merchant_ban_ip');
+        $this->load->model('sale/customer_ban_ip');
 
         if (isset($this->request->post['selected']) && $this->validateDelete()) {
-            foreach ($this->request->post['selected'] as $merchant_ban_ip_id) {
-                $this->model_account_merchant_ban_ip->deleteMerchantBanIp($merchant_ban_ip_id);
+            foreach ($this->request->post['selected'] as $customer_ban_ip_id) {
+                $this->model_sale_customer_ban_ip->deleteCustomerBanIp($customer_ban_ip_id);
             }
 
             $this->session->data['success'] = $this->language->get('text_success');
@@ -123,7 +123,7 @@ class ControllerAccountMerchantBanIp extends Controller {
                 $url .= '&page=' . $this->request->get['page'];
             }
 
-            $this->response->redirect($this->url->link('account/merchant_ban_ip', 'token=' . $this->session->data['token'] . $url, 'SSL'));
+            $this->response->redirect($this->url->link('sale/customer_ban_ip', 'token=' . $this->session->data['token'] . $url, 'SSL'));
         }
 
         $this->getList();
@@ -166,18 +166,20 @@ class ControllerAccountMerchantBanIp extends Controller {
 
         $data['breadcrumbs'][] = array(
             'text' => $this->language->get('text_home'),
-            'href' => $this->url->link('common/dashboard', 'token=' . $this->session->data['token'], 'SSL')
+            'href' => $this->url->link('common/dashboard', 'token=' . $this->session->data['token'], 'SSL'),
+            'sp'=>true
         );
 
         $data['breadcrumbs'][] = array(
             'text' => $this->language->get('heading_title'),
-            'href' => $this->url->link('account/merchant_ban_ip', 'token=' . $this->session->data['token'] . $url, 'SSL')
+            'href' => $this->url->link('sale/customer_ban_ip', 'token=' . $this->session->data['token'] . $url, 'SSL'),
+            'sp'=>false
         );
 
-        $data['add'] = $this->url->link('account/merchant_ban_ip/add', 'token=' . $this->session->data['token'] . $url, 'SSL');
-        $data['delete'] = $this->url->link('account/merchant_ban_ip/delete', 'token=' . $this->session->data['token'] . $url, 'SSL');
+        $data['add'] = $this->url->link('sale/customer_ban_ip/add', 'token=' . $this->session->data['token'] . $url, 'SSL');
+        $data['delete'] = $this->url->link('sale/customer_ban_ip/delete', 'token=' . $this->session->data['token'] . $url, 'SSL');
 
-        $data['merchant_ban_ips'] = array();
+        $data['customer_ban_ips'] = array();
 
         $filter_data = array(
             'sort'  => $sort,
@@ -186,17 +188,17 @@ class ControllerAccountMerchantBanIp extends Controller {
             'limit' => $this->config->get('config_limit_admin')
         );
 
-        $merchant_ban_ip_total = $this->model_account_merchant_ban_ip->getTotalMerchantBanIps($filter_data);
+        $customer_ban_ip_total = $this->model_sale_customer_ban_ip->getTotalCustomerBanIps($filter_data);
 
-        $results = $this->model_account_merchant_ban_ip->getMerchantBanIps($filter_data);
+        $results = $this->model_sale_customer_ban_ip->getCustomerBanIps($filter_data);
 
         foreach ($results as $result) {
-            $data['merchant_ban_ips'][] = array(
-                'merchant_ban_ip_id' => $result['merchant_ban_ip_id'],
+            $data['customer_ban_ips'][] = array(
+                'customer_ban_ip_id' => $result['customer_ban_ip_id'],
                 'ip'                 => $result['ip'],
                 'total'              => $result['total'],
-                'merchant'           => $this->url->link('account/merchant', 'token=' . $this->session->data['token'] . '&filter_ip=' . $result['ip'], 'SSL'),
-                'edit'               => $this->url->link('account/merchant_ban_ip/edit', 'token=' . $this->session->data['token'] . '&merchant_ban_ip_id=' . $result['merchant_ban_ip_id'] . $url, 'SSL')
+                'customer'           => $this->url->link('sale/customer', 'token=' . $this->session->data['token'] . '&filter_ip=' . $result['ip'], 'SSL'),
+                'edit'               => $this->url->link('sale/customer_ban_ip/edit', 'token=' . $this->session->data['token'] . '&customer_ban_ip_id=' . $result['customer_ban_ip_id'] . $url, 'SSL')
             );
         }
 
@@ -207,7 +209,7 @@ class ControllerAccountMerchantBanIp extends Controller {
         $data['text_confirm'] = $this->language->get('text_confirm');
 
         $data['column_ip'] = $this->language->get('column_ip');
-        $data['column_merchant'] = $this->language->get('column_merchant');
+        $data['column_customer'] = $this->language->get('column_customer');
         $data['column_action'] = $this->language->get('column_action');
 
         $data['button_add'] = $this->language->get('button_add');
@@ -246,7 +248,7 @@ class ControllerAccountMerchantBanIp extends Controller {
             $url .= '&page=' . $this->request->get['page'];
         }
 
-        $data['sort_ip'] = $this->url->link('account/merchant_ban_ip', 'token=' . $this->session->data['token'] . '&sort=ip' . $url, 'SSL');
+        $data['sort_ip'] = $this->url->link('sale/customer_ban_ip', 'token=' . $this->session->data['token'] . '&sort=ip' . $url, 'SSL');
 
         $url = '';
 
@@ -259,14 +261,14 @@ class ControllerAccountMerchantBanIp extends Controller {
         }
 
         $pagination = new Pagination();
-        $pagination->total = $merchant_ban_ip_total;
+        $pagination->total = $customer_ban_ip_total;
         $pagination->page = $page;
         $pagination->limit = $this->config->get('config_limit_admin');
-        $pagination->url = $this->url->link('account/merchant_ban_ip', 'token=' . $this->session->data['token'] . $url . '&page={page}', 'SSL');
+        $pagination->url = $this->url->link('sale/customer_ban_ip', 'token=' . $this->session->data['token'] . $url . '&page={page}', 'SSL');
 
         $data['pagination'] = $pagination->render();
 
-        $data['results'] = sprintf($this->language->get('text_pagination'), ($merchant_ban_ip_total) ? (($page - 1) * $this->config->get('config_limit_admin')) + 1 : 0, ((($page - 1) * $this->config->get('config_limit_admin')) > ($merchant_ban_ip_total - $this->config->get('config_limit_admin'))) ? $merchant_ban_ip_total : ((($page - 1) * $this->config->get('config_limit_admin')) + $this->config->get('config_limit_admin')), $merchant_ban_ip_total, ceil($merchant_ban_ip_total / $this->config->get('config_limit_admin')));
+        $data['results'] = sprintf($this->language->get('text_pagination'), ($customer_ban_ip_total) ? (($page - 1) * $this->config->get('config_limit_admin')) + 1 : 0, ((($page - 1) * $this->config->get('config_limit_admin')) > ($customer_ban_ip_total - $this->config->get('config_limit_admin'))) ? $customer_ban_ip_total : ((($page - 1) * $this->config->get('config_limit_admin')) + $this->config->get('config_limit_admin')), $customer_ban_ip_total, ceil($customer_ban_ip_total / $this->config->get('config_limit_admin')));
 
         $data['sort'] = $sort;
         $data['order'] = $order;
@@ -275,13 +277,13 @@ class ControllerAccountMerchantBanIp extends Controller {
         $data['column_left'] = $this->load->controller('common/column_left');
         $data['footer'] = $this->load->controller('common/footer');
 
-        $this->response->setOutput($this->load->view('account/merchant_ban_ip_list.tpl', $data));
+        $this->response->setOutput($this->load->view('sale/customer_ban_ip_list.tpl', $data));
     }
 
     protected function getForm() {
         $data['heading_title'] = $this->language->get('heading_title');
 
-        $data['text_form'] = !isset($this->request->get['merchant_ban_ip_id']) ? $this->language->get('text_add') : $this->language->get('text_edit');
+        $data['text_form'] = !isset($this->request->get['customer_ban_ip_id']) ? $this->language->get('text_add') : $this->language->get('text_edit');
 
         $data['entry_ip'] = $this->language->get('entry_ip');
 
@@ -318,30 +320,32 @@ class ControllerAccountMerchantBanIp extends Controller {
 
         $data['breadcrumbs'][] = array(
             'text' => $this->language->get('text_home'),
-            'href' => $this->url->link('common/dashboard', 'token=' . $this->session->data['token'], 'SSL')
+            'href' => $this->url->link('common/dashboard', 'token=' . $this->session->data['token'], 'SSL'),
+            'sp'=>true
         );
 
         $data['breadcrumbs'][] = array(
             'text' => $this->language->get('heading_title'),
-            'href' => $this->url->link('account/merchant_ban_ip', 'token=' . $this->session->data['token'] . $url, 'SSL')
+            'href' => $this->url->link('sale/customer_ban_ip', 'token=' . $this->session->data['token'] . $url, 'SSL'),
+            'sp'=>false
         );
 
-        if (!isset($this->request->get['merchant_ban_ip_id'])) {
-            $data['action'] = $this->url->link('account/merchant_ban_ip/add', 'token=' . $this->session->data['token'] . $url, 'SSL');
+        if (!isset($this->request->get['customer_ban_ip_id'])) {
+            $data['action'] = $this->url->link('sale/customer_ban_ip/add', 'token=' . $this->session->data['token'] . $url, 'SSL');
         } else {
-            $data['action'] = $this->url->link('account/merchant_ban_ip/edit', 'token=' . $this->session->data['token'] . '&merchant_ban_ip_id=' . $this->request->get['merchant_ban_ip_id'] . $url, 'SSL');
+            $data['action'] = $this->url->link('sale/customer_ban_ip/edit', 'token=' . $this->session->data['token'] . '&customer_ban_ip_id=' . $this->request->get['customer_ban_ip_id'] . $url, 'SSL');
         }
 
-        $data['cancel'] = $this->url->link('account/merchant_ban_ip', 'token=' . $this->session->data['token'] . $url, 'SSL');
+        $data['cancel'] = $this->url->link('sale/customer_ban_ip', 'token=' . $this->session->data['token'] . $url, 'SSL');
 
-        if (isset($this->request->get['merchant_ban_ip_id']) && ($this->request->server['REQUEST_METHOD'] != 'POST')) {
-            $merchant_ban_ip_info = $this->model_account_merchant_ban_ip->getMerchantBanIp($this->request->get['merchant_ban_ip_id']);
+        if (isset($this->request->get['customer_ban_ip_id']) && ($this->request->server['REQUEST_METHOD'] != 'POST')) {
+            $customer_ban_ip_info = $this->model_sale_customer_ban_ip->getCustomerBanIp($this->request->get['customer_ban_ip_id']);
         }
 
         if (isset($this->request->post['ip'])) {
             $data['ip'] = $this->request->post['ip'];
-        } elseif (!empty($merchant_ban_ip_info)) {
-            $data['ip'] = $merchant_ban_ip_info['ip'];
+        } elseif (!empty($customer_ban_ip_info)) {
+            $data['ip'] = $customer_ban_ip_info['ip'];
         } else {
             $data['ip'] = '';
         }
@@ -350,11 +354,11 @@ class ControllerAccountMerchantBanIp extends Controller {
         $data['column_left'] = $this->load->controller('common/column_left');
         $data['footer'] = $this->load->controller('common/footer');
 
-        $this->response->setOutput($this->load->view('account/merchant_ban_ip_form.tpl', $data));
+        $this->response->setOutput($this->load->view('sale/customer_ban_ip_form.tpl', $data));
     }
 
     protected function validateForm() {
-        if (!$this->user->hasPermission('modify', 'account/merchant_ban_ip')) {
+        if (!$this->user->hasPermission('modify', 'sale/customer_ban_ip')) {
             $this->error['warning'] = $this->language->get('error_permission');
         }
 
@@ -366,11 +370,11 @@ class ControllerAccountMerchantBanIp extends Controller {
     }
 
     protected function validateDelete() {
-        if (!$this->user->hasPermission('modify', 'account/merchant_ban_ip')) {
+        if (!$this->user->hasPermission('modify', 'sale/customer_ban_ip')) {
             $this->error['warning'] = $this->language->get('error_permission');
         }
 
         return !$this->error;
     }
 }
-//End of file merchant_ban_ip.php 
+//End of file customer_ban_ip.php 
