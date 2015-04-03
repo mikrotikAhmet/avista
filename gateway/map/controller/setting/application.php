@@ -419,23 +419,27 @@ class ControllerSettingApplication extends Controller {
 
         $data['breadcrumbs'][] = array(
             'text' => $this->language->get('text_home'),
-            'href' => $this->url->link('common/dashboard', 'token=' . $this->session->data['token'], 'SSL')
+            'href' => $this->url->link('common/dashboard', 'token=' . $this->session->data['token'], 'SSL'),
+            'sp'=>true
         );
 
         $data['breadcrumbs'][] = array(
             'text' => $this->language->get('heading_title'),
-            'href' => $this->url->link('setting/application', 'token=' . $this->session->data['token'], 'SSL')
+            'href' => $this->url->link('setting/application', 'token=' . $this->session->data['token'], 'SSL'),
+            'sp'=>true
         );
 
         if (!isset($this->request->get['application_id'])) {
             $data['breadcrumbs'][] = array(
                 'text' => $this->language->get('text_settings'),
-                'href' => $this->url->link('setting/application/add', 'token=' . $this->session->data['token'], 'SSL')
+                'href' => $this->url->link('setting/application/add', 'token=' . $this->session->data['token'], 'SSL'),
+                'sp'=>false
             );
         } else {
             $data['breadcrumbs'][] = array(
                 'text' => $this->language->get('text_settings'),
-                'href' => $this->url->link('setting/application/edit', 'token=' . $this->session->data['token'] . '&application_id=' . $this->request->get['application_id'], 'SSL')
+                'href' => $this->url->link('setting/application/edit', 'token=' . $this->session->data['token'] . '&application_id=' . $this->request->get['application_id'], 'SSL'),
+                'sp'=>false
             );
         }
 

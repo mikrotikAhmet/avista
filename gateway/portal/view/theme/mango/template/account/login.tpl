@@ -11,7 +11,7 @@
         <!-- Right link -->
         <div class="right">
             <span>Got no account?</span>
-            <a href="javascript:void(0);">Register</a>
+            <a href="<?php echo $register; ?>">Register</a>
         </div>
 
     </div><!-- End of .container -->
@@ -21,7 +21,7 @@
 <!-- The container of the sidebar and content box -->
 <section id="login" class="container_12 clearfix">
 
-    <form action="dashboard.html" method="post" class="box validate">
+    <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" class="box validate">
 
         <div class="header">
             <h2><span class="icon icon-lock"></span>Login</h2>
@@ -31,7 +31,11 @@
 
             <!-- Login messages -->
             <div class="login-messages">
+                <?php if ($error_warning) { ?>
+                <div class="message welcome"><i class="fa fa-exclamation-circle"></i> <?php echo $error_warning; ?></div>
+                <?php } else { ?>
                 <div class="message welcome">Welcome back!</div>
+                <?php } ?>
                 <div class="message failure">Invalid credentials.</div>
             </div>
 
@@ -40,21 +44,20 @@
 
                 <div class="row">
                     <label for="login_name">
-                        <strong>Username</strong>
-                        <small>Or email address</small>
+                        <strong><?php echo $entry_email; ?></strong>
                     </label>
                     <div>
-                        <input tabindex=1 type="text" class="required" name=login_name id=login_name />
+                        <input tabindex=1 type="text" value="<?php echo $email; ?>" class="required" placeholder="<?php echo $entry_email; ?>" name="email" id=login_name />
                     </div>
                 </div>
 
                 <div class="row">
                     <label for="login_pw">
-                        <strong>Password</strong>
-                        <small><a href="javascript:void(0);" id="">Forgot it?</a></small>
+                        <strong><?php echo $entry_password; ?></strong>
+                        <small><a href="<?php echo $forgotten; ?>" id=""><?php echo $text_forgotten; ?></a></small>
                     </label>
                     <div>
-                        <input tabindex=2 type="password" class="required" name=login_pw id=login_pw />
+                        <input tabindex=2 type="password" class="required" value="<?php echo $password; ?>" name="password" id=login_pw placeholder="<?php echo $entry_password; ?>"/>
                     </div>
                 </div>
 
@@ -72,7 +75,9 @@
                 <input tabindex=3 type="submit" value="Sign In" name="login_btn" />
             </div>
         </div><!-- End of .actions -->
-
+        <?php if ($redirect) { ?>
+        <input type="hidden" name="redirect" value="<?php echo $redirect; ?>" />
+        <?php } ?>
     </form><!-- End of form -->
 
 </section>

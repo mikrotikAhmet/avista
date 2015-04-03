@@ -22,7 +22,7 @@ class ControllerCommonDashboard extends Controller {
 
     public function index() {
 
-	    if (!$this->merchant->isLogged()) {
+	    if (!$this->customer->isLogged()) {
 		    $this->response->redirect($this->url->link('account/login', '', 'SSL'));
 	    }
 

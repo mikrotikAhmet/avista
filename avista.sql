@@ -24,7 +24,7 @@ DROP TABLE IF EXISTS `engine4_address`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `engine4_address` (
   `address_id` int(11) NOT NULL AUTO_INCREMENT,
-  `merchant_id` int(11) NOT NULL,
+  `customer_id` int(11) NOT NULL,
   `firstname` varchar(32) NOT NULL,
   `lastname` varchar(32) NOT NULL,
   `company` varchar(40) NOT NULL,
@@ -36,7 +36,7 @@ CREATE TABLE `engine4_address` (
   `zone_id` int(11) NOT NULL DEFAULT '0',
   `custom_field` text NOT NULL,
   PRIMARY KEY (`address_id`),
-  KEY `merchant_id` (`merchant_id`)
+  KEY `merchant_id` (`customer_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -296,7 +296,7 @@ CREATE TABLE `engine4_currency` (
 
 LOCK TABLES `engine4_currency` WRITE;
 /*!40000 ALTER TABLE `engine4_currency` DISABLE KEYS */;
-INSERT INTO `engine4_currency` VALUES (1,'Pound Sterling','GBP','£','','2',0.67479998,1,'2015-04-02 13:27:20'),(2,'US Dollar','USD','$','','2',1.00000000,1,'2015-04-02 14:25:22'),(3,'Euro','EUR','','€','2',0.92000002,1,'2015-04-02 13:27:20');
+INSERT INTO `engine4_currency` VALUES (1,'Pound Sterling','GBP','£','','2',0.67479998,1,'2015-04-02 13:27:20'),(2,'US Dollar','USD','$','','2',1.00000000,1,'2015-04-03 10:02:33'),(3,'Euro','EUR','','€','2',0.92000002,1,'2015-04-02 13:27:20');
 /*!40000 ALTER TABLE `engine4_currency` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -325,6 +325,30 @@ CREATE TABLE `engine4_custom_field` (
 LOCK TABLES `engine4_custom_field` WRITE;
 /*!40000 ALTER TABLE `engine4_custom_field` DISABLE KEYS */;
 /*!40000 ALTER TABLE `engine4_custom_field` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `engine4_custom_field_customer_group`
+--
+
+DROP TABLE IF EXISTS `engine4_custom_field_customer_group`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_custom_field_customer_group` (
+  `custom_field_id` int(11) NOT NULL,
+  `customer_group_id` int(11) NOT NULL,
+  `required` tinyint(1) NOT NULL,
+  PRIMARY KEY (`custom_field_id`,`customer_group_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_custom_field_customer_group`
+--
+
+LOCK TABLES `engine4_custom_field_customer_group` WRITE;
+/*!40000 ALTER TABLE `engine4_custom_field_customer_group` DISABLE KEYS */;
+/*!40000 ALTER TABLE `engine4_custom_field_customer_group` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -425,6 +449,311 @@ LOCK TABLES `engine4_custom_field_value_description` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `engine4_customer`
+--
+
+DROP TABLE IF EXISTS `engine4_customer`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_customer` (
+  `customer_id` int(11) NOT NULL AUTO_INCREMENT,
+  `customer_group_id` int(11) NOT NULL,
+  `application_id` int(11) NOT NULL DEFAULT '0',
+  `firstname` varchar(32) NOT NULL,
+  `lastname` varchar(32) NOT NULL,
+  `email` varchar(96) NOT NULL,
+  `telephone` varchar(32) NOT NULL,
+  `fax` varchar(32) NOT NULL,
+  `password` varchar(40) NOT NULL,
+  `salt` varchar(9) NOT NULL,
+  `cart` text,
+  `wishlist` text,
+  `newsletter` tinyint(1) NOT NULL DEFAULT '0',
+  `address_id` int(11) NOT NULL DEFAULT '0',
+  `custom_field` text NOT NULL,
+  `ip` varchar(40) NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `approved` tinyint(1) NOT NULL,
+  `safe` tinyint(1) NOT NULL,
+  `token` varchar(255) NOT NULL,
+  `date_added` datetime NOT NULL,
+  PRIMARY KEY (`customer_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_customer`
+--
+
+LOCK TABLES `engine4_customer` WRITE;
+/*!40000 ALTER TABLE `engine4_customer` DISABLE KEYS */;
+/*!40000 ALTER TABLE `engine4_customer` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `engine4_customer_activity`
+--
+
+DROP TABLE IF EXISTS `engine4_customer_activity`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_customer_activity` (
+  `activity_id` int(11) NOT NULL AUTO_INCREMENT,
+  `customer_id` int(11) NOT NULL,
+  `key` varchar(64) NOT NULL,
+  `data` text NOT NULL,
+  `ip` varchar(40) NOT NULL,
+  `date_added` datetime NOT NULL,
+  PRIMARY KEY (`activity_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_customer_activity`
+--
+
+LOCK TABLES `engine4_customer_activity` WRITE;
+/*!40000 ALTER TABLE `engine4_customer_activity` DISABLE KEYS */;
+/*!40000 ALTER TABLE `engine4_customer_activity` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `engine4_customer_ban_ip`
+--
+
+DROP TABLE IF EXISTS `engine4_customer_ban_ip`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_customer_ban_ip` (
+  `customer_ban_ip_id` int(11) NOT NULL AUTO_INCREMENT,
+  `ip` varchar(40) NOT NULL,
+  PRIMARY KEY (`customer_ban_ip_id`),
+  KEY `ip` (`ip`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_customer_ban_ip`
+--
+
+LOCK TABLES `engine4_customer_ban_ip` WRITE;
+/*!40000 ALTER TABLE `engine4_customer_ban_ip` DISABLE KEYS */;
+/*!40000 ALTER TABLE `engine4_customer_ban_ip` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `engine4_customer_group`
+--
+
+DROP TABLE IF EXISTS `engine4_customer_group`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_customer_group` (
+  `customer_group_id` int(11) NOT NULL AUTO_INCREMENT,
+  `approval` int(1) NOT NULL,
+  `sort_order` int(3) NOT NULL,
+  PRIMARY KEY (`customer_group_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_customer_group`
+--
+
+LOCK TABLES `engine4_customer_group` WRITE;
+/*!40000 ALTER TABLE `engine4_customer_group` DISABLE KEYS */;
+INSERT INTO `engine4_customer_group` VALUES (1,1,1),(2,1,2);
+/*!40000 ALTER TABLE `engine4_customer_group` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `engine4_customer_group_description`
+--
+
+DROP TABLE IF EXISTS `engine4_customer_group_description`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_customer_group_description` (
+  `customer_group_id` int(11) NOT NULL,
+  `language_id` int(11) NOT NULL,
+  `name` varchar(32) NOT NULL,
+  `description` text NOT NULL,
+  PRIMARY KEY (`customer_group_id`,`language_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_customer_group_description`
+--
+
+LOCK TABLES `engine4_customer_group_description` WRITE;
+/*!40000 ALTER TABLE `engine4_customer_group_description` DISABLE KEYS */;
+INSERT INTO `engine4_customer_group_description` VALUES (1,1,'Merchant','Merchant Customer Group.'),(2,1,'Client','Client Customer');
+/*!40000 ALTER TABLE `engine4_customer_group_description` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `engine4_customer_history`
+--
+
+DROP TABLE IF EXISTS `engine4_customer_history`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_customer_history` (
+  `customer_history_id` int(11) NOT NULL AUTO_INCREMENT,
+  `customer_id` int(11) NOT NULL,
+  `comment` text NOT NULL,
+  `date_added` datetime NOT NULL,
+  PRIMARY KEY (`customer_history_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_customer_history`
+--
+
+LOCK TABLES `engine4_customer_history` WRITE;
+/*!40000 ALTER TABLE `engine4_customer_history` DISABLE KEYS */;
+/*!40000 ALTER TABLE `engine4_customer_history` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `engine4_customer_ip`
+--
+
+DROP TABLE IF EXISTS `engine4_customer_ip`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_customer_ip` (
+  `customer_ip_id` int(11) NOT NULL AUTO_INCREMENT,
+  `customer_id` int(11) NOT NULL,
+  `ip` varchar(40) NOT NULL,
+  `date_added` datetime NOT NULL,
+  PRIMARY KEY (`customer_ip_id`),
+  KEY `ip` (`ip`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_customer_ip`
+--
+
+LOCK TABLES `engine4_customer_ip` WRITE;
+/*!40000 ALTER TABLE `engine4_customer_ip` DISABLE KEYS */;
+/*!40000 ALTER TABLE `engine4_customer_ip` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `engine4_customer_login`
+--
+
+DROP TABLE IF EXISTS `engine4_customer_login`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_customer_login` (
+  `customer_login_id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(96) NOT NULL,
+  `ip` varchar(40) NOT NULL,
+  `total` int(4) NOT NULL,
+  `date_added` datetime NOT NULL,
+  `date_modified` datetime NOT NULL,
+  PRIMARY KEY (`customer_login_id`),
+  KEY `email` (`email`),
+  KEY `ip` (`ip`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_customer_login`
+--
+
+LOCK TABLES `engine4_customer_login` WRITE;
+/*!40000 ALTER TABLE `engine4_customer_login` DISABLE KEYS */;
+INSERT INTO `engine4_customer_login` VALUES (1,'asdf','127.0.0.1',6,'2015-04-03 09:58:28','2015-04-03 09:58:36');
+/*!40000 ALTER TABLE `engine4_customer_login` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `engine4_customer_online`
+--
+
+DROP TABLE IF EXISTS `engine4_customer_online`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_customer_online` (
+  `ip` varchar(40) NOT NULL,
+  `customer_id` int(11) NOT NULL,
+  `url` text NOT NULL,
+  `referer` text NOT NULL,
+  `date_added` datetime NOT NULL,
+  PRIMARY KEY (`ip`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_customer_online`
+--
+
+LOCK TABLES `engine4_customer_online` WRITE;
+/*!40000 ALTER TABLE `engine4_customer_online` DISABLE KEYS */;
+/*!40000 ALTER TABLE `engine4_customer_online` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `engine4_customer_reward`
+--
+
+DROP TABLE IF EXISTS `engine4_customer_reward`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_customer_reward` (
+  `customer_reward_id` int(11) NOT NULL AUTO_INCREMENT,
+  `customer_id` int(11) NOT NULL DEFAULT '0',
+  `order_id` int(11) NOT NULL DEFAULT '0',
+  `description` text NOT NULL,
+  `points` int(8) NOT NULL DEFAULT '0',
+  `date_added` datetime NOT NULL,
+  PRIMARY KEY (`customer_reward_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_customer_reward`
+--
+
+LOCK TABLES `engine4_customer_reward` WRITE;
+/*!40000 ALTER TABLE `engine4_customer_reward` DISABLE KEYS */;
+/*!40000 ALTER TABLE `engine4_customer_reward` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `engine4_customer_transaction`
+--
+
+DROP TABLE IF EXISTS `engine4_customer_transaction`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_customer_transaction` (
+  `customer_transaction_id` int(11) NOT NULL AUTO_INCREMENT,
+  `customer_id` int(11) NOT NULL,
+  `order_id` int(11) NOT NULL,
+  `description` text NOT NULL,
+  `amount` decimal(15,4) NOT NULL,
+  `date_added` datetime NOT NULL,
+  PRIMARY KEY (`customer_transaction_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_customer_transaction`
+--
+
+LOCK TABLES `engine4_customer_transaction` WRITE;
+/*!40000 ALTER TABLE `engine4_customer_transaction` DISABLE KEYS */;
+/*!40000 ALTER TABLE `engine4_customer_transaction` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `engine4_event`
 --
 
@@ -447,6 +776,109 @@ CREATE TABLE `engine4_event` (
 LOCK TABLES `engine4_event` WRITE;
 /*!40000 ALTER TABLE `engine4_event` DISABLE KEYS */;
 /*!40000 ALTER TABLE `engine4_event` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `engine4_information`
+--
+
+DROP TABLE IF EXISTS `engine4_information`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_information` (
+  `information_id` int(11) NOT NULL AUTO_INCREMENT,
+  `bottom` int(1) NOT NULL DEFAULT '0',
+  `sort_order` int(3) NOT NULL DEFAULT '0',
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`information_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_information`
+--
+
+LOCK TABLES `engine4_information` WRITE;
+/*!40000 ALTER TABLE `engine4_information` DISABLE KEYS */;
+INSERT INTO `engine4_information` VALUES (3,1,3,1),(4,1,1,1),(5,1,4,1),(6,1,2,1);
+/*!40000 ALTER TABLE `engine4_information` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `engine4_information_description`
+--
+
+DROP TABLE IF EXISTS `engine4_information_description`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_information_description` (
+  `information_id` int(11) NOT NULL,
+  `language_id` int(11) NOT NULL,
+  `title` varchar(64) NOT NULL,
+  `description` text NOT NULL,
+  `meta_title` varchar(255) NOT NULL,
+  `meta_description` varchar(255) NOT NULL,
+  `meta_keyword` varchar(255) NOT NULL,
+  PRIMARY KEY (`information_id`,`language_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_information_description`
+--
+
+LOCK TABLES `engine4_information_description` WRITE;
+/*!40000 ALTER TABLE `engine4_information_description` DISABLE KEYS */;
+INSERT INTO `engine4_information_description` VALUES (4,1,'About Us','&lt;p&gt;\r\n	About Us&lt;/p&gt;\r\n','','',''),(5,1,'Terms &amp; Conditions','&lt;p&gt;\r\n	Terms &amp;amp; Conditions&lt;/p&gt;\r\n','','',''),(3,1,'Privacy Policy','&lt;p&gt;\r\n	Privacy Policy&lt;/p&gt;\r\n','','',''),(6,1,'Delivery Information','&lt;p&gt;\r\n	Delivery Information&lt;/p&gt;\r\n','','','');
+/*!40000 ALTER TABLE `engine4_information_description` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `engine4_information_to_application`
+--
+
+DROP TABLE IF EXISTS `engine4_information_to_application`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_information_to_application` (
+  `information_id` int(11) NOT NULL,
+  `application_id` int(11) NOT NULL,
+  PRIMARY KEY (`information_id`,`application_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_information_to_application`
+--
+
+LOCK TABLES `engine4_information_to_application` WRITE;
+/*!40000 ALTER TABLE `engine4_information_to_application` DISABLE KEYS */;
+INSERT INTO `engine4_information_to_application` VALUES (3,0),(4,0),(5,0),(6,0);
+/*!40000 ALTER TABLE `engine4_information_to_application` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `engine4_information_to_layout`
+--
+
+DROP TABLE IF EXISTS `engine4_information_to_layout`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_information_to_layout` (
+  `information_id` int(11) NOT NULL,
+  `application_id` int(11) NOT NULL,
+  `layout_id` int(11) NOT NULL,
+  PRIMARY KEY (`information_id`,`application_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_information_to_layout`
+--
+
+LOCK TABLES `engine4_information_to_layout` WRITE;
+/*!40000 ALTER TABLE `engine4_information_to_layout` DISABLE KEYS */;
+/*!40000 ALTER TABLE `engine4_information_to_layout` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -613,311 +1045,6 @@ CREATE TABLE `engine4_marketing` (
 LOCK TABLES `engine4_marketing` WRITE;
 /*!40000 ALTER TABLE `engine4_marketing` DISABLE KEYS */;
 /*!40000 ALTER TABLE `engine4_marketing` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `engine4_merchant`
---
-
-DROP TABLE IF EXISTS `engine4_merchant`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `engine4_merchant` (
-  `merchant_id` int(11) NOT NULL AUTO_INCREMENT,
-  `merchant_group_id` int(11) NOT NULL,
-  `store_id` int(11) NOT NULL DEFAULT '0',
-  `firstname` varchar(32) NOT NULL,
-  `lastname` varchar(32) NOT NULL,
-  `email` varchar(96) NOT NULL,
-  `telephone` varchar(32) NOT NULL,
-  `fax` varchar(32) NOT NULL,
-  `password` varchar(40) NOT NULL,
-  `salt` varchar(9) NOT NULL,
-  `cart` text,
-  `wishlist` text,
-  `newsletter` tinyint(1) NOT NULL DEFAULT '0',
-  `address_id` int(11) NOT NULL DEFAULT '0',
-  `custom_field` text NOT NULL,
-  `ip` varchar(40) NOT NULL,
-  `status` tinyint(1) NOT NULL,
-  `approved` tinyint(1) NOT NULL,
-  `safe` tinyint(1) NOT NULL,
-  `token` varchar(255) NOT NULL,
-  `date_added` datetime NOT NULL,
-  PRIMARY KEY (`merchant_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `engine4_merchant`
---
-
-LOCK TABLES `engine4_merchant` WRITE;
-/*!40000 ALTER TABLE `engine4_merchant` DISABLE KEYS */;
-INSERT INTO `engine4_merchant` VALUES (1,1,0,'Ahmet','Goudenoglu','ahmet.gudenoglu@gmail.com','+381656728972','','b74a3889968727f604967a759ddd0c33d05063eb','366cce0d9',NULL,NULL,0,0,'','',1,0,1,'','2015-04-01 10:12:12');
-/*!40000 ALTER TABLE `engine4_merchant` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `engine4_merchant_activity`
---
-
-DROP TABLE IF EXISTS `engine4_merchant_activity`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `engine4_merchant_activity` (
-  `activity_id` int(11) NOT NULL AUTO_INCREMENT,
-  `merchant_id` int(11) NOT NULL,
-  `key` varchar(64) NOT NULL,
-  `data` text NOT NULL,
-  `ip` varchar(40) NOT NULL,
-  `date_added` datetime NOT NULL,
-  PRIMARY KEY (`activity_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `engine4_merchant_activity`
---
-
-LOCK TABLES `engine4_merchant_activity` WRITE;
-/*!40000 ALTER TABLE `engine4_merchant_activity` DISABLE KEYS */;
-/*!40000 ALTER TABLE `engine4_merchant_activity` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `engine4_merchant_ban_ip`
---
-
-DROP TABLE IF EXISTS `engine4_merchant_ban_ip`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `engine4_merchant_ban_ip` (
-  `merchant_ban_ip_id` int(11) NOT NULL AUTO_INCREMENT,
-  `ip` varchar(40) NOT NULL,
-  PRIMARY KEY (`merchant_ban_ip_id`),
-  KEY `ip` (`ip`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `engine4_merchant_ban_ip`
---
-
-LOCK TABLES `engine4_merchant_ban_ip` WRITE;
-/*!40000 ALTER TABLE `engine4_merchant_ban_ip` DISABLE KEYS */;
-/*!40000 ALTER TABLE `engine4_merchant_ban_ip` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `engine4_merchant_group`
---
-
-DROP TABLE IF EXISTS `engine4_merchant_group`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `engine4_merchant_group` (
-  `merchant_group_id` int(11) NOT NULL AUTO_INCREMENT,
-  `approval` int(1) NOT NULL,
-  `sort_order` int(3) NOT NULL,
-  PRIMARY KEY (`merchant_group_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `engine4_merchant_group`
---
-
-LOCK TABLES `engine4_merchant_group` WRITE;
-/*!40000 ALTER TABLE `engine4_merchant_group` DISABLE KEYS */;
-INSERT INTO `engine4_merchant_group` VALUES (1,0,1);
-/*!40000 ALTER TABLE `engine4_merchant_group` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `engine4_merchant_group_description`
---
-
-DROP TABLE IF EXISTS `engine4_merchant_group_description`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `engine4_merchant_group_description` (
-  `merchant_group_id` int(11) NOT NULL,
-  `language_id` int(11) NOT NULL,
-  `name` varchar(32) NOT NULL,
-  `description` text NOT NULL,
-  PRIMARY KEY (`merchant_group_id`,`language_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `engine4_merchant_group_description`
---
-
-LOCK TABLES `engine4_merchant_group_description` WRITE;
-/*!40000 ALTER TABLE `engine4_merchant_group_description` DISABLE KEYS */;
-INSERT INTO `engine4_merchant_group_description` VALUES (1,1,'Default','test');
-/*!40000 ALTER TABLE `engine4_merchant_group_description` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `engine4_merchant_history`
---
-
-DROP TABLE IF EXISTS `engine4_merchant_history`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `engine4_merchant_history` (
-  `merchant_history_id` int(11) NOT NULL AUTO_INCREMENT,
-  `merchant_id` int(11) NOT NULL,
-  `comment` text NOT NULL,
-  `date_added` datetime NOT NULL,
-  PRIMARY KEY (`merchant_history_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `engine4_merchant_history`
---
-
-LOCK TABLES `engine4_merchant_history` WRITE;
-/*!40000 ALTER TABLE `engine4_merchant_history` DISABLE KEYS */;
-/*!40000 ALTER TABLE `engine4_merchant_history` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `engine4_merchant_ip`
---
-
-DROP TABLE IF EXISTS `engine4_merchant_ip`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `engine4_merchant_ip` (
-  `merchant_ip_id` int(11) NOT NULL AUTO_INCREMENT,
-  `merchant_id` int(11) NOT NULL,
-  `ip` varchar(40) NOT NULL,
-  `date_added` datetime NOT NULL,
-  PRIMARY KEY (`merchant_ip_id`),
-  KEY `ip` (`ip`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `engine4_merchant_ip`
---
-
-LOCK TABLES `engine4_merchant_ip` WRITE;
-/*!40000 ALTER TABLE `engine4_merchant_ip` DISABLE KEYS */;
-/*!40000 ALTER TABLE `engine4_merchant_ip` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `engine4_merchant_login`
---
-
-DROP TABLE IF EXISTS `engine4_merchant_login`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `engine4_merchant_login` (
-  `merchant_login_id` int(11) NOT NULL AUTO_INCREMENT,
-  `email` varchar(96) NOT NULL,
-  `ip` varchar(40) NOT NULL,
-  `total` int(4) NOT NULL,
-  `date_added` datetime NOT NULL,
-  `date_modified` datetime NOT NULL,
-  PRIMARY KEY (`merchant_login_id`),
-  KEY `email` (`email`),
-  KEY `ip` (`ip`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `engine4_merchant_login`
---
-
-LOCK TABLES `engine4_merchant_login` WRITE;
-/*!40000 ALTER TABLE `engine4_merchant_login` DISABLE KEYS */;
-/*!40000 ALTER TABLE `engine4_merchant_login` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `engine4_merchant_online`
---
-
-DROP TABLE IF EXISTS `engine4_merchant_online`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `engine4_merchant_online` (
-  `ip` varchar(40) NOT NULL,
-  `merchant_id` int(11) NOT NULL,
-  `url` text NOT NULL,
-  `referer` text NOT NULL,
-  `date_added` datetime NOT NULL,
-  PRIMARY KEY (`ip`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `engine4_merchant_online`
---
-
-LOCK TABLES `engine4_merchant_online` WRITE;
-/*!40000 ALTER TABLE `engine4_merchant_online` DISABLE KEYS */;
-/*!40000 ALTER TABLE `engine4_merchant_online` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `engine4_merchant_reward`
---
-
-DROP TABLE IF EXISTS `engine4_merchant_reward`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `engine4_merchant_reward` (
-  `merchant_reward_id` int(11) NOT NULL AUTO_INCREMENT,
-  `merchant_id` int(11) NOT NULL DEFAULT '0',
-  `order_id` int(11) NOT NULL DEFAULT '0',
-  `description` text NOT NULL,
-  `points` int(8) NOT NULL DEFAULT '0',
-  `date_added` datetime NOT NULL,
-  PRIMARY KEY (`merchant_reward_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `engine4_merchant_reward`
---
-
-LOCK TABLES `engine4_merchant_reward` WRITE;
-/*!40000 ALTER TABLE `engine4_merchant_reward` DISABLE KEYS */;
-/*!40000 ALTER TABLE `engine4_merchant_reward` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `engine4_merchant_transaction`
---
-
-DROP TABLE IF EXISTS `engine4_merchant_transaction`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `engine4_merchant_transaction` (
-  `merchant_transaction_id` int(11) NOT NULL AUTO_INCREMENT,
-  `merchant_id` int(11) NOT NULL,
-  `order_id` int(11) NOT NULL,
-  `description` text NOT NULL,
-  `amount` decimal(15,4) NOT NULL,
-  `date_added` datetime NOT NULL,
-  PRIMARY KEY (`merchant_transaction_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `engine4_merchant_transaction`
---
-
-LOCK TABLES `engine4_merchant_transaction` WRITE;
-/*!40000 ALTER TABLE `engine4_merchant_transaction` DISABLE KEYS */;
-/*!40000 ALTER TABLE `engine4_merchant_transaction` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1460,7 +1587,7 @@ CREATE TABLE `engine4_user_group` (
 
 LOCK TABLES `engine4_user_group` WRITE;
 /*!40000 ALTER TABLE `engine4_user_group` DISABLE KEYS */;
-INSERT INTO `engine4_user_group` VALUES (1,'Administrator','a:2:{s:6:\"access\";a:11:{i:0;s:20:\"account/custom_field\";i:1;s:16:\"account/merchant\";i:2;s:23:\"account/merchant_ban_ip\";i:3;s:22:\"account/merchant_group\";i:4;s:18:\"common/filemanager\";i:5;s:11:\"common/menu\";i:6;s:19:\"setting/application\";i:7;s:15:\"setting/setting\";i:8;s:8:\"user/api\";i:9;s:9:\"user/user\";i:10;s:20:\"user/user_permission\";}s:6:\"modify\";a:11:{i:0;s:20:\"account/custom_field\";i:1;s:16:\"account/merchant\";i:2;s:23:\"account/merchant_ban_ip\";i:3;s:22:\"account/merchant_group\";i:4;s:18:\"common/filemanager\";i:5;s:11:\"common/menu\";i:6;s:19:\"setting/application\";i:7;s:15:\"setting/setting\";i:8;s:8:\"user/api\";i:9;s:9:\"user/user\";i:10;s:20:\"user/user_permission\";}}'),(10,'Demonstration','a:1:{s:6:\"access\";a:9:{i:0;s:20:\"account/custom_field\";i:1;s:16:\"account/merchant\";i:2;s:23:\"account/merchant_ban_ip\";i:3;s:22:\"account/merchant_group\";i:4;s:18:\"common/filemanager\";i:5;s:11:\"common/menu\";i:6;s:8:\"user/api\";i:7;s:9:\"user/user\";i:8;s:20:\"user/user_permission\";}}');
+INSERT INTO `engine4_user_group` VALUES (1,'Administrator','a:2:{s:6:\"access\";a:12:{i:0;s:18:\"common/filemanager\";i:1;s:11:\"common/menu\";i:2;s:17:\"sale/custom_field\";i:3;s:13:\"sale/customer\";i:4;s:20:\"sale/customer_ban_ip\";i:5;s:19:\"sale/customer_group\";i:6;s:10:\"sale/order\";i:7;s:19:\"setting/application\";i:8;s:15:\"setting/setting\";i:9;s:8:\"user/api\";i:10;s:9:\"user/user\";i:11;s:20:\"user/user_permission\";}s:6:\"modify\";a:12:{i:0;s:18:\"common/filemanager\";i:1;s:11:\"common/menu\";i:2;s:17:\"sale/custom_field\";i:3;s:13:\"sale/customer\";i:4;s:20:\"sale/customer_ban_ip\";i:5;s:19:\"sale/customer_group\";i:6;s:10:\"sale/order\";i:7;s:19:\"setting/application\";i:8;s:15:\"setting/setting\";i:9;s:8:\"user/api\";i:10;s:9:\"user/user\";i:11;s:20:\"user/user_permission\";}}'),(10,'Demonstration','a:1:{s:6:\"access\";a:9:{i:0;s:20:\"account/custom_field\";i:1;s:16:\"account/merchant\";i:2;s:23:\"account/merchant_ban_ip\";i:3;s:22:\"account/merchant_group\";i:4;s:18:\"common/filemanager\";i:5;s:11:\"common/menu\";i:6;s:8:\"user/api\";i:7;s:9:\"user/user\";i:8;s:20:\"user/user_permission\";}}');
 /*!40000 ALTER TABLE `engine4_user_group` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1500,4 +1627,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-04-02 16:33:24
+-- Dump completed on 2015-04-03 12:03:02

@@ -209,17 +209,17 @@ $registry->set('language', $language);
 $registry->set('document', new Document());
 
 // Merchant
-$merchant = new Merchant($registry);
-$registry->set('merchant', $merchant);
+$customer = new Customer($registry);
+$registry->set('customer', $customer);
 
 // Customer Group
-if ($merchant->isLogged()) {
-    $config->set('config_merchant_group_id', $merchant->getGroupId());
-} elseif (isset($session->data['merchant']) && isset($session->data['merchant']['merchant_group_id'])) {
+if ($customer->isLogged()) {
+    $config->set('config_customer_group_id', $customer->getGroupId());
+} elseif (isset($session->data['customer']) && isset($session->data['customer']['customer_group_id'])) {
     // For API calls
-    $config->set('config_merchant_group_id', $session->data['merchant']['merchant_group_id']);
-} elseif (isset($session->data['guest']) && isset($session->data['guest']['merchant_group_id'])) {
-    $config->set('config_merchant_group_id', $session->data['guest']['merchant_group_id']);
+    $config->set('config_customer_group_id', $session->data['customer']['customer_group_id']);
+} elseif (isset($session->data['guest']) && isset($session->data['guest']['customer_group_id'])) {
+    $config->set('config_customer_group_id', $session->data['guest']['customer_group_id']);
 }
 
 // Tracking Code
@@ -257,9 +257,6 @@ $controller = new Front($registry);
 
 // Maintenance Mode
 $controller->addPreAction(new Action('common/maintenance'));
-
-// SEO URL's
-$controller->addPreAction(new Action('account/login/check'));
 
 // Router
 if (isset($request->get['route'])) {

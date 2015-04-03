@@ -55,12 +55,12 @@ class ControllerCommonHeader extends Controller {
         $this->load->language('common/header');
 
         $data['text_home'] = $this->language->get('text_home');
-        $data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', 'SSL'), $this->merchant->getFirstName(), $this->url->link('account/logout', '', 'SSL'));
+        $data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', 'SSL'), $this->customer->getFirstName(), $this->url->link('account/logout', '', 'SSL'));
 
         $data['text_all'] = $this->language->get('text_all');
 
         $data['home'] = $this->url->link('common/dashboard');
-        $data['logged'] = $this->merchant->isLogged();
+        $data['logged'] = $this->customer->isLogged();
         $data['logout'] = $this->url->link('account/logout', '', 'SSL');
 
         $status = true;
@@ -83,7 +83,7 @@ class ControllerCommonHeader extends Controller {
 //        $data['cart'] = $this->load->controller('common/cart');
 
         // For page specific css
-	    if (!$this->merchant->isLogged()) {
+	    if (!$this->customer->isLogged()) {
 		    $data['class'] = 'login';
         } else {
             $data['class'] = 'common-home';
