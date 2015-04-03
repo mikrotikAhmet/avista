@@ -48,45 +48,48 @@
     <!-- ---------- -->
 
     <!-- Layout Styles -->
-    <link rel="stylesheet" href="/view/theme/mango/assets/css/style.css">
-    <link rel="stylesheet" href="/view/theme/mango/assets/css/grid.css">
-    <link rel="stylesheet" href="/view/theme/mango/assets/css/layout.css">
+    <link rel="stylesheet" href="view/theme/mango/assets/css/style.css">
+    <link rel="stylesheet" href="view/theme/mango/assets/css/grid.css">
+    <link rel="stylesheet" href="view/theme/mango/assets/css/layout.css">
 
     <!-- Icon Styles -->
-    <link rel="stylesheet" href="/view/theme/mango/assets/css/icons.css">
-    <link rel="stylesheet" href="/view/theme/mango/assets/css/fonts/font-awesome.css">
-    <!--[if IE 8]><link rel="stylesheet" href="/view/theme/mango/assets/css/fonts/font-awesome-ie7.css"><![endif]-->
+    <link rel="stylesheet" href="view/theme/mango/assets/css/icons.css">
+    <link rel="stylesheet" href="view/theme/mango/assets/css/fonts/font-awesome.css">
+    <!--[if IE 8]><link rel="stylesheet" href="view/theme/mango/assets/css/fonts/font-awesome-ie7.css"><![endif]-->
 
     <!-- External Styles -->
-    <link rel="stylesheet" href="/view/theme/mango/assets/css/external/jquery-ui-1.9.1.custom.css">
-    <link rel="stylesheet" href="/view/theme/mango/assets/css/external/jquery.chosen.css">
-    <link rel="stylesheet" href="/view/theme/mango/assets/css/external/jquery.cleditor.css">
-    <link rel="stylesheet" href="/view/theme/mango/assets/css/external/jquery.colorpicker.css">
-    <link rel="stylesheet" href="/view/theme/mango/assets/css/external/jquery.elfinder.css">
-    <link rel="stylesheet" href="/view/theme/mango/assets/css/external/jquery.fancybox.css">
-    <link rel="stylesheet" href="/view/theme/mango/assets/css/external/jquery.jgrowl.css">
-    <link rel="stylesheet" href="/view/theme/mango/assets/css/external/jquery.plupload.queue.css">
-    <link rel="stylesheet" href="/view/theme/mango/assets/css/external/syntaxhighlighter/shCore.css" />
-    <link rel="stylesheet" href="/view/theme/mango/assets/css/external/syntaxhighlighter/shThemeDefault.css" />
+    <link rel="stylesheet" href="view/theme/mango/assets/css/external/jquery-ui-1.9.1.custom.css">
+    <link rel="stylesheet" href="view/theme/mango/assets/css/external/jquery.chosen.css">
+    <link rel="stylesheet" href="view/theme/mango/assets/css/external/jquery.cleditor.css">
+    <link rel="stylesheet" href="view/theme/mango/assets/css/external/jquery.colorpicker.css">
+    <link rel="stylesheet" href="view/theme/mango/assets/css/external/jquery.elfinder.css">
+    <link rel="stylesheet" href="view/theme/mango/assets/css/external/jquery.fancybox.css">
+    <link rel="stylesheet" href="view/theme/mango/assets/css/external/jquery.jgrowl.css">
+    <link rel="stylesheet" href="view/theme/mango/assets/css/external/jquery.plupload.queue.css">
+    <link rel="stylesheet" href="view/theme/mango/assets/css/external/syntaxhighlighter/shCore.css" />
+    <link rel="stylesheet" href="view/theme/mango/assets/css/external/syntaxhighlighter/shThemeDefault.css" />
 
     <!-- Elements -->
-    <link rel="stylesheet" href="/view/theme/mango/assets/css/elements.css">
-    <link rel="stylesheet" href="/view/theme/mango/assets/css/forms.css">
+    <link rel="stylesheet" href="view/theme/mango/assets/css/elements.css">
+    <link rel="stylesheet" href="view/theme/mango/assets/css/forms.css">
 
     <!-- OPTIONAL: Print Stylesheet for Invoice -->
-    <link rel="stylesheet" href="/view/theme/mango/assets/css/print-invoice.css">
+    <link rel="stylesheet" href="view/theme/mango/assets/css/print-invoice.css">
 
     <!-- Typographics -->
-    <link rel="stylesheet" href="/view/theme/mango/assets/css/typographics.css">
+    <link rel="stylesheet" href="view/theme/mango/assets/css/typographics.css">
 
     <!-- Responsive Design -->
-    <link rel="stylesheet" href="/view/theme/mango/assets/css/media-queries.css">
+    <link rel="stylesheet" href="view/theme/mango/assets/css/media-queries.css">
 
     <!-- Bad IE Styles -->
-    <link rel="stylesheet" href="/view/theme/mango/assets/css/ie-fixes.css">
+    <link rel="stylesheet" href="view/theme/mango/assets/css/ie-fixes.css">
+
     <?php foreach ($styles as $style) { ?>
     <link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>" media="<?php echo $style['media']; ?>" />
     <?php } ?>
+
+
     <!-- The Scripts -->
     <!-- ----------- -->
 
@@ -96,27 +99,27 @@
     <!-- Grab frameworks from CDNs -->
     <!-- Grab jQuery from a CDN; fall back to local if offline -->
     <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script>window.jQuery || document.write('<script src="/view/theme/mango/assets/js/libs/jquery-1.10.2.min.js"><\/script>')</script>
+    <script>window.jQuery || document.write('<script src="view/theme/mango/assets/js/libs/jquery-1.10.2.min.js"><\/script>')</script>
 
     <!-- Do the same with jquery-migrate -->
     <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script>window.jQuery || document.write('<script src="/view/theme/mango/assets/js/libs/jquery-migrate-1.2.1.min.js"><\/script>')</script>
+    <script>window.jQuery || document.write('<script src="view/theme/mango/assets/js/libs/jquery-migrate-1.2.1.min.js"><\/script>')</script>
 
     <!-- Do the same with jQuery UI -->
     <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.min.js"></script>
-    <script>window.jQuery.ui || document.write('<script src="/view/theme/mango/assets/js/libs/jquery-ui-1.9.1.min.js"><\/script>')</script>
+    <script>window.jQuery.ui || document.write('<script src="view/theme/mango/assets/js/libs/jquery-ui-1.9.1.min.js"><\/script>')</script>
 
     <!-- Do the same with Lo-Dash.js -->
     <!--[if gt IE 8]><!-->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/0.8.2/lodash.min.js"></script>
-    <script>window._ || document.write('<script src="/view/theme/mango/assets/js/libs/lo-dash.min.js"><\/script>')</script>
+    <script>window._ || document.write('<script src="view/theme/mango/assets/js/libs/lo-dash.min.js"><\/script>')</script>
     <!--<![endif]-->
     <!-- IE8 doesn't like lodash -->
     <!--[if lt IE 9]><script src="http://documentcloud.github.com/underscore/underscore.js"></script><![endif]-->
 
     <!-- Do the same with require.js -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/require.js/2.0.6/require.min.js"></script>
-    <script>window.require || document.write('<script src="/view/theme/mango/assets/js/libs/require-2.0.6.min.js"><\/script>')</script>
+    <script>window.require || document.write('<script src="view/theme/mango/assets/js/libs/require-2.0.6.min.js"><\/script>')</script>
 
 
     <!-- Load Webfont loader -->
@@ -129,36 +132,35 @@
     <script defer async src="https://ajax.googleapis.com/ajax/libs/webfont/1.0.28/webfont.js"></script>
 
     <!-- Essential polyfills -->
-    <script src="/view/theme/mango/assets/js/mylibs/polyfills/modernizr-2.6.1.min.js"></script>
-    <script src="/view/theme/mango/assets/js/mylibs/polyfills/respond.js"></script>
-    <script src="/view/theme/mango/assets/js/mylibs/polyfills/matchmedia.js"></script>
-    <!--[if lt IE 9]><script src="/view/theme/mango/assets/js/mylibs/polyfills/selectivizr.js"></script><![endif]-->
-    <!--[if lt IE 10]><script src="/view/theme/mango/assets/js/mylibs/polyfills/excanvas.js"></script><![endif]-->
-    <!--[if lt IE 10]><script src="/view/theme/mango/assets/js/mylibs/polyfills/classlist.js"></script><![endif]-->
-
+    <script src="view/theme/mango/assets/js/mylibs/polyfills/modernizr-2.6.1.min.js"></script>
+    <script src="view/theme/mango/assets/js/mylibs/polyfills/respond.js"></script>
+    <script src="view/theme/mango/assets/js/mylibs/polyfills/matchmedia.js"></script>
+    <!--[if lt IE 9]><script src="view/theme/mango/assets/js/mylibs/polyfills/selectivizr.js"></script><![endif]-->
+    <!--[if lt IE 10]><script src="view/theme/mango/assets/js/mylibs/polyfills/excanvas.js"></script><![endif]-->
+    <!--[if lt IE 10]><script src="view/theme/mango/assets/js/mylibs/polyfills/classlist.js"></script><![endif]-->
 
 
     <!-- scripts concatenated and minified via build script -->
 
     <!-- Scripts required everywhere -->
-    <script src="/view/theme/mango/assets/js/mylibs/jquery.hashchange.js"></script>
-    <script src="/view/theme/mango/assets/js/mylibs/jquery.idle-timer.js"></script>
-    <script src="/view/theme/mango/assets/js/mylibs/jquery.plusplus.js"></script>
-    <script src="/view/theme/mango/assets/js/mylibs/jquery.scrollTo.js"></script>
-    <script src="/view/theme/mango/assets/js/mylibs/jquery.ui.touch-punch.js"></script>
-    <script src="/view/theme/mango/assets/js/mylibs/jquery.ui.multiaccordion.js"></script>
-    <script src="/view/theme/mango/assets/js/mylibs/number-functions.js"></script>
-    <script src="/view/theme/mango/assets/js/mylibs/fullstats/jquery.css-transform.js"></script>
-    <script src="/view/theme/mango/assets/js/mylibs/fullstats/jquery.animate-css-rotate-scale.js"></script>
-    <script src="/view/theme/mango/assets/js/mylibs/forms/jquery.validate.js"></script>
+    <script src="view/theme/mango/assets/js/mylibs/jquery.hashchange.js"></script>
+    <script src="view/theme/mango/assets/js/mylibs/jquery.idle-timer.js"></script>
+    <script src="view/theme/mango/assets/js/mylibs/jquery.plusplus.js"></script>
+    <script src="view/theme/mango/assets/js/mylibs/jquery.scrollTo.js"></script>
+    <script src="view/theme/mango/assets/js/mylibs/jquery.ui.touch-punch.js"></script>
+    <script src="view/theme/mango/assets/js/mylibs/jquery.ui.multiaccordion.js"></script>
+    <script src="view/theme/mango/assets/js/mylibs/number-functions.js"></script>
+    <script src="view/theme/mango/assets/js/mylibs/fullstats/jquery.css-transform.js"></script>
+    <script src="view/theme/mango/assets/js/mylibs/fullstats/jquery.animate-css-rotate-scale.js"></script>
+    <script src="view/theme/mango/assets/js/mylibs/forms/jquery.validate.js"></script>
 
     <!-- Do not touch! -->
-    <script src="/view/theme/mango/assets/js/mango.js"></script>
-    <script src="/view/theme/mango/assets/js/plugins.js"></script>
-    <script src="/view/theme/mango/assets/js/script.js"></script>
+    <script src="view/theme/mango/assets/js/mango.js"></script>
+    <script src="view/theme/mango/assets/js/plugins.js"></script>
+    <script src="view/theme/mango/assets/js/script.js"></script>
 
     <!-- Your custom JS goes here -->
-    <script src="/view/theme/mango/assets/js/app.js"></script>
+    <script src="view/theme/mango/assets/js/app.js"></script>
     <!-- end scripts -->
     <?php foreach ($scripts as $script) { ?>
     <script src="<?php echo $script; ?>" type="text/javascript"></script>
@@ -166,7 +168,6 @@
     <?php echo $google_analytics; ?>
 </head>
 <body class="<?php echo $class; ?>">
-
 <!-- ----------------- -->
 <!-- Some dialogs etc. -->
 
@@ -176,6 +177,7 @@
     <span>Loading...</span>
 </div>
 <!-- End of loading box -->
+<?php if ($logged) { ?>
 <!-- The lock screen -->
 <div id="lock-screen" title="Screen Locked">
 
@@ -186,7 +188,7 @@
 
     <div class="actions">
         <div id="slide_to_unlock">
-            <img src="/view/theme/mango/assets/img/elements/slide-unlock/lock-slider.png" alt="slide me">
+            <img src="view/theme/mango/assets/img/elements/slide-unlock/lock-slider.png" alt="slide me">
             <span>slide to unlock</span>
         </div>
         <form action="#" method="GET">
@@ -195,13 +197,14 @@
     </div><!-- End of .actions -->
 
 </div><!-- End of lock screen -->
+
 <!-- The settings dialog -->
 <div id="settings" class="settings-content" data-width=450>
 
     <ul class="tabs center-elements">
-        <li><a href="#settings-1"><img src="/view/theme/mango/assets/img/icons/packs/fugue/24x24/user-business.png" alt="" /><span>Account Settings</span></a></li>
-        <li><a href="#settings-2"><img src="/view/theme/mango/assets/img/icons/packs/fugue/24x24/balloon.png" alt="" /><span>Notifications</span></a></li>
-        <li><a href="#settings-3"><img src="/view/theme/mango/assets/img/icons/packs/fugue/24x24/credit-card.png" alt="" /><span>Invoicing</span></a></li>
+        <li><a href="#settings-1"><img src="view/theme/mango/assets/img/icons/packs/fugue/24x24/user-business.png" alt="" /><span>Account Settings</span></a></li>
+        <li><a href="#settings-2"><img src="view/theme/mango/assets/img/icons/packs/fugue/24x24/balloon.png" alt="" /><span>Notifications</span></a></li>
+        <li><a href="#settings-3"><img src="view/theme/mango/assets/img/icons/packs/fugue/24x24/credit-card.png" alt="" /><span>Invoicing</span></a></li>
     </ul>
 
     <div class="change_password">
@@ -232,7 +235,7 @@
                 <p>
                     <label for="settings-pw">Password: </label> <input class="grey change_password_button" type="button" id="settings-pw" value="Change Password..." data-lang-changed="Password changed" />
                 </p>
-                </for>
+                </form>
         </div><!-- End of #settings-1 -->
 
         <div id="settings-2">
@@ -370,7 +373,7 @@
     <div class="messages full chat">
 
         <div class="msg reply">
-            <img src="/view/theme/mango/assets/img/icons/packs/iconsweets2/25x25/user-2.png"/>
+            <img src="view/theme/mango/assets/img/icons/packs/iconsweets2/25x25/user-2.png"/>
             <div class="content">
                 <h3><a href="pages_profile.html">John Doe</a> <span>says:</span><small>3 hours ago</small></h3>
                 <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
@@ -379,7 +382,7 @@
         </div>
 
         <div class="msg">
-            <img src="/view/theme/mango/assets/img/icons/packs/iconsweets2/25x25/user-2.png"/>
+            <img src="view/theme/mango/assets/img/icons/packs/iconsweets2/25x25/user-2.png"/>
             <div class="content">
                 <h3><a href="pages_profile.html">Peter Doe</a> <span>says:</span><small>5 hours ago</small></h3>
                 <p>At vero eos et accusam et justo duo dolores et ea rebum.
@@ -461,7 +464,7 @@
 
                                 <li>
                                     <div class="avatar">
-                                        <img src="/view/theme/mango/assets/img/elements/mail/avatar.png" height=40 width=40/>
+                                        <img src="view/theme/mango/assets/img/elements/mail/avatar.png" height=40 width=40/>
                                     </div>
                                     <div class="info">
                                         <strong>John Doe</strong>
@@ -481,7 +484,7 @@
 
                                 <li>
                                     <div class="avatar">
-                                        <img src="/view/theme/mango/assets/img/elements/mail/mail.png" height=40 width=40/>
+                                        <img src="view/theme/mango/assets/img/elements/mail/mail.png" height=40 width=40/>
                                     </div>
                                     <div class="info">
                                         <strong>System</strong>
@@ -501,7 +504,7 @@
 
                                 <li>
                                     <div class="avatar">
-                                        <img src="/view/theme/mango/assets/img/elements/mail/mail.png" height=40 width=40/>
+                                        <img src="view/theme/mango/assets/img/elements/mail/mail.png" height=40 width=40/>
                                     </div>
                                     <div class="info">
                                         <strong>Stranger</strong>
@@ -550,7 +553,7 @@
 
     <!-- Your logos -->
     <a href="<?php echo $home?>"><img src="<?php echo $logo?>" alt="Mango" width="300" height="60"></a>
-    <a class="phone-title" href="dashboard.html"><img src="/view/theme/mango/assets/img/logo-mobile.png" alt="Mango" height="22" width="70" /></a>
+    <a class="phone-title" href="dashboard.html"><img src="view/theme/mango/assets/img/logo-mobile.png" alt="Mango" height="22" width="70" /></a>
 
     <div class="buttons">
         <a href="statistics.html">
@@ -575,7 +578,7 @@
 <section class="toolbar">
     <div class="user">
         <div class="avatar">
-            <img src="/view/theme/mango/assets/img/layout/content/toolbar/user/avatar.png">
+            <img src="view/theme/mango/assets/img/layout/content/toolbar/user/avatar.png">
             <span>3</span>
         </div>
         <span>Administrator</span>
@@ -713,497 +716,4 @@
 
     <input type="search" data-source="extras/search.php" placeholder="Search..." autocomplete="off" class="tooltip" title="e.g. Peach" data-gravity=s>
 </section><!-- End of .toolbar-->
-
-<!-- The sidebar -->
-<aside>
-    <div class="top">
-
-
-        <!-- Navigation -->
-        <nav><ul class="collapsible accordion">
-
-                <li class="current"><a href="dashboard.html"><img src="/view/theme/mango/assets/img/icons/packs/fugue/16x16/dashboard.png" alt="" height=16 width=16>Dashboard</a></li>
-
-                <li>
-                    <a href="javascript:void(0);"><img src="/view/theme/mango/assets/img/icons/packs/fugue/16x16/ui-layered-pane.png" alt="" height=16 width=16>UI Widgets<span class="badge">4</span></a>
-                    <ul>
-                        <li><a href="ui_general.html"><span class="icon icon-list"></span>General</a></li>
-                        <li><a href="ui_extras.html"><span class="icon icon-cog"></span>Extras</a></li>
-                        <li><a href="ui_icons.html"><span class="icon icon-picture"></span>Icons</a></li>
-                        <li><a href="ui_grid.html"><span class="icon icon-th"></span>Grid</a></li>
-                    </ul>
-                </li>
-
-                <li>
-                    <a href="javascript:void(0);"><img src="/view/theme/mango/assets/img/icons/packs/fugue/16x16/application-form.png" alt="" height=16 width=16>Form Elements</a>
-                    <ul>
-                        <li><a href="forms.html"><span class="icon icon-list-alt"></span>General</a></li>
-                        <li><a href="forms_validation.html"><span class="icon icon-warning-sign"></span>Validation</a></li>
-                        <li><a href="forms_extras.html"><span class="icon icon-magic"></span>Fileuploader &amp; Wizard</a></li>
-                    </ul>
-                </li>
-
-                <li>
-                    <a href="javascript:void(0);"><img src="/view/theme/mango/assets/img/icons/packs/fugue/16x16/chart.png" alt="" height=16 width=16>Statistics / Charts<span class="badge">2</span></a>
-                    <ul>
-                        <li><a href="statistics.html"><span class="icon icon-sitemap"></span>Statistics Elements</a></li>
-                        <li><a href="charts.html"><span class="icon icon-bar-chart"></span>Charts</a></li>
-                    </ul>
-                </li>
-
-                <li>
-                    <a href="javascript:void(0);"><img src="/view/theme/mango/assets/img/icons/packs/fugue/16x16/table.png" alt="" height=16 width=16>Tables</a>
-                    <ul>
-                        <li><a href="tables_static.html"><span class="icon icon-check-empty"></span>Static</a></li>
-                        <li><a href="tables_dynamic.html"><span class="icon icon-table"></span>Dynamic</a></li>
-                        <li><a href="tables_full.html"><span class="icon icon-fullscreen"></span>Full</a></li>
-                    </ul>
-                </li>
-
-                <li>
-                    <a href="javascript:void(0);"><img src="/view/theme/mango/assets/img/icons/packs/fugue/16x16/document-horizontal.png" alt="" height=16 width=16>Other Pages</a>
-                    <ul>
-                        <li><a href="login.html">Login</a></li>
-                        <li><a href="pages_profile.html">Profile</a></li>
-                        <li><a href="pages_invoice.html">Invoice<span class="badge grey">1 open</span></a></li>
-                        <li><a href="pages_faq.html">FAQ</a></li>
-                        <li><a href="pages_search.html">Search</a></li>
-                        <li><a href="pages_error_404.html">Error Page (404)</a></li>
-                    </ul>
-                </li>
-
-            </ul></nav><!-- End of nav -->
-
-    </div><!-- End of .top -->
-
-    <div class="bottom sticky">
-        <div class="divider"></div>
-        <div class="progress">
-            <div class="bar" data-title="Space" data-value="1285" data-max="5120" data-format="0,0 MB"></div>
-            <div class="bar" data-title="Traffic" data-value="8.61" data-max="14" data-format="0.00 GB"></div>
-            <div class="bar" data-title="Budget" data-value="20000" data-max="20000" data-format="$0,0"></div>
-        </div>
-        <div class="divider"></div>
-        <div class="buttons">
-            <a href="javascript:void(0);" class="button grey open-add-client-dialog">Add New Client</a>
-            <a href="javascript:void(0);" class="button grey open-add-client-dialog">Open a Ticket</a>
-        </div>
-    </div><!-- End of .bottom -->
-
-</aside><!-- End of sidebar -->
-
-<!-- Here goes the content. -->
-<section id="content" class="container_12 clearfix" data-sort=true>
-<ul class="stats not-on-phone">
-    <li>
-        <strong>61263</strong>
-        <small>Total Visits</small>
-        <span class=green>+26%</span>
-    </li>
-    <li>
-        <strong>23</strong>
-        <small>Orders</small>
-        <span class=green>+16%</span>
-    </li>
-    <li>
-        <strong>$2165.57</strong>
-        <small>Total Volume</small>
-        <span class=red>-8%</span>
-    </li>
-    <li>
-        <strong>0</strong>
-        <small>Overdue Tickets</small>
-        <span>0%</span>
-    </li>
-    <li>
-        <strong>7</strong>
-        <small>Reported Bugs</small>
-        <span class=red>+17%</span>
-    </li>
-</ul><!-- End of ul.stats -->
-
-<h1 class="grid_12 margin-top no-margin-top-phone">Dashboard</h1>
-
-<div class="grid_12 center-elements">
-    <div class="full-stats">
-        <div class="stat minichart" data-total=16525 data-values="[4,6,7,7,4,3,2,1,4]" data-title=Visits data-format="+0,0;-0,0" data-change=22></div>
-    </div>
-    <div class="full-stats">
-        <div class="stat minichart" data-total=-17 data-values="[2,5,8,7,3,0,-1,-2,-4]" data-title=Users data-format="+0,0;-0,0" data-change=-6></div>
-    </div>
-    <div class="full-stats">
-        <div class="stat minichart" data-total=0 data-values="[0,0,0,1,2,1,-2,-2,-1]" data-title=Orders data-change=0></div>
-    </div>
-</div>
-
-<div class="grid_12">
-    <div class="box">
-
-        <div class="header">
-            <h2><img class="icon" src="/view/theme/mango/assets/img/icons/packs/fugue/16x16/chart-up-color.png">Charts</h2>
-
-            <a href="javascript:void(0);" class="menu icon-cog"></a>
-            <menu>
-                <a href="javascript:void(0);" class="open-add-client-dialog"><span class="icon icon-plus"></span>Add Client</a>
-                <a href="javascript:void(0);"><div class="icon icon-pencil"></div>Edit</a>
-                <a href="javascript:void(0);"><div class="icon icon-remove"></div>Remove</a>
-            </menu>
-        </div>
-
-        <div class="content" style="height: 250px;">
-            <table class=chart >
-                <thead>
-                <tr>
-                    <th></th>
-                    <th>Label 1</th>
-                    <th>Label 2</th>
-                    <th>Label 3</th>
-                    <th>Label 4</th>
-                    <th>Label 5</th>
-                    <th>Label 6</th>
-                    <th>Label 7</th>
-                    <th>Label 8</th>
-                    <th>Label 9</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th>First Label</th>
-                    <td>48</td>
-                    <td>125</td>
-                    <td>159</td>
-                    <td>147</td>
-                    <td>154</td>
-                    <td>114</td>
-                    <td>163</td>
-                    <td>122</td>
-                    <td>96</td>
-                </tr>
-                <tr>
-                    <th>Second Label</th>
-                    <td>8</td>
-                    <td>27</td>
-                    <td>0</td>
-                    <td>79</td>
-                    <td>47</td>
-                    <td>59</td>
-                    <td>80</td>
-                    <td>30</td>
-                    <td>70</td>
-                </tr>
-                <tr>
-                    <th>Third Label</th>
-                    <td>28</td>
-                    <td>56</td>
-                    <td>98</td>
-                    <td>112</td>
-                    <td>87</td>
-                    <td>26</td>
-                    <td>38</td>
-                    <td>110</td>
-                    <td>20</td>
-                </tr>
-                <tr>
-                    <th>Fourth Label</th>
-                    <td>38</td>
-                    <td>43</td>
-                    <td>69</td>
-                    <td>54</td>
-                    <td>16</td>
-                    <td>16</td>
-                    <td>202</td>
-                    <td>20</td>
-                    <td>73</td>
-                </tr>
-                </tbody>
-            </table>
-        </div><!-- End of .content -->
-
-    </div><!-- End of .box -->
-</div><!-- End of .grid_12 -->
-
-<div class="grid_6">
-
-    <div class="box">
-
-        <div class="header">
-            <h2><img class="icon" src="/view/theme/mango/assets/img/icons/packs/fugue/16x16/receipt-invoice.png">Invoices statistics</h2>
-        </div>
-
-        <div class="content">
-            <div class="spacer"></div>
-            <div class="full-stats">
-                <div class="stat hlist" data-list='[{"val":17621,"format":"$0,0;-$0,0","title":"already paid","color":"green"},{"val":1125,"format":"$0,0;-$0,0","title":"not paid yet","color":"red"},{"val":18746,"format":"$0,0;-$0,0","title":"total taxes"}]' data-flexiwidth=true></div>
-            </div>
-            <div class="clearfix"></div>
-            <div class="ui-progressbar" data-value=90 data-showtitle=percentage data-color=blue data-showvalue=true></div>
-        </div><!-- End of .content -->
-
-        <div class="actions">
-            <div class="left">
-                <a href="#" class="button grey">Print invoices</a>
-            </div>
-            <div class="right">
-                <a href="#" class="button">Generate report</a>
-            </div>
-        </div><!-- End of .actions -->
-
-    </div><!-- End of .box -->
-
-    <form class="box validate">
-
-        <div class="header">
-            <h2><img class="icon" src="/view/theme/mango/assets/img/icons/packs/fugue/16x16/newspaper.png">Messages</h2>
-        </div>
-
-        <div class="content">
-            <div class="spacer"></div>
-            <div class="messages full chat">
-
-                <div class="msg reply">
-                    <img src="/view/theme/mango/assets/img/icons/packs/iconsweets2/25x25/user-2.png"/>
-                    <div class="content">
-                        <h3><a href="pages_profile.html">John Doe</a> <span>says:</span><small>3 hours ago</small></h3>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
-                            et dolore magna aliquyam erat, sed diam voluptua.</p>
-                    </div>
-                </div>
-
-                <div class="msg">
-                    <img src="/view/theme/mango/assets/img/icons/packs/iconsweets2/25x25/user-2.png"/>
-                    <div class="content">
-                        <h3><a href="pages_profile.html">Peter Doe</a> <span>says:</span><small>5 hours ago</small></h3>
-                        <p>At vero eos et accusam et justo duo dolores et ea rebum.
-                            Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                    </div>
-                </div>
-
-            </div>
-        </div><!-- End of .content -->
-
-        <div class="actions">
-            <div class="left">
-                <label for="fb_pin" class=inline >Message to John Doe:</label>
-                <input type="text" class=required name=fb_pin id=fb_pin />
-            </div>
-            <div class="right">
-                <input type="reset" value="Cancel" class="grey" />
-                <input type="submit" value="Send" name=send />
-            </div>
-        </div><!-- End of .actions -->
-
-    </form><!-- End of .box -->
-</div><!-- End of .grid_6 -->
-
-<div class="grid_6">
-    <div class="box">
-
-        <div class="header">
-            <h2><img class="icon" src="/view/theme/mango/assets/img/icons/packs/fugue/16x16/calendar-select.png">Calendar</h2>
-        </div>
-        <div class="content calendar demo"></div>
-
-        <script>
-            // - Calendar Demo
-            $$.registry.calendar(function() {
-                var date = new Date();
-                var d = date.getDate();
-                var m = date.getMonth();
-                var y = date.getFullYear();
-
-                $('.calendar.demo').fullCalendar({
-                    editable: true,
-                    events: [
-                        {
-                            title: 'All Day Event',
-                            start: new Date(y, m, 1)
-                        },
-                        {
-                            title: 'Long Event',
-                            start: new Date(y, m, d-5),
-                            end: new Date(y, m, d-2)
-                        },
-                        {
-                            id: 999,
-                            title: 'Repeating Event',
-                            start: new Date(y, m, d-3, 16, 0),
-                            allDay: false
-                        },
-                        {
-                            id: 999,
-                            title: 'Repeating Event',
-                            start: new Date(y, m, d+4, 16, 0),
-                            allDay: false
-                        },
-                        {
-                            title: 'Meeting',
-                            start: new Date(y, m, d, 10, 30),
-                            allDay: false
-                        },
-                        {
-                            title: 'Lunch',
-                            start: new Date(y, m, d, 12, 0),
-                            end: new Date(y, m, d, 14, 0),
-                            allDay: false
-                        },
-                        {
-                            title: 'Birthday Party',
-                            start: new Date(y, m, d+1, 19, 0),
-                            end: new Date(y, m, d+1, 22, 30),
-                            allDay: false
-                        },
-                        {
-                            title: 'Click for Google',
-                            start: new Date(y, m, 28),
-                            end: new Date(y, m, 29),
-                            url: 'http://google.com/'
-                        }
-                    ]
-                });
-            });
-        </script>
-
-    </div>
-</div><!-- End of .grid_6 -->
-
-<div class="grid_12">
-    <div class="box">
-
-        <div class="header">
-            <h2><img class="icon" src="/view/theme/mango/assets/img/icons/packs/fugue/16x16/table.png">Table</h2>
-        </div>
-
-        <div class="content">
-            <div class="tabletools">
-                <div class="left">
-                    <a class="open-add-client-dialog" href="javascript:void(0);"><i class="icon-plus"></i>New Client</a>
-                </div>
-                <div class="right">
-                </div>
-            </div>
-            <table class="dynamic styled" data-table-tools='{"display":true}'> <!-- OPTIONAL: with-prev-next -->
-                <thead>
-                <tr>
-                    <th>Rendering engine</th>
-                    <th>Browser</th>
-                    <th>Platform(s)</th>
-                    <th>Engine version</th>
-                    <th>CSS grade</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr class="gradeX">
-                    <td>Trident</td>
-                    <td>Internet
-                        Explorer 4.0</td>
-                    <td>Win 95+</td>
-                    <td class="center">4</td>
-                    <td class="center">X</td>
-                </tr>
-                <tr class="gradeC">
-                    <td>Trident</td>
-                    <td>Internet
-                        Explorer 5.0</td>
-                    <td>Win 95+</td>
-                    <td class="center">5</td>
-                    <td class="center">C</td>
-                </tr>
-                <tr class="gradeA">
-                    <td>Trident</td>
-                    <td>Internet
-                        Explorer 5.5</td>
-                    <td>Win 95+</td>
-                    <td class="center">5.5</td>
-                    <td class="center">A</td>
-                </tr>
-                <tr class="gradeA">
-                    <td>Trident</td>
-                    <td>Internet
-                        Explorer 6</td>
-                    <td>Win 98+</td>
-                    <td class="center">6</td>
-                    <td class="center">A</td>
-                </tr>
-                <tr class="gradeA">
-                    <td>Trident</td>
-                    <td>Internet Explorer 7</td>
-                    <td>Win XP SP2+</td>
-                    <td class="center">7</td>
-                    <td class="center">A</td>
-                </tr>
-                <tr class="gradeA">
-                    <td>Trident</td>
-                    <td>AOL browser (AOL desktop)</td>
-                    <td>Win XP</td>
-                    <td class="center">6</td>
-                    <td class="center">A</td>
-                </tr>
-                <tr class="gradeA">
-                    <td>Gecko</td>
-                    <td>Firefox 1.0</td>
-                    <td>Win 98+ / OSX.2+</td>
-                    <td class="center">1.7</td>
-                    <td class="center">A</td>
-                </tr>
-                <tr class="gradeA">
-                    <td>Gecko</td>
-                    <td>Firefox 1.5</td>
-                    <td>Win 98+ / OSX.2+</td>
-                    <td class="center">1.8</td>
-                    <td class="center">A</td>
-                </tr>
-                <tr class="gradeA">
-                    <td>Gecko</td>
-                    <td>Firefox 2.0</td>
-                    <td>Win 98+ / OSX.2+</td>
-                    <td class="center">1.8</td>
-                    <td class="center">A</td>
-                </tr>
-                <tr class="gradeA">
-                    <td>Gecko</td>
-                    <td>Firefox 3.0</td>
-                    <td>Win 2k+ / OSX.3+</td>
-                    <td class="center">1.9</td>
-                    <td class="center">A</td>
-                </tr>
-                <tr class="gradeA">
-                    <td>Gecko</td>
-                    <td>Camino 1.0</td>
-                    <td>OSX.2+</td>
-                    <td class="center">1.8</td>
-                    <td class="center">A</td>
-                </tr>
-                </tbody>
-            </table>
-        </div><!-- End of .content -->
-
-    </div><!-- End of .box -->
-</div><!-- End of .grid_12 -->
-
-
-</section><!-- End of #content -->
-
-</div><!-- End of #main -->
-<!-- The footer -->
-<footer class="container_12">
-    <ul class="grid_6">
-        <li><a href="#">About</a></li>
-        <li><a href="#">Jobs</a></li>
-    </ul>
-
-		<span class="grid_6">
-			Copyright &copy; 2012 YourCompany
-		</span>
-</footer><!-- End of footer -->
-
-<!-- Spawn $$.loaded -->
-<script>
-    $$.loaded();
-</script>
-
-<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
-   chromium.org/developers/how-tos/chrome-frame-getting-started -->
-<!--[if lt IE 7 ]>
-<script defer src=http://ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-<script defer>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
-<![endif]-->
+    <?php } ?>
