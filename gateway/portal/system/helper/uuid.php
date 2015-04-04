@@ -169,6 +169,7 @@ class UUID {
             $final_id = '';
             $letters_lower = 'abcdefghijklmnopqrstuvwxyz';
             $letters_upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+	        $number = '1234567890';
             $the_format = preg_split('//', $format, -1, PREG_SPLIT_NO_EMPTY);
             foreach ($the_format as $aLetter) {
                 if ($aLetter == "l") {

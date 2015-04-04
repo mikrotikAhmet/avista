@@ -43,7 +43,7 @@ define('DB_DRIVER', 'mysqli');
 define('DB_HOSTNAME', 'localhost');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', 'ahm671et');
-define('DB_DATABASE', 'avista');
+define('DB_DATABASE', 'avista_ebanking');
 define('DB_PREFIX', 'engine4_');
 
 //End of file config.php 

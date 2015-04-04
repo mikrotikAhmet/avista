@@ -69,8 +69,9 @@ class ControllerCommonHeader extends Controller {
 		$data['text_login'] = $this->language->get('text_login');
 		$data['text_logout'] = $this->language->get('text_logout');
 		$data['text_all'] = $this->language->get('text_all');
+		$data['text_logged'] = sprintf($this->language->get('text_logged'),$this->customer->getFirstName().' '.$this->customer->getLastName());
 
-		$data['home'] = $this->url->link('common/home');
+		$data['home'] = $this->url->link('account/dashboard');
 		$data['logged'] = $this->customer->isLogged();
 		$data['register'] = $this->url->link('account/register', '', 'SSL');
 		$data['logout'] = $this->url->link('account/logout', '', 'SSL');
@@ -108,6 +109,8 @@ class ControllerCommonHeader extends Controller {
 		} else {
 			$data['class'] = 'common-home';
 		}
+
+		$data['column_left'] = $this->load->controller('common/column_left');
 
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/header.tpl')) {
 			return $this->load->view($this->config->get('config_template') . '/template/common/header.tpl', $data);

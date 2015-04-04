@@ -32,6 +32,8 @@ class ControllerAccountLogin extends Controller {
 
 	public function index() {
 
+		unset($this->session->data['acv_nc']);
+
 		$this->load->model('account/customer');
 
 		// Login override for admin users
@@ -191,6 +193,12 @@ class ControllerAccountLogin extends Controller {
 	protected function validate() {
 		if (!$this->customer->login($this->request->post['email'], $this->request->post['password'])) {
 			$this->error['warning'] = $this->language->get('error_login');
+		}
+
+		$customer_info = $this->model_account_customer->getCustomerByEmail($this->request->post['email']);
+
+		if ($customer_info && !$customer_info['approved']) {
+			$this->error['warning'] = $this->language->get('error_approved');
 		}
 
 		if (!$this->error) {

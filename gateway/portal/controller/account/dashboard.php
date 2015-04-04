@@ -36,5 +36,40 @@ class ControllerAccountDashboard extends Controller {
 
 			$this->response->redirect($this->url->link('account/login', '', 'SSL'));
 		}
+
+		$this->load->language('account/dashboard');
+
+		$this->document->setTitle($this->language->get('heading_title'));
+
+		$this->document->setTitle($this->config->get('config_meta_title'));
+		$this->document->setDescription($this->config->get('config_meta_description'));
+		$this->document->setKeywords($this->config->get('config_meta_keyword'));
+
+		if (isset($this->request->get['route'])) {
+			$this->document->addLink(HTTP_SERVER, 'canonical');
+		}
+
+		$data['breadcrumbs'] = array();
+
+		$data['breadcrumbs'][] = array(
+			'text'      => $this->language->get('heading_title'),
+			'href'      => $this->url->link('account/dashboard'),
+			'separator' => false
+		);
+
+		$data['heading_title'] = $this->language->get('heading_title');
+
+		$data['text_approval_request'] = sprintf($this->language->get('text_approval_request'),$this->url->link('account/account','','SSL'));
+
+
+		$data['column_left'] = $this->load->controller('common/column_left');
+		$data['footer'] = $this->load->controller('common/footer');
+		$data['header'] = $this->load->controller('common/header');
+
+		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/account/dashboard.tpl')) {
+			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/account/dashboard.tpl', $data));
+		} else {
+			$this->response->setOutput($this->load->view('default/template/account/dashboard.tpl', $data));
+		}
 	}
 } 
