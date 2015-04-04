@@ -59,6 +59,31 @@ class ControllerAccountAccount extends Controller {
 
 		$data['heading_title'] = $this->language->get('heading_title');
 
+		$data['entry_language'] = $this->language->get('entry_language');
+
+		$customer_data = array();
+
+		$this->load->model('account/customer');
+
+		$customer_data = $this->model_account_customer->getCustomer($this->customer->getId());
+
+		$this->load->model('localisation/language');
+		$language_data = $this->model_localisation_language->getLanguage($customer_data['language_id']);
+
+		if (isset($this->request->post['language_id'])) {
+			$data['language_id'] = $this->request->post['language_id'];
+		} elseif (isset($this->session->data['acv_nc'])) {
+			$data['language_id'] = $this->session->data['acv_nc']['language_id'];
+		} else {
+			$data['language_id'] = $this->config->get('config_language_id');
+		}
+
+		$data['current_language'] = $language_data['name'];
+
+		$this->load->model('localisation/language');
+
+		$data['languages'] = $this->model_localisation_language->getLanguages();
+
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
