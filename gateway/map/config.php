@@ -15,12 +15,12 @@
 
 // HTTP
 define('HTTP_SERVER', 'http://'.$_SERVER['HTTP_HOST'].'/');
-define('HTTP_PORTAL', 'http://'.$_SERVER['HTTP_HOST'].'/');
+define('HTTP_PORTAL', 'http://'.$_SERVER['HTTP_HOST'].'/portal/');
 define('HTTP_IMAGE', 'http://'.$_SERVER['HTTP_HOST'].'/map/');
 
 // HTTPS
 define('HTTPS_SERVER', 'https://'.$_SERVER['HTTP_HOST'].'/');
-define('HTTPS_PORTAL', 'https://'.$_SERVER['HTTP_HOST'].'/');
+define('HTTPS_PORTAL', 'https://'.$_SERVER['HTTP_HOST'].'/portal/');
 define('HTTPS_IMAGE', 'https://'.$_SERVER['HTTP_HOST'].'/map/');
 
 // DIR
@@ -41,7 +41,7 @@ define('DB_DRIVER', 'mysqli');
 define('DB_HOSTNAME', 'localhost');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', 'ahm671et');
-define('DB_DATABASE', 'avista');
+define('DB_DATABASE', 'avista_ebanking');
 define('DB_PREFIX', 'engine4_');
 
 //End of file config.php 

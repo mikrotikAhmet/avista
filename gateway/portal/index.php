@@ -12,7 +12,6 @@
  */
 // ------------------------------------------------------------------------
 
-
 // Version
 define('VERSION', '2.0.0.0');
 
@@ -255,14 +254,15 @@ foreach ($query->rows as $result) {
 // Front Controller
 $controller = new Front($registry);
 
+
 // Maintenance Mode
-$controller->addPreAction(new Action('common/maintenance'));
+//$controller->addPreAction(new Action('common/maintenance'));
 
 // Router
 if (isset($request->get['route'])) {
     $action = new Action($request->get['route']);
 } else {
-    $action = new Action('common/dashboard');
+    $action = new Action('account/dashboard');
 }
 
 // Dispatch

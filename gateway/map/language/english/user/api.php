@@ -1,23 +1,26 @@
 <?php
 /**
- *
- * Semite ADP (Application Development Program) for PHP 5.1.6 or newer
- *
- * @package		Open Gateway Core Processor Application
- * @author		Semite LLC. Dev Team
- * @copyright	Copyright (c) 2008 - 2015, Semite LLC.
- * @license		http://www.semitepayment.com/user_guide/license.html
- * @link		http://www.semitepayment.com
- * @version		Version 1.0.1
+ * Created by PhpStorm.
+ * User: root
+ * Date: 4/4/15
+ * Time: 1:51 PM
  */
-// ------------------------------------------------------------------------
-
-
+/**
+ * @package     Semite LLC avista
+ * @version     api.php 4/4/15 root
+ * @copyright   Copyright (c) 2014 Semite LLC .
+ * @license     http://www.semitepayment.com/license/
+ */
+/**
+ * Description of api.php
+ *
+ * @author root
+ */
 // Heading
-$_['heading_title']        = 'APIs';
+$_['heading_title']        = 'API\'s';
 
 // Text
-$_['text_success']         = 'Success: You have modified APIs!';
+$_['text_success']         = 'Success: You have modified API\'s!';
 $_['text_list']            = 'API List';
 $_['text_add']             = 'Add API';
 $_['text_edit']            = 'Edit API';
@@ -35,8 +38,6 @@ $_['entry_password']       = 'Password';
 $_['entry_status']         = 'Status';
 
 // Error
-$_['error_permission']     = 'Warning: You do not have permission to modify APIs!';
+$_['error_permission']     = 'Warning: You do not have permission to modify API\'s!';
 $_['error_username']       = 'Username must be between 3 and 20 characters!';
 $_['error_password']       = 'API password must be between 3 and 256 characters!';
-
-//End of file api.php 

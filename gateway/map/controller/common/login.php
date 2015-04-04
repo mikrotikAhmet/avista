@@ -1,186 +1,183 @@
 <?php
-
-
-
 if (!defined('DIR_APPLICATION'))
-    exit('No direct script access allowed');
+	exit('No direct script access allowed');
+	
+/**
+ * Created by PhpStorm.
+ * User: root
+ * Date: 4/4/15
+ * Time: 11:23 AM
+ */
 
 /**
+ * Smatsa Question Bank
  *
- * Semite ADP (Application Development Program) for PHP 5.1.6 or newer
- *
- * @package		Open Gateway Core Application
- * @author		Semite LLC. Dev Team
- * @copyright	Copyright (c) 2008 - 2015, Semite LLC.
- * @license		http://www.semitepayment.com/user_guide/license.html
- * @link		http://www.semitepayment.com
- * @version		Version 1.0.1
+ * @category   PhpStorm
+ * @package    smatsa
+ * @copyright  Copyright 2009-2014 Semite d.o.o. Developments
+ * @license    http://www.semitepayment.com/license/
+ * @version    home.php 10/22/14 ahmet $
+ * @author     Ahmet GOUDENOGLU <ahmet.gudenoglu@semitepayment.com>
  */
-// ------------------------------------------------------------------------
+
+/**
+ * @category   PhpStorm
+ * @package    smatsa
+ * @copyright  Copyright 2009-2014 Semite d.o.o. Developments
+ * @license    http://www.semitepayment.com/license/
+ */
 
 class ControllerCommonLogin extends Controller {
-    private $error = array();
+	private $error = array();
 
-    public function index() {
+	public function index() {
+		$this->load->language('common/login');
 
-        // Set Page related.js and .css files
-        //CSS
-        $this->document->addStyle('map/view/css/plugins/icheck/all.css');
-        // JS
-        $this->document->addScript('map/view/js/plugins/validation/jquery.validate.min.js');
-        $this->document->addScript('map/view/js/plugins/validation/additional-methods.min.js');
-        $this->document->addScript('map/view/js/plugins/icheck/jquery.icheck.min.js');
+		$this->document->setTitle($this->language->get('heading_title'));
 
-        $this->load->language('common/login');
+		if ($this->user->isLogged() && isset($this->request->get['token']) && ($this->request->get['token'] == $this->session->data['token'])) {
+			$this->response->redirect($this->url->link('common/dashboard', 'token=' . $this->session->data['token'], 'SSL'));
+		}
 
-        $this->document->setTitle($this->language->get('heading_title'));
+		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
+			$this->session->data['token'] = md5(mt_rand());
 
-        if ($this->user->isLogged() && isset($this->request->get['token']) && ($this->request->get['token'] == $this->session->data['token'])) {
-            $this->response->redirect($this->url->link('common/dashboard', 'token=' . $this->session->data['token'], 'SSL'));
-        }
+			if (isset($this->request->post['redirect']) && (strpos($this->request->post['redirect'], HTTP_SERVER) === 0 || strpos($this->request->post['redirect'], HTTPS_SERVER) === 0 )) {
+				$this->response->redirect($this->request->post['redirect'] . '&token=' . $this->session->data['token']);
+			} else {
+				$this->response->redirect($this->url->link('common/dashboard', 'token=' . $this->session->data['token'], 'SSL'));
+			}
+		}
 
-        if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
-            $this->session->data['token'] = md5(mt_rand());
+		$data['heading_title'] = $this->language->get('heading_title');
 
-            if (isset($this->request->post['redirect']) && (strpos($this->request->post['redirect'], HTTP_SERVER) === 0 || strpos($this->request->post['redirect'], HTTPS_SERVER) === 0 )) {
-                $this->response->redirect($this->request->post['redirect'] . '&token=' . $this->session->data['token']);
-            } else {
-                $this->response->redirect($this->url->link('common/dashboard', 'token=' . $this->session->data['token'], 'SSL'));
-            }
-        }
+		$data['text_login'] = $this->language->get('text_login');
+		$data['text_forgotten'] = $this->language->get('text_forgotten');
 
-        $data['heading_title'] = $this->language->get('heading_title');
+		$data['entry_username'] = $this->language->get('entry_username');
+		$data['entry_password'] = $this->language->get('entry_password');
 
-        $data['text_login'] = $this->language->get('text_login');
-        $data['text_forgotten'] = $this->language->get('text_forgotten');
+		$data['button_login'] = $this->language->get('button_login');
 
-        $data['entry_username'] = $this->language->get('entry_username');
-        $data['entry_password'] = $this->language->get('entry_password');
+		if ((isset($this->session->data['token']) && !isset($this->request->get['token'])) || ((isset($this->request->get['token']) && (isset($this->session->data['token']) && ($this->request->get['token'] != $this->session->data['token']))))) {
+			$this->error['warning'] = $this->language->get('error_token');
+		}
 
-        $data['button_login'] = $this->language->get('button_login');
+		if (isset($this->error['warning'])) {
+			$data['error_warning'] = $this->error['warning'];
+		} else {
+			$data['error_warning'] = '';
+		}
 
-        $data['home'] = $this->url->link('common/login', '', 'SSL');
+		if (isset($this->session->data['success'])) {
+			$data['success'] = $this->session->data['success'];
 
-        if ((isset($this->session->data['token']) && !isset($this->request->get['token'])) || ((isset($this->request->get['token']) && (isset($this->session->data['token']) && ($this->request->get['token'] != $this->session->data['token']))))) {
-            $this->error['warning'] = $this->language->get('error_token');
-        }
+			unset($this->session->data['success']);
+		} else {
+			$data['success'] = '';
+		}
 
-        if (isset($this->error['warning'])) {
-            $data['error_warning'] = $this->error['warning'];
-        } else {
-            $data['error_warning'] = '';
-        }
+		$data['action'] = $this->url->link('common/login', '', 'SSL');
 
-        if (isset($this->session->data['success'])) {
-            $data['success'] = $this->session->data['success'];
+		if (isset($this->request->post['username'])) {
+			$data['username'] = $this->request->post['username'];
+		} else {
+			$data['username'] = '';
+		}
 
-            unset($this->session->data['success']);
-        } else {
-            $data['success'] = '';
-        }
+		if (isset($this->request->post['password'])) {
+			$data['password'] = $this->request->post['password'];
+		} else {
+			$data['password'] = '';
+		}
 
-        $data['action'] = $this->url->link('common/login', '', 'SSL');
+		if (isset($this->request->get['route'])) {
+			$route = $this->request->get['route'];
 
-        if (isset($this->request->post['username'])) {
-            $data['username'] = $this->request->post['username'];
-        } else {
-            $data['username'] = '';
-        }
+			unset($this->request->get['route']);
+			unset($this->request->get['token']);
 
-        if (isset($this->request->post['password'])) {
-            $data['password'] = $this->request->post['password'];
-        } else {
-            $data['password'] = '';
-        }
+			$url = '';
 
-        if (isset($this->request->get['route'])) {
-            $route = $this->request->get['route'];
+			if ($this->request->get) {
+				$url .= http_build_query($this->request->get);
+			}
 
-            unset($this->request->get['route']);
-            unset($this->request->get['token']);
+			$data['redirect'] = $this->url->link($route, $url, 'SSL');
+		} else {
+			$data['redirect'] = '';
+		}
 
-            $url = '';
+		if ($this->config->get('config_password')) {
+			$data['forgotten'] = $this->url->link('common/forgotten', '', 'SSL');
+		} else {
+			$data['forgotten'] = '';
+		}
 
-            if ($this->request->get) {
-                $url .= http_build_query($this->request->get);
-            }
+		$data['header'] = $this->load->controller('common/header');
+		$data['footer'] = $this->load->controller('common/footer');
 
-            $data['redirect'] = $this->url->link($route, $url, 'SSL');
-        } else {
-            $data['redirect'] = '';
-        }
+		$this->response->setOutput($this->load->view('common/login.tpl', $data));
+	}
 
-        if ($this->config->get('config_password')) {
-            $data['forgotten'] = $this->url->link('common/forgotten', '', 'SSL');
-        } else {
-            $data['forgotten'] = '';
-        }
+	protected function validate() {
+		if (!isset($this->request->post['username']) || !isset($this->request->post['password']) || !$this->user->login($this->request->post['username'], $this->request->post['password'])) {
+			$this->error['warning'] = $this->language->get('error_login');
+		}
 
-        $data['header'] = $this->load->controller('common/header');
-        $data['footer'] = $this->load->controller('common/footer');
+		return !$this->error;
+	}
 
-        $this->response->setOutput($this->load->view('common/login.tpl', $data));
-    }
+	public function check() {
+		$route = '';
 
-    protected function validate() {
-        if (!isset($this->request->post['username']) || !isset($this->request->post['password']) || !$this->user->login($this->request->post['username'], $this->request->post['password'])) {
-            $this->error['warning'] = $this->language->get('error_login');
-        }
+		if (isset($this->request->get['route'])) {
+			$part = explode('/', $this->request->get['route']);
 
-        return !$this->error;
-    }
+			if (isset($part[0])) {
+				$route .= $part[0];
+			}
 
-    public function check() {
-        $route = '';
+			if (isset($part[1])) {
+				$route .= '/' . $part[1];
+			}
+		}
 
-        if (isset($this->request->get['route'])) {
-            $part = explode('/', $this->request->get['route']);
+		$ignore = array(
+			'common/login',
+			'common/forgotten',
+			'common/reset'
+		);
 
-            if (isset($part[0])) {
-                $route .= $part[0];
-            }
+		if (!$this->user->isLogged() && !in_array($route, $ignore)) {
+			return new Action('common/login');
+		}
 
-            if (isset($part[1])) {
-                $route .= '/' . $part[1];
-            }
-        }
+		if (isset($this->request->get['route'])) {
+			$ignore = array(
+				'common/login',
+				'common/logout',
+				'common/forgotten',
+				'common/reset',
+				'error/not_found',
+				'error/permission'
+			);
 
-        $ignore = array(
-            'common/login',
-            'common/forgotten',
-            'common/reset'
-        );
+			$config_ignore = array();
 
-        if (!$this->user->isLogged() && !in_array($route, $ignore)) {
-            return new Action('common/login');
-        }
+			if ($this->config->get('config_token_ignore')) {
+				$config_ignore = unserialize($this->config->get('config_token_ignore'));
+			}
 
-        if (isset($this->request->get['route'])) {
-            $ignore = array(
-                'common/login',
-                'common/logout',
-                'common/forgotten',
-                'common/reset',
-                'error/not_found',
-                'error/permission'
-            );
+			$ignore = array_merge($ignore, $config_ignore);
 
-            $config_ignore = array();
-
-            if ($this->config->get('config_token_ignore')) {
-                $config_ignore = unserialize($this->config->get('config_token_ignore'));
-            }
-
-            $ignore = array_merge($ignore, $config_ignore);
-
-            if (!in_array($route, $ignore) && (!isset($this->request->get['token']) || !isset($this->session->data['token']) || ($this->request->get['token'] != $this->session->data['token']))) {
-                return new Action('common/login');
-            }
-        } else {
-            if (!isset($this->request->get['token']) || !isset($this->session->data['token']) || ($this->request->get['token'] != $this->session->data['token'])) {
-                return new Action('common/login');
-            }
-        }
-    }
-}
-//End of file login.php 
+			if (!in_array($route, $ignore) && (!isset($this->request->get['token']) || !isset($this->session->data['token']) || ($this->request->get['token'] != $this->session->data['token']))) {
+				return new Action('common/login');
+			}
+		} else {
+			if (!isset($this->request->get['token']) || !isset($this->session->data['token']) || ($this->request->get['token'] != $this->session->data['token'])) {
+				return new Action('common/login');
+			}
+		}
+	}
+} 

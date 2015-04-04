@@ -1,52 +1,41 @@
-<?php echo $header?>
-<div id="main">
+<?php echo $header; ?>
+<!-- Page Content -->
+<div id="page-wrapper">
     <div class="container-fluid">
-        <div class="page-header">
-            <div class="pull-left">
-                <h1><?php echo $heading_title; ?></h1>
-            </div>
-        </div>
-        <div class="breadcrumbs">
-            <ul>
-                <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-                <li>
-                    <a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
-                    <?php if ($breadcrumb['sp']) { ?>
-                    <i class="fa fa-angle-right"></i>
-                    <?php } ?>
-                </li>
-
-                <?php } ?>
-            </ul>
-            <div class="close-bread">
-                <a href="#">
-                    <i class="fa fa-times"></i>
-                </a>
-            </div>
-        </div>
         <div class="row">
-            <div class="col-sm-12">
-                <div class="box">
-                    <div class="box-title">
-                        <h3>
-                            <i class="fa fa-list"></i> <?php echo $text_list; ?>
-                        </h3>
-                        <div class="pull-right">
-                            <a href="<?php echo $add; ?>" data-toggle="tooltip" title="<?php echo $button_add; ?>" class="btn btn-primary"><i class="fa fa-plus"></i></a>
-                            <button type="button" data-toggle="tooltip" title="<?php echo $button_delete; ?>" class="btn btn-danger" onclick="confirm('<?php echo $text_confirm; ?>') ? $('#form-user').submit() : false;"><i class="fa fa-trash-o"></i></button>
-                        </div>
+            <div class="col-lg-12">
+                <h1 class="page-header"><?php echo $heading_title; ?></h1>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="pull-right"><a href="<?php echo $insert; ?>" data-toggle="tooltip" title="<?php echo $button_insert; ?>" class="btn btn-primary"><i class="fa fa-plus"></i></a>
+                    <button type="button" data-toggle="tooltip" title="<?php echo $button_delete; ?>" class="btn btn-danger" onclick="confirm('<?php echo $text_confirm; ?>') ? $('#form-customer').submit() : false;"><i class="fa fa-trash-o"></i></button>
+                </div>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-lg-12">
+                <?php if ($error_warning) { ?>
+                <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> <?php echo $error_warning; ?>
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                </div>
+                <?php } ?>
+                <?php if ($success) { ?>
+                <div class="alert alert-success"><i class="fa fa-check-circle"></i> <?php echo $success; ?>
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                </div>
+                <?php } ?>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <i class="fa fa-list"></i> <?php echo $text_list; ?>
                     </div>
-                    <div class="box-content">
-                        <?php if ($error_warning) { ?>
-                        <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> <?php echo $error_warning; ?>
-                            <button type="button" class="close" data-dismiss="alert">&times;</button>
-                        </div>
-                        <?php } ?>
-                        <?php if ($success) { ?>
-                        <div class="alert alert-success"><i class="fa fa-check-circle"></i> <?php echo $success; ?>
-                            <button type="button" class="close" data-dismiss="alert">&times;</button>
-                        </div>
-                        <?php } ?>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
                         <div class="well">
                             <div class="row">
                                 <div class="col-sm-3">
@@ -82,7 +71,7 @@
                                             <?php } else { ?>
                                             <option value="1"><?php echo $text_enabled; ?></option>
                                             <?php } ?>
-                                            <?php if (!$filter_status && !is_null($filter_status)) { ?>
+                                            <?php if (($filter_status !== null) && !$filter_status) { ?>
                                             <option value="0" selected="selected"><?php echo $text_disabled; ?></option>
                                             <?php } else { ?>
                                             <option value="0"><?php echo $text_disabled; ?></option>
@@ -100,7 +89,7 @@
                                             <?php } else { ?>
                                             <option value="1"><?php echo $text_yes; ?></option>
                                             <?php } ?>
-                                            <?php if (!$filter_approved && !is_null($filter_approved)) { ?>
+                                            <?php if (($filter_approved !== null) && !$filter_approved) { ?>
                                             <option value="0" selected="selected"><?php echo $text_no; ?></option>
                                             <?php } else { ?>
                                             <option value="0"><?php echo $text_no; ?></option>
@@ -116,110 +105,110 @@
                                     <div class="form-group">
                                         <label class="control-label" for="input-date-added"><?php echo $entry_date_added; ?></label>
                                         <div class="input-group date">
-                                            <input type="text" name="filter_date_added" value="<?php echo $filter_date_added; ?>" placeholder="<?php echo $entry_date_added; ?>" data-date-format="yyyy-mm-dd" id="input-date-added" class="form-control datepick" />
-                                              <span class="input-group-btn">
-                                              <button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button>
-                                              </span>
-                                        </div>
+                                            <input type="text" name="filter_date_added" value="<?php echo $filter_date_added; ?>" placeholder="<?php echo $entry_date_added; ?>" data-format="YYYY-MM-DD" id="input-date-added" class="form-control" />
+                  <span class="input-group-btn">
+                  <button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button>
+                  </span></div>
                                     </div>
-                                    <button type="button" id="button-refresh" class="btn btn-default pull-right"><i class="fa fa-refresh"></i> <?php echo $button_refresh; ?></button>
                                     <button type="button" id="button-filter" class="btn btn-primary pull-right"><i class="fa fa-search"></i> <?php echo $button_filter; ?></button>
                                 </div>
                             </div>
                         </div>
-                        <form action="<?php echo $delete; ?>" method="post" enctype="multipart/form-data" id="form-user">
-                            <table class="table table-hover table-nomargin">
-                                <thead>
-                                <tr>
-                                    <th style="width: 1px;" class="text-center"><input type="checkbox" onclick="$('input[name*=\'selected\']').prop('checked', this.checked);" /></th>
-                                    <th class="text-left"><?php if ($sort == 'name') { ?>
-                                        <a href="<?php echo $sort_name; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_name; ?></a>
-                                        <?php } else { ?>
-                                        <a href="<?php echo $sort_name; ?>"><?php echo $column_name; ?></a>
-                                        <?php } ?></th>
-                                    <th class="text-left"><?php if ($sort == 'c.email') { ?>
-                                        <a href="<?php echo $sort_email; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_email; ?></a>
-                                        <?php } else { ?>
-                                        <a href="<?php echo $sort_email; ?>"><?php echo $column_email; ?></a>
-                                        <?php } ?></th>
-                                    <th class="text-left"><?php if ($sort == 'customer_group') { ?>
-                                        <a href="<?php echo $sort_customer_group; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_customer_group; ?></a>
-                                        <?php } else { ?>
-                                        <a href="<?php echo $sort_customer_group; ?>"><?php echo $column_customer_group; ?></a>
-                                        <?php } ?></th>
-                                    <th class="text-left"><?php if ($sort == 'c.status') { ?>
-                                        <a href="<?php echo $sort_status; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_status; ?></a>
-                                        <?php } else { ?>
-                                        <a href="<?php echo $sort_status; ?>"><?php echo $column_status; ?></a>
-                                        <?php } ?></th>
-                                    <th class="text-left"><?php if ($sort == 'c.ip') { ?>
-                                        <a href="<?php echo $sort_ip; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_ip; ?></a>
-                                        <?php } else { ?>
-                                        <a href="<?php echo $sort_ip; ?>"><?php echo $column_ip; ?></a>
-                                        <?php } ?></th>
-                                    <th class="text-left"><?php if ($sort == 'c.date_added') { ?>
-                                        <a href="<?php echo $sort_date_added; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_date_added; ?></a>
-                                        <?php } else { ?>
-                                        <a href="<?php echo $sort_date_added; ?>"><?php echo $column_date_added; ?></a>
-                                        <?php } ?></th>
-                                    <th class="text-right"><?php echo $column_action; ?></th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <?php if ($customers) { ?>
-                                <?php foreach ($customers as $customer) { ?>
-                                <tr>
-                                    <td class="text-center"><?php if (in_array($customer['customer_id'], $selected)) { ?>
-                                        <input type="checkbox" name="selected[]" value="<?php echo $customer['customer_id']; ?>" checked="checked" />
-                                        <?php } else { ?>
-                                        <input type="checkbox" name="selected[]" value="<?php echo $customer['customer_id']; ?>" />
-                                        <?php } ?></td>
-                                    <td class="text-left"><?php echo $customer['name']; ?></td>
-                                    <td class="text-left"><?php echo $customer['email']; ?></td>
-                                    <td class="text-left"><?php echo $customer['customer_group']; ?></td>
-                                    <td class="text-left"><?php echo $customer['status']; ?></td>
-                                    <td class="text-left"><?php echo $customer['ip']; ?></td>
-                                    <td class="text-left"><?php echo $customer['date_added']; ?></td>
-                                    <td class="text-right"><?php if ($customer['approve']) { ?>
-                                        <a href="<?php echo $customer['approve']; ?>" data-toggle="tooltip" title="<?php echo $button_approve; ?>" class="btn btn-success"><i class="fa fa-thumbs-o-up"></i></a>
-                                        <?php } else { ?>
-                                        <button type="button" class="btn btn-success" disabled><i class="fa fa-thumbs-o-up"></i></button>
-                                        <?php } ?>
-                                        <div class="btn-group" data-toggle="tooltip" title="<?php echo $button_login; ?>">
-                                            <button type="button" data-toggle="dropdown" class="btn btn-info dropdown-toggle"><i class="fa fa-lock"></i></button>
-                                            <ul class="dropdown-menu pull-right">
-                                                <li><a href="index.php?route=sale/customer/login&token=<?php echo $token; ?>&customer_id=<?php echo $customer['customer_id']; ?>&application_id=0" target="_blank"><?php echo $text_default; ?></a></li>
-                                                <?php foreach ($applications as $application) { ?>
-                                                <li><a href="index.php?route=sale/customer/login&token=<?php echo $token; ?>&customer_id=<?php echo $customer['customer_id']; ?>&application_id=<?php echo $application['application_id']; ?>" target="_blank"><?php echo $application['name']; ?></a></li>
-                                                <?php } ?>
-                                            </ul>
-                                        </div>
-                                        <?php if ($customer['unlock']) { ?>
-                                        <a href="<?php echo $customer['unlock']; ?>" data-toggle="tooltip" title="<?php echo $button_unlock; ?>" class="btn btn-warning"><i class="fa fa-unlock"></i></a>
-                                        <?php } else { ?>
-                                        <button type="button" class="btn btn-warning" disabled><i class="fa fa-unlock"></i></button>
-                                        <?php } ?>
-                                        <a href="<?php echo $customer['edit']; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
-                                </tr>
-                                <?php } ?>
-                                <?php } else { ?>
-                                <tr>
-                                    <td class="text-center" colspan="8"><?php echo $text_no_results; ?></td>
-                                </tr>
-                                <?php } ?>
-                                </tbody>
-                            </table>
+                        <form action="<?php echo $delete; ?>" method="post" enctype="multipart/form-data" id="form-customer">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th style="width: 1px;" class="text-center"><input type="checkbox" onclick="$('input[name*=\'selected\']').prop('checked', this.checked);" /></th>
+                                        <th class="text-left"><?php if ($sort == 'name') { ?>
+                                            <a href="<?php echo $sort_name; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_name; ?></a>
+                                            <?php } else { ?>
+                                            <a href="<?php echo $sort_name; ?>"><?php echo $column_name; ?></a>
+                                            <?php } ?></th>
+                                        <th class="text-left"><?php if ($sort == 'c.email') { ?>
+                                            <a href="<?php echo $sort_email; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_email; ?></a>
+                                            <?php } else { ?>
+                                            <a href="<?php echo $sort_email; ?>"><?php echo $column_email; ?></a>
+                                            <?php } ?></th>
+                                        <th class="text-left"><?php if ($sort == 'customer_group') { ?>
+                                            <a href="<?php echo $sort_customer_group; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_customer_group; ?></a>
+                                            <?php } else { ?>
+                                            <a href="<?php echo $sort_customer_group; ?>"><?php echo $column_customer_group; ?></a>
+                                            <?php } ?></th>
+                                        <th class="text-left"><?php if ($sort == 'c.status') { ?>
+                                            <a href="<?php echo $sort_status; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_status; ?></a>
+                                            <?php } else { ?>
+                                            <a href="<?php echo $sort_status; ?>"><?php echo $column_status; ?></a>
+                                            <?php } ?></th>
+                                        <th class="text-left"><?php if ($sort == 'c.ip') { ?>
+                                            <a href="<?php echo $sort_ip; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_ip; ?></a>
+                                            <?php } else { ?>
+                                            <a href="<?php echo $sort_ip; ?>"><?php echo $column_ip; ?></a>
+                                            <?php } ?></th>
+                                        <th class="text-left"><?php if ($sort == 'c.date_added') { ?>
+                                            <a href="<?php echo $sort_date_added; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_date_added; ?></a>
+                                            <?php } else { ?>
+                                            <a href="<?php echo $sort_date_added; ?>"><?php echo $column_date_added; ?></a>
+                                            <?php } ?></th>
+                                        <th class="text-right"><?php echo $column_action; ?></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php if ($customers) { ?>
+                                    <?php foreach ($customers as $customer) { ?>
+                                    <tr>
+                                        <td class="text-center"><?php if (in_array($customer['customer_id'], $selected)) { ?>
+                                            <input type="checkbox" name="selected[]" value="<?php echo $customer['customer_id']; ?>" checked="checked" />
+                                            <?php } else { ?>
+                                            <input type="checkbox" name="selected[]" value="<?php echo $customer['customer_id']; ?>" />
+                                            <?php } ?></td>
+                                        <td class="text-left"><?php echo $customer['name']; ?></td>
+                                        <td class="text-left"><?php echo $customer['email']; ?></td>
+                                        <td class="text-left"><?php echo $customer['customer_group']; ?></td>
+                                        <td class="text-left"><?php echo $customer['status']; ?></td>
+                                        <td class="text-left"><?php echo $customer['ip']; ?></td>
+                                        <td class="text-left"><?php echo $customer['date_added']; ?></td>
+                                        <td class="text-right"><?php if (!$customer['approved']) { ; ?>
+                                            <a href="<?php echo $customer['approve']; ?>" data-toggle="tooltip" title="<?php echo $button_approve; ?>" class="btn btn-xs btn-success"><i class="fa fa-thumbs-o-up"></i></a>
+                                            <?php } else { ?>
+                                            <button type="button" class="btn btn-xs btn-success" disabled><i class="fa fa-thumbs-o-up"></i></button>
+                                            <?php } ?>
+                                            <div class="btn-group" data-toggle="tooltip" title="<?php echo $text_login; ?>">
+                                                <button type="button" data-toggle="dropdown" class="btn btn-xs btn-info dropdown-toggle"><i class="fa fa-lock"></i></button>
+                                                <ul class="dropdown-menu pull-right">
+                                                    <li><a href="index.php?route=sale/customer/login&token=<?php echo $token; ?>&customer_id=<?php echo $customer['customer_id']; ?>&application_id=0" target="_blank"><?php echo $text_default; ?></a></li>
+                                                    <?php foreach ($applications as $application) { ?>
+                                                    <li><a href="index.php?route=sale/customer/login&token=<?php echo $token; ?>&customer_id=<?php echo $customer['customer_id']; ?>&application_id=<?php echo $application['application_id']; ?>" target="_blank"><?php echo $application['name']; ?></a></li>
+                                                    <?php } ?>
+                                                </ul>
+                                            </div>
+                                            <a href="<?php echo $customer['edit']; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>" class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i></a></td>
+                                    </tr>
+                                    <?php } ?>
+                                    <?php } else { ?>
+                                    <tr>
+                                        <td class="text-center" colspan="8"><?php echo $text_no_results; ?></td>
+                                    </tr>
+                                    <?php } ?>
+                                    </tbody>
+                                </table>
+                            </div>
                         </form>
                         <div class="row">
                             <div class="col-sm-6 text-left"><?php echo $pagination; ?></div>
                             <div class="col-sm-6 text-right"><?php echo $results; ?></div>
                         </div>
+                        <!-- /.table-responsive -->
                     </div>
+                    <!-- /.panel-body -->
                 </div>
+                <!-- /.panel -->
             </div>
         </div>
     </div>
+    <!-- /.container-fluid -->
 </div>
+<!-- /#page-wrapper -->
 <script type="text/javascript"><!--
     $('#button-filter').on('click', function() {
         url = 'index.php?route=sale/customer&token=<?php echo $token; ?>';
@@ -265,11 +254,6 @@
         if (filter_date_added) {
             url += '&filter_date_added=' + encodeURIComponent(filter_date_added);
         }
-
-        location = url;
-    });
-    $('#button-refresh').on('click', function() {
-        url = 'index.php?route=sale/customer&token=<?php echo $token; ?>';
 
         location = url;
     });

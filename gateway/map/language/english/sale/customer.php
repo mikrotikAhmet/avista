@@ -1,17 +1,21 @@
 <?php
 /**
- *
- * Semite ADP (Application Development Program) for PHP 5.1.6 or newer
- *
- * @package		Open Gateway Core Processor Application
- * @author		Semite LLC. Dev Team
- * @copyright	Copyright (c) 2008 - 2015, Semite LLC.
- * @license		http://www.semitepayment.com/user_guide/license.html
- * @link		http://www.semitepayment.com
- * @version		Version 1.0.1
+ * Created by PhpStorm.
+ * User: root
+ * Date: 4/4/15
+ * Time: 2:38 PM
  */
-// ------------------------------------------------------------------------
-
+/**
+ * @package     Semite LLC avista
+ * @version     customer.php 4/4/15 root
+ * @copyright   Copyright (c) 2014 Semite LLC .
+ * @license     http://www.semitepayment.com/license/
+ */
+/**
+ * Description of customer.php
+ *
+ * @author root
+ */
 // Heading
 $_['heading_title']         = 'Customers';
 
@@ -24,6 +28,7 @@ $_['text_default']          = 'Default';
 $_['text_balance']          = 'Balance';
 $_['text_add_ban_ip']       = 'Add Ban IP';
 $_['text_remove_ban_ip']    = 'Remove Ban IP';
+$_['text_login']            = 'Login into Store';
 
 // Column
 $_['column_name']           = 'Customer Name';
@@ -48,7 +53,6 @@ $_['entry_telephone']       = 'Telephone';
 $_['entry_fax']             = 'Fax';
 $_['entry_newsletter']      = 'Newsletter';
 $_['entry_status']          = 'Status';
-$_['entry_approved']        = 'Approved';
 $_['entry_safe']            = 'Safe';
 $_['entry_password']        = 'Password';
 $_['entry_confirm']         = 'Confirm';
@@ -65,6 +69,7 @@ $_['entry_description']     = 'Description';
 $_['entry_amount']          = 'Amount';
 $_['entry_points']          = 'Points';
 $_['entry_name']            = 'Customer Name';
+$_['entry_approved']        = 'Approved';
 $_['entry_ip']              = 'IP';
 $_['entry_date_added']      = 'Date Added';
 
@@ -89,6 +94,3 @@ $_['error_country']         = 'Please select a country!';
 $_['error_zone']            = 'Please select a region / state!';
 $_['error_custom_field']    = '%s required!';
 $_['error_comment']         = 'You must enter a comment!';
-
-
-//End of file customer.php 

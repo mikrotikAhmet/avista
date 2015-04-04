@@ -5,8 +5,8 @@ if (!defined('DIR_APPLICATION'))
 /**
  * Created by PhpStorm.
  * User: root
- * Date: 4/2/15
- * Time: 7:00 PM
+ * Date: 4/4/15
+ * Time: 4:53 PM
  */
 
 /**
@@ -34,7 +34,7 @@ class ControllerCommonFooter extends Controller {
 		$data['powered'] = sprintf($this->language->get('text_powered'), $this->config->get('config_name'), date('Y', time()));
 
 		// Whos Online
-		if ($this->config->get('config_merchant_online')) {
+		if ($this->config->get('config_customer_online')) {
 			$this->load->model('tool/online');
 
 			if (isset($this->request->server['REMOTE_ADDR'])) {
@@ -55,7 +55,7 @@ class ControllerCommonFooter extends Controller {
 				$referer = '';
 			}
 
-			$this->model_tool_online->whosonline($ip, $this->merchant->getId(), $url, $referer);
+			$this->model_tool_online->whosonline($ip, $this->customer->getId(), $url, $referer);
 		}
 
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/footer.tpl')) {

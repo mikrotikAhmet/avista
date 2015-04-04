@@ -1,18 +1,21 @@
 <?php
 /**
- *
- * Semite ADP (Application Development Program) for PHP 5.1.6 or newer
- *
- * @package		Open Gateway Core Processor Application
- * @author		Semite LLC. Dev Team
- * @copyright	Copyright (c) 2008 - 2015, Semite LLC.
- * @license		http://www.semitepayment.com/user_guide/license.html
- * @link		http://www.semitepayment.com
- * @version		Version 1.0.1
+ * Created by PhpStorm.
+ * User: root
+ * Date: 4/4/15
+ * Time: 5:17 PM
  */
-// ------------------------------------------------------------------------
-
-
+/**
+ * @package     Semite LLC avista
+ * @version     login.php 4/4/15 root
+ * @copyright   Copyright (c) 2014 Semite LLC .
+ * @license     http://www.semitepayment.com/license/
+ */
+/**
+ * Description of login.php
+ *
+ * @author root
+ */
 // Heading
 $_['heading_title']                = 'Account Login';
 
@@ -24,7 +27,7 @@ $_['text_register']                = 'Register Account';
 $_['text_register_account']        = 'By creating an account you will be able to shop faster, be up to date on an order\'s status, and keep track of the orders you have previously made.';
 $_['text_returning_customer']      = 'Returning Customer';
 $_['text_i_am_returning_customer'] = 'I am a returning customer';
-$_['text_forgotten']               = 'Forgotten Password';
+$_['text_forgotten']               = 'Forgotten Password?';
 
 // Entry
 $_['entry_email']                  = 'E-Mail Address';
@@ -32,7 +35,4 @@ $_['entry_password']               = 'Password';
 
 // Error
 $_['error_login']                  = 'Warning: No match for E-Mail Address and/or Password.';
-$_['error_attempts']               = 'Warning: Your account has exceeded allowed number of login attempts. Please try again in 1 hour.';
 $_['error_approved']               = 'Warning: Your account requires approval before you can login.';
-
-//End of file login.php 

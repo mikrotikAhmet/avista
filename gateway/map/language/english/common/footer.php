@@ -1,20 +1,21 @@
 <?php
 /**
- *
- * Semite ADP (Application Development Program) for PHP 5.1.6 or newer
- *
- * @package		Open Gateway Core Processor Application
- * @author		Semite LLC. Dev Team
- * @copyright	Copyright (c) 2008 - 2015, Semite LLC.
- * @license		http://www.semitepayment.com/user_guide/license.html
- * @link		http://www.semitepayment.com
- * @version		Version 1.0.1
+ * Created by PhpStorm.
+ * User: root
+ * Date: 4/4/15
+ * Time: 11:34 AM
  */
-// ------------------------------------------------------------------------
-
-
+/**
+ * @package     Semite LLC avista
+ * @version     footer.php 4/4/15 root
+ * @copyright   Copyright (c) 2014 Semite LLC .
+ * @license     http://www.semitepayment.com/license/
+ */
+/**
+ * Description of footer.php
+ *
+ * @author root
+ */
 // Text
-$_['text_footer'] 	= '<a href="http://www.semitepayment.com">Semite LLC</a> &copy; 2009-' . date('Y') . ' All Rights Reserved.';
+$_['text_footer'] 	= '<a href="http://www.semitepayment.com">Avista Ventures Co.</a> &copy; 2009-' . date('Y') . ' All Rights Reserved.';
 $_['text_version'] 	= 'Version %s';
-
-//End of file footer.php 

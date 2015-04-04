@@ -1,22 +1,25 @@
 <?php
 /**
- *
- * Semite ADP (Application Development Program) for PHP 5.1.6 or newer
- *
- * @package		Open Gateway Core Processor Application
- * @author		Semite LLC. Dev Team
- * @copyright	Copyright (c) 2008 - 2015, Semite LLC.
- * @license		http://www.semitepayment.com/user_guide/license.html
- * @link		http://www.semitepayment.com
- * @version		Version 1.0.1
+ * Created by PhpStorm.
+ * User: root
+ * Date: 4/4/15
+ * Time: 12:38 PM
  */
-// ------------------------------------------------------------------------
-
+/**
+ * @package     Semite LLC avista
+ * @version     application.php 4/4/15 root
+ * @copyright   Copyright (c) 2014 Semite LLC .
+ * @license     http://www.semitepayment.com/license/
+ */
+/**
+ * Description of application.php
+ *
+ * @author root
+ */
 // Heading
 $_['heading_title']                    = 'Applications';
 
 // Text
-$_['text_settings']                    = 'Settings';
 $_['text_success']                     = 'Success: You have modified Applications!';
 $_['text_list']                        = 'Application List';
 $_['text_add']                         = 'Add Application';
@@ -136,6 +139,3 @@ $_['error_image_cart']                 = 'Cart Image Size dimensions required!';
 $_['error_image_location']             = 'Application Image Size dimensions required!';
 $_['error_default']                    = 'Warning: You can not delete your default application!';
 $_['error_application']                      = 'Warning: This Application cannot be deleted as it is currently assigned to %s orders!';
-
-
-//End of file application.php 

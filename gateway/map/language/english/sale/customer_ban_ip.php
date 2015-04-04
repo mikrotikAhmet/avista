@@ -1,23 +1,26 @@
 <?php
 /**
- *
- * Semite ADP (Application Development Program) for PHP 5.1.6 or newer
- *
- * @package		Open Gateway Core Processor Application
- * @author		Semite LLC. Dev Team
- * @copyright	Copyright (c) 2008 - 2015, Semite LLC.
- * @license		http://www.semitepayment.com/user_guide/license.html
- * @link		http://www.semitepayment.com
- * @version		Version 1.0.1
+ * Created by PhpStorm.
+ * User: root
+ * Date: 4/4/15
+ * Time: 2:38 PM
  */
-// ------------------------------------------------------------------------
-
-
+/**
+ * @package     Semite LLC avista
+ * @version     customer_ban_ip.php 4/4/15 root
+ * @copyright   Copyright (c) 2014 Semite LLC .
+ * @license     http://www.semitepayment.com/license/
+ */
+/**
+ * Description of customer_ban_ip.php
+ *
+ * @author root
+ */
 // Heading
-$_['heading_title']    = 'Banned IPs';
+$_['heading_title']    = 'Banned IP\'s';
 
 // Text
-$_['text_success']     = 'Success: You have modified customer banned IPs!';
+$_['text_success']     = 'Success: You have modified customer banned IP\'s!';
 $_['text_list']        = 'Banned IP List';
 $_['text_add']         = 'Add Banned IP';
 $_['text_edit']        = 'Edit Banned IP';
@@ -31,7 +34,5 @@ $_['column_action']    = 'Action';
 $_['entry_ip']         = 'IP';
 
 // Error
-$_['error_permission'] = 'Warning: You do not have permission to modify customer banned IPs!';
+$_['error_permission'] = 'Warning: You do not have permission to modify customer banned IP\'s!';
 $_['error_ip']         = 'IP must be between 1 and 40 characters!';
-
-//End of file customer_ban_ip.php 

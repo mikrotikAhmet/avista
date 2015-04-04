@@ -1,18 +1,21 @@
 <?php
 /**
- *
- * Semite ADP (Application Development Program) for PHP 5.1.6 or newer
- *
- * @package		Open Gateway Core Processor Application
- * @author		Semite LLC. Dev Team
- * @copyright	Copyright (c) 2008 - 2015, Semite LLC.
- * @license		http://www.semitepayment.com/user_guide/license.html
- * @link		http://www.semitepayment.com
- * @version		Version 1.0.1
+ * Created by PhpStorm.
+ * User: root
+ * Date: 4/4/15
+ * Time: 1:51 PM
  */
-// ------------------------------------------------------------------------
-
-
+/**
+ * @package     Semite LLC avista
+ * @version     user.php 4/4/15 root
+ * @copyright   Copyright (c) 2014 Semite LLC .
+ * @license     http://www.semitepayment.com/license/
+ */
+/**
+ * Description of user.php
+ *
+ * @author root
+ */
 // Heading
 $_['heading_title']     = 'Users';
 
@@ -48,5 +51,3 @@ $_['error_password']   	= 'Password must be between 4 and 20 characters!';
 $_['error_confirm']    	= 'Password and password confirmation do not match!';
 $_['error_firstname']  	= 'First Name must be between 1 and 32 characters!';
 $_['error_lastname']   	= 'Last Name must be between 1 and 32 characters!';
-
-//End of file user.php 

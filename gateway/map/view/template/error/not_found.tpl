@@ -1,27 +1,26 @@
-<?php echo $header?>
-<div class="wrapper">
-    <div class="code">
-        <span>404</span>
-        <i class="fa fa-warning"></i>
-    </div>
-    <div class="desc">
-        <p><?php echo $heading_title; ?></p>
-        <p><?php echo $text_not_found; ?></p>
-    </div>
-    <form action="http://www.eakroko.de/flat/more-searchresults.html" class='form-horizontal'>
-        <div class="input-group">
-            <input type="text" name="search" placeholder="Search a site.." class='form-control'>
-				<span class="input-group-btn">
-					<button type='submit' class='btn'>
-                        <i class="fa fa-search"></i>
-                    </button>
-				</span>
+<?php echo $header; ?>
+<!-- Page Content -->
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header"><i class="fa fa-exclamation-circle"></i> <?php echo $heading_title; ?></h1>
+            </div>
+            <!-- /.col-lg-12 -->
         </div>
-    </form>
-    <div class="buttons">
-        <div class="pull-left">
-            <a href="index-2.html" class="btn btn--icon">
-                <i class="fa fa-arrow-left"></i>Back</a>
+        <!-- /.row -->
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-exclamation-triangle"></i> <?php echo $heading_title; ?></h3>
+                </div>
+                <div class="panel-body">
+                    <p class="text-center"><?php echo $text_not_found; ?></p>
+                </div>
+            </div>
         </div>
     </div>
+    <!-- /.container-fluid -->
 </div>
+<!-- /#page-wrapper -->
+<?php echo $footer?>

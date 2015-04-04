@@ -1,33 +1,30 @@
 <?php
 /**
- *
- * Semite ADP (Application Development Program) for PHP 5.1.6 or newer
- *
- * @package		Open Gateway Core Processor Application
- * @author		Semite LLC. Dev Team
- * @copyright	Copyright (c) 2008 - 2015, Semite LLC.
- * @license		http://www.semitepayment.com/user_guide/license.html
- * @link		http://www.semitepayment.com
- * @version		Version 1.0.1
+ * Created by PhpStorm.
+ * User: root
+ * Date: 4/4/15
+ * Time: 12:11 PM
  */
-// ------------------------------------------------------------------------
-
-
+/**
+ * @package     Semite LLC avista
+ * @version     menu.php 4/4/15 root
+ * @copyright   Copyright (c) 2014 Semite LLC .
+ * @license     http://www.semitepayment.com/license/
+ */
+/**
+ * Description of menu.php
+ *
+ * @author root
+ */
 // Text
 $_['text_dashboard']                   = 'Dashboard';
-$_['text_sale']                   = 'Sales';
+$_['text_setting']                     = 'Settings';
+$_['text_system']                      = 'System';
+$_['text_api']                         = 'API';
+$_['text_user']                        = 'Users';
+$_['text_users']                       = 'Users';
+$_['text_user_group']                  = 'User Groups';
+$_['text_sale']                    = 'Sales';
 $_['text_customer']                    = 'Customers';
 $_['text_customer_group']              = 'Customer Groups';
 $_['text_customer_ban_ip']             = 'Banned IP';
-$_['text_custom_field']                = 'Custom Fields';
-$_['text_system']                   = 'System';
-$_['text_application']                   = 'Application Settings';
-$_['text_gateway']                   = 'Gateway Settings';
-$_['text_user']                        = 'Users';
-$_['text_users']                       = 'Users';
-$_['text_api']                        = 'API';
-$_['text_user_group']                  = 'User Groups';
-$_['text_logout']          = 'Logout';
-$_['text_logged'] = '%s';
-
-//End of file menu.php 

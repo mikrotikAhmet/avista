@@ -1,118 +1,125 @@
 <?php
-
-
-
 if (!defined('DIR_APPLICATION'))
-    exit('No direct script access allowed');
+	exit('No direct script access allowed');
+	
+/**
+ * Created by PhpStorm.
+ * User: root
+ * Date: 4/4/15
+ * Time: 1:17 PM
+ */
 
 /**
+ * Smatsa Question Bank
  *
- * Semite ADP (Application Development Program) for PHP 5.1.6 or newer
- *
- * @package		Open Gateway Core Application
- * @author		Semite LLC. Dev Team
- * @copyright	Copyright (c) 2008 - 2015, Semite LLC.
- * @license		http://www.semitepayment.com/user_guide/license.html
- * @link		http://www.semitepayment.com
- * @version		Version 1.0.1
+ * @category   PhpStorm
+ * @package    smatsa
+ * @copyright  Copyright 2009-2014 Semite d.o.o. Developments
+ * @license    http://www.semitepayment.com/license/
+ * @version    home.php 10/22/14 ahmet $
+ * @author     Ahmet GOUDENOGLU <ahmet.gudenoglu@semitepayment.com>
  */
-// ------------------------------------------------------------------------
 
+/**
+ * @category   PhpStorm
+ * @package    smatsa
+ * @copyright  Copyright 2009-2014 Semite d.o.o. Developments
+ * @license    http://www.semitepayment.com/license/
+ */
 class ModelLocalisationOrderStatus extends Model {
-    public function addOrderStatus($data) {
-        foreach ($data['order_status'] as $language_id => $value) {
-            if (isset($order_status_id)) {
-                $this->db->query("INSERT INTO " . DB_PREFIX . "order_status SET order_status_id = '" . (int)$order_status_id . "', language_id = '" . (int)$language_id . "', name = '" . $this->db->escape($value['name']) . "'");
-            } else {
-                $this->db->query("INSERT INTO " . DB_PREFIX . "order_status SET language_id = '" . (int)$language_id . "', name = '" . $this->db->escape($value['name']) . "'");
+	public function addOrderStatus($data) {
+		foreach ($data['order_status'] as $language_id => $value) {
+			if (isset($order_status_id)) {
+				$this->db->query("INSERT INTO " . DB_PREFIX . "order_status SET order_status_id = '" . (int)$order_status_id . "', language_id = '" . (int)$language_id . "', name = '" . $this->db->escape($value['name']) . "'");
+			} else {
+				$this->db->query("INSERT INTO " . DB_PREFIX . "order_status SET language_id = '" . (int)$language_id . "', name = '" . $this->db->escape($value['name']) . "'");
 
-                $order_status_id = $this->db->getLastId();
-            }
-        }
+				$order_status_id = $this->db->getLastId();
+			}
+		}
 
-        $this->cache->delete('order_status');
-    }
+		$this->cache->delete('order_status');
+	}
 
-    public function editOrderStatus($order_status_id, $data) {
-        $this->db->query("DELETE FROM " . DB_PREFIX . "order_status WHERE order_status_id = '" . (int)$order_status_id . "'");
+	public function editOrderStatus($order_status_id, $data) {
+		$this->db->query("DELETE FROM " . DB_PREFIX . "order_status WHERE order_status_id = '" . (int)$order_status_id . "'");
 
-        foreach ($data['order_status'] as $language_id => $value) {
-            $this->db->query("INSERT INTO " . DB_PREFIX . "order_status SET order_status_id = '" . (int)$order_status_id . "', language_id = '" . (int)$language_id . "', name = '" . $this->db->escape($value['name']) . "'");
-        }
+		foreach ($data['order_status'] as $language_id => $value) {
+			$this->db->query("INSERT INTO " . DB_PREFIX . "order_status SET order_status_id = '" . (int)$order_status_id . "', language_id = '" . (int)$language_id . "', name = '" . $this->db->escape($value['name']) . "'");
+		}
 
-        $this->cache->delete('order_status');
-    }
+		$this->cache->delete('order_status');
+	}
 
-    public function deleteOrderStatus($order_status_id) {
-        $this->db->query("DELETE FROM " . DB_PREFIX . "order_status WHERE order_status_id = '" . (int)$order_status_id . "'");
+	public function deleteOrderStatus($order_status_id) {
+		$this->db->query("DELETE FROM " . DB_PREFIX . "order_status WHERE order_status_id = '" . (int)$order_status_id . "'");
 
-        $this->cache->delete('order_status');
-    }
+		$this->cache->delete('order_status');
+	}
 
-    public function getOrderStatus($order_status_id) {
-        $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "order_status WHERE order_status_id = '" . (int)$order_status_id . "' AND language_id = '" . (int)$this->config->get('config_language_id') . "'");
+	public function getOrderStatus($order_status_id) {
+		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "order_status WHERE order_status_id = '" . (int)$order_status_id . "' AND language_id = '" . (int)$this->config->get('config_language_id') . "'");
 
-        return $query->row;
-    }
+		return $query->row;
+	}
 
-    public function getOrderStatuses($data = array()) {
-        if ($data) {
-            $sql = "SELECT * FROM " . DB_PREFIX . "order_status WHERE language_id = '" . (int)$this->config->get('config_language_id') . "'";
+	public function getOrderStatuses($data = array()) {
+		if ($data) {
+			$sql = "SELECT * FROM " . DB_PREFIX . "order_status WHERE language_id = '" . (int)$this->config->get('config_language_id') . "'";
 
-            $sql .= " ORDER BY name";
+			$sql .= " ORDER BY name";
 
-            if (isset($data['order']) && ($data['order'] == 'DESC')) {
-                $sql .= " DESC";
-            } else {
-                $sql .= " ASC";
-            }
+			if (isset($data['order']) && ($data['order'] == 'DESC')) {
+				$sql .= " DESC";
+			} else {
+				$sql .= " ASC";
+			}
 
-            if (isset($data['start']) || isset($data['limit'])) {
-                if ($data['start'] < 0) {
-                    $data['start'] = 0;
-                }
+			if (isset($data['start']) || isset($data['limit'])) {
+				if ($data['start'] < 0) {
+					$data['start'] = 0;
+				}
 
-                if ($data['limit'] < 1) {
-                    $data['limit'] = 20;
-                }
+				if ($data['limit'] < 1) {
+					$data['limit'] = 20;
+				}
 
-                $sql .= " LIMIT " . (int)$data['start'] . "," . (int)$data['limit'];
-            }
+				$sql .= " LIMIT " . (int)$data['start'] . "," . (int)$data['limit'];
+			}
 
-            $query = $this->db->query($sql);
+			$query = $this->db->query($sql);
 
-            return $query->rows;
-        } else {
-            $order_status_data = $this->cache->get('order_status.' . (int)$this->config->get('config_language_id'));
+			return $query->rows;
+		} else {
+			$order_status_data = $this->cache->get('order_status.' . (int)$this->config->get('config_language_id'));
 
-            if (!$order_status_data) {
-                $query = $this->db->query("SELECT order_status_id, name FROM " . DB_PREFIX . "order_status WHERE language_id = '" . (int)$this->config->get('config_language_id') . "' ORDER BY name");
+			if (!$order_status_data) {
+				$query = $this->db->query("SELECT order_status_id, name FROM " . DB_PREFIX . "order_status WHERE language_id = '" . (int)$this->config->get('config_language_id') . "' ORDER BY name");
 
-                $order_status_data = $query->rows;
+				$order_status_data = $query->rows;
 
-                $this->cache->set('order_status.' . (int)$this->config->get('config_language_id'), $order_status_data);
-            }
+				$this->cache->set('order_status.' . (int)$this->config->get('config_language_id'), $order_status_data);
+			}
 
-            return $order_status_data;
-        }
-    }
+			return $order_status_data;
+		}
+	}
 
-    public function getOrderStatusDescriptions($order_status_id) {
-        $order_status_data = array();
+	public function getOrderStatusDescriptions($order_status_id) {
+		$order_status_data = array();
 
-        $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "order_status WHERE order_status_id = '" . (int)$order_status_id . "'");
+		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "order_status WHERE order_status_id = '" . (int)$order_status_id . "'");
 
-        foreach ($query->rows as $result) {
-            $order_status_data[$result['language_id']] = array('name' => $result['name']);
-        }
+		foreach ($query->rows as $result) {
+			$order_status_data[$result['language_id']] = array('name' => $result['name']);
+		}
 
-        return $order_status_data;
-    }
+		return $order_status_data;
+	}
 
-    public function getTotalOrderStatuses() {
-        $query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "order_status WHERE language_id = '" . (int)$this->config->get('config_language_id') . "'");
+	public function getTotalOrderStatuses() {
+		$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "order_status WHERE language_id = '" . (int)$this->config->get('config_language_id') . "'");
 
-        return $query->row['total'];
-    }
-}
-//End of file order_status.php 
+		return $query->row['total'];
+	}
+} 

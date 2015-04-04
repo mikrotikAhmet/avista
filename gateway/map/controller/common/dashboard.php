@@ -1,75 +1,72 @@
 <?php
-
-
-
 if (!defined('DIR_APPLICATION'))
-    exit('No direct script access allowed');
+	exit('No direct script access allowed');
+	
+/**
+ * Created by PhpStorm.
+ * User: root
+ * Date: 4/4/15
+ * Time: 12:05 PM
+ */
 
 /**
+ * Smatsa Question Bank
  *
- * Semite ADP (Application Development Program) for PHP 5.1.6 or newer
- *
- * @package		Open Gateway Core Application
- * @author		Semite LLC. Dev Team
- * @copyright	Copyright (c) 2008 - 2015, Semite LLC.
- * @license		http://www.semitepayment.com/user_guide/license.html
- * @link		http://www.semitepayment.com
- * @version		Version 1.0.1
+ * @category   PhpStorm
+ * @package    smatsa
+ * @copyright  Copyright 2009-2014 Semite d.o.o. Developments
+ * @license    http://www.semitepayment.com/license/
+ * @version    home.php 10/22/14 ahmet $
+ * @author     Ahmet GOUDENOGLU <ahmet.gudenoglu@semitepayment.com>
  */
-// ------------------------------------------------------------------------
+
+/**
+ * @category   PhpStorm
+ * @package    smatsa
+ * @copyright  Copyright 2009-2014 Semite d.o.o. Developments
+ * @license    http://www.semitepayment.com/license/
+ */
 
 class ControllerCommonDashboard extends Controller {
-    public function index() {
+	public function index() {
+		$this->load->language('common/dashboard');
 
-        // Set Page related.js and .css files
-        //CSS
-        // JS
-        $this->document->addScript('map/view/js/plugins/jquery-ui/jquery-ui.js');
-        $this->document->addScript('map/view/js/plugins/nicescroll/jquery.nicescroll.min.js');
-        $this->document->addScript('map/view/js/plugins/form/jquery.form.min.js');
-        $this->document->addScript('map/view/js/application.min.js');
-        $this->document->addScript('map/view/js/demonstration.min.js');
+		$this->document->setTitle($this->language->get('heading_title'));
 
-        $this->load->language('common/dashboard');
+		$data['heading_title'] = $this->language->get('heading_title');
 
-        $this->document->setTitle($this->language->get('heading_title'));
+		$data['text_sale'] = $this->language->get('text_sale');
+		$data['text_map'] = $this->language->get('text_map');
+		$data['text_activity'] = $this->language->get('text_activity');
+		$data['text_recent'] = $this->language->get('text_recent');
 
-        $data['heading_title'] = $this->language->get('heading_title');
 
-        $data['breadcrumbs'] = array();
+		$data['breadcrumbs'] = array();
 
-        $data['breadcrumbs'][] = array(
-            'text' => $this->language->get('text_home'),
-            'href' => $this->url->link('common/dashboard', 'token=' . $this->session->data['token'], 'SSL'),
-            'sp'=>true
-        );
+		$data['breadcrumbs'][] = array(
+			'text' => $this->language->get('text_home'),
+			'href' => $this->url->link('common/dashboard', 'token=' . $this->session->data['token'], 'SSL')
+		);
 
-        $data['breadcrumbs'][] = array(
-            'text' => $this->language->get('heading_title'),
-            'href' => $this->url->link('common/dashboard', 'token=' . $this->session->data['token'], 'SSL'),
-            'sp'=>false
-        );
+		$data['breadcrumbs'][] = array(
+			'text' => $this->language->get('heading_title'),
+			'href' => $this->url->link('common/dashboard', 'token=' . $this->session->data['token'], 'SSL')
+		);
 
-        // Check install directory exists
-        if (is_dir(dirname(DIR_APPLICATION) . '/install')) {
-            $data['error_install'] = $this->language->get('error_install');
-        } else {
-            $data['error_install'] = '';
-        }
+		// Check install directory exists
+		if (is_dir(dirname(DIR_APPLICATION) . '/install')) {
+			$data['error_install'] = $this->language->get('error_install');
+		} else {
+			$data['error_install'] = '';
+		}
 
-        $data['token'] = $this->session->data['token'];
+		$data['token'] = $this->session->data['token'];
 
-        $data['header'] = $this->load->controller('common/header');
-        $data['footer'] = $this->load->controller('common/footer');
+		$data['header'] = $this->load->controller('common/header');
+		$data['customer'] = $this->load->controller('dashboard/customer');
+		$data['online'] = $this->load->controller('dashboard/online');
+		$data['footer'] = $this->load->controller('common/footer');
 
-        // Run currency update
-        if ($this->config->get('config_currency_auto')) {
-            $this->load->model('localisation/currency');
-
-            $this->model_localisation_currency->refresh();
-        }
-
-        $this->response->setOutput($this->load->view('common/dashboard.tpl', $data));
-    }
-}
-//End of file dashboard.php 
+		$this->response->setOutput($this->load->view('common/dashboard.tpl', $data));
+	}
+} 
