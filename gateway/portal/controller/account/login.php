@@ -202,11 +202,11 @@ class ControllerAccountLogin extends Controller {
 			$this->error['warning'] = $this->language->get('error_login');
 		}
 
-		$customer_info = $this->model_account_customer->getCustomerByEmail($this->request->post['email']);
-
-		if ($customer_info && !$customer_info['approved']) {
-			$this->error['warning'] = $this->language->get('error_approved');
-		}
+//		$customer_info = $this->model_account_customer->getCustomerByEmail($this->request->post['email']);
+//
+//		if ($customer_info && !$customer_info['approved']) {
+//			$this->error['warning'] = $this->language->get('error_approved');
+//		}
 
 		if (!$this->error) {
 			return true;
