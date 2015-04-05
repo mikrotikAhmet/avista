@@ -15,7 +15,7 @@
     </div>
 </div>
 <!-- /.row -->
-
+<?php if (!$approved) { ?>
 <div class="row">
     <div class="col-lg-12">
         <div class="alert alert-warning alert-dismissable">
@@ -24,6 +24,7 @@
         </div>
     </div>
 </div>
+<?php } ?>
 <!-- /.row -->
 
 <div class="row">

@@ -140,11 +140,19 @@
                                     <td><?php echo ($approved ? 'Approved' : 'Pending')?></td>
                                     <td><a href="javascript::viod()">Edit</a></td>
                                 </tr>
+                                <?php if (!$approved) { ?>
                                 <tr class="">
                                     <td colspan="3">
                                         <p>You account is waiting for Verification. To continue and get approved please follow this link : </p>
                                     </td>
                                 </tr>
+                                <?php } else { ?>
+                                <tr class="">
+                                    <td colspan="3">
+                                        <p class="text-success"><strong>Your account is ACTIVE </strong></p>
+                                    </td>
+                                </tr>
+                                <?php } ?>
                                 </tbody>
                             </table>
                         </div>

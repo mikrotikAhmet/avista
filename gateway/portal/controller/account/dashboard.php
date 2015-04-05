@@ -64,6 +64,7 @@ class ControllerAccountDashboard extends Controller {
 
 		$data['text_approval_request'] = sprintf($this->language->get('text_approval_request'),$this->url->link('account/account','','SSL'));
 
+		$data['approved'] = $this->customer->isApproved();
 
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['footer'] = $this->load->controller('common/footer');
