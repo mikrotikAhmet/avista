@@ -37,6 +37,9 @@ class ControllerAccountDashboard extends Controller {
 			$this->response->redirect($this->url->link('account/login', '', 'SSL'));
 		}
 
+		$this->load->model('account/customer');
+		$this->model_account_customer->updateToken('',$this->customer->getId());
+
 		$this->load->language('account/dashboard');
 
 		$this->document->setTitle($this->language->get('heading_title'));

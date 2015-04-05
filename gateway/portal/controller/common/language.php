@@ -91,4 +91,6 @@ class ControllerCommonLanguage extends Controller {
 			$this->response->redirect($this->url->link('common/home'));
 		}
 	}
+
+
 } 

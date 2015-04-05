@@ -70,6 +70,7 @@ $_['button_quote']          = 'Get Quotes';
 $_['button_list']           = 'List';
 $_['button_grid']           = 'Grid';
 $_['button_map']            = 'View Google Map';
+$_['button_request_code']           = 'Request new code';
 
 // Error
 $_['error_exception']       = 'Error Code(%s): %s in %s on line %s';

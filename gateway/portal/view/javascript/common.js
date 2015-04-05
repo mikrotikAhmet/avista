@@ -132,6 +132,123 @@ $(document).ready(function() {
 	$(document).ajaxStop(function() {
 		$('[data-toggle=\'tooltip\']').tooltip({container: 'body'});
 	});
+
+	$('#save-language').click(function(){
+
+		var element = $(this);
+		var language_id = $('select[name=\'language_id\']').val();
+
+		$.ajax({
+			url: 'index.php?route=account/account/updateLanguage',
+			type: 'post',
+			data: 'language_id='+language_id,
+			dataType: 'json',
+			beforeSend: function() {
+				element.button('loading');
+			},
+			success: function(json) {
+
+				element.button('reset');
+
+				if (json.redirect) {
+					location = json.redirect;
+				}
+			}
+		});
+	});
+
+	$('#save-password').click(function(){
+
+		var element = $(this);
+		var current = $('input[name=\'current_password\']').val();
+		var newpass = $('input[name=\'new_password\']').val();
+		var confirm = $('input[name=\'confirm_password\']').val();
+
+		$.ajax({
+			url: 'index.php?route=account/account/updatePassword',
+			type: 'post',
+			data: 'current='+current+'&new='+newpass+'&confirm='+confirm,
+			dataType: 'json',
+			beforeSend: function() {
+				element.button('loading');
+			},
+			success: function(json) {
+
+				element.button('reset');
+
+				if (json.error){
+					alert(json.error['message']);
+				}
+
+				if (json.redirect) {
+					location = json.redirect;
+				}
+			}
+		});
+	});
+
+	$('#save-auth').click(function(){
+
+		var element = $(this);
+		var telephone = $('input[name=\'telephone\']').val();
+
+		if ($('input[name=\'twoway\']').is(':checked')) {
+			var auth = 1;
+		} else {
+			var auth = 0;
+		}
+
+		$.ajax({
+			url: 'index.php?route=account/account/updateTwoway',
+			type: 'post',
+			data: 'auth='+auth+'&telephone='+telephone,
+			dataType: 'json',
+			beforeSend: function() {
+				element.button('loading');
+			},
+			success: function(json) {
+
+				element.button('reset');
+
+				if (json.error){
+					alert(json.error['message']);
+				}
+
+				if (json.redirect) {
+					location = json.redirect;
+				}
+			}
+		});
+	});
+
+	$('#save-newsletter').click(function(){
+
+		var element = $(this);
+
+		if ($('input[name=\'newsletter\']').is(':checked')) {
+			var subscribe = 1;
+		} else {
+			var subscribe = 0;
+		}
+
+		$.ajax({
+			url: 'index.php?route=account/account/updateNewsletter',
+			type: 'post',
+			data: 'subscribe='+subscribe,
+			dataType: 'json',
+			beforeSend: function() {
+				element.button('loading');
+			},
+			success: function(json) {
+
+				element.button('reset');
+
+				if (json.redirect) {
+					location = json.redirect;
+				}
+			}
+		});
+	});
 });
 
 // Cart add remove functions

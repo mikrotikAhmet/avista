@@ -60,4 +60,9 @@ class ModelLocalisationLanguage extends Model {
 
 		return $language_data;
 	}
+
+	public function updateCustomerLanguage($language_id){
+
+		$this->db->query("UPDATE ".DB_PREFIX."customer SET language_id = '".(int) $language_id."' WHERE customer_id = '".(int) $this->customer->getId()."'");
+	}
 }

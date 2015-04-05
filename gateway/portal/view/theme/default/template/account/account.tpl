@@ -25,29 +25,28 @@
                 <div class="panel-body">
                     <!-- Nav tabs -->
                     <ul class="nav nav-pills">
-                        <li class="active"><a href="#home-pills" data-toggle="tab">Account Settings</a>
-                        </li>
-                        <li><a href="#profile-pills" data-toggle="tab">Business Info</a>
-                        </li>
-                        <li><a href="#messages-pills" data-toggle="tab">Verification</a>
+                        <li class="active"><a href="#account-pills" data-toggle="tab">Account Settings</a></li>
+                        <li><a href="#profile-pills" data-toggle="tab">Personal Information</a></li>
+                        <li><a href="#business-pills" data-toggle="tab">Business Information</a></li>
+                        <li><a href="#verification-pills" data-toggle="tab">Verification</a></li>
                     </ul>
                     <br/>
                     <!-- Tab panes -->
                     <div class="tab-content">
-                        <div class="tab-pane fade in active" id="home-pills">
+                        <div class="tab-pane fade in active" id="account-pills">
                             <table class="table table-responsive table-striped" id="account-manager">
                                 <thead>
                                 <tr></tr>
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <td><b>Language</b></td>
+                                    <td><b><?php echo $text_language?></b></td>
                                     <td><?php echo $current_language?></td>
                                     <td><a href="javascript::viod()">Edit</a></td>
                                 </tr>
                                 <tr class="">
-                                    <td><div class="form-group">
-                                            <div class="">
+                                    <td colspan="2"><div class="form-group">
+                                            <div class="col-sm-3">
                                                 <select name="language_id" id="input-language" class="form-control">
                                                     <?php foreach ($languages as $language) { ?>
                                                     <?php if ($language['language_id'] == $language_id) { ?>
@@ -59,50 +58,92 @@
                                                 </select>
                                             </div>
                                         </div></td>
-                                    <td></td>
                                     <td>
                                         <button type="button" id="save-language" class="btn btn-sm btn-success">Save</button>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><b>Password</b></td>
+                                    <td><b><?php echo $text_password?></b></td>
                                     <td>*********</td>
                                     <td><a href="javascript::viod()">Edit</a></td>
                                 </tr>
                                 <tr class="">
-                                    <td>ssssssssss</td>
+                                    <td colspan="2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="input-password"><?php echo $entry_current_password; ?></label>
+                                            <div class="">
+                                                <input type="password" name="current_password" id="input-password" class="form-control" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label" for="input-password"><?php echo $entry_new_password; ?></label>
+                                            <div class="">
+                                                <input type="password" name="new_password"  id="input-password" class="form-control" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label" for="input-password"><?php echo $entry_retype_password; ?></label>
+                                            <div class="">
+                                                <input type="password" name="confirm_password"  id="input-password" class="form-control" />
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><button type="button" id="save-password" class="btn btn-sm btn-success">Save</button></td>
                                 </tr>
                                 <tr>
-                                    <td><b>Security</b></td>
-                                    <td>2-Way Auth. Active</td>
+                                    <td><b><?php echo $text_security?></b></td>
+                                    <td><?php echo ($auth ? 'Active' : 'InActive')?></td>
                                     <td><a href="javascript::viod()">Edit</a></td>
                                 </tr>
                                 <tr class="">
-                                    <td>ssssssssss</td>
+                                    <td colspan="2">
+                                        <div class="form-group">
+
+                                            <div class="">
+                                                <?php if ($auth) { ?>
+                                                <input type="checkbox" name="twoway"  id="input-twoway" value="1" checked="checked"/>
+                                                <?php } else { ?>
+                                                <input type="checkbox" name="twoway"  id="input-twoway" value="1"/>
+                                                <?php } ?>
+                                            </div>
+                                            <label class="control-label" for="input-password"><?php echo $text_2way; ?></label>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label" for="input-telephone"><?php echo $entry_telephone; ?></label>
+                                            <div class="">
+                                                <input type="text" name="telephone"  value="<?php echo $telephone?>" id="input-telephone" class="form-control" />
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><button type="button" id="save-auth" class="btn btn-sm btn-success">Save</button></td>
                                 </tr>
                                 <tr>
                                     <td><b>Email preferences</b></td>
-                                    <td>Disabled</td>
+                                    <td><?php echo ($newsletter ? 'Enabled' : 'Disabled')?></td>
                                     <td><a href="javascript::viod()">Edit</a></td>
                                 </tr>
                                 <tr class="">
-                                    <td>ssssssssss</td>
-                                </tr>
-                                <tr>
-                                    <td><b>Referrals</b></td>
-                                    <td></td>
-                                    <td><a href="javascript::viod()">Edit</a></td>
-                                </tr>
-                                <tr class="">
-                                    <td>ssssssssss</td>
+                                    <td colspan="2"><div class="form-group">
+                                            <label class=" control-label"><?php echo $entry_newsletter; ?></label>
+                                            <div class="">
+                                                <?php if ($newsletter) { ?>
+                                                <input type="checkbox" name="newsletter"  id="input-twoway" value="1" checked="checked"/>
+                                                <?php } else { ?>
+                                                <input type="checkbox" name="newsletter"  id="input-twoway" value="1"/>
+                                                <?php } ?>
+                                            </div>
+                                        </div></td>
+                                    <td><button type="button" id="save-newsletter" class="btn btn-sm btn-success">Save</button></td>
                                 </tr>
                                 <tr>
                                     <td><b>Account status</b></td>
-                                    <td>Pending</td>
+                                    <td><?php echo ($approved ? 'Approved' : 'Pending')?></td>
                                     <td><a href="javascript::viod()">Edit</a></td>
                                 </tr>
                                 <tr class="">
-                                    <td>ssssssssss</td>
+                                    <td colspan="3">
+                                        <p>You account is waiting for Verification. To continue and get approved please follow this link : </p>
+                                    </td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -111,11 +152,11 @@
                             <h4>Profile Tab</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                         </div>
-                        <div class="tab-pane fade" id="messages-pills">
+                        <div class="tab-pane fade" id="business-pills">
                             <h4>Messages Tab</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                         </div>
-                        <div class="tab-pane fade" id="settings-pills">
+                        <div class="tab-pane fade" id="verification-pills">
                             <h4>Settings Tab</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                         </div>

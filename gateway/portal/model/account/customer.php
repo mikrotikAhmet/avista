@@ -132,12 +132,36 @@ class ModelAccountCustomer extends Model {
 		$this->event->trigger('post.customer.edit.password');
 	}
 
+	public function updateAuth($auth) {
+		$this->event->trigger('pre.customer.edit.auth');
+
+		$this->db->query("UPDATE " . DB_PREFIX . "customer SET two_way = '".(int)$auth."' WHERE customer_id = '".(int) $this->customer->getId()."'");
+
+		$this->event->trigger('post.customer.edit.auth');
+	}
+
+	public function updateToken($token,$customer_id) {
+		$this->event->trigger('pre.customer.edit.token');
+
+		$this->db->query("UPDATE " . DB_PREFIX . "customer SET token = '".(int)$token."' WHERE customer_id = '".(int) $customer_id."'");
+
+		$this->event->trigger('post.customer.edit.token');
+	}
+
 	public function editNewsletter($newsletter) {
 		$this->event->trigger('pre.customer.edit.newsletter');
 
 		$this->db->query("UPDATE " . DB_PREFIX . "customer SET newsletter = '" . (int)$newsletter . "' WHERE customer_id = '" . (int)$this->customer->getId() . "'");
 
 		$this->event->trigger('post.customer.edit.newsletter');
+	}
+
+	public function updateTelephone($telephone) {
+		$this->event->trigger('pre.customer.edit.telephone');
+
+		$this->db->query("UPDATE " . DB_PREFIX . "customer SET telephone = '" . (int)$telephone . "' WHERE customer_id = '" . (int)$this->customer->getId() . "'");
+
+		$this->event->trigger('post.customer.edit.telephone');
 	}
 
 	public function getCustomer($customer_id) {
