@@ -76,8 +76,13 @@ class ControllerAccountAccount extends Controller {
 		$customer_data = array();
 
 		$this->load->model('account/customer');
+		$this->load->model('localisation/country');
+		$this->load->model('localisation/zone');
 
 		$customer_data = $this->model_account_customer->getCustomer($this->customer->getId());
+		$customer_address = $this->model_account_customer->getCustomerAddress($customer_data['address_id']);
+		$customer_country = $this->model_localisation_country->getCountry($customer_address['country_id']);
+		$customer_zone = $this->model_localisation_zone->getZone($customer_address['zone_id']);
 
 		$this->load->model('localisation/language');
 		$language_data = $this->model_localisation_language->getLanguage($customer_data['language_id']);
@@ -88,6 +93,16 @@ class ControllerAccountAccount extends Controller {
 		$data['telephone'] = $customer_data['telephone'];
 		$data['newsletter'] = $customer_data['newsletter'];
 		$data['approved'] = $customer_data['approved'];
+
+
+		// Personal Details
+		$data['text_your_details'] = $this->language->get('text_your_details');
+		$data['firstname'] = $customer_data['firstname'];
+		$data['lastname'] = $customer_data['lastname'];
+		$data['email'] = $customer_data['email'];
+		$data['telephone'] = $customer_data['telephone'];
+		$data['address'] = $customer_address['address_1'].' '.$customer_address['address_2'].'<br/> '.$customer_address['city'].' '.$customer_address['postcode'].'<br/>'.$customer_zone['name'].' / '.$customer_country['name'];
+
 
 		$this->load->model('localisation/language');
 
@@ -222,6 +237,116 @@ class ControllerAccountAccount extends Controller {
 			$json = array(
 				'redirect' => $this->url->link('account/account', '', 'SSL'),
 			);
+
+		$this->response->addHeader('Content-Type: application/json');
+		$this->response->setOutput(json_encode($json));
+	}
+	public function upload() {
+
+		$json = array();
+
+		if (!$json) {
+			if (!empty($this->request->files['file']['name']) && is_file($this->request->files['file']['tmp_name'])) {
+				// Sanitize the filename
+				$filename = basename(html_entity_decode($this->request->files['file']['name'], ENT_QUOTES, 'UTF-8'));
+
+				// Validate the filename length
+				if ((utf8_strlen($filename) < 3) || (utf8_strlen($filename) > 128)) {
+					$json['error'] = $this->language->get('error_filename');
+				}
+
+				// Allowed file extension types
+				$allowed = array();
+
+				$extension_allowed = preg_replace('~\r?\n~', "\n", $this->config->get('config_file_ext_allowed'));
+
+				$filetypes = explode("\n", $extension_allowed);
+
+				foreach ($filetypes as $filetype) {
+					$allowed[] = trim($filetype);
+				}
+
+				if (!in_array(strtolower(substr(strrchr($filename, '.'), 1)), $allowed)) {
+					$json['error'] = $this->language->get('error_filetype');
+				}
+
+				// Allowed file mime types
+				$allowed = array();
+
+				$mime_allowed = preg_replace('~\r?\n~', "\n", $this->config->get('config_file_mime_allowed'));
+
+				$filetypes = explode("\n", $mime_allowed);
+
+				foreach ($filetypes as $filetype) {
+					$allowed[] = trim($filetype);
+				}
+
+				if (!in_array($this->request->files['file']['type'], $allowed)) {
+					$json['error'] = $this->language->get('error_filetype');
+				}
+
+				// Check to see if any PHP files are trying to be uploaded
+				$content = file_get_contents($this->request->files['file']['tmp_name']);
+
+				if (preg_match('/\<\?php/i', $content)) {
+					$json['error'] = $this->language->get('error_filetype');
+				}
+
+				// Return any upload error
+				if ($this->request->files['file']['error'] != UPLOAD_ERR_OK) {
+					$json['error'] = $this->language->get('error_upload_' . $this->request->files['file']['error']);
+				}
+			} else {
+				$json['error'] = $this->language->get('error_upload');
+			}
+		}
+
+		if (!$json) {
+			$file = $filename . '.' . md5(mt_rand());
+
+			move_uploaded_file($this->request->files['file']['tmp_name'], DIR_DOWNLOAD . $file);
+
+			$json['filename'] = $file;
+			$json['mask'] = $filename;
+
+			$this->load->model('account/customer');
+			$this->model_account_customer->addDocument($file,$filename);
+
+			$json['success'] = 'Successfully uploaded';
+		}
+
+		$this->response->addHeader('Content-Type: application/json');
+		$this->response->setOutput(json_encode($json));
+	}
+
+	public function documents(){
+
+		$data = array();
+
+		$this->load->model('account/customer');
+
+		$data['documents'] = $this->model_account_customer->getDocuments();
+
+		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/account/document.tpl')) {
+			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/account/document.tpl', $data));
+		} else {
+			$this->response->setOutput($this->load->view('default/template/account/document.tpl', $data));
+		}
+
+	}
+
+	public function removeDocument(){
+
+		$json = array();
+		$document_id = $this->request->post['document_id'];
+
+		$this->load->model('account/customer');
+
+		$document_info = $this->model_account_customer->getDocument($document_id);
+		unlink(DIR_DOWNLOAD.$document_info['file']);
+
+		$this->model_account_customer->removeDocument($document_id);
+
 
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));

@@ -2,20 +2,19 @@
 /**
  * Created by PhpStorm.
  * User: root
- * Date: 4/4/15
- * Time: 11:14 PM
+ * Date: 4/5/15
+ * Time: 10:43 PM
  */
 /**
  * @package     Semite LLC avista
- * @version     menu.php 4/4/15 root
+ * @version     order.php 4/5/15 root
  * @copyright   Copyright (c) 2014 Semite LLC .
  * @license     http://www.semitepayment.com/license/
  */
 /**
- * Description of menu.php
+ * Description of order.php
  *
  * @author root
  */
- // TEXT
-$_['text_dashboard'] = 'Dashboard';
-$_['text_order'] = 'Request Instrument';
+// Heading
+$_['heading_title']   = 'Order Request';

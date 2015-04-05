@@ -19,7 +19,7 @@
         <div class="col-lg-8">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Pill Tabs
+                    My account settings
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">
@@ -28,7 +28,9 @@
                         <li class="active"><a href="#account-pills" data-toggle="tab">Account Settings</a></li>
                         <li><a href="#profile-pills" data-toggle="tab">Personal Information</a></li>
                         <li><a href="#business-pills" data-toggle="tab">Business Information</a></li>
+                        <?php if (!$approved) { ?>
                         <li><a href="#verification-pills" data-toggle="tab">Verification</a></li>
+                        <?php } ?>
                     </ul>
                     <br/>
                     <!-- Tab panes -->
@@ -157,25 +159,70 @@
                             </table>
                         </div>
                         <div class="tab-pane fade" id="profile-pills">
-                            <h4>Profile Tab</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <fieldset>
+                                <legend><?php echo $text_your_details; ?></legend>
+                                <table class="table table-responsive table-striped">
+                                    <tbody>
+                                    <tr>
+                                        <td>Account type</td>
+                                        <td>Business</td>
+                                        <td></td>
+                                    </tr>
+                                        <tr>
+                                            <td>First name</td>
+                                            <td><?php echo $firstname?></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Last name</td>
+                                            <td><?php echo $lastname?></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>E-Mail</td>
+                                            <td><?php echo $email?></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Phone</td>
+                                            <td><?php echo $telephone?></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Address</td>
+                                            <td><?php echo $address?></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </fieldset>
                         </div>
                         <div class="tab-pane fade" id="business-pills">
-                            <h4>Messages Tab</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <?php if (!$approved) { ?>
+                            <div class="alert alert-warning alert-dismissable">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                <i class="fa fa-info-circle"></i>  <strong>Action required!</strong> Your account has no Approved Business Certificate yet.</div>
+                            <?php } ?>
                         </div>
+                        <?php if (!$approved) { ?>
                         <div class="tab-pane fade" id="verification-pills">
-                            <h4>Settings Tab</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <div class="input-group">
+                                <input type="text" name="upload" disabled value="" placeholder="Incorporation documents*" data-format="" id="input-incorporation-documents" class="form-control">
+                                  <span class="input-group-btn">
+                                    <button type="button" id="button-upload" data-loading-text="Uploading..." class="btn btn-primary"><i class="fa fa-upload"></i> Upload</button>
+                                  </span>
+                            </div>
+                            <br/>
+                            <div id="documents"></div>
+                            <br/>
                         </div>
+                        <?php } ?>
                     </div>
                 </div>
                 <!-- /.panel-body -->
             </div>
             </div>
     </div>
-
-
 </div>
 <!-- /.container-fluid -->
 </div>
@@ -183,7 +230,6 @@
 </div>
 <!-- /#wrapper -->
 <script>
-
     $("#account-manager tr:odd").addClass("master");
     $("#account-manager tr:not(.master)").hide();
     $("#account-manager tr:first-child").show();
@@ -201,4 +247,47 @@
 
     });
 </script>
+<script type="text/javascript"><!--
+    $('#documents').load('index.php?route=account/account/documents');
+
+    $('#button-upload').on('click', function() {
+        $('#form-upload').remove();
+
+        $('body').prepend('<form enctype="multipart/form-data" id="form-upload" style="display: none;"><input type="file" name="file" /></form>');
+
+        $('#form-upload input[name=\'file\']').trigger('click');
+
+        $('#form-upload input[name=\'file\']').on('change', function() {
+            $.ajax({
+                url: 'index.php?route=account/account/upload',
+                type: 'post',
+                dataType: 'json',
+                data: new FormData($(this).parent()[0]),
+                cache: false,
+                contentType: false,
+                processData: false,
+                beforeSend: function() {
+                    $('#button-upload').button('loading');
+                },
+                complete: function() {
+                    $('#button-upload').button('reset');
+                },
+                success: function(json) {
+                    if (json['error']) {
+                        alert(json['error']);
+                    }
+
+                    if (json['success']) {
+                        alert(json['success']);
+
+                        $('#documents').load('index.php?route=account/account/documents');
+                    }
+                },
+                error: function(xhr, ajaxOptions, thrownError) {
+                    alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+                }
+            });
+        });
+    });
+    //--></script>
 <?php echo $footer?>

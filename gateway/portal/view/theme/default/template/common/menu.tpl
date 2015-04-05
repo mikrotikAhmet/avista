@@ -4,6 +4,9 @@
         <li class="active">
             <a href="<?php echo $home?>"><i class="fa fa-fw fa-dashboard"></i> <?php echo $text_dashboard?></a>
         </li>
+        <li class="">
+            <a href="<?php echo $order?>"><i class="fa fa-fw fa-file"></i> <?php echo $text_order?></a>
+        </li>
     </ul>
 </div>
 <!-- /.navbar-collapse -->

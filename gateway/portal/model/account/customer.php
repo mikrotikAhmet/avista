@@ -115,6 +115,27 @@ class ModelAccountCustomer extends Model {
 		return $customer_id;
 	}
 
+	public function getDocuments(){
+		$results = $this->db->query("SELECT * FROM ".DB_PREFIX."customer_document WHERE customer_id = '".(int) $this->customer->getId()."'");
+
+		return $results->rows;
+	}
+
+	public function getDocument($document_id){
+		$result = $this->db->query("SELECT * FROM ".DB_PREFIX."customer_document WHERE document_id = '".(int) $document_id."'");
+
+		return $result->row;
+	}
+
+	public function removeDocument($document_id){
+		$this->db->query("DELETE FROM ".DB_PREFIX."customer_document WHERE document_id = '".(int) $document_id."'");
+	}
+
+	public function addDocument($file,$filename){
+
+		$this->db->query("INSERT INTO ".DB_PREFIX."customer_document SET customer_id = '".(int) $this->customer->getId()."', filename = '".$this->db->escape($filename)."',file = '".$this->db->escape($file)."'");
+	}
+
 	public function editCustomer($data) {
 		$this->event->trigger('pre.customer.edit', $data);
 
@@ -167,6 +188,12 @@ class ModelAccountCustomer extends Model {
 
 	public function getCustomer($customer_id) {
 		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer WHERE customer_id = '" . (int)$customer_id . "'");
+
+		return $query->row;
+	}
+
+	public function getCustomerAddress($address_id) {
+		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "address WHERE address_id = '" . (int)$address_id . "'");
 
 		return $query->row;
 	}

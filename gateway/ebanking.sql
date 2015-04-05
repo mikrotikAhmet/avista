@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.5.35, for Linux (x86_64)
+-- MySQL dump 10.14  Distrib 5.5.41-MariaDB, for Linux (x86_64)
 --
--- Host: localhost    Database: avista
+-- Host: localhost    Database: avista_ebanking
 -- ------------------------------------------------------
--- Server version	5.5.35
+-- Server version	5.5.41-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -37,7 +37,7 @@ CREATE TABLE `engine4_address` (
   `custom_field` text NOT NULL,
   PRIMARY KEY (`address_id`),
   KEY `merchant_id` (`customer_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -46,143 +46,8 @@ CREATE TABLE `engine4_address` (
 
 LOCK TABLES `engine4_address` WRITE;
 /*!40000 ALTER TABLE `engine4_address` DISABLE KEYS */;
-INSERT INTO `engine4_address` VALUES (1,0,'sdfgsd','fgsdfg','','','','','',0,0,'');
+INSERT INTO `engine4_address` VALUES (31,44,'Ahmet','GOUDENOGLU','','Kaludjerica Karadjordjeva 45','','Grocka','11130',243,3994,''),(26,0,'Jovanka','Vukadinovic','','15A  Ayiou Neophitou Street Archaggelos','','Lakatamia','2334',55,884,''),(27,0,'Jovanka','Vukadinovic','','15A  Ayiou Neophitou Street Archaggelos','','Lakatamia','2334',55,884,'');
 /*!40000 ALTER TABLE `engine4_address` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `engine4_affiliate`
---
-
-DROP TABLE IF EXISTS `engine4_affiliate`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `engine4_affiliate` (
-  `affiliate_id` int(11) NOT NULL AUTO_INCREMENT,
-  `firstname` varchar(32) NOT NULL,
-  `lastname` varchar(32) NOT NULL,
-  `email` varchar(96) NOT NULL,
-  `telephone` varchar(32) NOT NULL,
-  `fax` varchar(32) NOT NULL,
-  `password` varchar(40) NOT NULL,
-  `salt` varchar(9) NOT NULL,
-  `company` varchar(40) NOT NULL,
-  `website` varchar(255) NOT NULL,
-  `address_1` varchar(128) NOT NULL,
-  `address_2` varchar(128) NOT NULL,
-  `city` varchar(128) NOT NULL,
-  `postcode` varchar(10) NOT NULL,
-  `country_id` int(11) NOT NULL,
-  `zone_id` int(11) NOT NULL,
-  `code` varchar(64) NOT NULL,
-  `commission` decimal(4,2) NOT NULL DEFAULT '0.00',
-  `tax` varchar(64) NOT NULL,
-  `payment` varchar(6) NOT NULL,
-  `cheque` varchar(100) NOT NULL,
-  `paypal` varchar(64) NOT NULL,
-  `bank_name` varchar(64) NOT NULL,
-  `bank_branch_number` varchar(64) NOT NULL,
-  `bank_swift_code` varchar(64) NOT NULL,
-  `bank_account_name` varchar(64) NOT NULL,
-  `bank_account_number` varchar(64) NOT NULL,
-  `ip` varchar(40) NOT NULL,
-  `status` tinyint(1) NOT NULL,
-  `approved` tinyint(1) NOT NULL,
-  `date_added` datetime NOT NULL,
-  PRIMARY KEY (`affiliate_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `engine4_affiliate`
---
-
-LOCK TABLES `engine4_affiliate` WRITE;
-/*!40000 ALTER TABLE `engine4_affiliate` DISABLE KEYS */;
-/*!40000 ALTER TABLE `engine4_affiliate` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `engine4_affiliate_activity`
---
-
-DROP TABLE IF EXISTS `engine4_affiliate_activity`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `engine4_affiliate_activity` (
-  `activity_id` int(11) NOT NULL AUTO_INCREMENT,
-  `affiliate_id` int(11) NOT NULL,
-  `key` varchar(64) NOT NULL,
-  `data` text NOT NULL,
-  `ip` varchar(40) NOT NULL,
-  `date_added` datetime NOT NULL,
-  PRIMARY KEY (`activity_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `engine4_affiliate_activity`
---
-
-LOCK TABLES `engine4_affiliate_activity` WRITE;
-/*!40000 ALTER TABLE `engine4_affiliate_activity` DISABLE KEYS */;
-/*!40000 ALTER TABLE `engine4_affiliate_activity` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `engine4_affiliate_login`
---
-
-DROP TABLE IF EXISTS `engine4_affiliate_login`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `engine4_affiliate_login` (
-  `affiliate_login_id` int(11) NOT NULL AUTO_INCREMENT,
-  `email` varchar(96) NOT NULL,
-  `ip` varchar(40) NOT NULL,
-  `total` int(4) NOT NULL,
-  `date_added` datetime NOT NULL,
-  `date_modified` datetime NOT NULL,
-  PRIMARY KEY (`affiliate_login_id`),
-  KEY `email` (`email`),
-  KEY `ip` (`ip`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `engine4_affiliate_login`
---
-
-LOCK TABLES `engine4_affiliate_login` WRITE;
-/*!40000 ALTER TABLE `engine4_affiliate_login` DISABLE KEYS */;
-/*!40000 ALTER TABLE `engine4_affiliate_login` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `engine4_affiliate_transaction`
---
-
-DROP TABLE IF EXISTS `engine4_affiliate_transaction`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `engine4_affiliate_transaction` (
-  `affiliate_transaction_id` int(11) NOT NULL AUTO_INCREMENT,
-  `affiliate_id` int(11) NOT NULL,
-  `order_id` int(11) NOT NULL,
-  `description` text NOT NULL,
-  `amount` decimal(15,4) NOT NULL,
-  `date_added` datetime NOT NULL,
-  PRIMARY KEY (`affiliate_transaction_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `engine4_affiliate_transaction`
---
-
-LOCK TABLES `engine4_affiliate_transaction` WRITE;
-/*!40000 ALTER TABLE `engine4_affiliate_transaction` DISABLE KEYS */;
-/*!40000 ALTER TABLE `engine4_affiliate_transaction` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -202,7 +67,7 @@ CREATE TABLE `engine4_api` (
   `date_added` datetime NOT NULL,
   `date_modified` datetime NOT NULL,
   PRIMARY KEY (`api_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -211,7 +76,7 @@ CREATE TABLE `engine4_api` (
 
 LOCK TABLES `engine4_api` WRITE;
 /*!40000 ALTER TABLE `engine4_api` DISABLE KEYS */;
-INSERT INTO `engine4_api` VALUES (3,'avst.admin','','','KvLg5KyzxOZ4B7UGtxdAiFmqgGNH28QIKqyUBb3KcKF40zlhQ4d2QUQ8DKFQ6jzsiCNFUYLHkZIRsKHTOw1OKkQuC3tnpRCpfVUZkJEe71ukmgFMdbExJLM4AxoecvkzrpdIeo3L6IEMl2p5NGquFN4aQfmMV8oWGiRp5ZTheu5U2cWhfklxdlzxAxn6z3LFlFqwdKZPBO4On3We1VzVUSj4o4hcOPBig6DWH0Raku1nIETLUndNaBAwr15tDQ70',1,'2015-03-17 12:35:51','2015-03-17 12:35:51');
+INSERT INTO `engine4_api` VALUES (4,'admin.avc','','','LKWurTmwxQWrdK0rVv8lktVmxEJV1Yb5Iu0j4aVZpRxiKbp2yKS7fI6h24r7lbtVEXlFitZaz1AFsut2dQ8s0byjEYHSlrQjNR6efoxUILjhoYYMBzOTVhL6iSRZz87sdmQg8r02a5UlMfMQHW1TYy8Ge3043v4XyfS1u0WcnRtYmHoNuriMilogCk8gokO3IkHNonmiVOFwZhxKU1YlcMKwpay21MbdcPpZz7ZwqwwBKrYFgflI55jFF7TxVQuf',1,'2015-04-04 14:13:31','2015-04-04 14:13:31');
 /*!40000 ALTER TABLE `engine4_api` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -228,7 +93,7 @@ CREATE TABLE `engine4_application` (
   `url` varchar(255) NOT NULL,
   `ssl` varchar(255) NOT NULL,
   PRIMARY KEY (`application_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -237,7 +102,7 @@ CREATE TABLE `engine4_application` (
 
 LOCK TABLES `engine4_application` WRITE;
 /*!40000 ALTER TABLE `engine4_application` DISABLE KEYS */;
-INSERT INTO `engine4_application` VALUES (1,'HIF PORTAL','http://portal.avista.com/','https://portal.avista.com/');
+INSERT INTO `engine4_application` VALUES (3,'H.I.F. Invest Holding','http://portal.avista.com/','http://portal.avista.com/');
 /*!40000 ALTER TABLE `engine4_application` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -297,156 +162,8 @@ CREATE TABLE `engine4_currency` (
 
 LOCK TABLES `engine4_currency` WRITE;
 /*!40000 ALTER TABLE `engine4_currency` DISABLE KEYS */;
-INSERT INTO `engine4_currency` VALUES (1,'Pound Sterling','GBP','£','','2',0.67479998,1,'2015-04-02 13:27:20'),(2,'US Dollar','USD','$','','2',1.00000000,1,'2015-04-03 12:09:00'),(3,'Euro','EUR','','€','2',0.92000002,1,'2015-04-02 13:27:20');
+INSERT INTO `engine4_currency` VALUES (1,'Pound Sterling','GBP','£','','2',0.67019999,1,'2015-04-04 20:13:24'),(2,'US Dollar','USD','$','','2',1.00000000,1,'2015-04-05 17:25:44'),(3,'Euro','EUR','','€','2',0.91790003,1,'2015-04-04 20:13:24');
 /*!40000 ALTER TABLE `engine4_currency` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `engine4_custom_field`
---
-
-DROP TABLE IF EXISTS `engine4_custom_field`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `engine4_custom_field` (
-  `custom_field_id` int(11) NOT NULL AUTO_INCREMENT,
-  `type` varchar(32) NOT NULL,
-  `value` text NOT NULL,
-  `location` varchar(7) NOT NULL,
-  `status` tinyint(1) NOT NULL,
-  `sort_order` int(3) NOT NULL,
-  PRIMARY KEY (`custom_field_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `engine4_custom_field`
---
-
-LOCK TABLES `engine4_custom_field` WRITE;
-/*!40000 ALTER TABLE `engine4_custom_field` DISABLE KEYS */;
-/*!40000 ALTER TABLE `engine4_custom_field` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `engine4_custom_field_customer_group`
---
-
-DROP TABLE IF EXISTS `engine4_custom_field_customer_group`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `engine4_custom_field_customer_group` (
-  `custom_field_id` int(11) NOT NULL,
-  `customer_group_id` int(11) NOT NULL,
-  `required` tinyint(1) NOT NULL,
-  PRIMARY KEY (`custom_field_id`,`customer_group_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `engine4_custom_field_customer_group`
---
-
-LOCK TABLES `engine4_custom_field_customer_group` WRITE;
-/*!40000 ALTER TABLE `engine4_custom_field_customer_group` DISABLE KEYS */;
-/*!40000 ALTER TABLE `engine4_custom_field_customer_group` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `engine4_custom_field_description`
---
-
-DROP TABLE IF EXISTS `engine4_custom_field_description`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `engine4_custom_field_description` (
-  `custom_field_id` int(11) NOT NULL,
-  `language_id` int(11) NOT NULL,
-  `name` varchar(128) NOT NULL,
-  PRIMARY KEY (`custom_field_id`,`language_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `engine4_custom_field_description`
---
-
-LOCK TABLES `engine4_custom_field_description` WRITE;
-/*!40000 ALTER TABLE `engine4_custom_field_description` DISABLE KEYS */;
-/*!40000 ALTER TABLE `engine4_custom_field_description` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `engine4_custom_field_merchant_group`
---
-
-DROP TABLE IF EXISTS `engine4_custom_field_merchant_group`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `engine4_custom_field_merchant_group` (
-  `custom_field_id` int(11) NOT NULL,
-  `merchant_group_id` int(11) NOT NULL,
-  `required` tinyint(1) NOT NULL,
-  PRIMARY KEY (`custom_field_id`,`merchant_group_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `engine4_custom_field_merchant_group`
---
-
-LOCK TABLES `engine4_custom_field_merchant_group` WRITE;
-/*!40000 ALTER TABLE `engine4_custom_field_merchant_group` DISABLE KEYS */;
-/*!40000 ALTER TABLE `engine4_custom_field_merchant_group` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `engine4_custom_field_value`
---
-
-DROP TABLE IF EXISTS `engine4_custom_field_value`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `engine4_custom_field_value` (
-  `custom_field_value_id` int(11) NOT NULL AUTO_INCREMENT,
-  `custom_field_id` int(11) NOT NULL,
-  `sort_order` int(3) NOT NULL,
-  PRIMARY KEY (`custom_field_value_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `engine4_custom_field_value`
---
-
-LOCK TABLES `engine4_custom_field_value` WRITE;
-/*!40000 ALTER TABLE `engine4_custom_field_value` DISABLE KEYS */;
-/*!40000 ALTER TABLE `engine4_custom_field_value` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `engine4_custom_field_value_description`
---
-
-DROP TABLE IF EXISTS `engine4_custom_field_value_description`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `engine4_custom_field_value_description` (
-  `custom_field_value_id` int(11) NOT NULL,
-  `language_id` int(11) NOT NULL,
-  `custom_field_id` int(11) NOT NULL,
-  `name` varchar(128) NOT NULL,
-  PRIMARY KEY (`custom_field_value_id`,`language_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `engine4_custom_field_value_description`
---
-
-LOCK TABLES `engine4_custom_field_value_description` WRITE;
-/*!40000 ALTER TABLE `engine4_custom_field_value_description` DISABLE KEYS */;
-/*!40000 ALTER TABLE `engine4_custom_field_value_description` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -467,19 +184,21 @@ CREATE TABLE `engine4_customer` (
   `fax` varchar(32) NOT NULL,
   `password` varchar(40) NOT NULL,
   `salt` varchar(9) NOT NULL,
-  `cart` text,
-  `wishlist` text,
+  `dob` date DEFAULT '0000-00-00',
   `newsletter` tinyint(1) NOT NULL DEFAULT '0',
   `address_id` int(11) NOT NULL DEFAULT '0',
-  `custom_field` text NOT NULL,
   `ip` varchar(40) NOT NULL,
   `status` tinyint(1) NOT NULL,
   `approved` tinyint(1) NOT NULL,
   `safe` tinyint(1) NOT NULL,
   `token` varchar(255) NOT NULL,
   `date_added` datetime NOT NULL,
+  `language_id` int(11) NOT NULL,
+  `currency_code` varchar(3) NOT NULL,
+  `unique_id` varchar(96) NOT NULL,
+  `two_way` tinyint(1) NOT NULL,
   PRIMARY KEY (`customer_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=45 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -488,7 +207,7 @@ CREATE TABLE `engine4_customer` (
 
 LOCK TABLES `engine4_customer` WRITE;
 /*!40000 ALTER TABLE `engine4_customer` DISABLE KEYS */;
-INSERT INTO `engine4_customer` VALUES (16,2,1,'Ahmet','Goudenoglu','semiteproject@hotmail.com','','','57f2964bca7d5b4555c3d84a69cf3ce72daedfbc','a5e1489c4',NULL,NULL,0,0,'','127.0.0.1',1,0,0,'','2015-04-03 15:24:44');
+INSERT INTO `engine4_customer` VALUES (44,1,3,'Ahmet','GOUDENOGLU','ahmet.gudenoglu@gmail.com','381640155187','','989679e26865b47f510d6fe9102be39fcff8236b','b1179496a','0000-00-00',0,31,'127.0.0.1',1,0,0,'0','2015-04-05 18:52:25',1,'','585972',0);
 /*!40000 ALTER TABLE `engine4_customer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -507,7 +226,7 @@ CREATE TABLE `engine4_customer_activity` (
   `ip` varchar(40) NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`activity_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=82 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -516,7 +235,7 @@ CREATE TABLE `engine4_customer_activity` (
 
 LOCK TABLES `engine4_customer_activity` WRITE;
 /*!40000 ALTER TABLE `engine4_customer_activity` DISABLE KEYS */;
-INSERT INTO `engine4_customer_activity` VALUES (1,0,'register','a:2:{s:11:\"customer_id\";N;s:4:\"name\";s:16:\"Ahmet Goudenoglu\";}','127.0.0.1','2015-04-03 14:28:22'),(2,0,'register','a:2:{s:11:\"customer_id\";N;s:4:\"name\";s:16:\"Ahmet Goudenoglu\";}','127.0.0.1','2015-04-03 14:36:59'),(3,0,'register','a:2:{s:11:\"customer_id\";N;s:4:\"name\";s:16:\"Ahmet Goudenoglu\";}','127.0.0.1','2015-04-03 14:39:35'),(4,0,'register','a:2:{s:11:\"customer_id\";N;s:4:\"name\";s:16:\"Ahmet Goudenoglu\";}','127.0.0.1','2015-04-03 14:42:28'),(5,12,'login','a:2:{s:11:\"customer_id\";s:2:\"12\";s:4:\"name\";s:16:\"Ahmet Goudenoglu\";}','127.0.0.1','2015-04-03 15:00:06'),(6,12,'login','a:2:{s:11:\"customer_id\";s:2:\"12\";s:4:\"name\";s:16:\"Ahmet Goudenoglu\";}','127.0.0.1','2015-04-03 15:01:45'),(7,12,'login','a:2:{s:11:\"customer_id\";s:2:\"12\";s:4:\"name\";s:16:\"Ahmet Goudenoglu\";}','127.0.0.1','2015-04-03 15:03:05'),(8,12,'login','a:2:{s:11:\"customer_id\";s:2:\"12\";s:4:\"name\";s:16:\"Ahmet Goudenoglu\";}','127.0.0.1','2015-04-03 15:06:30'),(9,12,'login','a:2:{s:11:\"customer_id\";s:2:\"12\";s:4:\"name\";s:16:\"Ahmet Goudenoglu\";}','127.0.0.1','2015-04-03 15:11:29'),(10,12,'login','a:2:{s:11:\"customer_id\";s:2:\"12\";s:4:\"name\";s:16:\"Ahmet Goudenoglu\";}','127.0.0.1','2015-04-03 15:14:02'),(11,13,'register','a:2:{s:11:\"customer_id\";s:2:\"13\";s:4:\"name\";s:16:\"Ahmet Goudenoglu\";}','127.0.0.1','2015-04-03 15:15:42'),(12,13,'login','a:2:{s:11:\"customer_id\";s:2:\"13\";s:4:\"name\";s:16:\"Ahmet Goudenoglu\";}','127.0.0.1','2015-04-03 15:17:32'),(13,14,'register','a:2:{s:11:\"customer_id\";s:2:\"14\";s:4:\"name\";s:16:\"Ahmet Goudenoglu\";}','127.0.0.1','2015-04-03 15:18:24'),(14,15,'register','a:2:{s:11:\"customer_id\";s:2:\"15\";s:4:\"name\";s:16:\"Ahmet Goudenoglu\";}','127.0.0.1','2015-04-03 15:20:45'),(15,15,'login','a:2:{s:11:\"customer_id\";s:2:\"15\";s:4:\"name\";s:16:\"Ahmet Goudenoglu\";}','127.0.0.1','2015-04-03 15:21:13'),(16,16,'register','a:2:{s:11:\"customer_id\";s:2:\"16\";s:4:\"name\";s:16:\"Ahmet Goudenoglu\";}','127.0.0.1','2015-04-03 15:24:45'),(17,16,'login','a:2:{s:11:\"customer_id\";s:2:\"16\";s:4:\"name\";s:16:\"Ahmet Goudenoglu\";}','127.0.0.1','2015-04-03 15:25:05');
+INSERT INTO `engine4_customer_activity` VALUES (21,0,'register','a:2:{s:11:\"customer_id\";N;s:4:\"name\";s:19:\"Jovanka Vukadinovic\";}','127.0.0.1','2015-04-04 20:31:13'),(22,0,'register','a:2:{s:11:\"customer_id\";N;s:4:\"name\";s:19:\"Christos Panayiotou\";}','127.0.0.1','2015-04-04 20:31:54'),(23,0,'register','a:2:{s:11:\"customer_id\";N;s:4:\"name\";s:19:\"Paraskevi Zafeiraki\";}','127.0.0.1','2015-04-04 20:42:22'),(24,0,'register','a:2:{s:11:\"customer_id\";N;s:4:\"name\";s:19:\"Jovanka Vukadinovic\";}','127.0.0.1','2015-04-04 20:46:53'),(25,0,'register','a:2:{s:11:\"customer_id\";N;s:4:\"name\";s:200:\"Vukadinovic &lt;b&gt;Notice&lt;/b&gt;: Undefined variable: lastname in &lt;b&gt;/var/www/avista/gateway/portal/view/theme/default/template/account/register.tpl&lt;/b&gt; on line &lt;b&gt;111&lt;/b&gt;\";}','127.0.0.1','2015-04-04 21:04:11'),(26,0,'register','a:2:{s:11:\"customer_id\";N;s:4:\"name\";s:19:\"Vukadinovic sssssss\";}','127.0.0.1','2015-04-04 21:04:47'),(27,0,'register','a:2:{s:11:\"customer_id\";N;s:4:\"name\";s:19:\"Jovanka Vukadinovic\";}','127.0.0.1','2015-04-04 21:16:30'),(28,24,'register','a:2:{s:11:\"customer_id\";s:2:\"24\";s:4:\"name\";s:19:\"Jovanka Vukadinovic\";}','127.0.0.1','2015-04-04 21:17:48'),(29,25,'register','a:2:{s:11:\"customer_id\";s:2:\"25\";s:4:\"name\";s:19:\"Jovanka Vukadinovic\";}','127.0.0.1','2015-04-04 21:23:54'),(30,26,'register','a:2:{s:11:\"customer_id\";s:2:\"26\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-04 21:26:40'),(31,27,'register','a:2:{s:11:\"customer_id\";s:2:\"27\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-04 21:48:32'),(32,31,'register','a:2:{s:11:\"customer_id\";s:2:\"31\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-04 21:58:55'),(33,35,'register','a:2:{s:11:\"customer_id\";s:2:\"35\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-04 22:05:11'),(34,36,'register','a:2:{s:11:\"customer_id\";s:2:\"36\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-04 22:23:56'),(35,37,'register','a:2:{s:11:\"customer_id\";s:2:\"37\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-04 22:29:18'),(36,38,'register','a:2:{s:11:\"customer_id\";s:2:\"38\";s:4:\"name\";s:19:\"Jovanka Vukadinovic\";}','127.0.0.1','2015-04-04 22:30:37'),(37,39,'register','a:2:{s:11:\"customer_id\";s:2:\"39\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-04 22:38:30'),(38,39,'login','a:2:{s:11:\"customer_id\";s:2:\"39\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-04 22:53:05'),(39,39,'login','a:2:{s:11:\"customer_id\";s:2:\"39\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-04 22:58:03'),(40,39,'login','a:2:{s:11:\"customer_id\";s:2:\"39\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-04 23:05:45'),(41,40,'register','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-04 23:52:31'),(42,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 09:12:58'),(43,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 10:31:27'),(44,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 10:31:55'),(45,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 10:32:44'),(46,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 10:44:00'),(47,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 10:46:28'),(48,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 11:24:28'),(49,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 11:26:03'),(50,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 11:28:21'),(51,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 11:29:17'),(52,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 11:30:15'),(53,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 12:05:45'),(54,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 14:12:35'),(55,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 14:13:39'),(56,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 14:19:09'),(57,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 14:20:49'),(58,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 14:24:33'),(59,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 14:30:18'),(60,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 14:32:25'),(61,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 14:37:14'),(62,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 14:39:48'),(63,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 14:41:57'),(64,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 14:43:41'),(65,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 15:01:12'),(66,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 16:23:36'),(67,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 16:23:55'),(68,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 16:27:41'),(69,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 16:30:47'),(70,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 16:33:02'),(71,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 17:06:05'),(72,0,'register','a:2:{s:11:\"customer_id\";N;s:4:\"name\";s:19:\"Jovanka Vukadinovic\";}','127.0.0.1','2015-04-05 18:32:50'),(73,0,'register','a:2:{s:11:\"customer_id\";N;s:4:\"name\";s:19:\"Jovanka Vukadinovic\";}','127.0.0.1','2015-04-05 18:34:16'),(74,41,'register','a:2:{s:11:\"customer_id\";s:2:\"41\";s:4:\"name\";s:19:\"Jovanka Vukadinovic\";}','127.0.0.1','2015-04-05 18:38:54'),(75,42,'register','a:2:{s:11:\"customer_id\";s:2:\"42\";s:4:\"name\";s:19:\"Jovanka Vukadinovic\";}','127.0.0.1','2015-04-05 18:44:48'),(76,0,'register','a:2:{s:11:\"customer_id\";N;s:4:\"name\";s:19:\"Jovanka Vukadinovic\";}','127.0.0.1','2015-04-05 18:48:13'),(77,43,'login','a:2:{s:11:\"customer_id\";s:2:\"43\";s:4:\"name\";s:19:\"Jovanka Vukadinovic\";}','127.0.0.1','2015-04-05 18:48:21'),(78,43,'login','a:2:{s:11:\"customer_id\";s:2:\"43\";s:4:\"name\";s:19:\"Jovanka Vukadinovic\";}','127.0.0.1','2015-04-05 18:49:01'),(79,0,'register','a:2:{s:11:\"customer_id\";N;s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 18:52:25'),(80,44,'login','a:2:{s:11:\"customer_id\";s:2:\"44\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 18:52:34'),(81,44,'login','a:2:{s:11:\"customer_id\";s:2:\"44\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 19:26:29');
 /*!40000 ALTER TABLE `engine4_customer_activity` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -532,7 +251,7 @@ CREATE TABLE `engine4_customer_ban_ip` (
   `ip` varchar(40) NOT NULL,
   PRIMARY KEY (`customer_ban_ip_id`),
   KEY `ip` (`ip`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -542,6 +261,32 @@ CREATE TABLE `engine4_customer_ban_ip` (
 LOCK TABLES `engine4_customer_ban_ip` WRITE;
 /*!40000 ALTER TABLE `engine4_customer_ban_ip` DISABLE KEYS */;
 /*!40000 ALTER TABLE `engine4_customer_ban_ip` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `engine4_customer_document`
+--
+
+DROP TABLE IF EXISTS `engine4_customer_document`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_customer_document` (
+  `document_id` int(11) NOT NULL AUTO_INCREMENT,
+  `customer_id` int(11) NOT NULL,
+  `filename` varchar(255) NOT NULL,
+  `file` varchar(255) NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`document_id`,`customer_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_customer_document`
+--
+
+LOCK TABLES `engine4_customer_document` WRITE;
+/*!40000 ALTER TABLE `engine4_customer_document` DISABLE KEYS */;
+/*!40000 ALTER TABLE `engine4_customer_document` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -556,7 +301,7 @@ CREATE TABLE `engine4_customer_group` (
   `approval` int(1) NOT NULL,
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`customer_group_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -565,7 +310,7 @@ CREATE TABLE `engine4_customer_group` (
 
 LOCK TABLES `engine4_customer_group` WRITE;
 /*!40000 ALTER TABLE `engine4_customer_group` DISABLE KEYS */;
-INSERT INTO `engine4_customer_group` VALUES (1,1,1),(2,1,2);
+INSERT INTO `engine4_customer_group` VALUES (1,0,1),(4,0,2);
 /*!40000 ALTER TABLE `engine4_customer_group` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -591,7 +336,7 @@ CREATE TABLE `engine4_customer_group_description` (
 
 LOCK TABLES `engine4_customer_group_description` WRITE;
 /*!40000 ALTER TABLE `engine4_customer_group_description` DISABLE KEYS */;
-INSERT INTO `engine4_customer_group_description` VALUES (1,1,'Merchant','Merchant Customer Group.'),(2,1,'Client','Client Customer');
+INSERT INTO `engine4_customer_group_description` VALUES (1,1,'Personal','Personal Account'),(4,1,'Business','Business Account');
 /*!40000 ALTER TABLE `engine4_customer_group_description` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -608,7 +353,7 @@ CREATE TABLE `engine4_customer_history` (
   `comment` text NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`customer_history_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -617,6 +362,7 @@ CREATE TABLE `engine4_customer_history` (
 
 LOCK TABLES `engine4_customer_history` WRITE;
 /*!40000 ALTER TABLE `engine4_customer_history` DISABLE KEYS */;
+INSERT INTO `engine4_customer_history` VALUES (1,17,'test','2015-04-04 16:03:02');
 /*!40000 ALTER TABLE `engine4_customer_history` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -634,7 +380,7 @@ CREATE TABLE `engine4_customer_ip` (
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`customer_ip_id`),
   KEY `ip` (`ip`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -643,7 +389,7 @@ CREATE TABLE `engine4_customer_ip` (
 
 LOCK TABLES `engine4_customer_ip` WRITE;
 /*!40000 ALTER TABLE `engine4_customer_ip` DISABLE KEYS */;
-INSERT INTO `engine4_customer_ip` VALUES (5,16,'127.0.0.1','2015-04-03 15:25:05');
+INSERT INTO `engine4_customer_ip` VALUES (20,44,'127.0.0.1','2015-04-05 18:52:34');
 /*!40000 ALTER TABLE `engine4_customer_ip` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -673,7 +419,6 @@ CREATE TABLE `engine4_customer_login` (
 
 LOCK TABLES `engine4_customer_login` WRITE;
 /*!40000 ALTER TABLE `engine4_customer_login` DISABLE KEYS */;
-INSERT INTO `engine4_customer_login` VALUES (1,'asdf','127.0.0.1',6,'2015-04-03 09:58:28','2015-04-03 09:58:36');
 /*!40000 ALTER TABLE `engine4_customer_login` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -704,33 +449,6 @@ LOCK TABLES `engine4_customer_online` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `engine4_customer_reward`
---
-
-DROP TABLE IF EXISTS `engine4_customer_reward`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `engine4_customer_reward` (
-  `customer_reward_id` int(11) NOT NULL AUTO_INCREMENT,
-  `customer_id` int(11) NOT NULL DEFAULT '0',
-  `order_id` int(11) NOT NULL DEFAULT '0',
-  `description` text NOT NULL,
-  `points` int(8) NOT NULL DEFAULT '0',
-  `date_added` datetime NOT NULL,
-  PRIMARY KEY (`customer_reward_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `engine4_customer_reward`
---
-
-LOCK TABLES `engine4_customer_reward` WRITE;
-/*!40000 ALTER TABLE `engine4_customer_reward` DISABLE KEYS */;
-/*!40000 ALTER TABLE `engine4_customer_reward` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `engine4_customer_transaction`
 --
 
@@ -745,7 +463,7 @@ CREATE TABLE `engine4_customer_transaction` (
   `amount` decimal(15,4) NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`customer_transaction_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -804,7 +522,7 @@ CREATE TABLE `engine4_information` (
 
 LOCK TABLES `engine4_information` WRITE;
 /*!40000 ALTER TABLE `engine4_information` DISABLE KEYS */;
-INSERT INTO `engine4_information` VALUES (3,1,3,1),(4,1,1,1),(5,1,4,1),(6,1,2,1);
+INSERT INTO `engine4_information` VALUES (1,1,1,1);
 /*!40000 ALTER TABLE `engine4_information` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -833,7 +551,7 @@ CREATE TABLE `engine4_information_description` (
 
 LOCK TABLES `engine4_information_description` WRITE;
 /*!40000 ALTER TABLE `engine4_information_description` DISABLE KEYS */;
-INSERT INTO `engine4_information_description` VALUES (4,1,'About Us','&lt;p&gt;\r\n	About Us&lt;/p&gt;\r\n','','',''),(5,1,'Terms &amp; Conditions','&lt;p&gt;\r\n	Terms &amp;amp; Conditions&lt;/p&gt;\r\n','','',''),(3,1,'Privacy Policy','&lt;p&gt;\r\n	Privacy Policy&lt;/p&gt;\r\n','','',''),(6,1,'Delivery Information','&lt;p&gt;\r\n	Delivery Information&lt;/p&gt;\r\n','','','');
+INSERT INTO `engine4_information_description` VALUES (1,1,'Privacy Policy','<p style=\"box-sizing: border-box; word-wrap: break-word; margin: 0px 0px 10px; padding: 0px; color: rgb(119, 119, 119); font-family: \'Open Sans\'; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);\"><b style=\"box-sizing: border-box; word-wrap: break-word; font-weight: bold;\">Effective date: 4 February 2015</b></p><p style=\"box-sizing: border-box; word-wrap: break-word; margin: 0px 0px 10px; padding: 0px; color: rgb(119, 119, 119); font-family: \'Open Sans\'; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);\"><strong style=\"box-sizing: border-box; word-wrap: break-word; font-weight: bold;\"><a name=\"14b552860f20c40c_privacy\" style=\"box-sizing: border-box; word-wrap: break-word; text-decoration: none; color: rgb(25, 151, 230);\"></a>PRIVACY POLICY<br style=\"box-sizing: border-box; word-wrap: break-word;\"></strong><br style=\"box-sizing: border-box; word-wrap: break-word;\"><em style=\"box-sizing: border-box; word-wrap: break-word;\"><strong style=\"box-sizing: border-box; word-wrap: break-word; font-weight: bold;\">SECTION 1 – WHAT DO WE DO WITH YOUR INFORMATION?</strong><br style=\"box-sizing: border-box; word-wrap: break-word;\"></em>When you purchase something from our store, as part of the buying and selling process, we collect the personal information you give us such as your name, address and email address.<br style=\"box-sizing: border-box; word-wrap: break-word;\">When you browse our store, we also automatically receive your computer’s internet protocol (IP) address in order to provide us with information that helps us learn about your browser and operating system.<br style=\"box-sizing: border-box; word-wrap: break-word;\">Email marketing (if applicable): With your permission, we may send you emails about our store, new products and other updates.</p><p style=\"box-sizing: border-box; word-wrap: break-word; margin: 0px 0px 10px; padding: 0px; color: rgb(119, 119, 119); font-family: \'Open Sans\'; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);\"><em style=\"box-sizing: border-box; word-wrap: break-word;\"><strong style=\"box-sizing: border-box; word-wrap: break-word; font-weight: bold;\">SECTION 2 – CONSENT</strong><br style=\"box-sizing: border-box; word-wrap: break-word;\"></em>How do you get my consent?<br style=\"box-sizing: border-box; word-wrap: break-word;\">When you provide us with personal information to complete a transaction, verify your credit card, place an order, arrange for a delivery or return a purchase, we imply that you consent to our collecting it and using it for that specific reason only.<br style=\"box-sizing: border-box; word-wrap: break-word;\">If we ask for your personal information for a secondary reason, like marketing, we will either ask you directly for your expressed consent, or provide you with an opportunity to say no.</p><p style=\"box-sizing: border-box; word-wrap: break-word; margin: 0px 0px 10px; padding: 0px; color: rgb(119, 119, 119); font-family: \'Open Sans\'; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);\">How do I withdraw my consent?<br style=\"box-sizing: border-box; word-wrap: break-word;\">If after you opt-in, you change your mind, you may withdraw your consent for us to contact you, for the continued collection, use or disclosure of your information, at anytime, by contacting us at&nbsp;<a title=\"H.I.F. Invest Holding Ltd. - Support\" href=\"mailto:support@hifinvestholding.com\" style=\"box-sizing: border-box; word-wrap: break-word; text-decoration: none; color: rgb(25, 151, 230);\">support@hifinvestholding.com</a>&nbsp;or mailing us at:<br style=\"box-sizing: border-box; word-wrap: break-word;\">H.I.F. Invest Holding Ltd.<br style=\"box-sizing: border-box; word-wrap: break-word;\">Ajeltake Road, Ajeltake Island Majuro<br style=\"box-sizing: border-box; word-wrap: break-word;\">Marshall Islands<br style=\"box-sizing: border-box; word-wrap: break-word;\">MH-96960</p><p style=\"box-sizing: border-box; word-wrap: break-word; margin: 0px 0px 10px; padding: 0px; color: rgb(119, 119, 119); font-family: \'Open Sans\'; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);\"><em style=\"box-sizing: border-box; word-wrap: break-word;\"><strong style=\"box-sizing: border-box; word-wrap: break-word; font-weight: bold;\">SECTION 3 – DISCLOSURE</strong><br style=\"box-sizing: border-box; word-wrap: break-word;\"></em>We may disclose your personal information if we are required by law to do so or if you violate our Terms of Service.</p><p style=\"box-sizing: border-box; word-wrap: break-word; margin: 0px 0px 10px; padding: 0px; color: rgb(119, 119, 119); font-family: \'Open Sans\'; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);\"><strong style=\"box-sizing: border-box; word-wrap: break-word; font-weight: bold;\"><em style=\"box-sizing: border-box; word-wrap: break-word;\">SECTION 4 – SEMITE PAYMENT SYSTEMS</em></strong></p><p style=\"box-sizing: border-box; word-wrap: break-word; margin: 0px 0px 10px; padding: 0px; color: rgb(119, 119, 119); font-family: \'Open Sans\'; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);\"><em style=\"box-sizing: border-box; word-wrap: break-word;\">This will be filled later…<br style=\"box-sizing: border-box; word-wrap: break-word;\"></em><br style=\"box-sizing: border-box; word-wrap: break-word;\"><em style=\"box-sizing: border-box; word-wrap: break-word;\"><strong style=\"box-sizing: border-box; word-wrap: break-word; font-weight: bold;\">SECTION 5 – THIRD-PARTY SERVICES</strong><br style=\"box-sizing: border-box; word-wrap: break-word;\"></em>In general, the third-party providers used by us will only collect, use and disclose your information to the extent necessary to allow them to perform the services they provide to us.<br style=\"box-sizing: border-box; word-wrap: break-word;\">However, certain third-party service providers, such as payment gateways and other payment transaction processors, have their own privacy policies in respect to the information we are required to provide to them for your purchase-related transactions.<br style=\"box-sizing: border-box; word-wrap: break-word;\">For these providers, we recommend that you read their privacy policies so you can understand the manner in which your personal information will be handled by these providers.<br style=\"box-sizing: border-box; word-wrap: break-word;\">In particular, remember that certain providers may be located in or have facilities that are located a different jurisdiction than either you or us. So if you elect to proceed with a transaction that involves the services of a third-party service provider, then your information may become subject to the laws of the jurisdiction(s) in which that service provider or its facilities are located.<br style=\"box-sizing: border-box; word-wrap: break-word;\">As an example, if you are located in Canada and your transaction is processed by a payment gateway located in the United States, then your personal information used in completing that transaction may be subject to disclosure under United States legislation, including the Patriot Act.<br style=\"box-sizing: border-box; word-wrap: break-word;\">Once you leave our store’s website or are redirected to a third-party website or application, you are no longer governed by this Privacy Policy or our website’s Terms of Service.</p><p style=\"box-sizing: border-box; word-wrap: break-word; margin: 0px 0px 10px; padding: 0px; color: rgb(119, 119, 119); font-family: \'Open Sans\'; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);\"><em style=\"box-sizing: border-box; word-wrap: break-word;\">Links<br style=\"box-sizing: border-box; word-wrap: break-word;\"></em>When you click on links on our store, they may direct you away from our site. We are not responsible for the privacy practices of other sites and encourage you to read their privacy statements.<br style=\"box-sizing: border-box; word-wrap: break-word;\"><em style=\"box-sizing: border-box; word-wrap: break-word;\"><br style=\"box-sizing: border-box; word-wrap: break-word;\"><strong style=\"box-sizing: border-box; word-wrap: break-word; font-weight: bold;\">SECTION 6 – SECURITY</strong><span class=\"Apple-converted-space\">&nbsp;</span></em><br style=\"box-sizing: border-box; word-wrap: break-word;\">To protect your personal information, we take reasonable precautions and follow industry best practices to make sure it is not inappropriately lost, misused, accessed, disclosed, altered or destroyed. If you provide us with your credit card information, the information is encrypted using secure socket layer technology (SSL) and stored with a AES-256 encryption. Although no method of transmission over the Internet or electronic storage is 100% secure, we follow all PCI-DSS requirements and implement additional generally accepted industry standards.</p><p style=\"box-sizing: border-box; word-wrap: break-word; margin: 0px 0px 10px; padding: 0px; color: rgb(119, 119, 119); font-family: \'Open Sans\'; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);\"><em style=\"box-sizing: border-box; word-wrap: break-word;\"><strong style=\"box-sizing: border-box; word-wrap: break-word; font-weight: bold;\">SECTION 7 – COOKIES</strong><br style=\"box-sizing: border-box; word-wrap: break-word;\"></em>Here is a list of cookies that we use. We’ve listed them here so you that you can choose if you want to opt-out of cookies or not.<br style=\"box-sizing: border-box; word-wrap: break-word;\">_session_id, unique token, sessional, Allows Shopify to store information about your session (referrer, landing page, etc).<br style=\"box-sizing: border-box; word-wrap: break-word;\">_shopify_visit, no data held, Persistent for 30 minutes from the last visit, Used by our website provider’s internal stats tracker to record the number of visits<br style=\"box-sizing: border-box; word-wrap: break-word;\">_shopify_uniq, no data held, expires midnight (relative to the visitor) of the next day, Counts the number of visits to a store by a single customer. cart, unique token, persistent for 2 weeks, Stores information about the contents of your cart.<br style=\"box-sizing: border-box; word-wrap: break-word;\">_secure_session_id, unique token, sessional<br style=\"box-sizing: border-box; word-wrap: break-word;\">storefront_digest, unique token, indefinite If the shop has a password, this is used to determine if the current visitor has access.</p><p style=\"box-sizing: border-box; word-wrap: break-word; margin: 0px 0px 10px; padding: 0px; color: rgb(119, 119, 119); font-family: \'Open Sans\'; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);\"><em style=\"box-sizing: border-box; word-wrap: break-word;\"><strong style=\"box-sizing: border-box; word-wrap: break-word; font-weight: bold;\">SECTION 8 – AGE OF CONSENT</strong><br style=\"box-sizing: border-box; word-wrap: break-word;\"></em>By using this site, you represent that you are at least the age of majority in your state or province of residence, or that you are the age of majority in your state or province of residence and you have given us your consent to allow any of your minor dependents to use this site.</p><p style=\"box-sizing: border-box; word-wrap: break-word; margin: 0px 0px 10px; padding: 0px; color: rgb(119, 119, 119); font-family: \'Open Sans\'; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);\"><em style=\"box-sizing: border-box; word-wrap: break-word;\"><strong style=\"box-sizing: border-box; word-wrap: break-word; font-weight: bold;\">SECTION 9 – CHANGES TO THIS PRIVACY POLICY</strong><br style=\"box-sizing: border-box; word-wrap: break-word;\"></em>We reserve the right to modify this privacy policy at any time, so please review it frequently. Changes and clarifications will take effect immediately upon their posting on the website. If we make material changes to this policy, we will notify you here that it has been updated, so that you are aware of what information we collect, how we use it, and under what circumstances, if any, we use and/or disclose it. If our store is acquired or merged with another company, your information may be transferred to the new owners so that we may continue to sell products to you.</p><p style=\"box-sizing: border-box; word-wrap: break-word; margin: 0px 0px 10px; padding: 0px; color: rgb(119, 119, 119); font-family: \'Open Sans\'; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);\"><strong style=\"box-sizing: border-box; word-wrap: break-word; font-weight: bold;\">QUESTIONS AND CONTACT INFORMATION</strong><br style=\"box-sizing: border-box; word-wrap: break-word;\">If you would like to: access, correct, amend or delete any personal information we have about you, register a complaint, or simply want more information contact our Privacy Compliance Officer at&nbsp;<a title=\"H.I.F. Invest Holding Ltd. - Privacy Complience\" href=\"mailto:complience@hifinvestholding.com\" style=\"box-sizing: border-box; word-wrap: break-word; text-decoration: none; color: rgb(25, 151, 230);\">complience@hifinvestholding.com</a>&nbsp;or by mail at:</p><p style=\"box-sizing: border-box; word-wrap: break-word; margin: 0px 0px 10px; padding: 0px; color: rgb(119, 119, 119); font-family: \'Open Sans\'; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);\"><strong style=\"box-sizing: border-box; word-wrap: break-word; font-weight: bold;\">H.I.F. Invest Holding Ltd.</strong><br style=\"box-sizing: border-box; word-wrap: break-word;\">Re: Privacy Compliance Officer<br style=\"box-sizing: border-box; word-wrap: break-word;\">Ajeltake Road, Ajeltake Island Majuro<br style=\"box-sizing: border-box; word-wrap: break-word;\">Marshall Islands<br style=\"box-sizing: border-box; word-wrap: break-word;\">MH-96960</p><p style=\"box-sizing: border-box; word-wrap: break-word; margin: 0px 0px 10px; padding: 0px; color: rgb(119, 119, 119); font-family: \'Open Sans\'; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);\">This Privacy Policy was last updated on February 04, 2015</p>\r','','','');
 /*!40000 ALTER TABLE `engine4_information_description` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -857,32 +575,8 @@ CREATE TABLE `engine4_information_to_application` (
 
 LOCK TABLES `engine4_information_to_application` WRITE;
 /*!40000 ALTER TABLE `engine4_information_to_application` DISABLE KEYS */;
-INSERT INTO `engine4_information_to_application` VALUES (3,0),(4,0),(5,0),(6,0);
+INSERT INTO `engine4_information_to_application` VALUES (1,0),(1,3);
 /*!40000 ALTER TABLE `engine4_information_to_application` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `engine4_information_to_layout`
---
-
-DROP TABLE IF EXISTS `engine4_information_to_layout`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `engine4_information_to_layout` (
-  `information_id` int(11) NOT NULL,
-  `application_id` int(11) NOT NULL,
-  `layout_id` int(11) NOT NULL,
-  PRIMARY KEY (`information_id`,`application_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `engine4_information_to_layout`
---
-
-LOCK TABLES `engine4_information_to_layout` WRITE;
-/*!40000 ALTER TABLE `engine4_information_to_layout` DISABLE KEYS */;
-/*!40000 ALTER TABLE `engine4_information_to_layout` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -903,7 +597,7 @@ CREATE TABLE `engine4_language` (
   `status` tinyint(1) NOT NULL,
   PRIMARY KEY (`language_id`),
   KEY `name` (`name`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -912,85 +606,8 @@ CREATE TABLE `engine4_language` (
 
 LOCK TABLES `engine4_language` WRITE;
 /*!40000 ALTER TABLE `engine4_language` DISABLE KEYS */;
-INSERT INTO `engine4_language` VALUES (1,'English','en','en_US.UTF-8,en_US,en-gb,english','gb.png','english',1,1);
+INSERT INTO `engine4_language` VALUES (1,'English','en','en_US.UTF-8,en_US,en-gb,english','gb.png','english',1,1),(2,'Turkish','tr','tr','tr.png','turkish',2,1);
 /*!40000 ALTER TABLE `engine4_language` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `engine4_layout`
---
-
-DROP TABLE IF EXISTS `engine4_layout`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `engine4_layout` (
-  `layout_id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(64) NOT NULL,
-  PRIMARY KEY (`layout_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `engine4_layout`
---
-
-LOCK TABLES `engine4_layout` WRITE;
-/*!40000 ALTER TABLE `engine4_layout` DISABLE KEYS */;
-INSERT INTO `engine4_layout` VALUES (1,'Home'),(2,'Product'),(3,'Category'),(4,'Default'),(5,'Manufacturer'),(6,'Account'),(7,'Checkout'),(8,'Contact'),(9,'Sitemap'),(10,'Affiliate'),(11,'Information'),(12,'Compare'),(13,'Search');
-/*!40000 ALTER TABLE `engine4_layout` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `engine4_layout_module`
---
-
-DROP TABLE IF EXISTS `engine4_layout_module`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `engine4_layout_module` (
-  `layout_module_id` int(11) NOT NULL AUTO_INCREMENT,
-  `layout_id` int(11) NOT NULL,
-  `code` varchar(64) NOT NULL,
-  `position` varchar(14) NOT NULL,
-  `sort_order` int(3) NOT NULL,
-  PRIMARY KEY (`layout_module_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=74 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `engine4_layout_module`
---
-
-LOCK TABLES `engine4_layout_module` WRITE;
-/*!40000 ALTER TABLE `engine4_layout_module` DISABLE KEYS */;
-INSERT INTO `engine4_layout_module` VALUES (2,4,'0','content_top',0),(3,4,'0','content_top',1),(20,5,'0','column_left',2),(69,10,'affiliate','column_right',1),(68,6,'account','column_right',1),(67,1,'carousel.29','content_top',3),(66,1,'slideshow.27','content_top',1),(65,1,'featured.28','content_top',2),(72,3,'category','column_left',1),(73,3,'banner.30','column_left',2);
-/*!40000 ALTER TABLE `engine4_layout_module` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `engine4_layout_route`
---
-
-DROP TABLE IF EXISTS `engine4_layout_route`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `engine4_layout_route` (
-  `layout_route_id` int(11) NOT NULL AUTO_INCREMENT,
-  `layout_id` int(11) NOT NULL,
-  `store_id` int(11) NOT NULL,
-  `route` varchar(255) NOT NULL,
-  PRIMARY KEY (`layout_route_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=54 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `engine4_layout_route`
---
-
-LOCK TABLES `engine4_layout_route` WRITE;
-/*!40000 ALTER TABLE `engine4_layout_route` DISABLE KEYS */;
-INSERT INTO `engine4_layout_route` VALUES (38,6,0,'account/%'),(17,10,0,'affiliate/%'),(44,3,0,'product/category'),(42,1,0,'common/home'),(20,2,0,'product/product'),(24,11,0,'information/information'),(23,7,0,'checkout/%'),(31,8,0,'information/contact'),(32,9,0,'information/sitemap'),(34,4,0,''),(45,5,0,'product/manufacturer'),(52,12,0,'product/compare'),(53,13,0,'product/search');
-/*!40000 ALTER TABLE `engine4_layout_route` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1025,403 +642,6 @@ LOCK TABLES `engine4_location` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `engine4_marketing`
---
-
-DROP TABLE IF EXISTS `engine4_marketing`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `engine4_marketing` (
-  `marketing_id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(32) NOT NULL,
-  `description` text NOT NULL,
-  `code` varchar(64) NOT NULL,
-  `clicks` int(5) NOT NULL DEFAULT '0',
-  `date_added` datetime NOT NULL,
-  PRIMARY KEY (`marketing_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `engine4_marketing`
---
-
-LOCK TABLES `engine4_marketing` WRITE;
-/*!40000 ALTER TABLE `engine4_marketing` DISABLE KEYS */;
-/*!40000 ALTER TABLE `engine4_marketing` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `engine4_modification`
---
-
-DROP TABLE IF EXISTS `engine4_modification`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `engine4_modification` (
-  `modification_id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(64) NOT NULL,
-  `code` varchar(64) NOT NULL,
-  `author` varchar(64) NOT NULL,
-  `version` varchar(32) NOT NULL,
-  `link` varchar(255) NOT NULL,
-  `xml` text NOT NULL,
-  `status` tinyint(1) NOT NULL,
-  `date_added` datetime NOT NULL,
-  PRIMARY KEY (`modification_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `engine4_modification`
---
-
-LOCK TABLES `engine4_modification` WRITE;
-/*!40000 ALTER TABLE `engine4_modification` DISABLE KEYS */;
-/*!40000 ALTER TABLE `engine4_modification` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `engine4_order`
---
-
-DROP TABLE IF EXISTS `engine4_order`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `engine4_order` (
-  `order_id` int(11) NOT NULL AUTO_INCREMENT,
-  `invoice_no` int(11) NOT NULL DEFAULT '0',
-  `invoice_prefix` varchar(26) NOT NULL,
-  `application_id` int(11) NOT NULL DEFAULT '0',
-  `application_name` varchar(64) NOT NULL,
-  `application_url` varchar(255) NOT NULL,
-  `merchant_id` int(11) NOT NULL DEFAULT '0',
-  `merchant_group_id` int(11) NOT NULL DEFAULT '0',
-  `firstname` varchar(32) NOT NULL,
-  `lastname` varchar(32) NOT NULL,
-  `email` varchar(96) NOT NULL,
-  `telephone` varchar(32) NOT NULL,
-  `fax` varchar(32) NOT NULL,
-  `custom_field` text NOT NULL,
-  `payment_firstname` varchar(32) NOT NULL,
-  `payment_lastname` varchar(32) NOT NULL,
-  `payment_company` varchar(40) NOT NULL,
-  `payment_address_1` varchar(128) NOT NULL,
-  `payment_address_2` varchar(128) NOT NULL,
-  `payment_city` varchar(128) NOT NULL,
-  `payment_postcode` varchar(10) NOT NULL,
-  `payment_country` varchar(128) NOT NULL,
-  `payment_country_id` int(11) NOT NULL,
-  `payment_zone` varchar(128) NOT NULL,
-  `payment_zone_id` int(11) NOT NULL,
-  `payment_address_format` text NOT NULL,
-  `payment_custom_field` text NOT NULL,
-  `payment_method` varchar(128) NOT NULL,
-  `payment_code` varchar(128) NOT NULL,
-  `shipping_firstname` varchar(32) NOT NULL,
-  `shipping_lastname` varchar(32) NOT NULL,
-  `shipping_company` varchar(40) NOT NULL,
-  `shipping_address_1` varchar(128) NOT NULL,
-  `shipping_address_2` varchar(128) NOT NULL,
-  `shipping_city` varchar(128) NOT NULL,
-  `shipping_postcode` varchar(10) NOT NULL,
-  `shipping_country` varchar(128) NOT NULL,
-  `shipping_country_id` int(11) NOT NULL,
-  `shipping_zone` varchar(128) NOT NULL,
-  `shipping_zone_id` int(11) NOT NULL,
-  `shipping_address_format` text NOT NULL,
-  `shipping_custom_field` text NOT NULL,
-  `shipping_method` varchar(128) NOT NULL,
-  `shipping_code` varchar(128) NOT NULL,
-  `comment` text NOT NULL,
-  `total` decimal(15,4) NOT NULL DEFAULT '0.0000',
-  `order_status_id` int(11) NOT NULL DEFAULT '0',
-  `affiliate_id` int(11) NOT NULL,
-  `commission` decimal(15,4) NOT NULL,
-  `marketing_id` int(11) NOT NULL,
-  `tracking` varchar(64) NOT NULL,
-  `language_id` int(11) NOT NULL,
-  `currency_id` int(11) NOT NULL,
-  `currency_code` varchar(3) NOT NULL,
-  `currency_value` decimal(15,8) NOT NULL DEFAULT '1.00000000',
-  `ip` varchar(40) NOT NULL,
-  `forwarded_ip` varchar(40) NOT NULL,
-  `user_agent` varchar(255) NOT NULL,
-  `accept_language` varchar(255) NOT NULL,
-  `date_added` datetime NOT NULL,
-  `date_modified` datetime NOT NULL,
-  PRIMARY KEY (`order_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `engine4_order`
---
-
-LOCK TABLES `engine4_order` WRITE;
-/*!40000 ALTER TABLE `engine4_order` DISABLE KEYS */;
-/*!40000 ALTER TABLE `engine4_order` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `engine4_order_custom_field`
---
-
-DROP TABLE IF EXISTS `engine4_order_custom_field`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `engine4_order_custom_field` (
-  `order_custom_field_id` int(11) NOT NULL AUTO_INCREMENT,
-  `order_id` int(11) NOT NULL,
-  `custom_field_id` int(11) NOT NULL,
-  `custom_field_value_id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `value` text NOT NULL,
-  `type` varchar(32) NOT NULL,
-  `location` varchar(16) NOT NULL,
-  PRIMARY KEY (`order_custom_field_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `engine4_order_custom_field`
---
-
-LOCK TABLES `engine4_order_custom_field` WRITE;
-/*!40000 ALTER TABLE `engine4_order_custom_field` DISABLE KEYS */;
-/*!40000 ALTER TABLE `engine4_order_custom_field` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `engine4_order_fraud`
---
-
-DROP TABLE IF EXISTS `engine4_order_fraud`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `engine4_order_fraud` (
-  `order_id` int(11) NOT NULL,
-  `merchant_id` int(11) NOT NULL,
-  `country_match` varchar(3) NOT NULL,
-  `country_code` varchar(2) NOT NULL,
-  `high_risk_country` varchar(3) NOT NULL,
-  `distance` int(11) NOT NULL,
-  `ip_region` varchar(255) NOT NULL,
-  `ip_city` varchar(255) NOT NULL,
-  `ip_latitude` decimal(10,6) NOT NULL,
-  `ip_longitude` decimal(10,6) NOT NULL,
-  `ip_isp` varchar(255) NOT NULL,
-  `ip_org` varchar(255) NOT NULL,
-  `ip_asnum` int(11) NOT NULL,
-  `ip_user_type` varchar(255) NOT NULL,
-  `ip_country_confidence` varchar(3) NOT NULL,
-  `ip_region_confidence` varchar(3) NOT NULL,
-  `ip_city_confidence` varchar(3) NOT NULL,
-  `ip_postal_confidence` varchar(3) NOT NULL,
-  `ip_postal_code` varchar(10) NOT NULL,
-  `ip_accuracy_radius` int(11) NOT NULL,
-  `ip_net_speed_cell` varchar(255) NOT NULL,
-  `ip_metro_code` int(3) NOT NULL,
-  `ip_area_code` int(3) NOT NULL,
-  `ip_time_zone` varchar(255) NOT NULL,
-  `ip_region_name` varchar(255) NOT NULL,
-  `ip_domain` varchar(255) NOT NULL,
-  `ip_country_name` varchar(255) NOT NULL,
-  `ip_continent_code` varchar(2) NOT NULL,
-  `ip_corporate_proxy` varchar(3) NOT NULL,
-  `anonymous_proxy` varchar(3) NOT NULL,
-  `proxy_score` int(3) NOT NULL,
-  `is_trans_proxy` varchar(3) NOT NULL,
-  `free_mail` varchar(3) NOT NULL,
-  `carder_email` varchar(3) NOT NULL,
-  `high_risk_username` varchar(3) NOT NULL,
-  `high_risk_password` varchar(3) NOT NULL,
-  `bin_match` varchar(10) NOT NULL,
-  `bin_country` varchar(2) NOT NULL,
-  `bin_name_match` varchar(3) NOT NULL,
-  `bin_name` varchar(255) NOT NULL,
-  `bin_phone_match` varchar(3) NOT NULL,
-  `bin_phone` varchar(32) NOT NULL,
-  `merchant_phone_in_billing_location` varchar(8) NOT NULL,
-  `ship_forward` varchar(3) NOT NULL,
-  `city_postal_match` varchar(3) NOT NULL,
-  `ship_city_postal_match` varchar(3) NOT NULL,
-  `score` decimal(10,5) NOT NULL,
-  `explanation` text NOT NULL,
-  `risk_score` decimal(10,5) NOT NULL,
-  `queries_remaining` int(11) NOT NULL,
-  `maxmind_id` varchar(8) NOT NULL,
-  `error` text NOT NULL,
-  `date_added` datetime NOT NULL,
-  PRIMARY KEY (`order_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `engine4_order_fraud`
---
-
-LOCK TABLES `engine4_order_fraud` WRITE;
-/*!40000 ALTER TABLE `engine4_order_fraud` DISABLE KEYS */;
-/*!40000 ALTER TABLE `engine4_order_fraud` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `engine4_order_history`
---
-
-DROP TABLE IF EXISTS `engine4_order_history`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `engine4_order_history` (
-  `order_history_id` int(11) NOT NULL AUTO_INCREMENT,
-  `order_id` int(11) NOT NULL,
-  `order_status_id` int(5) NOT NULL,
-  `notify` tinyint(1) NOT NULL DEFAULT '0',
-  `comment` text NOT NULL,
-  `date_added` datetime NOT NULL,
-  PRIMARY KEY (`order_history_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `engine4_order_history`
---
-
-LOCK TABLES `engine4_order_history` WRITE;
-/*!40000 ALTER TABLE `engine4_order_history` DISABLE KEYS */;
-/*!40000 ALTER TABLE `engine4_order_history` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `engine4_order_option`
---
-
-DROP TABLE IF EXISTS `engine4_order_option`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `engine4_order_option` (
-  `order_option_id` int(11) NOT NULL AUTO_INCREMENT,
-  `order_id` int(11) NOT NULL,
-  `order_product_id` int(11) NOT NULL,
-  `product_option_id` int(11) NOT NULL,
-  `product_option_value_id` int(11) NOT NULL DEFAULT '0',
-  `name` varchar(255) NOT NULL,
-  `value` text NOT NULL,
-  `type` varchar(32) NOT NULL,
-  PRIMARY KEY (`order_option_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `engine4_order_option`
---
-
-LOCK TABLES `engine4_order_option` WRITE;
-/*!40000 ALTER TABLE `engine4_order_option` DISABLE KEYS */;
-/*!40000 ALTER TABLE `engine4_order_option` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `engine4_order_product`
---
-
-DROP TABLE IF EXISTS `engine4_order_product`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `engine4_order_product` (
-  `order_product_id` int(11) NOT NULL AUTO_INCREMENT,
-  `order_id` int(11) NOT NULL,
-  `product_id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `model` varchar(64) NOT NULL,
-  `quantity` int(4) NOT NULL,
-  `price` decimal(15,4) NOT NULL DEFAULT '0.0000',
-  `total` decimal(15,4) NOT NULL DEFAULT '0.0000',
-  `tax` decimal(15,4) NOT NULL DEFAULT '0.0000',
-  `reward` int(8) NOT NULL,
-  PRIMARY KEY (`order_product_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `engine4_order_product`
---
-
-LOCK TABLES `engine4_order_product` WRITE;
-/*!40000 ALTER TABLE `engine4_order_product` DISABLE KEYS */;
-/*!40000 ALTER TABLE `engine4_order_product` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `engine4_order_recurring`
---
-
-DROP TABLE IF EXISTS `engine4_order_recurring`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `engine4_order_recurring` (
-  `order_recurring_id` int(11) NOT NULL AUTO_INCREMENT,
-  `order_id` int(11) NOT NULL,
-  `reference` varchar(255) NOT NULL,
-  `product_id` int(11) NOT NULL,
-  `product_name` varchar(255) NOT NULL,
-  `product_quantity` int(11) NOT NULL,
-  `recurring_id` int(11) NOT NULL,
-  `recurring_name` varchar(255) NOT NULL,
-  `recurring_description` varchar(255) NOT NULL,
-  `recurring_frequency` varchar(25) NOT NULL,
-  `recurring_cycle` smallint(6) NOT NULL,
-  `recurring_duration` smallint(6) NOT NULL,
-  `recurring_price` decimal(10,4) NOT NULL,
-  `trial` tinyint(1) NOT NULL,
-  `trial_frequency` varchar(25) NOT NULL,
-  `trial_cycle` smallint(6) NOT NULL,
-  `trial_duration` smallint(6) NOT NULL,
-  `trial_price` decimal(10,4) NOT NULL,
-  `status` tinyint(4) NOT NULL,
-  `date_added` datetime NOT NULL,
-  PRIMARY KEY (`order_recurring_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `engine4_order_recurring`
---
-
-LOCK TABLES `engine4_order_recurring` WRITE;
-/*!40000 ALTER TABLE `engine4_order_recurring` DISABLE KEYS */;
-/*!40000 ALTER TABLE `engine4_order_recurring` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `engine4_order_recurring_transaction`
---
-
-DROP TABLE IF EXISTS `engine4_order_recurring_transaction`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `engine4_order_recurring_transaction` (
-  `order_recurring_transaction_id` int(11) NOT NULL AUTO_INCREMENT,
-  `order_recurring_id` int(11) NOT NULL,
-  `reference` varchar(255) NOT NULL,
-  `type` varchar(255) NOT NULL,
-  `amount` decimal(10,4) NOT NULL,
-  `date_added` datetime NOT NULL,
-  PRIMARY KEY (`order_recurring_transaction_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `engine4_order_recurring_transaction`
---
-
-LOCK TABLES `engine4_order_recurring_transaction` WRITE;
-/*!40000 ALTER TABLE `engine4_order_recurring_transaction` DISABLE KEYS */;
-/*!40000 ALTER TABLE `engine4_order_recurring_transaction` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `engine4_order_status`
 --
 
@@ -1447,67 +667,6 @@ INSERT INTO `engine4_order_status` VALUES (2,1,'Processing'),(3,1,'Shipped'),(7,
 UNLOCK TABLES;
 
 --
--- Table structure for table `engine4_order_total`
---
-
-DROP TABLE IF EXISTS `engine4_order_total`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `engine4_order_total` (
-  `order_total_id` int(10) NOT NULL AUTO_INCREMENT,
-  `order_id` int(11) NOT NULL,
-  `code` varchar(32) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `value` decimal(15,4) NOT NULL DEFAULT '0.0000',
-  `sort_order` int(3) NOT NULL,
-  PRIMARY KEY (`order_total_id`),
-  KEY `order_id` (`order_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `engine4_order_total`
---
-
-LOCK TABLES `engine4_order_total` WRITE;
-/*!40000 ALTER TABLE `engine4_order_total` DISABLE KEYS */;
-/*!40000 ALTER TABLE `engine4_order_total` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `engine4_order_voucher`
---
-
-DROP TABLE IF EXISTS `engine4_order_voucher`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `engine4_order_voucher` (
-  `order_voucher_id` int(11) NOT NULL AUTO_INCREMENT,
-  `order_id` int(11) NOT NULL,
-  `voucher_id` int(11) NOT NULL,
-  `description` varchar(255) NOT NULL,
-  `code` varchar(10) NOT NULL,
-  `from_name` varchar(64) NOT NULL,
-  `from_email` varchar(96) NOT NULL,
-  `to_name` varchar(64) NOT NULL,
-  `to_email` varchar(96) NOT NULL,
-  `voucher_theme_id` int(11) NOT NULL,
-  `message` text NOT NULL,
-  `amount` decimal(15,4) NOT NULL,
-  PRIMARY KEY (`order_voucher_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `engine4_order_voucher`
---
-
-LOCK TABLES `engine4_order_voucher` WRITE;
-/*!40000 ALTER TABLE `engine4_order_voucher` DISABLE KEYS */;
-/*!40000 ALTER TABLE `engine4_order_voucher` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `engine4_setting`
 --
 
@@ -1517,12 +676,12 @@ DROP TABLE IF EXISTS `engine4_setting`;
 CREATE TABLE `engine4_setting` (
   `setting_id` int(11) NOT NULL AUTO_INCREMENT,
   `application_id` int(11) NOT NULL DEFAULT '0',
-  `code` varchar(32) NOT NULL,
+  `group` varchar(32) NOT NULL,
   `key` varchar(64) NOT NULL,
   `value` text NOT NULL,
   `serialized` tinyint(1) NOT NULL,
   PRIMARY KEY (`setting_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1010 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=1779 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1531,7 +690,7 @@ CREATE TABLE `engine4_setting` (
 
 LOCK TABLES `engine4_setting` WRITE;
 /*!40000 ALTER TABLE `engine4_setting` DISABLE KEYS */;
-INSERT INTO `engine4_setting` VALUES (1009,1,'config','config_secure','0',0),(1008,1,'config','config_image_location_height','180',0),(942,0,'config','config_seo_url','0',0),(943,0,'config','config_file_max_size','300000',0),(944,0,'config','config_file_ext_allowed','txt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc\r\nrtf\r\nxls\r\nppt\r\nodt\r\nods',0),(946,0,'config','config_maintenance','0',0),(947,0,'config','config_password','0',0),(948,0,'config','config_encryption','f42898ec41938bd417096625223dc4fa',0),(949,0,'config','config_compression','',0),(950,0,'config','config_error_display','1',0),(951,0,'config','config_error_log','0',0),(952,0,'config','config_error_filename','error.log',0),(953,0,'config','config_google_analytics','',0),(945,0,'config','config_file_mime_allowed','text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/vnd.microsoft.icon\r\nimage/tiff\r\nimage/svg+xml\r\napplication/zip\r\napplication/x-rar-compressed\r\napplication/x-msdownload\r\napplication/vnd.ms-cab-compressed\r\naudio/mpeg\r\nvideo/quicktime\r\napplication/pdf\r\nimage/vnd.adobe.photoshop\r\napplication/postscript\r\napplication/msword\r\napplication/rtf\r\napplication/vnd.ms-excel\r\napplication/vnd.ms-powerpoint\r\napplication/vnd.oasis.opendocument.text\r\napplication/vnd.oasis.opendocument.spreadsheet',0),(937,0,'config','config_fraud_score','',0),(938,0,'config','config_fraud_status_id','7',0),(939,0,'config','config_secure','0',0),(940,0,'config','config_shared','0',0),(941,0,'config','config_robots','abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai\'hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg',0),(924,0,'config','config_image_cart_height','47',0),(925,0,'config','config_image_location_width','268',0),(926,0,'config','config_image_location_height','180',0),(927,0,'config','config_ftp_hostname','map.avista.com',0),(928,0,'config','config_ftp_port','21',0),(929,0,'config','config_ftp_username','',0),(930,0,'config','config_ftp_password','',0),(931,0,'config','config_ftp_root','',0),(932,0,'config','config_ftp_status','0',0),(933,0,'config','config_mail','a:7:{s:8:\"protocol\";s:4:\"mail\";s:9:\"parameter\";s:0:\"\";s:13:\"smtp_hostname\";s:0:\"\";s:13:\"smtp_username\";s:0:\"\";s:13:\"smtp_password\";s:0:\"\";s:9:\"smtp_port\";s:2:\"25\";s:12:\"smtp_timeout\";s:1:\"5\";}',1),(936,0,'config','config_fraud_key','',0),(934,0,'config','config_mail_alert','',0),(935,0,'config','config_fraud_detection','0',0),(923,0,'config','config_image_cart_width','47',0),(888,0,'config','config_login_attempts','5',0),(922,0,'config','config_image_wishlist_height','47',0),(921,0,'config','config_image_wishlist_width','47',0),(920,0,'config','config_image_compare_height','90',0),(919,0,'config','config_image_compare_width','90',0),(918,0,'config','config_image_related_height','80',0),(917,0,'config','config_image_related_width','80',0),(916,0,'config','config_image_additional_height','74',0),(915,0,'config','config_image_additional_width','74',0),(914,0,'config','config_image_product_height','228',0),(913,0,'config','config_image_product_width','228',0),(912,0,'config','config_image_popup_height','500',0),(911,0,'config','config_image_popup_width','500',0),(910,0,'config','config_image_thumb_height','228',0),(909,0,'config','config_image_thumb_width','228',0),(908,0,'config','config_image_category_height','80',0),(907,0,'config','config_image_category_width','80',0),(906,0,'config','config_icon','catalog/Avista/avclogo.png',0),(905,0,'config','config_logo','catalog/Avista/avclogo.png',0),(904,0,'config','config_affiliate_mail','0',0),(903,0,'config','config_affiliate_id','0',0),(902,0,'config','config_affiliate_commission','5.00',0),(901,0,'config','config_affiliate_auto','0',0),(900,0,'config','config_affiliate_approval','0',0),(899,0,'config','config_order_mail','1',0),(898,0,'config','config_complete_status','a:1:{i:0;s:1:\"5\";}',1),(897,0,'config','config_processing_status','a:1:{i:0;s:1:\"2\";}',1),(896,0,'config','config_order_status_id','1',0),(895,0,'config','config_checkout_id','0',0),(894,0,'config','config_checkout_guest','0',0),(893,0,'config','config_cart_weight','0',0),(892,0,'config','config_api_id','0',0),(891,0,'config','config_invoice_prefix','INV-2015-00',0),(890,0,'config','config_account_mail','1',0),(889,0,'config','config_account_id','3',0),(887,0,'config','config_customer_price','0',0),(886,0,'config','config_customer_group_id','2',0),(885,0,'config','config_customer_online','0',0),(883,0,'config','config_tax_default','',0),(884,0,'config','config_tax_customer','',0),(881,0,'config','config_voucher_max','1000',0),(882,0,'config','config_tax','0',0),(880,0,'config','config_voucher_min','1',0),(879,0,'config','config_review_mail','0',0),(878,0,'config','config_review_guest','0',0),(877,0,'config','config_review_status','0',0),(876,0,'config','config_limit_admin','20',0),(874,0,'config','config_product_limit','15',0),(875,0,'config','config_product_description_length','100',0),(871,0,'config','config_currency','USD',0),(873,0,'config','config_product_count','0',0),(872,0,'config','config_currency_auto','1',0),(870,0,'config','config_admin_language','en',0),(869,0,'config','config_language','en',0),(868,0,'config','config_zone_id','3994',0),(867,0,'config','config_country_id','243',0),(866,0,'config','config_layout_id','6',0),(865,0,'config','config_template','mango',0),(864,0,'config','config_meta_keyword','',0),(863,0,'config','config_meta_description','',0),(862,0,'config','config_meta_title','Semite LLC',0),(861,0,'config','config_comment','',0),(859,0,'config','config_image','catalog/Avista/avclogo.png',0),(860,0,'config','config_open','',0),(858,0,'config','config_fax','',0),(857,0,'config','config_telephone','(381) 656-7289 72',0),(856,0,'config','config_email','ahmet.gudenoglu@semitepayment.com',0),(855,0,'config','config_geocode','RS',0),(854,0,'config','config_address','Kaludjerica Karadjordjeva 45',0),(853,0,'config','config_owner','Semite LLC',0),(852,0,'config','config_name','Semite LLC',0),(1007,1,'config','config_image_location_width','240',0),(1005,1,'config','config_image_cart_width','80',0),(1006,1,'config','config_image_cart_height','80',0),(1004,1,'config','config_image_wishlist_height','50',0),(1003,1,'config','config_image_wishlist_width','50',0),(1002,1,'config','config_image_compare_height','90',0),(1001,1,'config','config_image_compare_width','90',0),(1000,1,'config','config_image_related_height','80',0),(999,1,'config','config_image_related_width','80',0),(998,1,'config','config_image_additional_height','74',0),(997,1,'config','config_image_additional_width','74',0),(992,1,'config','config_image_thumb_height','228',0),(993,1,'config','config_image_popup_width','500',0),(994,1,'config','config_image_popup_height','500',0),(995,1,'config','config_image_product_width','80',0),(996,1,'config','config_image_product_height','80',0),(991,1,'config','config_image_thumb_width','228',0),(988,1,'config','config_icon','',0),(989,1,'config','config_image_category_width','80',0),(990,1,'config','config_image_category_height','80',0),(987,1,'config','config_logo','catalog/hiflogo.png',0),(986,1,'config','config_stock_checkout','0',0),(982,1,'config','config_checkout_guest','0',0),(983,1,'config','config_checkout_id','0',0),(984,1,'config','config_order_status_id','7',0),(985,1,'config','config_stock_display','0',0),(981,1,'config','config_cart_weight','0',0),(980,1,'config','config_account_id','3',0),(979,1,'config','config_customer_price','0',0),(978,1,'config','config_customer_group_id','2',0),(977,1,'config','config_tax_customer','',0),(975,1,'config','config_tax','0',0),(976,1,'config','config_tax_default','',0),(973,1,'config','config_product_limit','15',0),(974,1,'config','config_product_description_length','100',0),(972,1,'config','config_currency','USD',0),(971,1,'config','config_language','en',0),(970,1,'config','config_zone_id','199',0),(969,1,'config','config_country_id','14',0),(968,1,'config','config_layout_id','4',0),(967,1,'config','config_template','mango',0),(966,1,'config','config_meta_keyword','',0),(965,1,'config','config_meta_description','',0),(964,1,'config','config_meta_title','H.I.F. Invest Holding',0),(963,1,'config','config_image','',0),(962,1,'config','config_fax','',0),(961,1,'config','config_telephone','+381656728972',0),(960,1,'config','config_email','ahmet.gudenoglu@gmail.com',0),(959,1,'config','config_geocode','RS',0),(958,1,'config','config_address','Kaludjerica Karadjordjeva 45',0),(957,1,'config','config_owner','H.I.F. Invest Holding',0),(954,1,'config','config_url','http://portal.avista.com/',0),(955,1,'config','config_ssl','https://portal.avista.com/',0),(956,1,'config','config_name','HIF PORTAL',0);
+INSERT INTO `engine4_setting` VALUES (1009,1,'config','config_secure','0',0),(1008,1,'config','config_image_location_height','180',0),(1751,0,'config','config_error_filename','error.log',0),(1750,0,'config','config_error_log','0',0),(1775,3,'config','config_account_id','1',0),(1774,3,'config','config_customer_price','0',0),(1773,3,'config','config_customer_group_display','a:1:{i:0;s:1:\"4\";}',1),(1771,3,'config','config_product_description_length','100',0),(1772,3,'config','config_customer_group_id','4',0),(1770,3,'config','config_product_limit','15',0),(1749,0,'config','config_error_display','1',0),(1748,0,'config','config_compression','',0),(1747,0,'config','config_encryption','f42898ec41938bd417096625223dc4fa',0),(1745,0,'config','config_maintenance','0',0),(1746,0,'config','config_password','0',0),(1741,0,'config','config_seo_url','0',0),(1742,0,'config','config_file_max_size','300000',0),(1743,0,'config','config_file_ext_allowed','txt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc\r\nrtf\r\nxls\r\nppt\r\nodt\r\nods',0),(1769,3,'config','config_currency','USD',0),(1734,0,'config','config_fraud_detection','0',0),(1735,0,'config','config_fraud_key','',0),(1736,0,'config','config_fraud_score','',0),(1737,0,'config','config_fraud_status_id','7',0),(1738,0,'config','config_secure','0',0),(1739,0,'config','config_shared','0',0),(1740,0,'config','config_robots','abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai\'hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg',0),(1744,0,'config','config_file_mime_allowed','text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/vnd.microsoft.icon\r\nimage/tiff\r\nimage/svg+xml\r\napplication/zip\r\napplication/x-rar-compressed\r\napplication/x-msdownload\r\napplication/vnd.ms-cab-compressed\r\naudio/mpeg\r\nvideo/quicktime\r\napplication/pdf\r\nimage/vnd.adobe.photoshop\r\napplication/postscript\r\napplication/msword\r\napplication/rtf\r\napplication/vnd.ms-excel\r\napplication/vnd.ms-powerpoint\r\napplication/vnd.oasis.opendocument.text\r\napplication/vnd.oasis.opendocument.spreadsheet',0),(1733,0,'config','config_mail_alert','',0),(1732,0,'config','config_mail','a:7:{s:8:\"protocol\";s:4:\"mail\";s:9:\"parameter\";s:0:\"\";s:13:\"smtp_hostname\";s:0:\"\";s:13:\"smtp_username\";s:0:\"\";s:13:\"smtp_password\";s:0:\"\";s:9:\"smtp_port\";s:2:\"25\";s:12:\"smtp_timeout\";s:1:\"5\";}',1),(1729,0,'config','config_ftp_password','',0),(1730,0,'config','config_ftp_root','',0),(1731,0,'config','config_ftp_status','0',0),(1727,0,'config','config_ftp_port','21',0),(1728,0,'config','config_ftp_username','',0),(1726,0,'config','config_ftp_hostname','map.avista.com',0),(1725,0,'config','config_icon','catalog/Avista/avclogo.png',0),(1724,0,'config','config_logo','catalog/Avista/avclogo.png',0),(1723,0,'config','config_order_mail','1',0),(1722,0,'config','config_complete_status','a:1:{i:0;s:1:\"5\";}',1),(1721,0,'config','config_processing_status','a:1:{i:0;s:1:\"2\";}',1),(1719,0,'config','config_checkout_id','1',0),(1720,0,'config','config_order_status_id','1',0),(1718,0,'config','config_checkout_guest','0',0),(1717,0,'config','config_cart_weight','0',0),(1716,0,'config','config_api_id','4',0),(1714,0,'config','config_account_mail','1',0),(1715,0,'config','config_invoice_prefix','INV-2015-00',0),(1713,0,'config','config_account_id','1',0),(1712,0,'config','config_customer_price','0',0),(1711,0,'config','config_customer_group_display','a:1:{i:0;s:1:\"4\";}',1),(1709,0,'config','config_customer_online','0',0),(1710,0,'config','config_customer_group_id','4',0),(1708,0,'config','config_limit_admin','20',0),(1707,0,'config','config_currency_auto','1',0),(1705,0,'config','config_admin_language','en',0),(1706,0,'config','config_currency','USD',0),(1704,0,'config','config_language','en',0),(1703,0,'config','config_zone_id','3994',0),(1702,0,'config','config_country_id','243',0),(1701,0,'config','config_template','default',0),(1700,0,'config','config_meta_keyword','',0),(1699,0,'config','config_meta_description','',0),(1698,0,'config','config_meta_title','Semite LLC',0),(1697,0,'config','config_comment','',0),(1696,0,'config','config_open','',0),(1695,0,'config','config_image','catalog/Avista/avclogo.png',0),(1693,0,'config','config_telephone','(381) 656-7289 72',0),(1694,0,'config','config_fax','',0),(1768,3,'config','config_language','en',0),(1767,3,'config','config_zone_id','3994',0),(1766,3,'config','config_country_id','243',0),(1765,3,'config','config_template','default',0),(1764,3,'config','config_meta_keyword','',0),(1763,3,'config','config_meta_description','',0),(1762,3,'config','config_meta_title','H.I.F. Invest Holding',0),(1761,3,'config','config_fax','',0),(1760,3,'config','config_telephone','+381656728972',0),(1759,3,'config','config_email','semiteproject@hotmail.com',0),(1758,3,'config','config_geocode','',0),(1757,3,'config','config_address','Kaludjerica Karadjordjeva 45',0),(1753,3,'config','config_url','http://portal.avista.com/',0),(1754,3,'config','config_ssl','http://portal.avista.com/',0),(1692,0,'config','config_email','ahmet.gudenoglu@semitepayment.com',0),(1691,0,'config','config_geocode','RS',0),(1690,0,'config','config_address','Kaludjerica Karadjordjeva 45',0),(1756,3,'config','config_owner','H.I.F. Invest Holding',0),(1755,3,'config','config_name','H.I.F. Invest Holding',0),(1689,0,'config','config_owner','Semite LLC',0),(1688,0,'config','config_name','Semite LLC',0),(1752,0,'config','config_google_analytics','',0),(1776,3,'config','config_logo','',0),(1777,3,'config','config_icon','',0),(1778,3,'config','config_secure','0',0);
 /*!40000 ALTER TABLE `engine4_setting` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1566,7 +725,7 @@ CREATE TABLE `engine4_user` (
 
 LOCK TABLES `engine4_user` WRITE;
 /*!40000 ALTER TABLE `engine4_user` DISABLE KEYS */;
-INSERT INTO `engine4_user` VALUES (1,1,'admin','f67da967379085e2fba0f6e6aacdc92c5c66864c','4ec4e9e39','Ahmet','Goudenoglu','ahmet.gudenoglu@semitepayment.com','catalog/chris_palmer_profile_11.jpg','','127.0.0.1',1,'2014-10-27 12:03:39'),(3,10,'avista','e2ba6c4b0680419c6a879c21e12107d9fdf8ec60','24f350574','Dimitris','Chalambalis','info@avista-ventures.com','','','127.0.0.1',1,'2015-04-01 10:31:33');
+INSERT INTO `engine4_user` VALUES (1,1,'admin','f67da967379085e2fba0f6e6aacdc92c5c66864c','4ec4e9e39','Ahmet','Goudenoglu','ahmet.gudenoglu@semitepayment.com','catalog/chris_palmer_profile_11.jpg','','127.0.0.1',1,'2014-10-27 12:03:39');
 /*!40000 ALTER TABLE `engine4_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1591,7 +750,7 @@ CREATE TABLE `engine4_user_group` (
 
 LOCK TABLES `engine4_user_group` WRITE;
 /*!40000 ALTER TABLE `engine4_user_group` DISABLE KEYS */;
-INSERT INTO `engine4_user_group` VALUES (1,'Administrator','a:2:{s:6:\"access\";a:12:{i:0;s:18:\"common/filemanager\";i:1;s:11:\"common/menu\";i:2;s:17:\"sale/custom_field\";i:3;s:13:\"sale/customer\";i:4;s:20:\"sale/customer_ban_ip\";i:5;s:19:\"sale/customer_group\";i:6;s:10:\"sale/order\";i:7;s:19:\"setting/application\";i:8;s:15:\"setting/setting\";i:9;s:8:\"user/api\";i:10;s:9:\"user/user\";i:11;s:20:\"user/user_permission\";}s:6:\"modify\";a:12:{i:0;s:18:\"common/filemanager\";i:1;s:11:\"common/menu\";i:2;s:17:\"sale/custom_field\";i:3;s:13:\"sale/customer\";i:4;s:20:\"sale/customer_ban_ip\";i:5;s:19:\"sale/customer_group\";i:6;s:10:\"sale/order\";i:7;s:19:\"setting/application\";i:8;s:15:\"setting/setting\";i:9;s:8:\"user/api\";i:10;s:9:\"user/user\";i:11;s:20:\"user/user_permission\";}}'),(10,'Demonstration','a:1:{s:6:\"access\";a:9:{i:0;s:20:\"account/custom_field\";i:1;s:16:\"account/merchant\";i:2;s:23:\"account/merchant_ban_ip\";i:3;s:22:\"account/merchant_group\";i:4;s:18:\"common/filemanager\";i:5;s:11:\"common/menu\";i:6;s:8:\"user/api\";i:7;s:9:\"user/user\";i:8;s:20:\"user/user_permission\";}}');
+INSERT INTO `engine4_user_group` VALUES (1,'Administrator','a:2:{s:6:\"access\";a:10:{i:0;s:18:\"common/column_left\";i:1;s:11:\"common/menu\";i:2;s:13:\"sale/customer\";i:3;s:20:\"sale/customer_ban_ip\";i:4;s:19:\"sale/customer_group\";i:5;s:19:\"setting/application\";i:6;s:15:\"setting/setting\";i:7;s:8:\"user/api\";i:8;s:9:\"user/user\";i:9;s:20:\"user/user_permission\";}s:6:\"modify\";a:10:{i:0;s:18:\"common/column_left\";i:1;s:11:\"common/menu\";i:2;s:13:\"sale/customer\";i:3;s:20:\"sale/customer_ban_ip\";i:4;s:19:\"sale/customer_group\";i:5;s:19:\"setting/application\";i:6;s:15:\"setting/setting\";i:7;s:8:\"user/api\";i:8;s:9:\"user/user\";i:9;s:20:\"user/user_permission\";}}'),(10,'Demonstration','a:1:{s:6:\"access\";a:7:{i:0;s:18:\"common/column_left\";i:1;s:11:\"common/menu\";i:2;s:19:\"setting/application\";i:3;s:15:\"setting/setting\";i:4;s:8:\"user/api\";i:5;s:9:\"user/user\";i:6;s:20:\"user/user_permission\";}}');
 /*!40000 ALTER TABLE `engine4_user_group` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1631,4 +790,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-04-03 15:37:00
+-- Dump completed on 2015-04-05 22:54:43

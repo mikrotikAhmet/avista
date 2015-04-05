@@ -24,8 +24,9 @@ $_['text_account'] = 'My Account';
 $_['text_language'] = 'Language';
 $_['text_password'] = 'Password';
 $_['text_security'] = 'Security';
-$_['text_2way'] = '2-Way Auth. requires mobile number. This option will protect you account from fraud.'
-;
+$_['text_2way'] = '2-Way Auth. requires mobile number. This option will protect you account from fraud.';
+$_['text_your_details']    = 'Your Personal Details';
+
 
 // Entry
 $_['entry_language'] = 'Language';

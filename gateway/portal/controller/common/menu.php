@@ -32,9 +32,11 @@ class ControllerCommonMenu extends Controller {
 		$this->load->language('common/menu');
 
 		$data['text_dashboard'] = $this->language->get('text_dashboard');
+		$data['text_order'] = $this->language->get('text_order');
 
 
 		$data['home'] = $this->url->link('account/dashboard', '', 'SSL');
+		$data['order'] = $this->url->link('sale/order', '', 'SSL');
 
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/menu.tpl')) {
 			return $this->load->view($this->config->get('config_template') . '/template/common/menu.tpl', $data);
