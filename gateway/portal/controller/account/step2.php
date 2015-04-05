@@ -50,9 +50,9 @@ class ControllerAccountStep2 extends Controller {
 
 			unset($this->session->data['acv_nc']);
 
-			$this->customer->login($this->request->post['email'], $this->request->post['password']);
-
-			unset($this->session->data['guest']);
+//			$this->customer->login($this->request->post['email'], $this->request->post['password']);
+//
+//			unset($this->session->data['guest']);
 
 			// Add to activity log
 			$this->load->model('account/activity');

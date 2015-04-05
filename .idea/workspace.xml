@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbd0d96c-d439-4391-add6-8ad6ad0b2fa0" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/map/system/cache/cache.application.1428243807" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/map/system/cache/cache.country.1428243810" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/map/system/cache/cache.zone.243.1428243811" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/portal/system/cache/cache.currency.1428251800" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/portal/system/cache/cache.language.1428251800" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/config.php" afterPath="$PROJECT_DIR$/gateway/portal/config.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/model/account/customer.php" afterPath="$PROJECT_DIR$/gateway/portal/model/account/customer.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/controller/account/step2.php" afterPath="$PROJECT_DIR$/gateway/portal/controller/account/step2.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="avista.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,30 +28,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="step2.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="step2.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/step2.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4368421" vertical-offset="486" max-vertical-offset="3405">
-              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+            <state vertical-scroll-proportion="-12.25" vertical-offset="486" max-vertical-offset="3405">
+              <caret line="52" column="0" selection-start-line="52" selection-start-column="2" selection-end-line="54" selection-end-column="49" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="customer.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="success.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/success.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.75" vertical-offset="360" max-vertical-offset="1230">
+              <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="customer.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gateway/portal/model/account/customer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.375" vertical-offset="525" max-vertical-offset="3150">
-              <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.47368422" vertical-offset="525" max-vertical-offset="3150">
+              <caret line="53" column="46" selection-start-line="53" selection-start-column="46" selection-end-line="53" selection-end-column="46" />
               <folding>
-                <marker date="1428251928010" expanded="true" signature="1409:2234" placeholder="INSERT INTO ..." />
-                <marker date="1428251928010" expanded="true" signature="2301:2963" placeholder="INSERT INTO ..." />
-                <marker date="1428251928010" expanded="true" signature="8008:8095" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
-                <marker date="1428251928010" expanded="true" signature="8201:8314" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
-                <marker date="1428251928010" expanded="true" signature="8420:8525" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
-                <marker date="1428251928010" expanded="true" signature="8709:8838" placeholder="SELECT COUNT..DB_PREFIXcustomer..." />
-                <marker date="1428251928010" expanded="true" signature="8947:9039" placeholder="SELECT * FRO..." />
-                <marker date="1428251928010" expanded="true" signature="9132:9224" placeholder="SELECT * FRO..." />
+                <marker date="1428252475020" expanded="true" signature="1409:2206" placeholder="INSERT INTO ..." />
+                <marker date="1428252475020" expanded="true" signature="1409:2347" placeholder="INSERT INTO ..." />
+                <marker date="1428252475020" expanded="true" signature="2414:3076" placeholder="INSERT INTO ..." />
+                <marker date="1428252475020" expanded="true" signature="8121:8208" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
+                <marker date="1428252475020" expanded="true" signature="8314:8427" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
+                <marker date="1428252475020" expanded="true" signature="8533:8638" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
+                <marker date="1428252475020" expanded="true" signature="8822:8951" placeholder="SELECT COUNT..DB_PREFIXcustomer..." />
+                <marker date="1428252475020" expanded="true" signature="9060:9152" placeholder="SELECT * FRO..." />
+                <marker date="1428252475020" expanded="true" signature="9245:9337" placeholder="SELECT * FRO..." />
               </folding>
             </state>
           </provider>
@@ -126,8 +130,8 @@
         <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/account.tpl" />
         <option value="$PROJECT_DIR$/gateway/portal/controller/account/account.php" />
         <option value="$PROJECT_DIR$/gateway/portal/config.php" />
-        <option value="$PROJECT_DIR$/gateway/portal/model/account/customer.php" />
         <option value="$PROJECT_DIR$/gateway/portal/controller/account/step2.php" />
+        <option value="$PROJECT_DIR$/gateway/portal/model/account/customer.php" />
       </list>
     </option>
   </component>
@@ -233,7 +237,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
+              <option name="myItemId" value="controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -255,7 +259,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
+              <option name="myItemId" value="controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -368,13 +372,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gateway/portal/language/english/common/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.5" vertical-offset="0" max-vertical-offset="405">
-          <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gateway/portal/language/english/common/footer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="607">
@@ -724,28 +721,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/portal/model/account/customer.php">
+    <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/success.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.375" vertical-offset="525" max-vertical-offset="3150">
-          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-          <folding>
-            <marker date="1428251928010" expanded="true" signature="1409:2234" placeholder="INSERT INTO ..." />
-            <marker date="1428251928010" expanded="true" signature="2301:2963" placeholder="INSERT INTO ..." />
-            <marker date="1428251928010" expanded="true" signature="8008:8095" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
-            <marker date="1428251928010" expanded="true" signature="8201:8314" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
-            <marker date="1428251928010" expanded="true" signature="8420:8525" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
-            <marker date="1428251928010" expanded="true" signature="8709:8838" placeholder="SELECT COUNT..DB_PREFIXcustomer..." />
-            <marker date="1428251928010" expanded="true" signature="8947:9039" placeholder="SELECT * FRO..." />
-            <marker date="1428251928010" expanded="true" signature="9132:9224" placeholder="SELECT * FRO..." />
-          </folding>
+        <state vertical-scroll-proportion="-3.75" vertical-offset="360" max-vertical-offset="1230">
+          <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/step2.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4368421" vertical-offset="486" max-vertical-offset="3405">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+        <state vertical-scroll-proportion="-12.25" vertical-offset="486" max-vertical-offset="3405">
+          <caret line="52" column="0" selection-start-line="52" selection-start-column="2" selection-end-line="54" selection-end-column="49" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/portal/model/account/customer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47368422" vertical-offset="525" max-vertical-offset="3150">
+          <caret line="53" column="46" selection-start-line="53" selection-start-column="46" selection-end-line="53" selection-end-column="46" />
+          <folding>
+            <marker date="1428252475020" expanded="true" signature="1409:2206" placeholder="INSERT INTO ..." />
+            <marker date="1428252475020" expanded="true" signature="1409:2347" placeholder="INSERT INTO ..." />
+            <marker date="1428252475020" expanded="true" signature="2414:3076" placeholder="INSERT INTO ..." />
+            <marker date="1428252475020" expanded="true" signature="8121:8208" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
+            <marker date="1428252475020" expanded="true" signature="8314:8427" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
+            <marker date="1428252475020" expanded="true" signature="8533:8638" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
+            <marker date="1428252475020" expanded="true" signature="8822:8951" placeholder="SELECT COUNT..DB_PREFIXcustomer..." />
+            <marker date="1428252475020" expanded="true" signature="9060:9152" placeholder="SELECT * FRO..." />
+            <marker date="1428252475020" expanded="true" signature="9245:9337" placeholder="SELECT * FRO..." />
+          </folding>
         </state>
       </provider>
     </entry>
