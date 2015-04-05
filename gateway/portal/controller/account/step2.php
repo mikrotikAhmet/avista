@@ -42,10 +42,11 @@ class ControllerAccountStep2 extends Controller {
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
 
 
-
 			$customer_data = array_merge($this->request->post, $this->session->data['acv_nc']);
 
+
 			$this->model_account_customer->addCustomer($customer_data);
+
 
 			unset($this->session->data['acv_nc']);
 
