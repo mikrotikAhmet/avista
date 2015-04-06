@@ -60,13 +60,13 @@
                             <div class="form-group required">
                                 <label class="control-label" for="input-currency"><?php echo $entry_currency; ?></label>
                                 <div class="">
-                                    <select name="currency_id" id="input-currency" class="form-control">
+                                    <select name="currency_code" id="input-currency" class="form-control">
                                         <option value=""><?php echo $text_select; ?></option>
                                         <?php foreach ($currencies as $currency) { ?>
                                         <?php if ($currency['currency_id'] == $currency_id) { ?>
-                                        <option value="<?php echo $currency['currency_id']; ?>" selected="selected"><?php echo $currency['code']; ?></option>
+                                        <option value="<?php echo $currency['code']; ?>" selected="selected"><?php echo $currency['code']; ?></option>
                                         <?php } else { ?>
-                                        <option value="<?php echo $currency['currency_id']; ?>"><?php echo $currency['code']; ?></option>
+                                        <option value="<?php echo $currency['code']; ?>"><?php echo $currency['code']; ?></option>
                                         <?php } ?>
                                         <?php } ?>
                                     </select>

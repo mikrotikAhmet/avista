@@ -117,9 +117,41 @@ $('input[name=\'amount\']').on('keyup', function(e) {
 });
 
     function issue(){
-        $('.modal-body').html('<p>Please wait...</p>'+$('form').serialize());
-        $('#button-issue').attr("disabled", true);
-        $('#button-close').attr("disabled", true);
+
+        var data = $('input[name=\'vc\']').val();
+
+        var element = $(this);
+
+        $.ajax({
+            url: 'index.php?route=sale/order/verifyCode',
+            type: 'post',
+            data : 'vc='+data,
+            dataType: 'json',
+            beforeSend: function() {
+
+                $('#button-issue').attr("disabled", true);
+                $('#button-close').attr("disabled", true);
+                element.button('loading');
+            },
+            success: function(json) {
+
+                element.button('reset');
+
+                if (json.error){
+                    alert(json.error['message']);
+                    $('#button-issue').attr("disabled", false);
+                    $('#button-close').attr("disabled", false);
+
+                } else {
+                    alert(json.message);
+
+                    $('#button-issue').attr("disabled", false);
+                    $('#button-close').attr("disabled", false);
+
+                    location.reload();
+                }
+            }
+        });
     };
 
     function sendCode(){
@@ -129,6 +161,7 @@ $('input[name=\'amount\']').on('keyup', function(e) {
         $.ajax({
             url: 'index.php?route=sale/order/verification',
             type: 'post',
+            data : $('form').serialize(),
             dataType: 'json',
             beforeSend: function() {
                 element.button('loading');
@@ -164,13 +197,7 @@ $('input[name=\'amount\']').on('keyup', function(e) {
                     </div>
                 </div>
                 <?php } else { ?>
-                <p>Inorder to us to continue issuing your order you must proved a valid Mobile number.</p>
-                <div class="form-group">
-                    <label class="control-label" for="input-telephone">Telephone</label>
-                    <div class="">
-                        <input type="text" name="telephone"  value="" id="input-telephone" class="form-control"/>
-                    </div>
-                </div>
+                    <p>Inorder to us to continue issuing your order you must proved a valid Mobile number.</p>
                 <?php } ?>
             </div>
             <div class="modal-footer">

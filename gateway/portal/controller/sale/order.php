@@ -30,14 +30,18 @@ if (!defined('DIR_APPLICATION'))
 class ControllerSaleOrder extends Controller {
 
 	private $error = array();
+    private $uuid = '';
 
 	public function index(){
+
+        $this->load->model('sale/order');
 
 		$this->load->language('sale/order');
 
 		$this->document->setTitle($this->language->get('heading_title'));
 
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
+
 
 		}
 
@@ -75,13 +79,52 @@ class ControllerSaleOrder extends Controller {
 		}
 	}
 
+    public function verifyCode(){
+
+        $json = array();
+        $code = $this->request->post['vc'];
+
+        $this->load->model('sale/order');
+
+        $order_data = $this->model_sale_order->getOrder($code);
+
+        if (!$order_data){
+
+            $json['error'] = array(
+                'message'=>'Verification code does not match!'
+            );
+        } else {
+
+            if ($order_data['order_status_id'] > 0){
+
+                $json['error'] = array(
+                    'message'=>'This order has already placed.'
+                );
+            } else {
+                $this->model_sale_order->updateOrderStatus($code, $this->config->get('config_order_status_id'));
+
+                $json = array(
+                    'message' => 'Your order has been placed successfully.'
+                );
+            }
+        }
+
+
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($json));
+    }
+
     public function verification(){
+
+        $this->load->model('sale/order');
+
 
         $this->load->helper('uuid');
 
         $uuid = new UUID();
 
-        $unique_id =date('Ymdi'). $uuid->uniqueId($format = 'nnnnnn',$length = '20');
+        $unique_id =date('s').$uuid->uniqueId($format = 'nnnnnn',$length = '20');
+        $this->uuid = $unique_id;
 
         $user = "semitellc";
         $password = "ZePFFHQAQQgQIF";
@@ -89,7 +132,7 @@ class ControllerSaleOrder extends Controller {
         $baseurl ="http://api.clickatell.com";
 
         $text = urlencode($unique_id);
-        $to = '381656728972';
+        $to = $this->customer->getTelephone();
 
         // auth call
         $url = "$baseurl/http/auth?user=$user&password=$password&api_id=$api_id";
@@ -110,7 +153,35 @@ class ControllerSaleOrder extends Controller {
 
             if ($send[0] == "ID") {
 
+                $ip = $_SERVER['REMOTE_ADDR'];
+                $forwarded_ip = $_SERVER['REMOTE_ADDR'];
+                $user_agent = $_SERVER['HTTP_USER_AGENT'];
+                $accept_language = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
 
+                $data = array(
+                    'invoice_prefix'=>$this->config->get('config_invoice_prefix'),
+                    'application_id'=>$this->config->get('config_application_id'),
+                    'application_name'=>$this->config->get('config_name'),
+                    'application_url'=>$this->config->get('config_url'),
+                    'customer_id'=>$this->customer->getId(),
+                    'customer_group_id'=>$this->customer->getGroupId(),
+                    'firstname'=>$this->customer->getFirstName(),
+                    'lastname'=>$this->customer->getLastName(),
+                    'email'=>$this->customer->getEmail(),
+                    'telephone'=>$this->customer->getTelephone(),
+                    'request'=>$this->request->post['amount'],
+                    'order_status_id'=>$this->config->get('config_order_status_id'),
+                    'language_id'=>$this->customer->getLanguage(),
+                    'currency_id'=>$this->currency->getId($this->customer->getCurrency()),
+                    'currency_code'=>$this->customer->getCurrency(),
+                    'currency_value'=>$this->currency->getValue($this->customer->getCurrency()),
+                    'ip'=>$ip,
+                    'forwarded_ip'=>$forwarded_ip,
+                    'user_agent'=>$user_agent,
+                    'accept_language'=>$accept_language
+                );
+
+                $this->model_sale_order->addOrder($data,$unique_id);
 
             } else {
 //				echo "send message failed";

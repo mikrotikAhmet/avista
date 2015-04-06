@@ -20,6 +20,8 @@ if (!defined('DIR_APPLICATION'))
 
 class Customer {
     private $customer_id;
+    private $language_id;
+    private $currency_code;
     private $firstname;
     private $lastname;
     private $email;
@@ -52,6 +54,8 @@ class Customer {
                 $this->address_id = $customer_query->row['address_id'];
                 $this->approved = $customer_query->row['approved'];
 	            $this->twoway = $customer_query->row['two_way'];
+                $this->language_id = $customer_query->row['language_id'];
+                $this->currency_code = $customer_query->row['currency_code'];
 
 
                 $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer_ip WHERE customer_id = '" . (int)$this->session->data['customer_id'] . "' AND ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "'");
@@ -86,6 +90,8 @@ class Customer {
             $this->address_id = $customer_query->row['address_id'];
             $this->approved = $customer_query->row['approved'];
 	        $this->twoway = $customer_query->row['two_way'];
+            $this->language_id = $customer_query->row['language_id'];
+            $this->currency_code = $customer_query->row['currency_code'];
 
             $this->db->query("UPDATE " . DB_PREFIX . "customer SET ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "' WHERE customer_id = '" . (int)$this->customer_id . "'");
 
@@ -108,6 +114,14 @@ class Customer {
         $this->newsletter = '';
         $this->customer_group_id = '';
         $this->address_id = '';
+    }
+
+    public function getLanguage(){
+        return $this->language_id;
+    }
+
+    public function getCurrency(){
+        return $this->currency_code;
     }
 
 	public function isTwoway(){
