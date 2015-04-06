@@ -28,3 +28,4 @@ $_['text_sale']                    = 'Sales';
 $_['text_customer']                    = 'Customers';
 $_['text_customer_group']              = 'Customer Groups';
 $_['text_customer_ban_ip']             = 'Banned IP';
+$_['text_order']                       = 'Orders';

@@ -133,7 +133,7 @@ class ModelAccountCustomer extends Model {
 
 	public function addDocument($file,$filename){
 
-		$this->db->query("INSERT INTO ".DB_PREFIX."customer_document SET customer_id = '".(int) $this->customer->getId()."', filename = '".$this->db->escape($filename)."',file = '".$this->db->escape($file)."'");
+		$this->db->query("INSERT INTO ".DB_PREFIX."customer_document SET customer_id = '".(int) $this->customer->getId()."', filename = '".$this->db->escape($filename)."',file = '".$this->db->escape($file)."', ip = '".$_SERVER['REMOTE_ADDR']."', date_added = NOW(), status = '".$this->config->get('config_order_status_id')."'");
 	}
 
 	public function editCustomer($data) {

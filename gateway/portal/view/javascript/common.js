@@ -23,6 +23,13 @@ function getURLVar(key) {
 }
 
 $(document).ready(function() {
+
+    // Formating fields
+    //$('.cc').mask('0000-0000-0000-0000', {reverse: false});
+    //$('.cvv').mask('0000', {reverse: false});
+    $('.amount').mask('0000000000', {reverse: true});
+    //$('.phone').mask('+000000000000000', {reverse: false});
+
 	// Adding the clear Fix
 	cols1 = $('#column-right, #column-left').length;
 	

@@ -42,6 +42,8 @@ $_['column_amount']         = 'Amount';
 $_['column_points']         = 'Points';
 $_['column_ip']             = 'IP';
 $_['column_total']          = 'Total Accounts';
+$_['column_filename']           = 'Filename';
+$_['column_mask']           = 'Filename Mask';
 $_['column_action']         = 'Action';
 
 // Entry

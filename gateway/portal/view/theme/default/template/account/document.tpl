@@ -11,9 +11,9 @@
     <?php if ($documents) { ?>
     <?php foreach ($documents as $document) { ?>
         <tr>
-            <td><?php echo $document['file']?></td>
+            <td><?php echo $document['mask']?></td>
             <td><?php echo $document['filename']?></td>
-            <td><?php echo ($document['status'] ? 'Approved' : 'Pending')?></td>
+            <td><?php echo $document['status']?></td>
             <td><button type="button" id="remove-document" onclick="removeDocument('<?php echo $document['document_id']?>')" class="btn btn-xs btn-danger"><i class="fa fa-remove"></i></button></td>
         </tr>
     <?php } ?>

@@ -675,6 +675,7 @@ class ControllerSaleCustomer extends Controller {
 		$data['tab_transaction'] = $this->language->get('tab_transaction');
 		$data['tab_reward'] = $this->language->get('tab_reward');
 		$data['tab_ip'] = $this->language->get('tab_ip');
+        $data['tab_document'] = $this->language->get('tab_document');
 
 		$data['token'] = $this->session->data['token'];
 
@@ -1359,6 +1360,81 @@ class ControllerSaleCustomer extends Controller {
 		$this->response->setOutput(json_encode($json));
 	}
 
+    public function document() {
+        $this->load->language('sale/customer');
+
+        $this->load->model('sale/customer');
+
+        $data['text_no_results'] = $this->language->get('text_no_results');
+        $data['text_add_ban_ip'] = $this->language->get('text_add_ban_ip');
+        $data['text_remove_ban_ip'] = $this->language->get('text_remove_ban_ip');
+        $data['text_loading'] = $this->language->get('text_loading');
+
+        $data['column_filename'] = $this->language->get('column_filename');
+        $data['column_mask'] = $this->language->get('column_mask');
+        $data['column_status'] = $this->language->get('column_status');
+        $data['column_ip'] = $this->language->get('column_ip');
+        $data['column_date_added'] = $this->language->get('column_date_added');
+
+        if (isset($this->request->get['page'])) {
+            $page = $this->request->get['page'];
+        } else {
+            $page = 1;
+        }
+
+        $this->load->model('localisation/order_status');
+
+        $data['documents'] = array();
+
+        $results = $this->model_sale_customer->getDocuments($this->request->get['customer_id'], ($page - 1) * 10, 10);
+
+        foreach ($results as $result) {
+            $document_total = $this->model_sale_customer->getTotalDocumentsByCustomerId($result['customer_id']);
+            $order_status_data = $this->model_localisation_order_status->getOrderStatus($result['status']);
+
+
+            $data['documents'][] = array(
+                'document_id'         => $result['document_id'],
+                'customer_id'         => $result['customer_id'],
+                'filename'      =>$result['filename'],
+                'mask'      =>$result['file'],
+                'status'      =>$order_status_data['name'],
+                'filter_ip'      =>$result['ip'],
+                'ip'      => $this->url->link('sale/customer', 'token=' . $this->session->data['token'] . '&filter_ip=' . $result['ip'], 'SSL'),
+                'date_added' => date('d/m/y', strtotime($result['date_added'])),
+                'actions'=>$this->model_localisation_order_status->getOrderStatuses(),
+                'href'       => $this->url->link('sale/customer/download', 'token='.$this->session->data['token'].'&download_id=' . $result['document_id'], 'SSL')
+            );
+        }
+
+        $pagination = new Pagination();
+        $pagination->total = $document_total;
+        $pagination->page = $page;
+        $pagination->limit = 10;
+        $pagination->url = $this->url->link('sale/customer/document', 'token=' . $this->session->data['token'] . '&customer_id=' . $this->request->get['customer_id'] . '&page={page}', 'SSL');
+
+        $data['pagination'] = $pagination->render();
+
+        $data['results'] = sprintf($this->language->get('text_pagination'), ($document_total) ? (($page - 1) * 10) + 1 : 0, ((($page - 1) * 10) > ($document_total - 10)) ? $document_total : ((($page - 1) * 10) + 10), $document_total, ceil($document_total / 10));
+
+        $this->response->setOutput($this->load->view('sale/customer_document.tpl', $data));
+    }
+
+    public function updateDocumentStatus() {
+
+        $document_id = $this->request->post['document_id'];
+        $status_id = $this->request->post['status_id'];
+
+        $this->load->model('sale/customer');
+
+        $json = array();
+
+        $this->model_sale_customer->updateDocumentStatus($document_id,$status_id);
+
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($json));
+    }
+
 	public function autocomplete() {
 		$json = array();
 
@@ -1427,6 +1503,47 @@ class ControllerSaleCustomer extends Controller {
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
 	}
+
+    public function download() {
+
+        $this->load->model('sale/download');
+
+        if (isset($this->request->get['download_id'])) {
+            $download_id = $this->request->get['download_id'];
+        } else {
+            $download_id = 0;
+        }
+
+        $download_info = $this->model_sale_download->getDownload($download_id);
+
+        if ($download_info) {
+            $file = DIR_DOWNLOAD . $download_info['file'];
+            $mask = basename($download_info['filename']);
+
+            if (!headers_sent()) {
+                if (file_exists($file)) {
+                    header('Content-Type: application/octet-stream');
+                    header('Content-Disposition: attachment; filename="' . ($mask ? $mask : basename($file)) . '"');
+                    header('Expires: 0');
+                    header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+                    header('Pragma: public');
+                    header('Content-Length: ' . filesize($file));
+
+                    if (ob_get_level()) {
+                        ob_end_clean();
+                    }
+
+                    readfile($file, 'rb');
+
+                    exit();
+                } else {
+                    exit('Error: Could not find file ' . $file . '!');
+                }
+            } else {
+                exit('Error: Headers already sent out!');
+            }
+        }
+    }
 
 	public function country() {
 		$json = array();

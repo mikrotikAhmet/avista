@@ -324,8 +324,22 @@ class ControllerAccountAccount extends Controller {
 		$data = array();
 
 		$this->load->model('account/customer');
+        $this->load->model('localisation/order_status');
 
-		$data['documents'] = $this->model_account_customer->getDocuments();
+        $results = $this->model_account_customer->getDocuments();
+
+        foreach ($results as $result) {
+            $order_status_data = $this->model_localisation_order_status->getOrderStatus($result['status']);
+
+
+            $data['documents'][] = array(
+                'document_id'         => $result['document_id'],
+                'filename'      =>$result['filename'],
+                'mask'      =>$result['file'],
+                'status'      =>$order_status_data['name'],
+                'date_added' => date('d/m/y', strtotime($result['date_added'])),
+            );
+        }
 
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/account/document.tpl')) {
 			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/account/document.tpl', $data));

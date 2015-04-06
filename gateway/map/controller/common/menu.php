@@ -42,6 +42,7 @@ class ControllerCommonMenu extends Controller {
 		$data['text_customer'] = $this->language->get('text_customer');
 		$data['text_customer_group'] = $this->language->get('text_customer_group');
 		$data['text_customer_ban_ip'] = $this->language->get('text_customer_ban_ip');
+        $data['text_order'] = $this->language->get('text_order');
 
 
 		$data['home'] = $this->url->link('common/dashboard', 'token=' . $this->session->data['token'], 'SSL');
@@ -53,6 +54,7 @@ class ControllerCommonMenu extends Controller {
 		$data['customer_fields'] = $this->url->link('sale/customer_field', 'token=' . $this->session->data['token'], 'SSL');
 		$data['customer_group'] = $this->url->link('sale/customer_group', 'token=' . $this->session->data['token'], 'SSL');
 		$data['customer_ban_ip'] = $this->url->link('sale/customer_ban_ip', 'token=' . $this->session->data['token'], 'SSL');
+        $data['order'] = $this->url->link('sale/order', 'token=' . $this->session->data['token'], 'SSL');
 
 		return $this->load->view('common/menu.tpl', $data);
 	}

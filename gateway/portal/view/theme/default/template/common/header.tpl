@@ -36,6 +36,7 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="view/theme/default/js/bootstrap.min.js"></script>
 
+    <script src="view/javascript/inputmask/js/jquery.mask.min.js" type="text/javascript"></script>
     <script src="view/javascript/common.js" type="text/javascript"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

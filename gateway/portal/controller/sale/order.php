@@ -47,6 +47,18 @@ class ControllerSaleOrder extends Controller {
 			$data['error_warning'] = '';
 		}
 
+        $this->load->model('account/customer');
+        $data['customer'] = $this->model_account_customer->getCustomer($this->customer->getId());
+
+        $data['insts'] = array(
+            '1'=>'[BG] - Bank guarantee',
+            '2'=>'[SBLC] - Standby Letter of Credit',
+            '3'=>'[MTN] - Medium Term Note',
+            '4'=>'[LTN] - Long-term Notes',
+            '5'=>'BOND',
+        );
+
+
 
 		$data['heading_title'] = $this->language->get('heading_title');
 
@@ -62,4 +74,49 @@ class ControllerSaleOrder extends Controller {
 			$this->response->setOutput($this->load->view('default/template/sale/order.tpl', $data));
 		}
 	}
+
+    public function verification(){
+
+        $this->load->helper('uuid');
+
+        $uuid = new UUID();
+
+        $unique_id =date('Ymdi'). $uuid->uniqueId($format = 'nnnnnn',$length = '20');
+
+        $user = "semitellc";
+        $password = "ZePFFHQAQQgQIF";
+        $api_id = "3497179";
+        $baseurl ="http://api.clickatell.com";
+
+        $text = urlencode($unique_id);
+        $to = '381656728972';
+
+        // auth call
+        $url = "$baseurl/http/auth?user=$user&password=$password&api_id=$api_id";
+
+        // do auth call
+        $ret = file($url);
+
+        // explode our response. return string is on first line of the data returned
+        $sess = explode(":",$ret[0]);
+        if ($sess[0] == "OK") {
+
+            $sess_id = trim($sess[1]); // remove any whitespace
+            $url = "$baseurl/http/sendmsg?session_id=$sess_id&to=$to&text=$text";
+
+            // do sendmsg call
+            $ret = file($url);
+            $send = explode(":",$ret[0]);
+
+            if ($send[0] == "ID") {
+
+
+
+            } else {
+//				echo "send message failed";
+            }
+        } else {
+//			echo "Authentication failure: ". $ret[0];
+        }
+    }
 } 

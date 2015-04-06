@@ -35,6 +35,7 @@
                     <ul class="nav nav-tabs">
                         <li class="active"><a href="#tab-general" data-toggle="tab"><?php echo $tab_general; ?></a></li>
                         <?php if ($customer_id) { ?>
+                        <li><a href="#tab-document" data-toggle="tab"><?php echo $tab_document; ?></a></li>
                         <li><a href="#tab-history" data-toggle="tab"><?php echo $tab_history; ?></a></li>
                         <li><a href="#tab-transaction" data-toggle="tab"><?php echo $tab_transaction; ?></a></li>
                         <li><a href="#tab-ip" data-toggle="tab"><?php echo $tab_ip; ?></a></li>
@@ -281,6 +282,9 @@
                     </div>
                     </div>
                     <?php if ($customer_id) { ?>
+                    <div class="tab-pane" id="tab-document">
+                        <div id="document"></div>
+                    </div>
                     <div class="tab-pane" id="tab-history">
                         <div id="history"></div>
                         <br />
@@ -651,6 +655,15 @@
             });
         });
     });
+
+    $('#document').delegate('.pagination a', 'click', function(e) {
+        e.preventDefault();
+
+        $('#document').load(this.href);
+    });
+
+    $('#document').load('index.php?route=sale/customer/document&token=<?php echo $token; ?>&customer_id=<?php echo $customer_id; ?>');
+
 
     $('.date').datetimepicker({
         pickTime: false

@@ -16,6 +16,7 @@
             <li id="sale">
                 <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> <?php echo $text_sale?><span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
+                    <li id="order"><a href="<?php echo $order; ?>"><?php echo $text_order; ?></a></li>
                     <li id="customer">
                         <a href="#"><?php echo $text_customer; ?> <span class="fa arrow"></span></a>
                         <ul class="nav nav-third-level">

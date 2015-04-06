@@ -22,6 +22,24 @@ function getURLVar(key) {
 	}
 }
 
+function updateDocumentStatus(status_id, document_id,customer_id){
+
+
+    $.ajax({
+        url: 'index.php?route=sale/customer/updateDocumentStatus&token=' + getURLVar('token'),
+        type: 'post',
+        data: 'status_id=' + status_id + '&document_id=' + document_id,
+        dataType: 'json',
+        beforeSend: function() {
+
+        },
+        success: function(json) {
+
+            $('#document').load('index.php?route=sale/customer/document&token='+getURLVar('token')+'&customer_id='+customer_id);
+        }
+    });
+}
+
 $(document).ready(function() {
 	//Form Submit for IE Browser
 	$('button[type=\'submit\']').on('click', function() {

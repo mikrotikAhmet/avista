@@ -113,7 +113,7 @@
                                         <div class="form-group">
                                             <label class="control-label" for="input-telephone"><?php echo $entry_telephone; ?></label>
                                             <div class="">
-                                                <input type="text" name="telephone"  value="<?php echo $telephone?>" id="input-telephone" class="form-control" />
+                                                <input type="text" name="telephone"  value="<?php echo $telephone?>" id="input-telephone" class="form-control" <?php echo (!empty($telephone) ? 'disabled' : '')?>/>
                                             </div>
                                         </div>
                                     </td>

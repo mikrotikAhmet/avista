@@ -119,6 +119,7 @@ $_['tab_customer']                  = 'Customer Details';
 $_['tab_data']                      = 'Data';
 $_['tab_design']                    = 'Design';
 $_['tab_discount']                  = 'Discount';
+$_['tab_document']                  = 'Document Center';
 $_['tab_general']                   = 'General';
 $_['tab_history']                   = 'History';
 $_['tab_fraud']                     = 'Fraud';
