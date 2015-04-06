@@ -227,3 +227,13 @@ div.required .control-label:before {
 	color: #F00;
 	font-weight: bold;
 }
+.table a.asc:after {
+	content: " \f107";
+	font-family: FontAwesome;
+	font-size: 14px;
+}
+.table a.desc:after {
+	content: " \f106";
+	font-family: FontAwesome;
+	font-size: 14px;
+}

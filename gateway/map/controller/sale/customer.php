@@ -1388,8 +1388,10 @@ class ControllerSaleCustomer extends Controller {
 
         $results = $this->model_sale_customer->getDocuments($this->request->get['customer_id'], ($page - 1) * 10, 10);
 
+	    $document_total = $this->model_sale_customer->getTotalDocumentsByCustomerId($this->request->get['customer_id']);
+
         foreach ($results as $result) {
-            $document_total = $this->model_sale_customer->getTotalDocumentsByCustomerId($result['customer_id']);
+
             $order_status_data = $this->model_localisation_order_status->getOrderStatus($result['status']);
 
 

@@ -104,7 +104,8 @@ class ControllerSaleOrder extends Controller {
                 $this->model_sale_order->updateOrderStatus($code, $this->config->get('config_order_status_id'));
 
                 $json = array(
-                    'message' => 'Your order has been placed successfully.'
+                    'message' => 'Your order has been placed successfully.',
+	                'redirect' => $this->url->link('account/order', '', 'SSL'),
                 );
             }
         }

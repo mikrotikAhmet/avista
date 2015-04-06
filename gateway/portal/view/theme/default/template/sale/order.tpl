@@ -148,7 +148,9 @@ $('input[name=\'amount\']').on('keyup', function(e) {
                     $('#button-issue').attr("disabled", false);
                     $('#button-close').attr("disabled", false);
 
-                    location.reload();
+                    if (json.redirect) {
+                        location = json.redirect;
+                    }
                 }
             }
         });

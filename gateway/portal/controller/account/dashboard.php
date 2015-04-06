@@ -67,6 +67,7 @@ class ControllerAccountDashboard extends Controller {
 		$data['approved'] = $this->customer->isApproved();
 
 		$data['column_left'] = $this->load->controller('common/column_left');
+		$data['order'] = $this->load->controller('dashboard/order');
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
 

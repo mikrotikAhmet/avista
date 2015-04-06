@@ -321,7 +321,7 @@ class ControllerAccountAccount extends Controller {
 
 	public function documents(){
 
-		$data = array();
+		$data['documents'] = array();
 
 		$this->load->model('account/customer');
         $this->load->model('localisation/order_status');
