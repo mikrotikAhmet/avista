@@ -69,11 +69,12 @@ class ControllerCommonHeader extends Controller {
 		$data['text_login'] = $this->language->get('text_login');
 		$data['text_logout'] = $this->language->get('text_logout');
 		$data['text_all'] = $this->language->get('text_all');
+		$data['text_setting'] = $this->language->get('text_setting');
 		$data['text_logged'] = sprintf($this->language->get('text_logged'),$this->customer->getFirstName().' '.$this->customer->getLastName());
 
 		$data['home'] = $this->url->link('account/dashboard');
 		$data['logged'] = $this->customer->isLogged();
-		$data['register'] = $this->url->link('account/register', '', 'SSL');
+		$data['setting'] = $this->url->link('account/account', '', 'SSL');
 		$data['logout'] = $this->url->link('account/logout', '', 'SSL');
 
 		$status = true;

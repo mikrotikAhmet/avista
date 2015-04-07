@@ -67,6 +67,9 @@
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $text_logged?> <b class="caret"></b></a>
                 <ul class="dropdown-menu">
+                    <li>
+                        <a href="<?php echo $setting; ?>"><i class="fa fa-fw fa-cog"></i> <?php echo $text_setting; ?></a>
+                    </li>
                     <li class="divider"></li>
                     <li>
                         <a href="<?php echo $logout; ?>"><i class="fa fa-fw fa-power-off"></i> <?php echo $text_logout; ?></a>

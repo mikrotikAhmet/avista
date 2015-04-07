@@ -270,7 +270,7 @@
                 element.button('reset');
                 $('.modal-body').html(html);
 
-                $('#add-bank-form').modal('show');
+                $('#bank-general').modal('show');
 
             }
         });
@@ -319,7 +319,7 @@
     });
     //--></script>
 <!-- Modal -->
-<div class="modal fade" id="add-bank-form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="bank-general" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -363,7 +363,7 @@
                 } else {
                     alert(json.message);
 
-                    $('#add-bank-form').modal('hide');
+                    $('#bank-general').modal('hide');
                 }
 
                 $('#bank-list').load('index.php?route=account/account/bankList');
@@ -372,5 +372,56 @@
         });
 
     }
+
+
+    function removeBank(bank_id){
+
+        var element = $(this);
+
+        if(confirm('Are you sure?'))
+
+        $.ajax({
+            url: 'index.php?route=account/account/removeBank',
+            type: 'post',
+            data: 'bank_id=' + bank_id,
+            dataType: 'json',
+            beforeSend: function () {
+                element.button('loading');
+            },
+            success: function (json) {
+
+                element.button('reset');
+
+                $('#bank-list').load('index.php?route=account/account/bankList');
+
+            }
+        });
+        else return false;
+    }
+
+    function editBank(bank_id){
+
+        var element = $(this);
+//
+        $.ajax({
+            url: 'index.php?route=account/account/editBank',
+            type: 'post',
+            data: 'bank_id='+bank_id,
+            dataType: 'html',
+            beforeSend: function() {
+                element.button('loading');
+            },
+            success: function(html) {
+
+                element.button('reset');
+                $('.modal-body').html(html);
+
+                $('#bank-general').modal('show');
+
+            }
+        });
+    }
+
+
 </script>
 <?php echo $footer?>

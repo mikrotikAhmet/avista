@@ -44,6 +44,31 @@ class ModelAccountBank extends Model {
 		status = '".(int) $this->config->get('config_order_status_id')."'");
 	}
 
+	public function updateBank($data,$bank_id){
+
+		$this->db->query("UPDATE ".DB_PREFIX."bank SET bank = '".$this->db->escape($data['name'])."',
+		country_id = '".(int) $data['country_id']."',
+		zone_id = '".(int) $data['zone_id']."',
+		currency_code = '".$this->db->escape($data['currency_code'])."',
+		account_number = '".$this->db->escape($data['account'])."',
+		swift = '".$this->db->escape($data['swift'])."',
+		iban = '".$this->db->escape($data['iban'])."',
+		sort_code = '".$this->db->escape($data['sort_code'])."',
+		routing = '".$this->db->escape($data['routing'])."',
+		status = '".(int) $this->config->get('config_order_status_id')."' WHERE bank_id = '".(int) $bank_id."'");
+	}
+
+	public function delete($bank_id){
+
+		$this->db->query("DELETE FROM ".DB_PREFIX."bank WHERE bank_id = '".(int) $bank_id."' AND customer_id = '".(int) $this->customer->getId()."'");
+	}
+	public function getBank($bank_id){
+
+		$result = $this->db->query("SELECT * FROM ".DB_PREFIX."bank WHERE bank_id = '".(int) $bank_id."' AND customer_id = '".(int) $this->customer->getId()."'");
+
+		return $result->row;
+	}
+
 	public function getBanks(){
 
 		$results = $this->db->query("SELECT * FROM ".DB_PREFIX."bank WHERE customer_id = '".(int) $this->customer->getId()."'");

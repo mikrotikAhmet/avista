@@ -1,8 +1,12 @@
 <form id="bank-form" class="">
+    <div class="alert alert-info alert-dismissable">
+        <i class="fa fa-exclamation-circle"></i> <strong>Important Notice:</strong> Once you modify your Bank Information, our underwriting team will review your information which you have provided.
+    </div>
     <div class="form-group required">
         <label class="control-label" for="input-bank-name">Name of Bank</label>
         <div class="">
-            <input type="text" name="name" value="" placeholder="" id="input-bank-name" class="form-control" />
+            <input type="hidden" name="bank_id" value="<?php echo $bank['bank_id']?>"/>
+            <input type="text" name="name" value="<?php echo $bank['bank'] ?>" placeholder="" id="input-bank-name" class="form-control" />
         </div>
     </div>
     <div class="form-group required">
@@ -10,7 +14,7 @@
         <div class="">
             <select name="country_id" id="input-bank-country" class="form-control">
                 <?php foreach ($countries as $country) { ?>
-                <?php if ($country['country_id'] == $country_id) { ?>
+                <?php if ($country['country_id'] == $bank['country_id']) { ?>
                 <option value="<?php echo $country['country_id']; ?>" selected="selected"><?php echo $country['name']; ?></option>
                 <?php } else { ?>
                 <option value="<?php echo $country['country_id']; ?>"><?php echo $country['name']; ?></option>
@@ -28,7 +32,7 @@
     <div class="form-group required">
         <label class="control-label" for="input-bank-account">Account number</label>
         <div class="">
-            <input type="text" name="account" value="" placeholder="" id="input-bank-account" class="form-control" />
+            <input type="text" name="account" value="<?php echo $bank['account_number'] ?>" placeholder="" id="input-bank-account" class="form-control" />
         </div>
     </div>
     <div class="form-group required">
@@ -36,7 +40,7 @@
         <div class="">
             <select name="currency_code" id="input-bank-currency" class="form-control">
                 <?php foreach ($currencies as $currency) { ?>
-                <?php if ($currency['currency_code'] == $currency_code) { ?>
+                <?php if ($currency['currency_code'] ==  $bank['currency_code']) { ?>
                 <option value="<?php echo $currency['code']; ?>" selected="selected"><?php echo $currency['code']; ?></option>
                 <?php } else { ?>
                 <option value="<?php echo $currency['code']; ?>"><?php echo $currency['code']; ?></option>
@@ -48,26 +52,26 @@
     <div class="form-group required">
         <label class="control-label" for="input-bank-iban">IBAN</label>
         <div class="">
-            <input type="text" name="iban" value="" placeholder="" id="input-bank-iban" class="form-control" />
+            <input type="text" name="iban" value="<?php echo $bank['iban'] ?>" placeholder="" id="input-bank-iban" class="form-control" />
             <span class="text-muted">Please provide just numbers.(EX:123456781234)</span>
         </div>
     </div>
     <div class="form-group required">
         <label class="control-label" for="input-bank-swift">SWIFT/BIC Code</label>
         <div class="">
-            <input type="text" name="swift" value="" placeholder="" id="input-bank-swift" class="form-control" />
+            <input type="text" name="swift" value="<?php  echo $bank['swift'] ?>" placeholder="" id="input-bank-swift" class="form-control" />
         </div>
     </div>
     <div class="form-group">
         <label class="control-label" for="input-bank-routing">Routing Code <small><b>(optional)</b></small></label>
         <div class="">
-            <input type="text" name="routing" value="" placeholder="" id="input-bank-routing" class="form-control" />
+            <input type="text" name="routing" value="<?php echo $bank['routing'] ?>" placeholder="" id="input-bank-routing" class="form-control" />
         </div>
     </div>
     <div class="form-group">
         <label class="control-label" for="input-bank-sort-code">Sort Code <small><b>(optional)</b></small></label>
         <div class="">
-            <input type="text" name="sort_code" value="" placeholder="" id="input-bank-sort-code" class="form-control" />
+            <input type="text" name="sort_code" value="<?php echo $bank['sort_code'] ?>" placeholder="" id="input-bank-sort-code" class="form-control" />
         </div>
     </div>
 </form>
@@ -95,7 +99,7 @@
                     for (i = 0; i < json['zone'].length; i++) {
                         html += '<option value="' + json['zone'][i]['zone_id'] + '"';
 
-                        if (json['zone'][i]['zone_id'] == '<?php echo $zone_id; ?>') {
+                        if (json['zone'][i]['zone_id'] == '<?php echo $bank['zone_id']; ?>') {
                             html += ' selected="selected"';
                         }
 

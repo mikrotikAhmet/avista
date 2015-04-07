@@ -214,7 +214,9 @@ $('input[name=\'amount\']').on('keyup', function(e) {
             </div>
             <div class="modal-footer">
                 <button type="button" id="button-close"class="btn btn-default" data-dismiss="modal">Close</button>
+                <?php if ($approved) { ?>
                 <button type="button" id="button-issue" onclick="issue()" class="btn btn-primary">Continue</button>
+                <?php } ?>
             </div>
         </div>
         <!-- /.modal-content -->

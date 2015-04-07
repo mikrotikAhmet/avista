@@ -10,14 +10,16 @@
     <tbody>
     <?php if ($banks) { ?>
     <?php foreach ($banks as $bank) { ?>
-    <tr>
+    <tr id="<?php echo $bank['bank_id']?>">
         <td><?php echo $bank['bank']?></td>
         <td><?php echo $bank['account_number']?></td>
         <td><?php echo $bank['status']?></td>
         <td><i class="expand fa fa-plus"></i></td>
     </tr>
     <tr>
-        <td colspan="4">Hello There!</td>
+        <td colspan="4">
+            <div id="bank-details-<?php echo $bank['bank_id']?>"></div>
+        </td>
     </tr>
     <?php } ?>
     <?php } else { ?>
@@ -34,9 +36,9 @@
 
     $("#bank-manager tr.master").click(function() {
 
-//        if ($(this).next("tr").css('display') == 'none'){
-//            $('#transaction-details-'+this.id).load('index.php?route=account/transaction/details&transaction_id='+this.id);
-//        }
+        if ($(this).next("tr").css('display') == 'none'){
+            $('#bank-details-'+this.id).load('index.php?route=account/account/bankDetail&bank_id='+this.id);
+        }
 
         $(this).next("tr").toggle();
         $(this).find(".expand").toggleClass("fa-minus");

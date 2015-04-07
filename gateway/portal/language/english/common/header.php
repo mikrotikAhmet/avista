@@ -19,4 +19,5 @@
 
 // Text
 $_['text_logged']        = '%s';
+$_['text_setting']        = 'My Account';
 $_['text_logout']        = 'Logout';

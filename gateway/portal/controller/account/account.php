@@ -388,20 +388,104 @@ class ControllerAccountAccount extends Controller {
 
 	}
 
-	public function bankList(){
+	public function editBank(){
 
-		$this->load->model('localisation/country');
-		$this->load->model('localisation/currency');
+		$bank_id = $this->request->post['bank_id'];
+
 		$this->load->model('account/bank');
+		$this->load->model('localisation/country');
+		$this->load->model('localisation/zone');
+		$this->load->model('localisation/currency');
 
 		$data['currencies'] = $this->model_localisation_currency->getCurrencies();
 		$data['countries'] = $this->model_localisation_country->getCountries();
-		$data['banks'] = $this->model_account_bank->getBanks();
+
+		$bank = $this->model_account_bank->getBank($bank_id);
+
+		$data['complete_status'] = $this->config->get('config_complete_status');
+
+		$data['bank'] = array(
+			'bank_id'=>$bank['bank_id'],
+			'bank'=>$bank['bank'],
+			'country_id'=>$bank['country_id'],
+			'zone_id'=>$bank['zone_id'],
+			'account_number'=>$bank['account_number'],
+			'currency_code'=>$bank['currency_code'],
+			'iban'=>$bank['iban'],
+			'swift'=>$bank['swift'],
+			'routing'=>$bank['routing'],
+			'sort_code'=>$bank['sort_code'],
+			'status'=>$bank['status']
+		);
+
+		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/account/bank_edit.tpl')) {
+			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/account/bank_edit.tpl', $data));
+		} else {
+			$this->response->setOutput($this->load->view('default/template/account/bank_edit.tpl', $data));
+		}
+
+	}
+
+	public function bankList(){
+
+		$this->load->model('localisation/order_status');
+		$this->load->model('account/bank');
+
+		$data['banks'] = array();
+
+		$banks = $this->model_account_bank->getBanks();
+
+		foreach ($banks as $bank) {
+			$status_data = $this->model_localisation_order_status->getOrderStatus($bank['status']);
+			$data['banks'][] = array(
+				'bank_id'=>$bank['bank_id'],
+				'bank'=>$bank['bank'],
+				'account_number'=>$bank['account_number'],
+				'status'=>$status_data['name']
+			);
+		}
 
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/account/bank_list.tpl')) {
 			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/account/bank_list.tpl', $data));
 		} else {
 			$this->response->setOutput($this->load->view('default/template/account/bank_list.tpl', $data));
+		}
+
+	}
+
+	public function bankDetail(){
+
+		$bank_id = $this->request->get['bank_id'];
+
+		$this->load->model('account/bank');
+		$this->load->model('localisation/country');
+		$this->load->model('localisation/zone');
+
+		$bank = $this->model_account_bank->getBank($bank_id);
+
+		$country_data = $this->model_localisation_country->getCountry($bank['country_id']);
+		$zone_data = $this->model_localisation_zone->getZone($bank['zone_id']);
+
+		$data['complete_status'] = $this->config->get('config_complete_status');
+
+		$data['bank'] = array(
+			'bank_id'=>$bank['bank_id'],
+			'bank'=>$bank['bank'],
+			'country'=>$country_data['name'],
+			'zone'=>$zone_data['name'],
+			'account_number'=>$bank['account_number'],
+			'currency_code'=>$bank['currency_code'],
+			'iban'=>$bank['iban'],
+			'swift'=>$bank['swift'],
+			'routing'=>$bank['routing'],
+			'sort_code'=>$bank['sort_code'],
+			'status'=>$bank['status']
+		);
+
+		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/account/bank_detail.tpl')) {
+			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/account/bank_detail.tpl', $data));
+		} else {
+			$this->response->setOutput($this->load->view('default/template/account/bank_detail.tpl', $data));
 		}
 
 	}
@@ -445,17 +529,15 @@ class ControllerAccountAccount extends Controller {
 			);
 		}
 
-//		if (!empty($data['iban']) || !is_numeric($data['iban'])){
+		if (!is_numeric($data['iban'])){
 //			$this->load->helper('iban');
 //
 //			$iban = isValidIBAN($country_data['iso_code_2'].$data['iban']);
-//
-//			if (!$iban){
-//				$json['error'] = array(
-//					'message' => 'IBAN idoes not seems valid!'
-//				);
-//			}
-//		}
+			$error=true;
+				$json['error'] = array(
+					'message' => 'IBAN idoes not seems valid!'
+				);
+		}
 
 		if (empty($data['swift'])) {
 			$error=true;
@@ -468,12 +550,53 @@ class ControllerAccountAccount extends Controller {
 
 			$this->load->model('account/bank');
 
-			$this->model_account_bank->addBank($data);
+			if (!isset($data['bank_id'])) {
+
+				// Add to activity log
+				$this->load->model('account/activity');
+
+				$activity_data = array(
+					'customer_id' => $this->customer->getId(),
+					'name'        => $this->customer->getFirstName() . ' ' . $this->customer->getLastName()
+				);
+
+				$this->model_account_activity->addActivity('new bank', $activity_data);
+
+				$this->model_account_bank->addBank($data);
+			} else {
+
+				// Add to activity log
+				$this->load->model('account/activity');
+
+				$activity_data = array(
+					'customer_id' => $this->customer->getId(),
+					'name'        => $this->customer->getFirstName() . ' ' . $this->customer->getLastName()
+				);
+
+				$this->model_account_activity->addActivity('modify bank', $activity_data);
+
+				$this->model_account_bank->updateBank($data,$data['bank_id']);
+			}
 
 			$json = array(
 				'message' => 'Your bank information has been saved!'
 			);
 		}
+
+		$this->response->addHeader('Content-Type: application/json');
+		$this->response->setOutput(json_encode($json));
+	}
+
+	public function removeBank(){
+
+		$json = array();
+		$error = false;
+
+		$bank_id = $this->request->post['bank_id'];
+
+		$this->load->model('account/bank');
+
+		$this->model_account_bank->delete($bank_id);
 
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
