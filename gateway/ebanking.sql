@@ -37,7 +37,7 @@ CREATE TABLE `engine4_address` (
   `custom_field` text NOT NULL,
   PRIMARY KEY (`address_id`),
   KEY `merchant_id` (`customer_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -46,7 +46,7 @@ CREATE TABLE `engine4_address` (
 
 LOCK TABLES `engine4_address` WRITE;
 /*!40000 ALTER TABLE `engine4_address` DISABLE KEYS */;
-INSERT INTO `engine4_address` VALUES (26,0,'Jovanka','Vukadinovic','','15A  Ayiou Neophitou Street Archaggelos','','Lakatamia','2334',55,884,''),(27,0,'Jovanka','Vukadinovic','','15A  Ayiou Neophitou Street Archaggelos','','Lakatamia','2334',55,884,''),(35,48,'Ahmet','GOUDENOGLU','','Kaludjerica Karadjordjeva 45','','Grocka','11130',243,3994,''),(36,49,'Ahmet','GOUDENOGLU','','Kaludjerica Karadjordjeva 45','','Grocka','11130',243,3994,'');
+INSERT INTO `engine4_address` VALUES (26,0,'Jovanka','Vukadinovic','','15A  Ayiou Neophitou Street Archaggelos','','Lakatamia','2334',55,884,''),(27,0,'Jovanka','Vukadinovic','','15A  Ayiou Neophitou Street Archaggelos','','Lakatamia','2334',55,884,''),(38,51,'Jovanka','Vukadinovic','','15A  Ayiou Neophitou Street Archaggelos','','Lakatamia','2334',55,883,''),(37,50,'Ahmet','GOUDENOGLU','','Kaludjerica Karadjordjeva 45','','Grocka','11130',243,3994,'');
 /*!40000 ALTER TABLE `engine4_address` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -104,6 +104,40 @@ LOCK TABLES `engine4_application` WRITE;
 /*!40000 ALTER TABLE `engine4_application` DISABLE KEYS */;
 INSERT INTO `engine4_application` VALUES (3,'H.I.F. Invest Holding','http://portal.avista.com/','http://portal.avista.com/');
 /*!40000 ALTER TABLE `engine4_application` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `engine4_bank`
+--
+
+DROP TABLE IF EXISTS `engine4_bank`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_bank` (
+  `bank_id` int(11) NOT NULL AUTO_INCREMENT,
+  `customer_id` int(11) NOT NULL,
+  `bank` varchar(45) COLLATE utf8_bin NOT NULL,
+  `country_id` int(11) NOT NULL,
+  `zone_id` int(11) NOT NULL,
+  `currency_code` varchar(3) COLLATE utf8_bin NOT NULL,
+  `account_number` varchar(32) COLLATE utf8_bin NOT NULL,
+  `swift` varchar(16) COLLATE utf8_bin NOT NULL,
+  `routing` varchar(16) COLLATE utf8_bin NOT NULL,
+  `iban` varchar(45) COLLATE utf8_bin NOT NULL,
+  `sort_code` varchar(10) COLLATE utf8_bin NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`bank_id`,`customer_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_bank`
+--
+
+LOCK TABLES `engine4_bank` WRITE;
+/*!40000 ALTER TABLE `engine4_bank` DISABLE KEYS */;
+INSERT INTO `engine4_bank` VALUES (13,50,'Garanti Bankasi',215,3372,'USD','493-9078187','TGBATRIS','','510006200049300009078187','',1),(14,50,'Garanto Bankasi',215,3372,'EUR','493-9078188','TGBATRIS','','240006200049300009078188','',1),(15,50,'Sgdfgsdgsdfg',2,33,'EUR','3456456456','fhfhfhdfhfgh','','346546456','',1);
+/*!40000 ALTER TABLE `engine4_bank` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -198,7 +232,7 @@ CREATE TABLE `engine4_customer` (
   `unique_id` varchar(96) NOT NULL,
   `two_way` tinyint(1) NOT NULL,
   PRIMARY KEY (`customer_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=50 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=52 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -207,7 +241,7 @@ CREATE TABLE `engine4_customer` (
 
 LOCK TABLES `engine4_customer` WRITE;
 /*!40000 ALTER TABLE `engine4_customer` DISABLE KEYS */;
-INSERT INTO `engine4_customer` VALUES (48,4,3,'Ahmet','GOUDENOGLU','semiteproject@hotmail.com','381656728972','','a05d1a3a7f6a40e9d59c7fb9614faf2063876f16','540cdde6e','0000-00-00',0,35,'127.0.0.1',1,1,0,'0','2015-04-06 21:12:30',1,'USD','742888',0),(49,4,3,'Ahmet','GOUDENOGLU','ahmet.gudenoglu@semitepayment.com','','','52d05e3d6ac840ba87237eae275f741d09e983dc','ed02da6f1','0000-00-00',0,36,'127.0.0.1',1,0,0,'0','2015-04-06 23:59:59',1,'USD','127574',0);
+INSERT INTO `engine4_customer` VALUES (51,4,3,'Jovanka','Vukadinovic','email@example.com','','','6634a4587f60db8386dd7c7578e185ddb11650f3','16106339c','0000-00-00',0,38,'127.0.0.1',1,0,0,'','2015-04-07 09:48:19',1,'USD','594275',0),(50,4,3,'Ahmet','GOUDENOGLU','semiteproject@hotmail.com','381656728972','','47979652664057585f3620a3fa920fae7510569a','99df330c1','0000-00-00',1,37,'127.0.0.1',1,0,0,'0','2015-04-07 09:28:25',1,'USD','237988',0);
 /*!40000 ALTER TABLE `engine4_customer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -226,7 +260,7 @@ CREATE TABLE `engine4_customer_activity` (
   `ip` varchar(40) NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`activity_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=105 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=110 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -235,7 +269,7 @@ CREATE TABLE `engine4_customer_activity` (
 
 LOCK TABLES `engine4_customer_activity` WRITE;
 /*!40000 ALTER TABLE `engine4_customer_activity` DISABLE KEYS */;
-INSERT INTO `engine4_customer_activity` VALUES (21,0,'register','a:2:{s:11:\"customer_id\";N;s:4:\"name\";s:19:\"Jovanka Vukadinovic\";}','127.0.0.1','2015-04-04 20:31:13'),(22,0,'register','a:2:{s:11:\"customer_id\";N;s:4:\"name\";s:19:\"Christos Panayiotou\";}','127.0.0.1','2015-04-04 20:31:54'),(23,0,'register','a:2:{s:11:\"customer_id\";N;s:4:\"name\";s:19:\"Paraskevi Zafeiraki\";}','127.0.0.1','2015-04-04 20:42:22'),(24,0,'register','a:2:{s:11:\"customer_id\";N;s:4:\"name\";s:19:\"Jovanka Vukadinovic\";}','127.0.0.1','2015-04-04 20:46:53'),(25,0,'register','a:2:{s:11:\"customer_id\";N;s:4:\"name\";s:200:\"Vukadinovic &lt;b&gt;Notice&lt;/b&gt;: Undefined variable: lastname in &lt;b&gt;/var/www/avista/gateway/portal/view/theme/default/template/account/register.tpl&lt;/b&gt; on line &lt;b&gt;111&lt;/b&gt;\";}','127.0.0.1','2015-04-04 21:04:11'),(26,0,'register','a:2:{s:11:\"customer_id\";N;s:4:\"name\";s:19:\"Vukadinovic sssssss\";}','127.0.0.1','2015-04-04 21:04:47'),(27,0,'register','a:2:{s:11:\"customer_id\";N;s:4:\"name\";s:19:\"Jovanka Vukadinovic\";}','127.0.0.1','2015-04-04 21:16:30'),(28,24,'register','a:2:{s:11:\"customer_id\";s:2:\"24\";s:4:\"name\";s:19:\"Jovanka Vukadinovic\";}','127.0.0.1','2015-04-04 21:17:48'),(29,25,'register','a:2:{s:11:\"customer_id\";s:2:\"25\";s:4:\"name\";s:19:\"Jovanka Vukadinovic\";}','127.0.0.1','2015-04-04 21:23:54'),(30,26,'register','a:2:{s:11:\"customer_id\";s:2:\"26\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-04 21:26:40'),(31,27,'register','a:2:{s:11:\"customer_id\";s:2:\"27\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-04 21:48:32'),(32,31,'register','a:2:{s:11:\"customer_id\";s:2:\"31\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-04 21:58:55'),(33,35,'register','a:2:{s:11:\"customer_id\";s:2:\"35\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-04 22:05:11'),(34,36,'register','a:2:{s:11:\"customer_id\";s:2:\"36\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-04 22:23:56'),(35,37,'register','a:2:{s:11:\"customer_id\";s:2:\"37\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-04 22:29:18'),(36,38,'register','a:2:{s:11:\"customer_id\";s:2:\"38\";s:4:\"name\";s:19:\"Jovanka Vukadinovic\";}','127.0.0.1','2015-04-04 22:30:37'),(37,39,'register','a:2:{s:11:\"customer_id\";s:2:\"39\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-04 22:38:30'),(38,39,'login','a:2:{s:11:\"customer_id\";s:2:\"39\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-04 22:53:05'),(39,39,'login','a:2:{s:11:\"customer_id\";s:2:\"39\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-04 22:58:03'),(40,39,'login','a:2:{s:11:\"customer_id\";s:2:\"39\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-04 23:05:45'),(41,40,'register','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-04 23:52:31'),(42,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 09:12:58'),(43,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 10:31:27'),(44,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 10:31:55'),(45,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 10:32:44'),(46,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 10:44:00'),(47,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 10:46:28'),(48,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 11:24:28'),(49,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 11:26:03'),(50,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 11:28:21'),(51,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 11:29:17'),(52,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 11:30:15'),(53,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 12:05:45'),(54,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 14:12:35'),(55,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 14:13:39'),(56,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 14:19:09'),(57,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 14:20:49'),(58,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 14:24:33'),(59,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 14:30:18'),(60,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 14:32:25'),(61,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 14:37:14'),(62,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 14:39:48'),(63,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 14:41:57'),(64,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 14:43:41'),(65,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 15:01:12'),(66,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 16:23:36'),(67,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 16:23:55'),(68,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 16:27:41'),(69,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 16:30:47'),(70,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 16:33:02'),(71,40,'login','a:2:{s:11:\"customer_id\";s:2:\"40\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 17:06:05'),(72,0,'register','a:2:{s:11:\"customer_id\";N;s:4:\"name\";s:19:\"Jovanka Vukadinovic\";}','127.0.0.1','2015-04-05 18:32:50'),(73,0,'register','a:2:{s:11:\"customer_id\";N;s:4:\"name\";s:19:\"Jovanka Vukadinovic\";}','127.0.0.1','2015-04-05 18:34:16'),(74,41,'register','a:2:{s:11:\"customer_id\";s:2:\"41\";s:4:\"name\";s:19:\"Jovanka Vukadinovic\";}','127.0.0.1','2015-04-05 18:38:54'),(75,42,'register','a:2:{s:11:\"customer_id\";s:2:\"42\";s:4:\"name\";s:19:\"Jovanka Vukadinovic\";}','127.0.0.1','2015-04-05 18:44:48'),(76,0,'register','a:2:{s:11:\"customer_id\";N;s:4:\"name\";s:19:\"Jovanka Vukadinovic\";}','127.0.0.1','2015-04-05 18:48:13'),(77,43,'login','a:2:{s:11:\"customer_id\";s:2:\"43\";s:4:\"name\";s:19:\"Jovanka Vukadinovic\";}','127.0.0.1','2015-04-05 18:48:21'),(78,43,'login','a:2:{s:11:\"customer_id\";s:2:\"43\";s:4:\"name\";s:19:\"Jovanka Vukadinovic\";}','127.0.0.1','2015-04-05 18:49:01'),(79,0,'register','a:2:{s:11:\"customer_id\";N;s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 18:52:25'),(80,44,'login','a:2:{s:11:\"customer_id\";s:2:\"44\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 18:52:34'),(81,44,'login','a:2:{s:11:\"customer_id\";s:2:\"44\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-05 19:26:29'),(82,44,'login','a:2:{s:11:\"customer_id\";s:2:\"44\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-06 09:15:28'),(83,0,'register','a:2:{s:11:\"customer_id\";N;s:4:\"name\";s:20:\"Dimitris Chalambalis\";}','127.0.0.1','2015-04-06 09:17:54'),(84,44,'login','a:2:{s:11:\"customer_id\";s:2:\"44\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-06 09:24:57'),(85,44,'login','a:2:{s:11:\"customer_id\";s:2:\"44\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-06 12:06:16'),(86,45,'forgotten','a:2:{s:11:\"customer_id\";s:2:\"45\";s:4:\"name\";s:20:\"Dimitris Chalambalis\";}','127.0.0.1','2015-04-06 12:14:47'),(87,45,'login','a:2:{s:11:\"customer_id\";s:2:\"45\";s:4:\"name\";s:20:\"Dimitris Chalambalis\";}','127.0.0.1','2015-04-06 12:15:17'),(88,44,'login','a:2:{s:11:\"customer_id\";s:2:\"44\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-06 12:47:23'),(89,44,'login','a:2:{s:11:\"customer_id\";s:2:\"44\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-06 13:27:17'),(90,44,'login','a:2:{s:11:\"customer_id\";s:2:\"44\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-06 14:25:26'),(91,44,'login','a:2:{s:11:\"customer_id\";s:2:\"44\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-06 15:32:02'),(92,45,'forgotten','a:2:{s:11:\"customer_id\";s:2:\"45\";s:4:\"name\";s:20:\"Dimitris Chalambalis\";}','127.0.0.1','2015-04-06 16:51:44'),(93,0,'register','a:2:{s:11:\"customer_id\";N;s:4:\"name\";s:16:\"Ahmet Goudenoglu\";}','127.0.0.1','2015-04-06 18:08:45'),(94,0,'register','a:2:{s:11:\"customer_id\";N;s:4:\"name\";s:16:\"Ahmet Goudenoglu\";}','127.0.0.1','2015-04-06 18:10:09'),(95,47,'forgotten','a:2:{s:11:\"customer_id\";s:2:\"47\";s:4:\"name\";s:16:\"Ahmet Goudenoglu\";}','127.0.0.1','2015-04-06 18:13:25'),(96,47,'login','a:2:{s:11:\"customer_id\";s:2:\"47\";s:4:\"name\";s:16:\"Ahmet Goudenoglu\";}','127.0.0.1','2015-04-06 18:14:20'),(97,47,'login','a:2:{s:11:\"customer_id\";s:2:\"47\";s:4:\"name\";s:16:\"Ahmet Goudenoglu\";}','127.0.0.1','2015-04-06 19:26:02'),(98,0,'register','a:2:{s:11:\"customer_id\";N;s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-06 21:12:31'),(99,48,'login','a:2:{s:11:\"customer_id\";s:2:\"48\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-06 21:12:47'),(100,48,'forgotten','a:2:{s:11:\"customer_id\";s:2:\"48\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-06 23:54:43'),(101,48,'forgotten','a:2:{s:11:\"customer_id\";s:2:\"48\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-06 23:55:17'),(102,48,'forgotten','a:2:{s:11:\"customer_id\";s:2:\"48\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-06 23:56:13'),(103,0,'register','a:2:{s:11:\"customer_id\";N;s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-06 23:59:59'),(104,49,'login','a:2:{s:11:\"customer_id\";s:2:\"49\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-07 00:00:34');
+INSERT INTO `engine4_customer_activity` VALUES (109,50,'login','a:2:{s:11:\"customer_id\";s:2:\"50\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-07 09:49:38'),(108,0,'register','a:2:{s:11:\"customer_id\";N;s:4:\"name\";s:19:\"Jovanka Vukadinovic\";}','127.0.0.1','2015-04-07 09:48:20'),(107,50,'login','a:2:{s:11:\"customer_id\";s:2:\"50\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-07 09:28:37'),(106,0,'register','a:2:{s:11:\"customer_id\";N;s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-07 09:28:25');
 /*!40000 ALTER TABLE `engine4_customer_activity` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -279,7 +313,7 @@ CREATE TABLE `engine4_customer_document` (
   `ip` varchar(96) NOT NULL,
   `date_added` date NOT NULL DEFAULT '0000-00-00',
   PRIMARY KEY (`document_id`,`customer_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -381,7 +415,7 @@ CREATE TABLE `engine4_customer_ip` (
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`customer_ip_id`),
   KEY `ip` (`ip`)
-) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -390,7 +424,7 @@ CREATE TABLE `engine4_customer_ip` (
 
 LOCK TABLES `engine4_customer_ip` WRITE;
 /*!40000 ALTER TABLE `engine4_customer_ip` DISABLE KEYS */;
-INSERT INTO `engine4_customer_ip` VALUES (23,48,'127.0.0.1','2015-04-06 21:12:47'),(24,49,'127.0.0.1','2015-04-07 00:00:34');
+INSERT INTO `engine4_customer_ip` VALUES (25,50,'127.0.0.1','2015-04-07 09:28:37');
 /*!40000 ALTER TABLE `engine4_customer_ip` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -690,8 +724,34 @@ CREATE TABLE `engine4_order` (
 
 LOCK TABLES `engine4_order` WRITE;
 /*!40000 ALTER TABLE `engine4_order` DISABLE KEYS */;
-INSERT INTO `engine4_order` VALUES (42371795,0,0,'INV-2015-00',3,'H.I.F. Invest Holding','http://portal.avista.com/',48,4,'Ahmet','GOUDENOGLU','semiteproject@hotmail.com','381656728972','','',1000000000.0000,0.0000,1,0.0000,'',1,2,'USD',1.00000000,'127.0.0.1','127.0.0.1','Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36','en-US,en;q=0.8','2015-04-06 22:52:44','2015-04-06 22:52:44'),(51311749,0,0,'INV-2015-00',3,'H.I.F. Invest Holding','http://portal.avista.com/',48,4,'Ahmet','GOUDENOGLU','semiteproject@hotmail.com','381656728972','','',2000000000.0000,0.0000,1,0.0000,'',1,2,'USD',1.00000000,'127.0.0.1','127.0.0.1','Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36','en-US,en;q=0.8','2015-04-06 23:24:52','2015-04-06 23:24:52'),(50483333,0,0,'INV-2015-00',3,'H.I.F. Invest Holding','http://portal.avista.com/',48,4,'Ahmet','GOUDENOGLU','semiteproject@hotmail.com','381656728972','','',6000000000.0000,0.0000,1,0.0000,'',1,2,'USD',1.00000000,'127.0.0.1','127.0.0.1','Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36','en-US,en;q=0.8','2015-04-06 23:30:52','2015-04-06 23:30:52'),(36593998,0,0,'INV-2015-00',3,'H.I.F. Invest Holding','http://portal.avista.com/',48,4,'Ahmet','GOUDENOGLU','semiteproject@hotmail.com','381656728972','','',1000000000.0000,0.0000,1,0.0000,'',1,2,'USD',1.00000000,'127.0.0.1','127.0.0.1','Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36','en-US,en;q=0.8','2015-04-06 23:35:37','2015-04-06 23:35:37'),(19341631,0,0,'INV-2015-00',3,'H.I.F. Invest Holding','http://portal.avista.com/',48,4,'Ahmet','GOUDENOGLU','semiteproject@hotmail.com','381656728972','','',50000000.0000,0.0000,1,0.0000,'',1,2,'USD',1.00000000,'127.0.0.1','127.0.0.1','Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36','en-US,en;q=0.8','2015-04-06 23:36:20','2015-04-06 23:36:20');
 /*!40000 ALTER TABLE `engine4_order` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `engine4_order_product`
+--
+
+DROP TABLE IF EXISTS `engine4_order_product`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_order_product` (
+  `order_product_id` int(11) NOT NULL AUTO_INCREMENT,
+  `order_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `price` decimal(15,4) NOT NULL DEFAULT '0.0000',
+  `down` decimal(15,4) NOT NULL DEFAULT '0.0000',
+  PRIMARY KEY (`order_product_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_order_product`
+--
+
+LOCK TABLES `engine4_order_product` WRITE;
+/*!40000 ALTER TABLE `engine4_order_product` DISABLE KEYS */;
+/*!40000 ALTER TABLE `engine4_order_product` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -843,4 +903,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-04-07  0:01:59
+-- Dump completed on 2015-04-07 11:59:49

@@ -34,16 +34,19 @@ class ControllerSaleOrder extends Controller {
 
 	public function index(){
 
+		if (!$this->customer->isLogged()) {
+			$this->session->data['redirect'] = $this->url->link('account/dashboard', '', 'SSL');
+
+			$this->response->redirect($this->url->link('account/login', '', 'SSL'));
+		}
+
         $this->load->model('sale/order');
 
 		$this->load->language('sale/order');
 
 		$this->document->setTitle($this->language->get('heading_title'));
 
-		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
-
-
-		}
+		$data['approved'] = $this->customer->isApproved();
 
 		if (isset($this->error['warning'])) {
 			$data['error_warning'] = $this->error['warning'];
@@ -117,78 +120,92 @@ class ControllerSaleOrder extends Controller {
 
     public function verification(){
 
-        $this->load->model('sale/order');
+	    if ($this->customer->isApproved()) {
 
+		    $this->load->model('sale/order');
 
-        $this->load->helper('uuid');
+		    $this->load->helper('uuid');
 
-        $uuid = new UUID();
+		    $uuid = new UUID();
 
-        $unique_id =date('s').$uuid->uniqueId($format = 'nnnnnn',$length = '20');
-        $this->uuid = $unique_id;
+		    $unique_id = date('s') . $uuid->uniqueId($format = 'nnnnnn', $length = '20');
+		    $this->uuid = $unique_id;
 
-        $user = "semitellc";
-        $password = "ZePFFHQAQQgQIF";
-        $api_id = "3497179";
-        $baseurl ="http://api.clickatell.com";
+		    $user = "semitellc";
+		    $password = "ZePFFHQAQQgQIF";
+		    $api_id = "3497179";
+		    $baseurl = "http://api.clickatell.com";
 
-        $text = urlencode($unique_id);
-        $to = $this->customer->getTelephone();
+		    $text = urlencode($unique_id);
+		    $to = $this->customer->getTelephone();
 
-        // auth call
-        $url = "$baseurl/http/auth?user=$user&password=$password&api_id=$api_id";
+		    // auth call
+		    $url = "$baseurl/http/auth?user=$user&password=$password&api_id=$api_id";
 
-        // do auth call
-        $ret = file($url);
+		    // do auth call
+		    $ret = file($url);
 
-        // explode our response. return string is on first line of the data returned
-        $sess = explode(":",$ret[0]);
-        if ($sess[0] == "OK") {
+		    // explode our response. return string is on first line of the data returned
+		    $sess = explode(":", $ret[0]);
+		    if ($sess[0] == "OK") {
 
-            $sess_id = trim($sess[1]); // remove any whitespace
-            $url = "$baseurl/http/sendmsg?session_id=$sess_id&to=$to&text=$text";
+			    $sess_id = trim($sess[1]); // remove any whitespace
+			    $url = "$baseurl/http/sendmsg?session_id=$sess_id&to=$to&text=$text";
 
-            // do sendmsg call
-            $ret = file($url);
-            $send = explode(":",$ret[0]);
+			    // do sendmsg call
+			    $ret = file($url);
+			    $send = explode(":", $ret[0]);
 
-            if ($send[0] == "ID") {
+			    if ($send[0] == "ID") {
 
-                $ip = $_SERVER['REMOTE_ADDR'];
-                $forwarded_ip = $_SERVER['REMOTE_ADDR'];
-                $user_agent = $_SERVER['HTTP_USER_AGENT'];
-                $accept_language = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
+				    $ip = $_SERVER['REMOTE_ADDR'];
+				    $forwarded_ip = $_SERVER['REMOTE_ADDR'];
+				    $user_agent = $_SERVER['HTTP_USER_AGENT'];
+				    $accept_language = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
 
-                $data = array(
-                    'invoice_prefix'=>$this->config->get('config_invoice_prefix'),
-                    'application_id'=>$this->config->get('config_application_id'),
-                    'application_name'=>$this->config->get('config_name'),
-                    'application_url'=>$this->config->get('config_url'),
-                    'customer_id'=>$this->customer->getId(),
-                    'customer_group_id'=>$this->customer->getGroupId(),
-                    'firstname'=>$this->customer->getFirstName(),
-                    'lastname'=>$this->customer->getLastName(),
-                    'email'=>$this->customer->getEmail(),
-                    'telephone'=>$this->customer->getTelephone(),
-                    'request'=>$this->request->post['amount'],
-                    'order_status_id'=>$this->config->get('config_order_status_id'),
-                    'language_id'=>$this->customer->getLanguage(),
-                    'currency_id'=>$this->currency->getId($this->customer->getCurrency()),
-                    'currency_code'=>$this->customer->getCurrency(),
-                    'currency_value'=>$this->currency->getValue($this->customer->getCurrency()),
-                    'ip'=>$ip,
-                    'forwarded_ip'=>$forwarded_ip,
-                    'user_agent'=>$user_agent,
-                    'accept_language'=>$accept_language
-                );
+				    $data = array(
+					    'invoice_prefix' => $this->config->get('config_invoice_prefix'),
+					    'application_id' => $this->config->get('config_application_id'),
+					    'application_name' => $this->config->get('config_name'),
+					    'application_url' => $this->config->get('config_url'),
+					    'customer_id' => $this->customer->getId(),
+					    'customer_group_id' => $this->customer->getGroupId(),
+					    'firstname' => $this->customer->getFirstName(),
+					    'lastname' => $this->customer->getLastName(),
+					    'email' => $this->customer->getEmail(),
+					    'telephone' => $this->customer->getTelephone(),
+					    'request' => $this->request->post['amount'],
+					    'order_status_id' => $this->config->get('config_order_status_id'),
+					    'language_id' => $this->customer->getLanguage(),
+					    'currency_id' => $this->currency->getId($this->customer->getCurrency()),
+					    'currency_code' => $this->customer->getCurrency(),
+					    'currency_value' => $this->currency->getValue($this->customer->getCurrency()),
+					    'ip' => $ip,
+					    'forwarded_ip' => $forwarded_ip,
+					    'user_agent' => $user_agent,
+					    'accept_language' => $accept_language,
+					    'product_id'=>$this->request->post['instrument'],
+					    'product_name'=>$this->request->post['product_name'],
+				    );
 
-                $this->model_sale_order->addOrder($data,$unique_id);
+				    $this->model_sale_order->addOrder($data, $unique_id);
 
-            } else {
+				    // Add to activity log
+				    $this->load->model('account/activity');
+
+				    $activity_data = array(
+					    'customer_id' => $this->customer->getId(),
+					    'name' => $this->customer->getFirstName() . ' ' . $this->customer->getLastName()
+				    );
+
+				    $this->model_account_activity->addActivity('order', $activity_data);
+
+			    } else {
 //				echo "send message failed";
-            }
-        } else {
+			    }
+		    } else {
 //			echo "Authentication failure: ". $ret[0];
-        }
+		    }
+	    }
     }
 } 

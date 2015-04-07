@@ -28,6 +28,7 @@
                         <li class="active"><a href="#account-pills" data-toggle="tab">Account Settings</a></li>
                         <li><a href="#profile-pills" data-toggle="tab">Personal Information</a></li>
                         <li><a href="#business-pills" data-toggle="tab">Business Information</a></li>
+                        <li><a href="#bank-pills" data-toggle="tab">Bank Account(s)</a></li>
                         <?php if (!$approved) { ?>
                         <li><a href="#verification-pills" data-toggle="tab">Verification</a></li>
                         <?php } ?>
@@ -204,6 +205,10 @@
                                 <i class="fa fa-info-circle"></i>  <strong>Action required!</strong> Your account has no Approved Business Certificate yet.</div>
                             <?php } ?>
                         </div>
+                        <div class="tab-pane fade" id="bank-pills">
+                            <button type="button" id="add-bank" class="pull-right btn btn-primary">Add bank</button>
+                            <div id="bank-list"></div>
+                        </div>
                         <?php if (!$approved) { ?>
                         <div class="tab-pane fade" id="verification-pills">
                             <div class="input-group">
@@ -248,6 +253,29 @@
     });
 </script>
 <script type="text/javascript"><!--
+
+    $('#add-bank').on('click',function(){
+
+        var element = $(this);
+//
+        $.ajax({
+            url: 'index.php?route=account/account/addBank',
+            type: 'post',
+            dataType: 'html',
+            beforeSend: function() {
+                element.button('loading');
+            },
+            success: function(html) {
+
+                element.button('reset');
+                $('.modal-body').html(html);
+
+                $('#add-bank-form').modal('show');
+
+            }
+        });
+
+    });
     $('#documents').load('index.php?route=account/account/documents');
 
     $('#button-upload').on('click', function() {
@@ -290,4 +318,59 @@
         });
     });
     //--></script>
+<!-- Modal -->
+<div class="modal fade" id="add-bank-form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Add new Bank</h4>
+            </div>
+            <div class="modal-body">
+                <div id="new-bank-form"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="button-close"class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" id="button-issue" onclick="addBank()" class="btn btn-primary">Continue</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+<script>
+    $('#bank-list').load('index.php?route=account/account/bankList');
+
+    function addBank(){
+
+        var data = $('#bank-form').serialize();
+        var element = $(this);
+
+        $.ajax({
+            url: 'index.php?route=account/account/insertBank',
+            type: 'post',
+            data: data,
+            dataType: 'json',
+            beforeSend: function() {
+                element.button('loading');
+            },
+            success: function(json) {
+
+                element.button('reset');
+
+                if (json.error){
+                    alert(json.error['message']);
+                } else {
+                    alert(json.message);
+
+                    $('#add-bank-form').modal('hide');
+                }
+
+                $('#bank-list').load('index.php?route=account/account/bankList');
+
+            }
+        });
+
+    }
+</script>
 <?php echo $footer?>

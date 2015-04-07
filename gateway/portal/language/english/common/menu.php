@@ -18,4 +18,8 @@
  */
  // TEXT
 $_['text_dashboard'] = 'Dashboard';
-$_['text_order'] = 'Request Instrument';
+$_['text_operation'] = 'Operations';
+$_['text_request'] = 'Create a request';
+$_['text_transaction'] = 'My transactions';
+$_['text_report'] = 'Reports';
+$_['text_order'] = 'My orders';

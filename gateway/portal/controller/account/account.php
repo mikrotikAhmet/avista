@@ -33,6 +33,12 @@ class ControllerAccountAccount extends Controller {
 
 	public function index(){
 
+		if (!$this->customer->isLogged()) {
+			$this->session->data['redirect'] = $this->url->link('account/dashboard', '', 'SSL');
+
+			$this->response->redirect($this->url->link('account/login', '', 'SSL'));
+		}
+
 		$this->load->language('account/account');
 
 		$this->document->setTitle($this->language->get('heading_title'));
@@ -361,6 +367,139 @@ class ControllerAccountAccount extends Controller {
 
 		$this->model_account_customer->removeDocument($document_id);
 
+
+		$this->response->addHeader('Content-Type: application/json');
+		$this->response->setOutput(json_encode($json));
+	}
+
+	public function addBank(){
+
+		$this->load->model('localisation/country');
+		$this->load->model('localisation/currency');
+
+		$data['currencies'] = $this->model_localisation_currency->getCurrencies();
+		$data['countries'] = $this->model_localisation_country->getCountries();
+
+		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/account/bank.tpl')) {
+			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/account/bank.tpl', $data));
+		} else {
+			$this->response->setOutput($this->load->view('default/template/account/bank.tpl', $data));
+		}
+
+	}
+
+	public function bankList(){
+
+		$this->load->model('localisation/country');
+		$this->load->model('localisation/currency');
+		$this->load->model('account/bank');
+
+		$data['currencies'] = $this->model_localisation_currency->getCurrencies();
+		$data['countries'] = $this->model_localisation_country->getCountries();
+		$data['banks'] = $this->model_account_bank->getBanks();
+
+		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/account/bank_list.tpl')) {
+			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/account/bank_list.tpl', $data));
+		} else {
+			$this->response->setOutput($this->load->view('default/template/account/bank_list.tpl', $data));
+		}
+
+	}
+
+	public function insertBank(){
+
+		$json = array();
+		$error = false;
+
+		$data = $this->request->post;
+
+		$this->load->model('localisation/country');
+
+		$country_data = $this->model_localisation_country->getCountry($data['country_id']);
+
+		if (empty($data['name'])) {
+			$error=true;
+			$json['error'] = array(
+				'message' => 'Name of Bank is required!'
+			);
+		}
+
+		if (!isset($data['zone_id'])) {
+			$error=true;
+			$json['error'] = array(
+				'message' => 'Invalid State/Region of Bank'
+			);
+		}
+
+		if (empty($data['account'])) {
+			$error=true;
+			$json['error'] = array(
+				'message' => 'Account number is required!'
+			);
+		}
+
+		if (empty($data['iban'])) {
+			$error=true;
+			$json['error'] = array(
+				'message' => 'IBAN is required!'
+			);
+		}
+
+//		if (!empty($data['iban']) || !is_numeric($data['iban'])){
+//			$this->load->helper('iban');
+//
+//			$iban = isValidIBAN($country_data['iso_code_2'].$data['iban']);
+//
+//			if (!$iban){
+//				$json['error'] = array(
+//					'message' => 'IBAN idoes not seems valid!'
+//				);
+//			}
+//		}
+
+		if (empty($data['swift'])) {
+			$error=true;
+			$json['error'] = array(
+				'message' => 'SWIFT code is required!'
+			);
+		}
+
+		if (!$error){
+
+			$this->load->model('account/bank');
+
+			$this->model_account_bank->addBank($data);
+
+			$json = array(
+				'message' => 'Your bank information has been saved!'
+			);
+		}
+
+		$this->response->addHeader('Content-Type: application/json');
+		$this->response->setOutput(json_encode($json));
+	}
+
+	public function country() {
+		$json = array();
+
+		$this->load->model('localisation/country');
+
+		$country_info = $this->model_localisation_country->getCountry($this->request->get['country_id']);
+
+		if ($country_info) {
+			$this->load->model('localisation/zone');
+
+			$json = array(
+				'country_id'        => $country_info['country_id'],
+				'name'              => $country_info['name'],
+				'iso_code_2'        => $country_info['iso_code_2'],
+				'iso_code_3'        => $country_info['iso_code_3'],
+				'address_format'    => $country_info['address_format'],
+				'postcode_required' => $country_info['postcode_required'],
+				'zone'              => $this->model_localisation_zone->getZonesByCountryId($this->request->get['country_id']),
+				'status'            => $country_info['status']
+			);
+		}
 
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));

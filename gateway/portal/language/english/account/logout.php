@@ -20,6 +20,7 @@
 $_['heading_title'] = 'Account Logout';
 
 // Text
-$_['text_message']  = '<p>You have been logged off your account. It is now safe to leave the computer.</p><p>Your shopping cart has been saved, the items inside it will be restored whenever you log back into your account.</p>';
+$_['text_message']  = '<p>You have been logged off your account. It is now safe to leave the computer.</p><p>Thank you for using AVC E-Banking system.</p>
+<p>Your business is always valued and we welcome your <a href="%s">feedback.</a></p>';
 $_['text_account']  = 'Account';
 $_['text_logout']   = 'Logout';

@@ -191,6 +191,8 @@ class ControllerAccountOrder extends Controller {
 
 		$data['button_invoice_print'] = $this->language->get('button_invoice_print');
 		$data['button_filter'] = $this->language->get('button_filter');
+		$data['button_refresh'] = $this->language->get('button_refresh');
+		$data['button_export'] = $this->language->get('button_export');
 		$data['button_view'] = $this->language->get('button_view');
 
 		$url = '';

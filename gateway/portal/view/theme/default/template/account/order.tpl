@@ -72,7 +72,9 @@
                   <button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button>
                   </span></div>
                                     </div>
-                                    <button type="button" id="button-filter" class="btn btn-primary pull-right"><i class="fa fa-search"></i> <?php echo $button_filter; ?></button>
+                                    <button type="button" id="button-refresh" class="btn btn-default pull-right"><i class="fa fa-refresh"></i> <?php echo $button_refresh; ?></button>
+                                    <button type="button" id="button-export" class="btn btn-info pull-left"><i class="fa fa-file-excel-o"></i> <?php echo $button_export; ?></button>
+                                    <button type="button" id="button-filter" class="btn btn-primary pull-right"><i class="fa fa-search"></i> <?php echo $button_filter; ?></button>&nbsp;
                                 </div>
                             </div>
                         </div>
@@ -176,6 +178,11 @@
 </div>
 <!-- /#wrapper -->
 <script type="text/javascript"><!--
+    $('#button-refresh').on('click', function() {
+        url = 'index.php?route=account/order';
+
+        location = url;
+    });
     $('#button-filter').on('click', function() {
         url = 'index.php?route=account/order';
 
@@ -242,7 +249,6 @@
             }
         });
 
-        $('#order-view').modal('show');
     }
     //--></script>
 <?php echo $footer?>

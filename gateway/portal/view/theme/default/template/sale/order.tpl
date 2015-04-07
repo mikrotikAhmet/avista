@@ -33,6 +33,7 @@
                                     <option value="<?php echo $key?>"><?php echo $inst?></option>
                                 <?php } ?>
                             </select>
+                            <input type="hidden" name="product_name" value=""/>
                         </div>
                     </div>
                     <div class="form-group">
@@ -98,10 +99,17 @@ $('select[name=\'instrument\']').on('change', function(e) {
     $('.instrument').html($(this).find("option:selected").text());
 
     if ($('input[name=\'amount\']').val() < 10000 || $('select[name=\'instrument\']').val() == ""){
+
         $('#issue-order').attr("disabled", true);
     } else {
         $('#issue-order').attr("disabled", false);
     }
+if ($('select[name=\'instrument\']').val() != "") {
+    $('input[name=\'product_name\']').val($(this).find("option:selected").text());
+} else {
+    $('input[name=\'product_name\']').val('');
+}
+
 });
 $('input[name=\'amount\']').on('keyup', function(e) {
 
@@ -187,7 +195,9 @@ $('input[name=\'amount\']').on('keyup', function(e) {
                 <h4 class="modal-title" id="myModalLabel">Order Request</h4>
             </div>
             <div class="modal-body">
-                <?php if ($customer['telephone']) { ?>
+                <?php if (!$approved) { ?>
+                <p>You account is not approved yet.</p>
+                <?php } else if ($customer['telephone']) { ?>
                 <p>Dear Customer,</p>
                 <p>To continue your order request, please type the Verification code associated to your Order Request.</p>
                 <p>Verification code has been sent to your Mobile Phone.</p>
