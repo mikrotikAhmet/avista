@@ -14,7 +14,13 @@
             <td><?php echo $document['mask']?></td>
             <td><?php echo $document['filename']?></td>
             <td><?php echo $document['status']?></td>
-            <td><button type="button" id="remove-document" onclick="removeDocument('<?php echo $document['document_id']?>')" class="btn btn-xs btn-danger"><i class="fa fa-remove"></i></button></td>
+            <td>
+                <?php if (!in_array($document['status_id'],$complete_status)) { ?>
+                    <button type="button" id="remove-document" onclick="removeDocument('<?php echo $document['document_id']?>')" class="btn btn-xs btn-danger"><i class="fa fa-remove"></i></button>
+                <?php } else { ?>
+                <i class="text-success fa fa-check-square-o"></i>
+                <?php } ?>
+            </td>
         </tr>
     <?php } ?>
     <?php } else { ?>

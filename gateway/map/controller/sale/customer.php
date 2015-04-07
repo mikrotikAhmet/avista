@@ -673,7 +673,7 @@ class ControllerSaleCustomer extends Controller {
 		$data['tab_address'] = $this->language->get('tab_address');
 		$data['tab_history'] = $this->language->get('tab_history');
 		$data['tab_transaction'] = $this->language->get('tab_transaction');
-		$data['tab_reward'] = $this->language->get('tab_reward');
+		$data['tab_bank'] = $this->language->get('tab_bank');
 		$data['tab_ip'] = $this->language->get('tab_ip');
         $data['tab_document'] = $this->language->get('tab_document');
 
@@ -902,6 +902,8 @@ class ControllerSaleCustomer extends Controller {
 		} else {
 			$data['address_id'] = '';
 		}
+
+		$data['directors'] = array();
 
 		$data['header'] = $this->load->controller('common/header');
 		$data['column_left'] = $this->load->controller('common/column_left');
@@ -1205,67 +1207,6 @@ class ControllerSaleCustomer extends Controller {
 		$this->response->setOutput($this->load->view('sale/customer_transaction.tpl', $data));
 	}
 
-	public function reward() {
-		$this->load->language('sale/customer');
-
-		$this->load->model('sale/customer');
-
-		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->user->hasPermission('modify', 'sale/customer')) {
-			$this->model_sale_customer->addReward($this->request->get['customer_id'], $this->request->post['description'], $this->request->post['points']);
-
-			$data['success'] = $this->language->get('text_success');
-		} else {
-			$data['success'] = '';
-		}
-
-		if (($this->request->server['REQUEST_METHOD'] == 'POST') && !$this->user->hasPermission('modify', 'sale/customer')) {
-			$data['error_warning'] = $this->language->get('error_permission');
-		} else {
-			$data['error_warning'] = '';
-		}
-
-		$data['text_no_results'] = $this->language->get('text_no_results');
-		$data['text_balance'] = $this->language->get('text_balance');
-
-		$data['column_date_added'] = $this->language->get('column_date_added');
-		$data['column_description'] = $this->language->get('column_description');
-		$data['column_points'] = $this->language->get('column_points');
-
-		if (isset($this->request->get['page'])) {
-			$page = $this->request->get['page'];
-		} else {
-			$page = 1;
-		}
-
-		$data['rewards'] = array();
-
-		$results = $this->model_sale_customer->getRewards($this->request->get['customer_id'], ($page - 1) * 10, 10);
-
-		foreach ($results as $result) {
-			$data['rewards'][] = array(
-				'points'      => $result['points'],
-				'description' => $result['description'],
-				'date_added'  => date($this->language->get('date_format_short'), strtotime($result['date_added']))
-			);
-		}
-
-		$data['balance'] = $this->model_sale_customer->getRewardTotal($this->request->get['customer_id']);
-
-		$reward_total = $this->model_sale_customer->getTotalRewards($this->request->get['customer_id']);
-
-		$pagination = new Pagination();
-		$pagination->total = $reward_total;
-		$pagination->page = $page;
-		$pagination->limit = 10;
-		$pagination->url = $this->url->link('sale/customer/reward', 'token=' . $this->session->data['token'] . '&customer_id=' . $this->request->get['customer_id'] . '&page={page}', 'SSL');
-
-		$data['pagination'] = $pagination->render();
-
-		$data['results'] = sprintf($this->language->get('text_pagination'), ($reward_total) ? (($page - 1) * 10) + 1 : 0, ((($page - 1) * 10) > ($reward_total - 10)) ? $reward_total : ((($page - 1) * 10) + 10), $reward_total, ceil($reward_total / 10));
-
-		$this->response->setOutput($this->load->view('sale/customer_reward.tpl', $data));
-	}
-
 	public function ip() {
 		$this->load->language('sale/customer');
 
@@ -1421,6 +1362,75 @@ class ControllerSaleCustomer extends Controller {
 
         $this->response->setOutput($this->load->view('sale/customer_document.tpl', $data));
     }
+
+	public function bank() {
+		$this->load->language('sale/customer');
+
+		$this->load->model('sale/customer');
+
+		$data['text_no_results'] = $this->language->get('text_no_results');
+		$data['text_loading'] = $this->language->get('text_loading');
+
+		$data['column_bank'] = $this->language->get('column_bank');
+		$data['column_account'] = $this->language->get('column_account');
+		$data['column_status'] = $this->language->get('column_status');
+
+		if (isset($this->request->get['page'])) {
+			$page = $this->request->get['page'];
+		} else {
+			$page = 1;
+		}
+
+		$this->load->model('localisation/order_status');
+
+		$data['banks'] = array();
+
+		$results = $this->model_sale_customer->getBanks($this->request->get['customer_id'], ($page - 1) * 10, 10);
+
+		$bank_total = $this->model_sale_customer->getTotalBanksByCustomerId($this->request->get['customer_id']);
+
+		foreach ($results as $result) {
+
+			$order_status_data = $this->model_localisation_order_status->getOrderStatus($result['status']);
+
+
+			$data['banks'][] = array(
+				'bank_id'         => $result['bank_id'],
+				'bank'         => $result['bank'],
+				'customer_id'         => $result['customer_id'],
+				'account_number'      =>$result['account_number'],
+				'status'      =>$order_status_data['name'],
+				'actions'=>$this->model_localisation_order_status->getOrderStatuses(),
+			);
+		}
+
+		$pagination = new Pagination();
+		$pagination->total = $bank_total;
+		$pagination->page = $page;
+		$pagination->limit = 10;
+		$pagination->url = $this->url->link('sale/customer/bank', 'token=' . $this->session->data['token'] . '&customer_id=' . $this->request->get['customer_id'] . '&page={page}', 'SSL');
+
+		$data['pagination'] = $pagination->render();
+
+		$data['results'] = sprintf($this->language->get('text_pagination'), ($bank_total) ? (($page - 1) * 10) + 1 : 0, ((($page - 1) * 10) > ($bank_total - 10)) ? $bank_total : ((($page - 1) * 10) + 10), $bank_total, ceil($bank_total / 10));
+
+		$this->response->setOutput($this->load->view('sale/customer_bank.tpl', $data));
+	}
+
+	public function updateBankStatus() {
+
+		$bank_id = $this->request->post['bank_id'];
+		$status_id = $this->request->post['status_id'];
+
+		$this->load->model('sale/customer');
+
+		$json = array();
+
+		$this->model_sale_customer->updateBankStatus($bank_id,$status_id);
+
+		$this->response->addHeader('Content-Type: application/json');
+		$this->response->setOutput(json_encode($json));
+	}
 
     public function updateDocumentStatus() {
 

@@ -334,6 +334,8 @@ class ControllerAccountAccount extends Controller {
 
         $results = $this->model_account_customer->getDocuments();
 
+		$data['complete_status'] = $this->config->get('config_complete_status');
+
         foreach ($results as $result) {
             $order_status_data = $this->model_localisation_order_status->getOrderStatus($result['status']);
 
@@ -343,6 +345,7 @@ class ControllerAccountAccount extends Controller {
                 'filename'      =>$result['filename'],
                 'mask'      =>$result['file'],
                 'status'      =>$order_status_data['name'],
+	            'status_id'      =>$result['status'],
                 'date_added' => date('d/m/y', strtotime($result['date_added'])),
             );
         }
@@ -435,13 +438,16 @@ class ControllerAccountAccount extends Controller {
 
 		$banks = $this->model_account_bank->getBanks();
 
+		$data['complete_status'] = $this->config->get('config_complete_status');
+
 		foreach ($banks as $bank) {
 			$status_data = $this->model_localisation_order_status->getOrderStatus($bank['status']);
 			$data['banks'][] = array(
 				'bank_id'=>$bank['bank_id'],
 				'bank'=>$bank['bank'],
 				'account_number'=>$bank['account_number'],
-				'status'=>$status_data['name']
+				'status'=>$status_data['name'],
+				'status_id'=>$bank['status']
 			);
 		}
 

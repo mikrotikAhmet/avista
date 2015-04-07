@@ -160,6 +160,9 @@
                             </table>
                         </div>
                         <div class="tab-pane fade" id="profile-pills">
+                            <div class="alert alert-info alert-dismissable">
+                                <i class="fa fa-exclamation-circle"></i> <strong>Important Notice:</strong> In order to change your Personal Information, please contact to our <a href="mailto:compliance@hifholding.com">compliance</a> department. Our compliance team will review your change request.
+                            </div>
                             <fieldset>
                                 <legend><?php echo $text_your_details; ?></legend>
                                 <table class="table table-responsive table-striped">

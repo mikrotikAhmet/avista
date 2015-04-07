@@ -45,20 +45,16 @@ class ControllerAccountStep2 extends Controller {
 			$customer_data = array_merge($this->request->post, $this->session->data['acv_nc']);
 
 
-			$this->model_account_customer->addCustomer($customer_data);
+			$customer_id = $this->model_account_customer->addCustomer($customer_data);
 
 
 			unset($this->session->data['acv_nc']);
-
-//			$this->customer->login($this->request->post['email'], $this->request->post['password']);
-//
-//			unset($this->session->data['guest']);
 
 			// Add to activity log
 			$this->load->model('account/activity');
 
 			$activity_data = array(
-				'customer_id' => $this->customer->getId(),
+				'customer_id' => $customer_id,
 				'name'        => $customer_data['firstname'] . ' ' . $customer_data['lastname']
 			);
 

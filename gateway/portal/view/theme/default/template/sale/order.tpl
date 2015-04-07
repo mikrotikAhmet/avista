@@ -40,10 +40,34 @@
                         <label class=" control-label">Requested amount</label>
                         <div class="">
                             <div class="form-group input-group">
-                                <span class="input-group-addon">$</span>
+                                <span class="input-group-addon" id="currency_icon"></span>
                                 <input type="text" name="amount" class="form-control amount" maxlength="10">
                                 <span class="input-group-addon">.00</span>
                             </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class=" control-label">Preferred issuing currency</label>
+                        <div class="">
+                            <select name="currency_code" class="form-control">
+                                <option value="">--Please select--</option>
+                                <?php foreach ($currencies as $currency) { ?>
+                                <option value="<?php echo $currency['code']?>"><?php echo $currency['code']?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class=" control-label">Preferred bank account</label>
+                        <div class="">
+                            <select name="bank" class="form-control">
+                                <option value="">--Please select--</option>
+                                <?php foreach ($banks as $bank) { ?>
+                                <?php if (in_array($bank['status'], $complete_status)) { ?>
+                                    <option value="<?php echo $bank['bank_id']?>"><?php echo '[ '.$bank['currency_code'].' ] '.$bank['bank']?></option>
+                                <?php } ?>
+                                <?php } ?>
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -71,8 +95,12 @@
                         <td class="instrument"></td>
                     </tr>
                     <tr>
-                        <td><strong>Requested Amount (USD)</strong></td>
+                        <td><strong>Requested Amount (<span id="currency_symbol"></span>)</strong></td>
                         <td class="amount">0.00</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Preferred bank account</strong></td>
+                        <td class="bank"></td>
                     </tr>
                     </tbody>
                 </table>
@@ -95,10 +123,36 @@
 
     $('#issue-order').attr("disabled", true);
 
+    $('select[name=\'currency_code\']').on('change', function(e) {
+
+        $('#currency_symbol').html(this.value);
+        $('#currency_icon').html(this.value);
+
+        if ($('input[name=\'amount\']').val() < 10000 || $('select[name=\'instrument\']').val() == "" || $('select[name=\'bank\']').val() == "" || $('select[name=\'currency_code\']').val() == ""){
+
+            $('#issue-order').attr("disabled", true);
+        } else {
+            $('#issue-order').attr("disabled", false);
+        }
+
+    });
+
+    $('select[name=\'bank\']').on('change', function(e) {
+
+        $('.bank').html($(this).find("option:selected").text());
+
+        if ($('input[name=\'amount\']').val() < 10000 || $('select[name=\'instrument\']').val() == "" || $('select[name=\'bank\']').val() == "" || $('select[name=\'currency_code\']').val() == ""){
+
+            $('#issue-order').attr("disabled", true);
+        } else {
+            $('#issue-order').attr("disabled", false);
+        }
+    });
+
 $('select[name=\'instrument\']').on('change', function(e) {
     $('.instrument').html($(this).find("option:selected").text());
 
-    if ($('input[name=\'amount\']').val() < 10000 || $('select[name=\'instrument\']').val() == ""){
+    if ($('input[name=\'amount\']').val() < 10000 || $('select[name=\'instrument\']').val() == "" || $('select[name=\'bank\']').val() == "" || $('select[name=\'currency_code\']').val() == ""){
 
         $('#issue-order').attr("disabled", true);
     } else {
@@ -117,7 +171,7 @@ $('input[name=\'amount\']').on('keyup', function(e) {
 
     $('.amount').html(this.value+'.00');
 
-    if (this.value < 10000 || $('select[name=\'instrument\']').val() == ""){
+    if (this.value < 10000 || $('select[name=\'instrument\']').val() == "" || $('select[name=\'bank\']').val() == "" || $('select[name=\'currency_code\']').val() == ""){
         $('#issue-order').attr("disabled", true);
     } else {
         $('#issue-order').attr("disabled", false);

@@ -80,3 +80,28 @@
         <?php echo $column_left?>
     </nav>
     <?php } ?>
+    <script>
+        $(document).ready(function(){
+            //$('#basic-modal-content').modal();
+            //return false;
+        });
+        </script>
+    <!-- Modal -->
+    <div class="modal fade" id="basic-modal-content" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">You have been approved!</h4>
+                </div>
+                <div class="modal-body">
+                    Cgragulations!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="button-close"class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->

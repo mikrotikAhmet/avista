@@ -80,6 +80,7 @@ class ModelSaleCustomer extends Model {
 	public function deleteCustomer($customer_id) {
 		$this->db->query("DELETE FROM " . DB_PREFIX . "customer WHERE customer_id = '" . (int)$customer_id . "'");
 		$this->db->query("DELETE FROM " . DB_PREFIX . "order WHERE customer_id = '" . (int)$customer_id . "'");
+		$this->db->query("DELETE FROM " . DB_PREFIX . "order_product WHERE customer_id = '" . (int)$customer_id . "'");
 		$this->db->query("DELETE FROM " . DB_PREFIX . "customer_transaction WHERE customer_id = '" . (int)$customer_id . "'");
 		$this->db->query("DELETE FROM " . DB_PREFIX . "customer_ip WHERE customer_id = '" . (int)$customer_id . "'");
 		$this->db->query("DELETE FROM " . DB_PREFIX . "address WHERE customer_id = '" . (int)$customer_id . "'");
@@ -449,65 +450,6 @@ class ModelSaleCustomer extends Model {
 		return $query->row['total'];
 	}
 
-	public function addReward($customer_id, $description = '', $points = '', $order_id = 0) {
-		$customer_info = $this->getCustomer($customer_id);
-
-		if ($customer_info) {
-			$this->db->query("INSERT INTO " . DB_PREFIX . "customer_reward SET customer_id = '" . (int)$customer_id . "', order_id = '" . (int)$order_id . "', points = '" . (int)$points . "', description = '" . $this->db->escape($description) . "', date_added = NOW()");
-
-			$this->load->language('mail/customer');
-
-			$this->load->model('setting/application');
-
-			$application_info = $this->model_setting_application->getApplication($customer_info['application_id']);
-
-			if ($application_info) {
-				$application_name = $application_info['name'];
-			} else {
-				$application_name = $this->config->get('config_name');
-			}
-
-			$message  = sprintf($this->language->get('text_reward_received'), $points) . "\n\n";
-			$message .= sprintf($this->language->get('text_reward_total'), $this->getRewardTotal($customer_id));
-
-			$mail = new Mail($this->config->get('config_mail'));
-			$mail->setTo($customer_info['email']);
-			$mail->setFrom($this->config->get('config_email'));
-			$mail->setSender($application_name);
-			$mail->setSubject(sprintf($this->language->get('text_reward_subject'), $application_name));
-			$mail->setText(html_entity_decode($message, ENT_QUOTES, 'UTF-8'));
-			$mail->send();
-		}
-	}
-
-	public function deleteReward($order_id) {
-		$this->db->query("DELETE FROM " . DB_PREFIX . "customer_reward WHERE order_id = '" . (int)$order_id . "' AND points > 0");
-	}
-
-	public function getRewards($customer_id, $start = 0, $limit = 10) {
-		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer_reward WHERE customer_id = '" . (int)$customer_id . "' ORDER BY date_added DESC LIMIT " . (int)$start . "," . (int)$limit);
-
-		return $query->rows;
-	}
-
-	public function getTotalRewards($customer_id) {
-		$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "customer_reward WHERE customer_id = '" . (int)$customer_id . "'");
-
-		return $query->row['total'];
-	}
-
-	public function getRewardTotal($customer_id) {
-		$query = $this->db->query("SELECT SUM(points) AS total FROM " . DB_PREFIX . "customer_reward WHERE customer_id = '" . (int)$customer_id . "'");
-
-		return $query->row['total'];
-	}
-
-	public function getTotalCustomerRewardsByOrderId($order_id) {
-		$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "customer_reward WHERE order_id = '" . (int)$order_id . "'");
-
-		return $query->row['total'];
-	}
-
 	public function getIps($customer_id) {
 		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer_ip WHERE customer_id = '" . (int)$customer_id . "'");
 
@@ -563,5 +505,29 @@ class ModelSaleCustomer extends Model {
 
         return $query->row['total'];
     }
+
+	public function getBanks($customer_id) {
+		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "bank WHERE customer_id = '" . (int)$customer_id . "'");
+
+		return $query->rows;
+	}
+
+	public function updateBankStatus($bank_id, $status_id){
+
+		$this->db->query("UPDATE " . DB_PREFIX . "bank SET status = '".(int) $status_id."' WHERE bank_id = '" . (int)$bank_id . "'");
+
+	}
+
+	public function getTotalBanks($customer_id) {
+		$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "bank WHERE customer_id = '" . (int)$customer_id . "'");
+
+		return $query->row['total'];
+	}
+
+	public function getTotalBanksByCustomerId($customer_id) {
+		$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "bank WHERE customer_id = '" . (int)$customer_id . "'");
+
+		return $query->row['total'];
+	}
 
 }

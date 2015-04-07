@@ -45,6 +45,8 @@ $_['column_total']          = 'Total Accounts';
 $_['column_filename']           = 'Filename';
 $_['column_mask']           = 'Filename Mask';
 $_['column_action']         = 'Action';
+$_['column_bank']         = 'Bank Name';
+$_['column_account']         = 'Bank Account Number';
 
 // Entry
 $_['entry_customer_group']  = 'Customer Group';

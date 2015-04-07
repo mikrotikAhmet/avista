@@ -13,7 +13,11 @@
     <tr id="<?php echo $bank['bank_id']?>">
         <td><?php echo $bank['bank']?></td>
         <td><?php echo $bank['account_number']?></td>
+        <?php if (!in_array($bank['status_id'], $complete_status)) { ?>
         <td><?php echo $bank['status']?></td>
+        <?php } else { ?>
+        <td><i class="text-success fa fa-check-square-o"></i><?php echo $bank['status']?></td>
+        <?php } ?>
         <td><i class="expand fa fa-plus"></i></td>
     </tr>
     <tr>

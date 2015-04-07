@@ -114,6 +114,7 @@ $_['button_reward']                 = 'Apply Points';
 // Tab
 $_['tab_address']                   = 'Address';
 $_['tab_admin']                     = 'Admin';
+$_['tab_bank']                     = 'Bank Account(s)';
 $_['tab_attribute']                 = 'Attribute';
 $_['tab_customer']                  = 'Customer Details';
 $_['tab_data']                      = 'Data';

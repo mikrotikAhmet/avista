@@ -65,7 +65,13 @@ class ControllerSaleOrder extends Controller {
             '5'=>'BOND',
         );
 
+		$data['complete_status'] = $this->config->get('config_complete_status');
 
+		$this->load->model('account/bank');
+		$this->load->model('localisation/currency');
+
+		$data['banks'] = $this->model_account_bank->getBanks();
+		$data['currencies'] = $this->model_localisation_currency->getCurrencies();
 
 		$data['heading_title'] = $this->language->get('heading_title');
 
@@ -177,14 +183,15 @@ class ControllerSaleOrder extends Controller {
 					    'request' => $this->request->post['amount'],
 					    'order_status_id' => $this->config->get('config_order_status_id'),
 					    'language_id' => $this->customer->getLanguage(),
-					    'currency_id' => $this->currency->getId($this->customer->getCurrency()),
-					    'currency_code' => $this->customer->getCurrency(),
-					    'currency_value' => $this->currency->getValue($this->customer->getCurrency()),
+					    'currency_id' => $this->currency->getId($this->request->post['currency_code']),
+					    'currency_code' => $this->request->post['currency_code'],
+					    'currency_value' => $this->currency->getValue($this->request->post['currency_code']),
 					    'ip' => $ip,
 					    'forwarded_ip' => $forwarded_ip,
 					    'user_agent' => $user_agent,
 					    'accept_language' => $accept_language,
 					    'product_id'=>$this->request->post['instrument'],
+					    'bank_id'=>$this->request->post['bank'],
 					    'product_name'=>$this->request->post['product_name'],
 				    );
 
