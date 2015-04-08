@@ -37,6 +37,7 @@
                         <?php if ($customer_id) { ?>
                         <li><a href="#tab-document" data-toggle="tab"><?php echo $tab_document; ?></a></li>
                         <li><a href="#tab-bank" data-toggle="tab"><?php echo $tab_bank; ?></a></li>
+                        <li><a href="#tab-certificate" data-toggle="tab"><?php echo $tab_certificate; ?></a></li>
                         <li><a href="#tab-history" data-toggle="tab"><?php echo $tab_history; ?></a></li>
                         <li><a href="#tab-transaction" data-toggle="tab"><?php echo $tab_transaction; ?></a></li>
                         <li><a href="#tab-ip" data-toggle="tab"><?php echo $tab_ip; ?></a></li>
@@ -285,6 +286,26 @@
                     <?php if ($customer_id) { ?>
                     <div class="tab-pane" id="tab-document">
                         <div id="document"></div>
+                    </div>
+                    <div class="tab-pane" id="tab-certificate">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <div class="col-sm-10">
+                                        <select name="certificate_id" id="certificate" class="form-control">
+                                            <option value="0"><?php echo $text_select?></option>
+                                            <?php foreach ($certificates as $certificate) { ?>
+                                            <?php if ($certificate['certificate_id'] == $certificate_id) { ?>
+                                            <option value="<?php echo $certificate['certificate_id']?>" selected="selected"><?php echo $certificate['legal_name']?></option>
+                                            <?php } else { ?>
+                                                <option value="<?php echo $certificate['certificate_id']?>"><?php echo $certificate['legal_name']?></option>
+                                            <?php } ?>
+                                            <?php } ?>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="tab-pane" id="tab-bank">
                         <div id="bank"></div>

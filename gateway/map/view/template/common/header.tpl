@@ -40,6 +40,7 @@
 
     <!-- jQuery -->
     <script src="view/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="view/javascript/inputmask/js/jquery.mask.min.js" type="text/javascript"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="view/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- Metis Menu Plugin JavaScript -->

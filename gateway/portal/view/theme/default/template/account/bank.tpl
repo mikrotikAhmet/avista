@@ -1,4 +1,4 @@
-<form id="bank-form" class="">
+<form id="form-bank" class="">
     <div class="form-group required">
         <label class="control-label" for="input-bank-name">Name of Bank</label>
         <div class="">
@@ -10,7 +10,7 @@
         <div class="">
             <select name="country_id" id="input-bank-country" class="form-control">
                 <?php foreach ($countries as $country) { ?>
-                <?php if ($country['country_id'] == $country_id) { ?>
+                <?php if (isset($country_id) && $country['country_id'] == $country_id) { ?>
                 <option value="<?php echo $country['country_id']; ?>" selected="selected"><?php echo $country['name']; ?></option>
                 <?php } else { ?>
                 <option value="<?php echo $country['country_id']; ?>"><?php echo $country['name']; ?></option>
@@ -70,7 +70,44 @@
             <input type="text" name="sort_code" value="" placeholder="" id="input-bank-sort-code" class="form-control" />
         </div>
     </div>
+    <small>Additional informations will help us to approve your account more quickly.</small>
+    <div class="form-group">
+        <label class="control-label" for="input-bank-officer">Bank officer full name <small><b>(optional)</b></small></label>
+        <div class="">
+            <input type="text" name="officer_name" value="" placeholder="" id="input-bank-officer" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label" for="input-bank-officer">Bank officer telephone <small><b>(optional)</b></small></label>
+        <div class="">
+            <input type="text" name="officer_telephone" value="" placeholder="" id="input-bank-officer" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label" for="input-bank-officer">Bank officer E-Mail <small><b>(optional)</b></small></label>
+        <div class="">
+            <input type="text" name="officer_email" value="" placeholder="" id="input-bank-officer" class="form-control" />
+        </div>
+    </div>
 </form>
+<script>
+    $("#account-manager tr:odd").addClass("master");
+    $("#account-manager tr:not(.master)").hide();
+    $("#account-manager tr:first-child").show();
+
+    $("#account-manager tr.master").click(function() {
+
+//        if ($(this).next("tr").css('display') == 'none'){
+//            $('#transaction-details-'+this.id).load('index.php?route=account/transaction/details&transaction_id='+this.id);
+//        }
+
+        $(this).next("tr").toggle();
+        $(this).find(".expand").toggleClass("fa-minus");
+        $(this).toggleClass("selected");
+
+
+    });
+</script>
 <script type="text/javascript"><!--
     $('select[name=\'country_id\']').on('change', function() {
         $.ajax({

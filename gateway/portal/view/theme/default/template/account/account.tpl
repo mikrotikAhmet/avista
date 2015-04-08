@@ -237,24 +237,6 @@
 <!-- /#page-wrapper -->
 </div>
 <!-- /#wrapper -->
-<script>
-    $("#account-manager tr:odd").addClass("master");
-    $("#account-manager tr:not(.master)").hide();
-    $("#account-manager tr:first-child").show();
-
-    $("#account-manager tr.master").click(function() {
-
-//        if ($(this).next("tr").css('display') == 'none'){
-//            $('#transaction-details-'+this.id).load('index.php?route=account/transaction/details&transaction_id='+this.id);
-//        }
-
-        $(this).next("tr").toggle();
-        $(this).find(".expand").toggleClass("fa-minus");
-        $(this).toggleClass("selected");
-
-
-    });
-</script>
 <script type="text/javascript"><!--
 
     $('#add-bank').on('click',function(){
@@ -346,8 +328,10 @@
 
     function addBank(){
 
-        var data = $('#bank-form').serialize();
+        var data = $('#form-bank').serialize();
         var element = $(this);
+
+        console.log(data);
 
         $.ajax({
             url: 'index.php?route=account/account/insertBank',

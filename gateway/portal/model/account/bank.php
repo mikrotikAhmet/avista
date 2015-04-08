@@ -41,7 +41,10 @@ class ModelAccountBank extends Model {
 		iban = '".$this->db->escape($data['iban'])."',
 		sort_code = '".$this->db->escape($data['sort_code'])."',
 		routing = '".$this->db->escape($data['routing'])."',
-		status = '".(int) $this->config->get('config_order_status_id')."'");
+		status = '".(int) $this->config->get('config_order_status_id')."',
+		officer_name = '".$this->db->escape($data['officer_name'])."',
+		officer_telephone = '".$this->db->escape($data['officer_telephone'])."',
+		officer_email = '".$this->db->escape($data['officer_email'])."'");
 	}
 
 	public function updateBank($data,$bank_id){
@@ -55,6 +58,9 @@ class ModelAccountBank extends Model {
 		iban = '".$this->db->escape($data['iban'])."',
 		sort_code = '".$this->db->escape($data['sort_code'])."',
 		routing = '".$this->db->escape($data['routing'])."',
+		officer_name = '".$this->db->escape($data['officer_name'])."',
+		officer_telephone = '".$this->db->escape($data['officer_telephone'])."',
+		officer_email = '".$this->db->escape($data['officer_email'])."',
 		status = '".(int) $this->config->get('config_order_status_id')."' WHERE bank_id = '".(int) $bank_id."'");
 	}
 

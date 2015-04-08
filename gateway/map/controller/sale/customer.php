@@ -439,7 +439,8 @@ class ControllerSaleCustomer extends Controller {
 				'date_added'     => date($this->language->get('date_format_short'), strtotime($result['date_added'])),
 				'edit'           => $this->url->link('sale/customer/edit', 'token=' . $this->session->data['token'] . '&customer_id=' . $result['customer_id'] . $url, 'SSL'),
 				'approve'        => $this->url->link('sale/customer/approve', 'token=' . $this->session->data['token'] . '&customer_id=' . $result['customer_id'] . $url, 'SSL'),
-				'approved'       => $result['approved']
+				'approved'       => $result['approved'],
+				'certificate_id'    => $result['certificate_id'],
 			);
 		}
 
@@ -671,6 +672,7 @@ class ControllerSaleCustomer extends Controller {
 
 		$data['tab_general'] = $this->language->get('tab_general');
 		$data['tab_address'] = $this->language->get('tab_address');
+		$data['tab_certificate'] = $this->language->get('tab_certificate');
 		$data['tab_history'] = $this->language->get('tab_history');
 		$data['tab_transaction'] = $this->language->get('tab_transaction');
 		$data['tab_bank'] = $this->language->get('tab_bank');
@@ -901,6 +903,18 @@ class ControllerSaleCustomer extends Controller {
 			$data['address_id'] = $customer_info['address_id'];
 		} else {
 			$data['address_id'] = '';
+		}
+
+		$this->load->model('customer/certificate');
+
+		$data['certificates'] = $this->model_customer_certificate->getCertificates();
+
+		if (isset($this->request->post['certificate_id'])) {
+			$data['certificate_id'] = $this->request->post['certificate_id'];
+		} elseif (!empty($customer_info)) {
+			$data['certificate_id'] = $customer_info['certificate_id'];
+		} else {
+			$data['certificate_id'] = '';
 		}
 
 		$data['header'] = $this->load->controller('common/header');
@@ -1379,6 +1393,8 @@ class ControllerSaleCustomer extends Controller {
 			$page = 1;
 		}
 
+		$data['token'] = $this->session->data['token'];
+
 		$this->load->model('localisation/order_status');
 
 		$data['banks'] = array();
@@ -1579,6 +1595,39 @@ class ControllerSaleCustomer extends Controller {
 
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
+	}
+
+	public function bankDetail(){
+
+		$bank_id = $this->request->get['bank_id'];
+
+		$this->load->model('account/bank');
+		$this->load->model('localisation/country');
+		$this->load->model('localisation/zone');
+
+		$bank = $this->model_account_bank->getBank($bank_id);
+
+		$country_data = $this->model_localisation_country->getCountry($bank['country_id']);
+		$zone_data = $this->model_localisation_zone->getZone($bank['zone_id']);
+
+		$data['complete_status'] = $this->config->get('config_complete_status');
+
+		$data['bank'] = array(
+			'bank_id'=>$bank['bank_id'],
+			'bank'=>$bank['bank'],
+			'country'=>$country_data['name'],
+			'zone'=>$zone_data['name'],
+			'account_number'=>$bank['account_number'],
+			'currency_code'=>$bank['currency_code'],
+			'iban'=>$bank['iban'],
+			'swift'=>$bank['swift'],
+			'routing'=>$bank['routing'],
+			'sort_code'=>$bank['sort_code'],
+			'status'=>$bank['status']
+		);
+
+		$this->response->setOutput($this->load->view('sale/bank_detail.tpl', $data));
+
 	}
 
 }

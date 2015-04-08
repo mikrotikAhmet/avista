@@ -50,9 +50,6 @@ class ControllerCustomerCertificate extends Controller {
 
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validateForm()) {
 
-			echo '<pre>';
-			print_r($this->request->post);
-			die();
 			$this->model_customer_certificate->addCertificate($this->request->post);
 
 			$this->session->data['success'] = $this->language->get('text_success');
@@ -93,6 +90,7 @@ class ControllerCustomerCertificate extends Controller {
 		$this->load->model('customer/certificate');
 
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validateForm()) {
+
 			$this->model_customer_certificate->editCertificate($this->request->get['certificate_id'], $this->request->post);
 
 			$this->session->data['success'] = $this->language->get('text_success');
@@ -570,22 +568,79 @@ class ControllerCustomerCertificate extends Controller {
 
 		$this->load->model('sale/customer');
 
-		if (isset($this->request->post['address'])) {
-			$data['address'] = $this->request->post['address'];
+		if (isset($this->request->post['country_id'])) {
+			$data['country_id'] = $this->request->post['country_id'];
 		} elseif (!empty($certificate_info)) {
-			$data['address'] = $this->model_sale_customer->getAddress($certificate_info['address_id']);
+			$data['country_id'] = $certificate_info['country_id'];
 		} else {
-			$data['address'] = array(
-				'address_1'      => '',
-				'address_2'      => '',
-				'postcode'       => '',
-				'city'           => '',
-				'zone_id'        => '',
-				'country_id'     => ''
-			);
+			$data['country_id'] = '';
 		}
 
-		$data['directors'] = array();
+		if (isset($this->request->post['address_1'])) {
+			$data['address_1'] = $this->request->post['address_1'];
+		} elseif (!empty($certificate_info)) {
+			$data['address_1'] = $certificate_info['address_1'];
+		} else {
+			$data['address_1'] = '';
+		}
+
+		if (isset($this->request->post['address_2'])) {
+			$data['address_2'] = $this->request->post['address_2'];
+		} elseif (!empty($certificate_info)) {
+			$data['address_2'] = $certificate_info['address_2'];
+		} else {
+			$data['address_2'] = '';
+		}
+
+		if (isset($this->request->post['city'])) {
+			$data['city'] = $this->request->post['city'];
+		} elseif (!empty($certificate_info)) {
+			$data['city'] = $certificate_info['city'];
+		} else {
+			$data['city'] = '';
+		}
+
+		if (isset($this->request->post['postcode'])) {
+			$data['postcode'] = $this->request->post['postcode'];
+		} elseif (!empty($certificate_info)) {
+			$data['postcode'] = $certificate_info['postcode'];
+		} else {
+			$data['postcode'] = '';
+		}
+
+		if (isset($this->request->post['zone_id'])) {
+			$data['zone_id'] = $this->request->post['zone_id'];
+		} elseif (!empty($certificate_info)) {
+			$data['zone_id'] = $certificate_info['zone_id'];
+		} else {
+			$data['zone_id'] = '';
+		}
+
+		$this->load->model('customer/certificate');
+
+		if (isset($this->request->post['director'])) {
+			$data['directors'] = $this->request->post['director'];
+		} elseif (!empty($certificate_info)) {
+			$data['directors'] = $this->model_customer_certificate->getDirectors($certificate_info['certificate_id']);
+		} else {
+			$data['directors'] = '';
+		}
+
+		if (isset($this->request->post['ubo'])) {
+			$data['ubos'] = $this->request->post['ubo'];
+		} elseif (!empty($certificate_info)) {
+			$data['ubos'] = $this->model_customer_certificate->getUbos($certificate_info['certificate_id']);
+		} else {
+			$data['ubos'] = '';
+		}
+
+		if (isset($this->request->post['contact'])) {
+			$data['contacts'] = $this->request->post['contact'];
+		} elseif (!empty($certificate_info)) {
+			$data['contacts'] = $this->model_customer_certificate->getContacts($certificate_info['certificate_id']);
+		} else {
+			$data['contacts'] = '';
+		}
 
 		$data['header'] = $this->load->controller('common/header');
 		$data['column_left'] = $this->load->controller('common/column_left');

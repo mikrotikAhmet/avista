@@ -46,7 +46,7 @@ CREATE TABLE `engine4_address` (
 
 LOCK TABLES `engine4_address` WRITE;
 /*!40000 ALTER TABLE `engine4_address` DISABLE KEYS */;
-INSERT INTO `engine4_address` VALUES (26,0,'Jovanka','Vukadinovic','','15A  Ayiou Neophitou Street Archaggelos','','Lakatamia','2334',55,884,''),(27,0,'Jovanka','Vukadinovic','','15A  Ayiou Neophitou Street Archaggelos','','Lakatamia','2334',55,884,''),(40,53,'Ahmet','GOUDENOGLU','','Kaludjerica Karadjordjeva 45','','Grocka','11130',243,3994,'N;'),(5,53,'Ahmet','GOUDENOGLU','','Kaludjerica Karadjordjeva 45','','Grocka','11130',243,3994,'');
+INSERT INTO `engine4_address` VALUES (26,0,'Jovanka','Vukadinovic','','15A  Ayiou Neophitou Street Archaggelos','','Lakatamia','2334',55,884,''),(27,0,'Jovanka','Vukadinovic','','15A  Ayiou Neophitou Street Archaggelos','','Lakatamia','2334',55,884,''),(40,53,'Ahmet','GOUDENOGLU','','Kaludjerica Karadjordjeva 45','','Grocka','11130',243,3994,'N;');
 /*!40000 ALTER TABLE `engine4_address` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -126,8 +126,11 @@ CREATE TABLE `engine4_bank` (
   `iban` varchar(45) COLLATE utf8_bin NOT NULL,
   `sort_code` varchar(10) COLLATE utf8_bin NOT NULL,
   `status` tinyint(1) NOT NULL DEFAULT '0',
+  `officer_name` varchar(96) COLLATE utf8_bin NOT NULL,
+  `office_telephone` varchar(32) COLLATE utf8_bin NOT NULL,
+  `officer_email` varchar(96) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`bank_id`,`customer_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -136,7 +139,7 @@ CREATE TABLE `engine4_bank` (
 
 LOCK TABLES `engine4_bank` WRITE;
 /*!40000 ALTER TABLE `engine4_bank` DISABLE KEYS */;
-INSERT INTO `engine4_bank` VALUES (13,50,'Garanti Bankasi',215,3372,'EUR','493-9078187','TGBATRIS','','510006200049300009078187','',1),(18,50,'Garanti Bankasi KKTC',215,3354,'EUR','493-9078188','TGBATRIS','','240006200049300009078188','',1),(19,52,'Garanti Bank',215,3372,'EUR','493-123456','TGBATRIS','','510006123000021887226','',17),(20,53,'Garanti Bank',215,3372,'USD','493-0011245','TGBATRIS','','5100022121125455452221','',17);
+INSERT INTO `engine4_bank` VALUES (13,50,'Garanti Bankasi',215,3372,'EUR','493-9078187','TGBATRIS','','510006200049300009078187','',1,'','',''),(18,50,'Garanti Bankasi KKTC',215,3354,'EUR','493-9078188','TGBATRIS','','240006200049300009078188','',1,'','',''),(19,52,'Garanti Bank',215,3372,'EUR','493-123456','TGBATRIS','','510006123000021887226','',17,'','',''),(20,53,'Garanti Bank',215,3372,'USD','493-0011245','TGBATRIS','','5100022121125455452221','',17,'','','');
 /*!40000 ALTER TABLE `engine4_bank` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -149,13 +152,18 @@ DROP TABLE IF EXISTS `engine4_certificate`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `engine4_certificate` (
   `certificate_id` int(11) NOT NULL,
-  `address_id` int(11) NOT NULL,
   `legal_name` varchar(96) NOT NULL,
   `dba` varchar(96) NOT NULL,
   `type` varchar(96) NOT NULL,
   `registration_number` varchar(62) NOT NULL,
   `tax_number` varchar(32) NOT NULL,
   `inc_date` date NOT NULL DEFAULT '0000-00-00',
+  `country_id` int(11) NOT NULL,
+  `address_1` varchar(128) NOT NULL,
+  `address_2` varchar(128) NOT NULL,
+  `city` varchar(128) NOT NULL,
+  `postcode` varchar(10) NOT NULL,
+  `zone_id` int(11) NOT NULL,
   `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`certificate_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -167,8 +175,116 @@ CREATE TABLE `engine4_certificate` (
 
 LOCK TABLES `engine4_certificate` WRITE;
 /*!40000 ALTER TABLE `engine4_certificate` DISABLE KEYS */;
-INSERT INTO `engine4_certificate` VALUES (1,0,'Semite DOO BEOGRAD','Semite LLC','1','123456','654321','2014-01-14','2015-04-08 00:00:00'),(2,0,'LAMDA PROCESSING LTD','LAMDA','LLC','1700710','332002211','2014-06-10','2015-04-08 02:17:49'),(25203387,5,'Aversa LTD','AVERSA','LTD','887788778822','654654654654','2014-07-23','2015-04-08 02:20:25');
+INSERT INTO `engine4_certificate` VALUES (46569294,'Semite DOO BEOGRAD','Semite','LLC','1700710','332002211','2014-01-14',243,'Kaludjerica Karadjordjeva 45','','Grocka','11130',3994,'2015-04-08 20:56:46');
 /*!40000 ALTER TABLE `engine4_certificate` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `engine4_certificate_contact`
+--
+
+DROP TABLE IF EXISTS `engine4_certificate_contact`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_certificate_contact` (
+  `certificate_director_id` int(11) NOT NULL AUTO_INCREMENT,
+  `certificate_id` int(11) NOT NULL,
+  `firstname` varchar(32) NOT NULL,
+  `lastname` varchar(32) NOT NULL,
+  `email` varchar(96) NOT NULL,
+  `dob` date NOT NULL DEFAULT '0000-00-00',
+  `telephone` varchar(20) NOT NULL,
+  `passport` varchar(40) NOT NULL,
+  `ssn` varchar(40) NOT NULL,
+  `country_id` int(11) NOT NULL,
+  `address_1` varchar(128) NOT NULL,
+  `address_2` varchar(128) NOT NULL,
+  `city` varchar(128) NOT NULL,
+  `postcode` varchar(10) NOT NULL,
+  `zone_id` int(11) NOT NULL,
+  PRIMARY KEY (`certificate_director_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_certificate_contact`
+--
+
+LOCK TABLES `engine4_certificate_contact` WRITE;
+/*!40000 ALTER TABLE `engine4_certificate_contact` DISABLE KEYS */;
+/*!40000 ALTER TABLE `engine4_certificate_contact` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `engine4_certificate_director`
+--
+
+DROP TABLE IF EXISTS `engine4_certificate_director`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_certificate_director` (
+  `certificate_director_id` int(11) NOT NULL AUTO_INCREMENT,
+  `certificate_id` int(11) NOT NULL,
+  `firstname` varchar(32) NOT NULL,
+  `lastname` varchar(32) NOT NULL,
+  `email` varchar(96) NOT NULL,
+  `dob` date NOT NULL DEFAULT '0000-00-00',
+  `telephone` varchar(20) NOT NULL,
+  `passport` varchar(40) NOT NULL,
+  `ssn` varchar(40) NOT NULL,
+  `country_id` int(11) NOT NULL,
+  `address_1` varchar(128) NOT NULL,
+  `address_2` varchar(128) NOT NULL,
+  `city` varchar(128) NOT NULL,
+  `postcode` varchar(10) NOT NULL,
+  `zone_id` int(11) NOT NULL,
+  PRIMARY KEY (`certificate_director_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_certificate_director`
+--
+
+LOCK TABLES `engine4_certificate_director` WRITE;
+/*!40000 ALTER TABLE `engine4_certificate_director` DISABLE KEYS */;
+/*!40000 ALTER TABLE `engine4_certificate_director` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `engine4_certificate_ubo`
+--
+
+DROP TABLE IF EXISTS `engine4_certificate_ubo`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_certificate_ubo` (
+  `certificate_director_id` int(11) NOT NULL AUTO_INCREMENT,
+  `certificate_id` int(11) NOT NULL,
+  `firstname` varchar(32) NOT NULL,
+  `lastname` varchar(32) NOT NULL,
+  `email` varchar(96) NOT NULL,
+  `dob` date NOT NULL DEFAULT '0000-00-00',
+  `telephone` varchar(20) NOT NULL,
+  `passport` varchar(40) NOT NULL,
+  `ssn` varchar(40) NOT NULL,
+  `country_id` int(11) NOT NULL,
+  `address_1` varchar(128) NOT NULL,
+  `address_2` varchar(128) NOT NULL,
+  `city` varchar(128) NOT NULL,
+  `postcode` varchar(10) NOT NULL,
+  `zone_id` int(11) NOT NULL,
+  PRIMARY KEY (`certificate_director_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_certificate_ubo`
+--
+
+LOCK TABLES `engine4_certificate_ubo` WRITE;
+/*!40000 ALTER TABLE `engine4_certificate_ubo` DISABLE KEYS */;
+/*!40000 ALTER TABLE `engine4_certificate_ubo` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -262,6 +378,7 @@ CREATE TABLE `engine4_customer` (
   `currency_code` varchar(3) NOT NULL,
   `unique_id` varchar(96) NOT NULL,
   `two_way` tinyint(1) NOT NULL,
+  `certificate_id` int(11) NOT NULL,
   PRIMARY KEY (`customer_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=54 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -272,7 +389,7 @@ CREATE TABLE `engine4_customer` (
 
 LOCK TABLES `engine4_customer` WRITE;
 /*!40000 ALTER TABLE `engine4_customer` DISABLE KEYS */;
-INSERT INTO `engine4_customer` VALUES (53,4,3,'Ahmet','GOUDENOGLU','semiteproject@hotmail.com','381656728972','','99c36a89351709f4d299832ff9eecccab6829c20','b2281f56e','0000-00-00',0,40,'127.0.0.1',1,0,1,'0','2015-04-07 18:55:22',1,'EUR','539815',0);
+INSERT INTO `engine4_customer` VALUES (53,4,3,'Ahmet','GOUDENOGLU','semiteproject@hotmail.com','381656728972','','99c36a89351709f4d299832ff9eecccab6829c20','b2281f56e','0000-00-00',0,40,'127.0.0.1',1,0,1,'0','2015-04-07 18:55:22',1,'EUR','539815',0,0);
 /*!40000 ALTER TABLE `engine4_customer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -291,7 +408,7 @@ CREATE TABLE `engine4_customer_activity` (
   `ip` varchar(40) NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`activity_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=126 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=129 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -300,7 +417,7 @@ CREATE TABLE `engine4_customer_activity` (
 
 LOCK TABLES `engine4_customer_activity` WRITE;
 /*!40000 ALTER TABLE `engine4_customer_activity` DISABLE KEYS */;
-INSERT INTO `engine4_customer_activity` VALUES (122,53,'login','a:2:{s:11:\"customer_id\";s:2:\"53\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-07 18:55:30'),(125,53,'login','a:2:{s:11:\"customer_id\";s:2:\"53\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-07 20:16:15'),(124,53,'login','a:2:{s:11:\"customer_id\";s:2:\"53\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-07 20:15:48'),(123,53,'new bank','a:2:{s:11:\"customer_id\";s:2:\"53\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-07 19:00:32'),(121,53,'register','a:2:{s:11:\"customer_id\";i:53;s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-07 18:55:22');
+INSERT INTO `engine4_customer_activity` VALUES (127,53,'new bank','a:2:{s:11:\"customer_id\";s:2:\"53\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-08 21:58:36'),(128,53,'new bank','a:2:{s:11:\"customer_id\";s:2:\"53\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-08 21:58:42'),(126,53,'login','a:2:{s:11:\"customer_id\";s:2:\"53\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-08 21:33:24'),(122,53,'login','a:2:{s:11:\"customer_id\";s:2:\"53\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-07 18:55:30'),(125,53,'login','a:2:{s:11:\"customer_id\";s:2:\"53\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-07 20:16:15'),(124,53,'login','a:2:{s:11:\"customer_id\";s:2:\"53\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-07 20:15:48'),(123,53,'new bank','a:2:{s:11:\"customer_id\";s:2:\"53\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-07 19:00:32'),(121,53,'register','a:2:{s:11:\"customer_id\";i:53;s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-07 18:55:22');
 /*!40000 ALTER TABLE `engine4_customer_activity` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -344,7 +461,7 @@ CREATE TABLE `engine4_customer_document` (
   `ip` varchar(96) NOT NULL,
   `date_added` date NOT NULL DEFAULT '0000-00-00',
   PRIMARY KEY (`document_id`,`customer_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -983,4 +1100,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-04-08 13:37:23
+-- Dump completed on 2015-04-08 22:24:01

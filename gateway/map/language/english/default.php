@@ -116,6 +116,7 @@ $_['button_add_contact']                 = 'Add Contact';
 
 // Tab
 $_['tab_address']                   = 'Address';
+$_['tab_certificate']                   = 'Business Certificate';
 $_['tab_admin']                     = 'Admin';
 $_['tab_bank']                     = 'Bank Account(s)';
 $_['tab_attribute']                 = 'Attribute';

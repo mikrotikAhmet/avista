@@ -168,7 +168,7 @@
                                         <td class="text-left"><?php echo $customer['status']; ?></td>
                                         <td class="text-left"><?php echo $customer['ip']; ?></td>
                                         <td class="text-left"><?php echo $customer['date_added']; ?></td>
-                                        <td class="text-right"><?php if (!$customer['approved']) { ; ?>
+                                        <td class="text-right"><?php if (!$customer['approved'] && $customer['certificate_id']) { ; ?>
                                             <a href="<?php echo $customer['approve']; ?>" data-toggle="tooltip" title="<?php echo $button_approve; ?>" class="btn btn-xs btn-success"><i class="fa fa-thumbs-o-up"></i></a>
                                             <?php } else { ?>
                                             <button type="button" class="btn btn-xs btn-success" disabled><i class="fa fa-thumbs-o-up"></i></button>
