@@ -16,12 +16,12 @@
 // HTTP
 define('HTTP_SERVER', 'http://'.$_SERVER['HTTP_HOST'].'/');
 define('HTTP_PORTAL', 'http://'.$_SERVER['HTTP_HOST'].'/portal/');
-define('HTTP_IMAGE', 'http://'.$_SERVER['HTTP_HOST'].'/map/');
+define('HTTP_IMAGE', 'http://'.$_SERVER['HTTP_HOST'].'/');
 
 // HTTPS
 define('HTTPS_SERVER', 'https://'.$_SERVER['HTTP_HOST'].'/');
 define('HTTPS_PORTAL', 'https://'.$_SERVER['HTTP_HOST'].'/portal/');
-define('HTTPS_IMAGE', 'https://'.$_SERVER['HTTP_HOST'].'/map/');
+define('HTTPS_IMAGE', 'https://'.$_SERVER['HTTP_HOST'].'/');
 
 // DIR
 define('DIR_APPLICATION', APPLICATION_PATH_COR.'map/');

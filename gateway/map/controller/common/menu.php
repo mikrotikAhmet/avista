@@ -32,6 +32,7 @@ class ControllerCommonMenu extends Controller {
 		$this->load->language('common/menu');
 
 		$data['text_dashboard'] = $this->language->get('text_dashboard');
+		$data['text_certificate'] = $this->language->get('text_certificate');
 		$data['text_system'] = $this->language->get('text_system');
 		$data['text_setting'] = $this->language->get('text_setting');
 		$data['text_api'] = $this->language->get('text_api');
@@ -46,6 +47,7 @@ class ControllerCommonMenu extends Controller {
 
 
 		$data['home'] = $this->url->link('common/dashboard', 'token=' . $this->session->data['token'], 'SSL');
+		$data['certificate'] = $this->url->link('customer/certificate', 'token=' . $this->session->data['token'], 'SSL');
 		$data['setting'] = $this->url->link('setting/application', 'token=' . $this->session->data['token'], 'SSL');
 		$data['api'] = $this->url->link('user/api', 'token=' . $this->session->data['token'], 'SSL');
 		$data['user'] = $this->url->link('user/user', 'token=' . $this->session->data['token'], 'SSL');

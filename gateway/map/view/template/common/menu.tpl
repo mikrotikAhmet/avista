@@ -13,6 +13,7 @@
                 <!-- /input-group -->
             </li>
             <li id="dashboard"><a href="<?php echo $home; ?>"><i class="fa fa-dashboard fa-fw"></i> <span><?php echo $text_dashboard; ?></span></a></li>
+            <li id="certificate"><a href="<?php echo $certificate; ?>"><i class="fa fa-shield fa-fw"></i> <span><?php echo $text_certificate; ?></span></a></li>
             <li id="sale">
                 <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> <?php echo $text_sale?><span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">

@@ -121,7 +121,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="control-label" for="input-address-2"><?php echo $entry_address_2; ?></label>
-                                <div class="c">
+                                <div class="">
                                     <input type="text" name="address_2" value="<?php echo $address_2; ?>" placeholder="<?php echo $entry_address_2; ?>" id="input-address-2" class="form-control" />
                                 </div>
                             </div>
@@ -145,7 +145,7 @@
                                 </div>
                             </div>
                             <div class="form-group required">
-                                <label class="ccontrol-label" for="input-postcode"><?php echo $entry_postcode; ?></label>
+                                <label class="control-label" for="input-postcode"><?php echo $entry_postcode; ?></label>
                                 <div class="">
                                     <input type="text" name="postcode" value="<?php echo $postcode; ?>" placeholder="<?php echo $entry_postcode; ?>" id="input-postcode" class="form-control" />
                                     <?php if ($error_postcode) { ?>

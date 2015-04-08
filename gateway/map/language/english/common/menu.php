@@ -18,6 +18,7 @@
  */
 // Text
 $_['text_dashboard']                   = 'Dashboard';
+$_['text_certificate']                   = 'Business Certificates';
 $_['text_setting']                     = 'Settings';
 $_['text_system']                      = 'System';
 $_['text_api']                         = 'API';

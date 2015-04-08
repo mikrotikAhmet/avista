@@ -1,0 +1,183 @@
+<!-- Modal -->
+<div class="modal fade" id="certificate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Create Business Certificate</h4>
+            </div>
+            <div class="modal-body">
+                <form id="form-certificate">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#tab-company" data-toggle="tab">Company Information</a></li>
+                        <li class=""><a href="#tab-cop" data-toggle="tab">Company Ownership Profiles(s)</a></li>
+                        <li class=""><a href="#tab-ubo" data-toggle="tab">Ultimate Beneficiary Owner(s)</a></li>
+                        <li class=""><a href="#tab-contact" data-toggle="tab">Contact(s)</a></li>
+                        <li class=""><a href="#tab-extra" data-toggle="tab">Extra(s)</a></li>
+                    </ul>
+                    <br/>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tab-company">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label class="control-label" for="input-registration-number">Company registration number</label>
+                                        <div class="">
+                                            <input type="text" name="registration_number" value="" placeholder="Company registration number" id="input-company" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label" for="input-tax">VAT / Tax Identification number</label>
+                                        <div class="">
+                                            <input type="text" name="tax_number" value="" placeholder="VAT / Tax Identification number" id="input-tax" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label" for="input-inc-date">Incorporation date</label>
+                                        <div class="">
+                                            <input type="text" name="inc_date" value="" placeholder="Incorporation date" id="input-inc-date" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label" for="input-legal-name">Legal name of company</label>
+                                        <div class="">
+                                            <input type="text" name="legal_name" value="" placeholder="Legal name of company" id="input-legal-name" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label" for="input-dba">Registered DBA/trade name <small>(if other than legal name)</small></label>
+                                        <div class="">
+                                            <input type="text" name="dba" value="" placeholder="Registered DBA/trade name" id="input-dba" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label" for="input-registered-address">Registered street address</label>
+                                        <div class="">
+                                            <input type="text" name="registered_address" value="" placeholder="Registered street address" id="input-registered-address" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label" for="input-house-number">House number</label>
+                                        <div class="">
+                                            <input type="text" name="house_number" value="" placeholder="House number" id="input-house-number" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label" for="input-country">Country</label>
+                                        <div class="">
+                                            <select name="country" id="select-country" class="form-control"></select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label" for="input-zone">Zone</label>
+                                        <div class="">
+                                            <select name="zone" id="select-zone" class="form-control"></select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label" for="input-city">City</label>
+                                        <div class="">
+                                            <input type="text" name="city" value="" placeholder="city" id="input-city" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label" for="input-postcode">Postcode / zip code</label>
+                                        <div class="">
+                                            <input type="text" name="postcode" value="" placeholder="Postcode / zip code" id="input-postcode" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label" for="input-type-business">Type of business <small>(LLC, Ltd, Sole Proprietor, etc)</small></label>
+                                        <div class="">
+                                            <select name="business_type" id="select-type-business" class="form-control"></select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label" for="input-phone-number">Phone number</label>
+                                        <div class="">
+                                            <input type="text" name="telephone_number" value="" placeholder="Phone number" id="input-phone-number" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label" for="input-fax-number">Fax number</label>
+                                        <div class="">
+                                            <input type="text" name="fax_number" value="" placeholder="Fax number" id="input-fax-number" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab-cop">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="alert alert-info alert-dismissable">
+                                        All directors should be mentioned on the incorporation documents
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <ul class="nav nav-pills nav-stacked" id="director">
+                                                <li class="active"><a href="#tab-director1" data-toggle="tab"><?php echo $tab_general; ?></a></li>
+                                                <?php $director_row = 1; ?>
+                                                <?php foreach ($directors as $director) { ?>
+                                                <li><a href="#tab-director<?php echo $director_row; ?>" data-toggle="tab"><i class="fa fa-minus-circle" onclick="$('#director a:first').tab('show'); $('#director a[href=\'#tab-director<?php echo $director_row; ?>\']').parent().remove(); $('#tab-director<?php echo $director_row; ?>').remove();"></i> <?php echo $tab_director . ' ' . $director_row; ?></a></li>
+                                                <?php $director_row++; ?>
+                                                <?php } ?>
+                                                <li id="director-add"><a onclick="addDirector();"><i class="fa fa-plus-circle"></i> Add Director</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <div class="tab-content">
+                                                <div class="tab-pane active" id="tab-director1">
+                                                    Director #1
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab-ubo">
+                            <div class="row">
+                                ubo
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab-contact">
+                            <div class="row">
+                                contact
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab-extra">
+                            <div class="row">
+                                extra
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="button-close"class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" id="button-issue" onclick="createCertificate()" class="btn btn-primary">Continue</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+<script type="text/javascript"><!--
+    var director_row = <?php echo $director_row; ?>;
+
+    function addDirector() {
+        html  = '<div class="tab-pane" id="tab-director' + director_row + '">';
+        html += '  <p>'+director_row+'</p>';
+        html += '</div>';
+
+        $('#tab-director .tab-content').prepend(html);
+
+        $('#director-add').before('<li><a href="#tab-director' + director_row + '" data-toggle="tab"><i class="fa fa-minus-circle" onclick="$(\'#director a:first\').tab(\'show\'); $(\'a[href=\\\'#tab-director' + director_row + '\\\']\').parent().remove(); $(\'#tab-director' + director_row + '\').remove();"></i> Director #' + director_row + '</a></li>');
+
+        $('#director a[href=\'#tab-director' + director_row + '\']').tab('show');
+
+        director_row++;
+    }
+    //--></script>
