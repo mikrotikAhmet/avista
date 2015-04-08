@@ -2,49 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbd0d96c-d439-4391-add6-8ad6ad0b2fa0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gateway/portal/image/seal.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gateway/usefull/bank" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gateway/map/language/english/mail/customer.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/map/system/cache/cache.application.1428525145" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/map/system/cache/cache.country.1428523668" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/map/system/cache/cache.order_status.1.1428522385" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/map/system/cache/cache.zone.17.1428522164" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/map/system/cache/cache.zone.243.1428523624" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/map/system/cache/cache.zone.3.1428521660" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/portal/system/cache/cache.country.status.1428525227" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/portal/system/cache/cache.currency.1428525197" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/portal/system/cache/cache.language.1428525197" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/portal/system/cache/cache.order_status.1.1428525214" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/portal/system/cache/cache.zone.14.1428526576" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/portal/system/cache/cache.zone.215.1428528061" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/portal/system/cache/cache.zone.244.1428528145" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/portal/system/cache/cache.zone.3.1428526798" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/portal/system/cache/cache.zone.4.1428528050" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/portal/system/cache/cache.zone.5.1428526632" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/portal/system/cache/cache.zone.6.1428526423" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/controller/account/account.php" afterPath="$PROJECT_DIR$/gateway/portal/controller/account/account.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/account.tpl" afterPath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/account.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/bank.tpl" afterPath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/bank.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/config.php" afterPath="$PROJECT_DIR$/gateway/portal/config.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/portal/system/cache/cache.currency.1428534153" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/portal/system/cache/cache.language.1428534153" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/map/model/sale/customer.php" afterPath="$PROJECT_DIR$/gateway/map/model/sale/customer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/model/account/customer.php" afterPath="$PROJECT_DIR$/gateway/portal/model/account/customer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/system/library/customer.php" afterPath="$PROJECT_DIR$/gateway/portal/system/library/customer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/controller/account/forgotten.php" afterPath="$PROJECT_DIR$/gateway/portal/controller/account/forgotten.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/forgotten.tpl" afterPath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/forgotten.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/controller/common/header.php" afterPath="$PROJECT_DIR$/gateway/portal/controller/common/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/common/header.tpl" afterPath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/common/header.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/controller/account/login.php" afterPath="$PROJECT_DIR$/gateway/portal/controller/account/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/login.tpl" afterPath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/login.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/controller/account/logout.php" afterPath="$PROJECT_DIR$/gateway/portal/controller/account/logout.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/controller/account/register.php" afterPath="$PROJECT_DIR$/gateway/portal/controller/account/register.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/register.tpl" afterPath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/register.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/controller/account/step2.php" afterPath="$PROJECT_DIR$/gateway/portal/controller/account/step2.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/language/english/account/step2.php" afterPath="$PROJECT_DIR$/gateway/portal/language/english/account/step2.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/step2.tpl" afterPath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/step2.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/controller/account/success.php" afterPath="$PROJECT_DIR$/gateway/portal/controller/account/success.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/controller/account/twoway.php" afterPath="$PROJECT_DIR$/gateway/portal/controller/account/twoway.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/twoway.tpl" afterPath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/twoway.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="avista.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -68,7 +28,64 @@
     <favorites_list name="avista" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="customer.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gateway/map/model/sale/customer.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5263158" vertical-offset="2475" max-vertical-offset="8445">
+              <caret line="185" column="83" selection-start-line="185" selection-start-column="83" selection-end-line="185" selection-end-column="83" />
+              <folding>
+                <marker date="1428535520354" expanded="true" signature="737:1448" placeholder="INSERT INTO ..." />
+                <marker date="1428535520354" expanded="true" signature="1594:2285" placeholder="INSERT INTO ..." />
+                <marker date="1428535520354" expanded="true" signature="3647:3731" placeholder="DELETE FROM ..." />
+                <marker date="1428535520354" expanded="true" signature="3836:4579" placeholder="INSERT INTO ..." />
+                <marker date="1428535520354" expanded="true" signature="5111:5196" placeholder="DELETE FROM ..." />
+                <marker date="1428535520354" expanded="true" signature="5220:5302" placeholder="DELETE FROM ..." />
+                <marker date="1428535520354" expanded="true" signature="5326:5416" placeholder="DELETE FROM ..." />
+                <marker date="1428535520354" expanded="true" signature="5440:5537" placeholder="DELETE FROM ..." />
+                <marker date="1428535520354" expanded="true" signature="5561:5649" placeholder="DELETE FROM ..." />
+                <marker date="1428535520354" expanded="true" signature="5673:5757" placeholder="DELETE FROM ..." />
+                <marker date="1428535520354" expanded="true" signature="5781:5875" placeholder="DELETE FROM ..." />
+                <marker date="1428535520354" expanded="true" signature="5957:6053" placeholder="SELECT DISTI..DB_PREFIXcustomer..." />
+                <marker date="1428535520354" expanded="true" signature="6159:6281" placeholder="SELECT DISTI..DB_PREFIXcustomer..." />
+                <marker date="1428535520354" expanded="true" signature="6371:6673" placeholder="SELECT *, CO..DB_PREFIXcustomer..." />
+                <marker date="1428535520354" expanded="true" signature="11042:11126" placeholder="SELECT * FRO..DB_PREFIXaddress..." />
+                <marker date="1428535520354" expanded="true" signature="11203:11311" placeholder="SELECT * FRO..." />
+                <marker date="1428535520354" expanded="true" signature="11704:11803" placeholder="SELECT * FRO..." />
+                <marker date="1428535520354" expanded="true" signature="13030:13125" placeholder="SELECT addre..DB_PREFIXaddress..." />
+                <marker date="1428535520354" expanded="true" signature="13414:13469" placeholder="SELECT COUNT..DB_PREFIXcustomer..." />
+                <marker date="1428535520354" expanded="true" signature="14944:15036" placeholder="SELECT COUNT..DB_PREFIXcustomer..." />
+                <marker date="1428535520354" expanded="true" signature="15168:15270" placeholder="SELECT COUNT..DB_PREFIXaddress..." />
+                <marker date="1428535520354" expanded="true" signature="15400:15500" placeholder="SELECT COUNT..DB_PREFIXaddress..." />
+                <marker date="1428535520354" expanded="true" signature="15624:15718" placeholder="SELECT COUNT..DB_PREFIXaddress..." />
+                <marker date="1428535520354" expanded="true" signature="15861:15976" placeholder="SELECT COUNT..DB_PREFIXcustomer..." />
+                <marker date="1428535520354" expanded="true" signature="16090:16262" placeholder="INSERT INTO ..." />
+                <marker date="1428535520354" expanded="true" signature="16451:16616" placeholder="SELECT comme..DB_PREFIXcustomer_history..." />
+                <marker date="1428535520354" expanded="true" signature="16742:16853" placeholder="SELECT COUNT..DB_PREFIXcustomer_history..." />
+                <marker date="1428535520354" expanded="true" signature="17088:17332" placeholder="INSERT INTO ..." />
+                <marker date="1428535520354" expanded="true" signature="18462:18553" placeholder="DELETE FROM ..." />
+                <marker date="1428535520354" expanded="true" signature="18745:18896" placeholder="SELECT * FRO..DB_PREFIXcustomer_transaction..." />
+                <marker date="1428535520354" expanded="true" signature="19025:19141" placeholder="SELECT COUNT..DB_PREFIXcustomer_transaction..." />
+                <marker date="1428535520354" expanded="true" signature="19263:19381" placeholder="SELECT SUM(a..DB_PREFIXcustomer_transaction..." />
+                <marker date="1428535520354" expanded="true" signature="19510:19619" placeholder="SELECT COUNT..DB_PREFIXcustomer_transaction..." />
+                <marker date="1428535520354" expanded="true" signature="19728:19818" placeholder="SELECT * FRO..DB_PREFIXcustomer_ip..." />
+                <marker date="1428535520354" expanded="true" signature="19924:20030" placeholder="SELECT COUNT..DB_PREFIXcustomer_ip..." />
+                <marker date="1428535520354" expanded="true" signature="20145:20247" placeholder="SELECT COUNT..DB_PREFIXcustomer_ip..." />
+                <marker date="1428535520354" expanded="true" signature="20340:20430" placeholder="INSERT INTO ..." />
+                <marker date="1428535520354" expanded="true" signature="20494:20586" placeholder="DELETE FROM ..." />
+                <marker date="1428535520354" expanded="true" signature="20666:20776" placeholder="SELECT COUNT..." />
+                <marker date="1428535520354" expanded="true" signature="20900:20996" placeholder="SELECT * FRO..DB_PREFIXcustomer_document..." />
+                <marker date="1428535520354" expanded="true" signature="21358:21470" placeholder="SELECT COUNT..DB_PREFIXcustomer_document..." />
+                <marker date="1428535520354" expanded="true" signature="21620:21732" placeholder="SELECT COUNT..DB_PREFIXcustomer_document..." />
+                <marker date="1428535520354" expanded="true" signature="21852:21935" placeholder="SELECT * FRO..DB_PREFIXbank..." />
+                <marker date="1428535520354" expanded="true" signature="22234:22333" placeholder="SELECT COUNT..DB_PREFIXbank..." />
+                <marker date="1428535520354" expanded="true" signature="22461:22560" placeholder="SELECT COUNT..DB_PREFIXbank..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -200,6 +217,72 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="avista" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="avista" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gateway" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="map" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="avista" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="avista" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gateway" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="map" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="avista" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="avista" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gateway" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="map" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sale" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -265,7 +348,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="27" width="1368" height="742" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -273,7 +356,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2942899" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2942899" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -805,66 +888,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/map/model/sale/customer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0526316" vertical-offset="2475" max-vertical-offset="8445">
-          <caret line="205" column="105" selection-start-line="205" selection-start-column="105" selection-end-line="205" selection-end-column="105" />
-          <folding>
-            <marker date="1428531727625" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428531727625" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428531727625" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1428531727625" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428531727625" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1428531727625" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1428531727625" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1428531727625" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1428531727625" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1428531727625" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1428531727625" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1428531727625" expanded="true" signature="-1:-1" placeholder="SELECT DISTI..DB_PREFIXcustomer..." />
-            <marker date="1428531727625" expanded="true" signature="-1:-1" placeholder="SELECT DISTI..DB_PREFIXcustomer..." />
-            <marker date="1428531727625" expanded="true" signature="-1:-1" placeholder="SELECT *, CO..DB_PREFIXcustomer..." />
-            <marker date="1428531727625" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXaddress..." />
-            <marker date="1428531727625" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-            <marker date="1428531727625" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-            <marker date="1428531727625" expanded="true" signature="-1:-1" placeholder="SELECT addre..DB_PREFIXaddress..." />
-            <marker date="1428531727625" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXcustomer..." />
-            <marker date="1428531727625" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXcustomer..." />
-            <marker date="1428531727625" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXaddress..." />
-            <marker date="1428531727625" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXaddress..." />
-            <marker date="1428531727625" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXaddress..." />
-            <marker date="1428531727625" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXcustomer..." />
-            <marker date="1428531727625" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428531727625" expanded="true" signature="-1:-1" placeholder="SELECT comme..DB_PREFIXcustomer_history..." />
-            <marker date="1428531727625" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXcustomer_history..." />
-            <marker date="1428531727625" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428531727625" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1428531727625" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustomer_transaction..." />
-            <marker date="1428531727625" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXcustomer_transaction..." />
-            <marker date="1428531727625" expanded="true" signature="-1:-1" placeholder="SELECT SUM(a..DB_PREFIXcustomer_transaction..." />
-            <marker date="1428531727625" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXcustomer_transaction..." />
-            <marker date="1428531727625" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustomer_ip..." />
-            <marker date="1428531727625" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXcustomer_ip..." />
-            <marker date="1428531727625" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXcustomer_ip..." />
-            <marker date="1428531727625" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428531727625" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1428531727625" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
-            <marker date="1428531727625" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustomer_document..." />
-            <marker date="1428531727625" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXcustomer_document..." />
-            <marker date="1428531727625" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXcustomer_document..." />
-            <marker date="1428531727625" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXbank..." />
-            <marker date="1428531727625" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXbank..." />
-            <marker date="1428531727625" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXbank..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gateway/map/language/english/mail/customer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6052632" vertical-offset="0" max-vertical-offset="570">
           <caret line="23" column="21" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="21" />
           <folding>
             <element signature="e#6#85#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/map/model/sale/customer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5263158" vertical-offset="2475" max-vertical-offset="8445">
+          <caret line="185" column="83" selection-start-line="185" selection-start-column="83" selection-end-line="185" selection-end-column="83" />
+          <folding>
+            <marker date="1428535520354" expanded="true" signature="737:1448" placeholder="INSERT INTO ..." />
+            <marker date="1428535520354" expanded="true" signature="1594:2285" placeholder="INSERT INTO ..." />
+            <marker date="1428535520354" expanded="true" signature="3647:3731" placeholder="DELETE FROM ..." />
+            <marker date="1428535520354" expanded="true" signature="3836:4579" placeholder="INSERT INTO ..." />
+            <marker date="1428535520354" expanded="true" signature="5111:5196" placeholder="DELETE FROM ..." />
+            <marker date="1428535520354" expanded="true" signature="5220:5302" placeholder="DELETE FROM ..." />
+            <marker date="1428535520354" expanded="true" signature="5326:5416" placeholder="DELETE FROM ..." />
+            <marker date="1428535520354" expanded="true" signature="5440:5537" placeholder="DELETE FROM ..." />
+            <marker date="1428535520354" expanded="true" signature="5561:5649" placeholder="DELETE FROM ..." />
+            <marker date="1428535520354" expanded="true" signature="5673:5757" placeholder="DELETE FROM ..." />
+            <marker date="1428535520354" expanded="true" signature="5781:5875" placeholder="DELETE FROM ..." />
+            <marker date="1428535520354" expanded="true" signature="5957:6053" placeholder="SELECT DISTI..DB_PREFIXcustomer..." />
+            <marker date="1428535520354" expanded="true" signature="6159:6281" placeholder="SELECT DISTI..DB_PREFIXcustomer..." />
+            <marker date="1428535520354" expanded="true" signature="6371:6673" placeholder="SELECT *, CO..DB_PREFIXcustomer..." />
+            <marker date="1428535520354" expanded="true" signature="11042:11126" placeholder="SELECT * FRO..DB_PREFIXaddress..." />
+            <marker date="1428535520354" expanded="true" signature="11203:11311" placeholder="SELECT * FRO..." />
+            <marker date="1428535520354" expanded="true" signature="11704:11803" placeholder="SELECT * FRO..." />
+            <marker date="1428535520354" expanded="true" signature="13030:13125" placeholder="SELECT addre..DB_PREFIXaddress..." />
+            <marker date="1428535520354" expanded="true" signature="13414:13469" placeholder="SELECT COUNT..DB_PREFIXcustomer..." />
+            <marker date="1428535520354" expanded="true" signature="14944:15036" placeholder="SELECT COUNT..DB_PREFIXcustomer..." />
+            <marker date="1428535520354" expanded="true" signature="15168:15270" placeholder="SELECT COUNT..DB_PREFIXaddress..." />
+            <marker date="1428535520354" expanded="true" signature="15400:15500" placeholder="SELECT COUNT..DB_PREFIXaddress..." />
+            <marker date="1428535520354" expanded="true" signature="15624:15718" placeholder="SELECT COUNT..DB_PREFIXaddress..." />
+            <marker date="1428535520354" expanded="true" signature="15861:15976" placeholder="SELECT COUNT..DB_PREFIXcustomer..." />
+            <marker date="1428535520354" expanded="true" signature="16090:16262" placeholder="INSERT INTO ..." />
+            <marker date="1428535520354" expanded="true" signature="16451:16616" placeholder="SELECT comme..DB_PREFIXcustomer_history..." />
+            <marker date="1428535520354" expanded="true" signature="16742:16853" placeholder="SELECT COUNT..DB_PREFIXcustomer_history..." />
+            <marker date="1428535520354" expanded="true" signature="17088:17332" placeholder="INSERT INTO ..." />
+            <marker date="1428535520354" expanded="true" signature="18462:18553" placeholder="DELETE FROM ..." />
+            <marker date="1428535520354" expanded="true" signature="18745:18896" placeholder="SELECT * FRO..DB_PREFIXcustomer_transaction..." />
+            <marker date="1428535520354" expanded="true" signature="19025:19141" placeholder="SELECT COUNT..DB_PREFIXcustomer_transaction..." />
+            <marker date="1428535520354" expanded="true" signature="19263:19381" placeholder="SELECT SUM(a..DB_PREFIXcustomer_transaction..." />
+            <marker date="1428535520354" expanded="true" signature="19510:19619" placeholder="SELECT COUNT..DB_PREFIXcustomer_transaction..." />
+            <marker date="1428535520354" expanded="true" signature="19728:19818" placeholder="SELECT * FRO..DB_PREFIXcustomer_ip..." />
+            <marker date="1428535520354" expanded="true" signature="19924:20030" placeholder="SELECT COUNT..DB_PREFIXcustomer_ip..." />
+            <marker date="1428535520354" expanded="true" signature="20145:20247" placeholder="SELECT COUNT..DB_PREFIXcustomer_ip..." />
+            <marker date="1428535520354" expanded="true" signature="20340:20430" placeholder="INSERT INTO ..." />
+            <marker date="1428535520354" expanded="true" signature="20494:20586" placeholder="DELETE FROM ..." />
+            <marker date="1428535520354" expanded="true" signature="20666:20776" placeholder="SELECT COUNT..." />
+            <marker date="1428535520354" expanded="true" signature="20900:20996" placeholder="SELECT * FRO..DB_PREFIXcustomer_document..." />
+            <marker date="1428535520354" expanded="true" signature="21358:21470" placeholder="SELECT COUNT..DB_PREFIXcustomer_document..." />
+            <marker date="1428535520354" expanded="true" signature="21620:21732" placeholder="SELECT COUNT..DB_PREFIXcustomer_document..." />
+            <marker date="1428535520354" expanded="true" signature="21852:21935" placeholder="SELECT * FRO..DB_PREFIXbank..." />
+            <marker date="1428535520354" expanded="true" signature="22234:22333" placeholder="SELECT COUNT..DB_PREFIXbank..." />
+            <marker date="1428535520354" expanded="true" signature="22461:22560" placeholder="SELECT COUNT..DB_PREFIXbank..." />
           </folding>
         </state>
       </provider>

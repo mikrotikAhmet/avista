@@ -183,7 +183,7 @@ class ModelSaleCustomer extends Model {
 		$customer_info = $this->getCustomer($customer_id);
 
 		if ($customer_info) {
-			$this->db->query("UPDATE " . DB_PREFIX . "customer SET approved = '1' AND firsttime = '1' WHERE customer_id = '" . (int)$customer_id . "'");
+			$this->db->query("UPDATE " . DB_PREFIX . "customer SET approved = '1' , firsttime = '1' WHERE customer_id = '" . (int)$customer_id . "'");
 
 			$this->load->language('mail/customer');
 
