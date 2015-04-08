@@ -24,6 +24,7 @@ $_['heading_title']        = '2. Account Credentials';
 // Entry
 $_['entry_email']          = 'E-Mail';
 $_['entry_newsletter']     = 'Please let me know future exclusive offers promotions from %s. You can opt out any time.';
+$_['entry_telephone']          = 'Mobile GSM Number';
 $_['entry_password']       = 'Password';
 $_['entry_confirm']        = 'Password Confirm';
 $_['text_agree']           = 'I have read and agree to the <a href="%s" class="agree"><b>%s</b></a>';

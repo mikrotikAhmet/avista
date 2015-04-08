@@ -82,22 +82,33 @@
     <?php } ?>
     <script>
         $(document).ready(function(){
-            //$('#basic-modal-content').modal();
-            //return false;
+            $('#basic-modal-content').modal();
+            return false;
         });
         </script>
+    <?php if ($isFirst) { ?>
     <!-- Modal -->
     <div class="modal fade" id="basic-modal-content" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel">You have been approved!</h4>
+                    <h4 class="modal-title" id="myModalLabel"><i class="fa fa-shield"></i> You have been approved!</h4>
                 </div>
                 <div class="modal-body">
-                    Cgragulations!
+                    <div class="row" style="background: #337ab7; color: #fff;margin-top: 20px;">
+                        <div class="col-md-4">
+                            <img src="<?php echo $logo?>" style="width: 200px;"/>
+                        </div>
+                    </div>
+                    <h3>Congratulations!</h3>
+                    <p>Your HIF Invest Holding E-Banking account successfully approved by our compilance team.</p>
+                    <p>Your Verified <b>Business Certification</b> number and <b>Globally Unique Customer</b> number has been sent to email which associated to your account.</p>
+                    <div class="col-md-4">
+                        <img src="image/seal.png" style="width: 100px;"/>
+                    </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" id="button-close"class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" id="button-close" onclick="removeGreeting()" class="btn btn-default" data-dismiss="modal">Close and Do not show again!</button>
                 </div>
             </div>
             <!-- /.modal-content -->
@@ -105,3 +116,19 @@
         <!-- /.modal-dialog -->
     </div>
     <!-- /.modal -->
+    <script>
+
+        function removeGreeting(){
+
+            $.ajax({
+                url : 'index.php?route=account/account/removeGreeting',
+                type : 'post',
+                dataType : 'json',
+                success : function(e){
+
+                    location = 'index.php?route=sale/order';
+                }
+            });
+        }
+    </script>
+    <?php } ?>

@@ -31,6 +31,19 @@ class ControllerAccountForgotten extends Controller {
 	private $error = array();
 
 	public function index() {
+
+		if (is_file(DIR_IMAGE . $this->config->get('config_icon'))) {
+			$data['icon'] = HTTP_IMAGE . 'image/' . $this->config->get('config_icon');
+		} else {
+			$data['icon'] = '';
+		}
+
+		if (is_file(DIR_IMAGE . $this->config->get('config_logo'))) {
+			$data['logo'] = HTTP_IMAGE . 'image/' . $this->config->get('config_logo');
+		} else {
+			$data['logo'] = '';
+		}
+
 		if ($this->customer->isLogged()) {
 			$this->response->redirect($this->url->link('account/account', '', 'SSL'));
 		}

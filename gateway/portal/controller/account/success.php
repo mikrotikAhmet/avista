@@ -29,6 +29,19 @@ if (!defined('DIR_APPLICATION'))
 
 class ControllerAccountSuccess extends Controller {
 	public function index() {
+
+		if (is_file(DIR_IMAGE . $this->config->get('config_icon'))) {
+			$data['icon'] = HTTP_IMAGE . 'image/' . $this->config->get('config_icon');
+		} else {
+			$data['icon'] = '';
+		}
+
+		if (is_file(DIR_IMAGE . $this->config->get('config_logo'))) {
+			$data['logo'] = HTTP_IMAGE . 'image/' . $this->config->get('config_logo');
+		} else {
+			$data['logo'] = '';
+		}
+
 		$this->load->language('account/success');
 
 		$this->document->setTitle($this->language->get('heading_title'));

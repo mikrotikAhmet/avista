@@ -505,7 +505,7 @@ class ControllerAccountAccount extends Controller {
 
 		$this->load->model('localisation/country');
 
-		$country_data = $this->model_localisation_country->getCountry($data['country_id']);
+//		$country_data = $this->model_localisation_country->getCountry($data['country_id']);
 
 		if (empty($data['name'])) {
 			$error=true;
@@ -603,6 +603,18 @@ class ControllerAccountAccount extends Controller {
 		$this->load->model('account/bank');
 
 		$this->model_account_bank->delete($bank_id);
+
+		$this->response->addHeader('Content-Type: application/json');
+		$this->response->setOutput(json_encode($json));
+	}
+
+	public function removeGreeting(){
+
+		$json = array();
+
+		$this->load->model('account/customer');
+
+		$this->model_account_customer->removeGreeting();
 
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));

@@ -2,6 +2,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 col-md-offset-2">
+            <img src="<?php echo $logo?>" style="width: 345px;"/>
             <div class="login-panel panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title"><i class="fa fa-certificate"></i> <?php echo $heading_title; ?></h3>
@@ -19,6 +20,15 @@
                                 <input type="text" name="email" value="<?php echo $email; ?>" placeholder="<?php echo $entry_email; ?>" id="input-email" class="form-control" />
                                 <?php if ($error_email) { ?>
                                 <div class="text-danger"><?php echo $error_email; ?></div>
+                                <?php } ?>
+                            </div>
+                        </div>
+                        <div class="form-group required">
+                            <label class="control-label" for="input-telephone"><?php echo $entry_telephone; ?><small>Ex:381xxxxxxxxx.</small></label>
+                            <div class="">
+                                <input type="text" name="telephone" value="<?php echo $telephone; ?>" placeholder="<?php echo $entry_telephone; ?>" id="input-telephone" class="form-control" />
+                                <?php if ($error_telephone) { ?>
+                                <div class="text-danger"><?php echo $error_telephone; ?></div>
                                 <?php } ?>
                             </div>
                         </div>

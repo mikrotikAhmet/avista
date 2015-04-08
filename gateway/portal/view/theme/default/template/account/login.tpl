@@ -1,7 +1,9 @@
 <?php echo $header?>
 <div class="container">
     <div class="row">
+
         <div class="col-md-6 col-md-offset-2">
+            <img src="<?php echo $logo?>" style="width: 345px;"/>
             <div class="login-panel panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title"><i class="fa fa-lock"></i> <?php echo $text_i_am_returning_customer; ?></h3>

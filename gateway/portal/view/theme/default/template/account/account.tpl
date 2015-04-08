@@ -237,6 +237,24 @@
 <!-- /#page-wrapper -->
 </div>
 <!-- /#wrapper -->
+<script>
+    $("#account-manager tr:odd").addClass("master");
+    $("#account-manager tr:not(.master)").hide();
+    $("#account-manager tr:first-child").show();
+
+    $("#account-manager tr.master").click(function() {
+
+//        if ($(this).next("tr").css('display') == 'none'){
+//            $('#transaction-details-'+this.id).load('index.php?route=account/transaction/details&transaction_id='+this.id);
+//        }
+
+        $(this).next("tr").toggle();
+        $(this).find(".expand").toggleClass("fa-minus");
+        $(this).toggleClass("selected");
+
+
+    });
+</script>
 <script type="text/javascript"><!--
 
     $('#add-bank').on('click',function(){
@@ -253,7 +271,7 @@
             success: function(html) {
 
                 element.button('reset');
-                $('.modal-body').html(html);
+                $('.bank').html(html);
 
                 $('#bank-general').modal('show');
 
@@ -310,12 +328,12 @@
             <div class="modal-header">
                 <h4 class="modal-title" id="myModalLabel">Add new Bank</h4>
             </div>
-            <div class="modal-body">
+            <div class="modal-body bank">
                 <div id="new-bank-form"></div>
             </div>
             <div class="modal-footer">
                 <button type="button" id="button-close"class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" id="button-issue" onclick="addBank()" class="btn btn-primary">Continue</button>
+                <button type="button" id="button-issue" onclick="addBank( $('#bank-form').serialize())" class="btn btn-primary">Continue</button>
             </div>
         </div>
         <!-- /.modal-content -->
@@ -326,12 +344,10 @@
 <script>
     $('#bank-list').load('index.php?route=account/account/bankList');
 
-    function addBank(){
+    function addBank(data){
 
-        var data = $('#form-bank').serialize();
+//        var data = $('#bank-form').serialize();
         var element = $(this);
-
-        console.log(data);
 
         $.ajax({
             url: 'index.php?route=account/account/insertBank',

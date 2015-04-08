@@ -183,7 +183,7 @@ class ModelSaleCustomer extends Model {
 		$customer_info = $this->getCustomer($customer_id);
 
 		if ($customer_info) {
-			$this->db->query("UPDATE " . DB_PREFIX . "customer SET approved = '1' WHERE customer_id = '" . (int)$customer_id . "'");
+			$this->db->query("UPDATE " . DB_PREFIX . "customer SET approved = '1' AND firsttime = '1' WHERE customer_id = '" . (int)$customer_id . "'");
 
 			$this->load->language('mail/customer');
 
@@ -203,6 +203,7 @@ class ModelSaleCustomer extends Model {
 			$message .= $this->language->get('text_approve_login') . "\n";
 			$message .= $application_url . "\n\n";
 			$message .= $this->language->get('text_approve_services') . "\n\n";
+			$message .= sprintf($this->language->get('text_approve_info'),$customer_info['certificate_id'],$customer_info['unique_id']) . "\n\n";
 			$message .= $this->language->get('text_approve_thanks') . "\n";
 			$message .= $application_name;
 
