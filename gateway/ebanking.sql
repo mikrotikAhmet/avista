@@ -46,7 +46,7 @@ CREATE TABLE `engine4_address` (
 
 LOCK TABLES `engine4_address` WRITE;
 /*!40000 ALTER TABLE `engine4_address` DISABLE KEYS */;
-INSERT INTO `engine4_address` VALUES (26,0,'Jovanka','Vukadinovic','','15A  Ayiou Neophitou Street Archaggelos','','Lakatamia','2334',55,884,''),(27,0,'Jovanka','Vukadinovic','','15A  Ayiou Neophitou Street Archaggelos','','Lakatamia','2334',55,884,''),(40,53,'Ahmet','GOUDENOGLU','','Kaludjerica Karadjordjeva 45','','Grocka','11130',243,3994,'N;');
+INSERT INTO `engine4_address` VALUES (26,0,'Jovanka','Vukadinovic','','15A  Ayiou Neophitou Street Archaggelos','','Lakatamia','2334',55,884,''),(27,0,'Jovanka','Vukadinovic','','15A  Ayiou Neophitou Street Archaggelos','','Lakatamia','2334',55,884,''),(40,53,'Ahmet','GOUDENOGLU','','Kaludjerica Karadjordjeva 45','','Grocka','11130',243,3994,'N;'),(5,53,'Ahmet','GOUDENOGLU','','Kaludjerica Karadjordjeva 45','','Grocka','11130',243,3994,'');
 /*!40000 ALTER TABLE `engine4_address` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -149,6 +149,7 @@ DROP TABLE IF EXISTS `engine4_certificate`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `engine4_certificate` (
   `certificate_id` int(11) NOT NULL,
+  `address_id` int(11) NOT NULL,
   `legal_name` varchar(96) NOT NULL,
   `dba` varchar(96) NOT NULL,
   `type` varchar(96) NOT NULL,
@@ -166,7 +167,7 @@ CREATE TABLE `engine4_certificate` (
 
 LOCK TABLES `engine4_certificate` WRITE;
 /*!40000 ALTER TABLE `engine4_certificate` DISABLE KEYS */;
-INSERT INTO `engine4_certificate` VALUES (1,'Semite DOO BEOGRAD','Semite LLC','1','123456','654321','2014-01-14','2015-04-08 00:00:00'),(2,'LAMDA PROCESSING LTD','LAMDA','LLC','1700710','332002211','2014-06-10','2015-04-08 02:17:49'),(25203387,'Aversa LTD','AVERSA','LTD','887788778822','654654654654','2014-07-23','2015-04-08 02:20:25');
+INSERT INTO `engine4_certificate` VALUES (1,0,'Semite DOO BEOGRAD','Semite LLC','1','123456','654321','2014-01-14','2015-04-08 00:00:00'),(2,0,'LAMDA PROCESSING LTD','LAMDA','LLC','1700710','332002211','2014-06-10','2015-04-08 02:17:49'),(25203387,5,'Aversa LTD','AVERSA','LTD','887788778822','654654654654','2014-07-23','2015-04-08 02:20:25');
 /*!40000 ALTER TABLE `engine4_certificate` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -578,7 +579,7 @@ CREATE TABLE `engine4_formation` (
   `country_id` int(11) NOT NULL,
   `title` varchar(96) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`formation_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=282 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -846,7 +847,7 @@ CREATE TABLE `engine4_representative` (
   `representative_id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(32) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`representative_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -982,4 +983,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-04-08  3:59:02
+-- Dump completed on 2015-04-08 13:37:23

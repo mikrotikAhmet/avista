@@ -44,6 +44,14 @@ $_['entry_city']            = 'City';
 $_['entry_postcode']        = 'Postcode / zip code';
 $_['entry_country']         = 'Country';
 $_['entry_zone']            = 'Region / State';
+$_['entry_firstname']       = 'First Name';
+$_['entry_lastname']        = 'Last Name';
+$_['entry_email']           = 'E-Mail';
+$_['entry_dob'] = 'Date of birth';
+$_['entry_telephone']       = 'Telephone';
+$_['entry_passport'] = 'Passport / ID number';
+$_['entry_ssn'] = 'Social security number';
+
 
 // Error
 $_['error_warning']         = 'Warning: Please check the form carefully for errors!';

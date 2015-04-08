@@ -216,6 +216,30 @@ class ModelSaleCustomer extends Model {
 		}
 	}
 
+	public function getBusinessAddress($address_id){
+
+		return array(
+			'address_id'     => '',
+			'customer_id'    => '',
+			'firstname'      => '',
+			'lastname'       => '',
+			'company'        => '',
+			'address_1'      => '',
+			'address_2'      => '',
+			'postcode'       => '',
+			'city'           => '',
+			'zone_id'        => '',
+			'zone'           => '',
+			'zone_code'      => '',
+			'country_id'     => '',
+			'country'        => '',
+			'iso_code_2'     => '',
+			'iso_code_3'     => '',
+			'address_format' => '',
+			'custom_field'   => ''
+		);
+	}
+
 	public function getAddress($address_id) {
 		$address_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "address WHERE address_id = '" . (int)$address_id . "'");
 

@@ -109,6 +109,9 @@ $_['button_payment']                = 'Apply Payment Method';
 $_['button_coupon']                 = 'Apply Coupon';
 $_['button_voucher']                = 'Apply Voucher';
 $_['button_reward']                 = 'Apply Points';
+$_['button_add_director']                 = 'Add Director';
+$_['button_add_ubo']                 = 'Add UBO';
+$_['button_add_contact']                 = 'Add Contact';
 
 
 // Tab

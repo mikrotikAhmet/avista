@@ -49,6 +49,10 @@ class ControllerCustomerCertificate extends Controller {
 		$this->load->model('customer/certificate');
 
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validateForm()) {
+
+			echo '<pre>';
+			print_r($this->request->post);
+			die();
 			$this->model_customer_certificate->addCertificate($this->request->post);
 
 			$this->session->data['success'] = $this->language->get('text_success');
@@ -384,12 +388,22 @@ class ControllerCustomerCertificate extends Controller {
 		$data['entry_postcode'] = $this->language->get('entry_postcode');
 		$data['entry_zone'] = $this->language->get('entry_zone');
 		$data['entry_country'] = $this->language->get('entry_country');
+		$data['entry_firstname'] = $this->language->get('entry_firstname');
+		$data['entry_lastname'] = $this->language->get('entry_lastname');
+		$data['entry_email'] = $this->language->get('entry_email');
+		$data['entry_dob'] = $this->language->get('entry_dob');
+		$data['entry_telephone'] = $this->language->get('entry_telephone');
+		$data['entry_passport'] = $this->language->get('entry_passport');
+		$data['entry_ssn'] = $this->language->get('entry_ssn');
 
 		$data['help_dba'] = $this->language->get('help_dba');
 		$data['help_type'] = $this->language->get('help_type');
 
 		$data['button_save'] = $this->language->get('button_save');
 		$data['button_cancel'] = $this->language->get('button_cancel');
+		$data['button_add_director'] = $this->language->get('button_add_director');
+		$data['button_add_ubo'] = $this->language->get('button_add_ubo');
+		$data['button_add_contact'] = $this->language->get('button_add_contact');
 
 		$data['tab_general'] = $this->language->get('tab_general');
 
@@ -431,10 +445,28 @@ class ControllerCustomerCertificate extends Controller {
 			$data['error_inc_date'] = '';
 		}
 
-		if (isset($this->error['address'])) {
-			$data['error_address'] = $this->error['address'];
+		if (isset($this->error['country'])) {
+			$data['error_country'] = $this->error['country'];
 		} else {
-			$data['error_address'] = '';
+			$data['error_country'] = "";
+		}
+
+		if (isset($this->error['address_1'])) {
+			$data['error_address_1'] = $this->error['address_1'];
+		} else {
+			$data['error_address_1'] = "";
+		}
+
+		if (isset($this->error['zone'])) {
+			$data['error_zone'] = $this->error['zone'];
+		} else {
+			$data['error_zone'] = "";
+		}
+
+		if (isset($this->error['city'])) {
+			$data['error_city'] = $this->error['city'];
+		} else {
+			$data['error_city'] = "";
 		}
 
 		$url = '';
@@ -536,13 +568,24 @@ class ControllerCustomerCertificate extends Controller {
 
 		$data['countries'] = $this->model_localisation_country->getCountries();
 
+		$this->load->model('sale/customer');
+
 		if (isset($this->request->post['address'])) {
 			$data['address'] = $this->request->post['address'];
-		} elseif (isset($this->request->get['certificate_id'])) {
-			$data['address'] = $this->model_sale_customer->getAddresses($this->request->get['certificate_id']);
+		} elseif (!empty($certificate_info)) {
+			$data['address'] = $this->model_sale_customer->getAddress($certificate_info['address_id']);
 		} else {
-			$data['address'] = array();
+			$data['address'] = array(
+				'address_1'      => '',
+				'address_2'      => '',
+				'postcode'       => '',
+				'city'           => '',
+				'zone_id'        => '',
+				'country_id'     => ''
+			);
 		}
+
+		$data['directors'] = array();
 
 		$data['header'] = $this->load->controller('common/header');
 		$data['column_left'] = $this->load->controller('common/column_left');
@@ -622,6 +665,32 @@ class ControllerCustomerCertificate extends Controller {
 		}
 
 		array_multisort($sort_order, SORT_ASC, $json);
+
+		$this->response->addHeader('Content-Type: application/json');
+		$this->response->setOutput(json_encode($json));
+	}
+
+	public function country() {
+		$json = array();
+
+		$this->load->model('localisation/country');
+
+		$country_info = $this->model_localisation_country->getCountry($this->request->get['country_id']);
+
+		if ($country_info) {
+			$this->load->model('localisation/zone');
+
+			$json = array(
+				'country_id'        => $country_info['country_id'],
+				'name'              => $country_info['name'],
+				'iso_code_2'        => $country_info['iso_code_2'],
+				'iso_code_3'        => $country_info['iso_code_3'],
+				'address_format'    => $country_info['address_format'],
+				'postcode_required' => $country_info['postcode_required'],
+				'zone'              => $this->model_localisation_zone->getZonesByCountryId($this->request->get['country_id']),
+				'status'            => $country_info['status']
+			);
+		}
 
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
