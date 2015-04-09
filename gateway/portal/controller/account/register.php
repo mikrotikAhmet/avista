@@ -257,7 +257,7 @@ class ControllerAccountRegister extends Controller {
 
 		if (isset($this->request->post['currency_id'])) {
 			$data['currency_id'] = $this->request->post['currency_id'];
-		} elseif (isset($this->session->data['acv_nc'])) {
+		} elseif (isset($this->session->data['acv_nc']['currency_id'])) {
 			$data['currency_id'] = $this->session->data['acv_nc']['currency_id'];
 		} else {
 			$data['currency_id'] = $this->config->get('config_currency');
@@ -269,7 +269,7 @@ class ControllerAccountRegister extends Controller {
 
 		if (isset($this->request->post['language_id'])) {
 			$data['language_id'] = $this->request->post['language_id'];
-		} elseif (isset($this->session->data['acv_nc'])) {
+		} elseif (isset($this->session->data['acv_nc']['language_id'])) {
 			$data['language_id'] = $this->session->data['acv_nc']['language_id'];
 		} else {
 			$data['language_id'] = $this->config->get('config_language_id');
