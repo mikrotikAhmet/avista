@@ -15,13 +15,13 @@
 
 // HTTP
 define('HTTP_SERVER', 'http://'.$_SERVER['HTTP_HOST'].'/');
-define('HTTP_IMAGE', 'http://map.avista.com/');
-define('HTTP_MAP', 'http://map.avista.com/map/');
+define('HTTPS_IMAGE', 'http://map.hifholding.com/');
+define('HTTPS_MAP', 'http://map.hifholding.com/map/');
 
 // HTTPS
 define('HTTPS_SERVER', 'https://'.$_SERVER['HTTP_HOST'].'/');
-define('HTTPS_IMAGE', 'https://map.avista.com/');
-define('HTTPS_MAP', 'https://map.avista.com/map/');
+define('HTTPS_IMAGE', 'https://map.hifholding.com/');
+define('HTTPS_MAP', 'https://map.hifholding.com/map/');
 
 // DIR
 define('DIR_APPLICATION', APPLICATION_PATH_COR.'portal/');
