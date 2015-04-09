@@ -84,8 +84,10 @@
                             </div>
                         </fieldset>
                         <div class="buttons clearfix">
-                            <div class="pull-left"><a href="<?php echo $back; ?>" class="btn btn-default"><i class="fa fa-arrow-left"></i> <?php echo $button_back; ?></a></div>
+                            <div class="pull-left"><a href="http://www.hifholding.com/" class="btn btn-danger"><i class="fa fa-home"></i> Cancel Registration</a></div>
                             <div class="pull-right">
+
+                                <a href="<?php echo $back; ?>" class="btn btn-default"><i class="fa fa-arrow-left"></i> Go to Login</a>
                                 <button type="submit" class="btn btn-primary" ><?php echo $button_continue_2; ?> <i class="fa fa-arrow-right"></i></button>
                             </div>
                         </div>

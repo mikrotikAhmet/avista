@@ -90,10 +90,12 @@ class ModelAccountCustomer extends Model {
 			$message .= $this->language->get('text_approval') . "\n";
 		}
 
+		$message .= sprintf($this->language->get('text_unique'),$unique_id) . "\n\n";
+
 		$message .= $this->url->link('account/login', '', 'SSL') . "\n\n";
 		$message .= $this->language->get('text_services') . "\n\n";
-		$message .= sprintf($this->language->get('text_unique'),$unique_id) . "\n\n";
-		$message .= $this->language->get('text_thanks') . "\n\n";
+
+//		$message .= $this->language->get('text_thanks') . "\n\n";
 		$message .= $this->config->get('config_name');
 
 		$mail = new Mail($this->config->get('config_mail'));

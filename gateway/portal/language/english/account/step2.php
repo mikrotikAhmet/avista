@@ -28,8 +28,9 @@ $_['entry_telephone']          = 'Mobile GSM Number';
 $_['entry_password']       = 'Password';
 $_['entry_confirm']        = 'Password Confirm';
 $_['text_agree']           = 'I have read and agree to the <a href="%s" class="agree"><b>%s</b></a>';
-$_['entry_firstname']      = 'Contact Name';
-$_['entry_lastname']       = 'Contact Last Name';
+$_['text_agree_term']           = 'I have read and agree to the <a href="%s" class="agree"><b>%s</b></a>';
+$_['entry_firstname']      = 'Contact Person First Name';
+$_['entry_lastname']       = 'Contact Person Last Name';
 
 // Error
 $_['error_firstname']      = 'First Name must be between 1 and 32 characters!';

@@ -38,7 +38,7 @@
                                 <span class="help-block"><a href="<?php echo $register; ?>"><?php echo $text_register; ?></a></span>
                             </div>
                             <div class="text-right">
-                                <a href="<?php echo $main_web?>" class="btn btn-default pull-left"><i class="fa fa-arrow-left"></i> Back</a>
+                                <a href="<?php echo $main_web?>" class="btn btn-default pull-left"><i class="fa fa-home"></i> Back to Homepage</a>
                                 <button type="submit" class="btn btn-success pull-right"><i class="fa fa-key"></i> <?php echo $button_login; ?></button>
                             </div>
                             <?php if ($redirect) { ?>

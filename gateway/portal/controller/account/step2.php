@@ -222,6 +222,7 @@ class ControllerAccountStep2 extends Controller {
 
 			if ($information_info) {
 				$data['text_agree'] = sprintf($this->language->get('text_agree'), $this->url->link('information/information/agree', 'information_id=' . $this->config->get('config_account_id'), 'SSL'), $information_info['title'], $information_info['title']);
+				$data['text_agree_term'] = sprintf($this->language->get('text_agree_term'), $this->url->link('information/information/agree', 'information_id=2', 'SSL'), 'Terms and Conditions', 'Terms and Conditions');
 			} else {
 				$data['text_agree'] = '';
 			}
@@ -233,6 +234,12 @@ class ControllerAccountStep2 extends Controller {
 			$data['agree'] = $this->request->post['agree'];
 		} else {
 			$data['agree'] = false;
+		}
+
+		if (isset($this->request->post['agree_term'])) {
+			$data['agree_term'] = $this->request->post['agree_term'];
+		} else {
+			$data['agree_term'] = false;
 		}
 
 
@@ -264,8 +271,18 @@ class ControllerAccountStep2 extends Controller {
 			$this->error['warning'] = $this->language->get('error_exists');
 		}
 
+		if ((utf8_strlen($this->request->post['mac1']) < 1) || (utf8_strlen($this->request->post['mac1']) > 4) || !is_numeric($this->request->post['mac1'])) {
+			$this->error['mobile'] = 'Please provide area code.';
+		}
+
 		if ((utf8_strlen($this->request->post['mobile']) < 4) || (utf8_strlen($this->request->post['mobile']) > 20) || !is_numeric($this->request->post['mobile'])) {
-			$this->error['mobile'] = 'Please provide mobile GSM number.';
+			$this->error['mobile'] = 'Please provide mobile number.';
+		}
+
+		if (!empty($this->request->post['tac1'])){
+			if ((utf8_strlen($this->request->post['telephone']) < 4) || (utf8_strlen($this->request->post['telephone']) > 20) || !is_numeric($this->request->post['telephone'])) {
+				$this->error['telephone'] = 'Please provide telephone number';;
+			}
 		}
 
 		if ((utf8_strlen($this->request->post['password']) < 4) || (utf8_strlen($this->request->post['password']) > 20)) {
@@ -284,6 +301,10 @@ class ControllerAccountStep2 extends Controller {
 
 			if ($information_info && !isset($this->request->post['agree'])) {
 				$this->error['warning'] = sprintf($this->language->get('error_agree'), $information_info['title']);
+			}
+
+			if ($information_info && !isset($this->request->post['agree_term'])) {
+				$this->error['warning'] = 'You must agree to the Terms and Conditions';
 			}
 		}
 

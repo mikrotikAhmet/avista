@@ -17,7 +17,7 @@
  * @author root
  */
 // Heading
-$_['heading_title']        = 'Register Account';
+$_['heading_title']        = '1. Register Account';
 
 // Text
 $_['text_account']         = 'Account';

@@ -158,8 +158,6 @@ class ControllerAccountLogin extends Controller {
 		$data['button_continue'] = $this->language->get('button_continue');
 		$data['button_login'] = $this->language->get('button_login');
 
-		$data['main_web'] = HIF;
-
 		if (isset($this->error['warning'])) {
 			$data['error_warning'] = $this->error['warning'];
 		} else {
@@ -169,6 +167,7 @@ class ControllerAccountLogin extends Controller {
 		$data['action'] = $this->url->link('account/login', '', 'SSL');
 		$data['register'] = $this->url->link('account/register', '', 'SSL');
 		$data['forgotten'] = $this->url->link('account/forgotten', '', 'SSL');
+		$data['main_web'] = HIF;
 
 		// Added strpos check to pass McAfee PCI compliance test (http://forum.opencart.com/viewtopic.php?f=10&t=12043&p=151494#p151295)
 		if (isset($this->request->post['redirect']) && (strpos($this->request->post['redirect'], $this->config->get('config_url')) !== false || strpos($this->request->post['redirect'], $this->config->get('config_ssl')) !== false)) {

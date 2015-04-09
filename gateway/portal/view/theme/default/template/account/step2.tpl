@@ -42,18 +42,32 @@
                             </div>
                         </div>
                         <div class="form-group required">
-                            <label class="control-label" for="input-mobile">Mobile Number<small>Ex:381xxxxxxxxx.</small></label>
+                            <label class="control-label" for="input-mobile">Mobile Number</label>
                             <div class="">
-                                <input type="text" name="mobile" value="<?php echo $mobile; ?>" placeholder="Mobile Number" id="input-mobile" class="form-control" />
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <input type="text" name="mac1" placeholder="Area" class="form-control" maxlength="4"/>
+                                    </div>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="mobile" value="<?php echo $mobile; ?>" placeholder="Mobile Number" id="input-mobile" class="form-control" />
+                                    </div>
+                                </div>
                                 <?php if ($error_mobile) { ?>
                                 <div class="text-danger"><?php echo $error_mobile; ?></div>
                                 <?php } ?>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label" for="input-telephone">Telephone Number<small>Ex:381xxxxxxxxx.</small></label>
+                            <label class="control-label" for="input-telephone">Telephone Number</label>
                             <div class="">
-                                <input type="text" name="telephone" value="<?php echo $telephone; ?>" placeholder="Alternative telephone" id="input-telephone" class="form-control" />
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <input type="text" name="tac1" placeholder="Area" class="form-control" maxlength="4"/>
+                                    </div>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="telephone" value="<?php echo $telephone; ?>" placeholder="Alternative telephone" id="input-telephone" class="form-control" />
+                                    </div>
+                                </div>
                                 <?php if ($error_telephone) { ?>
                                 <div class="text-danger"><?php echo $error_telephone; ?></div>
                                 <?php } ?>
@@ -104,14 +118,23 @@
                                 <?php } else { ?>
                                 <input type="checkbox" name="agree" value="1" />
                                 <?php } ?>
-                            <label class=" control-label"><?php echo $text_agree; ?>
-                            </label>
+                            <label class=" control-label"><?php echo $text_agree; ?></label>
+                        </div>
+                        <div class="form-group">
+                            <?php if ($agree_term) { ?>
+                            <input type="checkbox" name="agree_term" value="1" checked="checked" />
+                            <?php } else { ?>
+                            <input type="checkbox" name="agree_term" value="1" />
+                            <?php } ?>
+                            <label class=" control-label"><?php echo $text_agree_term; ?></label>
                         </div>
                         <?php } ?>
                         <div class="buttons clearfix">
-                            <div class="pull-left"><a href="<?php echo $back; ?>" class="btn btn-default"><?php echo $button_back; ?></a></div>
+                            <div class="pull-left">
+                                <a href="http://www.hifholding.com/" class="btn btn-danger"><i class="fa fa-home"></i> Cancel Registration</a></div>
                             <div class="pull-right">
-                                <input type="submit" value="<?php echo $button_continue; ?>" class="btn btn-primary" />
+                                <a href="<?php echo $back; ?>" class="btn btn-default"><i class="fa fa-arrow-left"></i> Back to step 1</a>
+                                <button type="submit" class="btn btn-primary"><i class="fa fa-check"></i> Finish</button>
                             </div>
                         </div>
                     </form>
