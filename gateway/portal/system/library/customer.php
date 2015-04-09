@@ -35,6 +35,7 @@ class Customer {
 	private $firsttime;
 	private $certificate;
 	private $unique;
+	private $account_status;
 
     public function __construct($registry) {
         $this->config = $registry->get('config');
@@ -62,6 +63,7 @@ class Customer {
 	            $this->firsttime = $customer_query->row['firsttime'];
 	            $this->certificate = $customer_query->row['certificate_id'];
 	            $this->unique = $customer_query->row['unique_id'];
+	            $this->account_status = $customer_query->row['account_status'];
 
 
                 $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer_ip WHERE customer_id = '" . (int)$this->session->data['customer_id'] . "' AND ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "'");
@@ -101,6 +103,7 @@ class Customer {
 	        $this->firsttime = $customer_query->row['firsttime'];
 	        $this->certificate = $customer_query->row['certificate_id'];
 	        $this->unique = $customer_query->row['unique_id'];
+	        $this->account_status = $customer_query->row['account_status'];
 
             $this->db->query("UPDATE " . DB_PREFIX . "customer SET ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "' WHERE customer_id = '" . (int)$this->customer_id . "'");
 
@@ -128,6 +131,10 @@ class Customer {
     public function getLanguage(){
         return $this->language_id;
     }
+
+	public function getAccountStatus(){
+		return $this->account_status;
+	}
 
 	public function getUniqueId(){
 		return $this->unique;

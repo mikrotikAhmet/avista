@@ -194,7 +194,7 @@ class ControllerSaleOrder extends Controller {
 					    'product_id'=>$this->request->post['instrument'],
 					    'bank_id'=>$this->request->post['bank'],
 					    'product_name'=>$this->request->post['product_name'],
-					    'issuer_name'=>$this->request->post['issuer_name'],
+					    'issuer_name'=>(!empty($this->request->post['issuer_name']) ? $this->request->post['issuer_name'] : $this->customer->getFirstName().' '.strtoupper($this->customer->getLastName())),
 				    );
 
 				    $this->model_sale_order->addOrder($data, $unique_id);

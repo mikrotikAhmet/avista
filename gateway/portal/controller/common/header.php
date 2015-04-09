@@ -74,6 +74,8 @@ class ControllerCommonHeader extends Controller {
 
 		$data['home'] = $this->url->link('account/dashboard');
 		$data['logged'] = $this->customer->isLogged();
+		$data['approved'] = $this->customer->isApproved();
+		$data['hasrequest'] = $this->customer->getAccountStatus();
 		$data['isFirst'] = $this->customer->isFirstTime();
 		$data['setting'] = $this->url->link('account/account', '', 'SSL');
 		$data['logout'] = $this->url->link('account/logout', '', 'SSL');

@@ -23,6 +23,9 @@
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">
+                <?php if (!$approved || $account_status) { ?>
+                <p class="text-info"><b>After you providing company document(s) and valid bank account(s) please make a aprroval request by clicking</b> <button type="button" class="btn btn-sm btn-success">Request Approval</button>.</p>
+                <?php } ?>
                     <!-- Nav tabs -->
                     <ul class="nav nav-pills">
                         <li class="active"><a href="#account-pills" data-toggle="tab">Account Settings</a></li>

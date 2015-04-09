@@ -380,6 +380,7 @@ CREATE TABLE `engine4_customer` (
   `two_way` tinyint(1) NOT NULL,
   `certificate_id` int(11) NOT NULL,
   `firsttime` tinyint(1) NOT NULL,
+  `account_status` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`customer_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=56 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -390,7 +391,7 @@ CREATE TABLE `engine4_customer` (
 
 LOCK TABLES `engine4_customer` WRITE;
 /*!40000 ALTER TABLE `engine4_customer` DISABLE KEYS */;
-INSERT INTO `engine4_customer` VALUES (55,4,3,'Ahmet','GOUDENOGLU','semiteproject@hotmail.com','381656728972','','79089094e8e6bcca1fe54b184ec4f5bf63cfa7af','f8bdbf1bf','0000-00-00',0,42,'127.0.0.1',1,1,1,'0','2015-04-09 01:24:24',1,'EUR','217347',0,46569294,0);
+INSERT INTO `engine4_customer` VALUES (55,4,3,'Ahmet','GOUDENOGLU','semiteproject@hotmail.com','381656728972','','79089094e8e6bcca1fe54b184ec4f5bf63cfa7af','f8bdbf1bf','0000-00-00',0,42,'127.0.0.1',1,1,1,'0','2015-04-09 01:24:24',1,'EUR','217347',0,46569294,0,0);
 /*!40000 ALTER TABLE `engine4_customer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -409,7 +410,7 @@ CREATE TABLE `engine4_customer_activity` (
   `ip` varchar(40) NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`activity_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=163 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=171 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -418,7 +419,7 @@ CREATE TABLE `engine4_customer_activity` (
 
 LOCK TABLES `engine4_customer_activity` WRITE;
 /*!40000 ALTER TABLE `engine4_customer_activity` DISABLE KEYS */;
-INSERT INTO `engine4_customer_activity` VALUES (157,55,'register','a:2:{s:11:\"customer_id\";i:55;s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-09 01:24:24'),(158,55,'login','a:2:{s:11:\"customer_id\";s:2:\"55\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-09 01:24:33'),(159,55,'new bank','a:2:{s:11:\"customer_id\";s:2:\"55\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-09 01:47:51'),(160,55,'order','a:2:{s:11:\"customer_id\";s:2:\"55\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-09 01:50:43'),(161,55,'order','a:2:{s:11:\"customer_id\";s:2:\"55\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-09 01:52:29'),(162,55,'order','a:2:{s:11:\"customer_id\";s:2:\"55\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-09 02:01:36');
+INSERT INTO `engine4_customer_activity` VALUES (163,55,'login','a:2:{s:11:\"customer_id\";s:2:\"55\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-09 09:09:36'),(157,55,'register','a:2:{s:11:\"customer_id\";i:55;s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-09 01:24:24'),(158,55,'login','a:2:{s:11:\"customer_id\";s:2:\"55\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-09 01:24:33'),(159,55,'new bank','a:2:{s:11:\"customer_id\";s:2:\"55\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-09 01:47:51'),(160,55,'order','a:2:{s:11:\"customer_id\";s:2:\"55\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-09 01:50:43'),(161,55,'order','a:2:{s:11:\"customer_id\";s:2:\"55\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-09 01:52:29'),(162,55,'order','a:2:{s:11:\"customer_id\";s:2:\"55\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-09 02:01:36'),(170,55,'order','a:2:{s:11:\"customer_id\";s:2:\"55\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-09 12:02:43'),(169,55,'login','a:2:{s:11:\"customer_id\";s:2:\"55\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-09 12:02:27'),(168,55,'order','a:2:{s:11:\"customer_id\";s:2:\"55\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-09 12:00:08'),(167,55,'order','a:2:{s:11:\"customer_id\";s:2:\"55\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-09 11:50:39'),(165,55,'order','a:2:{s:11:\"customer_id\";s:2:\"55\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-09 11:33:44'),(166,55,'login','a:2:{s:11:\"customer_id\";s:2:\"55\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-09 11:42:02'),(164,55,'login','a:2:{s:11:\"customer_id\";s:2:\"55\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-09 10:59:13');
 /*!40000 ALTER TABLE `engine4_customer_activity` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -900,7 +901,7 @@ CREATE TABLE `engine4_order` (
 
 LOCK TABLES `engine4_order` WRITE;
 /*!40000 ALTER TABLE `engine4_order` DISABLE KEYS */;
-INSERT INTO `engine4_order` VALUES (41382662,0,0,'HIF-2015-00',3,'H.I.F. Invest Holding','http://portal.avista.com/',55,4,'Ahmet','GOUDENOGLU','semiteproject@hotmail.com','381656728972','','',5000000000.0000,0.0000,1,0.0000,'',1,3,0,'EUR',0.92250001,'127.0.0.1','127.0.0.1','Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36','en-US,en;q=0.8','2015-04-09 01:50:43','2015-04-09 01:50:43',''),(28841236,0,0,'HIF-2015-00',3,'H.I.F. Invest Holding','http://portal.avista.com/',55,4,'Ahmet','GOUDENOGLU','semiteproject@hotmail.com','381656728972','','',2000000000.0000,0.0000,1,0.0000,'',1,3,0,'EUR',0.92250001,'127.0.0.1','127.0.0.1','Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36','en-US,en;q=0.8','2015-04-09 01:52:29','2015-04-09 01:52:29','Ahmet Gudenoglu'),(34317993,0,0,'HIF-2015-00',3,'H.I.F. Invest Holding','http://portal.avista.com/',55,4,'Ahmet','GOUDENOGLU','semiteproject@hotmail.com','381656728972','','',4000000000.0000,0.0000,1,0.0000,'',1,3,0,'EUR',0.92250001,'127.0.0.1','127.0.0.1','Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36','en-US,en;q=0.8','2015-04-09 02:01:36','2015-04-09 02:01:36','Hakan Islek');
+INSERT INTO `engine4_order` VALUES (41382662,0,0,'HIF-2015-00',3,'H.I.F. Invest Holding','http://portal.avista.com/',55,4,'Ahmet','GOUDENOGLU','semiteproject@hotmail.com','381656728972','','',5000000000.0000,0.0000,1,0.0000,'',1,3,0,'EUR',0.92250001,'127.0.0.1','127.0.0.1','Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36','en-US,en;q=0.8','2015-04-09 01:50:43','2015-04-09 01:50:43',''),(28841236,0,0,'HIF-2015-00',3,'H.I.F. Invest Holding','http://portal.avista.com/',55,4,'Ahmet','GOUDENOGLU','semiteproject@hotmail.com','381656728972','','',2000000000.0000,0.0000,1,0.0000,'',1,3,0,'EUR',0.92250001,'127.0.0.1','127.0.0.1','Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36','en-US,en;q=0.8','2015-04-09 01:52:29','2015-04-09 01:52:29','Ahmet Gudenoglu'),(34317993,0,0,'HIF-2015-00',3,'H.I.F. Invest Holding','http://portal.avista.com/',55,4,'Ahmet','GOUDENOGLU','semiteproject@hotmail.com','381656728972','','',4000000000.0000,0.0000,1,0.0000,'',1,3,0,'EUR',0.92250001,'127.0.0.1','127.0.0.1','Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36','en-US,en;q=0.8','2015-04-09 02:01:36','2015-04-09 02:01:36','Hakan Islek'),(41212854,0,0,'HIF-2015-00',3,'H.I.F. Invest Holding','http://portal.avista.com/',55,4,'Ahmet','GOUDENOGLU','semiteproject@hotmail.com','381656728972','','',40000000.0000,0.0000,0,0.0000,'',1,3,0,'EUR',0.92250001,'127.0.0.1','127.0.0.1','Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36','en-US,en;q=0.8','2015-04-09 11:33:43','2015-04-09 11:33:43','Ahmet GUDENOGLU'),(37997374,0,0,'HIF-2015-00',3,'H.I.F. Invest Holding','http://portal.avista.com/',55,4,'Ahmet','GOUDENOGLU','semiteproject@hotmail.com','381656728972','','',40000000.0000,0.0000,0,0.0000,'',1,3,0,'EUR',0.92250001,'127.0.0.1','127.0.0.1','Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36','en-US,en;q=0.8','2015-04-09 11:50:39','2015-04-09 11:50:39','Ahmet Gudenoglu'),(7312437,0,0,'HIF-2015-00',3,'H.I.F. Invest Holding','http://portal.avista.com/',55,4,'Ahmet','GOUDENOGLU','semiteproject@hotmail.com','381656728972','','',40000000.0000,0.0000,0,0.0000,'',1,3,0,'EUR',0.92250001,'127.0.0.1','127.0.0.1','Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36','en-US,en;q=0.8','2015-04-09 12:00:08','2015-04-09 12:00:08',''),(41111552,0,0,'HIF-2015-00',3,'H.I.F. Invest Holding','http://portal.avista.com/',55,4,'Ahmet','GOUDENOGLU','semiteproject@hotmail.com','381656728972','','',40000000.0000,0.0000,1,0.0000,'',1,3,0,'EUR',0.92250001,'127.0.0.1','127.0.0.1','Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36','en-US,en;q=0.8','2015-04-09 12:02:43','2015-04-09 12:02:43','');
 /*!40000 ALTER TABLE `engine4_order` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -919,7 +920,7 @@ CREATE TABLE `engine4_order_product` (
   `price` decimal(15,4) NOT NULL DEFAULT '0.0000',
   `down` decimal(15,4) NOT NULL DEFAULT '0.0000',
   PRIMARY KEY (`order_product_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -928,7 +929,7 @@ CREATE TABLE `engine4_order_product` (
 
 LOCK TABLES `engine4_order_product` WRITE;
 /*!40000 ALTER TABLE `engine4_order_product` DISABLE KEYS */;
-INSERT INTO `engine4_order_product` VALUES (6,28841236,3,'[MTN] - Medium Term Note',0.0000,0.0000),(5,41382662,1,'[BG] - Bank guarantee',0.0000,0.0000),(7,34317993,4,'[LTN] - Long-term Notes',0.0000,0.0000);
+INSERT INTO `engine4_order_product` VALUES (6,28841236,3,'[MTN] - Medium Term Note',0.0000,0.0000),(5,41382662,1,'[BG] - Bank guarantee',0.0000,0.0000),(7,34317993,4,'[LTN] - Long-term Notes',0.0000,0.0000),(8,41212854,1,'[BG] - Bank guarantee',0.0000,0.0000),(9,37997374,1,'[BG] - Bank guarantee',0.0000,0.0000),(10,7312437,2,'[SBLC] - Standby Letter of Credit',0.0000,0.0000),(11,41111552,2,'[SBLC] - Standby Letter of Credit',0.0000,0.0000);
 /*!40000 ALTER TABLE `engine4_order_product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1104,4 +1105,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-04-09  2:36:11
+-- Dump completed on 2015-04-09 12:44:28

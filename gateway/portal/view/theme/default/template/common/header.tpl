@@ -51,7 +51,7 @@
 <div id="wrapper">
     <?php if ($logged) { ?>
     <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -79,6 +79,12 @@
         </ul>
         <?php echo $column_left?>
     </nav>
+    <?php } ?>
+    <?php if (!$approved && $hasrequest) { ?>
+    <div class="alert alert-info alert-dismissable">
+        <i class="fa fa-exclamation-circle"></i> Your account is being reviewing by our underwriting team.<br/>
+        When we approve your account you will receive email as your account has been activated.
+    </div>
     <?php } ?>
     <script>
         $(document).ready(function(){

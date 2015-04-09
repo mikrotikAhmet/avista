@@ -99,6 +99,7 @@ class ControllerAccountAccount extends Controller {
 		$data['telephone'] = $customer_data['telephone'];
 		$data['newsletter'] = $customer_data['newsletter'];
 		$data['approved'] = $customer_data['approved'];
+		$data['account_status'] = $customer_data['account_status'];
 		$data['unique'] = $this->customer->getUniqueId();
 
 		$this->load->model('account/certificate');

@@ -77,7 +77,7 @@
                     </div>
                     <p class="text-info"><i class="fa fa-exclamation-circle"></i> Issuer name should be mentioned on the incorporation documents</p>
                     <div class="form-group">
-                        <label class=" control-label">Issuer Name</label>
+                        <label class=" control-label">Issuer Name <small>(optional)</small></label>
                         <div class="">
                             <input type="text" name="issuer_name" value="" class="form-control"/>
                         </div>
