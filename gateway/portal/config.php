@@ -15,7 +15,7 @@
 
 // HTTP
 define('HTTP_SERVER', 'http://'.$_SERVER['HTTP_HOST'].'/');
-define('HTTPS_IMAGE', 'http://map.hifholding.com/');
+define('HTTP_IMAGE', 'http://map.hifholding.com/');
 define('HTTPS_MAP', 'http://map.hifholding.com/map/');
 
 // HTTPS
