@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbd0d96c-d439-4391-add6-8ad6ad0b2fa0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/controller/account/register.php" afterPath="$PROJECT_DIR$/gateway/portal/controller/account/register.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/controller/account/forgotten.php" afterPath="$PROJECT_DIR$/gateway/portal/controller/account/forgotten.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/language/english/mail/forgotten.php" afterPath="$PROJECT_DIR$/gateway/portal/language/english/mail/forgotten.php" />
     </list>
     <ignored path="avista.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,21 +28,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="register.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/register.php">
+      <file leaf-file-name="forgotten.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gateway/portal/language/english/mail/forgotten.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.31578946" vertical-offset="345" max-vertical-offset="6375">
-              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+            <state vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="240">
+              <caret line="18" column="58" selection-start-line="18" selection-start-column="58" selection-end-line="18" selection-end-column="58" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="step2.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/step2.php">
+      <file leaf-file-name="forgotten.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/forgotten.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.125" vertical-offset="615" max-vertical-offset="4785">
-              <caret line="62" column="12" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="50" />
+            <state vertical-scroll-proportion="0.5263158" vertical-offset="750" max-vertical-offset="2340">
+              <caret line="70" column="68" selection-start-line="70" selection-start-column="68" selection-end-line="70" selection-end-column="68" />
               <folding />
             </state>
           </provider>
@@ -60,7 +61,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/gateway/portal/model/account/bank.php" />
         <option value="$PROJECT_DIR$/gateway/usefull/bank" />
         <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/bank.tpl" />
         <option value="$PROJECT_DIR$/gateway/map/controller/common/header.php" />
@@ -89,7 +89,6 @@
         <option value="$PROJECT_DIR$/gateway/portal/controller/sale/order.php" />
         <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/common/header.tpl" />
         <option value="$PROJECT_DIR$/gateway/portal/language/english/default.php" />
-        <option value="$PROJECT_DIR$/gateway/portal/controller/account/forgotten.php" />
         <option value="$PROJECT_DIR$/gateway/portal/controller/account/registe.php" />
         <option value="$PROJECT_DIR$/gateway/map/controller/sale/customer.php" />
         <option value="$PROJECT_DIR$/gateway/map/view/template/sale/customer_form.tpl" />
@@ -111,6 +110,8 @@
         <option value="$PROJECT_DIR$/gateway/portal/controller/account/account.php" />
         <option value="$PROJECT_DIR$/gateway/portal/controller/account/step2.php" />
         <option value="$PROJECT_DIR$/gateway/portal/controller/account/register.php" />
+        <option value="$PROJECT_DIR$/gateway/portal/language/english/mail/forgotten.php" />
+        <option value="$PROJECT_DIR$/gateway/portal/controller/account/forgotten.php" />
       </list>
     </option>
   </component>
@@ -194,6 +195,62 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="avista" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="avista" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gateway" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="language" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="english" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="avista" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="avista" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gateway" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="language" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="english" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mail" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -520,22 +577,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/forgotten.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36842105" vertical-offset="765" max-vertical-offset="2325">
-          <caret line="65" column="64" selection-start-line="65" selection-start-column="64" selection-end-line="65" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/portal/language/english/mail/forgotten.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="607">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/register_old.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.868421" vertical-offset="2040" max-vertical-offset="5490">
@@ -769,18 +810,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31578946" vertical-offset="345" max-vertical-offset="6375">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/step2.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.125" vertical-offset="615" max-vertical-offset="4785">
+        <state vertical-scroll-proportion="0.55263156" vertical-offset="615" max-vertical-offset="4785">
           <caret line="62" column="12" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/register.php">
+    <entry file="file://$PROJECT_DIR$/gateway/portal/language/english/mail/forgotten.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31578946" vertical-offset="345" max-vertical-offset="6375">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        <state vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="240">
+          <caret line="18" column="58" selection-start-line="18" selection-start-column="58" selection-end-line="18" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/forgotten.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5263158" vertical-offset="750" max-vertical-offset="2340">
+          <caret line="70" column="68" selection-start-line="70" selection-start-column="68" selection-end-line="70" selection-end-column="68" />
           <folding />
         </state>
       </provider>
