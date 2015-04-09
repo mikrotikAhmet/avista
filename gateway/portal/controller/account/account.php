@@ -93,8 +93,8 @@ class ControllerAccountAccount extends Controller {
 		$this->load->model('localisation/language');
 		$language_data = $this->model_localisation_language->getLanguage($customer_data['language_id']);
 
-		$data['current_language'] = $language_data['name'];
-		$data['language_id'] = $customer_data['language_id'];
+		$data['current_language'] = (isset($language_data['name']) ? $language_data['name'] : $this->config->get('config_language_id'));
+		$data['language_id'] = (isset($customer_data['language_id']) ? $customer_data['language_id'] : $this->config->get('config_language_id'));
 		$data['auth'] = $customer_data['two_way'];
 		$data['telephone'] = $customer_data['telephone'];
 		$data['newsletter'] = $customer_data['newsletter'];
@@ -105,7 +105,9 @@ class ControllerAccountAccount extends Controller {
 		$this->load->model('account/certificate');
 
 		$data['certificate'] = $this->model_account_certificate->getCertificate();
-		$data['registered_country'] = $this->model_localisation_country->getCountry($data['certificate']['country_id']);
+		if (isset($data['certificate']['country_id'])) {
+			$data['registered_country'] = $this->model_localisation_country->getCountry($data['certificate']['country_id']);
+		}
 
 		// Personal Details
 		$data['text_your_details'] = $this->language->get('text_your_details');
@@ -113,7 +115,7 @@ class ControllerAccountAccount extends Controller {
 		$data['lastname'] = $customer_data['lastname'];
 		$data['email'] = $customer_data['email'];
 		$data['telephone'] = $customer_data['telephone'];
-		$data['address'] = $customer_address['address_1'].' '.$customer_address['address_2'].'<br/> '.$customer_address['city'].' '.$customer_address['postcode'].'<br/>'.$customer_zone['name'].' / '.$customer_country['name'];
+		$data['address'] = $customer_address['address_1'].' '.$customer_address['address_2'].'<br/> '.(isset($customer_address['city']) ? $customer_address['city'] : null).' '.$customer_address['postcode'].'<br/>'.(isset($customer_zone['name']) ? $customer_zone['name'] : null).' / '.$customer_country['name'];
 
 
 		$this->load->model('localisation/language');
