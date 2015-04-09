@@ -70,6 +70,13 @@
                             </select>
                         </div>
                     </div>
+                    <p class="text-info"><i class="fa fa-exclamation-circle"></i> Issuer name should be mentioned on the incorporation documents</p>
+                    <div class="form-group">
+                        <label class=" control-label">Issuer Name</label>
+                        <div class="">
+                            <input type="text" name="issuer_name" value="" class="form-control"/>
+                        </div>
+                    </div>
                 </div>
             </div>
         </form>
@@ -101,6 +108,10 @@
                     <tr>
                         <td><strong>Preferred bank account</strong></td>
                         <td class="bank"></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Preferred issuer name</strong></td>
+                        <td class="issuer"></td>
                     </tr>
                     </tbody>
                 </table>
@@ -177,6 +188,17 @@ $('input[name=\'amount\']').on('keyup', function(e) {
         $('#issue-order').attr("disabled", false);
     }
 });
+
+    $('input[name=\'issuer_name\']').on('keyup', function(e) {
+
+        $('.issuer').html(this.value);
+
+        if (this.value < 10000 || $('select[name=\'instrument\']').val() == "" || $('select[name=\'bank\']').val() == "" || $('select[name=\'currency_code\']').val() == ""){
+            $('#issue-order').attr("disabled", true);
+        } else {
+            $('#issue-order').attr("disabled", false);
+        }
+    });
 
     function issue(){
 

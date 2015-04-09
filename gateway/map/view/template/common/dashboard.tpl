@@ -18,6 +18,7 @@
                 <?php } ?>
                 <div class="row">
                     <div class="col-lg-3 col-md-3 col-sm-6"><?php echo $customer; ?></div>
+                    <div class="col-lg-3 col-md-3 col-sm-6"><?php echo $order; ?></div>
                 </div>
             </div>
             <!-- /.col-lg-12 -->

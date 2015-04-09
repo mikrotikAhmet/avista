@@ -64,7 +64,7 @@ class ControllerCommonDashboard extends Controller {
 
 		$data['header'] = $this->load->controller('common/header');
 		$data['customer'] = $this->load->controller('dashboard/customer');
-		$data['online'] = $this->load->controller('dashboard/online');
+		$data['order'] = $this->load->controller('dashboard/order');
 		$data['footer'] = $this->load->controller('common/footer');
 
 		$this->response->setOutput($this->load->view('common/dashboard.tpl', $data));
