@@ -34,6 +34,7 @@ class Customer {
 	private $twoway;
 	private $firsttime;
 	private $certificate;
+	private $unique;
 
     public function __construct($registry) {
         $this->config = $registry->get('config');
@@ -60,6 +61,7 @@ class Customer {
                 $this->currency_code = $customer_query->row['currency_code'];
 	            $this->firsttime = $customer_query->row['firsttime'];
 	            $this->certificate = $customer_query->row['certificate_id'];
+	            $this->unique = $customer_query->row['unique_id'];
 
 
                 $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer_ip WHERE customer_id = '" . (int)$this->session->data['customer_id'] . "' AND ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "'");
@@ -98,6 +100,7 @@ class Customer {
             $this->currency_code = $customer_query->row['currency_code'];
 	        $this->firsttime = $customer_query->row['firsttime'];
 	        $this->certificate = $customer_query->row['certificate_id'];
+	        $this->unique = $customer_query->row['unique_id'];
 
             $this->db->query("UPDATE " . DB_PREFIX . "customer SET ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "' WHERE customer_id = '" . (int)$this->customer_id . "'");
 
@@ -125,6 +128,10 @@ class Customer {
     public function getLanguage(){
         return $this->language_id;
     }
+
+	public function getUniqueId(){
+		return $this->unique;
+	}
 
 	public function isFirstTime(){
 		return $this->firsttime;

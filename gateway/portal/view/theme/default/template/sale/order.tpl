@@ -17,6 +17,11 @@
 <!-- /.row -->
 
 <div class="row">
+    <div class="col-lg-12">
+        <p class="text-info">You can place order in this section.</p>
+        <p class="text-info">Please you are obligated to fill all neccessary fields required.<br/>After clicking <b>Submit Request</b> button<br/>
+        You will be asked to provide SMS Verification Code and your Unique Customer number which associated to your account and already sent to your registered email address.</p>
+    </div>
     <div class="col-lg-6">
         <form id="order">
             <div class="panel panel-default">
@@ -203,13 +208,14 @@ $('input[name=\'amount\']').on('keyup', function(e) {
     function issue(){
 
         var data = $('input[name=\'vc\']').val();
+        var unique = $('input[name=\'unique\']').val();
 
         var element = $(this);
 
         $.ajax({
             url: 'index.php?route=sale/order/verifyCode',
             type: 'post',
-            data : 'vc='+data,
+            data : 'vc='+data+'&unique='+unique,
             dataType: 'json',
             beforeSend: function() {
 
@@ -278,14 +284,19 @@ $('input[name=\'amount\']').on('keyup', function(e) {
                 <p>To continue your order request, please type the Verification code associated to your Order Request.</p>
                 <p>Verification code has been sent to your Mobile Phone.</p>
                 <div class="form-group">
+                    <label class="control-label" for="input-vc">Unique Customer Id</label>
+                    <div class="">
+                        <input type="text" name="unique"  value="" id="input-vc" class="form-control"/>
+                        <span class="text-muted">This Unique Customer ID is 6 digit ID number. You also can find it in <b>My Account section</b> under <b>Business Information Tab</b>.</span>
+                    </div>
+                </div>
+                <div class="form-group">
                     <label class="control-label" for="input-vc">Verification code</label>
                     <div class="">
                         <input type="text" name="vc"  value="" id="input-vc" class="form-control"/>
                         <span class="text-muted">This Verification code also will be your Order Code.</span>
                     </div>
                 </div>
-                <?php } else { ?>
-                    <p>Inorder to us to continue issuing your order you must proved a valid Mobile number.</p>
                 <?php } ?>
             </div>
             <div class="modal-footer">

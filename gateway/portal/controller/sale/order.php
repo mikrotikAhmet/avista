@@ -92,15 +92,16 @@ class ControllerSaleOrder extends Controller {
 
         $json = array();
         $code = $this->request->post['vc'];
+	    $unique = $this->request->post['unique'];
 
         $this->load->model('sale/order');
 
         $order_data = $this->model_sale_order->getOrder($code);
 
-        if (!$order_data){
+        if (!$order_data || $unique != $this->customer->getUniqueId()){
 
             $json['error'] = array(
-                'message'=>'Verification code does not match!'
+                'message'=>'Verification code or Customer Unique ID does not match!'
             );
         } else {
 

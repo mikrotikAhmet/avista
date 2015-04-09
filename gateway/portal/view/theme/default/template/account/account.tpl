@@ -210,6 +210,7 @@
                             <?php } else { ?>
                             <h1>Verified</h1>
                             <h3 class="text-success">Your Company account has been successfully approved.</h3>
+                            <h4 class="text-success">Customer Unique ID : <b><?php echo $unique?></b></h4>
                             <ul>
                                 <li>Company Certificate ID : <b><?php echo $certificate['certificate_id']?></b></li>
                                 <li>Company Legal Name : <b><?php echo strtoupper($certificate['legal_name'])?></b></li>
