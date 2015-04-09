@@ -35,6 +35,9 @@
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div class="tab-pane fade in active" id="account-pills">
+                            <div class="alert alert-info alert-dismissable">
+                                <i class="fa fa-exclamation-circle"></i> In this section you can modify your basic account settings.
+                            </div>
                             <table class="table table-responsive table-striped" id="account-manager">
                                 <thead>
                                 <tr></tr>
@@ -118,7 +121,7 @@
                                     </td>
                                     <td><button type="button" id="save-auth" class="btn btn-sm btn-success">Save</button></td>
                                 </tr>
-                                <tr>
+                                <!--tr>
                                     <td><b>Email preferences</b></td>
                                     <td><?php echo ($newsletter ? 'Enabled' : 'Disabled')?></td>
                                     <td><a href="javascript::viod()">Edit</a></td>
@@ -135,7 +138,7 @@
                                             </div>
                                         </div></td>
                                     <td><button type="button" id="save-newsletter" class="btn btn-sm btn-success">Save</button></td>
-                                </tr>
+                                </tr-->
                                 <tr>
                                     <td><b>Account status</b></td>
                                     <td><?php echo ($approved ? 'Approved' : 'Pending')?></td>
@@ -204,13 +207,33 @@
                             <div class="alert alert-warning alert-dismissable">
                                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                                 <i class="fa fa-info-circle"></i>  <strong>Action required!</strong> Your account has no Approved Business Certificate yet.</div>
+                            <?php } else { ?>
+                            <h1>Verified</h1>
+                            <h3 class="text-success">Your Company account has been successfully approved.</h3>
+                            <ul>
+                                <li>Company Certificate ID : <b><?php echo $certificate['certificate_id']?></b></li>
+                                <li>Company Legal Name : <b><?php echo strtoupper($certificate['legal_name'])?></b></li>
+                                <li>Company Registration Number : <b><?php echo strtoupper($certificate['registration_number'])?></b> with Date <b><?php echo date('jS \of F Y',strtotime($certificate['inc_date']))?></b></li>
+                                <li>Company Registreted Country : <b><?php echo $registered_country['name']?></b></li>
+                            </ul>
                             <?php } ?>
                         </div>
                         <div class="tab-pane fade" id="bank-pills">
                             <button type="button" id="add-bank" class="pull-right btn btn-primary">Add bank</button>
+                            <br/><br/>
+                            <div class="alert alert-info alert-dismissable">
+                                <i class="fa fa-exclamation-circle"></i>
+                                Please provide us valid bank account(s) which has associated to you company. We will review your Banking Information in order to verify.<br/>
+                                Once we verify your Bank Information, you can use your verified bank information while you are placing an order.
+                            </div>
                             <div id="bank-list"></div>
                         </div>
                         <div class="tab-pane fade" id="verification-pills">
+                            <h3>Document required.</h3>
+                            <p class="text-danger">Company documents are required to approve your Company. Please see the list of required documents.
+                                More documents you provide will help up to approve your company faster.<br/>
+                                <b>NOTE:</b> In some cases we may ask for additional information and documents to complete your approval process.
+                            </p>
                             <div class="input-group">
                                 <input type="text" name="upload" disabled value="" placeholder="Incorporation documents*" data-format="" id="input-incorporation-documents" class="form-control">
                                   <span class="input-group-btn">
@@ -218,6 +241,13 @@
                                   </span>
                             </div>
                             <br/>
+                            <ul>
+                                <li>Company incorporation documents.</li>
+                                <li>Passport copy of Ultimate Beneficial Owner(s) and authorized signer</li>
+                                <li>a bank reference letter for the corporation (within 6 months) - required for corporations older than one year)</li>
+                                <li>certified copy of Certificate of Goodstanding/Incumbency (issued by registered agent)/Extract of Registry - Required for corporations older than one year</li>
+                                <li>copies of share and director registery</li>
+                            </ul>
                             <div id="documents"></div>
                             <br/>
                         </div>

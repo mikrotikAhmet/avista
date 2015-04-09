@@ -33,6 +33,7 @@ class Customer {
     private $approved;
 	private $twoway;
 	private $firsttime;
+	private $certificate;
 
     public function __construct($registry) {
         $this->config = $registry->get('config');
@@ -58,6 +59,7 @@ class Customer {
                 $this->language_id = $customer_query->row['language_id'];
                 $this->currency_code = $customer_query->row['currency_code'];
 	            $this->firsttime = $customer_query->row['firsttime'];
+	            $this->certificate = $customer_query->row['certificate_id'];
 
 
                 $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer_ip WHERE customer_id = '" . (int)$this->session->data['customer_id'] . "' AND ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "'");
@@ -95,6 +97,7 @@ class Customer {
             $this->language_id = $customer_query->row['language_id'];
             $this->currency_code = $customer_query->row['currency_code'];
 	        $this->firsttime = $customer_query->row['firsttime'];
+	        $this->certificate = $customer_query->row['certificate_id'];
 
             $this->db->query("UPDATE " . DB_PREFIX . "customer SET ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "' WHERE customer_id = '" . (int)$this->customer_id . "'");
 
@@ -134,6 +137,10 @@ class Customer {
     public function getCurrency(){
         return $this->currency_code;
     }
+
+	public function getCertificate(){
+		return $this->certificate;
+	}
 
 	public function isTwoway(){
 		return $this->twoway;

@@ -100,6 +100,10 @@ class ControllerAccountAccount extends Controller {
 		$data['newsletter'] = $customer_data['newsletter'];
 		$data['approved'] = $customer_data['approved'];
 
+		$this->load->model('account/certificate');
+
+		$data['certificate'] = $this->model_account_certificate->getCertificate();
+		$data['registered_country'] = $this->model_localisation_country->getCountry($data['certificate']['country_id']);
 
 		// Personal Details
 		$data['text_your_details'] = $this->language->get('text_your_details');
