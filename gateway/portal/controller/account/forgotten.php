@@ -68,7 +68,7 @@ class ControllerAccountForgotten extends Controller {
 			$message .= sprintf($this->language->get('text_password'),$password) . "\n\n";
 			$message .='Please, after you login proceed with the change of the temporary password with a new one.'."\n\n";
 			$message .='We thank you for your cooperation.\n\n';
-			$message -=$this->config->get('config_name').' IT Team';
+			$message .=$this->config->get('config_name').' IT Team';
 
 			$mail = new Mail($this->config->get('config_mail'));
 			$mail->setTo($this->request->post['email']);
@@ -140,6 +140,7 @@ class ControllerAccountForgotten extends Controller {
 	}
 
 	protected function validate() {
+
 		if (!isset($this->request->post['email'])) {
 			$this->error['warning'] = $this->language->get('error_email');
 		} elseif (!$this->model_account_customer->getTotalCustomersByEmail($this->request->post['email'])) {
