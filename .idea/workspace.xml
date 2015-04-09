@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="dbd0d96c-d439-4391-add6-8ad6ad0b2fa0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/controller/account/register.php" afterPath="$PROJECT_DIR$/gateway/portal/controller/account/register.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/controller/account/step2.php" afterPath="$PROJECT_DIR$/gateway/portal/controller/account/step2.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/common/success.tpl" afterPath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/common/success.tpl" />
     </list>
     <ignored path="avista.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,11 +39,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="register.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="register.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/register.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.8421053" vertical-offset="240" max-vertical-offset="5310">
-              <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+            <state vertical-scroll-proportion="-17.5" vertical-offset="240" max-vertical-offset="5490">
+              <caret line="44" column="9" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="success.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/success.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-15.625" vertical-offset="270" max-vertical-offset="1425">
+              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="logout.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/logout.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-15.625" vertical-offset="270" max-vertical-offset="1620">
+              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="step2.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/step2.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-15.0" vertical-offset="315" max-vertical-offset="3525">
+              <caret line="45" column="9" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -60,9 +92,21 @@
       <file leaf-file-name="step2.tpl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/step2.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.875" vertical-offset="45" max-vertical-offset="1515">
-              <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+            <state vertical-scroll-proportion="-0.625" vertical-offset="45" max-vertical-offset="1515">
+              <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="65" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="success.tpl" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/common/success.tpl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.10695187" vertical-offset="0" max-vertical-offset="561">
+              <caret line="4" column="65" selection-start-line="4" selection-start-column="65" selection-end-line="4" selection-end-column="65" />
+              <folding>
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -80,7 +124,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/gateway/map/controller/customer/certificate.php" />
         <option value="$PROJECT_DIR$/gateway/map/view/template/customer/certificate_form.tpl" />
         <option value="$PROJECT_DIR$/gateway/map/model/customer/certificate.php" />
         <option value="$PROJECT_DIR$/gateway/map/language/english/default.php" />
@@ -126,11 +169,12 @@
         <option value="$PROJECT_DIR$/gateway/portal/config.php" />
         <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/register.tpl" />
         <option value="$PROJECT_DIR$/gateway/portal/language/english/account/register.php" />
-        <option value="$PROJECT_DIR$/gateway/portal/controller/account/step2.php" />
         <option value="$PROJECT_DIR$/gateway/portal/language/english/account/step2.php" />
         <option value="$PROJECT_DIR$/gateway/portal/language/english/mail/customer.php" />
         <option value="$PROJECT_DIR$/gateway/portal/model/account/customer.php" />
+        <option value="$PROJECT_DIR$/gateway/portal/controller/account/step2.php" />
         <option value="$PROJECT_DIR$/gateway/portal/controller/account/register.php" />
+        <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/common/success.tpl" />
       </list>
     </option>
   </component>
@@ -285,7 +329,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="account" />
+              <option name="myItemId" value="common" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -499,14 +543,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/bank_list.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30874786" vertical-offset="0" max-vertical-offset="870">
-          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gateway/map/view/template/sale/customer_bank.tpl">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.57894737" vertical-offset="495" max-vertical-offset="1065">
@@ -596,34 +632,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/forgotten.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.57481754" vertical-offset="360" max-vertical-offset="2295">
-          <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/logout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65789473" vertical-offset="270" max-vertical-offset="1620">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/twoway.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7105263" vertical-offset="270" max-vertical-offset="2445">
           <caret line="45" column="9" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/success.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65789473" vertical-offset="270" max-vertical-offset="1425">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -945,14 +957,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/step2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.25" vertical-offset="360" max-vertical-offset="3345">
-          <caret line="50" column="50" selection-start-line="50" selection-start-column="50" selection-end-line="50" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gateway/portal/language/english/mail/customer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="420">
@@ -983,14 +987,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/step2.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.875" vertical-offset="45" max-vertical-offset="1515">
-          <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/register.tpl">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.6666666" vertical-offset="2045" max-vertical-offset="3285">
@@ -1007,11 +1003,61 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/forgotten.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2631579" vertical-offset="360" max-vertical-offset="2295">
+          <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="44" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/step2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.0" vertical-offset="315" max-vertical-offset="3525">
+          <caret line="45" column="9" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/register.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.8421053" vertical-offset="240" max-vertical-offset="5310">
-          <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+        <state vertical-scroll-proportion="-17.5" vertical-offset="240" max-vertical-offset="5490">
+          <caret line="44" column="9" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/success.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.625" vertical-offset="270" max-vertical-offset="1425">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/logout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.625" vertical-offset="270" max-vertical-offset="1620">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/step2.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.625" vertical-offset="45" max-vertical-offset="1515">
+          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/common/success.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10695187" vertical-offset="0" max-vertical-offset="561">
+          <caret line="4" column="65" selection-start-line="4" selection-start-column="65" selection-end-line="4" selection-end-column="65" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
