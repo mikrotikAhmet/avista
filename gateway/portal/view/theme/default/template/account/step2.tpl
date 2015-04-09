@@ -50,7 +50,7 @@
                                 <?php } ?>
                             </div>
                         </div>
-                        <div class="form-group">
+                        <!--div class="form-group">
                             <label class=" control-label"><?php echo $entry_newsletter; ?></label>
                             <div class="">
                                 <?php if ($newsletter) { ?>
@@ -69,7 +69,7 @@
                                     <?php echo $text_no; ?></label>
                                 <?php } ?>
                             </div>
-                        </div>
+                        </div-->
                         <?php if ($text_agree) { ?>
                         <div class="form-group">
                                 <?php if ($agree) { ?>
