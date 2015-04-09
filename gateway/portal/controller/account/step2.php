@@ -33,18 +33,6 @@ class ControllerAccountStep2 extends Controller {
 
 	public function index() {
 
-		if (is_file(DIR_IMAGE . $this->config->get('config_icon'))) {
-			$data['icon'] = HTTP_IMAGE . 'image/' . $this->config->get('config_icon');
-		} else {
-			$data['icon'] = '';
-		}
-
-		if (is_file(DIR_IMAGE . $this->config->get('config_logo'))) {
-			$data['logo'] = HTTP_IMAGE . 'image/' . $this->config->get('config_logo');
-		} else {
-			$data['logo'] = '';
-		}
-
 		$this->load->language('account/step2');
 
 		$this->document->setTitle($this->language->get('heading_title'));
@@ -104,7 +92,6 @@ class ControllerAccountStep2 extends Controller {
 		$data['text_loading'] = $this->language->get('text_loading');
 
 		$data['entry_email'] = $this->language->get('entry_email');
-		$data['entry_telephone'] = $this->language->get('entry_telephone');
 		$data['entry_password'] = $this->language->get('entry_password');
 		$data['entry_confirm'] = $this->language->get('entry_confirm');
 		$data['entry_newsletter'] = sprintf($this->language->get('entry_newsletter'), $this->config->get('config_name'));
@@ -122,12 +109,6 @@ class ControllerAccountStep2 extends Controller {
 			$data['error_email'] = $this->error['email'];
 		} else {
 			$data['error_email'] = '';
-		}
-
-		if (isset($this->error['telephone'])) {
-			$data['error_telephone'] = $this->error['telephone'];
-		} else {
-			$data['error_telephone'] = '';
 		}
 
 		if (isset($this->error['password'])) {
@@ -151,12 +132,6 @@ class ControllerAccountStep2 extends Controller {
 			$data['email'] = $this->request->post['email'];
 		} else {
 			$data['email'] = '';
-		}
-
-		if (isset($this->request->post['telephone'])) {
-			$data['telephone'] = $this->request->post['telephone'];
-		} else {
-			$data['telephone'] = '';
 		}
 
 		if (isset($this->request->post['password'])) {
@@ -216,10 +191,6 @@ class ControllerAccountStep2 extends Controller {
 
 		if ($this->model_account_customer->getTotalCustomersByEmail($this->request->post['email'])) {
 			$this->error['warning'] = $this->language->get('error_exists');
-		}
-
-		if ((utf8_strlen($this->request->post['telephone']) < 4) || (utf8_strlen($this->request->post['telephone']) > 20) || !is_numeric($this->request->post['telephone'])) {
-			$this->error['telephone'] = $this->language->get('error_telephone');
 		}
 
 		if ((utf8_strlen($this->request->post['password']) < 4) || (utf8_strlen($this->request->post['password']) > 20)) {

@@ -20,6 +20,7 @@ $_['text_welcome']        = 'Welcome and thank you for registering at %s! E-Bank
 $_['text_login']          = 'Your account has now been created and you can log in by using your email address and password by visiting our website or at the following URL:';
 $_['text_approval']       = 'Your account must be approved before you can login. Once approved you can log in by using your email address and password by visiting our website or at the following URL:';
 $_['text_services']       = 'Upon logging in, you will be able to access other services including reviewing past orders, printing invoices and editing your account information.';
+$_['text_unique']         = 'Your Globally Unique Customer number is <b>%s</b>,<br/>Your will use this number when you contact us and when you are placing an order.';
 $_['text_thanks']         = 'Thanks,';
 $_['text_new_customer']   = 'New customer';
 $_['text_signup']         = 'A new customer has signed up:';

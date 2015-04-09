@@ -73,6 +73,7 @@ class ModelAccountCustomer extends Model {
 
 		$message .= $this->url->link('account/login', '', 'SSL') . "\n\n";
 		$message .= $this->language->get('text_services') . "\n\n";
+		$message .= sprintf($this->language->get('text_unique'),$unique_id) . "\n";
 		$message .= $this->language->get('text_thanks') . "\n";
 		$message .= $this->config->get('config_name');
 
