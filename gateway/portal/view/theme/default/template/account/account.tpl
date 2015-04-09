@@ -210,7 +210,6 @@
                             <button type="button" id="add-bank" class="pull-right btn btn-primary">Add bank</button>
                             <div id="bank-list"></div>
                         </div>
-                        <?php if (!$approved) { ?>
                         <div class="tab-pane fade" id="verification-pills">
                             <div class="input-group">
                                 <input type="text" name="upload" disabled value="" placeholder="Incorporation documents*" data-format="" id="input-incorporation-documents" class="form-control">
@@ -222,7 +221,6 @@
                             <div id="documents"></div>
                             <br/>
                         </div>
-                        <?php } ?>
                     </div>
                 </div>
                 <!-- /.panel-body -->
