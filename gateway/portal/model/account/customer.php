@@ -208,7 +208,7 @@ class ModelAccountCustomer extends Model {
 	public function updateTelephone($telephone) {
 		$this->event->trigger('pre.customer.edit.telephone');
 
-		$this->db->query("UPDATE " . DB_PREFIX . "customer SET telephone = '" . (int)$telephone . "' WHERE customer_id = '" . (int)$this->customer->getId() . "'");
+		$this->db->query("UPDATE " . DB_PREFIX . "customer SET mobile = '" . (int)$telephone . "' WHERE customer_id = '" . (int)$this->customer->getId() . "'");
 
 		$this->event->trigger('post.customer.edit.telephone');
 	}

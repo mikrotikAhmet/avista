@@ -37,12 +37,16 @@ class ControllerCommonMenu extends Controller {
 		$data['text_transaction'] = $this->language->get('text_transaction');
 		$data['text_report'] = $this->language->get('text_report');
 		$data['text_order'] = $this->language->get('text_order');
+		$data['text_setting'] = $this->language->get('text_setting');
+
+		$data['unique'] = $this->customer->getUniqueId();
 
 
 		$data['home'] = $this->url->link('account/dashboard', '', 'SSL');
 		$data['order'] = $this->url->link('sale/order', '', 'SSL');
 		$data['order_report'] = $this->url->link('account/order', '', 'SSL');
 		$data['transaction'] = $this->url->link('sale/transaction', '', 'SSL');
+		$data['setting'] = $this->url->link('account/account', '', 'SSL');
 
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/menu.tpl')) {
 			return $this->load->view($this->config->get('config_template') . '/template/common/menu.tpl', $data);

@@ -23,3 +23,4 @@ $_['text_request'] = 'Create a request';
 $_['text_transaction'] = 'My transactions';
 $_['text_report'] = 'Reports';
 $_['text_order'] = 'My orders';
+$_['text_setting']        = 'My Account';

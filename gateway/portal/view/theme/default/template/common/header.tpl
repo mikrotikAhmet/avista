@@ -51,7 +51,7 @@
 <div id="wrapper">
     <?php if ($logged) { ?>
     <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-fixed-top" role="navigation">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -60,22 +60,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="<?php echo $home?>">HIF INVEST HOLDING LTD.</a>
+            <a class="navbar-brand" href="<?php echo $home?>"><img src="<?php echo $logo?>" style="  width: 213px;
+  position: relative;
+  bottom: 10px;"/></a>
         </div>
         <!-- Top Menu Items -->
         <ul class="nav navbar-right top-nav">
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $text_logged?> <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                    <li>
-                        <a href="<?php echo $setting; ?>"><i class="fa fa-fw fa-cog"></i> <?php echo $text_setting; ?></a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="<?php echo $logout; ?>"><i class="fa fa-fw fa-power-off"></i> <?php echo $text_logout; ?></a>
-                    </li>
-                </ul>
-            </li>
+            <li><i class="fa fa-user"></i> <?php echo $text_logged?></li>
+            <li><a href="<?php echo $logout; ?>"><i class="fa fa-fw fa-power-off"></i> <?php echo $text_logout; ?></a></li>
         </ul>
         <?php echo $column_left?>
     </nav>

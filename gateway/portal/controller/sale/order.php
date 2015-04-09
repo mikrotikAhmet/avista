@@ -136,6 +136,7 @@ class ControllerSaleOrder extends Controller {
 		    $uuid = new UUID();
 
 		    $unique_id = date('s') . $uuid->uniqueId($format = 'nnnnnn', $length = '20');
+		    $other_unique_id = $uuid->uniqueId($format = 'nn', $length = '20').date('s');
 		    $this->uuid = $unique_id;
 
 		    $user = "semitellc";
@@ -191,9 +192,9 @@ class ControllerSaleOrder extends Controller {
 					    'forwarded_ip' => $forwarded_ip,
 					    'user_agent' => $user_agent,
 					    'accept_language' => $accept_language,
-					    'product_id'=>$this->request->post['instrument'],
+					    'product_id'=>(isset($this->request->post['other']) ? $other_unique_id : $this->request->post['instrument']),
+					    'product_name'=>(isset($this->request->post['other']) ? $this->request->post['other'] : $this->request->post['product_name']),
 					    'bank_id'=>$this->request->post['bank'],
-					    'product_name'=>$this->request->post['product_name'],
 					    'issuer_name'=>(!empty($this->request->post['issuer_name']) ? $this->request->post['issuer_name'] : $this->customer->getFirstName().' '.strtoupper($this->customer->getLastName())),
 				    );
 

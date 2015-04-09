@@ -37,7 +37,12 @@
                                 <?php foreach ($insts as $key=>$inst) { ?>
                                     <option value="<?php echo $key?>"><?php echo $inst?></option>
                                 <?php } ?>
+                                <option value="999">Other</option>
                             </select>
+                            <br/>
+                            <div id="other" style="display: none">
+                                <input type="text" name="other" value="" class="form-control"/>
+                            </div>
                             <input type="hidden" name="product_name" value=""/>
                         </div>
                     </div>
@@ -45,8 +50,8 @@
                         <label class=" control-label">Requested amount</label>
                         <div class="">
                             <div class="form-group input-group">
-                                <span class="input-group-addon" id="currency_icon"></span>
-                                <input type="text" name="amount" class="form-control amount" maxlength="10">
+                                <span class="input-group-addon" id="currency_icon">EUR</span>
+                                <input type="text" name="amount" class="form-control amount" maxlength="9">
                                 <span class="input-group-addon">.00</span>
                             </div>
                         </div>
@@ -55,7 +60,7 @@
                         <label class=" control-label">Preferred issuing currency</label>
                         <div class="">
                             <select name="currency_code" class="form-control">
-                                <option value="">--Please select--</option>
+                                <!--option value="">--Please select--</option-->
                                 <?php foreach ($currencies as $currency) { ?>
                                 <option value="<?php echo $currency['code']?>"><?php echo $currency['code']?></option>
                                 <?php } ?>
@@ -63,7 +68,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class=" control-label">Preferred bank account</label>
+                        <label class=" control-label">Preferred bank account of Payment</label>
                         <div class="">
                             <select name="bank" class="form-control">
                                 <option value="">--Please select--</option>
@@ -77,7 +82,7 @@
                     </div>
                     <p class="text-info"><i class="fa fa-exclamation-circle"></i> Issuer name should be mentioned on the incorporation documents</p>
                     <div class="form-group">
-                        <label class=" control-label">Issuer Name <small>(optional)</small></label>
+                        <label class=" control-label">Beneficiary  Name <small>(optional)</small></label>
                         <div class="">
                             <input type="text" name="issuer_name" value="" class="form-control"/>
                         </div>
@@ -166,6 +171,13 @@
     });
 
 $('select[name=\'instrument\']').on('change', function(e) {
+
+    if (this.value == '999') {
+        $('#other').show();
+    } else {
+        $('input[name=\'other\']').val('');
+        $('#other').hide();
+    }
     $('.instrument').html($(this).find("option:selected").text());
 
     if ($('input[name=\'amount\']').val() < 10000 || $('select[name=\'instrument\']').val() == "" || $('select[name=\'bank\']').val() == "" || $('select[name=\'currency_code\']').val() == ""){

@@ -47,6 +47,24 @@
                                 </thead>
                                 <tbody>
                                 <tr>
+                                    <td><b>Account status</b></td>
+                                    <td><?php echo ($approved ? 'Approved' : 'Pending')?></td>
+                                    <td><a href="javascript::viod()">Edit</a></td>
+                                </tr>
+                                <?php if (!$approved) { ?>
+                                <tr class="">
+                                    <td colspan="3">
+                                        <h4>You account is waiting for Verification. To continue and get approved please follow this link : </h4>
+                                    </td>
+                                </tr>
+                                <?php } else { ?>
+                                <tr class="">
+                                    <td colspan="3">
+                                        <p class="text-success"><strong>Your account is ACTIVE </strong></p>
+                                    </td>
+                                </tr>
+                                <?php } ?>
+                                <!--tr>
                                     <td><b><?php echo $text_language?></b></td>
                                     <td><?php echo $current_language?></td>
                                     <td><a href="javascript::viod()">Edit</a></td>
@@ -68,7 +86,7 @@
                                     <td>
                                         <button type="button" id="save-language" class="btn btn-sm btn-success">Save</button>
                                     </td>
-                                </tr>
+                                </tr-->
                                 <tr>
                                     <td><b><?php echo $text_password?></b></td>
                                     <td>*********</td>
@@ -105,7 +123,6 @@
                                 <tr class="">
                                     <td colspan="2">
                                         <div class="form-group">
-
                                             <div class="">
                                                 <?php if ($auth) { ?>
                                                 <input type="checkbox" name="twoway"  id="input-twoway" value="1" checked="checked"/>
@@ -118,7 +135,7 @@
                                         <div class="form-group">
                                             <label class="control-label" for="input-telephone"><?php echo $entry_telephone; ?></label>
                                             <div class="">
-                                                <input type="text" name="telephone"  value="<?php echo $telephone?>" id="input-telephone" class="form-control" <?php echo (!empty($telephone) ? 'disabled' : '')?>/>
+                                                <input type="text" name="telephone"  value="<?php echo $telephone?>" id="input-telephone" class="form-control" <?php //echo (!empty($telephone) ? 'disabled' : '')?>/>
                                             </div>
                                         </div>
                                     </td>
@@ -142,24 +159,6 @@
                                         </div></td>
                                     <td><button type="button" id="save-newsletter" class="btn btn-sm btn-success">Save</button></td>
                                 </tr-->
-                                <tr>
-                                    <td><b>Account status</b></td>
-                                    <td><?php echo ($approved ? 'Approved' : 'Pending')?></td>
-                                    <td><a href="javascript::viod()">Edit</a></td>
-                                </tr>
-                                <?php if (!$approved) { ?>
-                                <tr class="">
-                                    <td colspan="3">
-                                        <p>You account is waiting for Verification. To continue and get approved please follow this link : </p>
-                                    </td>
-                                </tr>
-                                <?php } else { ?>
-                                <tr class="">
-                                    <td colspan="3">
-                                        <p class="text-success"><strong>Your account is ACTIVE </strong></p>
-                                    </td>
-                                </tr>
-                                <?php } ?>
                                 </tbody>
                             </table>
                         </div>
@@ -233,11 +232,13 @@
                             <div id="bank-list"></div>
                         </div>
                         <div class="tab-pane fade" id="verification-pills">
+                            <!--
                             <h3>Document required.</h3>
                             <p class="text-danger">Company documents are required to approve your Company. Please see the list of required documents.
                                 More documents you provide will help up to approve your company faster.<br/>
                                 <b>NOTE:</b> In some cases we may ask for additional information and documents to complete your approval process.
                             </p>
+                            -->
                             <div class="input-group">
                                 <input type="text" name="upload" disabled value="" placeholder="Incorporation documents*" data-format="" id="input-incorporation-documents" class="form-control">
                                   <span class="input-group-btn">
@@ -245,13 +246,13 @@
                                   </span>
                             </div>
                             <br/>
-                            <ul>
+                            <!--ul>
                                 <li>Company incorporation documents.</li>
                                 <li>Passport copy of Ultimate Beneficial Owner(s) and authorized signer</li>
                                 <li>a bank reference letter for the corporation (within 6 months) - required for corporations older than one year)</li>
                                 <li>certified copy of Certificate of Goodstanding/Incumbency (issued by registered agent)/Extract of Registry - Required for corporations older than one year</li>
                                 <li>copies of share and director registery</li>
-                            </ul>
+                            </ul-->
                             <div id="documents"></div>
                             <br/>
                         </div>

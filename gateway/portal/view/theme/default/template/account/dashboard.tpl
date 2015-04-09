@@ -20,7 +20,7 @@
     <div class="col-lg-12">
         <div class="alert alert-warning alert-dismissable">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-            <?php echo $text_approval_request?>
+            <i class="fa fa-exclamation-circle"></i> <strong>Action required!</strong> Your account is in Pending Mode.
         </div>
     </div>
 </div>
