@@ -2,38 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbd0d96c-d439-4391-add6-8ad6ad0b2fa0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gateway/portal/controller/account/register_old.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/map/system/cache/cache.application.1428574103" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/map/system/cache/cache.country.1428574105" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/map/system/cache/cache.order_status.1.1428575964" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/map/system/cache/cache.zone.243.1428574105" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/portal/system/cache/cache.country.status.1428579815" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/portal/system/cache/cache.currency.1428577188" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/portal/system/cache/cache.language.1428577188" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/portal/system/cache/cache.zone.243.1428579815" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/portal/system/cache/cache.zone.244.1428579130" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/register.tpl" afterPath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/register_old.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/config.php" afterPath="$PROJECT_DIR$/gateway/portal/config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/map/controller/sale/customer.php" afterPath="$PROJECT_DIR$/gateway/map/controller/sale/customer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/language/english/mail/customer.php" afterPath="$PROJECT_DIR$/gateway/portal/language/english/mail/customer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/model/account/customer.php" afterPath="$PROJECT_DIR$/gateway/portal/model/account/customer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/map/view/template/sale/customer_form.tpl" afterPath="$PROJECT_DIR$/gateway/map/view/template/sale/customer_form.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/language/english/default.php" afterPath="$PROJECT_DIR$/gateway/portal/language/english/default.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/controller/account/forgotten.php" afterPath="$PROJECT_DIR$/gateway/portal/controller/account/forgotten.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/forgotten.tpl" afterPath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/forgotten.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/controller/account/login.php" afterPath="$PROJECT_DIR$/gateway/portal/controller/account/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/login.tpl" afterPath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/login.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/controller/account/register.php" afterPath="$PROJECT_DIR$/gateway/portal/controller/account/register.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/language/english/account/register.php" afterPath="$PROJECT_DIR$/gateway/portal/language/english/account/register.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/register.tpl" afterPath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/register.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/view/theme/default/css/sb-admin.css" afterPath="$PROJECT_DIR$/gateway/portal/view/theme/default/css/sb-admin.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/controller/account/step2.php" afterPath="$PROJECT_DIR$/gateway/portal/controller/account/step2.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/language/english/account/step2.php" afterPath="$PROJECT_DIR$/gateway/portal/language/english/account/step2.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/step2.tpl" afterPath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/step2.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/language/english/account/success.php" afterPath="$PROJECT_DIR$/gateway/portal/language/english/account/success.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/common/success.tpl" afterPath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/common/success.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/twoway.tpl" afterPath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/twoway.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="avista.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -98,22 +67,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="success.tpl" pinned="false" current-in-tab="true">
+      <file leaf-file-name="success.tpl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/common/success.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.10291595" vertical-offset="0" max-vertical-offset="583">
+            <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="420">
               <caret line="4" column="59" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="59" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="register.tpl" pinned="false" current-in-tab="false">
+      <file leaf-file-name="register.tpl" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/register.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="2205">
-              <caret line="4" column="61" selection-start-line="4" selection-start-column="61" selection-end-line="4" selection-end-column="61" />
-              <folding />
+            <state vertical-scroll-proportion="0.2631579" vertical-offset="720" max-vertical-offset="2205">
+              <caret line="58" column="104" selection-start-line="58" selection-start-column="104" selection-end-line="58" selection-end-column="104" />
+              <folding>
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -187,11 +158,11 @@
         <option value="$PROJECT_DIR$/gateway/portal/language/english/account/register.php" />
         <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/css/sb-admin.css" />
         <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/login.tpl" />
-        <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/register.tpl" />
         <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/step2.tpl" />
         <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/twoway.tpl" />
         <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/forgotten.tpl" />
         <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/common/success.tpl" />
+        <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/register.tpl" />
       </list>
     </option>
   </component>
@@ -475,7 +446,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2942899" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2942899" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -896,14 +867,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/register.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="2205">
-          <caret line="4" column="61" selection-start-line="4" selection-start-column="61" selection-end-line="4" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/step2.tpl">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="1920">
@@ -930,9 +893,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/common/success.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10291595" vertical-offset="0" max-vertical-offset="583">
+        <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="420">
           <caret line="4" column="59" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="59" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/register.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2631579" vertical-offset="720" max-vertical-offset="2205">
+          <caret line="58" column="104" selection-start-line="58" selection-start-column="104" selection-end-line="58" selection-end-column="104" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -56,7 +56,7 @@
                                 </div>
                             </div>
                             <div class="form-group required">
-                                <label class="control-label" for="input-country"><?php echo $entry_country; ?></label>
+                                <label class="control-label" for="input-country">Country of registration</label>
                                 <div class="">
                                     <select name="country_id" id="input-country" class="form-control">
                                         <option value=""><?php echo $text_select; ?></option>
