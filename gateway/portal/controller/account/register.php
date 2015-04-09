@@ -32,18 +32,6 @@ class ControllerAccountRegister extends Controller {
 
 	public function index() {
 
-		if (is_file(DIR_IMAGE . $this->config->get('config_icon'))) {
-			$data['icon'] = HTTP_IMAGE . 'image/' . $this->config->get('config_icon');
-		} else {
-			$data['icon'] = '';
-		}
-
-		if (is_file(DIR_IMAGE . $this->config->get('config_logo'))) {
-			$data['logo'] = HTTP_IMAGE . 'image/' . $this->config->get('config_logo');
-		} else {
-			$data['logo'] = '';
-		}
-
 		$this->load->language('account/register');
 
 		$this->document->setTitle($this->language->get('heading_title'));
@@ -91,11 +79,12 @@ class ControllerAccountRegister extends Controller {
 		$data['entry_address_1'] = $this->language->get('entry_address_1');
 		$data['entry_address_2'] = $this->language->get('entry_address_2');
 		$data['entry_postcode'] = $this->language->get('entry_postcode');
+		$data['entry_city'] = $this->language->get('entry_city');
 		$data['entry_country'] = $this->language->get('entry_country');
-		$data['entry_company'] = $this->language->get('entry_company');
-		$data['entry_company_registration'] = $this->language->get('entry_company_registration');
+		$data['entry_currency'] = $this->language->get('entry_currency');
+		$data['entry_language'] = $this->language->get('entry_language');
+		$data['entry_zone'] = $this->language->get('entry_zone');
 
-		$data['button_continue'] = $this->language->get('button_continue');
 		$data['button_continue_2'] = $this->language->get('button_continue_2');
 		$data['button_back'] = $this->language->get('button_back');
 		$data['button_upload'] = $this->language->get('button_upload');
@@ -124,10 +113,10 @@ class ControllerAccountRegister extends Controller {
 			$data['error_address_1'] = '';
 		}
 
-		if (isset($this->error['company'])) {
-			$data['error_company'] = $this->error['company'];
+		if (isset($this->error['city'])) {
+			$data['error_city'] = $this->error['city'];
 		} else {
-			$data['error_company'] = '';
+			$data['error_city'] = '';
 		}
 
 		if (isset($this->error['postcode'])) {
@@ -142,10 +131,16 @@ class ControllerAccountRegister extends Controller {
 			$data['error_country'] = '';
 		}
 
-		if (isset($this->error['company_registration'])) {
-			$data['error_company_registration'] = $this->error['company_registration'];
+		if (isset($this->error['zone'])) {
+			$data['error_zone'] = $this->error['zone'];
 		} else {
-			$data['error_company_registration'] = '';
+			$data['error_zone'] = '';
+		}
+
+		if (isset($this->error['language'])) {
+			$data['error_language'] = $this->error['language'];
+		} else {
+			$data['error_language'] = '';
 		}
 
 		$data['action'] = $this->url->link('account/register', '', 'SSL');
