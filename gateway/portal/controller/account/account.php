@@ -114,7 +114,7 @@ class ControllerAccountAccount extends Controller {
 		$data['firstname'] = $customer_data['firstname'];
 		$data['lastname'] = $customer_data['lastname'];
 		$data['email'] = $customer_data['email'];
-		$data['telephone'] = $customer_data['telephone'];
+		$data['telephone'] = $customer_data['mobile'];
 		$data['address'] = $customer_address['address_1'].' '.$customer_address['address_2'].'<br/> '.(isset($customer_address['city']) ? $customer_address['city'] : null).' '.$customer_address['postcode'].'<br/>'.(isset($customer_zone['name']) ? $customer_zone['name'] : null).' / '.$customer_country['name'];
 
 

@@ -36,6 +36,7 @@ class Customer {
 	private $certificate;
 	private $unique;
 	private $account_status;
+	private $mobile;
 
     public function __construct($registry) {
         $this->config = $registry->get('config');
@@ -64,6 +65,7 @@ class Customer {
 	            $this->certificate = $customer_query->row['certificate_id'];
 	            $this->unique = $customer_query->row['unique_id'];
 	            $this->account_status = $customer_query->row['account_status'];
+	            $this->mobile = $customer_query->row['mobile'];
 
 
                 $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer_ip WHERE customer_id = '" . (int)$this->session->data['customer_id'] . "' AND ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "'");
@@ -104,6 +106,7 @@ class Customer {
 	        $this->certificate = $customer_query->row['certificate_id'];
 	        $this->unique = $customer_query->row['unique_id'];
 	        $this->account_status = $customer_query->row['account_status'];
+	        $this->mobile = $customer_query->row['mobile'];
 
             $this->db->query("UPDATE " . DB_PREFIX . "customer SET ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "' WHERE customer_id = '" . (int)$this->customer_id . "'");
 
@@ -187,6 +190,10 @@ class Customer {
     public function getTelephone() {
         return $this->telephone;
     }
+
+	public function getMobile() {
+		return $this->mobile;
+	}
 
     public function getFax() {
         return $this->fax;

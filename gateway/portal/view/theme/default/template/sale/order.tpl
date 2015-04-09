@@ -279,7 +279,7 @@ $('input[name=\'amount\']').on('keyup', function(e) {
             <div class="modal-body">
                 <?php if (!$approved) { ?>
                 <p>You account is not approved yet.</p>
-                <?php } else if ($customer['telephone']) { ?>
+                <?php } else if ($customer['mobile']) { ?>
                 <p>Dear Customer,</p>
                 <p>To continue your order request, please type the Verification code associated to your Order Request.</p>
                 <p>Verification code has been sent to your Mobile Phone.</p>

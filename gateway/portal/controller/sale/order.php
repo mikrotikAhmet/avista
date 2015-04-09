@@ -144,7 +144,7 @@ class ControllerSaleOrder extends Controller {
 		    $baseurl = "http://api.clickatell.com";
 
 		    $text = urlencode($unique_id);
-		    $to = $this->customer->getTelephone();
+		    $to = $this->customer->getMobile();
 
 		    // auth call
 		    $url = "$baseurl/http/auth?user=$user&password=$password&api_id=$api_id";
@@ -180,7 +180,7 @@ class ControllerSaleOrder extends Controller {
 					    'firstname' => $this->customer->getFirstName(),
 					    'lastname' => $this->customer->getLastName(),
 					    'email' => $this->customer->getEmail(),
-					    'telephone' => $this->customer->getTelephone(),
+					    'telephone' => ($this->customer->getTelephone() ? $this->customer->getTelephone() : $this->customer->getMobile()),
 					    'request' => $this->request->post['amount'],
 					    'order_status_id' => $this->config->get('config_order_status_id'),
 					    'language_id' => $this->customer->getLanguage(),
