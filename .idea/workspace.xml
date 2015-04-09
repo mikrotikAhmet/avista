@@ -2,15 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbd0d96c-d439-4391-add6-8ad6ad0b2fa0" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/map/system/cache/cache.order_status.1.1428542620" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/portal/system/cache/cache.country.status.1428565410" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/portal/system/cache/cache.currency.1428565391" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/portal/system/cache/cache.language.1428565391" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/portal/system/cache/cache.zone.243.1428565410" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/language/english/mail/customer.php" afterPath="$PROJECT_DIR$/gateway/portal/language/english/mail/customer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/model/account/customer.php" afterPath="$PROJECT_DIR$/gateway/portal/model/account/customer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/controller/account/register.php" afterPath="$PROJECT_DIR$/gateway/portal/controller/account/register.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/controller/account/step2.php" afterPath="$PROJECT_DIR$/gateway/portal/controller/account/step2.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="avista.iws" />
@@ -36,35 +27,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="customer.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/gateway/portal/model/account/customer.php">
+      <file leaf-file-name="account.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/account.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.47368422" vertical-offset="855" max-vertical-offset="3645">
-              <caret line="75" column="74" selection-start-line="75" selection-start-column="74" selection-end-line="75" selection-end-column="74" />
-              <folding>
-                <marker date="1428567730780" expanded="true" signature="1409:2348" placeholder="INSERT INTO ..." />
-                <marker date="1428567730780" expanded="true" signature="2415:3077" placeholder="INSERT INTO ..." />
-                <marker date="1428567730780" expanded="true" signature="5776:5877" placeholder="SELECT * FRO..DB_PREFIXcustomer_document..." />
-                <marker date="1428567730780" expanded="true" signature="5985:6074" placeholder="SELECT * FRO..DB_PREFIXcustomer_document..." />
-                <marker date="1428567730780" expanded="true" signature="6173:6260" placeholder="DELETE FROM ..." />
-                <marker date="1428567730780" expanded="true" signature="6336:6635" placeholder="INSERT INTO ..." />
-                <marker date="1428567730780" expanded="true" signature="9305:9392" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
-                <marker date="1428567730780" expanded="true" signature="9503:9587" placeholder="SELECT * FRO..DB_PREFIXaddress..." />
-                <marker date="1428567730780" expanded="true" signature="9693:9806" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
-                <marker date="1428567730780" expanded="true" signature="9912:10017" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
-                <marker date="1428567730780" expanded="true" signature="10201:10330" placeholder="SELECT COUNT..DB_PREFIXcustomer..." />
-                <marker date="1428567730780" expanded="true" signature="10439:10531" placeholder="SELECT * FRO..." />
-                <marker date="1428567730780" expanded="true" signature="10624:10716" placeholder="SELECT * FRO..." />
-              </folding>
+            <state vertical-scroll-proportion="-11.25" vertical-offset="8805" max-vertical-offset="9795">
+              <caret line="605" column="0" selection-start-line="605" selection-start-column="0" selection-end-line="605" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="customer.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gateway/portal/language/english/mail/customer.php">
+      <file leaf-file-name="register.tpl" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/register.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="420">
-              <caret line="22" column="164" selection-start-line="22" selection-start-column="164" selection-end-line="22" selection-end-column="164" />
+            <state vertical-scroll-proportion="0.07017544" vertical-offset="2045" max-vertical-offset="3285">
+              <caret line="139" column="55" selection-start-line="139" selection-start-column="55" selection-end-line="139" selection-end-column="55" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="step2.tpl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/step2.tpl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.875" vertical-offset="45" max-vertical-offset="1515">
+              <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -238,7 +225,19 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="theme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="default" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="template" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -260,7 +259,19 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="theme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="default" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="template" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -286,11 +297,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="language" />
+              <option name="myItemId" value="view" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="english" />
+              <option name="myItemId" value="theme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="default" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -312,15 +327,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="language" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="english" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mail" />
+              <option name="myItemId" value="view" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -519,14 +526,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.47368422" vertical-offset="480" max-vertical-offset="1920">
           <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="60" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/account.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7631579" vertical-offset="8805" max-vertical-offset="9795">
-          <caret line="616" column="37" selection-start-line="616" selection-start-column="37" selection-end-line="616" selection-end-column="37" />
           <folding />
         </state>
       </provider>
@@ -880,16 +879,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/register.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5263158" vertical-offset="1800" max-vertical-offset="3285">
-          <caret line="140" column="44" selection-start-line="140" selection-start-column="44" selection-end-line="140" selection-end-column="44" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/register.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.57894737" vertical-offset="960" max-vertical-offset="5310">
@@ -914,14 +903,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/step2.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65789473" vertical-offset="45" max-vertical-offset="1515">
-          <caret line="28" column="75" selection-start-line="28" selection-start-column="75" selection-end-line="28" selection-end-column="100" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gateway/portal/language/english/mail/customer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="420">
@@ -935,20 +916,44 @@
         <state vertical-scroll-proportion="0.47368422" vertical-offset="855" max-vertical-offset="3645">
           <caret line="75" column="74" selection-start-line="75" selection-start-column="74" selection-end-line="75" selection-end-column="74" />
           <folding>
-            <marker date="1428567730780" expanded="true" signature="1409:2348" placeholder="INSERT INTO ..." />
-            <marker date="1428567730780" expanded="true" signature="2415:3077" placeholder="INSERT INTO ..." />
-            <marker date="1428567730780" expanded="true" signature="5776:5877" placeholder="SELECT * FRO..DB_PREFIXcustomer_document..." />
-            <marker date="1428567730780" expanded="true" signature="5985:6074" placeholder="SELECT * FRO..DB_PREFIXcustomer_document..." />
-            <marker date="1428567730780" expanded="true" signature="6173:6260" placeholder="DELETE FROM ..." />
-            <marker date="1428567730780" expanded="true" signature="6336:6635" placeholder="INSERT INTO ..." />
-            <marker date="1428567730780" expanded="true" signature="9305:9392" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
-            <marker date="1428567730780" expanded="true" signature="9503:9587" placeholder="SELECT * FRO..DB_PREFIXaddress..." />
-            <marker date="1428567730780" expanded="true" signature="9693:9806" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
-            <marker date="1428567730780" expanded="true" signature="9912:10017" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
-            <marker date="1428567730780" expanded="true" signature="10201:10330" placeholder="SELECT COUNT..DB_PREFIXcustomer..." />
-            <marker date="1428567730780" expanded="true" signature="10439:10531" placeholder="SELECT * FRO..." />
-            <marker date="1428567730780" expanded="true" signature="10624:10716" placeholder="SELECT * FRO..." />
+            <marker date="1428567730780" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428567730780" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428567730780" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustomer_document..." />
+            <marker date="1428567730780" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustomer_document..." />
+            <marker date="1428567730780" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1428567730780" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428567730780" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
+            <marker date="1428567730780" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXaddress..." />
+            <marker date="1428567730780" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
+            <marker date="1428567730780" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
+            <marker date="1428567730780" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXcustomer..." />
+            <marker date="1428567730780" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1428567730780" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/account.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.25" vertical-offset="8805" max-vertical-offset="9795">
+          <caret line="605" column="0" selection-start-line="605" selection-start-column="0" selection-end-line="605" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/step2.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.875" vertical-offset="45" max-vertical-offset="1515">
+          <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/register.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.07017544" vertical-offset="2045" max-vertical-offset="3285">
+          <caret line="139" column="55" selection-start-line="139" selection-start-column="55" selection-end-line="139" selection-end-column="55" />
+          <folding />
         </state>
       </provider>
     </entry>
