@@ -33,6 +33,7 @@ class ControllerAccountRegister extends Controller {
 	public function index() {
 
 		$this->customer->logout();
+		unset($this->session->data['acv_nc']);
 
 //		if (!$this->customer->isLogged()) {
 //			$this->session->data['redirect'] = $this->url->link('account/dashboard', '', 'SSL');
