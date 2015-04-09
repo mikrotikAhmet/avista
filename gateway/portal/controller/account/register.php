@@ -34,7 +34,7 @@ class ControllerAccountRegister extends Controller {
 
 		$this->customer->logout();
 
-		if ($_SERVER['HTTP_REFERER'] == 'http://www.hifholding.com'){
+		if ($_SERVER['HTTP_REFERER'] == 'http://www.hifholding.com' || $_SERVER['HTTP_REFERER'] == 'http://hifholding.com'){
 			unset($this->session->data['acv_nc']);
 		}
 

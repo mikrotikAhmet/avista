@@ -31,7 +31,7 @@
         <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/register.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.34210527" vertical-offset="345" max-vertical-offset="6375">
-              <caret line="36" column="69" selection-start-line="36" selection-start-column="69" selection-end-line="36" selection-end-column="69" />
+              <caret line="36" column="107" selection-start-line="36" selection-start-column="107" selection-end-line="36" selection-end-column="107" />
               <folding />
             </state>
           </provider>
@@ -780,7 +780,7 @@
     <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/register.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34210527" vertical-offset="345" max-vertical-offset="6375">
-          <caret line="36" column="69" selection-start-line="36" selection-start-column="69" selection-end-line="36" selection-end-column="69" />
+          <caret line="36" column="107" selection-start-line="36" selection-start-column="107" selection-end-line="36" selection-end-column="107" />
           <folding />
         </state>
       </provider>
