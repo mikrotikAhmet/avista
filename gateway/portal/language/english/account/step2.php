@@ -22,14 +22,18 @@ $_['heading_title']        = '2. Account Credentials';
 // Text
 
 // Entry
-$_['entry_email']          = 'E-Mail';
+$_['entry_email']          = 'Contact E-Mail';
 $_['entry_newsletter']     = 'Please let me know future exclusive offers promotions from %s. You can opt out any time.';
 $_['entry_telephone']          = 'Mobile GSM Number';
 $_['entry_password']       = 'Password';
 $_['entry_confirm']        = 'Password Confirm';
 $_['text_agree']           = 'I have read and agree to the <a href="%s" class="agree"><b>%s</b></a>';
+$_['entry_firstname']      = 'Contact Name';
+$_['entry_lastname']       = 'Contact Last Name';
 
 // Error
+$_['error_firstname']      = 'First Name must be between 1 and 32 characters!';
+$_['error_lastname']       = 'Last Name must be between 1 and 32 characters!';
 $_['error_exists']         = 'Warning: E-Mail Address is already registered!';
 $_['error_email']          = 'E-Mail Address does not appear to be valid!';
 $_['error_password']       = 'Password must be between 4 and 20 characters!';

@@ -711,10 +711,10 @@ class ControllerSaleCustomer extends Controller {
 			$data['error_email'] = '';
 		}
 
-		if (isset($this->error['telephone'])) {
-			$data['error_telephone'] = $this->error['telephone'];
+		if (isset($this->error['mobile'])) {
+			$data['error_mobile'] = $this->error['mobile'];
 		} else {
-			$data['error_telephone'] = '';
+			$data['error_mobile'] = '';
 		}
 
 		if (isset($this->error['password'])) {
@@ -831,6 +831,14 @@ class ControllerSaleCustomer extends Controller {
 			$data['email'] = $customer_info['email'];
 		} else {
 			$data['email'] = '';
+		}
+
+		if (isset($this->request->post['mobile'])) {
+			$data['mobile'] = $this->request->post['mobile'];
+		} elseif (!empty($customer_info)) {
+			$data['mobile'] = $customer_info['mobile'];
+		} else {
+			$data['mobile'] = '';
 		}
 
 		if (isset($this->request->post['telephone'])) {
@@ -953,9 +961,13 @@ class ControllerSaleCustomer extends Controller {
 			}
 		}
 
-		if ((utf8_strlen($this->request->post['telephone']) < 3) || (utf8_strlen($this->request->post['telephone']) > 32)) {
-			$this->error['telephone'] = $this->language->get('error_telephone');
+		if ((utf8_strlen($this->request->post['mobile']) < 3) || (utf8_strlen($this->request->post['mobile']) > 32)) {
+			$this->error['mobile'] = $this->language->get('error_mobile');
 		}
+
+//		if ((utf8_strlen($this->request->post['telephone']) < 3) || (utf8_strlen($this->request->post['telephone']) > 32)) {
+//			$this->error['telephone'] = $this->language->get('error_telephone');
+//		}
 
 
 		if ($this->request->post['password'] || (!isset($this->request->get['customer_id']))) {
@@ -982,9 +994,9 @@ class ControllerSaleCustomer extends Controller {
 					$this->error['address'][$key]['address_1'] = $this->language->get('error_address_1');
 				}
 
-				if ((utf8_strlen($value['city']) < 2) || (utf8_strlen($value['city']) > 128)) {
-					$this->error['address'][$key]['city'] = $this->language->get('error_city');
-				}
+//				if ((utf8_strlen($value['city']) < 2) || (utf8_strlen($value['city']) > 128)) {
+//					$this->error['address'][$key]['city'] = $this->language->get('error_city');
+//				}
 
 				$this->load->model('localisation/country');
 
@@ -998,9 +1010,9 @@ class ControllerSaleCustomer extends Controller {
 					$this->error['address'][$key]['country'] = $this->language->get('error_country');
 				}
 
-				if (!isset($value['zone_id']) || $value['zone_id'] == '') {
-					$this->error['address'][$key]['zone'] = $this->language->get('error_zone');
-				}
+//				if (!isset($value['zone_id']) || $value['zone_id'] == '') {
+//					$this->error['address'][$key]['zone'] = $this->language->get('error_zone');
+//				}
 
 			}
 		}

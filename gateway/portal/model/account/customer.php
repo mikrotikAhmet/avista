@@ -48,8 +48,7 @@ class ModelAccountCustomer extends Model {
 
 		$customer_group_info = $this->model_account_customer_group->getCustomerGroup($customer_group_id);
 
-
-		$this->db->query("INSERT INTO " . DB_PREFIX . "customer SET customer_group_id = '" . (int)$customer_group_id . "', application_id = '" . (int)$this->config->get('config_application_id') . "', firstname = '" . $this->db->escape($data['firstname']) . "', lastname = '" . $this->db->escape($data['lastname']) . "', telephone = '" . $this->db->escape($data['telephone']) . "', email = '" . $this->db->escape($data['email']) . "', salt = '" . $this->db->escape($salt = substr(md5(uniqid(rand(), true)), 0, 9)) . "', password = '" . $this->db->escape(sha1($salt . sha1($salt . sha1($data['password'])))) . "', newsletter = '" . (isset($data['newsletter']) ? (int)$data['newsletter'] : 0) . "', ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "', unique_id = '".$this->db->escape($unique_id)."' , language_id = '".(int) $data['language_id']."', currency_code = '".$this->db->escape($data['currency_code'])."' ,status = '1',  date_added = NOW()");
+		$this->db->query("INSERT INTO " . DB_PREFIX . "customer SET customer_group_id = '" . (int)$customer_group_id . "', application_id = '" . (int)$this->config->get('config_application_id') . "', firstname = '" . $this->db->escape($data['firstname']) . "', lastname = '" . $this->db->escape($data['lastname']) . "', telephone = '" . $this->db->escape($data['telephone']) . "', mobile = '" . $this->db->escape($data['mobile']) . "',email = '" . $this->db->escape($data['email']) . "', salt = '" . $this->db->escape($salt = substr(md5(uniqid(rand(), true)), 0, 9)) . "', password = '" . $this->db->escape(sha1($salt . sha1($salt . sha1($data['password'])))) . "', newsletter = '" . (isset($data['newsletter']) ? (int)$data['newsletter'] : 0) . "', ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "', unique_id = '".$this->db->escape($unique_id)."' , language_id = '".(int) $data['language_id']."', currency_code = '".$this->db->escape($data['currency_code'])."' ,status = '1',  date_added = NOW()");
 
 		$customer_id = $this->db->getLastId();
 
@@ -59,11 +58,31 @@ class ModelAccountCustomer extends Model {
 
 		$this->db->query("UPDATE " . DB_PREFIX . "customer SET address_id = '" . (int)$address_id . "' WHERE customer_id = '" . (int)$customer_id . "'");
 
+
+		$this->load->helper('uuid');
+
+		$uuid = new UUID();
+
+		$unique_id = date('si') . $uuid->uniqueId($format = 'nnnn', $length = '20');
+
+		$this->db->query("INSERT INTO ".DB_PREFIX."certificate SET certificate_id = '".(int) $unique_id."' ,legal_name = '".$this->db->escape($data['company'])."',
+		registration_number = '".$this->db->escape($data['company_registration'])."',
+		tax_number = '".$this->db->escape($data['tax_number'])."',
+		country_id = '".(int)$data['country_id']."',
+		address_1 = '".$this->db->escape($data['address_1'])."',
+		address_2 = '".$this->db->escape($data['address_2'])."',
+		postcode = '".$this->db->escape($data['postcode'])."',
+		website = '".$this->db->escape($data['web'])."',
+		date_added = NOW()");
+
+		$this->db->query("INSERT INTO " . DB_PREFIX . "certificate_contact SET certificate_id = '" . (int)$unique_id . "', firstname = '" . $this->db->escape($data['firstname']) . "', lastname = '" . $this->db->escape($data['lastname']) . "', email = '" . $this->db->escape($data['email']) . "', address_1 = '" . $this->db->escape($data['address_1']) . "', address_2 = '" . $this->db->escape($data['address_2']) . "', city = '" . $this->db->escape($data['city']) . "', postcode = '" . $this->db->escape($data['postcode']) . "', country_id = '" . (int)$data['country_id'] . "', zone_id = '" . (int)$data['zone_id'] . "', telephone = '" . $this->db->escape($data['telephone']) . "', passport = '" . $this->db->escape($data['passport']) . "', ssn = '" . $this->db->escape($data['ssn']) . "', dob = '" . $this->db->escape($data['dob']) . "'");
+
 		$this->load->language('mail/customer');
 
 		$subject = sprintf($this->language->get('text_subject'), $this->config->get('config_name'));
 
-		$message = sprintf($this->language->get('text_welcome'), $this->config->get('config_name')) . "\n\n";
+		$message = $this->language->get('text_greeting')."\n\n";
+		$message .= sprintf($this->language->get('text_welcome'), $this->config->get('config_name')) . "\n\n";
 
 		if (!$customer_group_info['approval']) {
 			$message .= $this->language->get('text_login') . "\n";

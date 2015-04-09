@@ -2,10 +2,10 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 col-md-offset-2">
-            <img src="<?php echo $logo?>" style="width: 345px;"/>
+            <img src="<?php echo $logo?>" style="width: 555px;"/>
             <div class="login-panel panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title"><i class="fa fa-certificate"></i> <?php echo $heading_title; ?></h3>
+                    <h3 class="panel-title"><?php echo $heading_title; ?></h3>
                 </div>
                 <div class="panel-body">
                     <?php if ($error_warning) { ?>
@@ -15,30 +15,45 @@
                     <?php } ?>
                     <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" class="form">
                         <fieldset>
-                            <legend>Account details</legend>
-                            <div class="form-group required" style="display: <?php echo (count($customer_groups) > 1 ? 'block' : 'none'); ?>;">
-                                <label class="control-label"><?php echo $entry_customer_group; ?></label>
+                            <legend>Register details</legend>
+                            <div class="form-group required">
+                                <label class="control-label" for="input-company">Company name</label>
                                 <div class="">
-                                    <?php foreach ($customer_groups as $customer_group) { ?>
-                                    <?php if ($customer_group['customer_group_id'] == $customer_group_id) { ?>
-                                    <div class="radio-inline">
-                                        <label>
-                                            <input type="radio" name="customer_group_id" value="<?php echo $customer_group['customer_group_id']; ?>" checked="checked" />
-                                            <?php echo $customer_group['name']; ?></label>
-                                    </div>
-                                    <?php } else { ?>
-                                    <div class="radio-inline">
-                                        <label>
-                                            <input type="radio" name="customer_group_id" value="<?php echo $customer_group['customer_group_id']; ?>" />
-                                            <?php echo $customer_group['name']; ?></label>
-                                    </div>
-                                    <?php } ?>
+                                    <input type="text" name="company" value="<?php echo $company; ?>" placeholder="Company name" id="input-company" class="form-control" />
+                                    <?php if ($error_company) { ?>
+                                    <div class="text-danger"><?php echo $error_company; ?></div>
                                     <?php } ?>
                                 </div>
                             </div>
-                            <hr/>
-                            <div id="business" style="display: none">
-
+                            <div class="form-group required">
+                                <label class="control-label" for="input-company-registration">Company registration number</label>
+                                <div class="">
+                                    <input type="text" name="company_registration" value="<?php echo $company_registration; ?>" placeholder="Company registration number" id="input-registration" class="form-control" />
+                                    <?php if ($error_company_registration) { ?>
+                                    <div class="text-danger"><?php echo $error_company_registration; ?></div>
+                                    <?php } ?>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="input-web">Company Web Site Url <small>(optional)</small></label>
+                                <div class="">
+                                    <input type="text" name="web" value="<?php echo $web; ?>" placeholder="Company Web Site Url" id="input-web" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group required">
+                                <label class="control-label" for="input-address-1"><?php echo $entry_address_1; ?></label>
+                                <div class="">
+                                    <input type="text" name="address_1" value="<?php echo $address_1; ?>" placeholder="<?php echo $entry_address_1; ?>" id="input-address-1" class="form-control" />
+                                    <?php if ($error_address_1) { ?>
+                                    <div class="text-danger"><?php echo $error_address_1; ?></div>
+                                    <?php } ?>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="input-address-2"><?php echo $entry_address_2; ?></label>
+                                <div class="">
+                                    <input type="text" name="address_2" value="<?php echo $address_2; ?>" placeholder="<?php echo $entry_address_2; ?>" id="input-address-2" class="form-control" />
+                                </div>
                             </div>
                             <div class="form-group required">
                                 <label class="control-label" for="input-country"><?php echo $entry_country; ?></label>
@@ -59,93 +74,6 @@
                                 </div>
                             </div>
                             <div class="form-group required">
-                                <label class="control-label" for="input-currency"><?php echo $entry_currency; ?></label>
-                                <div class="">
-                                    <select name="currency_code" id="input-currency" class="form-control">
-                                        <?php foreach ($currencies as $currency) { ?>
-                                        <?php if ($currency['currency_id'] == $currency_id) { ?>
-                                        <option value="<?php echo $currency['code']; ?>" selected="selected"><?php echo $currency['code']; ?></option>
-                                        <?php } else { ?>
-                                        <option value="<?php echo $currency['code']; ?>"><?php echo $currency['code']; ?></option>
-                                        <?php } ?>
-                                        <?php } ?>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group required">
-                                <label class="control-label" for="input-language"><?php echo $entry_language; ?></label>
-                                <div class="">
-                                    <select name="language_id" id="input-language" class="form-control">
-                                        <option value=""><?php echo $text_select; ?></option>
-                                        <?php foreach ($languages as $language) { ?>
-                                        <?php if ($language['language_id'] == $language_id) { ?>
-                                        <option value="<?php echo $language['language_id']; ?>" selected="selected"><?php echo $language['name']; ?></option>
-                                        <?php } else { ?>
-                                        <option value="<?php echo $language['language_id']; ?>"><?php echo $language['name']; ?></option>
-                                        <?php } ?>
-                                        <?php } ?>
-                                    </select>
-                                    <?php if ($error_language) { ?>
-                                    <div class="text-danger"><?php echo $error_language; ?></div>
-                                    <?php } ?>
-                                </div>
-                            </div>
-                        </fieldset>
-                        <fieldset>
-                            <legend><?php echo $text_your_details; ?></legend>
-                            <div class="form-group required">
-                                <label class="control-label" for="input-firstname"><?php echo $entry_firstname; ?></label>
-                                <div class="">
-                                    <input type="text" name="firstname" value="<?php echo $firstname; ?>" placeholder="<?php echo $entry_firstname; ?>" id="input-firstname" class="form-control" />
-                                    <?php if ($error_firstname) { ?>
-                                    <div class="text-danger"><?php echo $error_firstname; ?></div>
-                                    <?php } ?>
-                                </div>
-                            </div>
-                            <div class="form-group required">
-                                <label class="control-label" for="input-lastname"><?php echo $entry_lastname; ?></label>
-                                <div class="">
-                                    <input type="text" name="lastname" value="<?php echo $lastname; ?>" placeholder="<?php echo $entry_lastname; ?>" id="input-lastname" class="form-control" />
-                                    <?php if ($error_lastname) { ?>
-                                    <div class="text-danger"><?php echo $error_lastname; ?></div>
-                                    <?php } ?>
-                                </div>
-                            </div>
-                            <div class="form-group required">
-                                <label class="control-label" for="input-address-1"><?php echo $entry_address_1; ?></label>
-                                <div class="">
-                                    <input type="text" name="address_1" value="<?php echo $address_1; ?>" placeholder="<?php echo $entry_address_1; ?>" id="input-address-1" class="form-control" />
-                                    <?php if ($error_address_1) { ?>
-                                    <div class="text-danger"><?php echo $error_address_1; ?></div>
-                                    <?php } ?>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label" for="input-address-2"><?php echo $entry_address_2; ?></label>
-                                <div class="">
-                                    <input type="text" name="address_2" value="<?php echo $address_2; ?>" placeholder="<?php echo $entry_address_2; ?>" id="input-address-2" class="form-control" />
-                                </div>
-                            </div>
-                            <div class="form-group required">
-                                <label class="control-label" for="input-zone"><?php echo $entry_zone; ?></label>
-                                <div class="">
-                                    <select name="zone_id" id="input-zone" class="form-control">
-                                    </select>
-                                    <?php if ($error_zone) { ?>
-                                    <div class="text-danger"><?php echo $error_zone; ?></div>
-                                    <?php } ?>
-                                </div>
-                            </div>
-                            <div class="form-group required">
-                                <label class="control-label" for="input-city"><?php echo $entry_city; ?></label>
-                                <div class="">
-                                    <input type="text" name="city" value="<?php echo $city; ?>" placeholder="<?php echo $entry_city; ?>" id="input-city" class="form-control" />
-                                    <?php if ($error_city) { ?>
-                                    <div class="text-danger"><?php echo $error_city; ?></div>
-                                    <?php } ?>
-                                </div>
-                            </div>
-                            <div class="form-group required">
                                 <label class="control-label" for="input-postcode"><?php echo $entry_postcode; ?></label>
                                 <div class="">
                                     <input type="text" name="postcode" value="<?php echo $postcode; ?>" placeholder="<?php echo $entry_postcode; ?>" id="input-postcode" class="form-control" />
@@ -156,9 +84,9 @@
                             </div>
                         </fieldset>
                         <div class="buttons clearfix">
-                            <div class="pull-left"><a href="<?php echo $back; ?>" class="btn btn-default"><?php echo $button_back; ?></a></div>
+                            <div class="pull-left"><a href="<?php echo $back; ?>" class="btn btn-default"><i class="fa fa-arrow-left"></i> <?php echo $button_back; ?></a></div>
                             <div class="pull-right">
-                                <input type="submit" value="<?php echo $button_continue_2; ?>" class="btn btn-primary" />
+                                <button type="submit" class="btn btn-primary" ><?php echo $button_continue_2; ?> <i class="fa fa-arrow-right"></i></button>
                             </div>
                         </div>
                     </form>

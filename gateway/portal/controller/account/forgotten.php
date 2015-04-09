@@ -63,8 +63,10 @@ class ControllerAccountForgotten extends Controller {
 
 			$subject = sprintf($this->language->get('text_subject'), $this->config->get('config_name'));
 
-			$message  = sprintf($this->language->get('text_greeting'), $this->config->get('config_name')) . "\n\n";
+			$message = $this->config->get('config_name')."\n\n";
+			$message .= sprintf($this->language->get('text_greeting'), $this->config->get('config_name')) . "\n\n";
 			$message .= $this->language->get('text_password') . "\n\n";
+			$message .='Please, after you login proceed with the change of the temporary password with a new one.';
 			$message .= $password;
 
 			$mail = new Mail($this->config->get('config_mail'));

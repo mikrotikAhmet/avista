@@ -158,6 +158,8 @@ class ControllerAccountLogin extends Controller {
 		$data['button_continue'] = $this->language->get('button_continue');
 		$data['button_login'] = $this->language->get('button_login');
 
+		$data['main_web'] = HIF;
+
 		if (isset($this->error['warning'])) {
 			$data['error_warning'] = $this->error['warning'];
 		} else {

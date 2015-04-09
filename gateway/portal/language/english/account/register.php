@@ -17,7 +17,7 @@
  * @author root
  */
 // Heading
-$_['heading_title']        = '1. Register Account';
+$_['heading_title']        = 'Register Account';
 
 // Text
 $_['text_account']         = 'Account';
@@ -37,6 +37,8 @@ $_['entry_currency']        = 'Currency';
 $_['entry_language']        = 'Language';
 
 // Error
+$_['error_company']      = 'Company Name must be between 1 and 32 characters!';
+$_['error_company_registration']      = 'Company Register Number must be between 1 and 32 characters!';
 $_['error_firstname']      = 'First Name must be between 1 and 32 characters!';
 $_['error_lastname']       = 'Last Name must be between 1 and 32 characters!';
 $_['error_address_1']      = 'Address 1 must be between 3 and 128 characters!';

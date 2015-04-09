@@ -1,7 +1,7 @@
 <?php
 if (!defined('DIR_APPLICATION'))
 	exit('No direct script access allowed');
-
+	
 /**
  * Created by PhpStorm.
  * User: root
@@ -107,29 +107,17 @@ class ControllerAccountRegister extends Controller {
 			$data['error_warning'] = '';
 		}
 
-		if (isset($this->error['company_registration'])) {
-			$data['error_company_registration'] = $this->error['company_registration'];
+		if (isset($this->error['firstname'])) {
+			$data['error_firstname'] = $this->error['firstname'];
 		} else {
-			$data['error_company_registration'] = '';
+			$data['error_firstname'] = '';
 		}
 
-		if (isset($this->error['company'])) {
-			$data['error_company'] = $this->error['company'];
+		if (isset($this->error['lastname'])) {
+			$data['error_lastname'] = $this->error['lastname'];
 		} else {
-			$data['error_company'] = '';
+			$data['error_lastname'] = '';
 		}
-
-//		if (isset($this->error['firstname'])) {
-//			$data['error_firstname'] = $this->error['firstname'];
-//		} else {
-//			$data['error_firstname'] = '';
-//		}
-//
-//		if (isset($this->error['lastname'])) {
-//			$data['error_lastname'] = $this->error['lastname'];
-//		} else {
-//			$data['error_lastname'] = '';
-//		}
 
 		if (isset($this->error['address_1'])) {
 			$data['error_address_1'] = $this->error['address_1'];
@@ -137,11 +125,11 @@ class ControllerAccountRegister extends Controller {
 			$data['error_address_1'] = '';
 		}
 
-//		if (isset($this->error['city'])) {
-//			$data['error_city'] = $this->error['city'];
-//		} else {
-//			$data['error_city'] = '';
-//		}
+		if (isset($this->error['city'])) {
+			$data['error_city'] = $this->error['city'];
+		} else {
+			$data['error_city'] = '';
+		}
 
 		if (isset($this->error['postcode'])) {
 			$data['error_postcode'] = $this->error['postcode'];
@@ -155,17 +143,17 @@ class ControllerAccountRegister extends Controller {
 			$data['error_country'] = '';
 		}
 
-//		if (isset($this->error['zone'])) {
-//			$data['error_zone'] = $this->error['zone'];
-//		} else {
-//			$data['error_zone'] = '';
-//		}
+		if (isset($this->error['zone'])) {
+			$data['error_zone'] = $this->error['zone'];
+		} else {
+			$data['error_zone'] = '';
+		}
 
-//		if (isset($this->error['language'])) {
-//			$data['error_language'] = $this->error['language'];
-//		} else {
-//			$data['error_language'] = '';
-//		}
+		if (isset($this->error['language'])) {
+			$data['error_language'] = $this->error['language'];
+		} else {
+			$data['error_language'] = '';
+		}
 
 		$data['action'] = $this->url->link('account/register', '', 'SSL');
 
@@ -185,58 +173,33 @@ class ControllerAccountRegister extends Controller {
 			}
 		}
 
-//		if (isset($this->request->post['customer_group_id'])) {
-//			$data['customer_group_id'] = $this->request->post['customer_group_id'];
-//		} elseif (isset($this->session->data['acv_nc'])) {
-//			$data['customer_group_id'] = $this->session->data['acv_nc']['customer_group_id'];
-//		} else {
-//			$data['customer_group_id'] = $this->config->get('config_customer_group_id');
-//		}
-
-		if (isset($this->request->post['company'])) {
-			$data['company'] = $this->request->post['company'];
+		if (isset($this->request->post['customer_group_id'])) {
+			$data['customer_group_id'] = $this->request->post['customer_group_id'];
 		} elseif (isset($this->session->data['acv_nc'])) {
-			$data['company'] = $this->session->data['acv_nc']['company'];
+			$data['customer_group_id'] = $this->session->data['acv_nc']['customer_group_id'];
 		} else {
-			$data['company'] = '';
+			$data['customer_group_id'] = $this->config->get('config_customer_group_id');
 		}
 
-		if (isset($this->request->post['company_registration'])) {
-			$data['company_registration'] = $this->request->post['company_registration'];
+		if (isset($this->request->post['firstname'])) {
+			$data['firstname'] = $this->request->post['firstname'];
 		} elseif (isset($this->session->data['acv_nc'])) {
-			$data['company_registration'] = $this->session->data['acv_nc']['company_registration'];
+			$data['firstname'] = $this->session->data['acv_nc']['firstname'];
 		} else {
-			$data['company_registration'] = '';
+			$data['firstname'] = '';
 		}
 
-//		if (isset($this->request->post['firstname'])) {
-//			$data['firstname'] = $this->request->post['firstname'];
-//		} elseif (isset($this->session->data['acv_nc'])) {
-//			$data['firstname'] = $this->session->data['acv_nc']['firstname'];
-//		} else {
-//			$data['firstname'] = '';
-//		}
-//
-//		if (isset($this->request->post['lastname'])) {
-//			$data['lastname'] = $this->request->post['lastname'];
-//		} elseif (isset($this->session->data['acv_nc'])) {
-//			$data['lastname'] = $this->session->data['acv_nc']['lastname'];
-//		} else {
-//			$data['lastname'] = '';
-//		}
-
-		if (isset($this->request->post['web'])) {
-			$data['web'] = $this->request->post['web'];
-		} elseif (isset($this->session->data['acv_nc']['web'])) {
-			$data['web'] = $this->session->data['acv_nc']['web'];
+		if (isset($this->request->post['lastname'])) {
+			$data['lastname'] = $this->request->post['lastname'];
+		} elseif (isset($this->session->data['acv_nc'])) {
+			$data['lastname'] = $this->session->data['acv_nc']['lastname'];
 		} else {
-			$data['web'] = '';
+			$data['lastname'] = '';
 		}
-
 
 		if (isset($this->request->post['address_1'])) {
 			$data['address_1'] = $this->request->post['address_1'];
-		} elseif (isset($this->session->data['acv_nc']['address_1'])) {
+		} elseif (isset($this->session->data['acv_nc'])) {
 			$data['address_1'] = $this->session->data['acv_nc']['address_1'];
 		} else {
 			$data['address_1'] = '';
@@ -244,7 +207,7 @@ class ControllerAccountRegister extends Controller {
 
 		if (isset($this->request->post['address_2'])) {
 			$data['address_2'] = $this->request->post['address_2'];
-		} elseif (isset($this->session->data['acv_nc']['address_2'])) {
+		} elseif (isset($this->session->data['acv_nc'])) {
 			$data['address_2'] = $this->session->data['acv_nc']['address_2'];
 		} else {
 			$data['address_2'] = '';
@@ -254,39 +217,39 @@ class ControllerAccountRegister extends Controller {
 			$data['postcode'] = $this->request->post['postcode'];
 		} elseif (isset($this->session->data['shipping_address']['postcode'])) {
 			$data['postcode'] = $this->session->data['shipping_address']['postcode'];
-		} elseif (isset($this->session->data['acv_nc']['postcode'])) {
+		} elseif (isset($this->session->data['acv_nc'])) {
 			$data['postcode'] = $this->session->data['acv_nc']['postcode'];
 		} else {
 			$data['postcode'] = '';
 		}
 
-//		if (isset($this->request->post['city'])) {
-//			$data['city'] = $this->request->post['city'];
-//		} elseif (isset($this->session->data['acv_nc'])) {
-//			$data['city'] = $this->session->data['acv_nc']['city'];
-//		} else {
-//			$data['city'] = '';
-//		}
+		if (isset($this->request->post['city'])) {
+			$data['city'] = $this->request->post['city'];
+		} elseif (isset($this->session->data['acv_nc'])) {
+			$data['city'] = $this->session->data['acv_nc']['city'];
+		} else {
+			$data['city'] = '';
+		}
 
 		if (isset($this->request->post['country_id'])) {
 			$data['country_id'] = $this->request->post['country_id'];
 		} elseif (isset($this->session->data['shipping_address']['country_id'])) {
 			$data['country_id'] = $this->session->data['shipping_address']['country_id'];
-		} elseif (isset($this->session->data['acv_nc']['country_id'])) {
+		} elseif (isset($this->session->data['acv_nc'])) {
 			$data['country_id'] = $this->session->data['acv_nc']['country_id'];
 		} else {
 			$data['country_id'] = $this->config->get('config_country_id');
 		}
 
-//		if (isset($this->request->post['zone_id'])) {
-//			$data['zone_id'] = $this->request->post['zone_id'];
-//		} elseif (isset($this->session->data['shipping_address']['zone_id'])) {
-//			$data['zone_id'] = $this->session->data['shipping_address']['zone_id'];
-//		} elseif (isset($this->session->data['acv_nc'])) {
-//			$data['zone_id'] = $this->session->data['acv_nc']['zone_id'];
-//		} else {
-//			$data['zone_id'] = '';
-//		}
+		if (isset($this->request->post['zone_id'])) {
+			$data['zone_id'] = $this->request->post['zone_id'];
+		} elseif (isset($this->session->data['shipping_address']['zone_id'])) {
+			$data['zone_id'] = $this->session->data['shipping_address']['zone_id'];
+		} elseif (isset($this->session->data['acv_nc'])) {
+			$data['zone_id'] = $this->session->data['acv_nc']['zone_id'];
+		} else {
+			$data['zone_id'] = '';
+		}
 
 		$this->load->model('localisation/country');
 
@@ -328,30 +291,21 @@ class ControllerAccountRegister extends Controller {
 	}
 
 	public function validate() {
-
-		if ((utf8_strlen(trim($this->request->post['company'])) < 2) || (utf8_strlen(trim($this->request->post['company'])) > 32)) {
-			$this->error['company'] = $this->language->get('error_company');
+		if ((utf8_strlen(trim($this->request->post['firstname'])) < 1) || (utf8_strlen(trim($this->request->post['firstname'])) > 32)) {
+			$this->error['firstname'] = $this->language->get('error_firstname');
 		}
 
-		if ((utf8_strlen(trim($this->request->post['company_registration'])) < 2) || (utf8_strlen(trim($this->request->post['company_registration'])) > 32)) {
-			$this->error['company_registration'] = $this->language->get('error_company_registration');
+		if ((utf8_strlen(trim($this->request->post['lastname'])) < 1) || (utf8_strlen(trim($this->request->post['lastname'])) > 32)) {
+			$this->error['lastname'] = $this->language->get('error_lastname');
 		}
-
-//		if ((utf8_strlen(trim($this->request->post['firstname'])) < 1) || (utf8_strlen(trim($this->request->post['firstname'])) > 32)) {
-//			$this->error['firstname'] = $this->language->get('error_firstname');
-//		}
-//
-//		if ((utf8_strlen(trim($this->request->post['lastname'])) < 1) || (utf8_strlen(trim($this->request->post['lastname'])) > 32)) {
-//			$this->error['lastname'] = $this->language->get('error_lastname');
-//		}
 
 		if ((utf8_strlen(trim($this->request->post['address_1'])) < 3) || (utf8_strlen(trim($this->request->post['address_1'])) > 128)) {
 			$this->error['address_1'] = $this->language->get('error_address_1');
 		}
 
-//		if ((utf8_strlen(trim($this->request->post['city'])) < 2) || (utf8_strlen(trim($this->request->post['city'])) > 128)) {
-//			$this->error['city'] = $this->language->get('error_city');
-//		}
+		if ((utf8_strlen(trim($this->request->post['city'])) < 2) || (utf8_strlen(trim($this->request->post['city'])) > 128)) {
+			$this->error['city'] = $this->language->get('error_city');
+		}
 
 		$this->load->model('localisation/country');
 
@@ -365,16 +319,16 @@ class ControllerAccountRegister extends Controller {
 			$this->error['country'] = $this->language->get('error_country');
 		}
 
-//		if (!isset($this->request->post['zone_id']) || $this->request->post['zone_id'] == '') {
-//			$this->error['zone'] = $this->language->get('error_zone');
-//		}
+		if (!isset($this->request->post['zone_id']) || $this->request->post['zone_id'] == '') {
+			$this->error['zone'] = $this->language->get('error_zone');
+		}
 
 		// Customer Group
-//		if (isset($this->request->post['customer_group_id']) && is_array($this->config->get('config_customer_group_display')) && in_array($this->request->post['customer_group_id'], $this->config->get('config_customer_group_display'))) {
-//			$customer_group_id = $this->request->post['customer_group_id'];
-//		} else {
-//			$customer_group_id = $this->config->get('config_customer_group_id');
-//		}
+		if (isset($this->request->post['customer_group_id']) && is_array($this->config->get('config_customer_group_display')) && in_array($this->request->post['customer_group_id'], $this->config->get('config_customer_group_display'))) {
+			$customer_group_id = $this->request->post['customer_group_id'];
+		} else {
+			$customer_group_id = $this->config->get('config_customer_group_id');
+		}
 
 		return !$this->error;
 	}
@@ -404,4 +358,4 @@ class ControllerAccountRegister extends Controller {
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
 	}
-}
+} 

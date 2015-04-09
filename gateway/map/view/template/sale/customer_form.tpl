@@ -103,14 +103,20 @@
                         </div>
                     </div>
                     <div class="form-group required">
-                        <label class="col-sm-2 control-label" for="input-telephone"><?php echo $entry_telephone; ?></label>
+                        <label class="col-sm-2 control-label" for="input-m">Mobile GSM Number</label>
                         <div class="col-sm-10">
-                            <input type="text" name="telephone" value="<?php echo $telephone; ?>" placeholder="<?php echo $entry_telephone; ?>" id="input-telephone" class="form-control" />
-                            <?php if ($error_telephone) { ?>
-                            <div class="text-danger"><?php echo $error_telephone; ?></div>
+                            <input type="text" name="mobile" value="<?php echo $mobile; ?>" placeholder="<?php echo $entry_mobile; ?>" id="input-mobile" class="form-control" />
+                            <?php if ($error_mobile) { ?>
+                            <div class="text-danger"><?php echo $error_mobile; ?></div>
                             <?php  } ?>
                         </div>
                     </div>
+                        <div class="form-group required">
+                            <label class="col-sm-2 control-label" for="input-telephone"><?php echo $entry_telephone; ?></label>
+                            <div class="col-sm-10">
+                                <input type="text" name="telephone" value="<?php echo $telephone; ?>" placeholder="<?php echo $entry_telephone; ?>" id="input-telephone" class="form-control" />
+                            </div>
+                        </div>
                     <div class="form-group">
                         <label class="col-sm-2 control-label" for="input-fax"><?php echo $entry_fax; ?></label>
                         <div class="col-sm-10">

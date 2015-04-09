@@ -2,10 +2,10 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 col-md-offset-2">
-            <img src="<?php echo $logo?>" style="width: 345px;"/>
+            <img src="<?php echo $logo?>" style="width: 555px;"/>
             <div class="login-panel panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title"><i class="fa fa-certificate"></i> <?php echo $heading_title; ?></h3>
+                    <h3 class="panel-title"><?php echo $heading_title; ?></h3>
                 </div>
                 <div class="panel-body">
                     <?php if ($error_warning) { ?>
@@ -14,6 +14,24 @@
                     </div>
                     <?php } ?>
                     <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" class="form">
+                        <div class="form-group required">
+                            <label class="control-label" for="input-firstname"><?php echo $entry_firstname; ?></label>
+                            <div class="">
+                                <input type="text" name="firstname" value="<?php echo $firstname; ?>" placeholder="<?php echo $entry_firstname; ?>" id="input-firstname" class="form-control" />
+                                <?php if ($error_firstname) { ?>
+                                <div class="text-danger"><?php echo $error_firstname; ?></div>
+                                <?php } ?>
+                            </div>
+                        </div>
+                        <div class="form-group required">
+                            <label class="control-label" for="input-lastname"><?php echo $entry_lastname; ?></label>
+                            <div class="">
+                                <input type="text" name="lastname" value="<?php echo $lastname; ?>" placeholder="<?php echo $entry_lastname; ?>" id="input-lastname" class="form-control" />
+                                <?php if ($error_lastname) { ?>
+                                <div class="text-danger"><?php echo $error_lastname; ?></div>
+                                <?php } ?>
+                            </div>
+                        </div>
                         <div class="form-group required">
                             <label class="control-label" for="input-email"><?php echo $entry_email; ?></label>
                             <div class="">
@@ -24,9 +42,18 @@
                             </div>
                         </div>
                         <div class="form-group required">
-                            <label class="control-label" for="input-telephone"><?php echo $entry_telephone; ?><small>Ex:381xxxxxxxxx.</small></label>
+                            <label class="control-label" for="input-mobile">Mobile Number<small>Ex:381xxxxxxxxx.</small></label>
                             <div class="">
-                                <input type="text" name="telephone" value="<?php echo $telephone; ?>" placeholder="<?php echo $entry_telephone; ?>" id="input-telephone" class="form-control" />
+                                <input type="text" name="mobile" value="<?php echo $mobile; ?>" placeholder="Mobile Number" id="input-mobile" class="form-control" />
+                                <?php if ($error_mobile) { ?>
+                                <div class="text-danger"><?php echo $error_mobile; ?></div>
+                                <?php } ?>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="input-telephone">Telephone Number<small>Ex:381xxxxxxxxx.</small></label>
+                            <div class="">
+                                <input type="text" name="telephone" value="<?php echo $telephone; ?>" placeholder="Alternative telephone" id="input-telephone" class="form-control" />
                                 <?php if ($error_telephone) { ?>
                                 <div class="text-danger"><?php echo $error_telephone; ?></div>
                                 <?php } ?>

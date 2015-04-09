@@ -37,7 +37,7 @@ CREATE TABLE `engine4_address` (
   `custom_field` text NOT NULL,
   PRIMARY KEY (`address_id`),
   KEY `merchant_id` (`customer_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=43 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=48 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -46,7 +46,7 @@ CREATE TABLE `engine4_address` (
 
 LOCK TABLES `engine4_address` WRITE;
 /*!40000 ALTER TABLE `engine4_address` DISABLE KEYS */;
-INSERT INTO `engine4_address` VALUES (26,0,'Jovanka','Vukadinovic','','15A  Ayiou Neophitou Street Archaggelos','','Lakatamia','2334',55,884,''),(27,0,'Jovanka','Vukadinovic','','15A  Ayiou Neophitou Street Archaggelos','','Lakatamia','2334',55,884,''),(42,55,'Ahmet','GOUDENOGLU','','Kaludjerica Karadjordjeva 45','','Grocka','11130',243,3994,'N;');
+INSERT INTO `engine4_address` VALUES (26,0,'Jovanka','Vukadinovic','','15A  Ayiou Neophitou Street Archaggelos','','Lakatamia','2334',55,884,''),(27,0,'Jovanka','Vukadinovic','','15A  Ayiou Neophitou Street Archaggelos','','Lakatamia','2334',55,884,'');
 /*!40000 ALTER TABLE `engine4_address` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -165,6 +165,7 @@ CREATE TABLE `engine4_certificate` (
   `postcode` varchar(10) NOT NULL,
   `zone_id` int(11) NOT NULL,
   `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `website` varchar(255) NOT NULL,
   PRIMARY KEY (`certificate_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -175,7 +176,6 @@ CREATE TABLE `engine4_certificate` (
 
 LOCK TABLES `engine4_certificate` WRITE;
 /*!40000 ALTER TABLE `engine4_certificate` DISABLE KEYS */;
-INSERT INTO `engine4_certificate` VALUES (46569294,'Semite DOO BEOGRAD','Semite','LLC','1700710','332002211','2014-01-14',243,'Kaludjerica Karadjordjeva 45','','Grocka','11130',3994,'2015-04-08 20:56:46');
 /*!40000 ALTER TABLE `engine4_certificate` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -203,7 +203,7 @@ CREATE TABLE `engine4_certificate_contact` (
   `postcode` varchar(10) NOT NULL,
   `zone_id` int(11) NOT NULL,
   PRIMARY KEY (`certificate_director_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -239,7 +239,7 @@ CREATE TABLE `engine4_certificate_director` (
   `postcode` varchar(10) NOT NULL,
   `zone_id` int(11) NOT NULL,
   PRIMARY KEY (`certificate_director_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -275,7 +275,7 @@ CREATE TABLE `engine4_certificate_ubo` (
   `postcode` varchar(10) NOT NULL,
   `zone_id` int(11) NOT NULL,
   PRIMARY KEY (`certificate_director_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -362,7 +362,7 @@ CREATE TABLE `engine4_customer` (
   `lastname` varchar(32) NOT NULL,
   `email` varchar(96) NOT NULL,
   `telephone` varchar(32) NOT NULL,
-  `fax` varchar(32) NOT NULL,
+  `mobile` varchar(32) NOT NULL,
   `password` varchar(40) NOT NULL,
   `salt` varchar(9) NOT NULL,
   `dob` date DEFAULT '0000-00-00',
@@ -381,8 +381,9 @@ CREATE TABLE `engine4_customer` (
   `certificate_id` int(11) NOT NULL,
   `firsttime` tinyint(1) NOT NULL,
   `account_status` int(11) NOT NULL DEFAULT '0',
+  `fax` varchar(32) NOT NULL,
   PRIMARY KEY (`customer_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=56 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=61 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -391,7 +392,6 @@ CREATE TABLE `engine4_customer` (
 
 LOCK TABLES `engine4_customer` WRITE;
 /*!40000 ALTER TABLE `engine4_customer` DISABLE KEYS */;
-INSERT INTO `engine4_customer` VALUES (55,4,3,'Ahmet','GOUDENOGLU','semiteproject@hotmail.com','381656728972','','79089094e8e6bcca1fe54b184ec4f5bf63cfa7af','f8bdbf1bf','0000-00-00',0,42,'127.0.0.1',1,1,1,'0','2015-04-09 01:24:24',1,'EUR','217347',0,46569294,0,0);
 /*!40000 ALTER TABLE `engine4_customer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -410,7 +410,7 @@ CREATE TABLE `engine4_customer_activity` (
   `ip` varchar(40) NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`activity_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=171 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=177 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -419,7 +419,6 @@ CREATE TABLE `engine4_customer_activity` (
 
 LOCK TABLES `engine4_customer_activity` WRITE;
 /*!40000 ALTER TABLE `engine4_customer_activity` DISABLE KEYS */;
-INSERT INTO `engine4_customer_activity` VALUES (163,55,'login','a:2:{s:11:\"customer_id\";s:2:\"55\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-09 09:09:36'),(157,55,'register','a:2:{s:11:\"customer_id\";i:55;s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-09 01:24:24'),(158,55,'login','a:2:{s:11:\"customer_id\";s:2:\"55\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-09 01:24:33'),(159,55,'new bank','a:2:{s:11:\"customer_id\";s:2:\"55\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-09 01:47:51'),(160,55,'order','a:2:{s:11:\"customer_id\";s:2:\"55\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-09 01:50:43'),(161,55,'order','a:2:{s:11:\"customer_id\";s:2:\"55\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-09 01:52:29'),(162,55,'order','a:2:{s:11:\"customer_id\";s:2:\"55\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-09 02:01:36'),(170,55,'order','a:2:{s:11:\"customer_id\";s:2:\"55\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-09 12:02:43'),(169,55,'login','a:2:{s:11:\"customer_id\";s:2:\"55\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-09 12:02:27'),(168,55,'order','a:2:{s:11:\"customer_id\";s:2:\"55\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-09 12:00:08'),(167,55,'order','a:2:{s:11:\"customer_id\";s:2:\"55\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-09 11:50:39'),(165,55,'order','a:2:{s:11:\"customer_id\";s:2:\"55\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-09 11:33:44'),(166,55,'login','a:2:{s:11:\"customer_id\";s:2:\"55\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-09 11:42:02'),(164,55,'login','a:2:{s:11:\"customer_id\";s:2:\"55\";s:4:\"name\";s:16:\"Ahmet GOUDENOGLU\";}','127.0.0.1','2015-04-09 10:59:13');
 /*!40000 ALTER TABLE `engine4_customer_activity` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -463,7 +462,7 @@ CREATE TABLE `engine4_customer_document` (
   `ip` varchar(96) NOT NULL,
   `date_added` date NOT NULL DEFAULT '0000-00-00',
   PRIMARY KEY (`document_id`,`customer_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -575,7 +574,6 @@ CREATE TABLE `engine4_customer_ip` (
 
 LOCK TABLES `engine4_customer_ip` WRITE;
 /*!40000 ALTER TABLE `engine4_customer_ip` DISABLE KEYS */;
-INSERT INTO `engine4_customer_ip` VALUES (29,55,'127.0.0.1','2015-04-09 01:24:33');
 /*!40000 ALTER TABLE `engine4_customer_ip` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -901,7 +899,6 @@ CREATE TABLE `engine4_order` (
 
 LOCK TABLES `engine4_order` WRITE;
 /*!40000 ALTER TABLE `engine4_order` DISABLE KEYS */;
-INSERT INTO `engine4_order` VALUES (41382662,0,0,'HIF-2015-00',3,'H.I.F. Invest Holding','http://portal.avista.com/',55,4,'Ahmet','GOUDENOGLU','semiteproject@hotmail.com','381656728972','','',5000000000.0000,0.0000,1,0.0000,'',1,3,0,'EUR',0.92250001,'127.0.0.1','127.0.0.1','Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36','en-US,en;q=0.8','2015-04-09 01:50:43','2015-04-09 01:50:43',''),(28841236,0,0,'HIF-2015-00',3,'H.I.F. Invest Holding','http://portal.avista.com/',55,4,'Ahmet','GOUDENOGLU','semiteproject@hotmail.com','381656728972','','',2000000000.0000,0.0000,1,0.0000,'',1,3,0,'EUR',0.92250001,'127.0.0.1','127.0.0.1','Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36','en-US,en;q=0.8','2015-04-09 01:52:29','2015-04-09 01:52:29','Ahmet Gudenoglu'),(34317993,0,0,'HIF-2015-00',3,'H.I.F. Invest Holding','http://portal.avista.com/',55,4,'Ahmet','GOUDENOGLU','semiteproject@hotmail.com','381656728972','','',4000000000.0000,0.0000,1,0.0000,'',1,3,0,'EUR',0.92250001,'127.0.0.1','127.0.0.1','Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36','en-US,en;q=0.8','2015-04-09 02:01:36','2015-04-09 02:01:36','Hakan Islek'),(41212854,0,0,'HIF-2015-00',3,'H.I.F. Invest Holding','http://portal.avista.com/',55,4,'Ahmet','GOUDENOGLU','semiteproject@hotmail.com','381656728972','','',40000000.0000,0.0000,0,0.0000,'',1,3,0,'EUR',0.92250001,'127.0.0.1','127.0.0.1','Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36','en-US,en;q=0.8','2015-04-09 11:33:43','2015-04-09 11:33:43','Ahmet GUDENOGLU'),(37997374,0,0,'HIF-2015-00',3,'H.I.F. Invest Holding','http://portal.avista.com/',55,4,'Ahmet','GOUDENOGLU','semiteproject@hotmail.com','381656728972','','',40000000.0000,0.0000,0,0.0000,'',1,3,0,'EUR',0.92250001,'127.0.0.1','127.0.0.1','Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36','en-US,en;q=0.8','2015-04-09 11:50:39','2015-04-09 11:50:39','Ahmet Gudenoglu'),(7312437,0,0,'HIF-2015-00',3,'H.I.F. Invest Holding','http://portal.avista.com/',55,4,'Ahmet','GOUDENOGLU','semiteproject@hotmail.com','381656728972','','',40000000.0000,0.0000,0,0.0000,'',1,3,0,'EUR',0.92250001,'127.0.0.1','127.0.0.1','Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36','en-US,en;q=0.8','2015-04-09 12:00:08','2015-04-09 12:00:08',''),(41111552,0,0,'HIF-2015-00',3,'H.I.F. Invest Holding','http://portal.avista.com/',55,4,'Ahmet','GOUDENOGLU','semiteproject@hotmail.com','381656728972','','',40000000.0000,0.0000,1,0.0000,'',1,3,0,'EUR',0.92250001,'127.0.0.1','127.0.0.1','Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36','en-US,en;q=0.8','2015-04-09 12:02:43','2015-04-09 12:02:43','');
 /*!40000 ALTER TABLE `engine4_order` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1105,4 +1102,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-04-09 12:44:28
+-- Dump completed on 2015-04-09 18:03:33

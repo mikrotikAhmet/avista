@@ -12,6 +12,8 @@
  */
 // ------------------------------------------------------------------------
 
+// MAIN WEB
+define('HIF','http://www.hifholding.com');
 
 // HTTP
 define('HTTP_SERVER', 'http://'.$_SERVER['HTTP_HOST'].'/');

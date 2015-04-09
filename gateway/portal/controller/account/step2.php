@@ -108,6 +108,8 @@ class ControllerAccountStep2 extends Controller {
 		$data['entry_password'] = $this->language->get('entry_password');
 		$data['entry_confirm'] = $this->language->get('entry_confirm');
 		$data['entry_newsletter'] = sprintf($this->language->get('entry_newsletter'), $this->config->get('config_name'));
+		$data['entry_firstname'] = $this->language->get('entry_firstname');
+		$data['entry_lastname'] = $this->language->get('entry_lastname');
 
 		$data['button_continue'] = $this->language->get('button_continue');
 		$data['button_back'] = $this->language->get('button_back');
@@ -116,6 +118,18 @@ class ControllerAccountStep2 extends Controller {
 			$data['error_warning'] = $this->error['warning'];
 		} else {
 			$data['error_warning'] = '';
+		}
+
+		if (isset($this->error['firstname'])) {
+			$data['error_firstname'] = $this->error['firstname'];
+		} else {
+			$data['error_firstname'] = '';
+		}
+
+		if (isset($this->error['lastname'])) {
+			$data['error_lastname'] = $this->error['lastname'];
+		} else {
+			$data['error_lastname'] = '';
 		}
 
 		if (isset($this->error['email'])) {
@@ -128,6 +142,12 @@ class ControllerAccountStep2 extends Controller {
 			$data['error_telephone'] = $this->error['telephone'];
 		} else {
 			$data['error_telephone'] = '';
+		}
+
+		if (isset($this->error['mobile'])) {
+			$data['error_mobile'] = $this->error['mobile'];
+		} else {
+			$data['error_mobile'] = '';
 		}
 
 		if (isset($this->error['password'])) {
@@ -147,6 +167,18 @@ class ControllerAccountStep2 extends Controller {
 		$data['back'] = $this->url->link('account/register', '', 'SSL');
 
 
+		if (isset($this->request->post['firstname'])) {
+			$data['firstname'] = $this->request->post['firstname'];
+		} else {
+			$data['firstname'] = '';
+		}
+
+		if (isset($this->request->post['lastname'])) {
+			$data['lastname'] = $this->request->post['lastname'];
+		} else {
+			$data['lastname'] = '';
+		}
+
 		if (isset($this->request->post['email'])) {
 			$data['email'] = $this->request->post['email'];
 		} else {
@@ -157,6 +189,12 @@ class ControllerAccountStep2 extends Controller {
 			$data['telephone'] = $this->request->post['telephone'];
 		} else {
 			$data['telephone'] = '';
+		}
+
+		if (isset($this->request->post['mobile'])) {
+			$data['mobile'] = $this->request->post['mobile'];
+		} else {
+			$data['mobile'] = '';
 		}
 
 		if (isset($this->request->post['password'])) {
@@ -210,6 +248,14 @@ class ControllerAccountStep2 extends Controller {
 
 	public function validate() {
 
+		if ((utf8_strlen(trim($this->request->post['firstname'])) < 1) || (utf8_strlen(trim($this->request->post['firstname'])) > 32)) {
+			$this->error['firstname'] = $this->language->get('error_firstname');
+		}
+
+		if ((utf8_strlen(trim($this->request->post['lastname'])) < 1) || (utf8_strlen(trim($this->request->post['lastname'])) > 32)) {
+			$this->error['lastname'] = $this->language->get('error_lastname');
+		}
+
 		if ((utf8_strlen($this->request->post['email']) > 96) || !preg_match('/^[^\@]+@.*\.[a-z]{2,6}$/i', $this->request->post['email'])) {
 			$this->error['email'] = $this->language->get('error_email');
 		}
@@ -218,8 +264,8 @@ class ControllerAccountStep2 extends Controller {
 			$this->error['warning'] = $this->language->get('error_exists');
 		}
 
-		if ((utf8_strlen($this->request->post['telephone']) < 4) || (utf8_strlen($this->request->post['telephone']) > 20) || !is_numeric($this->request->post['telephone'])) {
-			$this->error['telephone'] = $this->language->get('error_telephone');
+		if ((utf8_strlen($this->request->post['mobile']) < 4) || (utf8_strlen($this->request->post['mobile']) > 20) || !is_numeric($this->request->post['mobile'])) {
+			$this->error['mobile'] = 'Please provide mobile GSM number.';
 		}
 
 		if ((utf8_strlen($this->request->post['password']) < 4) || (utf8_strlen($this->request->post['password']) > 20)) {

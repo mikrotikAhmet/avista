@@ -2,18 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbd0d96c-d439-4391-add6-8ad6ad0b2fa0" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/portal/system/cache/cache.country.status.1428575693" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/portal/system/cache/cache.order_status.1.1428575632" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/portal/system/cache/cache.zone.244.1428575693" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/controller/account/account.php" afterPath="$PROJECT_DIR$/gateway/portal/controller/account/account.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/account.tpl" afterPath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/account.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/system/library/customer.php" afterPath="$PROJECT_DIR$/gateway/portal/system/library/customer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/controller/common/header.php" afterPath="$PROJECT_DIR$/gateway/portal/controller/common/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/common/header.tpl" afterPath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/common/header.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/controller/sale/order.php" afterPath="$PROJECT_DIR$/gateway/portal/controller/sale/order.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/dashboard/order.tpl" afterPath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/dashboard/order.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/sale/order.tpl" afterPath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/sale/order.tpl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gateway/portal/controller/account/register_old.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/map/system/cache/cache.application.1428574103" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/map/system/cache/cache.country.1428574105" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/map/system/cache/cache.order_status.1.1428575964" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/map/system/cache/cache.zone.243.1428574105" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/portal/system/cache/cache.country.status.1428579815" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/portal/system/cache/cache.currency.1428577188" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/portal/system/cache/cache.language.1428577188" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/portal/system/cache/cache.zone.243.1428579815" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/portal/system/cache/cache.zone.244.1428579130" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/register.tpl" afterPath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/register_old.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/config.php" afterPath="$PROJECT_DIR$/gateway/portal/config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/map/controller/sale/customer.php" afterPath="$PROJECT_DIR$/gateway/map/controller/sale/customer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/language/english/mail/customer.php" afterPath="$PROJECT_DIR$/gateway/portal/language/english/mail/customer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/model/account/customer.php" afterPath="$PROJECT_DIR$/gateway/portal/model/account/customer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/map/view/template/sale/customer_form.tpl" afterPath="$PROJECT_DIR$/gateway/map/view/template/sale/customer_form.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/language/english/default.php" afterPath="$PROJECT_DIR$/gateway/portal/language/english/default.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/controller/account/forgotten.php" afterPath="$PROJECT_DIR$/gateway/portal/controller/account/forgotten.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/forgotten.tpl" afterPath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/forgotten.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/controller/account/login.php" afterPath="$PROJECT_DIR$/gateway/portal/controller/account/login.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/login.tpl" afterPath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/login.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/controller/account/register.php" afterPath="$PROJECT_DIR$/gateway/portal/controller/account/register.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/language/english/account/register.php" afterPath="$PROJECT_DIR$/gateway/portal/language/english/account/register.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/register.tpl" afterPath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/register.tpl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/view/theme/default/css/sb-admin.css" afterPath="$PROJECT_DIR$/gateway/portal/view/theme/default/css/sb-admin.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/controller/account/step2.php" afterPath="$PROJECT_DIR$/gateway/portal/controller/account/step2.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/language/english/account/step2.php" afterPath="$PROJECT_DIR$/gateway/portal/language/english/account/step2.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/step2.tpl" afterPath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/step2.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/language/english/account/success.php" afterPath="$PROJECT_DIR$/gateway/portal/language/english/account/success.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/common/success.tpl" afterPath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/common/success.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/twoway.tpl" afterPath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/twoway.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="avista.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,21 +58,71 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="header.tpl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/common/header.tpl">
+      <file leaf-file-name="sb-admin.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/css/sb-admin.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.375" vertical-offset="450" max-vertical-offset="2190">
-              <caret line="53" column="37" selection-start-line="53" selection-start-column="37" selection-end-line="53" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3660">
+              <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sb-admin.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/css/sb-admin.css">
+      <file leaf-file-name="step2.tpl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/step2.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.28103447" vertical-offset="2027" max-vertical-offset="3660">
-              <caret line="146" column="15" selection-start-line="146" selection-start-column="12" selection-end-line="146" selection-end-column="15" />
+            <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="1920">
+              <caret line="4" column="56" selection-start-line="4" selection-start-column="56" selection-end-line="4" selection-end-column="59" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="twoway.tpl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/twoway.tpl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="660">
+              <caret line="4" column="59" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="59" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="forgotten.tpl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/forgotten.tpl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="585">
+              <caret line="4" column="59" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="59" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="success.tpl" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/common/success.tpl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.10291595" vertical-offset="0" max-vertical-offset="583">
+              <caret line="4" column="59" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="59" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="register.tpl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/register.tpl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="2205">
+              <caret line="4" column="61" selection-start-line="4" selection-start-column="61" selection-end-line="4" selection-end-column="61" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.tpl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/login.tpl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="885">
+              <caret line="5" column="61" selection-start-line="5" selection-start-column="61" selection-end-line="5" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -71,24 +141,14 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/gateway/map/view/template/sale/customer_list.tpl" />
-        <option value="$PROJECT_DIR$/gateway/map/view/template/sale/customer_form.tpl" />
-        <option value="$PROJECT_DIR$/gateway/map/model/account/bank.php" />
-        <option value="$PROJECT_DIR$/gateway/map/view/template/common/header.tpl" />
         <option value="$PROJECT_DIR$/gateway/map/view/template/sale/customer_bank.tpl" />
-        <option value="$PROJECT_DIR$/gateway/map/controller/sale/customer.php" />
         <option value="$PROJECT_DIR$/gateway/portal/model/account/bank.php" />
         <option value="$PROJECT_DIR$/gateway/usefull/bank" />
         <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/bank.tpl" />
         <option value="$PROJECT_DIR$/gateway/map/controller/common/header.php" />
-        <option value="$PROJECT_DIR$/gateway/portal/controller/account/login.php" />
-        <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/login.tpl" />
         <option value="$PROJECT_DIR$/gateway/portal/controller/account/success.php" />
         <option value="$PROJECT_DIR$/gateway/portal/controller/account/twoway.php" />
         <option value="$PROJECT_DIR$/gateway/portal/controller/account/logout.php" />
-        <option value="$PROJECT_DIR$/gateway/portal/controller/account/forgotten.php" />
-        <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/twoway.tpl" />
-        <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/forgotten.tpl" />
         <option value="$PROJECT_DIR$/gateway/map/language/english/mail/customer.php" />
         <option value="$PROJECT_DIR$/gateway/map/model/sale/customer.php" />
         <option value="$PROJECT_DIR$/gateway/portal/model/sale/order.php" />
@@ -102,16 +162,6 @@
         <option value="$PROJECT_DIR$/gateway/map/controller/sale/order.php" />
         <option value="$PROJECT_DIR$/gateway/map/view/template/sale/order_info.tpl" />
         <option value="$PROJECT_DIR$/gateway/map/language/english/sale/order.php" />
-        <option value="$PROJECT_DIR$/gateway/portal/config.php" />
-        <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/register.tpl" />
-        <option value="$PROJECT_DIR$/gateway/portal/language/english/account/register.php" />
-        <option value="$PROJECT_DIR$/gateway/portal/language/english/account/step2.php" />
-        <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/common/success.tpl" />
-        <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/step2.tpl" />
-        <option value="$PROJECT_DIR$/gateway/portal/controller/account/step2.php" />
-        <option value="$PROJECT_DIR$/gateway/portal/controller/account/register.php" />
-        <option value="$PROJECT_DIR$/gateway/portal/language/english/mail/customer.php" />
-        <option value="$PROJECT_DIR$/gateway/portal/model/account/customer.php" />
         <option value="$PROJECT_DIR$/gateway/portal/model/account/certificate.php" />
         <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/sale/order.tpl" />
         <option value="$PROJECT_DIR$/gateway/portal/controller/account/account.php" />
@@ -121,7 +171,27 @@
         <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/dashboard/order.tpl" />
         <option value="$PROJECT_DIR$/gateway/portal/controller/sale/order.php" />
         <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/common/header.tpl" />
+        <option value="$PROJECT_DIR$/gateway/portal/config.php" />
+        <option value="$PROJECT_DIR$/gateway/portal/controller/account/login.php" />
+        <option value="$PROJECT_DIR$/gateway/portal/language/english/default.php" />
+        <option value="$PROJECT_DIR$/gateway/portal/language/english/mail/customer.php" />
+        <option value="$PROJECT_DIR$/gateway/portal/language/english/account/success.php" />
+        <option value="$PROJECT_DIR$/gateway/portal/controller/account/forgotten.php" />
+        <option value="$PROJECT_DIR$/gateway/portal/controller/account/registe.php" />
+        <option value="$PROJECT_DIR$/gateway/portal/language/english/account/step2.php" />
+        <option value="$PROJECT_DIR$/gateway/portal/controller/account/step2.php" />
+        <option value="$PROJECT_DIR$/gateway/map/controller/sale/customer.php" />
+        <option value="$PROJECT_DIR$/gateway/map/view/template/sale/customer_form.tpl" />
+        <option value="$PROJECT_DIR$/gateway/portal/controller/account/register.php" />
+        <option value="$PROJECT_DIR$/gateway/portal/model/account/customer.php" />
+        <option value="$PROJECT_DIR$/gateway/portal/language/english/account/register.php" />
         <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/css/sb-admin.css" />
+        <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/login.tpl" />
+        <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/register.tpl" />
+        <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/step2.tpl" />
+        <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/twoway.tpl" />
+        <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/forgotten.tpl" />
+        <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/common/success.tpl" />
       </list>
     </option>
   </component>
@@ -331,40 +401,6 @@
               <option name="myItemId" value="view" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="theme" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="default" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="avista" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="avista" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gateway" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="portal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -403,15 +439,15 @@
       <BehatRunner />
       <method />
     </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
       <tasks />
       <pass-parent-env-vars>false</pass-parent-env-vars>
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -439,19 +475,19 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2942899" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2942899" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32948583" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32948583" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328594" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -476,177 +512,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gateway/portal/model/account/bank.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65789473" vertical-offset="540" max-vertical-offset="1335">
-          <caret line="61" column="63" selection-start-line="61" selection-start-column="63" selection-end-line="61" selection-end-column="63" />
-          <folding>
-            <marker date="1428523188454" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428523188454" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428523188454" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428523188454" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428523188454" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1428523188454" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXbank..." />
-            <marker date="1428523188454" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXbank..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/bank.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8947368" vertical-offset="795" max-vertical-offset="2100">
-          <caret line="87" column="50" selection-start-line="87" selection-start-column="50" selection-end-line="87" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/map/controller/common/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6315789" vertical-offset="525" max-vertical-offset="1140">
-          <caret line="59" column="35" selection-start-line="59" selection-start-column="35" selection-end-line="59" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/dashboard.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5145798" vertical-offset="0" max-vertical-offset="765">
-          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="23" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/twoway.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7105263" vertical-offset="270" max-vertical-offset="2445">
-          <caret line="45" column="9" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/login.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="870">
-          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="65" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/twoway.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="660">
-          <caret line="4" column="65" selection-start-line="4" selection-start-column="65" selection-end-line="4" selection-end-column="65" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/forgotten.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10526316" vertical-offset="0" max-vertical-offset="585">
-          <caret line="4" column="65" selection-start-line="4" selection-start-column="65" selection-end-line="4" selection-end-column="65" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/map/language/english/sale/customer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.5437393" vertical-offset="180" max-vertical-offset="1500">
-          <caret line="77" column="43" selection-start-line="77" selection-start-column="43" selection-end-line="77" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/map/language/english/mail/customer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6052632" vertical-offset="0" max-vertical-offset="570">
-          <caret line="23" column="21" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="21" />
-          <folding>
-            <element signature="e#6#85#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/map/model/sale/customer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5263158" vertical-offset="2475" max-vertical-offset="8445">
-          <caret line="185" column="83" selection-start-line="185" selection-start-column="83" selection-end-line="185" selection-end-column="83" />
-          <folding>
-            <marker date="1428535520354" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428535520354" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428535520354" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1428535520354" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428535520354" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1428535520354" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1428535520354" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1428535520354" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1428535520354" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1428535520354" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1428535520354" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1428535520354" expanded="true" signature="-1:-1" placeholder="SELECT DISTI..DB_PREFIXcustomer..." />
-            <marker date="1428535520354" expanded="true" signature="-1:-1" placeholder="SELECT DISTI..DB_PREFIXcustomer..." />
-            <marker date="1428535520354" expanded="true" signature="-1:-1" placeholder="SELECT *, CO..DB_PREFIXcustomer..." />
-            <marker date="1428535520354" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXaddress..." />
-            <marker date="1428535520354" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-            <marker date="1428535520354" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-            <marker date="1428535520354" expanded="true" signature="-1:-1" placeholder="SELECT addre..DB_PREFIXaddress..." />
-            <marker date="1428535520354" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXcustomer..." />
-            <marker date="1428535520354" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXcustomer..." />
-            <marker date="1428535520354" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXaddress..." />
-            <marker date="1428535520354" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXaddress..." />
-            <marker date="1428535520354" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXaddress..." />
-            <marker date="1428535520354" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXcustomer..." />
-            <marker date="1428535520354" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428535520354" expanded="true" signature="-1:-1" placeholder="SELECT comme..DB_PREFIXcustomer_history..." />
-            <marker date="1428535520354" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXcustomer_history..." />
-            <marker date="1428535520354" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428535520354" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1428535520354" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustomer_transaction..." />
-            <marker date="1428535520354" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXcustomer_transaction..." />
-            <marker date="1428535520354" expanded="true" signature="-1:-1" placeholder="SELECT SUM(a..DB_PREFIXcustomer_transaction..." />
-            <marker date="1428535520354" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXcustomer_transaction..." />
-            <marker date="1428535520354" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustomer_ip..." />
-            <marker date="1428535520354" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXcustomer_ip..." />
-            <marker date="1428535520354" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXcustomer_ip..." />
-            <marker date="1428535520354" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428535520354" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1428535520354" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
-            <marker date="1428535520354" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustomer_document..." />
-            <marker date="1428535520354" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXcustomer_document..." />
-            <marker date="1428535520354" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXcustomer_document..." />
-            <marker date="1428535520354" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXbank..." />
-            <marker date="1428535520354" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXbank..." />
-            <marker date="1428535520354" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXbank..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/portal/model/sale/order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.625" vertical-offset="135" max-vertical-offset="2655">
-          <caret line="26" column="1560" selection-start-line="26" selection-start-column="1549" selection-end-line="26" selection-end-column="1560" />
-          <folding>
-            <marker date="1428537035166" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428537035166" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428537035166" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428537035166" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXorder..." />
-            <marker date="1428537035166" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
-            <marker date="1428537035166" expanded="true" signature="-1:-1" placeholder="SELECT o.ord..." />
-            <marker date="1428537035166" expanded="true" signature="-1:-1" placeholder="SELECT os.na..DB_PREFIXorder_status..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gateway/map/controller/dashboard/customer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.84210527" vertical-offset="600" max-vertical-offset="1170">
           <caret line="72" column="1" selection-start-line="29" selection-start-column="0" selection-end-line="72" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -654,9 +523,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5660377" vertical-offset="0" max-vertical-offset="583">
           <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
-          <folding>
-            <element signature="e#6#84#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -664,7 +530,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.84562606" vertical-offset="587" max-vertical-offset="1170">
           <caret line="72" column="1" selection-start-line="72" selection-start-column="1" selection-end-line="72" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -672,7 +537,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="583">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="25" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -680,7 +544,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5145798" vertical-offset="0" max-vertical-offset="583">
           <caret line="20" column="77" selection-start-line="20" selection-start-column="77" selection-end-line="20" selection-end-column="77" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -688,7 +551,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7169811" vertical-offset="572" max-vertical-offset="1155">
           <caret line="66" column="20" selection-start-line="66" selection-start-column="20" selection-end-line="66" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -696,7 +558,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="583">
           <caret line="0" column="31" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -712,7 +573,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.47368422" vertical-offset="0" max-vertical-offset="4680">
           <caret line="18" column="14" selection-start-line="0" selection-start-column="0" selection-end-line="306" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -720,7 +580,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-22.5" vertical-offset="3600" max-vertical-offset="4245">
           <caret line="276" column="18" selection-start-line="276" selection-start-column="18" selection-end-line="276" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -728,14 +587,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.05" vertical-offset="2591" max-vertical-offset="3195">
           <caret line="205" column="5" selection-start-line="205" selection-start-column="5" selection-end-line="205" selection-end-column="5" />
-          <folding>
-            <marker date="1428538625044" expanded="true" signature="-1:-1" placeholder="SELECT *, (S..." />
-            <marker date="1428538625044" expanded="true" signature="-1:-1" placeholder="SELECT CONCA..DB_PREFIXcustomer..." />
-            <marker date="1428538625044" expanded="true" signature="-1:-1" placeholder="SELECT o.ord..." />
-            <marker date="1428538625044" expanded="true" signature="-1:-1" placeholder="SELECT os.na..DB_PREFIXorder_status..." />
-            <marker date="1428538625044" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
-            <marker date="1428538625044" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXorder_product..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -743,7 +594,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5263158" vertical-offset="0" max-vertical-offset="1485">
           <caret line="20" column="25" selection-start-line="0" selection-start-column="0" selection-end-line="93" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -751,7 +601,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.075" vertical-offset="744" max-vertical-offset="10530">
           <caret line="66" column="121" selection-start-line="66" selection-start-column="121" selection-end-line="66" selection-end-column="121" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -759,9 +608,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33268481" vertical-offset="2139" max-vertical-offset="3885">
           <caret line="154" column="66" selection-start-line="154" selection-start-column="66" selection-end-line="154" selection-end-column="66" />
-          <folding>
-            <element signature="e#6#361#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -769,47 +615,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.19521178" vertical-offset="9164" max-vertical-offset="14625">
           <caret line="618" column="33" selection-start-line="618" selection-start-column="33" selection-end-line="618" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/portal/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18010291" vertical-offset="0" max-vertical-offset="660">
-          <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/portal/language/english/account/register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28301886" vertical-offset="0" max-vertical-offset="705">
-          <caret line="16" column="15" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/forgotten.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2631579" vertical-offset="360" max-vertical-offset="2295">
-          <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="44" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.57481754" vertical-offset="3750" max-vertical-offset="5490">
-          <caret line="271" column="69" selection-start-line="271" selection-start-column="69" selection-end-line="271" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3010949" vertical-offset="405" max-vertical-offset="3510">
-          <caret line="38" column="9" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -817,7 +622,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.68430656" vertical-offset="270" max-vertical-offset="1425">
           <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -825,57 +629,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.65789473" vertical-offset="270" max-vertical-offset="1620">
           <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/step2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.0263158" vertical-offset="1470" max-vertical-offset="3780">
-          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/register.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07017544" vertical-offset="2045" max-vertical-offset="3285">
-          <caret line="139" column="55" selection-start-line="139" selection-start-column="55" selection-end-line="139" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/step2.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.4350877" vertical-offset="247" max-vertical-offset="1515">
-          <caret line="71" column="31" selection-start-line="71" selection-start-column="31" selection-end-line="71" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/common/success.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10291595" vertical-offset="0" max-vertical-offset="583">
-          <caret line="4" column="65" selection-start-line="4" selection-start-column="65" selection-end-line="4" selection-end-column="65" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/portal/language/english/account/step2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5145798" vertical-offset="0" max-vertical-offset="583">
-          <caret line="25" column="120" selection-start-line="25" selection-start-column="120" selection-end-line="25" selection-end-column="120" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/portal/language/english/mail/customer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31578946" vertical-offset="0" max-vertical-offset="570">
-          <caret line="22" column="75" selection-start-line="22" selection-start-column="75" selection-end-line="22" selection-end-column="75" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -883,34 +636,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.92105263" vertical-offset="0" max-vertical-offset="645">
           <caret line="35" column="28" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
-          <folding>
-            <marker date="1428570299079" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-            <marker date="1428570299079" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIX..." />
-            <marker date="1428570299079" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcertificate..." />
-            <marker date="1428570299079" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcertificate..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/portal/model/account/customer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.25" vertical-offset="855" max-vertical-offset="3645">
-          <caret line="75" column="83" selection-start-line="75" selection-start-column="83" selection-end-line="75" selection-end-column="83" />
-          <folding>
-            <marker date="1428569668014" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428569668014" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428569668014" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustomer_document..." />
-            <marker date="1428569668014" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustomer_document..." />
-            <marker date="1428569668014" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1428569668014" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428569668014" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
-            <marker date="1428569668014" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXaddress..." />
-            <marker date="1428569668014" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
-            <marker date="1428569668014" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
-            <marker date="1428569668014" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXcustomer..." />
-            <marker date="1428569668014" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-            <marker date="1428569668014" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -918,7 +643,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.31578946" vertical-offset="1005" max-vertical-offset="4785">
           <caret line="79" column="82" selection-start-line="79" selection-start-column="82" selection-end-line="79" selection-end-column="82" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -926,7 +650,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.68421054" vertical-offset="1125" max-vertical-offset="9885">
           <caret line="101" column="64" selection-start-line="101" selection-start-column="64" selection-end-line="101" selection-end-column="64" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -934,9 +657,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.5" vertical-offset="540" max-vertical-offset="6990">
           <caret line="40" column="28" selection-start-line="40" selection-start-column="28" selection-end-line="42" selection-end-column="34" />
-          <folding>
-            <marker date="1428574886117" expanded="false" signature="-1:-1" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -944,15 +664,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.5" vertical-offset="1710" max-vertical-offset="3360">
           <caret line="134" column="36" selection-start-line="134" selection-start-column="20" selection-end-line="134" selection-end-column="36" />
-          <folding>
-            <marker date="1428575122760" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
-            <marker date="1428575122760" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustomer_ip..." />
-            <marker date="1428575122760" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428575122760" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
-            <marker date="1428575122760" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
-            <marker date="1428575122760" expanded="true" signature="-1:-1" placeholder="SELECT SUM(a..DB_PREFIXcustomer_transaction..." />
-            <marker date="1428575122760" expanded="true" signature="-1:-1" placeholder="SELECT SUM(p..DB_PREFIXcustomer_reward..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -960,7 +671,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-16.875" vertical-offset="750" max-vertical-offset="1950">
           <caret line="77" column="63" selection-start-line="77" selection-start-column="63" selection-end-line="77" selection-end-column="63" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -968,7 +678,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.10291595" vertical-offset="0" max-vertical-offset="583">
           <caret line="4" column="40" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -976,22 +685,253 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.57894737" vertical-offset="2610" max-vertical-offset="3375">
           <caret line="196" column="192" selection-start-line="196" selection-start-column="192" selection-end-line="196" selection-end-column="192" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/common/header.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.375" vertical-offset="450" max-vertical-offset="2190">
+        <state vertical-scroll-proportion="0.6052632" vertical-offset="450" max-vertical-offset="2190">
           <caret line="53" column="37" selection-start-line="53" selection-start-column="37" selection-end-line="53" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34210527" vertical-offset="2205" max-vertical-offset="3540">
+          <caret line="160" column="23" selection-start-line="160" selection-start-column="15" selection-end-line="160" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/portal/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15437393" vertical-offset="0" max-vertical-offset="690">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/portal/language/english/default.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.125" vertical-offset="0" max-vertical-offset="1260">
+          <caret line="39" column="51" selection-start-line="39" selection-start-column="51" selection-end-line="39" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/portal/language/english/mail/customer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36842105" vertical-offset="0" max-vertical-offset="570">
+          <caret line="24" column="39" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/portal/language/english/account/success.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47368422" vertical-offset="0" max-vertical-offset="570">
+          <caret line="23" column="272" selection-start-line="23" selection-start-column="272" selection-end-line="23" selection-end-column="272" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/forgotten.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36842105" vertical-offset="765" max-vertical-offset="2325">
+          <caret line="65" column="64" selection-start-line="65" selection-start-column="64" selection-end-line="65" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/portal/language/english/mail/forgotten.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="607">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/register_old.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.868421" vertical-offset="2040" max-vertical-offset="5490">
+          <caret line="245" column="31" selection-start-line="245" selection-start-column="31" selection-end-line="245" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/portal/language/english/account/account.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="607">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/register_old.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.375" vertical-offset="1215" max-vertical-offset="3285">
+          <caret line="112" column="34" selection-start-line="95" selection-start-column="28" selection-end-line="112" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/portal/language/english/account/step2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.75" vertical-offset="0" max-vertical-offset="630">
+          <caret line="35" column="78" selection-start-line="35" selection-start-column="78" selection-end-line="35" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/map/view/template/sale/customer_form.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3249027" vertical-offset="1408" max-vertical-offset="10980">
+          <caret line="105" column="93" selection-start-line="105" selection-start-column="93" selection-end-line="105" selection-end-column="93" />
+          <folding>
+            <marker date="1428591607059" expanded="false" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/map/controller/sale/customer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49473685" vertical-offset="10458" max-vertical-offset="24750">
+          <caret line="716" column="31" selection-start-line="716" selection-start-column="31" selection-end-line="716" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/map/model/customer/certificate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7105263" vertical-offset="630" max-vertical-offset="3570">
+          <caret line="69" column="886" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="886" />
+          <folding>
+            <marker date="1428518766065" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428518766065" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428518766065" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428518766065" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428518766065" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1428518766065" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428518766065" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1428518766065" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428518766065" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1428518766065" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428518766065" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcertificate..." />
+            <marker date="1428518766065" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcertificate_director..." />
+            <marker date="1428518766065" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcertificate_ubo..." />
+            <marker date="1428518766065" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcertificate_contact..." />
+            <marker date="1428518766065" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcertificate..." />
+            <marker date="1428518766065" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXcertificate..." />
+            <marker date="1428518766065" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1428518766065" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1428518766065" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1428518766065" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/step2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.57894737" vertical-offset="3675" max-vertical-offset="4470">
+          <caret line="267" column="71" selection-start-line="267" selection-start-column="71" selection-end-line="267" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/portal/model/account/customer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5263158" vertical-offset="810" max-vertical-offset="3930">
+          <caret line="74" column="49" selection-start-line="74" selection-start-column="49" selection-end-line="74" selection-end-column="49" />
+          <folding>
+            <marker date="1428594886368" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428594886368" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428594886368" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428594886368" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428594886368" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428594886368" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustomer_document..." />
+            <marker date="1428594886368" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustomer_document..." />
+            <marker date="1428594886368" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1428594886368" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428594886368" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
+            <marker date="1428594886368" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXaddress..." />
+            <marker date="1428594886368" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
+            <marker date="1428594886368" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
+            <marker date="1428594886368" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXcustomer..." />
+            <marker date="1428594886368" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1428594886368" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/portal/language/english/account/register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1509434" vertical-offset="122" max-vertical-offset="735">
+          <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47368422" vertical-offset="3840" max-vertical-offset="6195">
+          <caret line="274" column="68" selection-start-line="274" selection-start-column="68" selection-end-line="274" selection-end-column="68" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/css/sb-admin.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28103447" vertical-offset="2027" max-vertical-offset="3660">
-          <caret line="146" column="15" selection-start-line="146" selection-start-column="12" selection-end-line="146" selection-end-column="15" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3660">
+          <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/login.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="885">
+          <caret line="5" column="61" selection-start-line="5" selection-start-column="61" selection-end-line="5" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/register.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="2205">
+          <caret line="4" column="61" selection-start-line="4" selection-start-column="61" selection-end-line="4" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/step2.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="1920">
+          <caret line="4" column="56" selection-start-line="4" selection-start-column="56" selection-end-line="4" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/twoway.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="660">
+          <caret line="4" column="59" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/forgotten.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="585">
+          <caret line="4" column="59" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/common/success.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10291595" vertical-offset="0" max-vertical-offset="583">
+          <caret line="4" column="59" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="59" />
           <folding />
         </state>
       </provider>
