@@ -32,6 +32,12 @@ class ControllerAccountLogin extends Controller {
 
 	public function index() {
 
+		if (!$this->customer->isLogged()) {
+			$this->session->data['redirect'] = $this->url->link('account/dashboard', '', 'SSL');
+
+			$this->response->redirect($this->url->link('account/login', '', 'SSL'));
+		}
+
 		if (is_file(DIR_IMAGE . $this->config->get('config_icon'))) {
 			$data['icon'] = HTTP_IMAGE . 'image/' . $this->config->get('config_icon');
 		} else {
