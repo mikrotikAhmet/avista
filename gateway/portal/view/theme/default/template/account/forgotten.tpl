@@ -8,6 +8,9 @@
                     <h3 class="panel-title"><i class="fa fa-lock"></i> <?php echo $heading_title; ?></h3>
                 </div>
                 <div class="panel-body">
+                    <?php if ($error_warning) { ?>
+                    <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> <?php echo $error_warning; ?></div>
+                    <?php } ?>
                     <p><?php echo $text_email; ?></p>
                     <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" class="form">
                         <fieldset>
