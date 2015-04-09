@@ -29,9 +29,7 @@
                         <li><a href="#profile-pills" data-toggle="tab">Personal Information</a></li>
                         <li><a href="#business-pills" data-toggle="tab">Business Information</a></li>
                         <li><a href="#bank-pills" data-toggle="tab">Bank Account(s)</a></li>
-                        <?php if (!$approved) { ?>
                         <li><a href="#verification-pills" data-toggle="tab">Verification</a></li>
-                        <?php } ?>
                     </ul>
                     <br/>
                     <!-- Tab panes -->
