@@ -3,16 +3,16 @@
     <ul class="nav navbar-nav side-nav">
         <div style="display: block;
   padding: 21px 21px;
-  font-weight: bolder;">
+  font-weight: bolder;color: #FFF">
             Unique ID : <?php echo $unique?>
         </div>
-        <li class="active">
+        <li class="">
             <a href="<?php echo $home?>"><i class="fa fa-fw fa-dashboard"></i> <?php echo $text_dashboard?></a>
         </li>
         <li>
             <a href="<?php echo $setting; ?>"><i class="fa fa-fw fa-cog"></i> <?php echo $text_setting; ?></a>
         </li>
-        <li>
+        <li id="">
             <a href="javascript:;" data-toggle="collapse" data-target="#operation"><?php echo $text_operation?></a>
             <ul id="operation" class="">
                 <li id="request">

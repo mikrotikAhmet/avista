@@ -122,7 +122,7 @@ ul.alert-dropdown {
 		border: none;
 		border-radius: 0;
 		overflow-y: auto;
-		background-color: #e7e7e7;
+		/* background-color: #e7e7e7; */
 	}
 
 	.side-nav>li>a {
@@ -144,7 +144,7 @@ ul.alert-dropdown {
 	display: block;
 	padding: 10px 15px 10px 38px;
 	text-decoration: none;
-	color: #999;
+	color: #FFF;
 }
 
 .side-nav>li>ul>li>a:hover {

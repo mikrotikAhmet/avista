@@ -84,6 +84,11 @@ class ControllerAccountAccount extends Controller {
 		$this->load->model('account/customer');
 		$this->load->model('localisation/country');
 		$this->load->model('localisation/zone');
+		$this->load->model('account/certificate');
+
+
+		$data['identity'] = $this->model_account_customer->getCustomerIdentity($this->customer->getId());
+		$data['customer'] = $this->model_account_customer->getCustomer($this->customer->getId());
 
 		$customer_data = $this->model_account_customer->getCustomer($this->customer->getId());
 		$customer_address = $this->model_account_customer->getCustomerAddress($customer_data['address_id']);
@@ -101,6 +106,17 @@ class ControllerAccountAccount extends Controller {
 		$data['approved'] = $customer_data['approved'];
 		$data['account_status'] = $customer_data['account_status'];
 		$data['unique'] = $this->customer->getUniqueId();
+		$data['certificate'] = $this->model_account_certificate->getCertificate();
+
+		$czone = $this->model_localisation_zone->getZone($data['certificate']['zone_id']);
+		$ccountry = $this->model_localisation_country->getCountry($data['certificate']['country_id']);
+
+		if ($czone) {
+			$data['certificate_zone'] = $czone['name'];
+		} else {
+			$data['certificate_zone'] = '';
+		}
+		$data['certificate_country'] = $ccountry['name'];
 
 		$this->load->model('account/certificate');
 
@@ -652,5 +668,132 @@ class ControllerAccountAccount extends Controller {
 
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
+	}
+
+	public function personalDetail(){
+
+		$this->load->model('account/customer');
+
+		$data['customer'] = $this->model_account_customer->getCustomer($this->customer->getId());
+
+		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/account/personal_detail_form.tpl')) {
+			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/account/personal_detail_form.tpl', $data));
+		} else {
+			$this->response->setOutput($this->load->view('default/template/account/personal_detail_form.tpl', $data));
+		}
+
+	}
+
+	public function showpersonalDetail(){
+
+		$this->load->model('account/customer');
+
+		$data['customer'] = $this->model_account_customer->getCustomer($this->customer->getId());
+
+		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/account/personal_account_detail.tpl')) {
+			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/account/personal_account_detail.tpl', $data));
+		} else {
+			$this->response->setOutput($this->load->view('default/template/account/personal_account_detail.tpl', $data));
+		}
+
+	}
+
+	public function identityDetail(){
+
+		$this->load->model('localisation/country');
+		$data['countries'] = $this->model_localisation_country->getCountries();
+
+		$this->load->model('account/customer');
+
+		$data['customer'] = $this->model_account_customer->getCustomer($this->customer->getId());
+		$data['identity'] = $this->model_account_customer->getCustomerIdentity($this->customer->getId());
+
+
+		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/account/identity_detail_form.tpl')) {
+			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/account/identity_detail_form.tpl', $data));
+		} else {
+			$this->response->setOutput($this->load->view('default/template/account/identity_detail_form.tpl', $data));
+		}
+
+	}
+
+	public function showidentityDetail(){
+
+		$this->load->model('account/customer');
+
+		$data['customer'] = $this->model_account_customer->getCustomer($this->customer->getId());
+		$data['identity'] = $this->model_account_customer->getCustomerIdentity($this->customer->getId());
+
+		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/account/identity_account_detail.tpl')) {
+			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/account/identity_account_detail.tpl', $data));
+		} else {
+			$this->response->setOutput($this->load->view('default/template/account/identity_account_detail.tpl', $data));
+		}
+
+	}
+
+	public function companyDetail(){
+
+		$this->load->model('account/certificate');
+
+		$data['certificate'] = $this->model_account_certificate->getCertificate();
+
+
+		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/account/company_detail_form.tpl')) {
+			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/account/company_detail_form.tpl', $data));
+		} else {
+			$this->response->setOutput($this->load->view('default/template/account/company_detail_form.tpl', $data));
+		}
+
+	}
+
+	public function showcompanyDetail(){
+
+		$this->load->model('account/certificate');
+		$this->load->model('localisation/country');
+		$this->load->model('localisation/zone');
+
+		$data['certificate'] = $this->model_account_certificate->getCertificate();
+
+		$czone = $this->model_localisation_zone->getZone($data['certificate']['zone_id']);
+		$ccountry = $this->model_localisation_country->getCountry($data['certificate']['country_id']);
+
+		if ($czone) {
+			$data['certificate_zone'] = $czone['name'];
+		} else {
+			$data['certificate_zone'] = '';
+		}
+		$data['certificate_country'] = $ccountry['name'];
+
+		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/account/company_account_detail.tpl')) {
+			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/account/company_account_detail.tpl', $data));
+		} else {
+			$this->response->setOutput($this->load->view('default/template/account/company_account_detail.tpl', $data));
+		}
+
+	}
+
+	public function updateAccount(){
+
+		$json = array();
+
+		$section = $this->request->get['section'];
+		$data = $this->request->post;
+
+		$action = 'update'.ucfirst($section);
+		$model = 'account/'.$section;
+		$model_line = 'model_account_'.$section;
+
+		$this->load->model($model);
+
+		$this->$model_line->$action($data);
+
+		$json = array(
+			'message'=>'Your Personal Details successfully updated!'
+		);
+
+		$this->response->addHeader('Content-Type: application/json');
+		$this->response->setOutput(json_encode($json));
+
 	}
 } 

@@ -23,14 +23,11 @@
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">
-                <?php if (!$approved || $account_status) { ?>
-                <p class="text-info"><b>After you providing company document(s) and valid bank account(s) please make a aprroval request by clicking</b> <button type="button" class="btn btn-sm btn-success">Request Approval</button>.</p>
-                <?php } ?>
                     <!-- Nav tabs -->
-                    <ul class="nav nav-pills">
+                    <ul class="nav nav-pills" style="background-color : #173e9a;">
                         <li class="active"><a href="#account-pills" data-toggle="tab">Account Settings</a></li>
-                        <li><a href="#profile-pills" data-toggle="tab">Personal Information</a></li>
-                        <li><a href="#business-pills" data-toggle="tab">Business Information</a></li>
+                        <li><a href="#profile-pills" data-toggle="tab">Personal & Business Information</a></li>
+                        <li><a href="#business-pills" data-toggle="tab">Business Certificate</a></li>
                         <li><a href="#bank-pills" data-toggle="tab">Bank Account(s)</a></li>
                         <li><a href="#verification-pills" data-toggle="tab">Verification</a></li>
                     </ul>
@@ -167,41 +164,138 @@
                                 <i class="fa fa-exclamation-circle"></i> <strong>Important Notice:</strong> In order to change your Personal Information, please contact to our <a href="mailto:compliance@hifholding.com">compliance</a> department. Our compliance team will review your change request.
                             </div>
                             <fieldset>
-                                <legend><?php echo $text_your_details; ?></legend>
-                                <table class="table table-responsive table-striped">
-                                    <tbody>
-                                    <tr>
-                                        <td>Account type</td>
-                                        <td>Business</td>
-                                        <td></td>
-                                    </tr>
-                                        <tr>
-                                            <td>First name</td>
-                                            <td><?php echo $firstname?></td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Last name</td>
-                                            <td><?php echo $lastname?></td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td>E-Mail</td>
-                                            <td><?php echo $email?></td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Phone</td>
-                                            <td><?php echo $telephone?></td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Address</td>
-                                            <td><?php echo $address?></td>
-                                            <td></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <legend><?php echo $text_your_details; ?><span class="pull-right"><button type="button" class="btn btn-link" value="Personal Details" id="modify-personal"><i class="fa fa-edit"></i> Modify</button></span></legend>
+                                        <div id="personal-table">
+                                        <table class="table table-responsive table-striped">
+                                            <tbody>
+                                            <tr>
+                                                <td>Account type</td>
+                                                <td>Business</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>First name</td>
+                                                <td><?php echo $firstname?></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Last name</td>
+                                                <td><?php echo $lastname?></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>E-Mail</td>
+                                                <td><?php echo $email?></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Phone</td>
+                                                <td><?php echo $telephone?></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Address</td>
+                                                <td><?php echo $address?></td>
+                                                <td></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <legend>Your Identity Details<span class="pull-right"><button type="button" value="Identity Details" id="modify-identity" class="btn btn-link"><i class="fa fa-edit"></i> Modify</button></span></legend>
+                                        <div id="identity-table">
+                                            <table class="table table-responsive table-striped">
+                                                <tbody>
+                                                <tr>
+                                                    <td>Nationality</td>
+                                                    <td><?php echo $identity['country_id']?></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Passport number</td>
+                                                    <td><?php echo $identity['passport']?></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Date of issue</td>
+                                                    <td><?php echo $identity['issue']?></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Date of expiration</td>
+                                                    <td><?php echo $identity['expiration']?></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Date of birth</td>
+                                                    <td><?php echo date('d/m/Y',strtotime($customer['dob']))?></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Place of birth</td>
+                                                    <td><?php echo $customer['pob']?></td>
+                                                    <td></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                            </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <legend>Company Information<span class="pull-right"><button type="button" value="Company Details" id="modify-company" class="btn btn-link"><i class="fa fa-edit"></i> Modify</button></span></legend>
+                                        <div id="company-table">
+                                        <table class="table table-responsive table-striped">
+                                            <tbody>
+                                            <tr>
+                                                <td>Legal name of company</td>
+                                                <td><?php echo $certificate['legal_name']?></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Incorporation date</td>
+                                                <td><?php echo $certificate['inc_date']?></td>
+                                                <td></td>
+                                            </tr>
+                                            <?php if (!empty($certificate['dba'])) { ?>
+                                            <tr>
+                                                <td>Registered DBA/trade name</td>
+                                                <td><?php echo $certificate['dba']?></td>
+                                                <td></td>
+                                            </tr>
+                                            <?php } ?>
+                                            <tr>
+                                                <td>Type of business</td>
+                                                <td><?php echo $certificate['type']?></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Company registration number</td>
+                                                <td><?php echo $certificate['registration_number']?></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>VAT / Tax Identification number</td>
+                                                <td><?php echo $certificate['tax_number']?></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Company registered address</td>
+                                                <td>
+                                                    <?php echo $certificate['address_1'].' '.$certificate['address_2']?><br/>
+                                                    <?php echo (!empty($certificate['city']) ? $certificate['city'].' - ' : '').$certificate['postcode']?><br/>
+                                                    <?php echo (!empty($certificate_zone) ? $certificate_zone.' / ' : '').$certificate_country?>
+
+                                                </td>
+                                                <td></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                            </div>
+                                    </div>
+                                </div>
                             </fieldset>
                         </div>
                         <div class="tab-pane fade" id="business-pills">
@@ -456,6 +550,98 @@
         });
     }
 
+$('#modify-personal').on('click',function(){
+
+    var element = $(this);
+    $('#form-title').html(this.value);
+    $('#button-update').val('personal');
+
+    $.ajax({
+        url : 'index.php?route=account/account/personalDetail',
+        dataType : 'html',
+        beforeSend: function() {
+            element.button('loading');
+        },
+        success: function(html) {
+
+            element.button('reset');
+
+            $('.account').html(html);
+
+            $('#form-account').modal('show');
+
+        }
+    });
+
+});
+
+    $('#modify-identity').on('click',function(){
+
+        $('#form-title').html(this.value);
+        $('#button-update').val('identity');
+
+        $('.account').load('index.php?route=account/account/identityDetail');
+
+        $('#form-account').modal('show');
+    });
+
+    $('#modify-company').on('click',function(){
+
+        $('#form-title').html(this.value);
+        $('#button-update').val('company');
+
+        $('.account').load('index.php?route=account/account/companyDetail');
+
+        $('#form-account').modal('show');
+    });
+
+    function formUpdate(section,data){
+
+        var element = $(this);
+
+        $.ajax({
+            url : 'index.php?route=account/account/UpdateAccount&section='+section,
+            type: 'post',
+            data: data,
+            dataType : 'json',
+            beforeSend: function() {
+                element.button('loading');
+            },
+            success: function(json) {
+
+                element.button('reset');
+                $('#detail-form')[0].reset();
+
+                alert(json.message);
+
+                $('#form-account').modal('hide');
+
+                $('#'+section+'-table').load('index.php?route=account/account/show'+section+'Detail');
+
+            }
+        });
+    }
+
 
 </script>
+<!-- Modal -->
+<div class="modal fade" id="form-account" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel"><span id="form-title"></span></h4>
+            </div>
+            <div class="modal-body account">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="button-close"class="btn btn-danger" onclick="$('#detail-form')[0].reset();" data-dismiss="modal"><i class="fa fa-remove"></i> Cancel</button>
+                <button type="button" id="button-update" value="" onclick="formUpdate(this.value,$('#detail-form').serialize())" class="btn btn-primary"><i class="fa fa-check"></i> Update</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
 <?php echo $footer?>

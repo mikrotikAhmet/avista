@@ -64,10 +64,22 @@
   position: relative;
   bottom: 10px;"/></a>
         </div>
+        <?php if (!$approved || $account_status) { ?>
+        <p class="text-info" style=" color: #FFF;
+  position: relative;
+  top: 0px;
+  background: #173e9a;
+  padding: 10px 5px;"><b>***After you providing company document(s) and valid bank account(s) please make a aprroval request by clicking</b> <button type="button" class="btn btn-sm btn-success">Request Approval</button></p>
+        <?php } ?>
         <!-- Top Menu Items -->
-        <ul class="nav navbar-right top-nav">
-            <li><i class="fa fa-user"></i> <?php echo $text_logged?></li>
-            <li><a href="<?php echo $logout; ?>"><i class="fa fa-fw fa-power-off"></i> <?php echo $text_logout; ?></a></li>
+        <ul class="pull-right" style=" padding: 0;
+  margin: 0;
+  position: relative;
+  bottom: 52px;
+  right: 15px;
+  list-style: none;">
+            <li style="color: #FFF"><i class="fa fa-user"></i> <?php echo $text_logged?></li>
+            <li><a href="<?php echo $logout; ?>" style="color: #FFF"><i class="fa fa-fw fa-power-off"></i> <?php echo $text_logout; ?></a></li>
         </ul>
         <?php echo $column_left?>
     </nav>

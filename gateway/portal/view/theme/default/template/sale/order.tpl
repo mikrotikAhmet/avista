@@ -52,21 +52,12 @@
                             <div class="form-group input-group">
                                 <span class="input-group-addon" id="currency_icon">EUR</span>
                                 <input type="text" name="amount" class="form-control amount" maxlength="9">
+                                <input type="hidden" name="currency_code" value="EUR">
                                 <span class="input-group-addon">.00</span>
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class=" control-label">Preferred issuing currency</label>
-                        <div class="">
-                            <select name="currency_code" class="form-control">
-                                <!--option value="">--Please select--</option-->
-                                <?php foreach ($currencies as $currency) { ?>
-                                <option value="<?php echo $currency['code']?>"><?php echo $currency['code']?></option>
-                                <?php } ?>
-                            </select>
-                        </div>
-                    </div>
+
                     <div class="form-group">
                         <label class=" control-label">Preferred bank account of Payment</label>
                         <div class="">
@@ -120,7 +111,7 @@
                         <td class="bank"></td>
                     </tr>
                     <tr>
-                        <td><strong>Preferred issuer name</strong></td>
+                        <td><strong>Beneficiary  Name</strong></td>
                         <td class="issuer"></td>
                     </tr>
                     </tbody>
