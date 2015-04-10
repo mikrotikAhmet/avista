@@ -78,7 +78,12 @@ class ModelSaleCustomer extends Model {
 	}
 
 	public function deleteCustomer($customer_id) {
+
+		$customer_data = $this->getCustomer($customer_id);
+
 		$this->db->query("DELETE FROM " . DB_PREFIX . "customer WHERE customer_id = '" . (int)$customer_id . "'");
+		$this->db->query("DELETE FROM " . DB_PREFIX . "certificate WHERE certificate_id = '" . (int)$customer_data['certificate_id'] . "'");
+		$this->db->query("DELETE FROM " . DB_PREFIX . "customer_identity WHERE customer_id = '" . (int)$customer_id . "'");
 		$this->db->query("DELETE FROM " . DB_PREFIX . "order WHERE customer_id = '" . (int)$customer_id . "'");
 		$this->db->query("DELETE FROM " . DB_PREFIX . "order_product WHERE customer_id = '" . (int)$customer_id . "'");
 		$this->db->query("DELETE FROM " . DB_PREFIX . "customer_transaction WHERE customer_id = '" . (int)$customer_id . "'");

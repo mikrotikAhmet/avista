@@ -27,7 +27,7 @@
     </tr>
     <tr>
         <td>Address</td>
-        <td>Get Address somehow!!</td>
+        <td><?php echo $address?></td>
         <td></td>
     </tr>
     </tbody>

@@ -73,12 +73,7 @@
             <b>***After you providing company document(s) and valid bank account(s) please make a approval request by clicking</b> <button type="button" class="btn btn-sm btn-success" id="approval-request">Request Approval</button></p>
         <?php } ?>
         <!-- Top Menu Items -->
-        <ul class="pull-right" style=" padding: 0;
-    margin-top: 6px;
-  list-style: none;">
-            <li style="color: #FFF"><i class="fa fa-user"></i> <?php echo $text_logged?></li>
-            <li><a href="<?php echo $logout; ?>" style="color: #FFF"><i class="fa fa-fw fa-power-off"></i> <?php echo $text_logout; ?></a></li>
-        </ul>
+
         <?php echo $column_left?>
     </nav>
     <?php } ?>

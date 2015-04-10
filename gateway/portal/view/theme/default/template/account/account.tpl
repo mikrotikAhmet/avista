@@ -610,13 +610,19 @@ $('#modify-personal').on('click',function(){
             success: function(json) {
 
                 element.button('reset');
-                $('#detail-form')[0].reset();
 
-                alert(json.message);
 
-                $('#form-account').modal('hide');
+                if (json.error){
+                    alert(json.error['message']);
+                }else {
+                    alert(json.message);
 
-                $('#'+section+'-table').load('index.php?route=account/account/show'+section+'Detail');
+                    $('#detail-form')[0].reset();
+
+                    $('#form-account').modal('hide');
+
+                    $('#' + section + '-table').load('index.php?route=account/account/show' + section + 'Detail');
+                }
 
             }
         });

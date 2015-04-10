@@ -25,7 +25,7 @@
                             </div>
                         </fieldset>
                         <div class="buttons clearfix">
-                            <div class="pull-left"><button type="button" class="btn btn-default" id="request-code"><?php echo $button_request_code; ?></button></div>
+                            <div class="pull-left"><a href="<?php echo $back?>" onclick='location.reload()' class="btn btn-default" id="request-code"><i class="fa fa-arrow-left"></i> Back to login</a></div>
                             <div class="pull-right">
                                 <input type="submit" value="<?php echo $button_continue; ?>" class="btn btn-primary" />
                             </div>

@@ -21,7 +21,7 @@
         </div>
     </div>
     <div class="form-group required">
-        <label class="control-label" for="input-last-name">Mobile Number</label>
+        <label class="control-label" for="input-last-name">Mobile Number <small class="text-danger">Please include the area code and do not use any character, such as (+)</small></label>
         <div class="">
             <input type="text" name="mobile" value="<?php echo $customer['mobile']?>" placeholder="" id="input-mobile" class="form-control" />
         </div>

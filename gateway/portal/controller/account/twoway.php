@@ -65,7 +65,7 @@ class ControllerAccountTwoway extends Controller {
 		$baseurl ="http://api.clickatell.com";
 
 		$text = urlencode($unique_id);
-		$to = $customer_info['telephone'];
+		$to = $customer_info['mobile'];
 
 		// auth call
 		$url = "$baseurl/http/auth?user=$user&password=$password&api_id=$api_id";
@@ -127,6 +127,8 @@ class ControllerAccountTwoway extends Controller {
 
 		$data['button_continue'] = $this->language->get('button_continue');
 		$data['button_request_code'] = $this->language->get('button_request_code');
+
+		$data['back'] = $this->url->link('account/login', '', 'SSL');
 
 
 

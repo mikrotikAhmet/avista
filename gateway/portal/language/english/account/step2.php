@@ -27,8 +27,8 @@ $_['entry_newsletter']     = 'Please let me know future exclusive offers promoti
 $_['entry_telephone']          = 'Mobile GSM Number';
 $_['entry_password']       = 'Password';
 $_['entry_confirm']        = 'Password Confirm';
-$_['text_agree']           = 'I have read and agree to the <a href="%s" class="agree"><b>%s</b></a>';
-$_['text_agree_term']           = 'I have read and agree to the <a href="%s" class="agree"><b>%s</b></a>';
+$_['text_agree']           = 'I have read and agree to the <a href="%s" class="agree" style="color:#173e9a"><b>%s</b></a>';
+$_['text_agree_term']           = 'I have read and agree to the <a href="%s" class="agree" style="color:#173e9a"><b>%s</b></a>';
 $_['entry_firstname']      = 'Contact Person First Name';
 $_['entry_lastname']       = 'Contact Person Last Name';
 

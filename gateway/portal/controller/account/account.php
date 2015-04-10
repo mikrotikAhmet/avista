@@ -683,7 +683,6 @@ class ControllerAccountAccount extends Controller {
 		$this->load->model('account/customer');
 
 		$data['customer'] = $this->model_account_customer->getCustomer($this->customer->getId());
-
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/account/personal_detail_form.tpl')) {
 			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/account/personal_detail_form.tpl', $data));
 		} else {
@@ -695,8 +694,14 @@ class ControllerAccountAccount extends Controller {
 	public function showpersonalDetail(){
 
 		$this->load->model('account/customer');
+		$this->load->model('account/address');
+		$this->load->model('localisation/country');
 
 		$data['customer'] = $this->model_account_customer->getCustomer($this->customer->getId());
+		$customer_address = $this->model_account_address->getAddress($data['customer']['address_id']);
+		$customer_country = $this->model_localisation_country->getCountry($customer_address['country_id']);
+
+		$data['address'] = $customer_address['address_1'].' '.$customer_address['address_2'].'<br/> '.(isset($customer_address['city']) ? $customer_address['city'] : null).' '.$customer_address['postcode'].'<br/>'.(isset($customer_zone['name']) ? $customer_zone['name'] : null).' / '.$customer_country['name'];
 
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/account/personal_account_detail.tpl')) {
 			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/account/personal_account_detail.tpl', $data));
@@ -787,9 +792,96 @@ class ControllerAccountAccount extends Controller {
 	public function updateAccount(){
 
 		$json = array();
+		$error = false;
+
+		$data = $this->request->post;
 
 		$section = $this->request->get['section'];
-		$data = $this->request->post;
+
+		if ($section == 'personal' && empty($data['firstname'])){
+			$error = true;
+			$json['error'] = array(
+				'message'=>'Please provide your First Name'
+			);
+		}
+
+		if ($section == 'personal' && empty($data['lastname'])){
+			$error = true;
+			$json['error'] = array(
+				'message'=>'Please provide your Last Name'
+			);
+		}
+
+		if ($section == 'personal' && empty($data['email'])){
+			$error = true;
+			$json['error'] = array(
+				'message'=>'Please provide your E-Mail'
+			);
+		}
+
+		if ($section == 'personal' && empty($data['mobile'])){
+			$error = true;
+			$json['error'] = array(
+				'message'=>'Please provide your Mobile Number'
+			);
+		}
+
+		if ($section == 'identity' && empty($data['country_id'])){
+			$error = true;
+			$json['error'] = array(
+				'message'=>'Please provide your Nationality'
+			);
+		}
+
+		if ($section == 'identity' && empty($data['passport'])){
+			$error = true;
+			$json['error'] = array(
+				'message'=>'Please provide your Passport Number'
+			);
+		}
+
+		if ($section == 'identity' && empty($data['issue'])){
+			$error = true;
+			$json['error'] = array(
+				'message'=>'Please provide your Passport Issued Date'
+			);
+		}
+
+		if ($section == 'identity' && empty($data['expiration'])){
+			$error = true;
+			$json['error'] = array(
+				'message'=>'Please provide your Passport Expiration Date'
+			);
+		}
+
+		if ($section == 'identity' && empty($data['dob'])){
+			$error = true;
+			$json['error'] = array(
+				'message'=>'Please provide your Date of Birth'
+			);
+		}
+
+		if ($section == 'identity' && empty($data['pob'])){
+			$error = true;
+			$json['error'] = array(
+				'message'=>'Please provide your Place of Birth'
+			);
+		}
+
+		if ($section == 'company' && empty($data['inc_date'])){
+			$error = true;
+			$json['error'] = array(
+				'message'=>'Please provide Incorporation date'
+			);
+		}
+
+		if ($section == 'company' && empty($data['type'])){
+			$error = true;
+			$json['error'] = array(
+				'message'=>'Please provide Company Business type'
+			);
+		}
+
 
 		$action = 'update'.ucfirst($section);
 		$model = 'account/'.$section;
@@ -797,11 +889,14 @@ class ControllerAccountAccount extends Controller {
 
 		$this->load->model($model);
 
-		$this->$model_line->$action($data);
 
-		$json = array(
-			'message'=>'Your Personal Details successfully updated!'
-		);
+		if (!$error) {
+			$json = array(
+				'message' => 'Your Personal Details successfully updated!'
+			);
+
+			$this->$model_line->$action($data);
+		}
 
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));

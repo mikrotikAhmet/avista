@@ -204,11 +204,11 @@ $('input[name=\'amount\']').on('keyup', function(e) {
 
         $('.issuer').html(this.value);
 
-        if (this.value < 10000 || $('select[name=\'instrument\']').val() == "" || $('select[name=\'bank\']').val() == "" || $('select[name=\'currency_code\']').val() == ""){
-            $('#issue-order').attr("disabled", true);
-        } else {
-            $('#issue-order').attr("disabled", false);
-        }
+//        if (this.value < 10000 || $('select[name=\'instrument\']').val() == "" || $('select[name=\'bank\']').val() == "" || $('select[name=\'currency_code\']').val() == ""){
+//            $('#issue-order').attr("disabled", true);
+//        } else {
+//            $('#issue-order').attr("disabled", false);
+//        }
     });
 
     function issue(){
@@ -285,6 +285,9 @@ $('input[name=\'amount\']').on('keyup', function(e) {
             <div class="modal-body">
                 <?php if (!$approved) { ?>
                 <p>You account is not approved yet.</p>
+                <?php } else if (!$customer['mobile']) { ?>
+                <p>We could not able to find any mobile number registered to our system.<br/>
+                Please go to My Account->Personal & Business Information and update your Personal Information</p>
                 <?php } else if ($customer['mobile']) { ?>
                 <p>Dear Customer,</p>
                 <p>To continue your order request, please type the Verification code associated to your Order Request.</p>

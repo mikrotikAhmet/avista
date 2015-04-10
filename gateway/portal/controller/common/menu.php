@@ -40,6 +40,8 @@ class ControllerCommonMenu extends Controller {
 		$data['text_setting'] = $this->language->get('text_setting');
 
 		$data['unique'] = $this->customer->getUniqueId();
+		$data['text_logged'] = sprintf($this->language->get('text_logged'),$this->customer->getFirstName().' '.$this->customer->getLastName());
+		$data['logout'] = $this->url->link('account/logout', '', 'SSL');
 
 
 		$data['home'] = $this->url->link('account/dashboard', '', 'SSL');

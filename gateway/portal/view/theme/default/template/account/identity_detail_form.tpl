@@ -20,7 +20,7 @@
             <input type="text" name="passport" value="<?php echo (isset($identity['passport']) ? $identity['passport'] : '')?>" placeholder="Passport number" id="input-passport" class="form-control" />
         </div>
     </div>
-    <div class="form-group">
+    <div class="form-group required">
         <label class="control-label" for="input-date-added">Date of issue</label>
         <div class="input-group date">
             <input type="text" name="issue" value="<?php echo (isset($identity['issue']) ? $identity['issue'] : '')?>" placeholder="Date of issue" data-format="YYYY-MM-DD" id="input-date-added" class="form-control" />
@@ -28,7 +28,7 @@
                   <button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button>
                   </span></div>
     </div>
-    <div class="form-group">
+    <div class="form-group required">
         <label class="control-label" for="input-date-added">Date of expiration</label>
         <div class="input-group date">
             <input type="text" name="expiration" value="<?php echo (isset($identity['expiration']) ? $identity['expiration'] : '')?>" placeholder="Date of expiration" data-format="YYYY-MM-DD" id="input-date-added" class="form-control" />
@@ -36,7 +36,7 @@
                   <button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button>
                   </span></div>
     </div>
-    <div class="form-group">
+    <div class="form-group required">
         <label class="control-label" for="input-date-added">Date of birth</label>
         <div class="input-group date">
             <input type="text" name="dob" value="<?php echo $customer['dob']?>" placeholder="Date of birth" data-format="YYYY-MM-DD" id="input-date-added" class="form-control" />

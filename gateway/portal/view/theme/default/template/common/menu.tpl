@@ -4,7 +4,7 @@
         <div style="display: block;
   padding: 21px 21px;
   font-weight: bolder;color: #FFF">
-            Unique ID : <?php echo $unique?>
+            <i class="fa fa-lock"></i> Unique ID : <?php echo $unique?><br/><i class="fa fa-user"></i> <?php echo $text_logged?>
         </div>
         <li class="">
             <a href="<?php echo $home?>"><i class="fa fa-fw fa-dashboard"></i> <?php echo $text_dashboard?></a>
@@ -31,6 +31,7 @@
                 </li>
             </ul>
         </li>
+        <li><a href="<?php echo $logout; ?>" style="color: #FFF"><i class="fa fa-fw fa-power-off"></i> Logout</a></li>
     </ul>
 </div>
 <!-- /.navbar-collapse -->
