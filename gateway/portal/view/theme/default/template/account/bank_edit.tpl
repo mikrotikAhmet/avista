@@ -23,12 +23,12 @@
             </select>
         </div>
     </div>
-    <div class="form-group required">
+    <!--div class="form-group required">
         <label class="control-label" for="input-bank-zone">State/Region of Bank</label>
         <div class="">
             <select name="zone_id" id="input-bank-zone" class="form-control"></select>
         </div>
-    </div>
+    </div-->
     <div class="form-group required">
         <label class="control-label" for="input-bank-account">Account number</label>
         <div class="">
@@ -72,6 +72,24 @@
         <label class="control-label" for="input-bank-sort-code">Sort Code <small><b>(optional)</b></small></label>
         <div class="">
             <input type="text" name="sort_code" value="<?php echo $bank['sort_code'] ?>" placeholder="" id="input-bank-sort-code" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label" for="input-officer-name">Officer Name <small><b>(optional)</b></small></label>
+        <div class="">
+            <input type="text" name="officer_name" value="<?php echo $bank['officer_name'] ?>" placeholder="Officer Name" id="input-bank-sort-code" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label" for="input-officer-telephone">Officer Telephone <small><b>(optional)</b></small></label>
+        <div class="">
+            <input type="text" name="officer_telephone" value="<?php echo $bank['officer_telephone'] ?>" placeholder="Officer Telephone" id="input-bank-sort-code" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label" for="input-officer-email">Officer Email <small><b>(optional)</b></small></label>
+        <div class="">
+            <input type="text" name="officer_email" value="<?php echo $bank['officer_email'] ?>" placeholder="Officer Email" id="input-bank-sort-code" class="form-control" />
         </div>
     </div>
 </form>

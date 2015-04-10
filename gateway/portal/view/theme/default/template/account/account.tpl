@@ -46,7 +46,7 @@
                                 <tr>
                                     <td><b>Account status</b></td>
                                     <td><?php echo ($approved ? 'Approved' : 'Pending')?></td>
-                                    <td><a href="javascript::viod()">Edit</a></td>
+                                    <td><a href="javascript::viod()" style="color: #173e9a">Edit</a></td>
                                 </tr>
                                 <?php if (!$approved) { ?>
                                 <tr class="">
@@ -87,7 +87,7 @@
                                 <tr>
                                     <td><b><?php echo $text_password?></b></td>
                                     <td>*********</td>
-                                    <td><a href="javascript::viod()">Edit</a></td>
+                                    <td><a href="javascript::viod()" style="color: #173e9a">Edit</a></td>
                                 </tr>
                                 <tr class="">
                                     <td colspan="2">
@@ -115,7 +115,7 @@
                                 <tr>
                                     <td><b><?php echo $text_security?></b></td>
                                     <td><?php echo ($auth ? 'Active' : 'InActive')?></td>
-                                    <td><a href="javascript::viod()">Edit</a></td>
+                                    <td><a href="javascript::viod()" style="color: #173e9a">Edit</a></td>
                                 </tr>
                                 <tr class="">
                                     <td colspan="2">

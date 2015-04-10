@@ -450,6 +450,9 @@ class ControllerAccountAccount extends Controller {
 			'swift'=>$bank['swift'],
 			'routing'=>$bank['routing'],
 			'sort_code'=>$bank['sort_code'],
+			'officer_name'=>$bank['officer_name'],
+			'officer_telephone'=>$bank['officer_telephone'],
+			'officer_email'=>$bank['officer_email'],
 			'status'=>$bank['status']
 		);
 
