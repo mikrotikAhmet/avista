@@ -570,15 +570,15 @@ class ControllerAccountAccount extends Controller {
 			);
 		}
 
-		if (!is_numeric($data['iban'])){
-//			$this->load->helper('iban');
-//
-//			$iban = isValidIBAN($country_data['iso_code_2'].$data['iban']);
-			$error=true;
-				$json['error'] = array(
-					'message' => 'IBAN does not seems valid!'
-				);
-		}
+//		if (!is_numeric($data['iban'])){
+////			$this->load->helper('iban');
+////
+////			$iban = isValidIBAN($country_data['iso_code_2'].$data['iban']);
+//			$error=true;
+//				$json['error'] = array(
+//					'message' => 'IBAN does not seems valid!'
+//				);
+//		}
 
 		if (empty($data['swift'])) {
 			$error=true;

@@ -64,11 +64,24 @@
                     <div class="form-group">
                         <label class=" control-label">Preferred bank account of Payment</label>
                         <div class="">
-                            <select name="bank" class="form-control">
+                            <select name="bank_id" class="form-control">
                                 <option value="">--Please select--</option>
                                 <?php foreach ($banks as $bank) { ?>
                                 <?php if (in_array($bank['status'], $complete_status)) { ?>
                                     <option value="<?php echo $bank['bank_id']?>"><?php echo '[ '.$bank['currency_code'].' ] '.$bank['bank']?></option>
+                                <?php } ?>
+                                <?php } ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class=" control-label">Preferred bank account for Settlement</label>
+                        <div class="">
+                            <select name="settlement" class="form-control">
+                                <option value="">--Please select--</option>
+                                <?php foreach ($banks as $bank) { ?>
+                                <?php if (in_array($bank['status'], $complete_status)) { ?>
+                                <option value="<?php echo $bank['bank_id']?>"><?php echo '[ '.$bank['currency_code'].' ] '.$bank['bank']?></option>
                                 <?php } ?>
                                 <?php } ?>
                             </select>

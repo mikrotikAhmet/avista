@@ -31,8 +31,7 @@
                     <div class="panel-body">
                         <ul class="nav nav-tabs">
                             <li class="active"><a href="#tab-order" data-toggle="tab"><?php echo $tab_order; ?></a></li>
-                            <li><a href="#tab-payment" data-toggle="tab"><?php echo $tab_payment; ?></a></li>
-                            <li><a href="#tab-product" data-toggle="tab"><?php echo $tab_product; ?></a></li>
+                            <li><a href="#tab-payment" data-toggle="tab">Order Details</a></li>
                             <li><a href="#tab-history" data-toggle="tab"><?php echo $tab_history; ?></a></li>
                         </ul>
                         <br/>
@@ -144,104 +143,25 @@
                         <div class="tab-pane" id="tab-payment">
                             <table class="table table-bordered">
                                 <tr>
-                                    <td><?php echo $text_firstname; ?></td>
+                                    <td>Banking Instrument</td>
                                     <td></td>
                                 </tr>
                                 <tr>
-                                    <td><?php echo $text_lastname; ?></td>
+                                    <td>Requested amount</td>
+                                    <td><?php echo $request?></td>
+                                </tr>
+                                <tr>
+                                    <td>Preferred bank account of Payment</td>
                                     <td></td>
                                 </tr>
-                                <?php if ($payment_company) { ?>
                                 <tr>
-                                    <td><?php echo $text_company; ?></td>
-                                    <td><?php echo $payment_company; ?></td>
-                                </tr>
-                                <?php } ?>
-                                <tr>
-                                    <td><?php echo $text_address_1; ?></td>
-                                    <td><?php echo $payment_address_1; ?></td>
-                                </tr>
-                                <?php if ($payment_address_2) { ?>
-                                <tr>
-                                    <td><?php echo $text_address_2; ?></td>
-                                    <td><?php echo $payment_address_2; ?></td>
-                                </tr>
-                                <?php } ?>
-                                <tr>
-                                    <td><?php echo $text_city; ?></td>
-                                    <td><?php echo $payment_city; ?></td>
-                                </tr>
-                                <?php if ($payment_postcode) { ?>
-                                <tr>
-                                    <td><?php echo $text_postcode; ?></td>
-                                    <td><?php echo $payment_postcode; ?></td>
-                                </tr>
-                                <?php } ?>
-                                <tr>
-                                    <td><?php echo $text_zone; ?></td>
-                                    <td><?php echo $payment_zone; ?></td>
-                                </tr>
-                                <?php if ($payment_zone_code) { ?>
-                                <tr>
-                                    <td><?php echo $text_zone_code; ?></td>
-                                    <td><?php echo $payment_zone_code; ?></td>
-                                </tr>
-                                <?php } ?>
-                                <tr>
-                                    <td><?php echo $text_country; ?></td>
-                                    <td><?php echo $payment_country; ?></td>
+                                    <td>Preferred bank account of Settlement</td>
+                                    <td></td>
                                 </tr>
                                 <tr>
-                                    <td><?php echo $text_payment_method; ?></td>
-                                    <td><?php echo $payment_method; ?></td>
+                                    <td>Beneficiary Name</td>
+                                    <td></td>
                                 </tr>
-                            </table>
-                            <?php echo $payment_action; ?></div>
-                        <div class="tab-pane" id="tab-product">
-                            <table class="table table-bordered">
-                                <thead>
-                                <tr>
-                                    <td class="text-left"><?php echo $column_product; ?></td>
-                                    <td class="text-left"><?php echo $column_model; ?></td>
-                                    <td class="text-right"><?php echo $column_quantity; ?></td>
-                                    <td class="text-right"><?php echo $column_price; ?></td>
-                                    <td class="text-right"><?php echo $column_total; ?></td>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <?php foreach ($products as $product) { ?>
-                                <tr>
-                                    <td class="text-left"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
-                                        <?php foreach ($product['option'] as $option) { ?>
-                                        <br />
-                                        <?php if ($option['type'] != 'file') { ?>
-                                        &nbsp;<small> - <?php echo $option['name']; ?>: <?php echo $option['value']; ?></small>
-                                        <?php } else { ?>
-                                        &nbsp;<small> - <?php echo $option['name']; ?>: <a href="<?php echo $option['href']; ?>"><?php echo $option['value']; ?></a></small>
-                                        <?php } ?>
-                                        <?php } ?></td>
-                                    <td class="text-left"><?php echo $product['model']; ?></td>
-                                    <td class="text-right"><?php echo $product['quantity']; ?></td>
-                                    <td class="text-right"><?php echo $product['price']; ?></td>
-                                    <td class="text-right"><?php echo $product['total']; ?></td>
-                                </tr>
-                                <?php } ?>
-                                <?php foreach ($vouchers as $voucher) { ?>
-                                <tr>
-                                    <td class="text-left"><a href="<?php echo $voucher['href']; ?>"><?php echo $voucher['description']; ?></a></td>
-                                    <td class="text-left"></td>
-                                    <td class="text-right">1</td>
-                                    <td class="text-right"><?php echo $voucher['amount']; ?></td>
-                                    <td class="text-right"><?php echo $voucher['amount']; ?></td>
-                                </tr>
-                                <?php } ?>
-                                <?php foreach ($totals as $totals) { ?>
-                                <tr>
-                                    <td colspan="4" class="text-right"><?php echo $totals['title']; ?>:</td>
-                                    <td class="text-right"><?php echo $totals['text']; ?></td>
-                                </tr>
-                                <?php } ?>
-                                </tbody>
                             </table>
                         </div>
                         <div class="tab-pane" id="tab-history">
@@ -295,4 +215,59 @@
     <!-- /.container-fluid -->
 </div>
 <!-- /#page-wrapper -->
+<script>
+//    $('#history').delegate('.pagination a', 'click', function(e) {
+//        e.preventDefault();
+//
+//        $('#history').load(this.href);
+//    });
+
+//    $('#history').load('index.php?route=sale/order/history&token=<?php echo $token; ?>&order_id=<?php echo $order_id; ?>');
+
+    $('#button-history').on('click', function() {
+
+
+        if(typeof verifyStatusChange == 'function'){
+            if(verifyStatusChange() == false){
+                return false;
+            }else{
+                addOrderInfo();
+            }
+        }else{
+            addOrderInfo();
+        }
+
+        $.ajax({
+            url: 'index.php?route=sale/order/api&token=<?php echo $token; ?>&api=api/order/history&order_id=<?php echo $order_id; ?>',
+            type: 'post',
+            dataType: 'json',
+            data: 'order_status_id=' + encodeURIComponent($('select[name=\'order_status_id\']').val()) + '&notify=' + ($('input[name=\'notify\']').prop('checked') ? 1 : 0) + '&append=' + ($('input[name=\'append\']').prop('checked') ? 1 : 0) + '&comment=' + encodeURIComponent($('textarea[name=\'comment\']').val()),
+            beforeSend: function() {
+                $('#button-history').button('loading');
+            },
+            complete: function() {
+                $('#button-history').button('reset');
+            },
+            success: function(json) {
+                $('.alert').remove();
+
+                if (json['error']) {
+                    $('#history').before('<div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> ' + json['error'] + ' <button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+                }
+
+                if (json['success']) {
+                    $('#history').load('index.php?route=sale/order/history&token=<?php echo $token; ?>&order_id=<?php echo $order_id; ?>');
+
+                    $('#history').before('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + json['success'] + ' <button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+
+                    $('textarea[name=\'comment\']').val('');
+
+                    $('#order-status').html($('select[name=\'order_status_id\'] option:selected').text());
+                }
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+            }
+        });
+</script>
 <?php echo $footer?>

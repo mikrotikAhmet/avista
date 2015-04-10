@@ -864,6 +864,8 @@ class ControllerSaleOrder extends Controller {
 			$data['date_added'] = date($this->language->get('date_format_short'), strtotime($order_info['date_added']));
 			$data['date_modified'] = date($this->language->get('date_format_short'), strtotime($order_info['date_modified']));
 
+			$data['request'] = $this->currency->format($order_info['request'],$this->config->get('config_currency'),'1');
+
 			$this->load->model('tool/upload');
 
 			$data['products'] = array();
