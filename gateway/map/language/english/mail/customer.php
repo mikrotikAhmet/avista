@@ -17,9 +17,10 @@
  * @author root
  */
 // Text
-$_['text_approve_subject']      = '%s - Your Account has been activated!';
+$_['text_approve_subject']      = '%s - Your Account has been approved!';
 $_['text_approve_welcome']      = 'Welcome and thank you for registering at %s!';
-$_['text_approve_login']        = 'Your account has now been created and you can log in by using your email address and password by visiting our website or at the following URL:';
-$_['text_approve_services']     = 'Upon logging in, you will be able to access other services including reviewing past orders, printing invoices and editing your account information.';
-$_['text_approve_info']      = 'Business Certification Number : %s\n\nYour Unique Customer Number : %s';
+$_['text_approve_login']        = 'Your account has now been created and you can log in by using your email address and password visiting our website or by clicking the URL:';
+$_['text_approve_services']     = 'Upon login, you will be able to access other services including reviewing past orders, printing invoices and editing your account information.';
+$_['text_approve_info']      = 'Your Business Certification Number : %s';
+$_['text_approve_info2'] = 'Your Unique Customer Number : %s';
 $_['text_approve_thanks']       = 'Thanks,';

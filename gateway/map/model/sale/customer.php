@@ -208,7 +208,8 @@ class ModelSaleCustomer extends Model {
 			$message .= $this->language->get('text_approve_login') . "\n";
 			$message .= $application_url . "\n\n";
 			$message .= $this->language->get('text_approve_services') . "\n\n";
-			$message .= sprintf($this->language->get('text_approve_info'),$customer_info['certificate_id'],$customer_info['unique_id']) . "\n\n";
+			$message .= sprintf($this->language->get('text_approve_info'),$customer_info['certificate_id']) . "\n";
+			$message .= sprintf($this->language->get('text_approve_info2'),$customer_info['unique_id']) . "\n\n";
 			$message .= $this->language->get('text_approve_thanks') . "\n";
 			$message .= $application_name;
 
