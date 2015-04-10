@@ -48,7 +48,7 @@ class ModelAccountCustomer extends Model {
 
 		$customer_group_info = $this->model_account_customer_group->getCustomerGroup($customer_group_id);
 
-		$this->db->query("INSERT INTO " . DB_PREFIX . "customer SET customer_group_id = '" . (int)$customer_group_id . "', application_id = '" . (int)$this->config->get('config_application_id') . "', firstname = '" . $this->db->escape($data['firstname']) . "', lastname = '" . $this->db->escape($data['lastname']) . "', telephone = '" . $this->db->escape($data['telephone']) . "', mobile = '" . $this->db->escape($data['mobile']) . "',email = '" . $this->db->escape($data['email']) . "', salt = '" . $this->db->escape($salt = substr(md5(uniqid(rand(), true)), 0, 9)) . "', password = '" . $this->db->escape(sha1($salt . sha1($salt . sha1($data['password'])))) . "', newsletter = '" . (isset($data['newsletter']) ? (int)$data['newsletter'] : 0) . "', ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "', unique_id = '".$this->db->escape($unique_id)."' , language_id = '".(int) $data['language_id']."', currency_code = '".$this->db->escape($data['currency_code'])."' ,status = '1',  date_added = NOW()");
+		$this->db->query("INSERT INTO " . DB_PREFIX . "customer SET customer_group_id = '" . (int)$customer_group_id . "', application_id = '" . (int)$this->config->get('config_application_id') . "', firstname = '" . $this->db->escape($data['firstname']) . "', lastname = '" . $this->db->escape($data['lastname']) . "', telephone = '" . $this->db->escape($data['tac1'].$data['telephone']) . "', mobile = '" . $this->db->escape($data['mac1'].$data['mobile']) . "',email = '" . $this->db->escape($data['email']) . "', salt = '" . $this->db->escape($salt = substr(md5(uniqid(rand(), true)), 0, 9)) . "', password = '" . $this->db->escape(sha1($salt . sha1($salt . sha1($data['password'])))) . "', newsletter = '" . (isset($data['newsletter']) ? (int)$data['newsletter'] : 0) . "', ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "', unique_id = '".$this->db->escape($unique_id)."' , language_id = '".(int) $data['language_id']."', currency_code = '".$this->db->escape($data['currency_code'])."' ,status = '1',  date_added = NOW()");
 
 		$customer_id = $this->db->getLastId();
 
@@ -66,9 +66,9 @@ class ModelAccountCustomer extends Model {
 
 		$uuid = new UUID();
 
-		$unique_id = date('si') . $uuid->uniqueId($format = 'nnnn', $length = '20');
+		$uniqueid = date('si') . $uuid->uniqueId($format = 'nnnn', $length = '20');
 
-		$this->db->query("INSERT INTO ".DB_PREFIX."certificate SET certificate_id = '".(int) $unique_id."' ,legal_name = '".$this->db->escape($data['company'])."',
+		$this->db->query("INSERT INTO ".DB_PREFIX."certificate SET certificate_id = '".(int) $uniqueid."' ,legal_name = '".$this->db->escape($data['company'])."',
 		registration_number = '".$this->db->escape($data['company_registration'])."',
 		tax_number = '".$this->db->escape($data['tax_number'])."',
 		country_id = '".(int)$data['country_id']."',
