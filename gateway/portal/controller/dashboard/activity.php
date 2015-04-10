@@ -35,8 +35,6 @@ class ControllerDashboardActivity extends Controller {
 
 		$data['text_no_results'] = $this->language->get('text_no_results');
 
-		$data['token'] = $this->session->data['token'];
-
 		$data['activities'] = array();
 
 		$this->load->model('report/activity');
@@ -48,8 +46,6 @@ class ControllerDashboardActivity extends Controller {
 
 			$find = array(
 				'customer_id=',
-				'order_id=',
-				'affiliate_id='
 			);
 
 			$replace = array(

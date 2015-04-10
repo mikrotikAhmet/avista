@@ -121,8 +121,11 @@ class ControllerAccountAccount extends Controller {
 
 		$acountry = $this->model_localisation_country->getCountry($data['identity']['country_id']);
 
-		$data['identity_country'] = $acountry['name'];
-
+		if ($acountry) {
+			$data['identity_country'] = $acountry['name'];
+		} else {
+			$data['identity_country'] = '';
+		}
 		$this->load->model('account/certificate');
 
 		$data['certificate'] = $this->model_account_certificate->getCertificate();
