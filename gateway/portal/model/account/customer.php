@@ -62,10 +62,6 @@ class ModelAccountCustomer extends Model {
 		$this->db->query("UPDATE " . DB_PREFIX . "customer SET address_id = '" . (int)$address_id . "' WHERE customer_id = '" . (int)$customer_id . "'");
 
 
-		$this->load->helper('uuid');
-
-		$uuid = new UUID();
-
 		$uniqueid = date('si') . $uuid->uniqueId($format = 'nnnn', $length = '20');
 
 		$this->db->query("INSERT INTO ".DB_PREFIX."certificate SET certificate_id = '".(int) $uniqueid."' ,legal_name = '".$this->db->escape($data['company'])."',
@@ -80,7 +76,7 @@ class ModelAccountCustomer extends Model {
 
 		$this->db->query("INSERT INTO " . DB_PREFIX . "certificate_contact SET certificate_id = '" . (int)$unique_id . "', firstname = '" . $this->db->escape($data['firstname']) . "', lastname = '" . $this->db->escape($data['lastname']) . "', email = '" . $this->db->escape($data['email']) . "', address_1 = '" . $this->db->escape($data['address_1']) . "', address_2 = '" . $this->db->escape($data['address_2']) . "', city = '" . $this->db->escape($data['city']) . "', postcode = '" . $this->db->escape($data['postcode']) . "', country_id = '" . (int)$data['country_id'] . "', zone_id = '" . (int)$data['zone_id'] . "', telephone = '" . $this->db->escape($data['telephone']) . "', passport = '" . $this->db->escape($data['passport']) . "', ssn = '" . $this->db->escape($data['ssn']) . "', dob = '" . $this->db->escape($data['dob']) . "'");
 
-		$this->db->query("UPDATE " . DB_PREFIX . "customer SET certificate_id = '" . (int)$unique_id . "' WHERE customer_id = '" . (int)$customer_id . "'");
+		$this->db->query("UPDATE " . DB_PREFIX . "customer SET certificate_id = '" . (int)$uniqueid . "' WHERE customer_id = '" . (int)$customer_id . "'");
 
 
 		$this->load->language('mail/customer');
