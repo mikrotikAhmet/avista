@@ -8,10 +8,10 @@
         <td><strong>Country of Bank</strong></td>
         <td><?php echo $bank['country']?></td>
     </tr>
-    <tr>
+    <!--tr>
         <td><strong>State/Region of Bank</strong></td>
         <td><?php echo $bank['zone']?></td>
-    </tr>
+    </tr-->
     <tr>
         <td><strong>Account number</strong></td>
         <td><?php echo $bank['account_number']?></td>
@@ -40,13 +40,19 @@
         <td><?php echo $bank['sort_code']?></td>
     </tr>
     <?php } ?>
-    <?php if (!in_array($bank['status'], $complete_status)) { ?>
     <tr>
-        <td colspan="2">
-            <button type="button" class="btn btn-link pull-right" onclick="removeBank('<?php echo $bank['bank_id']?>')" value="<?php echo $bank_id?>"><i class="text-danger fa fa-remove"></i> Delete</button>
-            <button type="button" class="btn btn-link pull-right" onclick="editBank('<?php echo $bank['bank_id']?>')" value="<?php echo $bank['bank_id']?>"><i class="fa fa-edit"></i> Edit</button>
-        </td>
+        <td><strong>Office Name</strong></td>
+        <td><?php echo $bank['officer_name']?></td>
     </tr>
+    <tr>
+        <td><strong>Office E-Mail</strong></td>
+        <td><?php echo $bank['officer_email']?></td>
+    </tr>
+    <tr>
+        <td><strong>Office Telephone</strong></td>
+        <td><?php echo $bank['officer_telephone']?></td>
+    </tr>
+    <?php if (!in_array($bank['status'], $complete_status)) { ?>
     <?php } ?>
     </tbody>
 </table>

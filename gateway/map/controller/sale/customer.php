@@ -1628,13 +1628,16 @@ class ControllerSaleCustomer extends Controller {
 			'bank_id'=>$bank['bank_id'],
 			'bank'=>$bank['bank'],
 			'country'=>$country_data['name'],
-			'zone'=>$zone_data['name'],
+			'zone'=>(isset($zone_data['name']) ? $zone_data['name'] : ''),
 			'account_number'=>$bank['account_number'],
 			'currency_code'=>$bank['currency_code'],
 			'iban'=>$bank['iban'],
 			'swift'=>$bank['swift'],
 			'routing'=>$bank['routing'],
 			'sort_code'=>$bank['sort_code'],
+			'officer_name'=>$bank['officer_name'],
+			'officer_email'=>$bank['officer_email'],
+			'officer_telephone'=>$bank['officer_telephone'],
 			'status'=>$bank['status']
 		);
 
