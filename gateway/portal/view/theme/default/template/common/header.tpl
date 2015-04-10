@@ -74,7 +74,7 @@
         <?php } ?>
         <!-- Top Menu Items -->
         <ul class="pull-right" style=" padding: 0;
-  margin: 0;
+    margin-top: 6px;
   list-style: none;">
             <li style="color: #FFF"><i class="fa fa-user"></i> <?php echo $text_logged?></li>
             <li><a href="<?php echo $logout; ?>" style="color: #FFF"><i class="fa fa-fw fa-power-off"></i> <?php echo $text_logout; ?></a></li>
