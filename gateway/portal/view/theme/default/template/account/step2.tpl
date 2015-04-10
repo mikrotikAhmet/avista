@@ -46,7 +46,7 @@
                             <div class="">
                                 <div class="row">
                                     <div class="col-sm-2">
-                                        <input type="text" name="mac1" placeholder="Area" class="form-control" maxlength="4"/>
+                                        <input type="text" name="mac1" value="<?php echo $mac; ?>" placeholder="Area" class="form-control" maxlength="4"/>
                                     </div>
                                     <div class="col-sm-10">
                                         <input type="text" name="mobile" value="<?php echo $mobile; ?>" placeholder="Mobile Number" id="input-mobile" class="form-control" />
@@ -62,7 +62,7 @@
                             <div class="">
                                 <div class="row">
                                     <div class="col-sm-2">
-                                        <input type="text" name="tac1" placeholder="Area" class="form-control" maxlength="4"/>
+                                        <input type="text" name="tac1" value="<?php echo $tac; ?>"  placeholder="Area" class="form-control" maxlength="4"/>
                                     </div>
                                     <div class="col-sm-10">
                                         <input type="text" name="telephone" value="<?php echo $telephone; ?>" placeholder="Alternative telephone" id="input-telephone" class="form-control" />

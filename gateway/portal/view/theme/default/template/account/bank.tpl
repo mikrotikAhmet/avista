@@ -19,12 +19,12 @@
             </select>
         </div>
     </div>
-    <div class="form-group required">
+    <!--div class="form-group required">
         <label class="control-label" for="input-bank-zone">State/Region of Bank</label>
         <div class="">
             <select name="zone_id" id="input-bank-zone" class="form-control"></select>
         </div>
-    </div>
+    </div-->
     <div class="form-group required">
         <label class="control-label" for="input-bank-account">Account number</label>
         <div class="">

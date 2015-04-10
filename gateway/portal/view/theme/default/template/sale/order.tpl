@@ -19,8 +19,8 @@
 <div class="row">
     <div class="col-lg-12">
         <p class="text-info">You can place order in this section.</p>
-        <p class="text-info">Please you are obligated to fill all neccessary fields required.<br/>After clicking <b>Submit Request</b> button<br/>
-        You will be asked to provide SMS Verification Code and your Unique Customer number which associated to your account and already sent to your registered email address.</p>
+        <p class="text-info">Please you are obligated to fill all neccessary fields required.<br/>After clicking <b class="text-danger">Submit Request</b> button<br/>
+        You will be asked to provide <strong class="text-danger">SMS Verification Code</strong> and your <strong class="text-danger">Unique Customer number</strong> which associated to your account and already sent to your registered email address.</p>
     </div>
     <div class="col-lg-6">
         <form id="order">
@@ -29,6 +29,9 @@
                     Order Form
                 </div>
                 <div class="panel-body">
+                    <?php if (!$banks) { ?>
+                    <h3 class="text-danger">To place an order request you must have at least 1 (One) verified Bank Account.</h3>
+                    <?php } ?>
                     <div class="form-group">
                         <label class=" control-label">Instrument</label>
                         <div class="">

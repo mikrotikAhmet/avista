@@ -24,7 +24,7 @@ $_['text_account'] = 'My Account';
 $_['text_language'] = 'Language';
 $_['text_password'] = 'Password';
 $_['text_security'] = 'Security';
-$_['text_2way'] = '2-Way Auth. requires mobile number. This option will protect you account from fraud.';
+$_['text_2way'] = '2-Way Auth. requires mobile number. This option will protect you account from fraud. If you enable this option, our system will automatically use the mobile number which you have provided during the registration process.<br/>If you want to you use another mobile phone to receive SMS messages, you can modify your Personal Information.';
 $_['text_your_details']    = 'Your Personal Details';
 
 

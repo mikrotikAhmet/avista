@@ -185,6 +185,18 @@ class ControllerAccountStep2 extends Controller {
 			$data['email'] = '';
 		}
 
+		if (isset($this->request->post['tac1'])) {
+			$data['tac'] = $this->request->post['tac1'];
+		} else {
+			$data['tac'] = '';
+		}
+
+		if (isset($this->request->post['mac1'])) {
+			$data['mac'] = $this->request->post['mac1'];
+		} else {
+			$data['mac'] = '';
+		}
+
 		if (isset($this->request->post['telephone'])) {
 			$data['telephone'] = $this->request->post['tac1'].$this->request->post['telephone'];
 		} else {

@@ -8,10 +8,12 @@
         <td><strong>Country of Bank</strong></td>
         <td><?php echo $bank['country']?></td>
     </tr>
+    <?php if ($bank['zone']) { ?>
     <tr>
         <td><strong>State/Region of Bank</strong></td>
         <td><?php echo $bank['zone']?></td>
     </tr>
+    <?php } ?>
     <tr>
         <td><strong>Account number</strong></td>
         <td><?php echo $bank['account_number']?></td>

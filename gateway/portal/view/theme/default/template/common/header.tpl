@@ -64,19 +64,17 @@
   position: relative;
   bottom: 10px;"/></a>
         </div>
-        <?php if (!$approved || $account_status) { ?>
-        <p class="text-info" style=" color: #FFF;
+        <?php if (!$approved && !$hasrequest) { ?>
+        <p class="text-info pull-left" style=" color: #FFF;
   position: relative;
   top: 0px;
   background: #173e9a;
-  padding: 10px 5px;"><b>***After you providing company document(s) and valid bank account(s) please make a aprroval request by clicking</b> <button type="button" class="btn btn-sm btn-success">Request Approval</button></p>
+  padding: 10px 5px;">
+            <b>***After you providing company document(s) and valid bank account(s) please make a approval request by clicking</b> <button type="button" class="btn btn-sm btn-success" id="approval-request">Request Approval</button></p>
         <?php } ?>
         <!-- Top Menu Items -->
         <ul class="pull-right" style=" padding: 0;
   margin: 0;
-  position: relative;
-  bottom: 52px;
-  right: 15px;
   list-style: none;">
             <li style="color: #FFF"><i class="fa fa-user"></i> <?php echo $text_logged?></li>
             <li><a href="<?php echo $logout; ?>" style="color: #FFF"><i class="fa fa-fw fa-power-off"></i> <?php echo $text_logout; ?></a></li>
@@ -94,6 +92,34 @@
         $(document).ready(function(){
             $('#basic-modal-content').modal();
             return false;
+        });
+        $(document).ready(function(){
+
+            $('#approval-request').on('click',function(){
+
+                var element = $(this);
+
+                $.ajax({
+                    url : 'index.php?route=account/account/UpdateAccountStatus',
+                    type: 'post',
+                    dataType : 'json',
+                    beforeSend: function() {
+                        element.button('loading');
+                    },
+                    success: function(json) {
+
+                        element.button('reset');
+
+                        alert(json.message);
+
+                        location.reload();
+
+
+                    }
+                });
+
+
+            });
         });
         </script>
     <?php if ($isFirst) { ?>

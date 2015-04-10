@@ -105,7 +105,7 @@
                     <div class="form-group required">
                         <label class="col-sm-2 control-label" for="input-m">Mobile GSM Number</label>
                         <div class="col-sm-10">
-                            <input type="text" name="mobile" value="<?php echo $mobile; ?>" placeholder="<?php echo $entry_mobile; ?>" id="input-mobile" class="form-control" />
+                            <input type="text" name="mobile" value="<?php echo $mobile; ?>" placeholder="Mobile GSM Number" id="input-mobile" class="form-control" />
                             <?php if ($error_mobile) { ?>
                             <div class="text-danger"><?php echo $error_mobile; ?></div>
                             <?php  } ?>

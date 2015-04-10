@@ -2,9 +2,10 @@
     <div class="form-group required">
         <label class="control-label" for="input-bank-country">Nationality</label>
         <div class="">
+            <?php $country_id = (isset($identity['country_id']) ? $identity['country_id'] : 0)?>
             <select name="country_id" id="input-nationality" class="form-control">
                 <?php foreach ($countries as $country) { ?>
-                <?php if ($country['country_id'] == $identity['country_id']) { ?>
+                <?php if ($country['country_id'] == $country_id) { ?>
                 <option value="<?php echo $country['country_id']; ?>" selected="selected"><?php echo $country['name']; ?></option>
                 <?php } else { ?>
                 <option value="<?php echo $country['country_id']; ?>"><?php echo $country['name']; ?></option>
@@ -16,13 +17,13 @@
     <div class="form-group required">
         <label class="control-label" for="input-pob">Passport number</label>
         <div class="">
-            <input type="text" name="passport" value="<?php echo $identity['passport']?>" placeholder="Passport number" id="input-passport" class="form-control" />
+            <input type="text" name="passport" value="<?php echo (isset($identity['passport']) ? $identity['passport'] : '')?>" placeholder="Passport number" id="input-passport" class="form-control" />
         </div>
     </div>
     <div class="form-group">
         <label class="control-label" for="input-date-added">Date of issue</label>
         <div class="input-group date">
-            <input type="text" name="issue" value="<?php echo $identity['issue']?>" placeholder="Date of issue" data-format="YYYY-MM-DD" id="input-date-added" class="form-control" />
+            <input type="text" name="issue" value="<?php echo (isset($identity['issue']) ? $identity['issue'] : '')?>" placeholder="Date of issue" data-format="YYYY-MM-DD" id="input-date-added" class="form-control" />
                   <span class="input-group-btn">
                   <button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button>
                   </span></div>
@@ -30,7 +31,7 @@
     <div class="form-group">
         <label class="control-label" for="input-date-added">Date of expiration</label>
         <div class="input-group date">
-            <input type="text" name="expiration" value="<?php echo $identity['expiration']?>" placeholder="Date of expiration" data-format="YYYY-MM-DD" id="input-date-added" class="form-control" />
+            <input type="text" name="expiration" value="<?php echo (isset($identity['expiration']) ? $identity['expiration'] : '')?>" placeholder="Date of expiration" data-format="YYYY-MM-DD" id="input-date-added" class="form-control" />
                   <span class="input-group-btn">
                   <button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button>
                   </span></div>

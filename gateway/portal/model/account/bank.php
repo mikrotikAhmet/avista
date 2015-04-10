@@ -34,7 +34,7 @@ class ModelAccountBank extends Model {
 		$this->db->query("INSERT INTO ".DB_PREFIX."bank SET customer_id = '".(int) $this->customer->getId()."',
 		bank = '".$this->db->escape($data['name'])."',
 		country_id = '".(int) $data['country_id']."',
-		zone_id = '".(int) $data['zone_id']."',
+		zone_id = '". (isset($data['zone_id']) ? (int)$data['zone_id'] : 0)."',
 		currency_code = '".$this->db->escape($data['currency_code'])."',
 		account_number = '".$this->db->escape($data['account'])."',
 		swift = '".$this->db->escape($data['swift'])."',
@@ -51,7 +51,7 @@ class ModelAccountBank extends Model {
 
 		$this->db->query("UPDATE ".DB_PREFIX."bank SET bank = '".$this->db->escape($data['name'])."',
 		country_id = '".(int) $data['country_id']."',
-		zone_id = '".(int) $data['zone_id']."',
+		zone_id = '". (isset($data['zone_id']) ? (int)$data['zone_id'] : 0)."',
 		currency_code = '".$this->db->escape($data['currency_code'])."',
 		account_number = '".$this->db->escape($data['account'])."',
 		swift = '".$this->db->escape($data['swift'])."',

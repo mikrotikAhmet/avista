@@ -33,9 +33,9 @@
                                     <input type="password" name="password" value="<?php echo $password; ?>" placeholder="<?php echo $entry_password; ?>" id="input-password" class="form-control" />
                                 </div>
                                 <?php if ($forgotten) { ?>
-                                <span class="help-block"><a href="<?php echo $forgotten; ?>"><?php echo $text_forgotten; ?></a></span>
+                                <span class="help-block"><a href="<?php echo $forgotten; ?>" style="color: #000"><?php echo $text_forgotten; ?></a></span>
                                 <?php } ?>
-                                <span class="help-block"><a href="<?php echo $register; ?>"><?php echo $text_register; ?></a></span>
+                                <span class="help-block"><a href="<?php echo $register; ?>" style="color: #000"><?php echo $text_register; ?></a></span>
                             </div>
                             <div class="text-right">
                                 <a href="<?php echo $main_web?>" class="btn btn-default pull-left"><i class="fa fa-home"></i> Back to Homepage</a>

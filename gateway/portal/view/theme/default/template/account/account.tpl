@@ -51,7 +51,7 @@
                                 <?php if (!$approved) { ?>
                                 <tr class="">
                                     <td colspan="3">
-                                        <h4>You account is waiting for Verification. To continue and get approved please follow this link : </h4>
+                                        <h4>You account is waiting for Verification. To continue and get approved please complete your profile and provide the necessary documents. </h4>
                                     </td>
                                 </tr>
                                 <?php } else { ?>
@@ -129,12 +129,12 @@
                                             </div>
                                             <label class="control-label" for="input-password"><?php echo $text_2way; ?></label>
                                         </div>
-                                        <div class="form-group">
+                                        <!--div class="form-group">
                                             <label class="control-label" for="input-telephone"><?php echo $entry_telephone; ?></label>
                                             <div class="">
                                                 <input type="text" name="telephone"  value="<?php echo $telephone?>" id="input-telephone" class="form-control" <?php //echo (!empty($telephone) ? 'disabled' : '')?>/>
                                             </div>
-                                        </div>
+                                        </div-->
                                     </td>
                                     <td><button type="button" id="save-auth" class="btn btn-sm btn-success">Save</button></td>
                                 </tr>
@@ -161,7 +161,7 @@
                         </div>
                         <div class="tab-pane fade" id="profile-pills">
                             <div class="alert alert-info alert-dismissable">
-                                <i class="fa fa-exclamation-circle"></i> <strong>Important Notice:</strong> In order to change your Personal Information, please contact to our <a href="mailto:compliance@hifholding.com">compliance</a> department. Our compliance team will review your change request.
+                                <i class="fa fa-exclamation-circle"></i> <strong>Important Notice:</strong> In order to change your Personal Information, please contact to our <a href="mailto:compliance@hifholding.com" style="color: #000">compliance</a> department. Our compliance team will review your change request.
                             </div>
                             <fieldset>
                                 <div class="row">
@@ -211,31 +211,31 @@
                                                 <tbody>
                                                 <tr>
                                                     <td>Nationality</td>
-                                                    <td><?php echo $identity['country_id']?></td>
+                                                    <td><?php echo (!empty($identity_country) ? $identity_country : '<span class="text-danger">No record</span>')?></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Passport number</td>
-                                                    <td><?php echo $identity['passport']?></td>
+                                                    <td><?php echo (!empty($identity['passport']) ? $identity['passport'] : '<span class="text-danger">No record</span>')?></td>
                                                     <td></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Date of issue</td>
-                                                    <td><?php echo $identity['issue']?></td>
+                                                    <td><?php echo (!empty($identity['issue']) ? $identity['issue'] : '<span class="text-danger">No record</span>')?></td>
                                                     <td></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Date of expiration</td>
-                                                    <td><?php echo $identity['expiration']?></td>
+                                                    <td><?php echo (!empty($identity['expiration']) ? $identity['expiration'] : '<span class="text-danger">No record</span>')?></td>
                                                     <td></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Date of birth</td>
-                                                    <td><?php echo date('d/m/Y',strtotime($customer['dob']))?></td>
+                                                    <td><?php echo (!empty($customer['dob']) ? date('d/m/Y',strtotime($customer['dob'])) : '<span class="text-danger">No record</span>')?></td>
                                                     <td></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Place of birth</td>
-                                                    <td><?php echo $customer['pob']?></td>
+                                                    <td><?php echo (!empty($customer['pob']) ? $customer['pob'] : '<span class="text-danger">No record</span>')?></td>
                                                     <td></td>
                                                 </tr>
                                                 </tbody>
@@ -256,19 +256,19 @@
                                             </tr>
                                             <tr>
                                                 <td>Incorporation date</td>
-                                                <td><?php echo $certificate['inc_date']?></td>
+                                                <td><?php echo (!empty($certificate['inc_date']) ? $certificate['inc_date'] : '<span class="text-danger">No record</span>')?></td>
                                                 <td></td>
                                             </tr>
                                             <?php if (!empty($certificate['dba'])) { ?>
                                             <tr>
                                                 <td>Registered DBA/trade name</td>
-                                                <td><?php echo $certificate['dba']?></td>
+                                                <td><?php echo (!empty($certificate['dba']) ? $certificate['dba'] : '<span class="text-danger">No record</span>')?></td>
                                                 <td></td>
                                             </tr>
                                             <?php } ?>
                                             <tr>
                                                 <td>Type of business</td>
-                                                <td><?php echo $certificate['type']?></td>
+                                                <td><?php echo (!empty($certificate['type']) ? $certificate['type'] : '<span class="text-danger">No record</span>')?></td>
                                                 <td></td>
                                             </tr>
                                             <tr>
@@ -278,7 +278,7 @@
                                             </tr>
                                             <tr>
                                                 <td>VAT / Tax Identification number</td>
-                                                <td><?php echo $certificate['tax_number']?></td>
+                                                <td><?php echo (!empty($certificate['tax_number']) ? $certificate['tax_number'] : '<span class="text-danger">No record</span>')?></td>
                                                 <td></td>
                                             </tr>
                                             <tr>
@@ -301,8 +301,8 @@
                         <div class="tab-pane fade" id="business-pills">
                             <?php if (!$approved) { ?>
                             <div class="alert alert-warning alert-dismissable">
-                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                                <i class="fa fa-info-circle"></i>  <strong>Action required!</strong> Your account has no Approved Business Certificate yet.</div>
+                                <i class="fa fa-info-circle"></i>  <strong>Action required!</strong> Your account has no Approved Business Certificate yet.<br/>
+                            Please complete your profile by visiting the <b>Personal & Business Information</b> Tab.</div>
                             <?php } else { ?>
                             <h1>Verified</h1>
                             <h3 class="text-success">Your Company account has been successfully approved.</h3>
@@ -326,13 +326,13 @@
                             <div id="bank-list"></div>
                         </div>
                         <div class="tab-pane fade" id="verification-pills">
-                            <!--
-                            <h3>Document required.</h3>
-                            <p class="text-danger">Company documents are required to approve your Company. Please see the list of required documents.
-                                More documents you provide will help up to approve your company faster.<br/>
+
+                            <h3>Documents required.</h3>
+                            <p class="text-danger">Company documents are required to approve your Company.<br/>
                                 <b>NOTE:</b> In some cases we may ask for additional information and documents to complete your approval process.
                             </p>
-                            -->
+                            <p>We only accept .pdf, .jpg and .png formats.</p>
+
                             <div class="input-group">
                                 <input type="text" name="upload" disabled value="" placeholder="Incorporation documents*" data-format="" id="input-incorporation-documents" class="form-control">
                                   <span class="input-group-btn">

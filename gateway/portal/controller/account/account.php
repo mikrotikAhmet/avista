@@ -107,6 +107,7 @@ class ControllerAccountAccount extends Controller {
 		$data['account_status'] = $customer_data['account_status'];
 		$data['unique'] = $this->customer->getUniqueId();
 		$data['certificate'] = $this->model_account_certificate->getCertificate();
+		$data['identity'] = $this->model_account_customer->getIdentity();
 
 		$czone = $this->model_localisation_zone->getZone($data['certificate']['zone_id']);
 		$ccountry = $this->model_localisation_country->getCountry($data['certificate']['country_id']);
@@ -117,6 +118,10 @@ class ControllerAccountAccount extends Controller {
 			$data['certificate_zone'] = '';
 		}
 		$data['certificate_country'] = $ccountry['name'];
+
+		$acountry = $this->model_localisation_country->getCountry($data['identity']['country_id']);
+
+		$data['identity_country'] = $acountry['name'];
 
 		$this->load->model('account/certificate');
 
@@ -502,7 +507,7 @@ class ControllerAccountAccount extends Controller {
 			'bank_id'=>$bank['bank_id'],
 			'bank'=>$bank['bank'],
 			'country'=>$country_data['name'],
-			'zone'=>$zone_data['name'],
+			'zone'=>(isset($zone_data['name']) ? $zone_data['name'] : ''),
 			'account_number'=>$bank['account_number'],
 			'currency_code'=>$bank['currency_code'],
 			'iban'=>$bank['iban'],
@@ -538,12 +543,12 @@ class ControllerAccountAccount extends Controller {
 			);
 		}
 
-		if (!isset($data['zone_id'])) {
-			$error=true;
-			$json['error'] = array(
-				'message' => 'Invalid State/Region of Bank'
-			);
-		}
+//		if (!isset($data['zone_id'])) {
+//			$error=true;
+//			$json['error'] = array(
+//				'message' => 'Invalid State/Region of Bank'
+//			);
+//		}
 
 		if (empty($data['account'])) {
 			$error=true;
@@ -565,7 +570,7 @@ class ControllerAccountAccount extends Controller {
 //			$iban = isValidIBAN($country_data['iso_code_2'].$data['iban']);
 			$error=true;
 				$json['error'] = array(
-					'message' => 'IBAN idoes not seems valid!'
+					'message' => 'IBAN does not seems valid!'
 				);
 		}
 
@@ -720,9 +725,12 @@ class ControllerAccountAccount extends Controller {
 	public function showidentityDetail(){
 
 		$this->load->model('account/customer');
+		$this->load->model('localisation/country');
+
 
 		$data['customer'] = $this->model_account_customer->getCustomer($this->customer->getId());
 		$data['identity'] = $this->model_account_customer->getCustomerIdentity($this->customer->getId());
+		$data['country'] = $this->model_localisation_country->getCountry($data['identity']['country_id']);
 
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/account/identity_account_detail.tpl')) {
 			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/account/identity_account_detail.tpl', $data));
@@ -796,4 +804,21 @@ class ControllerAccountAccount extends Controller {
 		$this->response->setOutput(json_encode($json));
 
 	}
-} 
+
+	public function updateAccountStatus(){
+
+		$json = array();
+
+		$this->load->model('account/customer');
+
+		$this->model_account_customer->setRequest();
+
+		$json = array(
+			'message'=>'Your Request for Approval has been received .Our compliance team will review your account.!'
+		);
+
+		$this->response->addHeader('Content-Type: application/json');
+		$this->response->setOutput(json_encode($json));
+
+	}
+}
