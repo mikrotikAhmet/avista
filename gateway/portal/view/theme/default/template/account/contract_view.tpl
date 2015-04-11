@@ -55,7 +55,6 @@
 <div class="row">
     <div class="col-md-10 col-md-offset-1">
         <div class="container">
-        <a href="<?php echo $back?>" class="btn btn-danger"><i class="fa fa-remove"></i> Close</a>
             <ul style="list-style: none">
                 <li class="bold">+++ ELECTRONIC BUSINESS AGREEMENT/CONTRACT</li>
                 <li>A) BUSINESS AGREEMENT / CONTRACT NUMBER:<b><?php echo strtoupper($contract['contract_id'])?></b></li>
@@ -292,7 +291,6 @@
             </div>
 
             <h4><i>ELECTRONIC SIGN AND/OR STAMP IS ACCEPTED BY BOTH PARTIES AS TRUE, VALID AND IN FULL FORCE.</i></h4>
-        <a href="<?php echo $back?>" class="btn btn-danger"><i class="fa fa-remove"></i> Close</a>
         </div>
 
     </div>

@@ -2,32 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbd0d96c-d439-4391-add6-8ad6ad0b2fa0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gateway/map/image/stamp.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gateway/map/image/stamp2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gateway/portal/image/stamp2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gateway/map/controller/contract/contract.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gateway/map/controller/sale/contract.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gateway/map/model/contract/contract.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gateway/portal/model/contract/contract.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gateway/map/view/template/sale/contract.tpl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gateway/map/view/template/contract/contract_list.tpl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gateway/map/view/template/contract/contract_view.tpl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/contract_view.tpl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gateway/map/view/template/sale/invoice_view.tpl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gateway/map/view/template/sale/order_history.tpl" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/map/system/cache/cache.order_status.1.1428708510" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/portal/system/cache/cache.currency.1428706641" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/portal/system/cache/cache.language.1428706641" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/portal/system/cache/cache.order_status.1.1428705544" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/account.tpl" afterPath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/account.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/map/controller/common/menu.php" afterPath="$PROJECT_DIR$/gateway/map/controller/common/menu.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/map/view/template/common/menu.tpl" afterPath="$PROJECT_DIR$/gateway/map/view/template/common/menu.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/map/controller/sale/order.php" afterPath="$PROJECT_DIR$/gateway/map/controller/sale/order.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/map/model/sale/order.php" afterPath="$PROJECT_DIR$/gateway/map/model/sale/order.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/contract_view.tpl" afterPath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/contract_view.tpl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/controller/account/order.php" afterPath="$PROJECT_DIR$/gateway/portal/controller/account/order.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/order.tpl" afterPath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/order.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/map/view/template/sale/order_info.tpl" afterPath="$PROJECT_DIR$/gateway/map/view/template/sale/order_info.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="avista.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,76 +28,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="order.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gateway/map/controller/sale/order.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.2352943" vertical-offset="15882" max-vertical-offset="16635">
-              <caret line="1080" column="44" selection-start-line="1080" selection-start-column="33" selection-end-line="1080" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="contract.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gateway/map/model/contract/contract.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.875" vertical-offset="2025" max-vertical-offset="3045">
-              <caret line="154" column="44" selection-start-line="154" selection-start-column="32" selection-end-line="154" selection-end-column="44" />
-              <folding>
-                <marker date="1428729068241" expanded="true" signature="775:846" placeholder="SELECT * FRO..DB_PREFIXorder..." />
-                <marker date="1428729068241" expanded="true" signature="1037:2378" placeholder="INSERT INTO ..." />
-                <marker date="1428729068241" expanded="true" signature="3891:3930" placeholder="SELECT * FRO..DB_PREFIXcontract..." />
-                <marker date="1428729068241" expanded="true" signature="5353:5446" placeholder="SELECT * FRO..DB_PREFIXcontract..." />
-                <marker date="1428729068241" expanded="true" signature="5559:5646" placeholder="SELECT * FRO..DB_PREFIXcontract..." />
-                <marker date="1428729068241" expanded="true" signature="5742:5797" placeholder="SELECT COUNT..DB_PREFIXcontract..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="order.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/gateway/map/model/sale/order.php">
+        <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/order.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7894737" vertical-offset="3630" max-vertical-offset="4230">
-              <caret line="272" column="0" selection-start-line="272" selection-start-column="0" selection-end-line="272" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.9736842" vertical-offset="2205" max-vertical-offset="5205">
+              <caret line="184" column="0" selection-start-line="184" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
               <folding>
-                <marker date="1428736303006" expanded="true" signature="623:835" placeholder="SELECT *, (S..." />
-                <marker date="1428736303006" expanded="true" signature="634:746" placeholder="SELECT CONCA..DB_PREFIXcustomer..." />
-                <marker date="1428736303006" expanded="true" signature="1345:1444" placeholder="SELECT * FRO..DB_PREFIXorder_product..." />
-                <marker date="1428736303006" expanded="true" signature="1486:1574" placeholder="SELECT * FRO..DB_PREFIXbank..." />
-                <marker date="1428736303006" expanded="true" signature="1617:1708" placeholder="SELECT * FRO..DB_PREFIXbank..." />
-                <marker date="1428736303006" expanded="true" signature="4138:4500" placeholder="SELECT o.ord..." />
-                <marker date="1428736303006" expanded="true" signature="4208:4382" placeholder="SELECT os.na..DB_PREFIXorder_status..." />
-                <marker date="1428736303006" expanded="true" signature="6410:6464" placeholder="SELECT COUNT..." />
-                <marker date="1428736303006" expanded="true" signature="7713:7799" placeholder="SELECT * FRO..DB_PREFIXorder_product..." />
-                <marker date="1428736303006" expanded="true" signature="8014:8377" placeholder="SELECT oh.da..DB_PREFIXorder_history..." />
-                <marker date="1428736303006" expanded="true" signature="8505:8607" placeholder="SELECT COUNT..DB_PREFIXorder_history..." />
-                <marker date="1428736303006" expanded="true" signature="8860:8997" placeholder="INSERT INTO ..." />
-                <marker date="1428736303006" expanded="true" signature="9185:9333" placeholder="SELECT MAX(i..." />
+                <marker date="1428737808639" expanded="true" signature="5032:5044" placeholder="..." />
+                <marker date="1428737808639" expanded="false" signature="5309:5321" placeholder="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="invoice_view.tpl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gateway/map/view/template/sale/invoice_view.tpl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.125" vertical-offset="720" max-vertical-offset="1485">
-              <caret line="69" column="66" selection-start-line="69" selection-start-column="66" selection-end-line="69" selection-end-column="66" />
-              <folding>
-                <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="order_info.tpl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gateway/map/view/template/sale/order_info.tpl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-30.0" vertical-offset="4365" max-vertical-offset="5565">
-              <caret line="339" column="61" selection-start-line="339" selection-start-column="61" selection-end-line="339" selection-end-column="61" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -139,7 +54,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/gateway/portal/controller/account/step2.php" />
         <option value="$PROJECT_DIR$/gateway/map/view/template/sale/customer_form.tpl" />
         <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/identity_account_detail.tpl" />
         <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/login.tpl" />
@@ -185,11 +99,12 @@
         <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/account.tpl" />
         <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/order.tpl" />
         <option value="$PROJECT_DIR$/gateway/portal/model/contract/contract.php" />
-        <option value="$PROJECT_DIR$/gateway/portal/controller/account/order.php" />
         <option value="$PROJECT_DIR$/gateway/map/controller/sale/order.php" />
         <option value="$PROJECT_DIR$/gateway/map/view/template/sale/order_info.tpl" />
         <option value="$PROJECT_DIR$/gateway/map/view/template/sale/invoice_view.tpl" />
         <option value="$PROJECT_DIR$/gateway/map/model/sale/order.php" />
+        <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/contract_view.tpl" />
+        <option value="$PROJECT_DIR$/gateway/portal/controller/account/order.php" />
       </list>
     </option>
   </component>
@@ -290,7 +205,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="map" />
+              <option name="myItemId" value="portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -308,11 +227,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="map" />
+              <option name="myItemId" value="portal" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
+              <option name="myItemId" value="controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -330,15 +249,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="map" />
+              <option name="myItemId" value="portal" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
+              <option name="myItemId" value="controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="sale" />
+              <option name="myItemId" value="account" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -798,14 +717,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/sale/order.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.5526316" vertical-offset="105" max-vertical-offset="5115">
-          <caret line="66" column="49" selection-start-line="66" selection-start-column="42" selection-end-line="66" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/login.tpl">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.10526316" vertical-offset="0" max-vertical-offset="885">
@@ -834,14 +745,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/contract_view.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4605">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gateway/portal/model/contract/contract.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-18.75" vertical-offset="75" max-vertical-offset="645">
@@ -853,24 +756,6 @@
             <marker date="1428731187198" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcontract..." />
             <marker date="1428731187198" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcontract..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5" vertical-offset="2205" max-vertical-offset="5205">
-          <caret line="166" column="197" selection-start-line="166" selection-start-column="197" selection-end-line="166" selection-end-column="197" />
-          <folding>
-            <marker date="1428731270783" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/order.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5263158" vertical-offset="1620" max-vertical-offset="3915">
-          <caret line="128" column="62" selection-start-line="128" selection-start-column="62" selection-end-line="128" selection-end-column="93" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -887,21 +772,6 @@
         <state vertical-scroll-proportion="0.5263158" vertical-offset="1290" max-vertical-offset="4605">
           <caret line="106" column="64" selection-start-line="0" selection-start-column="0" selection-end-line="301" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/map/model/contract/contract.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.875" vertical-offset="2025" max-vertical-offset="3045">
-          <caret line="154" column="44" selection-start-line="154" selection-start-column="32" selection-end-line="154" selection-end-column="44" />
-          <folding>
-            <marker date="1428729068241" expanded="true" signature="775:846" placeholder="SELECT * FRO..DB_PREFIXorder..." />
-            <marker date="1428729068241" expanded="true" signature="1037:2378" placeholder="INSERT INTO ..." />
-            <marker date="1428729068241" expanded="true" signature="3891:3930" placeholder="SELECT * FRO..DB_PREFIXcontract..." />
-            <marker date="1428729068241" expanded="true" signature="5353:5446" placeholder="SELECT * FRO..DB_PREFIXcontract..." />
-            <marker date="1428729068241" expanded="true" signature="5559:5646" placeholder="SELECT * FRO..DB_PREFIXcontract..." />
-            <marker date="1428729068241" expanded="true" signature="5742:5797" placeholder="SELECT COUNT..DB_PREFIXcontract..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -925,14 +795,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6052632" vertical-offset="495" max-vertical-offset="19065">
           <caret line="56" column="42" selection-start-line="48" selection-start-column="36" selection-end-line="56" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/map/controller/sale/order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.2352943" vertical-offset="15882" max-vertical-offset="16635">
-          <caret line="1080" column="44" selection-start-line="1080" selection-start-column="33" selection-end-line="1080" selection-end-column="44" />
           <folding />
         </state>
       </provider>
@@ -961,19 +823,77 @@
         <state vertical-scroll-proportion="0.7894737" vertical-offset="3630" max-vertical-offset="4230">
           <caret line="272" column="0" selection-start-line="272" selection-start-column="0" selection-end-line="272" selection-end-column="0" />
           <folding>
-            <marker date="1428736303006" expanded="true" signature="623:835" placeholder="SELECT *, (S..." />
-            <marker date="1428736303006" expanded="true" signature="634:746" placeholder="SELECT CONCA..DB_PREFIXcustomer..." />
-            <marker date="1428736303006" expanded="true" signature="1345:1444" placeholder="SELECT * FRO..DB_PREFIXorder_product..." />
-            <marker date="1428736303006" expanded="true" signature="1486:1574" placeholder="SELECT * FRO..DB_PREFIXbank..." />
-            <marker date="1428736303006" expanded="true" signature="1617:1708" placeholder="SELECT * FRO..DB_PREFIXbank..." />
-            <marker date="1428736303006" expanded="true" signature="4138:4500" placeholder="SELECT o.ord..." />
-            <marker date="1428736303006" expanded="true" signature="4208:4382" placeholder="SELECT os.na..DB_PREFIXorder_status..." />
-            <marker date="1428736303006" expanded="true" signature="6410:6464" placeholder="SELECT COUNT..." />
-            <marker date="1428736303006" expanded="true" signature="7713:7799" placeholder="SELECT * FRO..DB_PREFIXorder_product..." />
-            <marker date="1428736303006" expanded="true" signature="8014:8377" placeholder="SELECT oh.da..DB_PREFIXorder_history..." />
-            <marker date="1428736303006" expanded="true" signature="8505:8607" placeholder="SELECT COUNT..DB_PREFIXorder_history..." />
-            <marker date="1428736303006" expanded="true" signature="8860:8997" placeholder="INSERT INTO ..." />
-            <marker date="1428736303006" expanded="true" signature="9185:9333" placeholder="SELECT MAX(i..." />
+            <marker date="1428736303006" expanded="true" signature="-1:-1" placeholder="SELECT *, (S..." />
+            <marker date="1428736303006" expanded="true" signature="-1:-1" placeholder="SELECT CONCA..DB_PREFIXcustomer..." />
+            <marker date="1428736303006" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXorder_product..." />
+            <marker date="1428736303006" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXbank..." />
+            <marker date="1428736303006" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXbank..." />
+            <marker date="1428736303006" expanded="true" signature="-1:-1" placeholder="SELECT o.ord..." />
+            <marker date="1428736303006" expanded="true" signature="-1:-1" placeholder="SELECT os.na..DB_PREFIXorder_status..." />
+            <marker date="1428736303006" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1428736303006" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXorder_product..." />
+            <marker date="1428736303006" expanded="true" signature="-1:-1" placeholder="SELECT oh.da..DB_PREFIXorder_history..." />
+            <marker date="1428736303006" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXorder_history..." />
+            <marker date="1428736303006" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428736303006" expanded="true" signature="-1:-1" placeholder="SELECT MAX(i..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/map/model/contract/contract.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5" vertical-offset="2025" max-vertical-offset="3045">
+          <caret line="154" column="44" selection-start-line="154" selection-start-column="32" selection-end-line="154" selection-end-column="44" />
+          <folding>
+            <marker date="1428729068241" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXorder..." />
+            <marker date="1428729068241" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428729068241" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcontract..." />
+            <marker date="1428729068241" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcontract..." />
+            <marker date="1428729068241" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcontract..." />
+            <marker date="1428729068241" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXcontract..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/map/controller/sale/order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.58563536" vertical-offset="15882" max-vertical-offset="16635">
+          <caret line="1080" column="44" selection-start-line="1080" selection-start-column="33" selection-end-line="1080" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/contract_view.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.68421054" vertical-offset="4005" max-vertical-offset="4575">
+          <caret line="293" column="0" selection-start-line="293" selection-start-column="0" selection-end-line="293" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/sale/order.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.5526316" vertical-offset="105" max-vertical-offset="5115">
+          <caret line="66" column="49" selection-start-line="66" selection-start-column="42" selection-end-line="66" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/order.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21052632" vertical-offset="1800" max-vertical-offset="3915">
+          <caret line="128" column="62" selection-start-line="128" selection-start-column="62" selection-end-line="128" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/portal/controller/account/order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9736842" vertical-offset="2205" max-vertical-offset="5205">
+          <caret line="184" column="0" selection-start-line="184" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
+          <folding>
+            <marker date="1428737808639" expanded="true" signature="5032:5044" placeholder="..." />
+            <marker date="1428737808639" expanded="false" signature="5309:5321" placeholder="..." />
           </folding>
         </state>
       </provider>

@@ -163,7 +163,7 @@ class ControllerAccountOrder extends Controller {
 				'total'         => $this->currency->format($result['total'], $result['currency_code'], $result['currency_value']),
 				'date_added'    => date($this->language->get('date_format_short'), strtotime($result['date_added'])),
 				'date_modified' => date($this->language->get('date_format_short'), strtotime($result['date_modified'])),
-				'invoice'=>($result['invoice_no'] > 0 ? '<span class="text-success">Issued</span>' : '<span class="text-danger">Not Issued</span>'),
+				'invoice'=>($result['invoice_no'] > 0 ? '<span class="text-success"><a href="'.$this->url->link('account/order/view','invoice_id='.$result['invoice_no'],'SSL').'" target="_blank" style="color : #000">Issued</a></span>' : '<span class="text-danger">Not Issued</span>'),
 				'contract'=>($result['contract_no'] > 0 ? '<span class="text-success"><a href="'.$this->url->link('account/order/view','contract_id='.$result['contract_no'],'SSL').'" target="_blank" style="color : #000">Issued</a></span>' : '<span class="text-danger">Not Issued</span>'),
 				'view'          => $this->url->link('sale/order/info', '' . '&order_id=' . $result['order_id'] . $url, 'SSL'),
 			);
