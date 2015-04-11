@@ -277,7 +277,7 @@ $('input[name=\'amount\']').on('keyup', function(e) {
 
                 element.button('reset');
 
-                alert('Verification code has been sent!');
+//                alert('Verification code has been sent!');
             }
         });
 

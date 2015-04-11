@@ -88,30 +88,25 @@ class ControllerSaleOrder extends Controller {
 		}
 	}
 
-    public function verifyCode(){
+    public function verifyCode($new_id){
 
         $json = array();
-        $code = $this->request->post['vc'];
-	    $unique = $this->request->post['unique'];
+        $code = $new_id;
+
 
         $this->load->model('sale/order');
 
         $order_data = $this->model_sale_order->getOrder($code);
 
-        if ($unique != $this->customer->getUniqueId()){
+//        if ($unique != $this->customer->getUniqueId()){
 
-            $json['error'] = array(
-                'message'=>'Verification code or Customer Unique ID does not match!'
-            );
-        } else {
-
-	        $this->model_sale_order->updateOrderStatus($code, '1');
+	        $this->model_sale_order->updateOrderStatus($new_id, $this->config->get('config_order_status_id'));
 
 	        $json = array(
 		        'message' => 'Your order has been placed successfully.',
 		        'redirect' => $this->url->link('account/order', '', 'SSL'),
 	        );
-        }
+//        }
 
 
         $this->response->addHeader('Content-Type: application/json');
@@ -129,7 +124,7 @@ class ControllerSaleOrder extends Controller {
 		    $uuid = new UUID();
 
 		    $unique_id = date('s') . $uuid->uniqueId($format = 'nnnnnn', $length = '20');
-		    $other_unique_id = $uuid->uniqueId($format = 'nn', $length = '20').date('s');
+		    $other_unique_id = $uuid->uniqueId($format = 'nn', $length = '20') . date('s');
 		    $this->uuid = $unique_id;
 
 		    $ip = $_SERVER['REMOTE_ADDR'];
@@ -154,15 +149,15 @@ class ControllerSaleOrder extends Controller {
 			    'currency_id' => $this->currency->getId($this->request->post['currency_code']),
 			    'currency_code' => $this->request->post['currency_code'],
 			    'currency_value' => $this->currency->getValue($this->request->post['currency_code']),
-			    'bank_id'=>$this->request->post['bank_id'],
-			    'settlement'=>$this->request->post['settlement'],
+			    'bank_id' => $this->request->post['bank_id'],
+			    'settlement' => $this->request->post['settlement'],
 			    'ip' => $ip,
 			    'forwarded_ip' => $forwarded_ip,
 			    'user_agent' => $user_agent,
 			    'accept_language' => $accept_language,
-			    'product_id'=>(isset($this->request->post['other']) ? $other_unique_id : $this->request->post['instrument']),
-			    'product_name'=>(isset($this->request->post['other']) ? $this->request->post['other'] : $this->request->post['product_name']),
-			    'issuer_name'=>(!empty($this->request->post['issuer_name']) ? $this->request->post['issuer_name'] : $this->customer->getFirstName().' '.strtoupper($this->customer->getLastName())),
+			    'product_id' => (isset($this->request->post['other']) ? $other_unique_id : $this->request->post['instrument']),
+			    'product_name' => (isset($this->request->post['other']) ? $this->request->post['other'] : $this->request->post['product_name']),
+			    'issuer_name' => (!empty($this->request->post['issuer_name']) ? $this->request->post['issuer_name'] : $this->customer->getFirstName() . ' ' . strtoupper($this->customer->getLastName())),
 		    );
 
 		    $this->model_sale_order->addOrder($data, $unique_id);
@@ -177,84 +172,7 @@ class ControllerSaleOrder extends Controller {
 
 		    $this->model_account_activity->addActivity('order', $activity_data);
 
-//		    $user = "semitellc";
-//		    $password = "ZePFFHQAQQgQIF";
-//		    $api_id = "3497179";
-//		    $baseurl = "http://api.clickatell.com";
-//
-//		    $text = urlencode($unique_id);
-//		    $to = $this->customer->getMobile();
-//
-//		    // auth call
-//		    $url = "$baseurl/http/auth?user=$user&password=$password&api_id=$api_id";
-//
-//		    // do auth call
-//		    $ret = file($url);
-//
-//		    // explode our response. return string is on first line of the data returned
-//		    $sess = explode(":", $ret[0]);
-//		    if ($sess[0] == "OK") {
-//
-//			    $sess_id = trim($sess[1]); // remove any whitespace
-//			    $url = "$baseurl/http/sendmsg?session_id=$sess_id&to=$to&text=$text";
-//
-//			    // do sendmsg call
-//			    $ret = file($url);
-//			    $send = explode(":", $ret[0]);
-//
-//			    if ($send[0] == "ID") {
-//
-//				    $ip = $_SERVER['REMOTE_ADDR'];
-//				    $forwarded_ip = $_SERVER['REMOTE_ADDR'];
-//				    $user_agent = $_SERVER['HTTP_USER_AGENT'];
-//				    $accept_language = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
-//
-//				    $data = array(
-//					    'invoice_prefix' => $this->config->get('config_invoice_prefix'),
-//					    'application_id' => $this->config->get('config_application_id'),
-//					    'application_name' => $this->config->get('config_name'),
-//					    'application_url' => $this->config->get('config_url'),
-//					    'customer_id' => $this->customer->getId(),
-//					    'customer_group_id' => $this->customer->getGroupId(),
-//					    'firstname' => $this->customer->getFirstName(),
-//					    'lastname' => $this->customer->getLastName(),
-//					    'email' => $this->customer->getEmail(),
-//					    'telephone' => ($this->customer->getTelephone() ? $this->customer->getTelephone() : $this->customer->getMobile()),
-//					    'request' => $this->request->post['amount'],
-//					    'order_status_id' => $this->config->get('config_order_status_id'),
-//					    'language_id' => $this->customer->getLanguage(),
-//					    'currency_id' => $this->currency->getId($this->request->post['currency_code']),
-//					    'currency_code' => $this->request->post['currency_code'],
-//					    'currency_value' => $this->currency->getValue($this->request->post['currency_code']),
-//					    'bank_id'=>$this->request->post['bank_id'],
-//					    'settlement'=>$this->request->post['settlement'],
-//					    'ip' => $ip,
-//					    'forwarded_ip' => $forwarded_ip,
-//					    'user_agent' => $user_agent,
-//					    'accept_language' => $accept_language,
-//					    'product_id'=>(isset($this->request->post['other']) ? $other_unique_id : $this->request->post['instrument']),
-//					    'product_name'=>(isset($this->request->post['other']) ? $this->request->post['other'] : $this->request->post['product_name']),
-//					    'issuer_name'=>(!empty($this->request->post['issuer_name']) ? $this->request->post['issuer_name'] : $this->customer->getFirstName().' '.strtoupper($this->customer->getLastName())),
-//				    );
-//
-//				    $this->model_sale_order->addOrder($data, $unique_id);
-//
-//				    // Add to activity log
-//				    $this->load->model('account/activity');
-//
-//				    $activity_data = array(
-//					    'customer_id' => $this->customer->getId(),
-//					    'name' => $this->customer->getFirstName() . ' ' . $this->customer->getLastName()
-//				    );
-//
-//				    $this->model_account_activity->addActivity('order', $activity_data);
-//
-//			    } else {
-////				echo "send message failed";
-//			    }
-//		    } else {
-////			echo "Authentication failure: ". $ret[0];
-//		    }
+		    $this->verifyCode($unique_id);
 	    }
     }
 } 
