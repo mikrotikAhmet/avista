@@ -83,7 +83,8 @@
                         <form method="post" enctype="multipart/form-data" target="_blank" id="form-order">
                             <div class="table-responsive">
                                 <table class="table table-bordered table-hover">
-                                    <thead>
+                                    <thead style="  background: #173a9e;
+  color: #fff;">
                                     <tr>
                                         <td class="text-right"><?php if ($sort == 'o.order_id') { ?>
                                             <a href="<?php echo $sort_order; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_order_id; ?></a>

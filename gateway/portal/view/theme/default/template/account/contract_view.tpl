@@ -130,13 +130,13 @@
                 <li>4.4.3. COMPANY’S TELEPHONE:<b><?php echo strtoupper($customer['mobile'])?></b></li>
                 <li>4.4.4. COMPANY’S EMAIL:<b><?php echo strtoupper($customer['email'])?></b></li>
                 <li>4.4.5. COMPANY’S CONTACT PERSON:<b><?php echo strtoupper($customer['firstname'].' '.$customer['lastname'])?></b></li>
-                <li>4.4.6. BANK NAME:<b><?php echo strtoupper($contract['bank_name'])?></b></li>
-                <li>4.4.7. BANK IBAN:<b><?php echo strtoupper($contract['iban'])?></b></li>
-                <li>4.4.8. BANK SWIFT CODE:<b><?php echo strtoupper($contract['swift_code'])?></b></li>
-                <li>4.4.9. BENEFICIARY NAME:<b><?php echo strtoupper($contract['beneficiary_name'])?></b></li>
-                <li>4.4.10. BANK OFFICER NAME:<b><?php echo strtoupper($contract['officer_name'])?></b></li>
-                <li>4.4.11. BANK OFFICER EMAIL:<b><?php echo strtoupper($contract['officer_email'])?></b></li>
-                <li>4.4.12. BANK OFFICER PHONE:<b><?php echo strtoupper($contract['officer_phone'])?></b></li>
+                <li>4.4.6. BANK NAME:<b><?php echo strtoupper($bank['bank_name'])?></b></li>
+                <li>4.4.7. BANK IBAN:<b><?php echo strtoupper($bank['iban'])?></b></li>
+                <li>4.4.8. BANK SWIFT CODE:<b><?php echo strtoupper($bank['swift_code'])?></b></li>
+                <li>4.4.9. BENEFICIARY NAME:<b><?php echo strtoupper($customer['fistname'].' '.$customer['lastname'])?></b></li>
+                <li>4.4.10. BANK OFFICER NAME:<b><?php echo strtoupper($bank['officer_name'])?></b></li>
+                <li>4.4.11. BANK OFFICER EMAIL:<b><?php echo strtoupper($bank['officer_email'])?></b></li>
+                <li>4.4.12. BANK OFFICER PHONE:<b><?php echo strtoupper($bank['officer_phone'])?></b></li>
                 <li>4.5. ISSUANCE OF THE INSTRUMENT FORMAT WITH SPECIFIC TEXT BY THE ISSUANCE BANK AND DELIVERY TO THE
                     NOMINATED RECEIVING BANK OF THE «MERCHANT», SHOULD BE THE SUBJECT OF THE INTERNATIONAL CHAMBER OF
                     COMMERCE - ICC RULES 500 / 600 / URDG 758 AND ACCORDING TO «MERCHANT»’S WISH WHILE IT WILL BE
