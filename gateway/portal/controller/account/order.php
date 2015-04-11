@@ -319,11 +319,15 @@ $data['order'] = $this->model_sale_order->getOrder($order_id);
 
 		$this->load->model('contract/contract');
 		$this->load->model('account/customer');
+		$this->load->model('account/certificate');
+		$this->load->model('localisation/country');
 
 
 
 		$data['contract'] = $this->model_contract_contract->getContract($this->request->get['contract_id']);
 		$data['customer'] = $this->model_account_customer->getCustomer($this->customer->getId());
+		$data['certificate'] = $this->model_account_certificate->getCertificate($data['customer']['certificate_id']);
+		$data['country'] = $this->model_localisation_country->getCountry($data['certificate']['country_id']);
 
 		$data['back'] = $this->url->link('account/order','','SSL');
 
