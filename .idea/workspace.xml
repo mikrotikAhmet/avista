@@ -4,7 +4,6 @@
     <list default="true" id="dbd0d96c-d439-4391-add6-8ad6ad0b2fa0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/bank_edit.tpl" afterPath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/bank_edit.tpl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/common/header.tpl" afterPath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/common/header.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/controller/account/order.php" afterPath="$PROJECT_DIR$/gateway/portal/controller/account/order.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/sale/order.tpl" afterPath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/sale/order.tpl" />
     </list>
     <ignored path="avista.iws" />
@@ -43,11 +42,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bank_edit.tpl" pinned="false" current-in-tab="false">
+      <file leaf-file-name="bank_edit.tpl" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/bank_edit.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.25" vertical-offset="0" max-vertical-offset="2160">
-              <caret line="2" column="137" selection-start-line="2" selection-start-column="137" selection-end-line="2" selection-end-column="137" />
+            <state vertical-scroll-proportion="0.08287293" vertical-offset="0" max-vertical-offset="2160">
+              <caret line="2" column="136" selection-start-line="2" selection-start-column="136" selection-end-line="2" selection-end-column="136" />
               <folding />
             </state>
           </provider>
@@ -57,17 +56,17 @@
         <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/common/header.tpl">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-5.3333335" vertical-offset="997" max-vertical-offset="2475">
-              <caret line="81" column="134" selection-start-line="81" selection-start-column="134" selection-end-line="81" selection-end-column="134" />
+              <caret line="81" column="128" selection-start-line="81" selection-start-column="128" selection-end-line="81" selection-end-column="128" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="order.tpl" pinned="false" current-in-tab="true">
+      <file leaf-file-name="order.tpl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/sale/order.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.35359117" vertical-offset="1492" max-vertical-offset="5115">
-              <caret line="108" column="62" selection-start-line="108" selection-start-column="62" selection-end-line="108" selection-end-column="62" />
+            <state vertical-scroll-proportion="-5.3333335" vertical-offset="1492" max-vertical-offset="5115">
+              <caret line="108" column="56" selection-start-line="108" selection-start-column="47" selection-end-line="108" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -134,9 +133,9 @@
         <option value="$PROJECT_DIR$/gateway/map/model/sale/order.php" />
         <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/contract_view.tpl" />
         <option value="$PROJECT_DIR$/gateway/portal/controller/account/order.php" />
-        <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/bank_edit.tpl" />
-        <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/common/header.tpl" />
         <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/sale/order.tpl" />
+        <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/common/header.tpl" />
+        <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/bank_edit.tpl" />
       </list>
     </option>
   </component>
@@ -818,10 +817,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/bank_edit.tpl">
+    <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/sale/order.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.25" vertical-offset="0" max-vertical-offset="2160">
-          <caret line="2" column="137" selection-start-line="2" selection-start-column="137" selection-end-line="2" selection-end-column="137" />
+        <state vertical-scroll-proportion="-5.3333335" vertical-offset="1492" max-vertical-offset="5115">
+          <caret line="108" column="56" selection-start-line="108" selection-start-column="47" selection-end-line="108" selection-end-column="56" />
           <folding />
         </state>
       </provider>
@@ -829,15 +828,15 @@
     <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/common/header.tpl">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.3333335" vertical-offset="997" max-vertical-offset="2475">
-          <caret line="81" column="134" selection-start-line="81" selection-start-column="134" selection-end-line="81" selection-end-column="134" />
+          <caret line="81" column="128" selection-start-line="81" selection-start-column="128" selection-end-line="81" selection-end-column="128" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/sale/order.tpl">
+    <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/bank_edit.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35359117" vertical-offset="1492" max-vertical-offset="5115">
-          <caret line="108" column="62" selection-start-line="108" selection-start-column="62" selection-end-line="108" selection-end-column="62" />
+        <state vertical-scroll-proportion="0.08287293" vertical-offset="0" max-vertical-offset="2160">
+          <caret line="2" column="136" selection-start-line="2" selection-start-column="136" selection-end-line="2" selection-end-column="136" />
           <folding />
         </state>
       </provider>

@@ -79,7 +79,7 @@
     <?php } ?>
     <?php if (!$approved && $hasrequest) { ?>
     <div class="alert alert-info alert-dismissable">
-        <i class="fa fa-exclamation-circle"></i> Than you for your registration. Your account is being reviewed by our compliance desk.<br/>
+        <i class="fa fa-exclamation-circle"></i> Than you for your registration. Your account is being reviewed by our complient desk.<br/>
         When we approve your account you will receive email as your account has been activated.
     </div>
     <?php } ?>

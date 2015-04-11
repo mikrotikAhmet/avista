@@ -1,6 +1,6 @@
 <form id="bank-form" class="">
     <div class="alert alert-info alert-dismissable">
-        <i class="fa fa-exclamation-circle"></i> <strong>Important Notice:</strong> Once you modify your Bank Information, our compliance desk will review your information which you have provided.
+        <i class="fa fa-exclamation-circle"></i> <strong>Important Notice:</strong> Once you modify your Bank Information, our complient desk will review your information which you have provided.
     </div>
     <div class="form-group required">
         <label class="control-label" for="input-bank-name">Name of Bank</label>
