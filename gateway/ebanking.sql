@@ -37,7 +37,7 @@ CREATE TABLE `engine4_address` (
   `custom_field` text NOT NULL,
   PRIMARY KEY (`address_id`),
   KEY `merchant_id` (`customer_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=53 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=55 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -130,7 +130,7 @@ CREATE TABLE `engine4_bank` (
   `officer_telephone` varchar(32) COLLATE utf8_bin NOT NULL,
   `officer_email` varchar(96) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`bank_id`,`customer_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -139,7 +139,6 @@ CREATE TABLE `engine4_bank` (
 
 LOCK TABLES `engine4_bank` WRITE;
 /*!40000 ALTER TABLE `engine4_bank` DISABLE KEYS */;
-INSERT INTO `engine4_bank` VALUES (20,53,'Garanti Bank',215,3372,'USD','493-0011245','TGBATRIS','','5100022121125455452221','',17,'','',''),(30,55,'TEST BANK',215,3323,'EUR','132412341234','2dsddfg','','1234234234','',17,'','',''),(31,61,'TEST BANK',17,315,'EUR','493-002211','TGBATRIS','','6546565654654654','',17,'Test Officer','+381656728972','ahmetgudenoglu@globotechsystems.com');
 /*!40000 ALTER TABLE `engine4_bank` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -203,7 +202,7 @@ CREATE TABLE `engine4_certificate_contact` (
   `postcode` varchar(10) NOT NULL,
   `zone_id` int(11) NOT NULL,
   PRIMARY KEY (`certificate_director_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -212,7 +211,7 @@ CREATE TABLE `engine4_certificate_contact` (
 
 LOCK TABLES `engine4_certificate_contact` WRITE;
 /*!40000 ALTER TABLE `engine4_certificate_contact` DISABLE KEYS */;
-INSERT INTO `engine4_certificate_contact` VALUES (3,3215,'Ahmet','GOUDENOGLU','ahmet.gudenoglu@semitepayment.com','0000-00-00','','','',243,'Corner Eyre &amp; Hutson Street','','','2416',0),(6,9065558,'Ahmet','GOUDENOGLU','ahmet.gudenoglu@semitepayment.com','0000-00-00','','','',243,'Test address 64/A','','','17563',0),(7,44248126,'Ahmet','GOUDENOGLU','ahmet.gudenoglu@gmail.com','0000-00-00','','','',243,'Test address 64/A','','','2416',0);
+INSERT INTO `engine4_certificate_contact` VALUES (3,3215,'Ahmet','GOUDENOGLU','ahmet.gudenoglu@semitepayment.com','0000-00-00','','','',243,'Corner Eyre &amp; Hutson Street','','','2416',0),(6,9065558,'Ahmet','GOUDENOGLU','ahmet.gudenoglu@semitepayment.com','0000-00-00','','','',243,'Test address 64/A','','','17563',0),(7,44248126,'Ahmet','GOUDENOGLU','ahmet.gudenoglu@gmail.com','0000-00-00','','','',243,'Test address 64/A','','','2416',0),(8,518148,'Ahmet','GOUDENOGLU','semiteproject@hotmail.com','0000-00-00','','','',243,'Kaludjerica Karadjordjeva 45','','','11130',0),(9,375398,'Ahmet','GOUDENOGLU','ahmet.gudenoglu@semitepayment.com','0000-00-00','','','',243,'Kaludjerica Karadjordjeva 45','','','11130',0);
 /*!40000 ALTER TABLE `engine4_certificate_contact` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -240,7 +239,7 @@ CREATE TABLE `engine4_certificate_director` (
   `postcode` varchar(10) NOT NULL,
   `zone_id` int(11) NOT NULL,
   PRIMARY KEY (`certificate_director_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -249,6 +248,7 @@ CREATE TABLE `engine4_certificate_director` (
 
 LOCK TABLES `engine4_certificate_director` WRITE;
 /*!40000 ALTER TABLE `engine4_certificate_director` DISABLE KEYS */;
+INSERT INTO `engine4_certificate_director` VALUES (1,52033776,'Ahmet','GOUDENOGLU','ahmet.gudenoglu@semitepayment.com','1975-03-22','+381656728972','KK01010101010','',243,'Kaludjerica Karadjordjeva 45','','Grocka','11130',3994);
 /*!40000 ALTER TABLE `engine4_certificate_director` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -286,6 +286,49 @@ CREATE TABLE `engine4_certificate_ubo` (
 LOCK TABLES `engine4_certificate_ubo` WRITE;
 /*!40000 ALTER TABLE `engine4_certificate_ubo` DISABLE KEYS */;
 /*!40000 ALTER TABLE `engine4_certificate_ubo` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `engine4_contract`
+--
+
+DROP TABLE IF EXISTS `engine4_contract`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_contract` (
+  `contract_id` varchar(96) NOT NULL,
+  `order_id` int(11) NOT NULL,
+  `customer_id` int(11) NOT NULL,
+  `instrument` varchar(96) NOT NULL,
+  `issuance_bank` varchar(96) NOT NULL,
+  `isin_code` varchar(96) NOT NULL,
+  `face_value` int(11) NOT NULL,
+  `maturity_date` date NOT NULL DEFAULT '0000-00-00',
+  `price` int(11) NOT NULL DEFAULT '0',
+  `company_name` varchar(96) NOT NULL,
+  `company_address` text NOT NULL,
+  `company_telephone` varchar(20) NOT NULL,
+  `company_email` varchar(96) NOT NULL,
+  `contact_person` varchar(64) NOT NULL,
+  `bank_name` varchar(45) NOT NULL,
+  `iban` varchar(45) NOT NULL,
+  `swift_code` varchar(45) NOT NULL,
+  `beneficiary_name` varchar(96) NOT NULL,
+  `officer_name` varchar(96) NOT NULL,
+  `officer_email` varchar(96) NOT NULL,
+  `officer_phone` varchar(20) NOT NULL,
+  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`contract_id`,`order_id`,`customer_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_contract`
+--
+
+LOCK TABLES `engine4_contract` WRITE;
+/*!40000 ALTER TABLE `engine4_contract` DISABLE KEYS */;
+/*!40000 ALTER TABLE `engine4_contract` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -385,7 +428,7 @@ CREATE TABLE `engine4_customer` (
   `fax` varchar(32) NOT NULL,
   `pob` varchar(128) NOT NULL,
   PRIMARY KEY (`customer_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=66 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=68 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -412,7 +455,7 @@ CREATE TABLE `engine4_customer_activity` (
   `ip` varchar(40) NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`activity_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=215 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=234 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -464,7 +507,7 @@ CREATE TABLE `engine4_customer_document` (
   `ip` varchar(96) NOT NULL,
   `date_added` date NOT NULL DEFAULT '0000-00-00',
   PRIMARY KEY (`document_id`,`customer_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -473,7 +516,7 @@ CREATE TABLE `engine4_customer_document` (
 
 LOCK TABLES `engine4_customer_document` WRITE;
 /*!40000 ALTER TABLE `engine4_customer_document` DISABLE KEYS */;
-INSERT INTO `engine4_customer_document` VALUES (3,52,'Certificate.pdf','Certificate.pdf.a0858dd1757dbcc9ec3f5fe37014f61a',17,'127.0.0.1','2015-04-07'),(4,52,'Certificate of Incorporation.pdf','Certificate of Incorporation.pdf.2aa44b8c55f3f2c50d608b4136d80f38',17,'127.0.0.1','2015-04-07'),(5,52,'Minutes - Certificate.pdf','Minutes - Certificate.pdf.8a426e3f5d5e64339c0451c79cf0083e',17,'127.0.0.1','2015-04-07'),(6,52,'Passport.jpg','Passport.jpg.5bac45502462d374d674f85de9ae2cb2',17,'127.0.0.1','2015-04-07'),(7,52,'Semite-ApplicationForm (Final).pdf','Semite-ApplicationForm (Final).pdf.b78205656113a45acd79f3e2010d0961',17,'127.0.0.1','2015-04-07'),(10,53,'Certificate.pdf','Certificate.pdf.d672a0ab1547aac755573044a4ec0631',17,'127.0.0.1','2015-04-07'),(11,53,'Certificate of Incorporation.pdf','Certificate of Incorporation.pdf.63e00be85cf715abd7cdf5e3b7382c16',17,'127.0.0.1','2015-04-07'),(12,53,'Minutes - Certificate.pdf','Minutes - Certificate.pdf.c8dfc45d43aa9a77a4a42f1aebced971',17,'127.0.0.1','2015-04-07'),(13,53,'Passport.jpg','Passport.jpg.0a1fc888c66844e84b1abf82eb1e75cb',17,'127.0.0.1','2015-04-07'),(14,53,'Semite-ApplicationForm (Final).pdf','Semite-ApplicationForm (Final).pdf.d6e7cc75ae31d3ad532418ac86bcc7ab',17,'127.0.0.1','2015-04-07');
+INSERT INTO `engine4_customer_document` VALUES (3,52,'Certificate.pdf','Certificate.pdf.a0858dd1757dbcc9ec3f5fe37014f61a',17,'127.0.0.1','2015-04-07'),(4,52,'Certificate of Incorporation.pdf','Certificate of Incorporation.pdf.2aa44b8c55f3f2c50d608b4136d80f38',17,'127.0.0.1','2015-04-07'),(5,52,'Minutes - Certificate.pdf','Minutes - Certificate.pdf.8a426e3f5d5e64339c0451c79cf0083e',17,'127.0.0.1','2015-04-07'),(6,52,'Passport.jpg','Passport.jpg.5bac45502462d374d674f85de9ae2cb2',17,'127.0.0.1','2015-04-07'),(7,52,'Semite-ApplicationForm (Final).pdf','Semite-ApplicationForm (Final).pdf.b78205656113a45acd79f3e2010d0961',17,'127.0.0.1','2015-04-07'),(10,53,'Certificate.pdf','Certificate.pdf.d672a0ab1547aac755573044a4ec0631',17,'127.0.0.1','2015-04-07'),(11,53,'Certificate of Incorporation.pdf','Certificate of Incorporation.pdf.63e00be85cf715abd7cdf5e3b7382c16',17,'127.0.0.1','2015-04-07'),(12,53,'Minutes - Certificate.pdf','Minutes - Certificate.pdf.c8dfc45d43aa9a77a4a42f1aebced971',17,'127.0.0.1','2015-04-07'),(13,53,'Passport.jpg','Passport.jpg.0a1fc888c66844e84b1abf82eb1e75cb',17,'127.0.0.1','2015-04-07'),(14,53,'Semite-ApplicationForm (Final).pdf','Semite-ApplicationForm (Final).pdf.d6e7cc75ae31d3ad532418ac86bcc7ab',17,'127.0.0.1','2015-04-07'),(15,66,'Certificate.pdf','Certificate.pdf.cfc5c78059c4d4508e44212d06df3ea4',1,'127.0.0.1','2015-04-10'),(16,66,'Certificate of Incorporation.pdf','Certificate of Incorporation.pdf.d4c1d28186f0b7c05d37b3cdd93ff7e2',1,'127.0.0.1','2015-04-10'),(17,66,'Minutes - Certificate.pdf','Minutes - Certificate.pdf.94903068cfe8e6d030a25ce1b523f58a',1,'127.0.0.1','2015-04-10'),(18,66,'Passport.jpg','Passport.jpg.4189b3bec549344eaf6012727866aaf4',1,'127.0.0.1','2015-04-10'),(19,66,'Semite-ApplicationForm (Final).pdf','Semite-ApplicationForm (Final).pdf.4de27cc250a7358805e9ee1c21bef45f',1,'127.0.0.1','2015-04-10'),(20,67,'Certificate.pdf','Certificate.pdf.e5cc5169bcd26aa49a52c8292c1e2b6b',17,'127.0.0.1','2015-04-10'),(21,67,'Certificate of Incorporation.pdf','Certificate of Incorporation.pdf.34f15bed946694c8e91eee2e8d04d70b',17,'127.0.0.1','2015-04-10'),(22,67,'Minutes - Certificate.pdf','Minutes - Certificate.pdf.8b1d39b4781001c869df438eecb731d3',17,'127.0.0.1','2015-04-10'),(23,67,'Passport.jpg','Passport.jpg.811196a375aee8675eb92a33ca95465b',17,'127.0.0.1','2015-04-10'),(24,67,'Semite-ApplicationForm (Final).pdf','Semite-ApplicationForm (Final).pdf.f0f31b99b757b1e8919bc2c9c2d2202e',17,'127.0.0.1','2015-04-10');
 /*!40000 ALTER TABLE `engine4_customer_document` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -593,7 +636,7 @@ CREATE TABLE `engine4_customer_ip` (
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`customer_ip_id`),
   KEY `ip` (`ip`)
-) ENGINE=MyISAM AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -886,8 +929,8 @@ DROP TABLE IF EXISTS `engine4_order`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `engine4_order` (
   `order_id` int(11) NOT NULL,
-  `contract_no` int(11) NOT NULL,
-  `invoice_no` int(11) NOT NULL DEFAULT '0',
+  `contract_no` varchar(96) NOT NULL,
+  `invoice_no` varchar(96) NOT NULL DEFAULT '0',
   `invoice_prefix` varchar(26) NOT NULL,
   `application_id` int(11) NOT NULL DEFAULT '0',
   `application_name` varchar(64) NOT NULL,
@@ -908,6 +951,7 @@ CREATE TABLE `engine4_order` (
   `language_id` int(11) NOT NULL,
   `currency_id` int(11) NOT NULL,
   `bank_id` int(11) NOT NULL,
+  `settlement` int(11) NOT NULL,
   `currency_code` varchar(3) NOT NULL,
   `currency_value` decimal(15,8) NOT NULL DEFAULT '1.00000000',
   `ip` varchar(40) NOT NULL,
@@ -917,6 +961,10 @@ CREATE TABLE `engine4_order` (
   `date_added` datetime NOT NULL,
   `date_modified` datetime NOT NULL,
   `issuer_name` varchar(64) NOT NULL,
+  `payment_description` text NOT NULL,
+  `total_amount` int(11) NOT NULL,
+  `down_payment` int(11) NOT NULL,
+  `due_amount` int(11) NOT NULL,
   PRIMARY KEY (`order_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -928,6 +976,34 @@ CREATE TABLE `engine4_order` (
 LOCK TABLES `engine4_order` WRITE;
 /*!40000 ALTER TABLE `engine4_order` DISABLE KEYS */;
 /*!40000 ALTER TABLE `engine4_order` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `engine4_order_history`
+--
+
+DROP TABLE IF EXISTS `engine4_order_history`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_order_history` (
+  `order_history_id` int(11) NOT NULL AUTO_INCREMENT,
+  `order_id` int(11) NOT NULL,
+  `order_status_id` int(5) NOT NULL,
+  `notify` tinyint(1) NOT NULL DEFAULT '0',
+  `comment` text NOT NULL,
+  `date_added` datetime NOT NULL,
+  PRIMARY KEY (`order_history_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_order_history`
+--
+
+LOCK TABLES `engine4_order_history` WRITE;
+/*!40000 ALTER TABLE `engine4_order_history` DISABLE KEYS */;
+INSERT INTO `engine4_order_history` VALUES (1,24457593,2,0,'','2015-04-11 01:30:00'),(2,24457593,12,0,'','2015-04-11 01:30:10'),(3,24457593,2,0,'','2015-04-11 01:30:52');
+/*!40000 ALTER TABLE `engine4_order_history` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -945,7 +1021,7 @@ CREATE TABLE `engine4_order_product` (
   `price` decimal(15,4) NOT NULL DEFAULT '0.0000',
   `down` decimal(15,4) NOT NULL DEFAULT '0.0000',
   PRIMARY KEY (`order_product_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -954,7 +1030,7 @@ CREATE TABLE `engine4_order_product` (
 
 LOCK TABLES `engine4_order_product` WRITE;
 /*!40000 ALTER TABLE `engine4_order_product` DISABLE KEYS */;
-INSERT INTO `engine4_order_product` VALUES (6,28841236,3,'[MTN] - Medium Term Note',0.0000,0.0000),(5,41382662,1,'[BG] - Bank guarantee',0.0000,0.0000),(7,34317993,4,'[LTN] - Long-term Notes',0.0000,0.0000),(8,41212854,1,'[BG] - Bank guarantee',0.0000,0.0000),(9,37997374,1,'[BG] - Bank guarantee',0.0000,0.0000),(10,7312437,2,'[SBLC] - Standby Letter of Credit',0.0000,0.0000),(11,41111552,2,'[SBLC] - Standby Letter of Credit',0.0000,0.0000),(12,49732321,1,'[BG] - Bank guarantee',0.0000,0.0000),(13,59275166,1,'[BG] - Bank guarantee',0.0000,0.0000),(14,47121173,1,'[BG] - Bank guarantee',0.0000,0.0000),(15,32431516,1,'[BG] - Bank guarantee',0.0000,0.0000),(16,46892571,1,'[BG] - Bank guarantee',0.0000,0.0000),(17,45417783,2,'[SBLC] - Standby Letter of Credit',0.0000,0.0000);
+INSERT INTO `engine4_order_product` VALUES (6,28841236,3,'[MTN] - Medium Term Note',0.0000,0.0000),(5,41382662,1,'[BG] - Bank guarantee',0.0000,0.0000),(7,34317993,4,'[LTN] - Long-term Notes',0.0000,0.0000),(8,41212854,1,'[BG] - Bank guarantee',0.0000,0.0000),(9,37997374,1,'[BG] - Bank guarantee',0.0000,0.0000),(10,7312437,2,'[SBLC] - Standby Letter of Credit',0.0000,0.0000),(11,41111552,2,'[SBLC] - Standby Letter of Credit',0.0000,0.0000),(12,49732321,1,'[BG] - Bank guarantee',0.0000,0.0000),(13,59275166,1,'[BG] - Bank guarantee',0.0000,0.0000),(14,47121173,1,'[BG] - Bank guarantee',0.0000,0.0000),(15,32431516,1,'[BG] - Bank guarantee',0.0000,0.0000),(16,46892571,1,'[BG] - Bank guarantee',0.0000,0.0000),(17,45417783,2,'[SBLC] - Standby Letter of Credit',0.0000,0.0000),(18,24457593,4824,'Test Bank',0.0000,0.0000),(19,4381949,2604,'',0.0000,0.0000),(20,41378823,4741,'',0.0000,0.0000),(21,36866625,1536,'',0.0000,0.0000),(22,45874445,8745,'',0.0000,0.0000),(23,20655574,7920,'',0.0000,0.0000);
 /*!40000 ALTER TABLE `engine4_order_product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1090,7 +1166,7 @@ CREATE TABLE `engine4_user_group` (
 
 LOCK TABLES `engine4_user_group` WRITE;
 /*!40000 ALTER TABLE `engine4_user_group` DISABLE KEYS */;
-INSERT INTO `engine4_user_group` VALUES (1,'Administrator','a:2:{s:6:\"access\";a:16:{i:0;s:18:\"common/column_left\";i:1;s:18:\"common/filemanager\";i:2;s:11:\"common/menu\";i:3;s:20:\"customer/certificate\";i:4;s:18:\"dashboard/customer\";i:5;s:15:\"dashboard/order\";i:6;s:17:\"extension/openbay\";i:7;s:13:\"sale/customer\";i:8;s:20:\"sale/customer_ban_ip\";i:9;s:19:\"sale/customer_group\";i:10;s:10:\"sale/order\";i:11;s:19:\"setting/application\";i:12;s:15:\"setting/setting\";i:13;s:8:\"user/api\";i:14;s:9:\"user/user\";i:15;s:20:\"user/user_permission\";}s:6:\"modify\";a:16:{i:0;s:18:\"common/column_left\";i:1;s:18:\"common/filemanager\";i:2;s:11:\"common/menu\";i:3;s:20:\"customer/certificate\";i:4;s:18:\"dashboard/customer\";i:5;s:15:\"dashboard/order\";i:6;s:17:\"extension/openbay\";i:7;s:13:\"sale/customer\";i:8;s:20:\"sale/customer_ban_ip\";i:9;s:19:\"sale/customer_group\";i:10;s:10:\"sale/order\";i:11;s:19:\"setting/application\";i:12;s:15:\"setting/setting\";i:13;s:8:\"user/api\";i:14;s:9:\"user/user\";i:15;s:20:\"user/user_permission\";}}'),(10,'Demonstration','a:1:{s:6:\"access\";a:7:{i:0;s:18:\"common/column_left\";i:1;s:11:\"common/menu\";i:2;s:19:\"setting/application\";i:3;s:15:\"setting/setting\";i:4;s:8:\"user/api\";i:5;s:9:\"user/user\";i:6;s:20:\"user/user_permission\";}}');
+INSERT INTO `engine4_user_group` VALUES (1,'Administrator','a:2:{s:6:\"access\";a:19:{i:0;s:18:\"common/column_left\";i:1;s:18:\"common/filemanager\";i:2;s:11:\"common/menu\";i:3;s:17:\"contract/contract\";i:4;s:20:\"customer/certificate\";i:5;s:26:\"dashboard/approval_request\";i:6;s:18:\"dashboard/customer\";i:7;s:15:\"dashboard/order\";i:8;s:17:\"extension/openbay\";i:9;s:13:\"sale/contract\";i:10;s:13:\"sale/customer\";i:11;s:20:\"sale/customer_ban_ip\";i:12;s:19:\"sale/customer_group\";i:13;s:10:\"sale/order\";i:14;s:19:\"setting/application\";i:15;s:15:\"setting/setting\";i:16;s:8:\"user/api\";i:17;s:9:\"user/user\";i:18;s:20:\"user/user_permission\";}s:6:\"modify\";a:19:{i:0;s:18:\"common/column_left\";i:1;s:18:\"common/filemanager\";i:2;s:11:\"common/menu\";i:3;s:17:\"contract/contract\";i:4;s:20:\"customer/certificate\";i:5;s:26:\"dashboard/approval_request\";i:6;s:18:\"dashboard/customer\";i:7;s:15:\"dashboard/order\";i:8;s:17:\"extension/openbay\";i:9;s:13:\"sale/contract\";i:10;s:13:\"sale/customer\";i:11;s:20:\"sale/customer_ban_ip\";i:12;s:19:\"sale/customer_group\";i:13;s:10:\"sale/order\";i:14;s:19:\"setting/application\";i:15;s:15:\"setting/setting\";i:16;s:8:\"user/api\";i:17;s:9:\"user/user\";i:18;s:20:\"user/user_permission\";}}'),(10,'Demonstration','a:1:{s:6:\"access\";a:7:{i:0;s:18:\"common/column_left\";i:1;s:11:\"common/menu\";i:2;s:19:\"setting/application\";i:3;s:15:\"setting/setting\";i:4;s:8:\"user/api\";i:5;s:9:\"user/user\";i:6;s:20:\"user/user_permission\";}}');
 /*!40000 ALTER TABLE `engine4_user_group` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1130,4 +1206,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-04-10 21:22:55
+-- Dump completed on 2015-04-11  9:15:04

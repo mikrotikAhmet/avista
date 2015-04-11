@@ -57,6 +57,7 @@ class ControllerCommonMenu extends Controller {
 		$data['customer_group'] = $this->url->link('sale/customer_group', 'token=' . $this->session->data['token'], 'SSL');
 		$data['customer_ban_ip'] = $this->url->link('sale/customer_ban_ip', 'token=' . $this->session->data['token'], 'SSL');
         $data['order'] = $this->url->link('sale/order', 'token=' . $this->session->data['token'], 'SSL');
+		$data['contract'] = $this->url->link('contract/contract', 'token=' . $this->session->data['token'], 'SSL');
 
 		return $this->load->view('common/menu.tpl', $data);
 	}

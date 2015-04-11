@@ -23,6 +23,8 @@
                         <h3 class="panel-title"><i class="fa fa-list"></i> <?php echo $text_list; ?></h3>
                     </div>
                     <div class="panel-body">
+                        <p><span class="text-success"><b>Issued</b></span> means, you have ISSUED CONTRACT. You can safely view and print your contract.<br/>
+                        After  singing the contract please go to : <b>My Accouns -> Verification & Document Upload Center</b> TAB and upload your contract. </p>
                         <div class="well">
                             <div class="row">
                                 <div class="col-sm-4">

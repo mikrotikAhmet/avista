@@ -570,6 +570,52 @@ class ControllerSaleOrder extends Controller {
 		$this->response->setOutput($this->load->view('sale/order_list.tpl', $data));
 	}
 
+	public function history() {
+		$this->load->language('sale/order');
+
+		$data['text_no_results'] = $this->language->get('text_no_results');
+
+		$data['column_date_added'] = $this->language->get('column_date_added');
+		$data['column_status'] = $this->language->get('column_status');
+		$data['column_notify'] = $this->language->get('column_notify');
+		$data['column_comment'] = $this->language->get('column_comment');
+
+		if (isset($this->request->get['page'])) {
+			$page = $this->request->get['page'];
+		} else {
+			$page = 1;
+		}
+
+		$data['histories'] = array();
+
+		$this->load->model('sale/order');
+
+		$results = $this->model_sale_order->getOrderHistories($this->request->get['order_id'], ($page - 1) * 10, 10);
+
+		foreach ($results as $result) {
+			$data['histories'][] = array(
+				'notify'     => $result['notify'] ? $this->language->get('text_yes') : $this->language->get('text_no'),
+				'status'     => $result['status'],
+				'comment'    => nl2br($result['comment']),
+				'date_added' => date($this->language->get('date_format_short'), strtotime($result['date_added']))
+			);
+		}
+
+		$history_total = $this->model_sale_order->getTotalOrderHistories($this->request->get['order_id']);
+
+		$pagination = new Pagination();
+		$pagination->total = $history_total;
+		$pagination->page = $page;
+		$pagination->limit = 10;
+		$pagination->url = $this->url->link('sale/order/history', 'token=' . $this->session->data['token'] . '&order_id=' . $this->request->get['order_id'] . '&page={page}', 'SSL');
+
+		$data['pagination'] = $pagination->render();
+
+		$data['results'] = sprintf($this->language->get('text_pagination'), ($history_total) ? (($page - 1) * 10) + 1 : 0, ((($page - 1) * 10) > ($history_total - 10)) ? $history_total : ((($page - 1) * 10) + 10), $history_total, ceil($history_total / 10));
+
+		$this->response->setOutput($this->load->view('sale/order_history.tpl', $data));
+	}
+
 	public function info() {
 		$this->load->model('sale/order');
 
@@ -804,7 +850,7 @@ class ControllerSaleOrder extends Controller {
 				'href' => $this->url->link('sale/order', 'token=' . $this->session->data['token'] . $url, 'SSL')
 			);
 
-			$data['shipping'] = $this->url->link('sale/order/shipping', 'token=' . $this->session->data['token'] . '&order_id=' . (int)$this->request->get['order_id'], 'SSL');
+			$data['contract'] = $this->url->link('sale/contract/add', 'token=' . $this->session->data['token'] . '&order_id=' . (int)$this->request->get['order_id'], 'SSL');
 			$data['invoice'] = $this->url->link('sale/order/invoice', 'token=' . $this->session->data['token'] . '&order_id=' . (int)$this->request->get['order_id'], 'SSL');
 			$data['edit'] = $this->url->link('sale/order/edit', 'token=' . $this->session->data['token'] . '&order_id=' . (int)$this->request->get['order_id'], 'SSL');
 			$data['cancel'] = $this->url->link('sale/order', 'token=' . $this->session->data['token'] . $url, 'SSL');
@@ -821,6 +867,8 @@ class ControllerSaleOrder extends Controller {
 			$data['application_url'] = $order_info['application_url'];
 			$data['firstname'] = $order_info['firstname'];
 			$data['lastname'] = $order_info['lastname'];
+			$data['hasContract'] = $order_info['contract_no'];
+			$data['hasInvoice'] = $order_info['invoice_no'];
 
 			if ($order_info['customer_id']) {
 				$data['customer'] = $this->url->link('sale/customer/edit', 'token=' . $this->session->data['token'] . '&customer_id=' . $order_info['customer_id'], 'SSL');
@@ -865,6 +913,10 @@ class ControllerSaleOrder extends Controller {
 			$data['date_modified'] = date($this->language->get('date_format_short'), strtotime($order_info['date_modified']));
 
 			$data['request'] = $this->currency->format($order_info['request'],$this->config->get('config_currency'),'1');
+			$data['issuer_name'] = $order_info['issuer_name'];
+			$data['product_name'] = $order_info['product_name'];
+			$data['bank_pay'] = $order_info['bank_pay'];
+			$data['bank_sett'] = $order_info['bank_sett'];
 
 			$this->load->model('tool/upload');
 
@@ -967,6 +1019,86 @@ class ControllerSaleOrder extends Controller {
 
 			$this->response->setOutput($this->load->view('error/not_found.tpl', $data));
 		}
+	}
+
+	public function updateOrderStatus(){
+
+		$json = array();
+		$order_id = $this->request->get['order_id'];
+		$order_status_id = $this->request->post['order_status_id'];
+
+		$this->load->model('sale/order');
+
+		$this->model_sale_order->updateOrderStatus($order_id,$order_status_id);
+
+		$json['success'] = true;
+
+		$this->response->addHeader('Content-Type: application/json');
+		$this->response->setOutput(json_encode($json));
+	}
+
+	public function createInvoiceNo() {
+		$this->load->language('sale/order');
+
+		$json = array();
+
+		if (!$this->user->hasPermission('modify', 'sale/order')) {
+			$json['error'] = $this->language->get('error_permission');
+		} elseif (isset($this->request->get['order_id'])) {
+			if (isset($this->request->get['order_id'])) {
+				$order_id = $this->request->get['order_id'];
+			} else {
+				$order_id = 0;
+			}
+
+			$this->load->model('sale/order');
+			$this->load->model('sale/customer');
+
+			$order_data = $this->model_sale_order->getOrder($order_id);
+			$customer_data = $this->model_sale_customer->getCustomer($order_data['customer_id']);
+
+			$invoice_no = $this->model_sale_order->createInvoiceNo($customer_data['unique_id'],$order_id);
+
+			if ($invoice_no) {
+				$json['invoice_no'] = $invoice_no;
+			} else {
+				$json['error'] = $this->language->get('error_action');
+			}
+		}
+
+		$this->response->addHeader('Content-Type: application/json');
+		$this->response->setOutput(json_encode($json));
+	}
+
+	public function updateInvoice(){
+
+		$json = array();
+		$this->load->model('sale/order');
+
+		$order_id = $this->request->get['order_id'];
+		$data = $this->request->post;
+
+		$this->model_sale_order->modifyOrder($order_id,$data);
+
+		$this->response->addHeader('Content-Type: application/json');
+		$this->response->setOutput(json_encode($json));
+	}
+
+	public function invoice() {
+
+		$order_id = $this->request->get['order_id'];
+
+		$this->load->model('sale/order');
+		$this->load->model('sale/customer');
+		$this->load->model('contract/contract');
+
+		$data['order'] = $this->model_sale_order->getOrder($order_id);
+
+		$data['customer'] = $this->model_sale_customer->getCustomer($data['order']['customer_id']);
+		$data['contract'] = $this->model_contract_contract->getContract($data['order']['contract_no']);
+
+		$this->response->setOutput($this->load->view('sale/invoice_view.tpl', $data));
+
 	}
 }
 //End of file order.php 

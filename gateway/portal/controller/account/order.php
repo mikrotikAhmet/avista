@@ -164,7 +164,7 @@ class ControllerAccountOrder extends Controller {
 				'date_added'    => date($this->language->get('date_format_short'), strtotime($result['date_added'])),
 				'date_modified' => date($this->language->get('date_format_short'), strtotime($result['date_modified'])),
 				'invoice'=>($result['invoice_no'] > 0 ? '<span class="text-success">Issued</span>' : '<span class="text-danger">Not Issued</span>'),
-				'contract'=>($result['contract_no'] > 0 ? '<span class="text-success">Issued</span>' : '<span class="text-danger">Not Issued</span>'),
+				'contract'=>($result['contract_no'] > 0 ? '<span class="text-success"><a href="'.$this->url->link('account/order/view','contract_id='.$result['contract_no'],'SSL').'" target="_blank" style="color : #000">Issued</a></span>' : '<span class="text-danger">Not Issued</span>'),
 				'view'          => $this->url->link('sale/order/info', '' . '&order_id=' . $result['order_id'] . $url, 'SSL'),
 			);
 		}
@@ -312,5 +312,31 @@ $data['order'] = $this->model_sale_order->getOrder($order_id);
 			$this->response->setOutput($this->load->view('default/template/account/order_detail.tpl', $data));
 		}
 
+	}
+
+	public function view(){
+
+
+		$this->load->model('contract/contract');
+		$this->load->model('account/customer');
+
+
+
+		$data['contract'] = $this->model_contract_contract->getContract($this->request->get['contract_id']);
+		$data['customer'] = $this->model_account_customer->getCustomer($this->customer->getId());
+
+		$data['back'] = $this->url->link('account/order','','SSL');
+
+
+
+		if (!$data['contract']){
+
+		} else {
+			if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/account/contract_view.tpl')) {
+				$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/account/contract_view.tpl', $data));
+			} else {
+				$this->response->setOutput($this->load->view('default/template/account/contract_view.tpl', $data));
+			}
+		}
 	}
 } 

@@ -29,7 +29,7 @@
                         <li><a href="#profile-pills" data-toggle="tab">Personal & Business Information</a></li>
                         <li><a href="#business-pills" data-toggle="tab">Business Certificate</a></li>
                         <li><a href="#bank-pills" data-toggle="tab">Bank Account(s)</a></li>
-                        <li><a href="#verification-pills" data-toggle="tab">Verification</a></li>
+                        <li><a href="#verification-pills" data-toggle="tab">Verification & Document Upload Center</a></li>
                     </ul>
                     <br/>
                     <!-- Tab panes -->
@@ -334,7 +334,7 @@
                             <p>We only accept .pdf, .jpg and .png formats.</p>
 
                             <div class="input-group">
-                                <input type="text" name="upload" disabled value="" placeholder="Incorporation documents*" data-format="" id="input-incorporation-documents" class="form-control">
+                                <input type="text" name="upload" disabled value="" placeholder="" data-format="" id="input-incorporation-documents" class="form-control">
                                   <span class="input-group-btn">
                                     <button type="button" id="button-upload" data-loading-text="Uploading..." class="btn btn-primary"><i class="fa fa-upload"></i> Upload</button>
                                   </span>
