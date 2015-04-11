@@ -163,7 +163,7 @@ class ControllerAccountOrder extends Controller {
 				'total'         => $this->currency->format($result['total'], $result['currency_code'], $result['currency_value']),
 				'date_added'    => date($this->language->get('date_format_short'), strtotime($result['date_added'])),
 				'date_modified' => date($this->language->get('date_format_short'), strtotime($result['date_modified'])),
-				'invoice'=>($result['invoice_no'] > 0 ? '<span class="text-success"><a href="'.$this->url->link('account/order/view','invoice_id='.$result['invoice_no'],'SSL').'" target="_blank" style="color : #000">Issued</a></span>' : '<span class="text-danger">Not Issued</span>'),
+				'invoice'=>($result['invoice_no'] > 0 ? '<span class="text-success"><a href="'.$this->url->link('account/order/viewInvoice','invoice_id='.$result['invoice_no'],'SSL').'" target="_blank" style="color : #000">Issued</a></span>' : '<span class="text-danger">Not Issued</span>'),
 				'contract'=>($result['contract_no'] > 0 ? '<span class="text-success"><a href="'.$this->url->link('account/order/view','contract_id='.$result['contract_no'],'SSL').'" target="_blank" style="color : #000">Issued</a></span>' : '<span class="text-danger">Not Issued</span>'),
 				'view'          => $this->url->link('sale/order/info', '' . '&order_id=' . $result['order_id'] . $url, 'SSL'),
 			);
@@ -321,12 +321,8 @@ $data['order'] = $this->model_sale_order->getOrder($order_id);
 		$this->load->model('account/customer');
 
 
-		if (isset($this->request->get['contract_id'])){
-			$data['contract'] = $this->model_contract_contract->getContract($this->request->get['contract_id']);
-		} else {
-			$data['contract'] = $this->model_contract_contract->getContract($this->request->get['contract_id']);
-		}
 
+		$data['contract'] = $this->model_contract_contract->getContract($this->request->get['contract_id']);
 		$data['customer'] = $this->model_account_customer->getCustomer($this->customer->getId());
 
 		$data['back'] = $this->url->link('account/order','','SSL');
@@ -340,6 +336,31 @@ $data['order'] = $this->model_sale_order->getOrder($order_id);
 				$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/account/contract_view.tpl', $data));
 			} else {
 				$this->response->setOutput($this->load->view('default/template/account/contract_view.tpl', $data));
+			}
+		}
+	}
+
+	public function viewInvoice(){
+
+
+		$this->load->model('sale/order');
+		$this->load->model('account/customer');
+		$this->load->model('contract/contract');
+
+
+		$data['order'] = $this->model_sale_order->getOrderByInvoice($this->request->get['invoice_id']);
+		$data['customer'] = $this->model_account_customer->getCustomer($this->customer->getId());
+		$data['contract'] = $this->model_contract_contract->getContract($data['order']['contract_no']);
+
+		$data['back'] = $this->url->link('account/order','','SSL');
+
+		if (!$data['order']){
+
+		} else {
+			if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/account/invoice_view.tpl')) {
+				$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/account/invoice_view.tpl', $data));
+			} else {
+				$this->response->setOutput($this->load->view('default/template/account/invoice_view.tpl', $data));
 			}
 		}
 	}
