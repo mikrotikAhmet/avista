@@ -32,7 +32,7 @@
         <?php echo $order?>
     </div>
     <div class="col-lg-3 col-md-6">
-        <?php echo $order?>
+        <?php echo $order_waiting?>
     </div>
     <div class="col-lg-3 col-md-6">
         <?php echo $order?>
