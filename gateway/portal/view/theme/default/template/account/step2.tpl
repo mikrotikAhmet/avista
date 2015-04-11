@@ -42,7 +42,7 @@
                             </div>
                         </div>
                         <div class="form-group required">
-                            <label class="control-label" for="input-mobile">Mobile Number <br/><small>(Please be advised to provide your Mobile Number for SMS Verifications)</small></label>
+                            <label class="control-label" for="input-mobile">Mobile Number</label>
                             <div class="">
                                 <div class="row">
                                     <div class="col-sm-2">
