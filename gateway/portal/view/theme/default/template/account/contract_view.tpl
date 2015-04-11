@@ -66,7 +66,7 @@
                 <li>1.2. <b>“PRINCIPAL”</b>, MEANS H.I.F. INVEST HOLDING LTD - MARSHALL ISLANDS - AJELTAKE ROAD - AJELTAKE
                     ISLAND - MAJURO - REGISTRATION NUMBER 41454 - EMAIL: <b>office@hifholding.com</b>
                 </li>
-                <li>1.3.<b>“CLIENT OR “MERCHANT”</b>, MEANS</li>
+                <li>1.3.<b>“CLIENT OR “MERCHANT”</b>, MEANS <b><?php echo strtoupper($certificate['legal_name'])?></b></li>
                 <li>1.4.<b>“PARTIES”</b>, MEANS BOTH “PRINCIPAL” AND “MERCHANT”</li>
                 <li>1.5.<b>“SERVICE PROVIDER”</b>, MEANS AVERSA OOD COMPANY WITH REGISTRATION NO 202633106, A LEGAL ORGANIZED
                     COMPANY THAT OPERATES UNDER THE LAWS OF THE REPUBLIC OF BULGARIA WITH ITS REGISTRATION ADDRESS AT
