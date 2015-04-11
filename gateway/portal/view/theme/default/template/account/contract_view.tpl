@@ -88,19 +88,19 @@
                     HAS ACCEPTED
                 </li>
                 <li class="bold">+++ CLAUSE 2 - CONTRACT DETAILS</li>
-                <li>2.1. BUSINESS AGREEMENT / CONTRACT NUMBER:</li>
-                <li>2.2. AGREEMENT EFFECTIVE DATE:</li>
-                <li>2.3. TRANSACTION CODE:</li>
+                <li>2.1. BUSINESS AGREEMENT / CONTRACT NUMBER:<b><?php echo strtoupper($contract['contract_id'])?></b></li>
+                <li>2.2. AGREEMENT EFFECTIVE DATE:<b><?php echo date('d/m/Y',strtotime($contract['date_added']))?></b></li>
+                <li>2.3. TRANSACTION CODE:<b><?php echo strtoupper($contract['order_id'])?></b></li>
                 <li>2.4. "PRINCIPAL" CODE: <b>HIF-41454</b></li>
-                <li>2.5. "MERCHANT" CODE:</li>
-                <li>2.6. "MERCHANT" (COMPANY) NAME:</li>
-                <li>2.7. "MERCHANT" REGISTRATION NUMBER:</li>
-                <li>2.8. "MERCHANT" COMPANY ADDRESS:</li>
-                <li>2.9. "MERCHANT" POSTAL CODE:</li>
-                <li>2.10. "MERCHANT" COUNTRY:</li>
-                <li>2.11. "MERCHANT" CONTACT PERSON:</li>
-                <li>2.12. "MERCHANT" CONTACT EMAIL:</li>
-                <li>2.13. "MERCHANT" CONTACT CELLULAR PHONE:</li>
+                <li>2.5. "MERCHANT" CODE:<b><?php echo strtoupper($customer['unique_id'])?></b></li>
+                <li>2.6. "MERCHANT" (COMPANY) NAME:<b><?php echo strtoupper($certificate['legal_name'])?></b></li>
+                <li>2.7. "MERCHANT" REGISTRATION NUMBER:<b><?php echo strtoupper($certificate['registration_number'])?></b></li>
+                <li>2.8. "MERCHANT" COMPANY ADDRESS:<b><?php echo strtoupper($certificate['address_1'].' '.$certificate['address_2'])?></b></li>
+                <li>2.9. "MERCHANT" POSTAL CODE:<b><?php echo strtoupper($certificate['postcode'])?></b></li>
+                <li>2.10. "MERCHANT" COUNTRY:<b><?php echo strtoupper($country['name'])?></b></li>
+                <li>2.11. "MERCHANT" CONTACT PERSON:<b><?php echo strtoupper($contract['contact_person'])?></b></li>
+                <li>2.12. "MERCHANT" CONTACT EMAIL:<b><?php echo strtoupper($contract['company_email'])?></b></li>
+                <li>2.13. "MERCHANT" CONTACT CELLULAR PHONE:<b><?php echo strtoupper($contract['company_telephone'])?></b></li>
                 <li class="bold">+++ CLAUSE 3 - SCOPE OF AGREEMENT/CONTRACT</li>
                 <li>3.1. THE “PRINCIPAL” WILL ARRANGE, AS PER “MERCHANT’S” REQUEST AND APPLICATION, THE ISSUANCE OF THE
                     FOLLOWING INSTRUMENT ON BEHALF OF “MERCHANT:
