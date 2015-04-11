@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbd0d96c-d439-4391-add6-8ad6ad0b2fa0" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/portal/system/cache/cache.currency.1428749702" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/portal/system/cache/cache.language.1428749702" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/portal/system/cache/cache.order_status.1.1428749796" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/map/controller/contract/contract.php" afterPath="$PROJECT_DIR$/gateway/map/controller/contract/contract.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/map/controller/sale/contract.php" afterPath="$PROJECT_DIR$/gateway/map/controller/sale/contract.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/map/view/template/sale/contract.tpl" afterPath="$PROJECT_DIR$/gateway/map/view/template/sale/contract.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/map/view/template/contract/contract_view.tpl" afterPath="$PROJECT_DIR$/gateway/map/view/template/contract/contract_view.tpl" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/map/system/cache/cache.application.1428752011" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/map/system/cache/cache.country.1428752013" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/map/system/cache/cache.order_status.1.1428752014" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/map/system/cache/cache.zone.14.1428752014" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/contract_view.tpl" afterPath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/contract_view.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/invoice_view.tpl" afterPath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/invoice_view.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/map/model/sale/order.php" afterPath="$PROJECT_DIR$/gateway/map/model/sale/order.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="avista.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,11 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="invoice_view.tpl" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/invoice_view.tpl">
+      <file leaf-file-name="contract_view.tpl" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/contract_view.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5754386" vertical-offset="572" max-vertical-offset="1485">
-              <caret line="60" column="54" selection-start-line="60" selection-start-column="54" selection-end-line="60" selection-end-column="54" />
+            <state vertical-scroll-proportion="0.5947368" vertical-offset="1191" max-vertical-offset="4575">
+              <caret line="102" column="94" selection-start-line="102" selection-start-column="94" selection-end-line="102" selection-end-column="94" />
               <folding />
             </state>
           </provider>
@@ -109,8 +103,8 @@
         <option value="$PROJECT_DIR$/gateway/map/controller/contract/contract.php" />
         <option value="$PROJECT_DIR$/gateway/map/view/template/contract/contract_view.tpl" />
         <option value="$PROJECT_DIR$/gateway/portal/controller/sale/order.php" />
-        <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/contract_view.tpl" />
         <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/invoice_view.tpl" />
+        <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/contract_view.tpl" />
       </list>
     </option>
   </component>
@@ -917,18 +911,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/contract_view.tpl">
+    <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/invoice_view.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6315789" vertical-offset="4005" max-vertical-offset="4575">
-          <caret line="291" column="12" selection-start-line="291" selection-start-column="12" selection-end-line="291" selection-end-column="128" />
+        <state vertical-scroll-proportion="-0.02631579" vertical-offset="915" max-vertical-offset="1485">
+          <caret line="60" column="54" selection-start-line="60" selection-start-column="54" selection-end-line="60" selection-end-column="54" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/invoice_view.tpl">
+    <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/contract_view.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5754386" vertical-offset="572" max-vertical-offset="1485">
-          <caret line="60" column="54" selection-start-line="60" selection-start-column="54" selection-end-line="60" selection-end-column="54" />
+        <state vertical-scroll-proportion="0.5947368" vertical-offset="1191" max-vertical-offset="4575">
+          <caret line="102" column="94" selection-start-line="102" selection-start-column="94" selection-end-line="102" selection-end-column="94" />
           <folding />
         </state>
       </provider>

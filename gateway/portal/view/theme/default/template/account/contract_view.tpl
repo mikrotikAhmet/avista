@@ -98,9 +98,9 @@
                 <li>2.8. "MERCHANT" COMPANY ADDRESS:<b><?php echo strtoupper($certificate['address_1'].' '.$certificate['address_2'])?></b></li>
                 <li>2.9. "MERCHANT" POSTAL CODE:<b><?php echo strtoupper($certificate['postcode'])?></b></li>
                 <li>2.10. "MERCHANT" COUNTRY:<b><?php echo strtoupper($country['name'])?></b></li>
-                <li>2.11. "MERCHANT" CONTACT PERSON:<b><?php echo strtoupper($contract['contact_person'])?></b></li>
-                <li>2.12. "MERCHANT" CONTACT EMAIL:<b><?php echo strtoupper($contract['company_email'])?></b></li>
-                <li>2.13. "MERCHANT" CONTACT CELLULAR PHONE:<b><?php echo strtoupper($contract['company_telephone'])?></b></li>
+                <li>2.11. "MERCHANT" CONTACT PERSON:<b><?php echo strtoupper($customer['firstname'].' '.$customer['lastname'])?></b></li>
+                <li>2.12. "MERCHANT" CONTACT EMAIL:<b><?php echo strtoupper($customer['email'])?></b></li>
+                <li>2.13. "MERCHANT" CONTACT CELLULAR PHONE:<b><?php echo strtoupper($customer['mobile'])?></b></li>
                 <li class="bold">+++ CLAUSE 3 - SCOPE OF AGREEMENT/CONTRACT</li>
                 <li>3.1. THE “PRINCIPAL” WILL ARRANGE, AS PER “MERCHANT’S” REQUEST AND APPLICATION, THE ISSUANCE OF THE
                     FOLLOWING INSTRUMENT ON BEHALF OF “MERCHANT:
