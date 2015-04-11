@@ -58,7 +58,7 @@
             <ul style="list-style: none">
                 <li class="bold">+++ ELECTRONIC BUSINESS AGREEMENT/CONTRACT</li>
                 <li>A) BUSINESS AGREEMENT / CONTRACT NUMBER:<b><?php echo strtoupper($contract['contract_id'])?></b></li>
-                <li>B) AGREEMENT EFFECTIVE DATE:</li>
+                <li>B) AGREEMENT EFFECTIVE DATE:<b><?php echo date('d/m/Y', strtotime($contract['date_added']))?></b></li>
                 <li>C) TRANSACTION CODE:<b><?php echo strtoupper($contract['order_id'])?></b></li>
                 <li>D) CLIENT CODE:<b><?php echo strtoupper($customer['unique_id'])?></b></li>
                 <li class="bold">+++ CLAUSE 1 - DEFINITIONS</li>
