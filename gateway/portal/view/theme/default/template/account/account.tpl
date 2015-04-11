@@ -112,7 +112,7 @@
                                     </td>
                                     <td><button type="button" id="save-password" class="btn btn-sm btn-success">Save</button></td>
                                 </tr>
-                                <tr>
+                                <!--tr>
                                     <td><b><?php echo $text_security?></b></td>
                                     <td><?php echo ($auth ? 'Active' : 'InActive')?></td>
                                     <td><a href="javascript::viod()" style="color: #173e9a">Edit</a></td>
@@ -137,7 +137,7 @@
                                         </div-->
                                     </td>
                                     <td><button type="button" id="save-auth" class="btn btn-sm btn-success">Save</button></td>
-                                </tr>
+                                </tr-->
                                 <!--tr>
                                     <td><b>Email preferences</b></td>
                                     <td><?php echo ($newsletter ? 'Enabled' : 'Disabled')?></td>
