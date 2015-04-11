@@ -321,8 +321,12 @@ $data['order'] = $this->model_sale_order->getOrder($order_id);
 		$this->load->model('account/customer');
 
 
+		if (isset($this->request->get['contract_id'])){
+			$data['contract'] = $this->model_contract_contract->getContract($this->request->get['contract_id']);
+		} else {
+			$data['contract'] = $this->model_contract_contract->getContract($this->request->get['contract_id']);
+		}
 
-		$data['contract'] = $this->model_contract_contract->getContract($this->request->get['contract_id']);
 		$data['customer'] = $this->model_account_customer->getCustomer($this->customer->getId());
 
 		$data['back'] = $this->url->link('account/order','','SSL');

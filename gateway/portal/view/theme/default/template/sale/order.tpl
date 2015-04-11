@@ -106,7 +106,7 @@
             <div class="panel-body">
                 <div class="alert alert-info alert-dismissable">
                     <i class="fa fa-exclamation-circle"></i> <strong>Important Notice!</strong>
-                    <p>After placing order our underwriting team will review your order and issue the <b>Electronic Contract</b>.</p>
+                    <p>After placing order our complience desk will review your order and issue the <b>Electronic Contract</b>.</p>
                 </div>
                 <table class="table table-responsive table-striped">
                     <tbody>
