@@ -105,7 +105,7 @@ class ControllerSaleOrder extends Controller {
             );
         } else {
 
-	        $this->model_sale_order->updateOrderStatus($code, $this->config->get('config_order_status_id'));
+	        $this->model_sale_order->updateOrderStatus($code, '1');
 
 	        $json = array(
 		        'message' => 'Your order has been placed successfully.',

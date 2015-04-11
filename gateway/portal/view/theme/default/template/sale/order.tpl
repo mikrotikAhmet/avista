@@ -20,7 +20,7 @@
     <div class="col-lg-12">
         <p class="text-info">You can place order in this section.</p>
         <p class="text-info">Please you are obligated to fill all neccessary fields required.<br/>After clicking <b class="text-danger">Submit Request</b> button<br/>
-        You will be asked to provide <strong class="text-danger">SMS Verification Code</strong> and your <strong class="text-danger">Unique Customer number</strong> which associated to your account and already sent to your registered email address.</p>
+        You will be asked to provide your <strong class="text-danger">Unique Customer number</strong> which associated to your account and already sent to your registered email address.</p>
     </div>
     <div class="col-lg-6">
         <form id="order">
