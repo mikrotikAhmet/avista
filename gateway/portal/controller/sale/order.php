@@ -151,7 +151,7 @@ class ControllerSaleOrder extends Controller {
 			    'currency_value' => $this->currency->getValue($this->request->post['currency_code']),
 			    'bank_id' => $this->request->post['bank_id'],
 			    'settlement' => $this->request->post['settlement'],
-			    'comment' => $this->request->post['instrument'],
+			    'comment' => (!empty($this->request->post['other']) ? $this->request->post['other'] : $this->request->post['instrument']),
 			    'ip' => $ip,
 			    'forwarded_ip' => $forwarded_ip,
 			    'user_agent' => $user_agent,
