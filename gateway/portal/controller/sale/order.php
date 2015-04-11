@@ -98,26 +98,19 @@ class ControllerSaleOrder extends Controller {
 
         $order_data = $this->model_sale_order->getOrder($code);
 
-        if (!$order_data || $unique != $this->customer->getUniqueId()){
+        if ($unique != $this->customer->getUniqueId()){
 
             $json['error'] = array(
                 'message'=>'Verification code or Customer Unique ID does not match!'
             );
         } else {
 
-            if ($order_data['order_status_id'] > 0){
+	        $this->model_sale_order->updateOrderStatus($code, $this->config->get('config_order_status_id'));
 
-                $json['error'] = array(
-                    'message'=>'This order has already placed.'
-                );
-            } else {
-                $this->model_sale_order->updateOrderStatus($code, $this->config->get('config_order_status_id'));
-
-                $json = array(
-                    'message' => 'Your order has been placed successfully.',
-	                'redirect' => $this->url->link('account/order', '', 'SSL'),
-                );
-            }
+	        $json = array(
+		        'message' => 'Your order has been placed successfully.',
+		        'redirect' => $this->url->link('account/order', '', 'SSL'),
+	        );
         }
 
 

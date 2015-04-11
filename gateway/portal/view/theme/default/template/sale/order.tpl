@@ -67,9 +67,7 @@
                             <select name="bank_id" class="form-control">
                                 <option value="">--Please select--</option>
                                 <?php foreach ($banks as $bank) { ?>
-                                <?php if (in_array($bank['status'], $complete_status)) { ?>
                                     <option value="<?php echo $bank['bank_id']?>"><?php echo '[ '.$bank['currency_code'].' ] '.$bank['bank']?></option>
-                                <?php } ?>
                                 <?php } ?>
                             </select>
                         </div>
@@ -80,9 +78,7 @@
                             <select name="settlement" class="form-control">
                                 <option value="">--Please select--</option>
                                 <?php foreach ($banks as $bank) { ?>
-                                <?php if (in_array($bank['status'], $complete_status)) { ?>
                                 <option value="<?php echo $bank['bank_id']?>"><?php echo '[ '.$bank['currency_code'].' ] '.$bank['bank']?></option>
-                                <?php } ?>
                                 <?php } ?>
                             </select>
                         </div>
@@ -303,8 +299,6 @@ $('input[name=\'amount\']').on('keyup', function(e) {
                 Please go to My Account->Personal & Business Information and update your Personal Information</p>
                 <?php } else if ($customer['mobile']) { ?>
                 <p>Dear Customer,</p>
-                <p>To continue your order request, please type the Verification code associated to your Order Request.</p>
-                <p>Verification code has been sent to your Mobile Phone.</p>
                 <div class="form-group">
                     <label class="control-label" for="input-vc">Unique Customer Id</label>
                     <div class="">
@@ -312,13 +306,13 @@ $('input[name=\'amount\']').on('keyup', function(e) {
                         <span class="text-muted">This Unique Customer ID is 6 digit ID number. You also can find it in <b>My Account section</b> under <b>Business Information Tab</b>.</span>
                     </div>
                 </div>
-                <div class="form-group">
+                <!--div class="form-group">
                     <label class="control-label" for="input-vc">Verification code</label>
                     <div class="">
                         <input type="text" name="vc"  value="" id="input-vc" class="form-control"/>
                         <span class="text-muted">This Verification code also will be your Order Code.</span>
                     </div>
-                </div>
+                </div-->
                 <?php } ?>
             </div>
             <div class="modal-footer">

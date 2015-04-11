@@ -35,7 +35,7 @@ class ModelSaleOrder extends Model {
 
     public function updateOrderStatus($order_id,$status){
 
-        $this->db->query("UPDATE ".DB_PREFIX."order SET order_status_id = '".(int) $status."' WHERE order_id = '".(int) $order_id."'");
+        $this->db->query("UPDATE ".DB_PREFIX."order SET order_status_id = '1' WHERE order_id = '".(int) $order_id."'");
 
     }
 

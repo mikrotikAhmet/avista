@@ -330,7 +330,7 @@ $data['order'] = $this->model_sale_order->getOrder($order_id);
 		$data['customer'] = $this->model_account_customer->getCustomer($this->customer->getId());
 		$data['certificate'] = $this->model_account_certificate->getCertificate($data['customer']['certificate_id']);
 		$data['country'] = $this->model_localisation_country->getCountry($data['certificate']['country_id']);
-		$data['order'] = $this->model_sale_order->getOrder($data['order_id']);
+		$data['order'] = $this->model_sale_order->getOrder($data['contract']['order_id']);
 		$data['bank'] = $this->model_account_bank->getBank($data['order']['bank_id']);
 
 		$data['back'] = $this->url->link('account/order','','SSL');
