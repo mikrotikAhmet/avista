@@ -150,76 +150,76 @@ class ControllerSaleContract extends Controller {
 			$data['error_price'] = '';
 		}
 
-		if (isset($this->error['company_name'])) {
-			$data['error_company_name'] = $this->error['company_name'];
-		} else {
-			$data['error_company_name'] = '';
-		}
-
-		if (isset($this->error['company_address'])) {
-			$data['error_company_address'] = $this->error['company_address'];
-		} else {
-			$data['error_company_address'] = '';
-		}
-
-		if (isset($this->error['company_telephone'])) {
-			$data['error_company_telephone'] = $this->error['company_telephone'];
-		} else {
-			$data['error_company_telephone'] = '';
-		}
-
-		if (isset($this->error['company_email'])) {
-			$data['error_company_email'] = $this->error['company_email'];
-		} else {
-			$data['error_company_email'] = '';
-		}
-
-		if (isset($this->error['contact_person'])) {
-			$data['error_contact_person'] = $this->error['contact_person'];
-		} else {
-			$data['error_contact_person'] = '';
-		}
-
-		if (isset($this->error['bank_name'])) {
-			$data['error_bank_name'] = $this->error['bank_name'];
-		} else {
-			$data['error_bank_name'] = '';
-		}
-
-		if (isset($this->error['iban'])) {
-			$data['error_iban'] = $this->error['iban'];
-		} else {
-			$data['error_iban'] = '';
-		}
-
-		if (isset($this->error['swift_code'])) {
-			$data['error_swift_code'] = $this->error['swift_code'];
-		} else {
-			$data['error_swift_code'] = '';
-		}
-
-		if (isset($this->error['beneficiary_name'])) {
-			$data['error_beneficiary_name'] = $this->error['beneficiary_name'];
-		} else {
-			$data['error_beneficiary_name'] = '';
-		}
-
-		if (isset($this->error['officer_name'])) {
-			$data['error_officer_name'] = $this->error['officer_name'];
-		} else {
-			$data['error_officer_name'] = '';
-		}
-
-		if (isset($this->error['officer_email'])) {
-			$data['error_officer_email'] = $this->error['officer_email'];
-		} else {
-			$data['error_officer_email'] = '';
-		}
-		if (isset($this->error['officer_phone'])) {
-			$data['error_officer_phone'] = $this->error['officer_phone'];
-		} else {
-			$data['error_officer_phone'] = '';
-		}
+//		if (isset($this->error['company_name'])) {
+//			$data['error_company_name'] = $this->error['company_name'];
+//		} else {
+//			$data['error_company_name'] = '';
+//		}
+//
+//		if (isset($this->error['company_address'])) {
+//			$data['error_company_address'] = $this->error['company_address'];
+//		} else {
+//			$data['error_company_address'] = '';
+//		}
+//
+//		if (isset($this->error['company_telephone'])) {
+//			$data['error_company_telephone'] = $this->error['company_telephone'];
+//		} else {
+//			$data['error_company_telephone'] = '';
+//		}
+//
+//		if (isset($this->error['company_email'])) {
+//			$data['error_company_email'] = $this->error['company_email'];
+//		} else {
+//			$data['error_company_email'] = '';
+//		}
+//
+//		if (isset($this->error['contact_person'])) {
+//			$data['error_contact_person'] = $this->error['contact_person'];
+//		} else {
+//			$data['error_contact_person'] = '';
+//		}
+//
+//		if (isset($this->error['bank_name'])) {
+//			$data['error_bank_name'] = $this->error['bank_name'];
+//		} else {
+//			$data['error_bank_name'] = '';
+//		}
+//
+//		if (isset($this->error['iban'])) {
+//			$data['error_iban'] = $this->error['iban'];
+//		} else {
+//			$data['error_iban'] = '';
+//		}
+//
+//		if (isset($this->error['swift_code'])) {
+//			$data['error_swift_code'] = $this->error['swift_code'];
+//		} else {
+//			$data['error_swift_code'] = '';
+//		}
+//
+//		if (isset($this->error['beneficiary_name'])) {
+//			$data['error_beneficiary_name'] = $this->error['beneficiary_name'];
+//		} else {
+//			$data['error_beneficiary_name'] = '';
+//		}
+//
+//		if (isset($this->error['officer_name'])) {
+//			$data['error_officer_name'] = $this->error['officer_name'];
+//		} else {
+//			$data['error_officer_name'] = '';
+//		}
+//
+//		if (isset($this->error['officer_email'])) {
+//			$data['error_officer_email'] = $this->error['officer_email'];
+//		} else {
+//			$data['error_officer_email'] = '';
+//		}
+//		if (isset($this->error['officer_phone'])) {
+//			$data['error_officer_phone'] = $this->error['officer_phone'];
+//		} else {
+//			$data['error_officer_phone'] = '';
+//		}
 
 		if (!isset($this->request->get['contract_id'])) {
 			$data['action'] = $this->url->link('sale/contract/add', 'token=' . $this->session->data['token'].'&order_id='.$this->request->get['order_id'], 'SSL');
@@ -283,101 +283,101 @@ class ControllerSaleContract extends Controller {
 			$data['price'] = '';
 		}
 
-		if (isset($this->request->post['company_name'])) {
-			$data['company_name'] = $this->request->post['company_name'];
-		} elseif (!empty($contract_info)) {
-			$data['company_name'] = $contract_info['company_name'];
-		} else {
-			$data['company_name'] = '';
-		}
-
-		if (isset($this->request->post['company_address'])) {
-			$data['company_address'] = $this->request->post['company_address'];
-		} elseif (!empty($contract_info)) {
-			$data['company_address'] = $contract_info['company_address'];
-		} else {
-			$data['company_address'] = '';
-		}
-
-		if (isset($this->request->post['company_telephone'])) {
-			$data['company_telephone'] = $this->request->post['company_telephone'];
-		} elseif (!empty($contract_info)) {
-			$data['company_telephone'] = $contract_info['company_telephone'];
-		} else {
-			$data['company_telephone'] = '';
-		}
-
-		if (isset($this->request->post['company_email'])) {
-			$data['company_email'] = $this->request->post['company_email'];
-		} elseif (!empty($contract_info)) {
-			$data['company_email'] = $contract_info['company_email'];
-		} else {
-			$data['company_email'] = '';
-		}
-
-		if (isset($this->request->post['contact_person'])) {
-			$data['contact_person'] = $this->request->post['contact_person'];
-		} elseif (!empty($contract_info)) {
-			$data['contact_person'] = $contract_info['contact_person'];
-		} else {
-			$data['contact_person'] = '';
-		}
-
-		if (isset($this->request->post['bank_name'])) {
-			$data['bank_name'] = $this->request->post['bank_name'];
-		} elseif (!empty($contract_info)) {
-			$data['bank_name'] = $contract_info['bank_name'];
-		} else {
-			$data['bank_name'] = '';
-		}
-
-		if (isset($this->request->post['iban'])) {
-			$data['iban'] = $this->request->post['iban'];
-		} elseif (!empty($contract_info)) {
-			$data['iban'] = $contract_info['iban'];
-		} else {
-			$data['iban'] = '';
-		}
-
-		if (isset($this->request->post['swift_code'])) {
-			$data['swift_code'] = $this->request->post['swift_code'];
-		} elseif (!empty($contract_info)) {
-			$data['swift_code'] = $contract_info['swift_code'];
-		} else {
-			$data['swift_code'] = '';
-		}
-
-		if (isset($this->request->post['beneficiary_name'])) {
-			$data['beneficiary_name'] = $this->request->post['beneficiary_name'];
-		} elseif (!empty($contract_info)) {
-			$data['beneficiary_name'] = $contract_info['beneficiary_name'];
-		} else {
-			$data['beneficiary_name'] = '';
-		}
-
-		if (isset($this->request->post['officer_name'])) {
-			$data['officer_name'] = $this->request->post['officer_name'];
-		} elseif (!empty($contract_info)) {
-			$data['officer_name'] = $contract_info['officer_name'];
-		} else {
-			$data['officer_name'] = '';
-		}
-
-		if (isset($this->request->post['officer_email'])) {
-			$data['officer_email'] = $this->request->post['officer_email'];
-		} elseif (!empty($contract_info)) {
-			$data['officer_email'] = $contract_info['officer_email'];
-		} else {
-			$data['officer_email'] = '';
-		}
-
-		if (isset($this->request->post['officer_phone'])) {
-			$data['officer_phone'] = $this->request->post['officer_phone'];
-		} elseif (!empty($contract_info)) {
-			$data['officer_phone'] = $contract_info['officer_phone'];
-		} else {
-			$data['officer_phone'] = '';
-		}
+//		if (isset($this->request->post['company_name'])) {
+//			$data['company_name'] = $this->request->post['company_name'];
+//		} elseif (!empty($contract_info)) {
+//			$data['company_name'] = $contract_info['company_name'];
+//		} else {
+//			$data['company_name'] = '';
+//		}
+//
+//		if (isset($this->request->post['company_address'])) {
+//			$data['company_address'] = $this->request->post['company_address'];
+//		} elseif (!empty($contract_info)) {
+//			$data['company_address'] = $contract_info['company_address'];
+//		} else {
+//			$data['company_address'] = '';
+//		}
+//
+//		if (isset($this->request->post['company_telephone'])) {
+//			$data['company_telephone'] = $this->request->post['company_telephone'];
+//		} elseif (!empty($contract_info)) {
+//			$data['company_telephone'] = $contract_info['company_telephone'];
+//		} else {
+//			$data['company_telephone'] = '';
+//		}
+//
+//		if (isset($this->request->post['company_email'])) {
+//			$data['company_email'] = $this->request->post['company_email'];
+//		} elseif (!empty($contract_info)) {
+//			$data['company_email'] = $contract_info['company_email'];
+//		} else {
+//			$data['company_email'] = '';
+//		}
+//
+//		if (isset($this->request->post['contact_person'])) {
+//			$data['contact_person'] = $this->request->post['contact_person'];
+//		} elseif (!empty($contract_info)) {
+//			$data['contact_person'] = $contract_info['contact_person'];
+//		} else {
+//			$data['contact_person'] = '';
+//		}
+//
+//		if (isset($this->request->post['bank_name'])) {
+//			$data['bank_name'] = $this->request->post['bank_name'];
+//		} elseif (!empty($contract_info)) {
+//			$data['bank_name'] = $contract_info['bank_name'];
+//		} else {
+//			$data['bank_name'] = '';
+//		}
+//
+//		if (isset($this->request->post['iban'])) {
+//			$data['iban'] = $this->request->post['iban'];
+//		} elseif (!empty($contract_info)) {
+//			$data['iban'] = $contract_info['iban'];
+//		} else {
+//			$data['iban'] = '';
+//		}
+//
+//		if (isset($this->request->post['swift_code'])) {
+//			$data['swift_code'] = $this->request->post['swift_code'];
+//		} elseif (!empty($contract_info)) {
+//			$data['swift_code'] = $contract_info['swift_code'];
+//		} else {
+//			$data['swift_code'] = '';
+//		}
+//
+//		if (isset($this->request->post['beneficiary_name'])) {
+//			$data['beneficiary_name'] = $this->request->post['beneficiary_name'];
+//		} elseif (!empty($contract_info)) {
+//			$data['beneficiary_name'] = $contract_info['beneficiary_name'];
+//		} else {
+//			$data['beneficiary_name'] = '';
+//		}
+//
+//		if (isset($this->request->post['officer_name'])) {
+//			$data['officer_name'] = $this->request->post['officer_name'];
+//		} elseif (!empty($contract_info)) {
+//			$data['officer_name'] = $contract_info['officer_name'];
+//		} else {
+//			$data['officer_name'] = '';
+//		}
+//
+//		if (isset($this->request->post['officer_email'])) {
+//			$data['officer_email'] = $this->request->post['officer_email'];
+//		} elseif (!empty($contract_info)) {
+//			$data['officer_email'] = $contract_info['officer_email'];
+//		} else {
+//			$data['officer_email'] = '';
+//		}
+//
+//		if (isset($this->request->post['officer_phone'])) {
+//			$data['officer_phone'] = $this->request->post['officer_phone'];
+//		} elseif (!empty($contract_info)) {
+//			$data['officer_phone'] = $contract_info['officer_phone'];
+//		} else {
+//			$data['officer_phone'] = '';
+//		}
 
 		$data['header'] = $this->load->controller('common/header');
 		$data['column_left'] = $this->load->controller('common/column_left');
@@ -416,52 +416,52 @@ class ControllerSaleContract extends Controller {
 			$this->error['price'] = 'Numeric only field!';
 		}
 
-		if ((utf8_strlen($this->request->post['company_name']) < 2) || (utf8_strlen(trim($this->request->post['company_name'])) > 32)) {
-			$this->error['company_name'] = 'Required field!';
-		}
-
-		if ((utf8_strlen($this->request->post['company_address']) < 2) || (utf8_strlen(trim($this->request->post['company_address'])) > 32)) {
-			$this->error['company_address'] = 'Required field!';
-		}
-
-		if ((utf8_strlen($this->request->post['company_telephone']) < 2) || (utf8_strlen(trim($this->request->post['company_telephone'])) > 32)) {
-			$this->error['company_telephone'] = 'Required field!';
-		}
-
-		if ((utf8_strlen($this->request->post['company_email']) > 96) || !preg_match('/^[^\@]+@.*\.[a-z]{2,6}$/i', $this->request->post['company_email'])) {
-			$this->error['company_email'] = 'Please provide a valid e-mail address';
-		}
-
-		if ((utf8_strlen($this->request->post['contact_person']) < 2) || (utf8_strlen(trim($this->request->post['contact_person'])) > 32)) {
-			$this->error['contact_person'] ='Required field!';
-		}
-
-		if ((utf8_strlen($this->request->post['bank_name']) < 2) || (utf8_strlen(trim($this->request->post['bank_name'])) > 32)) {
-			$this->error['bank_name'] = 'Required field!';
-		}
-
-		if ((utf8_strlen($this->request->post['iban']) < 2) || (utf8_strlen(trim($this->request->post['iban'])) > 32)) {
-			$this->error['iban'] = 'Required field!';
-		}
-
-		if ((utf8_strlen($this->request->post['swift_code']) < 2) || (utf8_strlen(trim($this->request->post['swift_code'])) > 32)) {
-			$this->error['swift_code'] = 'Required field!';
-		}
-
-		if ((utf8_strlen($this->request->post['beneficiary_name']) < 2) || (utf8_strlen(trim($this->request->post['beneficiary_name'])) > 32)) {
-			$this->error['beneficiary_name'] = 'Required field!';
-		}
-
-		if ((utf8_strlen($this->request->post['officer_name']) < 2) || (utf8_strlen(trim($this->request->post['officer_name'])) > 32)) {
-			$this->error['officer_name'] = 'Required field!';
-		}
-		if ((utf8_strlen($this->request->post['officer_email']) > 96) || !preg_match('/^[^\@]+@.*\.[a-z]{2,6}$/i', $this->request->post['officer_email'])) {
-			$this->error['officer_email'] = 'Please provide a valid e-mail address';
-		}
-
-		if ((utf8_strlen($this->request->post['officer_phone']) < 2) || (utf8_strlen(trim($this->request->post['officer_phone'])) > 32)) {
-			$this->error['officer_phone'] = 'Required field!';
-		}
+//		if ((utf8_strlen($this->request->post['company_name']) < 2) || (utf8_strlen(trim($this->request->post['company_name'])) > 32)) {
+//			$this->error['company_name'] = 'Required field!';
+//		}
+//
+//		if ((utf8_strlen($this->request->post['company_address']) < 2) || (utf8_strlen(trim($this->request->post['company_address'])) > 32)) {
+//			$this->error['company_address'] = 'Required field!';
+//		}
+//
+//		if ((utf8_strlen($this->request->post['company_telephone']) < 2) || (utf8_strlen(trim($this->request->post['company_telephone'])) > 32)) {
+//			$this->error['company_telephone'] = 'Required field!';
+//		}
+//
+//		if ((utf8_strlen($this->request->post['company_email']) > 96) || !preg_match('/^[^\@]+@.*\.[a-z]{2,6}$/i', $this->request->post['company_email'])) {
+//			$this->error['company_email'] = 'Please provide a valid e-mail address';
+//		}
+//
+//		if ((utf8_strlen($this->request->post['contact_person']) < 2) || (utf8_strlen(trim($this->request->post['contact_person'])) > 32)) {
+//			$this->error['contact_person'] ='Required field!';
+//		}
+//
+//		if ((utf8_strlen($this->request->post['bank_name']) < 2) || (utf8_strlen(trim($this->request->post['bank_name'])) > 32)) {
+//			$this->error['bank_name'] = 'Required field!';
+//		}
+//
+//		if ((utf8_strlen($this->request->post['iban']) < 2) || (utf8_strlen(trim($this->request->post['iban'])) > 32)) {
+//			$this->error['iban'] = 'Required field!';
+//		}
+//
+//		if ((utf8_strlen($this->request->post['swift_code']) < 2) || (utf8_strlen(trim($this->request->post['swift_code'])) > 32)) {
+//			$this->error['swift_code'] = 'Required field!';
+//		}
+//
+//		if ((utf8_strlen($this->request->post['beneficiary_name']) < 2) || (utf8_strlen(trim($this->request->post['beneficiary_name'])) > 32)) {
+//			$this->error['beneficiary_name'] = 'Required field!';
+//		}
+//
+//		if ((utf8_strlen($this->request->post['officer_name']) < 2) || (utf8_strlen(trim($this->request->post['officer_name'])) > 32)) {
+//			$this->error['officer_name'] = 'Required field!';
+//		}
+//		if ((utf8_strlen($this->request->post['officer_email']) > 96) || !preg_match('/^[^\@]+@.*\.[a-z]{2,6}$/i', $this->request->post['officer_email'])) {
+//			$this->error['officer_email'] = 'Please provide a valid e-mail address';
+//		}
+//
+//		if ((utf8_strlen($this->request->post['officer_phone']) < 2) || (utf8_strlen(trim($this->request->post['officer_phone'])) > 32)) {
+//			$this->error['officer_phone'] = 'Required field!';
+//		}
 
 
 		if ($this->error && !isset($this->error['warning'])) {

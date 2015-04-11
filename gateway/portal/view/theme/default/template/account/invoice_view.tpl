@@ -58,7 +58,7 @@
             <ul style="list-style: none">
                 <li>ELECTRONIC INVOICE<li/>
                 <li>01. INVOICE TYPE:<b>PROFORMA INVOICE</b><li/>
-                <li>02. DATE:<b><?php echo date('Y-m-d')?></b><li/>
+                <li>02. DATE:<b><?php echo date('d/m/Y')?></b><li/>
                 <li>03. INVOICE NUMBER:<b><?php echo strtoupper($order['invoice_no'])?></b><li/>
                 <li>04. INVOICE ISSUER:<b> H.I.F. INVEST HOLDING LTD - MARSHALL ISLANDS - AJELTAKE ROAD - AJELTAKE ISLAND - MAJURO - REGISTRATION NUMBER 41454 - E: info@hifholding.com</b><li/>
                 <li>05. INVOICE TO:<b><?php echo strtoupper($contract['company_name'])?><?php echo ' '.strtoupper($contract['company_address'])?></b><li/>
@@ -83,7 +83,7 @@
             <div class="margin-left : 31px;">
                 <img src="image/stamp2.png" style="margin-left: 24px"/>
             </div>
-
+            <input type="checkbox" class="form-control"/> I ACCEPT THIS CONTRACT/AGREEMENT IN ALL CLAUSES, TERMS AND CONDITIONS.
             <h4><i>ELECTRONIC SIGN AND/OR STAMP IS ACCEPTED BY BOTH PARTIES AS TRUE, VALID AND IN FULL FORCE.</i></h4>
         </div>
 

@@ -80,7 +80,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group required">
+
+                            <!--div class="form-group required">
                                 <label class="control-label" for="input-customer">COMPANY’S NAME: </label>
                                 <input type="text" name="company_name" value="<?php echo $company_name; ?>" placeholder="COMPANY’S NAME" id="input-customer" class="form-control" />
                                 <?php if ($error_company_name) { ?>
@@ -173,7 +174,7 @@
                                     <div class="text-danger"><?php echo $error_officer_phone; ?></div>
                                     <?php } ?>
                                 </div>
-                            </div>
+                            </div-->
                             <div class="pull-right">
                                 <a href="<?php echo $cancel?>" class="btn btn-danger"><i class="fa fa-remove"></i> Cancel Contract</a>
                                 <button type="submit" class="btn btn-primary"><i class="fa fa-check"></i> Create Contract</button>

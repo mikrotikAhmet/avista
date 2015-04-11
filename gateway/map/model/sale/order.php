@@ -54,6 +54,7 @@ class ModelSaleOrder extends Model {
 				'application_url'               => $order_query->row['application_url'],
 				'customer_id'             => $order_query->row['customer_id'],
 				'customer'                => $order_query->row['customer'],
+				'bank_id'                => $order_query->row['bank_id'],
 				'customer_group_id'       => $order_query->row['customer_group_id'],
 				'firstname'               => $order_query->row['firstname'],
 				'lastname'                => $order_query->row['lastname'],

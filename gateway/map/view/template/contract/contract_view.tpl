@@ -126,18 +126,18 @@
                     HEREUNDER MENTIONED AND AS THIS HAS BEEN REQUESTED IN WRITTEN BY THE “MERCHANT” ON HIS APPLICATION
                     FORM.
                 </li>
-                <li>4.4.1. COMPANY’S NAME:<b><?php echo strtoupper($contract['company_name'])?></b></li>
-                <li>4.4.2. COMPANY’S ADDRESS:<b><?php echo strtoupper($contract['company_address'])?></b></li>
-                <li>4.4.3. COMPANY’S TELEPHONE:<b><?php echo strtoupper($contract['company_telephone'])?></b></li>
-                <li>4.4.4. COMPANY’S EMAIL:<b><?php echo strtoupper($contract['company_email'])?></b></li>
-                <li>4.4.5. COMPANY’S CONTACT PERSON:<b><?php echo strtoupper($contract['contact_person'])?></b></li>
-                <li>4.4.6. BANK NAME:<b><?php echo strtoupper($contract['bank_name'])?></b></li>
-                <li>4.4.7. BANK IBAN:<b><?php echo strtoupper($contract['iban'])?></b></li>
-                <li>4.4.8. BANK SWIFT CODE:<b><?php echo strtoupper($contract['swift_code'])?></b></li>
-                <li>4.4.9. BENEFICIARY NAME:<b><?php echo strtoupper($contract['beneficiary_name'])?></b></li>
-                <li>4.4.10. BANK OFFICER NAME:<b><?php echo strtoupper($contract['officer_name'])?></b></li>
-                <li>4.4.11. BANK OFFICER EMAIL:<b><?php echo strtoupper($contract['officer_email'])?></b></li>
-                <li>4.4.12. BANK OFFICER PHONE:<b><?php echo strtoupper($contract['officer_phone'])?></b></li>
+                <li>4.4.1. COMPANY’S NAME:<b><?php echo strtoupper($certificate['legal_name'])?></b></li>
+                <li>4.4.2. COMPANY’S ADDRESS:<b><?php echo strtoupper($certificate['address_1'].' '.$certificate['address_2'])?></b></li>
+                <li>4.4.3. COMPANY’S TELEPHONE:<b><?php echo strtoupper($customer['mobile'])?></b></li>
+                <li>4.4.4. COMPANY’S EMAIL:<b><?php echo strtoupper($customer['email'])?></b></li>
+                <li>4.4.5. COMPANY’S CONTACT PERSON:<b><?php echo strtoupper($customer['firstname'].' '.$customer['lastname'])?></b></li>
+                <li>4.4.6. BANK NAME:<b><?php echo strtoupper($bank['bank'])?></b></li>
+                <li>4.4.7. BANK IBAN:<b><?php echo strtoupper($bank['iban'])?></b></li>
+                <li>4.4.8. BANK SWIFT CODE:<b><?php echo strtoupper($bank['swift'])?></b></li>
+                <li>4.4.9. BENEFICIARY NAME:<b><?php echo strtoupper($customer['firstname'].' '.$customer['lastname'])?></b></li>
+                <li>4.4.10. BANK OFFICER NAME:<b><?php echo strtoupper($bank['officer_name'])?></b></li>
+                <li>4.4.11. BANK OFFICER EMAIL:<b><?php echo strtoupper($bank['officer_email'])?></b></li>
+                <li>4.4.12. BANK OFFICER PHONE:<b><?php echo strtoupper($bank['officer_telephone'])?></b></li>
                 <li>4.5. ISSUANCE OF THE INSTRUMENT FORMAT WITH SPECIFIC TEXT BY THE ISSUANCE BANK AND DELIVERY TO THE
                     NOMINATED RECEIVING BANK OF THE «MERCHANT», SHOULD BE THE SUBJECT OF THE INTERNATIONAL CHAMBER OF
                     COMMERCE - ICC RULES 500 / 600 / URDG 758 AND ACCORDING TO «MERCHANT»’S WISH WHILE IT WILL BE

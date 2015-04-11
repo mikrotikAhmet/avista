@@ -125,11 +125,11 @@
                     HEREUNDER MENTIONED AND AS THIS HAS BEEN REQUESTED IN WRITTEN BY THE “MERCHANT” ON HIS APPLICATION
                     FORM.
                 </li>
-                <li>4.4.1. COMPANY’S NAME:<b><?php echo strtoupper($contract['company_name'])?></b></li>
-                <li>4.4.2. COMPANY’S ADDRESS:<b><?php echo strtoupper($contract['company_address'])?></b></li>
-                <li>4.4.3. COMPANY’S TELEPHONE:<b><?php echo strtoupper($contract['company_telephone'])?></b></li>
-                <li>4.4.4. COMPANY’S EMAIL:<b><?php echo strtoupper($contract['company_email'])?></b></li>
-                <li>4.4.5. COMPANY’S CONTACT PERSON:<b><?php echo strtoupper($contract['contact_person'])?></b></li>
+                <li>4.4.1. COMPANY’S NAME:<b><?php echo strtoupper($certificate['legal_name'])?></b></li>
+                <li>4.4.2. COMPANY’S ADDRESS:<b><?php echo strtoupper($certificate['address_1'].' '.$certificate['address_2'])?></b></li>
+                <li>4.4.3. COMPANY’S TELEPHONE:<b><?php echo strtoupper($customer['mobile'])?></b></li>
+                <li>4.4.4. COMPANY’S EMAIL:<b><?php echo strtoupper($customer['email'])?></b></li>
+                <li>4.4.5. COMPANY’S CONTACT PERSON:<b><?php echo strtoupper($customer['firstname'].' '.$customer['lastname'])?></b></li>
                 <li>4.4.6. BANK NAME:<b><?php echo strtoupper($contract['bank_name'])?></b></li>
                 <li>4.4.7. BANK IBAN:<b><?php echo strtoupper($contract['iban'])?></b></li>
                 <li>4.4.8. BANK SWIFT CODE:<b><?php echo strtoupper($contract['swift_code'])?></b></li>
@@ -289,7 +289,7 @@
             <div class="margin-left : 31px;">
                 <img src="image/stamp2.png" style="margin-left: 24px"/>
             </div>
-
+            <input type="checkbox" class="form-control"/> I ACCEPT THIS CONTRACT/AGREEMENT IN ALL CLAUSES, TERMS AND CONDITIONS.
             <h4><i>ELECTRONIC SIGN AND/OR STAMP IS ACCEPTED BY BOTH PARTIES AS TRUE, VALID AND IN FULL FORCE.</i></h4>
         </div>
 
