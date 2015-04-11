@@ -146,7 +146,7 @@
                             <table class="table table-bordered">
                                 <tr>
                                     <td>Banking Instrument</td>
-                                    <td><?php echo $product_name ?></td>
+                                    <td><?php echo $product['name']?></td>
                                 </tr>
                                 <tr>
                                     <td>Requested amount</td>

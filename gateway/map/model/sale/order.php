@@ -166,6 +166,13 @@ class ModelSaleOrder extends Model {
 		return $query->rows;
 	}
 
+	public function getProduct($order_id){
+
+		$result = $this->db->query("SELECT * FROM ".DB_PREFIX."order_product WHERE order_id = '".(int) $order_id."'");
+
+		return $result->row;
+	}
+
 	public function getTotalOrders($data = array()) {
 		$sql = "SELECT COUNT(*) AS total FROM `" . DB_PREFIX . "order`";
 

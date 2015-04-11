@@ -870,6 +870,11 @@ class ControllerSaleOrder extends Controller {
 			$data['hasContract'] = $order_info['contract_no'];
 			$data['hasInvoice'] = $order_info['invoice_no'];
 
+
+
+			$data['product'] = $this->model_sale_order->getProduct($order_info['order_id']);
+
+
 			if ($order_info['customer_id']) {
 				$data['customer'] = $this->url->link('sale/customer/edit', 'token=' . $this->session->data['token'] . '&customer_id=' . $order_info['customer_id'], 'SSL');
 			} else {

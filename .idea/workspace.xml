@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbd0d96c-d439-4391-add6-8ad6ad0b2fa0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/contract_view.tpl" afterPath="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/contract_view.tpl" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gateway/map/system/cache/cache.application.1428746983" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/map/controller/sale/order.php" afterPath="$PROJECT_DIR$/gateway/map/controller/sale/order.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/map/model/sale/order.php" afterPath="$PROJECT_DIR$/gateway/map/model/sale/order.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gateway/map/view/template/sale/order_info.tpl" afterPath="$PROJECT_DIR$/gateway/map/view/template/sale/order_info.tpl" />
     </list>
     <ignored path="avista.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,11 +30,50 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="contract_view.tpl" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/contract_view.tpl">
+      <file leaf-file-name="order.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gateway/map/controller/sale/order.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4473684" vertical-offset="765" max-vertical-offset="4575">
-              <caret line="68" column="118" selection-start-line="68" selection-start-column="118" selection-end-line="68" selection-end-column="118" />
+            <state vertical-scroll-proportion="-4.4313726" vertical-offset="12869" max-vertical-offset="16710">
+              <caret line="873" column="0" selection-start-line="873" selection-start-column="0" selection-end-line="873" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="order.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gateway/map/model/sale/order.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.67898834" vertical-offset="2201" max-vertical-offset="4335">
+              <caret line="170" column="34" selection-start-line="170" selection-start-column="34" selection-end-line="170" selection-end-column="34" />
+              <folding>
+                <marker date="1428749078516" expanded="true" signature="623:835" placeholder="SELECT *, (S..." />
+                <marker date="1428749078516" expanded="true" signature="634:746" placeholder="SELECT CONCA..DB_PREFIXcustomer..." />
+                <marker date="1428749078516" expanded="true" signature="1345:1444" placeholder="SELECT * FRO..DB_PREFIXorder_product..." />
+                <marker date="1428749078516" expanded="true" signature="1486:1574" placeholder="SELECT * FRO..DB_PREFIXbank..." />
+                <marker date="1428749078516" expanded="true" signature="1617:1708" placeholder="SELECT * FRO..DB_PREFIXbank..." />
+                <marker date="1428749078516" expanded="true" signature="4138:4500" placeholder="SELECT o.ord..." />
+                <marker date="1428749078516" expanded="true" signature="4208:4382" placeholder="SELECT os.na..DB_PREFIXorder_status..." />
+                <marker date="1428749078516" expanded="true" signature="6420:6433" placeholder="SELECT * FRO..." />
+                <marker date="1428749078516" expanded="true" signature="6420:6434" placeholder="SELECT * FRO..DB_PREFIX..." />
+                <marker date="1428749078516" expanded="true" signature="6420:6467" placeholder="SELECT * FRO..DB_PREFIXorder_product..." />
+                <marker date="1428749078516" expanded="true" signature="6420:6479" placeholder="SELECT * FRO..DB_PREFIXorder_product..." />
+                <marker date="1428749078516" expanded="true" signature="6420:6499" placeholder="SELECT * FRO..DB_PREFIXorder_product..." />
+                <marker date="1428749078516" expanded="true" signature="6592:6646" placeholder="SELECT COUNT..." />
+                <marker date="1428749078516" expanded="true" signature="7895:7981" placeholder="SELECT * FRO..DB_PREFIXorder_product..." />
+                <marker date="1428749078516" expanded="true" signature="8196:8559" placeholder="SELECT oh.da..DB_PREFIXorder_history..." />
+                <marker date="1428749078516" expanded="true" signature="8687:8789" placeholder="SELECT COUNT..DB_PREFIXorder_history..." />
+                <marker date="1428749078516" expanded="true" signature="9042:9179" placeholder="INSERT INTO ..." />
+                <marker date="1428749078516" expanded="true" signature="9367:9515" placeholder="SELECT MAX(i..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="order_info.tpl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gateway/map/view/template/sale/order_info.tpl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.8431373" vertical-offset="2024" max-vertical-offset="5565">
+              <caret line="148" column="59" selection-start-line="148" selection-start-column="59" selection-end-line="148" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -81,10 +123,7 @@
         <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/account.tpl" />
         <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/order.tpl" />
         <option value="$PROJECT_DIR$/gateway/portal/model/contract/contract.php" />
-        <option value="$PROJECT_DIR$/gateway/map/controller/sale/order.php" />
-        <option value="$PROJECT_DIR$/gateway/map/view/template/sale/order_info.tpl" />
         <option value="$PROJECT_DIR$/gateway/map/view/template/sale/invoice_view.tpl" />
-        <option value="$PROJECT_DIR$/gateway/map/model/sale/order.php" />
         <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/sale/order.tpl" />
         <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/common/header.tpl" />
         <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/bank_edit.tpl" />
@@ -101,6 +140,9 @@
         <option value="$PROJECT_DIR$/gateway/portal/model/sale/order.php" />
         <option value="$PROJECT_DIR$/gateway/portal/controller/account/order.php" />
         <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/contract_view.tpl" />
+        <option value="$PROJECT_DIR$/gateway/map/view/template/sale/order_info.tpl" />
+        <option value="$PROJECT_DIR$/gateway/map/controller/sale/order.php" />
+        <option value="$PROJECT_DIR$/gateway/map/model/sale/order.php" />
       </list>
     </option>
   </component>
@@ -183,7 +225,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="portal" />
+              <option name="myItemId" value="map" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -201,23 +243,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="portal" />
+              <option name="myItemId" value="map" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="theme" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="default" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="template" />
+              <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -235,101 +265,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="portal" />
+              <option name="myItemId" value="map" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
+              <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="theme" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="default" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="template" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="account" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="avista" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="avista" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gateway" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="portal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="theme" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="default" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="avista" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="avista" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gateway" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="portal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="avista" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="avista" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gateway" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="portal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
+              <option name="myItemId" value="sale" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -626,36 +570,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/map/view/template/sale/order_info.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-30.0" vertical-offset="4365" max-vertical-offset="5565">
-          <caret line="339" column="61" selection-start-line="339" selection-start-column="61" selection-end-line="339" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/map/model/sale/order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7894737" vertical-offset="3630" max-vertical-offset="4230">
-          <caret line="272" column="0" selection-start-line="272" selection-start-column="0" selection-end-line="272" selection-end-column="0" />
-          <folding>
-            <marker date="1428736303006" expanded="true" signature="-1:-1" placeholder="SELECT *, (S..." />
-            <marker date="1428736303006" expanded="true" signature="-1:-1" placeholder="SELECT CONCA..DB_PREFIXcustomer..." />
-            <marker date="1428736303006" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXorder_product..." />
-            <marker date="1428736303006" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXbank..." />
-            <marker date="1428736303006" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXbank..." />
-            <marker date="1428736303006" expanded="true" signature="-1:-1" placeholder="SELECT o.ord..." />
-            <marker date="1428736303006" expanded="true" signature="-1:-1" placeholder="SELECT os.na..DB_PREFIXorder_status..." />
-            <marker date="1428736303006" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
-            <marker date="1428736303006" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXorder_product..." />
-            <marker date="1428736303006" expanded="true" signature="-1:-1" placeholder="SELECT oh.da..DB_PREFIXorder_history..." />
-            <marker date="1428736303006" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXorder_history..." />
-            <marker date="1428736303006" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428736303006" expanded="true" signature="-1:-1" placeholder="SELECT MAX(i..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gateway/map/model/contract/contract.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5" vertical-offset="2025" max-vertical-offset="3045">
@@ -780,14 +694,6 @@
           <folding>
             <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gateway/map/controller/sale/order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55789477" vertical-offset="15882" max-vertical-offset="16635">
-          <caret line="1080" column="44" selection-start-line="1080" selection-start-column="33" selection-end-line="1080" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -922,6 +828,49 @@
         <state vertical-scroll-proportion="0.4473684" vertical-offset="765" max-vertical-offset="4575">
           <caret line="68" column="118" selection-start-line="68" selection-start-column="118" selection-end-line="68" selection-end-column="118" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/map/view/template/sale/order_info.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.8431373" vertical-offset="2024" max-vertical-offset="5565">
+          <caret line="148" column="59" selection-start-line="148" selection-start-column="59" selection-end-line="148" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/map/controller/sale/order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.4313726" vertical-offset="12869" max-vertical-offset="16710">
+          <caret line="873" column="0" selection-start-line="873" selection-start-column="0" selection-end-line="873" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gateway/map/model/sale/order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.67898834" vertical-offset="2201" max-vertical-offset="4335">
+          <caret line="170" column="34" selection-start-line="170" selection-start-column="34" selection-end-line="170" selection-end-column="34" />
+          <folding>
+            <marker date="1428749078516" expanded="true" signature="623:835" placeholder="SELECT *, (S..." />
+            <marker date="1428749078516" expanded="true" signature="634:746" placeholder="SELECT CONCA..DB_PREFIXcustomer..." />
+            <marker date="1428749078516" expanded="true" signature="1345:1444" placeholder="SELECT * FRO..DB_PREFIXorder_product..." />
+            <marker date="1428749078516" expanded="true" signature="1486:1574" placeholder="SELECT * FRO..DB_PREFIXbank..." />
+            <marker date="1428749078516" expanded="true" signature="1617:1708" placeholder="SELECT * FRO..DB_PREFIXbank..." />
+            <marker date="1428749078516" expanded="true" signature="4138:4500" placeholder="SELECT o.ord..." />
+            <marker date="1428749078516" expanded="true" signature="4208:4382" placeholder="SELECT os.na..DB_PREFIXorder_status..." />
+            <marker date="1428749078516" expanded="true" signature="6420:6433" placeholder="SELECT * FRO..." />
+            <marker date="1428749078516" expanded="true" signature="6420:6434" placeholder="SELECT * FRO..DB_PREFIX..." />
+            <marker date="1428749078516" expanded="true" signature="6420:6467" placeholder="SELECT * FRO..DB_PREFIXorder_product..." />
+            <marker date="1428749078516" expanded="true" signature="6420:6479" placeholder="SELECT * FRO..DB_PREFIXorder_product..." />
+            <marker date="1428749078516" expanded="true" signature="6420:6499" placeholder="SELECT * FRO..DB_PREFIXorder_product..." />
+            <marker date="1428749078516" expanded="true" signature="6592:6646" placeholder="SELECT COUNT..." />
+            <marker date="1428749078516" expanded="true" signature="7895:7981" placeholder="SELECT * FRO..DB_PREFIXorder_product..." />
+            <marker date="1428749078516" expanded="true" signature="8196:8559" placeholder="SELECT oh.da..DB_PREFIXorder_history..." />
+            <marker date="1428749078516" expanded="true" signature="8687:8789" placeholder="SELECT COUNT..DB_PREFIXorder_history..." />
+            <marker date="1428749078516" expanded="true" signature="9042:9179" placeholder="INSERT INTO ..." />
+            <marker date="1428749078516" expanded="true" signature="9367:9515" placeholder="SELECT MAX(i..." />
+          </folding>
         </state>
       </provider>
     </entry>
