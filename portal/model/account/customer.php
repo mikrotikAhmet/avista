@@ -89,6 +89,14 @@ class ModelAccountCustomer extends Model {
 		return $query->row;
 	}
 
+	public function updateToken($token,$customer_id) {
+		$this->event->trigger('pre.customer.edit.token');
+
+		$this->db->query("UPDATE " . DB_PREFIX . "customer SET token = '".(int)$token."' WHERE customer_id = '".(int) $customer_id."'");
+
+		$this->event->trigger('post.customer.edit.token');
+	}
+
 	public function getCustomerByEmail($email) {
 		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer WHERE LOWER(email) = '" . $this->db->escape(utf8_strtolower($email)) . "'");
 
