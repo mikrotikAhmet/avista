@@ -2,8 +2,168 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbd0d96c-d439-4391-add6-8ad6ad0b2fa0" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/portal/model/image.php" afterPath="$PROJECT_DIR$/portal/model/tool/image.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/portal/model/online.php" afterPath="$PROJECT_DIR$/portal/model/tool/online.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/portal/controller/information/information.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/system/cache/cache.currency.1428864447" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/system/cache/cache.order_status.1.1428864444" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/css/bootstrap-rtl.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/css/bootstrap-rtl.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/css/bootstrap.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/css/bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/css/plugins/morris.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/css/sb-admin-rtl.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/css/sb-admin.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/font-awesome/css/font-awesome.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/font-awesome/css/font-awesome.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/font-awesome/fonts/FontAwesome.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/font-awesome/fonts/fontawesome-webfont.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/font-awesome/fonts/fontawesome-webfont.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/font-awesome/fonts/fontawesome-webfont.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/font-awesome/fonts/fontawesome-webfont.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/font-awesome/less/bordered-pulled.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/font-awesome/less/core.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/font-awesome/less/fixed-width.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/font-awesome/less/font-awesome.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/font-awesome/less/icons.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/font-awesome/less/larger.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/font-awesome/less/list.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/font-awesome/less/mixins.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/font-awesome/less/path.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/font-awesome/less/rotated-flipped.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/font-awesome/less/spinning.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/font-awesome/less/stacked.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/font-awesome/less/variables.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/font-awesome/scss/_bordered-pulled.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/font-awesome/scss/_core.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/font-awesome/scss/_fixed-width.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/font-awesome/scss/_icons.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/font-awesome/scss/_larger.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/font-awesome/scss/_list.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/font-awesome/scss/_mixins.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/font-awesome/scss/_path.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/font-awesome/scss/_rotated-flipped.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/font-awesome/scss/_spinning.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/font-awesome/scss/_stacked.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/font-awesome/scss/_variables.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/font-awesome/scss/font-awesome.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/fonts/glyphicons-halflings-regular.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/fonts/glyphicons-halflings-regular.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/fonts/glyphicons-halflings-regular.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/img/brand/hif_blue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/img/brand/logo2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/img/brand/logo2_150.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/bootstrap/css/bootstrap-theme.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/bootstrap/css/bootstrap-theme.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/bootstrap/css/bootstrap-theme.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/bootstrap/css/bootstrap.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/bootstrap/css/bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/bootstrap/fonts/glyphicons-halflings-regular.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/bootstrap/fonts/glyphicons-halflings-regular.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/bootstrap/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/bootstrap/fonts/glyphicons-halflings-regular.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/bootstrap/js/bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/common.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/font-awesome/css/font-awesome.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/font-awesome/css/font-awesome.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/font-awesome/fonts/FontAwesome.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/font-awesome/fonts/fontawesome-webfont.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/font-awesome/fonts/fontawesome-webfont.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/font-awesome/fonts/fontawesome-webfont.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/font-awesome/fonts/fontawesome-webfont.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/font-awesome/less/bordered-pulled.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/font-awesome/less/core.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/font-awesome/less/fixed-width.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/font-awesome/less/font-awesome.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/font-awesome/less/icons.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/font-awesome/less/larger.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/font-awesome/less/list.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/font-awesome/less/mixins.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/font-awesome/less/path.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/font-awesome/less/rotated-flipped.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/font-awesome/less/spinning.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/font-awesome/less/stacked.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/font-awesome/less/variables.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/font-awesome/scss/_bordered-pulled.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/font-awesome/scss/_core.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/font-awesome/scss/_fixed-width.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/font-awesome/scss/_icons.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/font-awesome/scss/_larger.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/font-awesome/scss/_list.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/font-awesome/scss/_mixins.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/font-awesome/scss/_path.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/font-awesome/scss/_rotated-flipped.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/font-awesome/scss/_spinning.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/font-awesome/scss/_stacked.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/font-awesome/scss/_variables.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/font-awesome/scss/font-awesome.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/jquery/datetimepicker/moment.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/jquery/flexslider/flexslider.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/jquery/flexslider/fonts/flexslider-icon.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/jquery/flexslider/fonts/flexslider-icon.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/jquery/flexslider/fonts/flexslider-icon.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/jquery/flexslider/fonts/flexslider-icon.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/jquery/flexslider/images/bg_direction_nav.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/jquery/flexslider/images/bg_play_pause.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/jquery/flexslider/jquery.flexslider-min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/jquery/jquery-2.1.1.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/jquery/jquery-2.1.1.min.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/jquery/magnific/jquery.magnific-popup.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/javascript/jquery/magnific/magnific-popup.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/js/bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/js/bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/js/jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/js/plugins/flot/excanvas.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/js/plugins/flot/flot-data.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/js/plugins/flot/jquery.flot.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/js/plugins/flot/jquery.flot.pie.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/js/plugins/flot/jquery.flot.resize.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/js/plugins/flot/jquery.flot.tooltip.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/js/plugins/morris/morris-data.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/js/plugins/morris/morris.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/js/plugins/morris/morris.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/js/plugins/morris/raphael.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/template/account/account.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/template/account/bank.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/template/account/dashboard.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/template/account/document.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/template/account/document_list.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/template/account/error.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/template/account/forgotten.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/template/account/login.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/template/account/order.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/template/account/register.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/template/account/security.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/template/account/step2.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/template/account/template/bank.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/template/account/template/bank_detail.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/template/account/template/bank_edit.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/template/account/template/bank_list.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/template/account/template/company.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/template/account/template/company_form.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/template/account/template/identity.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/template/account/template/identity_form.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/template/account/template/personal.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/template/account/template/personal_form.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/template/common/column_left.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/template/common/footer.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/template/common/header.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/template/common/menu.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/template/common/success.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/template/report/contract.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/template/report/invoice.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/template/report/order.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/view/theme/hif/template/report/order_detail.tpl" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/view/theme/default/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/portal/view/theme/default/css/bootstrap.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/view/theme/default/template/common/header.tpl" afterPath="$PROJECT_DIR$/portal/view/theme/default/template/common/header.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/controller/common/menu.php" afterPath="$PROJECT_DIR$/portal/controller/common/menu.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/view/theme/default/template/common/menu.tpl" afterPath="$PROJECT_DIR$/portal/view/theme/default/template/common/menu.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/view/theme/default/template/account/order.tpl" afterPath="$PROJECT_DIR$/portal/view/theme/default/template/account/order.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/view/theme/default/css/sb-admin.css" afterPath="$PROJECT_DIR$/portal/view/theme/default/css/sb-admin.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/controller/account/step2.php" afterPath="$PROJECT_DIR$/portal/controller/account/step2.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/language/english/account/step2.php" afterPath="$PROJECT_DIR$/portal/language/english/account/step2.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="avista.iws" />
@@ -28,7 +188,18 @@
     <favorites_list name="avista" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="order.tpl" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/portal/view/theme/default/template/account/order.tpl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5" vertical-offset="900" max-vertical-offset="3885">
+              <caret line="79" column="168" selection-start-line="79" selection-start-column="168" selection-end-line="79" selection-end-column="168" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -41,15 +212,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/gateway/portal/language/english/account/step2.php" />
-        <option value="$PROJECT_DIR$/gateway/portal/controller/account/twoway.php" />
-        <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/twoway.tpl" />
-        <option value="$PROJECT_DIR$/gateway/portal/controller/common/menu.php" />
-        <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/common/menu.tpl" />
-        <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/personal_detail_form.tpl" />
-        <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/identity_detail_form.tpl" />
-        <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/account/personal_account_detail.tpl" />
-        <option value="$PROJECT_DIR$/gateway/map/language/english/mail/customer.php" />
         <option value="$PROJECT_DIR$/gateway/map/controller/dashboard/approval.php" />
         <option value="$PROJECT_DIR$/gateway/map/controller/common/dashboard.php" />
         <option value="$PROJECT_DIR$/gateway/map/view/template/common/dashboard.tpl" />
@@ -92,6 +254,15 @@
         <option value="$PROJECT_DIR$/gateway/portal/view/theme/default/template/sale/order.tpl" />
         <option value="$PROJECT_DIR$/gateway/portal/model/sale/order.php" />
         <option value="$PROJECT_DIR$/gateway/portal/controller/sale/order.php" />
+        <option value="$PROJECT_DIR$/portal/view/theme/hif/css/bootstrap.min.css" />
+        <option value="$PROJECT_DIR$/portal/language/english/account/step2.php" />
+        <option value="$PROJECT_DIR$/portal/controller/account/step2.php" />
+        <option value="$PROJECT_DIR$/portal/view/theme/default/css/bootstrap.min.css" />
+        <option value="$PROJECT_DIR$/portal/view/theme/default/template/common/header.tpl" />
+        <option value="$PROJECT_DIR$/portal/controller/common/menu.php" />
+        <option value="$PROJECT_DIR$/portal/view/theme/default/template/common/menu.tpl" />
+        <option value="$PROJECT_DIR$/portal/view/theme/default/css/sb-admin.css" />
+        <option value="$PROJECT_DIR$/portal/view/theme/default/template/account/order.tpl" />
       </list>
     </option>
   </component>
@@ -175,7 +346,219 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="theme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="default" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="avista" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="avista" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="theme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="default" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="account" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="avista" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="avista" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="theme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="default" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="avista" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="avista" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="theme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="default" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="brand" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="avista" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="avista" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="theme" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="default" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="avista" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="avista" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="avista" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="avista" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="language" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="avista" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="avista" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="avista" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="avista" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -185,17 +568,17 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../avistaOLD" />
     <property name="FullScreen" value="false" />
     <property name="LayoutCode.rearrangeEntriesCSS" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/portal/controller" />
+      <recent name="$PROJECT_DIR$/portal/view/theme/hif" />
       <recent name="$PROJECT_DIR$/portal/model" />
       <recent name="$PROJECT_DIR$/portal/language/english" />
       <recent name="$PROJECT_DIR$/gateway" />
-      <recent name="$PROJECT_DIR$/gateway/map/image" />
-      <recent name="$PROJECT_DIR$/gateway/portal/image" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/portal/model/tool" />
@@ -245,7 +628,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="27" width="1368" height="742" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -308,6 +691,91 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.28947368" vertical-offset="0" max-vertical-offset="570">
           <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/controller/information/information.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="840">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/language/english/account/step2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.813036" vertical-offset="66" max-vertical-offset="660">
+          <caret line="41" column="88" selection-start-line="41" selection-start-column="88" selection-end-line="41" selection-end-column="88" />
+          <folding>
+            <marker date="1428868667384" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1428868667384" expanded="false" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/controller/account/step2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36842105" vertical-offset="2700" max-vertical-offset="4680">
+          <caret line="194" column="30" selection-start-line="194" selection-start-column="30" selection-end-line="194" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/view/theme/default/template/account/step2.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.55263156" vertical-offset="315" max-vertical-offset="1965">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/view/theme/default/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1010101" vertical-offset="0" max-vertical-offset="105450">
+          <caret line="4" column="46" selection-start-line="0" selection-start-column="0" selection-end-line="7024" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/view/theme/default/template/common/header.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.70701754" vertical-offset="527" max-vertical-offset="1110">
+          <caret line="62" column="101" selection-start-line="62" selection-start-column="101" selection-end-line="62" selection-end-column="101" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/view/theme/default/css/sb-admin.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9505766" vertical-offset="3428" max-vertical-offset="4110">
+          <caret line="267" column="20" selection-start-line="267" selection-start-column="20" selection-end-line="267" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/view/theme/default/template/common/menu.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10291595" vertical-offset="0" max-vertical-offset="583">
+          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/controller/common/menu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6655232" vertical-offset="452" max-vertical-offset="1065">
+          <caret line="56" column="51" selection-start-line="56" selection-start-column="51" selection-end-line="56" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/view/theme/default/template/account/order.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5" vertical-offset="900" max-vertical-offset="3885">
+          <caret line="79" column="168" selection-start-line="79" selection-start-column="168" selection-end-line="79" selection-end-column="168" />
+          <folding />
         </state>
       </provider>
     </entry>

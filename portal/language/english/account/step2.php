@@ -39,5 +39,5 @@ $_['error_exists']         = 'Warning: E-Mail Address is already registered!';
 $_['error_email']          = 'E-Mail Address does not appear to be valid!';
 $_['error_password']       = 'Password must be between 4 and 20 characters!';
 $_['error_confirm']        = 'Password confirmation does not match password!';
-$_['error_agree']          = 'Warning: You must agree to the %s!';
+$_['error_agree']          = 'Warning: You must agree to the %s! AND Terms of Conditions';
 $_['error_agree_term']          = 'Warning: You must agree to the %s!';

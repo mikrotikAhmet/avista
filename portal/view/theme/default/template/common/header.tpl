@@ -60,7 +60,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="<?php echo $home?>">H.I.F Invest Holding Ltd.</a>
+            <a class="navbar-brand" href="<?php echo $home?>"><img src="view/theme/default/img/brand/logo2.png" style="width: 200px;"/></a>
         </div>
         <!-- Top Menu Items -->
         <?php echo $column_left?>

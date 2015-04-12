@@ -54,6 +54,8 @@ class ControllerCommonMenu extends Controller {
 		$data['document'] = $this->url->link('account/document', '', 'SSL');
 		$data['logout'] = $this->url->link('account/logout', '', 'SSL');
 
+		$data['unique'] = $this->customer->getId();
+
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/menu.tpl')) {
 			return $this->load->view($this->config->get('config_template') . '/template/common/menu.tpl', $data);
 		} else {

@@ -186,13 +186,13 @@ class ControllerAccountStep2 extends Controller {
 		}
 
 		if (isset($this->request->post['telephone'])) {
-			$data['telephone'] = $this->request->post['tac1'].$this->request->post['telephone'];
+			$data['telephone'] = $this->request->post['telephone'];
 		} else {
 			$data['telephone'] = '';
 		}
 
 		if (isset($this->request->post['mobile'])) {
-			$data['mobile'] = $this->request->post['mac1'].$this->request->post['mobile'];
+			$data['mobile'] = $this->request->post['mobile'];
 		} else {
 			$data['mobile'] = '';
 		}
