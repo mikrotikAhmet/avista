@@ -93,14 +93,6 @@ class ModelAccountOrder extends Model {
 			$sql .= " AND total = '" . (float)$data['filter_total'] . "'";
 		}
 
-//		if (!empty($data['filter_contract'])) {
-//			$sql .= " AND contract_no <> '1')";
-//		}
-//
-//		if (!empty($data['filter_invoice'])) {
-//			$sql .= " AND invoice_no <> '0')";
-//		}
-
 		$sql .= " AND customer_id = '".(int) $this->customer->getId()."'";
 
 		$query = $this->db->query($sql);
@@ -147,15 +139,49 @@ class ModelAccountOrder extends Model {
 			$sql .= " AND total = '" . (float)$data['filter_total'] . "'";
 		}
 
-//		if (!empty($data['filter_contract'])) {
-//			$sql .= " AND contract_no > '1')";
-//		}
-//
-//		if (!empty($data['filter_invoice'])) {
-//			$sql .= " AND invoice_no <> '0')";
-//		}
-
 		$sql .= " AND customer_id = '".(int) $this->customer->getId()."'";
+
+		$query = $this->db->query($sql);
+
+		return $query->row['total'];
+	}
+
+	public function getTotalContracts($data = array()) {
+		$sql = "SELECT COUNT(*) AS total FROM `" . DB_PREFIX . "order`";
+
+		if (!empty($data['filter_order_status'])) {
+			$implode = array();
+
+			$order_statuses = explode(',', $data['filter_order_status']);
+
+			foreach ($order_statuses as $order_status_id) {
+				$implode[] = "order_status_id = '" . (int)$order_status_id . "'";
+			}
+
+			if ($implode) {
+				$sql .= " WHERE (" . implode(" OR ", $implode) . ")";
+			}
+		} else {
+			$sql .= " WHERE order_status_id > '0'";
+		}
+
+		if (!empty($data['filter_order_id'])) {
+			$sql .= " AND order_id = '" . (int)$data['filter_order_id'] . "'";
+		}
+
+		if (!empty($data['filter_date_added'])) {
+			$sql .= " AND DATE(date_added) = DATE('" . $this->db->escape($data['filter_date_added']) . "')";
+		}
+
+		if (!empty($data['filter_date_modified'])) {
+			$sql .= " AND DATE(date_modified) = DATE('" . $this->db->escape($data['filter_date_modified']) . "')";
+		}
+
+		if (!empty($data['filter_total'])) {
+			$sql .= " AND total = '" . (float)$data['filter_total'] . "'";
+		}
+
+		$sql .= " AND contract_no <> '0' AND customer_id = '".(int) $this->customer->getId()."'";
 
 		$query = $this->db->query($sql);
 

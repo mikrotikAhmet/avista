@@ -17,12 +17,16 @@
 <!-- /.row -->
 <div class="row">
     <div class="col-lg-3 col-md-6">
+        <?php echo $order?>
     </div>
     <div class="col-lg-3 col-md-6">
+        <?php //echo $order?>
     </div>
     <div class="col-lg-3 col-md-6">
+        <?php //echo $order?>
     </div>
     <div class="col-lg-3 col-md-6">
+        <?php //echo $order?>
     </div>
 </div>
 <!-- /.row -->
