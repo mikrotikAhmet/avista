@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbd0d96c-d439-4391-add6-8ad6ad0b2fa0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/portal/controller/dashboard/order.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/portal/language/english/dashboard/order.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/portal/view/theme/default/template/dashboard/order.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/system/library/customer.php" afterPath="$PROJECT_DIR$/portal/system/library/customer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/controller/account/dashboard.php" afterPath="$PROJECT_DIR$/portal/controller/account/dashboard.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/view/theme/default/template/account/dashboard.tpl" afterPath="$PROJECT_DIR$/portal/view/theme/default/template/account/dashboard.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/model/account/order.php" afterPath="$PROJECT_DIR$/portal/model/account/order.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/controller/dashboard/order.php" afterPath="$PROJECT_DIR$/portal/controller/dashboard/order.php" />
     </list>
     <ignored path="avista.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,38 +26,7 @@
     <favorites_list name="avista" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="dashboard.tpl" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/portal/view/theme/default/template/account/dashboard.tpl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.72041166" vertical-offset="0" max-vertical-offset="630">
-              <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="order.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/portal/model/account/order.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.125" vertical-offset="2430" max-vertical-offset="4080">
-              <caret line="183" column="45" selection-start-line="183" selection-start-column="45" selection-end-line="183" selection-end-column="45" />
-              <folding>
-                <marker date="1428873284406" expanded="true" signature="686:2539" placeholder="INSERT INTO ..." />
-                <marker date="1428873284406" expanded="true" signature="2584:2897" placeholder="INSERT INTO ..." />
-                <marker date="1428873284406" expanded="true" signature="3235:3306" placeholder="SELECT * FRO..DB_PREFIXorder..." />
-                <marker date="1428873284406" expanded="true" signature="3428:3516" placeholder="SELECT * FRO..DB_PREFIXorder..." />
-                <marker date="1428873284406" expanded="true" signature="3616:3670" placeholder="SELECT COUNT..." />
-                <marker date="1428873284406" expanded="true" signature="5011:5065" placeholder="SELECT COUNT..." />
-                <marker date="1428873284406" expanded="true" signature="6372:6426" placeholder="SELECT COUNT..." />
-                <marker date="1428873284406" expanded="true" signature="7588:7980" placeholder="SELECT o.ord..." />
-                <marker date="1428873284406" expanded="true" signature="7687:7861" placeholder="SELECT os.na..DB_PREFIXorder_status..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -123,11 +85,11 @@
         <option value="$PROJECT_DIR$/portal/model/account/customer.php" />
         <option value="$PROJECT_DIR$/portal/view/theme/default/template/common/menu.tpl" />
         <option value="$PROJECT_DIR$/portal/view/theme/default/template/account/order.tpl" />
-        <option value="$PROJECT_DIR$/portal/controller/dashboard/order.php" />
         <option value="$PROJECT_DIR$/portal/controller/account/dashboard.php" />
         <option value="$PROJECT_DIR$/portal/model/account/order.php" />
         <option value="$PROJECT_DIR$/portal/system/library/customer.php" />
         <option value="$PROJECT_DIR$/portal/view/theme/default/template/account/dashboard.tpl" />
+        <option value="$PROJECT_DIR$/portal/controller/dashboard/order.php" />
       </list>
     </option>
   </component>
@@ -194,86 +156,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="portal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="avista" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="avista" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="portal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="system" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="avista" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="avista" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="portal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="system" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="library" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="avista" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="avista" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="portal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="avista" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="avista" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="portal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="account" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -383,7 +265,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="27" width="1368" height="742" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -391,7 +273,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2942899" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2942899" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -610,14 +492,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/portal/controller/dashboard/order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38421053" vertical-offset="546" max-vertical-offset="1185">
-          <caret line="51" column="43" selection-start-line="51" selection-start-column="43" selection-end-line="51" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/portal/system/library/customer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7894737" vertical-offset="1125" max-vertical-offset="2475">
@@ -638,15 +512,15 @@
         <state vertical-scroll-proportion="-13.125" vertical-offset="2430" max-vertical-offset="4080">
           <caret line="183" column="45" selection-start-line="183" selection-start-column="45" selection-end-line="183" selection-end-column="45" />
           <folding>
-            <marker date="1428873284406" expanded="true" signature="686:2539" placeholder="INSERT INTO ..." />
-            <marker date="1428873284406" expanded="true" signature="2584:2897" placeholder="INSERT INTO ..." />
-            <marker date="1428873284406" expanded="true" signature="3235:3306" placeholder="SELECT * FRO..DB_PREFIXorder..." />
-            <marker date="1428873284406" expanded="true" signature="3428:3516" placeholder="SELECT * FRO..DB_PREFIXorder..." />
-            <marker date="1428873284406" expanded="true" signature="3616:3670" placeholder="SELECT COUNT..." />
-            <marker date="1428873284406" expanded="true" signature="5011:5065" placeholder="SELECT COUNT..." />
-            <marker date="1428873284406" expanded="true" signature="6372:6426" placeholder="SELECT COUNT..." />
-            <marker date="1428873284406" expanded="true" signature="7588:7980" placeholder="SELECT o.ord..." />
-            <marker date="1428873284406" expanded="true" signature="7687:7861" placeholder="SELECT os.na..DB_PREFIXorder_status..." />
+            <marker date="1428873284406" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428873284406" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428873284406" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXorder..." />
+            <marker date="1428873284406" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXorder..." />
+            <marker date="1428873284406" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1428873284406" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1428873284406" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1428873284406" expanded="true" signature="-1:-1" placeholder="SELECT o.ord..." />
+            <marker date="1428873284406" expanded="true" signature="-1:-1" placeholder="SELECT os.na..DB_PREFIXorder_status..." />
           </folding>
         </state>
       </provider>
@@ -655,6 +529,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.72041166" vertical-offset="0" max-vertical-offset="630">
           <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/controller/dashboard/order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7526316" vertical-offset="546" max-vertical-offset="1185">
+          <caret line="65" column="49" selection-start-line="65" selection-start-column="49" selection-end-line="65" selection-end-column="49" />
           <folding />
         </state>
       </provider>

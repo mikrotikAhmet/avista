@@ -63,7 +63,7 @@ class ControllerDashboardOrder extends Controller {
 			$data['total'] = $order_total;
 		}
 
-		$data['order'] = $this->url->link('account/order', '', 'SSL');
+		$data['order'] = $this->url->link('report/order', '', 'SSL');
 
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/dashboard/order.tpl')) {
 			return $this->load->view($this->config->get('config_template') . '/template/dashboard/order.tpl', $data);
