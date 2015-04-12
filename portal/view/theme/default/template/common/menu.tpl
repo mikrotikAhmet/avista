@@ -10,7 +10,7 @@
         <li class="nav-heading"><?php echo $text_heading_my_account?></li>
         <li><a href="<?php echo $account; ?>"><i class="fa fa-fw fa-cogs"></i> <?php echo $text_account?></a></li>
         <li><a href="<?php echo $bank?>"><i class="fa fa-fw fa-bank"></i> <?php echo $text_bank?></a></li>
-        <li><a href="<?php echo $security?>"><i class="fa fa-fw fa-shield"></i> <?php echo $text_security?></a></li>
+        <!--li><a href="<?php echo $security?>"><i class="fa fa-fw fa-shield"></i> <?php echo $text_security?></a></li-->
         <li class="nav-heading">Operation</li>
         <li><a href="<?php echo $order?>"><i class="fa fa-fw fa-file-o"></i> <?php echo $text_order?></a></li>
         <li class="nav-heading">Document center</li>

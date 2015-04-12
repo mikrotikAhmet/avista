@@ -132,7 +132,7 @@ class ModelAccountCustomer extends Model {
 
 		$this->event->trigger('post.customer.add', $unique_id);
 
-		return $customer_id;
+		return $unique_id;
 
 	}
 
