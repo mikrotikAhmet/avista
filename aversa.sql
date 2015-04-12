@@ -353,6 +353,61 @@ LOCK TABLES `engine4_customer_ip` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `engine4_customer_login`
+--
+
+DROP TABLE IF EXISTS `engine4_customer_login`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_customer_login` (
+  `customer_login_id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(96) NOT NULL,
+  `ip` varchar(40) NOT NULL,
+  `total` int(4) NOT NULL,
+  `date_added` datetime NOT NULL,
+  `date_modified` datetime NOT NULL,
+  PRIMARY KEY (`customer_login_id`),
+  KEY `email` (`email`),
+  KEY `ip` (`ip`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_customer_login`
+--
+
+LOCK TABLES `engine4_customer_login` WRITE;
+/*!40000 ALTER TABLE `engine4_customer_login` DISABLE KEYS */;
+/*!40000 ALTER TABLE `engine4_customer_login` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `engine4_customer_online`
+--
+
+DROP TABLE IF EXISTS `engine4_customer_online`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `engine4_customer_online` (
+  `ip` varchar(40) NOT NULL,
+  `customer_id` int(11) NOT NULL,
+  `url` text NOT NULL,
+  `referer` text NOT NULL,
+  `date_added` datetime NOT NULL,
+  PRIMARY KEY (`ip`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `engine4_customer_online`
+--
+
+LOCK TABLES `engine4_customer_online` WRITE;
+/*!40000 ALTER TABLE `engine4_customer_online` DISABLE KEYS */;
+/*!40000 ALTER TABLE `engine4_customer_online` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `engine4_event`
 --
 
@@ -635,4 +690,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-04-12 20:25:25
+-- Dump completed on 2015-04-12 21:00:42
