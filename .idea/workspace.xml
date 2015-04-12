@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbd0d96c-d439-4391-add6-8ad6ad0b2fa0" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/system/cache/cache.country.status.1428871894" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/model/account/customer.php" afterPath="$PROJECT_DIR$/portal/model/account/customer.php" />
     </list>
     <ignored path="avista.iws" />
@@ -30,21 +31,31 @@
       <file leaf-file-name="customer.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/portal/model/account/customer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.6842105" vertical-offset="1020" max-vertical-offset="3180">
-              <caret line="132" column="61" selection-start-line="132" selection-start-column="61" selection-end-line="132" selection-end-column="61" />
+            <state vertical-scroll-proportion="0.8858195" vertical-offset="1979" max-vertical-offset="3300">
+              <caret line="164" column="5" selection-start-line="164" selection-start-column="5" selection-end-line="164" selection-end-column="5" />
               <folding>
-                <marker date="1428871688356" expanded="true" signature="1410:2308" placeholder="INSERT INTO ..." />
-                <marker date="1428871688356" expanded="true" signature="2333:2861" placeholder="INSERT INTO ..." />
-                <marker date="1428871688356" expanded="true" signature="5447:5529" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
-                <marker date="1428871688356" expanded="true" signature="5641:5731" placeholder="SELECT * FRO..DB_PREFIXcustomer_company..." />
-                <marker date="1428871688356" expanded="true" signature="6131:6244" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
-                <marker date="1428871688356" expanded="true" signature="6350:6455" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
-                <marker date="1428871688356" expanded="true" signature="6639:6768" placeholder="SELECT COUNT..DB_PREFIXcustomer..." />
-                <marker date="1428871688356" expanded="true" signature="7166:7465" placeholder="INSERT INTO ..." />
-                <marker date="1428871688356" expanded="true" signature="7537:7638" placeholder="SELECT * FRO..DB_PREFIXcustomer_document..." />
-                <marker date="1428871688356" expanded="true" signature="7746:7835" placeholder="SELECT * FRO..DB_PREFIXcustomer_document..." />
-                <marker date="1428871688356" expanded="true" signature="7934:8021" placeholder="DELETE FROM ..." />
+                <marker date="1428872108660" expanded="true" signature="1410:2308" placeholder="INSERT INTO ..." />
+                <marker date="1428872108660" expanded="true" signature="2333:2861" placeholder="INSERT INTO ..." />
+                <marker date="1428872108660" expanded="true" signature="5447:5529" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
+                <marker date="1428872108660" expanded="true" signature="5641:5731" placeholder="SELECT * FRO..DB_PREFIXcustomer_company..." />
+                <marker date="1428872108660" expanded="true" signature="6602:6715" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
+                <marker date="1428872108660" expanded="true" signature="6821:6926" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
+                <marker date="1428872108660" expanded="true" signature="7110:7239" placeholder="SELECT COUNT..DB_PREFIXcustomer..." />
+                <marker date="1428872108660" expanded="true" signature="7637:7936" placeholder="INSERT INTO ..." />
+                <marker date="1428872108660" expanded="true" signature="8008:8109" placeholder="SELECT * FRO..DB_PREFIXcustomer_document..." />
+                <marker date="1428872108660" expanded="true" signature="8217:8306" placeholder="SELECT * FRO..DB_PREFIXcustomer_document..." />
+                <marker date="1428872108660" expanded="true" signature="8405:8492" placeholder="DELETE FROM ..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="forgotten.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/portal/controller/account/forgotten.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="24.375" vertical-offset="585" max-vertical-offset="2175">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -255,6 +266,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="avista" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="avista" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="account" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -516,22 +549,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/portal/controller/account/forgotten.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="24.375" vertical-offset="585" max-vertical-offset="2175">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/portal/model/account/customer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.6842105" vertical-offset="1020" max-vertical-offset="3180">
-          <caret line="132" column="61" selection-start-line="132" selection-start-column="61" selection-end-line="132" selection-end-column="61" />
+        <state vertical-scroll-proportion="0.8858195" vertical-offset="1979" max-vertical-offset="3300">
+          <caret line="164" column="5" selection-start-line="164" selection-start-column="5" selection-end-line="164" selection-end-column="5" />
           <folding>
-            <marker date="1428871688356" expanded="true" signature="1410:2308" placeholder="INSERT INTO ..." />
-            <marker date="1428871688356" expanded="true" signature="2333:2861" placeholder="INSERT INTO ..." />
-            <marker date="1428871688356" expanded="true" signature="5447:5529" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
-            <marker date="1428871688356" expanded="true" signature="5641:5731" placeholder="SELECT * FRO..DB_PREFIXcustomer_company..." />
-            <marker date="1428871688356" expanded="true" signature="6131:6244" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
-            <marker date="1428871688356" expanded="true" signature="6350:6455" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
-            <marker date="1428871688356" expanded="true" signature="6639:6768" placeholder="SELECT COUNT..DB_PREFIXcustomer..." />
-            <marker date="1428871688356" expanded="true" signature="7166:7465" placeholder="INSERT INTO ..." />
-            <marker date="1428871688356" expanded="true" signature="7537:7638" placeholder="SELECT * FRO..DB_PREFIXcustomer_document..." />
-            <marker date="1428871688356" expanded="true" signature="7746:7835" placeholder="SELECT * FRO..DB_PREFIXcustomer_document..." />
-            <marker date="1428871688356" expanded="true" signature="7934:8021" placeholder="DELETE FROM ..." />
+            <marker date="1428872108660" expanded="true" signature="1410:2308" placeholder="INSERT INTO ..." />
+            <marker date="1428872108660" expanded="true" signature="2333:2861" placeholder="INSERT INTO ..." />
+            <marker date="1428872108660" expanded="true" signature="5447:5529" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
+            <marker date="1428872108660" expanded="true" signature="5641:5731" placeholder="SELECT * FRO..DB_PREFIXcustomer_company..." />
+            <marker date="1428872108660" expanded="true" signature="6602:6715" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
+            <marker date="1428872108660" expanded="true" signature="6821:6926" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
+            <marker date="1428872108660" expanded="true" signature="7110:7239" placeholder="SELECT COUNT..DB_PREFIXcustomer..." />
+            <marker date="1428872108660" expanded="true" signature="7637:7936" placeholder="INSERT INTO ..." />
+            <marker date="1428872108660" expanded="true" signature="8008:8109" placeholder="SELECT * FRO..DB_PREFIXcustomer_document..." />
+            <marker date="1428872108660" expanded="true" signature="8217:8306" placeholder="SELECT * FRO..DB_PREFIXcustomer_document..." />
+            <marker date="1428872108660" expanded="true" signature="8405:8492" placeholder="DELETE FROM ..." />
           </folding>
         </state>
       </provider>

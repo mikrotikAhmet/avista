@@ -156,6 +156,14 @@ class ModelAccountCustomer extends Model {
 		$this->event->trigger('post.customer.edit.token');
 	}
 
+	public function editPassword($email, $password) {
+		$this->event->trigger('pre.customer.edit.password');
+
+		$this->db->query("UPDATE " . DB_PREFIX . "customer SET salt = '" . $this->db->escape($salt = substr(md5(uniqid(rand(), true)), 0, 9)) . "', password = '" . $this->db->escape(sha1($salt . sha1($salt . sha1($password)))) . "' WHERE LOWER(email) = '" . $this->db->escape(utf8_strtolower($email)) . "'");
+
+		$this->event->trigger('post.customer.edit.password');
+	}
+
 	public function getCustomerByEmail($email) {
 		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer WHERE LOWER(email) = '" . $this->db->escape(utf8_strtolower($email)) . "'");
 
