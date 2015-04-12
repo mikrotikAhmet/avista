@@ -75,6 +75,31 @@ class ModelAccountCustomer extends Model {
 		country_id = '" . (int)$data['country_id'] . "',
 		url = '" . $this->db->escape($data['url']) . "'");
 
+		$this->db->query("INSERT INTO " . DB_PREFIX . "address SET customer_id = '" . (int)$unique_id . "', firstname = '" . $this->db->escape($data['firstname']) . "', lastname = '" . $this->db->escape($data['lastname']) . "', address_1 = '" . $this->db->escape($data['address_1']) . "', address_2 = '" . $this->db->escape($data['address_2']) . "', city = '" . $this->db->escape($data['city']) . "', postcode = '" . $this->db->escape($data['postcode']) . "', country_id = '" . (int)$data['country_id'] . "', zone_id = '" . (int)$data['zone_id'] . "', custom_field = '" . $this->db->escape(isset($data['custom_field']['address']) ? serialize($data['custom_field']['address']) : '') . "'");
+
+		$address_id = $this->db->getLastId();
+
+		$this->db->query("UPDATE " . DB_PREFIX . "customer SET address_id = '" . (int)$address_id . "' WHERE customer_id = '" . (int)$unique_id . "'");
+
+
+		$uniqueid = date('si') . $uuid->uniqueId($format = 'nnnn', $length = '20');
+
+		$this->db->query("INSERT INTO ".DB_PREFIX."certificate SET certificate_id = '".(int) $uniqueid."' ,
+		legal_name = '".$this->db->escape($data['legal_name'])."',
+		registration_number = '".$this->db->escape($data['registration_number'])."',
+		tax_number = '".$this->db->escape($data['tax_number'])."',
+		country_id = '".(int)$data['country_id']."',
+		address_1 = '".$this->db->escape($data['address_1'])."',
+		address_2 = '".$this->db->escape($data['address_2'])."',
+		postcode = '".$this->db->escape($data['postcode'])."',
+		website = '".$this->db->escape($data['url'])."',
+		date_added = NOW()");
+
+		$this->db->query("INSERT INTO " . DB_PREFIX . "certificate_contact SET certificate_id = '" . (int)$uniqueid . "', firstname = '" . $this->db->escape($data['firstname']) . "', lastname = '" . $this->db->escape($data['lastname']) . "', email = '" . $this->db->escape($data['email']) . "', address_1 = '" . $this->db->escape($data['address_1']) . "', address_2 = '" . $this->db->escape($data['address_2']) . "', city = '" . $this->db->escape($data['city']) . "', postcode = '" . $this->db->escape($data['postcode']) . "', country_id = '" . (int)$data['country_id'] . "', zone_id = '" . (int)$data['zone_id'] . "', telephone = '" . $this->db->escape($data['telephone']) . "', passport = '" . $this->db->escape($data['passport']) . "', ssn = '" . $this->db->escape($data['ssn']) . "', dob = '" . $this->db->escape($data['dob']) . "'");
+
+		$this->db->query("UPDATE " . DB_PREFIX . "customer SET certificate_id = '" . (int)$uniqueid . "' WHERE customer_id = '" . (int)$customer_id . "'");
+
+
 		$this->load->language('mail/customer');
 
 		$subject = sprintf($this->language->get('text_subject'), $this->config->get('config_name'));

@@ -267,3 +267,6 @@ div.required .control-label:before {
 	font-weight: 600;
 	font-size: 30px;
 }
+.text_grey{
+	color:#ccc;
+}

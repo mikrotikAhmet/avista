@@ -90,7 +90,7 @@
                                 </div>
                             </div>
                             <p class="text-info"><i class="fa fa-exclamation-circle"></i> Issuer name should be mentioned on the incorporation documents</p>
-                            <div class="form-group required">
+                            <div class="form-group">
                                 <label class=" control-label">Beneficiary  Name <small>(optional)</small></label>
                                 <div class="">
                                     <input type="text" name="issuer_name" value="" class="form-control"/>
@@ -130,7 +130,7 @@
                                 <td class="instrument"></td>
                             </tr>
                             <tr>
-                                <td><strong>Requested Amount (<span id="currency_symbol"></span>)</strong></td>
+                                <td><strong>Requested Amount (<span id="currency_symbol">EUR</span>)</strong></td>
                                 <td class="amount">0.00</td>
                             </tr>
                             <tr>
