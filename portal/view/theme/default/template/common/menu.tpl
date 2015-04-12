@@ -1,12 +1,8 @@
 <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
 <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav side-nav">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="unique">
-                    <span>ID : <?php echo $unique?></span>
-                </div>
-            </div>
+        <div class="unique">
+            <span>ID : <?php echo $unique?></span>
         </div>
         <li class="">
             <a href="<?php echo $home?>"><i class="fa fa-fw fa-dashboard"></i> <?php echo $text_dashboard?></a>
