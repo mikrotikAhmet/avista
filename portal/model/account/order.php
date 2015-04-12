@@ -147,13 +147,13 @@ class ModelAccountOrder extends Model {
 			$sql .= " AND total = '" . (float)$data['filter_total'] . "'";
 		}
 
-		if (!empty($data['filter_contract'])) {
-			$sql .= " AND contract_no > '1')";
-		}
-
-		if (!empty($data['filter_invoice'])) {
-			$sql .= " AND invoice_no <> '0')";
-		}
+//		if (!empty($data['filter_contract'])) {
+//			$sql .= " AND contract_no > '1')";
+//		}
+//
+//		if (!empty($data['filter_invoice'])) {
+//			$sql .= " AND invoice_no <> '0')";
+//		}
 
 		$sql .= " AND customer_id = '".(int) $this->customer->getId()."'";
 
