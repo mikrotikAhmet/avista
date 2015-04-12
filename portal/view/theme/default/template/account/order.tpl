@@ -37,7 +37,7 @@
                             <?php if (!$banks) { ?>
                             <h3 class="text-danger">To place an order request you must have at least 1 (One) verified Bank Account.</h3>
                             <?php } ?>
-                            <div class="form-group">
+                            <div class="form-group required">
                                 <label class=" control-label">Instrument</label>
                                 <div class="">
                                     <select name="instrument" class="form-control">
@@ -54,7 +54,7 @@
                                     <input type="hidden" name="product_name" value=""/>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group required">
                                 <label class=" control-label">Requested amount</label>
                                 <div class="">
                                     <div class="form-group input-group">
@@ -66,7 +66,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group required">
                                 <label class=" control-label">Preferred bank account of Payment</label>
                                 <div class="">
                                     <select name="bank_id" class="form-control">
@@ -78,7 +78,7 @@
                                 </div>
                             </div>
                             <span class="text-danger">NOTE:</span> You must also declare the SETTLEMENT Account, even is the same with PAYMENT Account.
-                            <div class="form-group">
+                            <div class="form-group required">
                                 <label class=" control-label">Preferred bank account for Settlement</label>
                                 <div class="">
                                     <select name="settlement" class="form-control">
@@ -90,13 +90,13 @@
                                 </div>
                             </div>
                             <p class="text-info"><i class="fa fa-exclamation-circle"></i> Issuer name should be mentioned on the incorporation documents</p>
-                            <div class="form-group">
+                            <div class="form-group required">
                                 <label class=" control-label">Beneficiary  Name <small>(optional)</small></label>
                                 <div class="">
                                     <input type="text" name="issuer_name" value="" class="form-control"/>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group required">
                                 <label class=" control-label">Your Unique Customer ID</br/></label>
                                 <div class="">
                                     <input type="text" name="unique" value="" class="form-control"/>
