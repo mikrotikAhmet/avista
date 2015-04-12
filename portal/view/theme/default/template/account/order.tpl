@@ -77,7 +77,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <span class="text-danger">NOTE:</span> If you do not select your Settlement Bank, System will automatically select your Payment Bank account as Settlement Bank Account.
+                            <span class="text-danger">NOTE:</span> You must also declare the SETTLEMENT Account, even is the same with PAYMENT Account.
                             <div class="form-group">
                                 <label class=" control-label">Preferred bank account for Settlement</label>
                                 <div class="">
