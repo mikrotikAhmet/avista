@@ -55,7 +55,7 @@
 <div class="row">
     <div class="col-md-10 col-md-offset-1">
         <div class="container">
-        <button class="btn btn-link pull-right" onclick="myFunction()">Print Contract <?php echo strtoupper($contract['contract_id'])?></button>
+        <button class="btn btn-link pull-right" onclick="myFunction()">Contract ID:<?php echo strtoupper($contract['contract_id'])?></button>
             <ul style="list-style: none">
                 <li class="bold">+++ ELECTRONIC BUSINESS AGREEMENT/CONTRACT</li>
                 <li>A) BUSINESS AGREEMENT / CONTRACT NUMBER:<b><?php echo strtoupper($contract['contract_id'])?></b></li>
