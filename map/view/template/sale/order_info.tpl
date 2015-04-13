@@ -18,7 +18,7 @@
                     <?php if (!$contract_no) { ?>
                     <a href="<?php echo $contract; ?>" data-toggle="tooltip" title="Create a Contract" class="btn btn-info"><i class="fa fa-file"></i></a>
                     <?php } ?>
-                    <a href="<?php echo $edit; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>" class="btn btn-primary"><i class="fa fa-pencil"></i></a> <a href="<?php echo $cancel; ?>" data-toggle="tooltip" title="<?php echo $button_cancel; ?>" class="btn btn-default"><i class="fa fa-reply"></i></a></div>
+                    <a href="<?php echo $edit; ?>" data-toggle="tooltip" target="_blank" title="<?php echo $button_edit; ?>" class="btn btn-primary"><i class="fa fa-eye"></i></a> <a href="<?php echo $cancel; ?>" data-toggle="tooltip" title="<?php echo $button_cancel; ?>" class="btn btn-default"><i class="fa fa-reply"></i></a></div>
             </div>
             <!-- /.col-lg-12 -->
         </div>
