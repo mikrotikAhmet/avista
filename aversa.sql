@@ -37,7 +37,7 @@ CREATE TABLE `engine4_address` (
   `custom_field` text NOT NULL,
   PRIMARY KEY (`address_id`),
   KEY `merchant_id` (`customer_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=62 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=63 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -128,7 +128,7 @@ CREATE TABLE `engine4_bank` (
   `officer_telephone` varchar(32) COLLATE utf8_bin NOT NULL,
   `officer_email` varchar(96) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`bank_id`,`customer_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -137,6 +137,7 @@ CREATE TABLE `engine4_bank` (
 
 LOCK TABLES `engine4_bank` WRITE;
 /*!40000 ALTER TABLE `engine4_bank` DISABLE KEYS */;
+INSERT INTO `engine4_bank` VALUES (1,878638,'TEST BANK',243,0,'EUR','493-000001','TGBATRIS','','BG5100001002200132225','',17,'','','');
 /*!40000 ALTER TABLE `engine4_bank` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -200,7 +201,7 @@ CREATE TABLE `engine4_certificate_contact` (
   `postcode` varchar(10) NOT NULL,
   `zone_id` int(11) NOT NULL,
   PRIMARY KEY (`certificate_director_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -299,7 +300,7 @@ CREATE TABLE `engine4_contract` (
   `issuance_bank` varchar(96) NOT NULL,
   `isin_code` varchar(96) NOT NULL,
   `face_value` int(11) NOT NULL,
-  `maturity_date` date NOT NULL DEFAULT '0000-00-00',
+  `maturity_date` varchar(20) NOT NULL DEFAULT '0000-00-00',
   `price` int(11) NOT NULL DEFAULT '0',
   `company_name` varchar(96) NOT NULL,
   `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
@@ -442,7 +443,7 @@ CREATE TABLE `engine4_customer_activity` (
   `ip` varchar(40) NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`activity_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=327 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=335 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -500,7 +501,7 @@ CREATE TABLE `engine4_customer_company` (
   `vat` varchar(32) NOT NULL,
   `dba` varchar(96) NOT NULL,
   PRIMARY KEY (`company_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -528,7 +529,7 @@ CREATE TABLE `engine4_customer_document` (
   `ip` varchar(96) NOT NULL,
   `date_added` date NOT NULL DEFAULT '0000-00-00',
   PRIMARY KEY (`document_id`,`customer_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -537,6 +538,7 @@ CREATE TABLE `engine4_customer_document` (
 
 LOCK TABLES `engine4_customer_document` WRITE;
 /*!40000 ALTER TABLE `engine4_customer_document` DISABLE KEYS */;
+INSERT INTO `engine4_customer_document` VALUES (1,878638,'INVOICE.pdf','INVOICE.pdf.c625624e9eb7fdfb217b97c8ed58c735',17,'127.0.0.1','2015-04-13'),(2,878638,'CONTRACT.pdf','CONTRACT.pdf.4a8a38081669725bf15fc9fed8b52716',17,'127.0.0.1','2015-04-13');
 /*!40000 ALTER TABLE `engine4_customer_document` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -630,7 +632,7 @@ CREATE TABLE `engine4_customer_ip` (
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`customer_ip_id`),
   KEY `ip` (`ip`)
-) ENGINE=MyISAM AUTO_INCREMENT=47 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=48 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -712,7 +714,7 @@ CREATE TABLE `engine4_customer_transaction` (
   `amount` decimal(15,4) NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`customer_transaction_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -963,7 +965,7 @@ CREATE TABLE `engine4_order_history` (
   `comment` text NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`order_history_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -991,7 +993,7 @@ CREATE TABLE `engine4_order_product` (
   `down` decimal(15,4) NOT NULL DEFAULT '0.0000',
   `other` varchar(255) NOT NULL,
   PRIMARY KEY (`order_product_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=70 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=75 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1152,4 +1154,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-04-13  3:29:17
+-- Dump completed on 2015-04-13 10:25:29

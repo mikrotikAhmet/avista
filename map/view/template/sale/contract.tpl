@@ -64,7 +64,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group required">
                                             <label class="control-label" for="input-customer">MATURITY DATE OF INSTRUMENT: </label>
-                                            <input type="text" name="maturity_date" value="<?php echo $maturity_date; ?>" placeholder="MATURITY DATE OF INSTRUMENT" data-format="YYYY-MM-DD" id="input-customer" class="form-control date" />
+                                            <input type="text" name="maturity_date" value="<?php echo $maturity_date; ?>" placeholder="MATURITY DATE OF INSTRUMENT" data-format="" id="input-customer" class="form-control date" />
                                             <?php if ($error_maturity_date) { ?>
                                             <div class="text-danger"><?php echo $error_maturity_date; ?></div>
                                             <?php } ?>
