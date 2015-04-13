@@ -40,7 +40,7 @@
         }
 
         li {
-            line-height: 34px;
+            line-height: 20px;
         }
 
         .bold{

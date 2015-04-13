@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbd0d96c-d439-4391-add6-8ad6ad0b2fa0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/portal/image/catalog/minicart.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/opencart.ico" afterPath="$PROJECT_DIR$/favicon.ico" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/portal/opencart.ico" afterPath="$PROJECT_DIR$/portal/favicon.ico" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/map/system/cache/cache.application.1428889039" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/map/system/cache/cache.country.1428889363" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/map/system/cache/cache.order_status.1.1428891941" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/map/system/cache/cache.zone.14.1428889364" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/system/cache/cache.country.status.1428888997" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/system/cache/cache.order_status.1.1428889881" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/map/view/template/contract/contract_view.tpl" afterPath="$PROJECT_DIR$/map/view/template/contract/contract_view.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/map/view/template/sale/invoice_view.tpl" afterPath="$PROJECT_DIR$/map/view/template/sale/invoice_view.tpl" />
     </list>
     <ignored path="avista.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,18 +33,7 @@
     <favorites_list name="avista" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="header.tpl" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/portal/view/theme/default/template/common/header.tpl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.6315789" vertical-offset="0" max-vertical-offset="1110">
-              <caret line="62" column="101" selection-start-line="62" selection-start-column="101" selection-end-line="62" selection-end-column="101" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -89,7 +82,6 @@
         <option value="$PROJECT_DIR$/map/view/template/sale/contract.tpl" />
         <option value="$PROJECT_DIR$/map/controller/contract/contract.php" />
         <option value="$PROJECT_DIR$/map/view/template/contract/contract_list.tpl" />
-        <option value="$PROJECT_DIR$/map/view/template/contract/contract_view.tpl" />
         <option value="$PROJECT_DIR$/portal/view/theme/default/template/account/order.tpl" />
         <option value="$PROJECT_DIR$/portal/controller/report/order.php" />
         <option value="$PROJECT_DIR$/portal/model/account/order.php" />
@@ -97,13 +89,14 @@
         <option value="$PROJECT_DIR$/portal/system/library/customer.php" />
         <option value="$PROJECT_DIR$/portal/view/theme/default/template/account/contract_view.tpl" />
         <option value="$PROJECT_DIR$/portal/view/theme/default/template/account/invoice_view.tpl" />
-        <option value="$PROJECT_DIR$/map/view/template/sale/invoice_view.tpl" />
         <option value="$PROJECT_DIR$/map/model/contract/contract.php" />
         <option value="$PROJECT_DIR$/map/controller/sale/contract.php" />
         <option value="$PROJECT_DIR$/portal/model/account/customer.php" />
         <option value="$PROJECT_DIR$/map/view/template/sale/order_info.tpl" />
         <option value="$PROJECT_DIR$/map/model/sale/order.php" />
         <option value="$PROJECT_DIR$/map/controller/sale/order.php" />
+        <option value="$PROJECT_DIR$/map/view/template/contract/contract_view.tpl" />
+        <option value="$PROJECT_DIR$/map/view/template/sale/invoice_view.tpl" />
       </list>
     </option>
   </component>
@@ -169,7 +162,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="portal" />
+              <option name="myItemId" value="map" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -183,11 +176,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="portal" />
+              <option name="myItemId" value="map" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="image" />
+              <option name="myItemId" value="view" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -201,15 +194,41 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="portal" />
+              <option name="myItemId" value="map" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="image" />
+              <option name="myItemId" value="view" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="catalog" />
+              <option name="myItemId" value="template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="avista" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="avista" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="map" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sale" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -534,13 +553,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/map/view/template/contract/contract_view.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.625" vertical-offset="4095" max-vertical-offset="4665">
-          <caret line="298" column="0" selection-start-line="298" selection-start-column="0" selection-end-line="302" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/portal/controller/account/order.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.4210526" vertical-offset="810" max-vertical-offset="2820">
@@ -653,13 +665,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/map/view/template/sale/invoice_view.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48947367" vertical-offset="756" max-vertical-offset="1575">
-          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/portal/favicon.ico">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -674,6 +679,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.6315789" vertical-offset="0" max-vertical-offset="1110">
           <caret line="62" column="101" selection-start-line="62" selection-start-column="101" selection-end-line="62" selection-end-column="101" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/view/template/contract/contract_view.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23684211" vertical-offset="495" max-vertical-offset="4665">
+          <caret line="42" column="27" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/view/template/sale/invoice_view.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4105263" vertical-offset="396" max-vertical-offset="1575">
+          <caret line="42" column="27" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
           <folding />
         </state>
       </provider>
