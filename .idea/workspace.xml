@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbd0d96c-d439-4391-add6-8ad6ad0b2fa0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/portal/model/account/certificate.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/portal/model/contract/contract.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/portal/view/theme/default/template/account/contract_view.tpl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/portal/view/theme/default/template/account/invoice_view.tpl" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/map/system/cache/cache.country.1428882429" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/map/system/cache/cache.order_status.1.1428882076" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/map/system/cache/cache.zone.14.1428882429" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/system/cache/cache.currency.1428883442" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/system/cache/cache.order_status.1.1428882475" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/system/library/customer.php" afterPath="$PROJECT_DIR$/portal/system/library/customer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/map/view/template/sale/invoice_view.tpl" afterPath="$PROJECT_DIR$/map/view/template/sale/invoice_view.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/view/theme/default/template/common/menu.tpl" afterPath="$PROJECT_DIR$/portal/view/theme/default/template/common/menu.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/controller/report/order.php" afterPath="$PROJECT_DIR$/portal/controller/report/order.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/model/account/order.php" afterPath="$PROJECT_DIR$/portal/model/account/order.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/model/account/customer.php" afterPath="$PROJECT_DIR$/portal/model/account/customer.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="avista.iws" />
@@ -41,32 +28,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="order_info.tpl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/map/view/template/sale/order_info.tpl">
+      <file leaf-file-name="customer.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/portal/model/account/customer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="173.125" vertical-offset="4380" max-vertical-offset="5580">
-              <caret line="15" column="27" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="order.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/map/controller/sale/order.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.94736844" vertical-offset="15990" max-vertical-offset="16725">
-              <caret line="1102" column="96" selection-start-line="1102" selection-start-column="96" selection-end-line="1102" selection-end-column="96" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="order.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/map/model/sale/order.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-20.0" vertical-offset="3780" max-vertical-offset="4350">
-              <caret line="284" column="24" selection-start-line="284" selection-start-column="24" selection-end-line="284" selection-end-column="24" />
-              <folding />
+            <state vertical-scroll-proportion="0.6315789" vertical-offset="1125" max-vertical-offset="3675">
+              <caret line="99" column="145" selection-start-line="99" selection-start-column="145" selection-end-line="99" selection-end-column="145" />
+              <folding>
+                <marker date="1428885964731" expanded="true" signature="1410:2308" placeholder="INSERT INTO ..." />
+                <marker date="1428885964731" expanded="true" signature="2333:2861" placeholder="INSERT INTO ..." />
+                <marker date="1428885964731" expanded="true" signature="2886:3546" placeholder="INSERT INTO ..." />
+                <marker date="1428885964731" expanded="true" signature="3839:4415" placeholder="INSERT INTO ..." />
+                <marker date="1428885964731" expanded="true" signature="4440:5249" placeholder="INSERT INTO ..." />
+                <marker date="1428885964731" expanded="true" signature="7983:8065" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
+                <marker date="1428885964731" expanded="true" signature="8177:8267" placeholder="SELECT * FRO..DB_PREFIXcustomer_company..." />
+                <marker date="1428885964731" expanded="true" signature="9138:9251" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
+                <marker date="1428885964731" expanded="true" signature="9357:9462" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
+                <marker date="1428885964731" expanded="true" signature="9646:9775" placeholder="SELECT COUNT..DB_PREFIXcustomer..." />
+                <marker date="1428885964731" expanded="true" signature="10173:10472" placeholder="INSERT INTO ..." />
+                <marker date="1428885964731" expanded="true" signature="10544:10645" placeholder="SELECT * FRO..DB_PREFIXcustomer_document..." />
+                <marker date="1428885964731" expanded="true" signature="10753:10842" placeholder="SELECT * FRO..DB_PREFIXcustomer_document..." />
+                <marker date="1428885964731" expanded="true" signature="10941:11028" placeholder="DELETE FROM ..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -116,13 +98,10 @@
         <option value="$PROJECT_DIR$/map/view/template/common/dashboard.tpl" />
         <option value="$PROJECT_DIR$/map/controller/sale/customer.php" />
         <option value="$PROJECT_DIR$/map/model/setting/setting.php" />
-        <option value="$PROJECT_DIR$/portal/model/account/customer.php" />
         <option value="$PROJECT_DIR$/map/model/sale/customer.php" />
         <option value="$PROJECT_DIR$/portal/view/theme/default/css/sb-admin.css" />
         <option value="$PROJECT_DIR$/map/view/template/sale/contract.tpl" />
-        <option value="$PROJECT_DIR$/map/controller/sale/contract.php" />
         <option value="$PROJECT_DIR$/map/controller/contract/contract.php" />
-        <option value="$PROJECT_DIR$/map/model/contract/contract.php" />
         <option value="$PROJECT_DIR$/map/view/template/contract/contract_list.tpl" />
         <option value="$PROJECT_DIR$/map/view/template/contract/contract_view.tpl" />
         <option value="$PROJECT_DIR$/portal/view/theme/default/template/account/order.tpl" />
@@ -135,6 +114,9 @@
         <option value="$PROJECT_DIR$/portal/view/theme/default/template/account/contract_view.tpl" />
         <option value="$PROJECT_DIR$/portal/view/theme/default/template/account/invoice_view.tpl" />
         <option value="$PROJECT_DIR$/map/view/template/sale/invoice_view.tpl" />
+        <option value="$PROJECT_DIR$/map/model/contract/contract.php" />
+        <option value="$PROJECT_DIR$/map/controller/sale/contract.php" />
+        <option value="$PROJECT_DIR$/portal/model/account/customer.php" />
       </list>
     </option>
   </component>
@@ -200,7 +182,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="map" />
+              <option name="myItemId" value="portal" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -214,7 +196,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="map" />
+              <option name="myItemId" value="portal" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -232,7 +214,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="map" />
+              <option name="myItemId" value="portal" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -240,47 +222,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="sale" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="avista" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="avista" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="map" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="avista" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="avista" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="map" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sale" />
+              <option name="myItemId" value="account" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -628,29 +570,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/portal/model/account/customer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.7894735" vertical-offset="315" max-vertical-offset="3675">
-          <caret line="203" column="5" selection-start-line="203" selection-start-column="5" selection-end-line="203" selection-end-column="5" />
-          <folding>
-            <marker date="1428875716773" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428875716773" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428875716773" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428875716773" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428875716773" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428875716773" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
-            <marker date="1428875716773" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustomer_company..." />
-            <marker date="1428875716773" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
-            <marker date="1428875716773" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
-            <marker date="1428875716773" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXcustomer..." />
-            <marker date="1428875716773" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428875716773" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustomer_document..." />
-            <marker date="1428875716773" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustomer_document..." />
-            <marker date="1428875716773" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/map/model/sale/customer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.35614035" vertical-offset="592" max-vertical-offset="8535">
@@ -715,44 +634,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/map/controller/contract/contract.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6052632" vertical-offset="4095" max-vertical-offset="4680">
-          <caret line="296" column="56" selection-start-line="296" selection-start-column="56" selection-end-line="296" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/controller/sale/contract.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0276244" vertical-offset="2907" max-vertical-offset="4260">
-          <caret line="231" column="54" selection-start-line="231" selection-start-column="54" selection-end-line="231" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/map/view/template/sale/contract.tpl">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.55263156" vertical-offset="1110" max-vertical-offset="2085">
           <caret line="95" column="33" selection-start-line="95" selection-start-column="33" selection-end-line="95" selection-end-column="33" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/model/contract/contract.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.68421054" vertical-offset="90" max-vertical-offset="2940">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding>
-            <marker date="1428879019220" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXorder..." />
-            <marker date="1428879019220" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXorder..." />
-            <marker date="1428879019220" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcertificate..." />
-            <marker date="1428879019220" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428879019220" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcontract..." />
-            <marker date="1428879019220" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcontract..." />
-            <marker date="1428879019220" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcontract..." />
-            <marker date="1428879019220" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXcontract..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -883,9 +769,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/map/controller/sale/order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.94736844" vertical-offset="15990" max-vertical-offset="16725">
+          <caret line="1102" column="96" selection-start-line="1102" selection-start-column="96" selection-end-line="1102" selection-end-column="96" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/map/view/template/sale/order_info.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="173.125" vertical-offset="4380" max-vertical-offset="5580">
+        <state vertical-scroll-proportion="-7.2894735" vertical-offset="4380" max-vertical-offset="5580">
           <caret line="15" column="27" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="27" />
           <folding />
         </state>
@@ -893,17 +787,65 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/map/model/sale/order.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.0" vertical-offset="3780" max-vertical-offset="4350">
+        <state vertical-scroll-proportion="0.84210527" vertical-offset="3780" max-vertical-offset="4350">
           <caret line="284" column="24" selection-start-line="284" selection-start-column="24" selection-end-line="284" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/map/controller/sale/order.php">
+    <entry file="file://$PROJECT_DIR$/map/controller/sale/contract.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.94736844" vertical-offset="15990" max-vertical-offset="16725">
-          <caret line="1102" column="96" selection-start-line="1102" selection-start-column="96" selection-end-line="1102" selection-end-column="96" />
+        <state vertical-scroll-proportion="0.8736842" vertical-offset="432" max-vertical-offset="4260">
+          <caret line="62" column="12" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="12" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/model/contract/contract.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47368422" vertical-offset="315" max-vertical-offset="2940">
+          <caret line="39" column="36" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
+          <folding>
+            <marker date="1428885710438" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXorder..." />
+            <marker date="1428885710438" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
+            <marker date="1428885710438" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcertificate..." />
+            <marker date="1428885710438" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1428885710438" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcontract..." />
+            <marker date="1428885710438" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcontract..." />
+            <marker date="1428885710438" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcontract..." />
+            <marker date="1428885710438" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXcontract..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/controller/contract/contract.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.2263157" vertical-offset="2601" max-vertical-offset="4680">
+          <caret line="296" column="56" selection-start-line="296" selection-start-column="56" selection-end-line="296" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/model/account/customer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6315789" vertical-offset="1125" max-vertical-offset="3675">
+          <caret line="99" column="145" selection-start-line="99" selection-start-column="145" selection-end-line="99" selection-end-column="145" />
+          <folding>
+            <marker date="1428885964731" expanded="true" signature="1410:2308" placeholder="INSERT INTO ..." />
+            <marker date="1428885964731" expanded="true" signature="2333:2861" placeholder="INSERT INTO ..." />
+            <marker date="1428885964731" expanded="true" signature="2886:3546" placeholder="INSERT INTO ..." />
+            <marker date="1428885964731" expanded="true" signature="3839:4415" placeholder="INSERT INTO ..." />
+            <marker date="1428885964731" expanded="true" signature="4440:5249" placeholder="INSERT INTO ..." />
+            <marker date="1428885964731" expanded="true" signature="7983:8065" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
+            <marker date="1428885964731" expanded="true" signature="8177:8267" placeholder="SELECT * FRO..DB_PREFIXcustomer_company..." />
+            <marker date="1428885964731" expanded="true" signature="9138:9251" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
+            <marker date="1428885964731" expanded="true" signature="9357:9462" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
+            <marker date="1428885964731" expanded="true" signature="9646:9775" placeholder="SELECT COUNT..DB_PREFIXcustomer..." />
+            <marker date="1428885964731" expanded="true" signature="10173:10472" placeholder="INSERT INTO ..." />
+            <marker date="1428885964731" expanded="true" signature="10544:10645" placeholder="SELECT * FRO..DB_PREFIXcustomer_document..." />
+            <marker date="1428885964731" expanded="true" signature="10753:10842" placeholder="SELECT * FRO..DB_PREFIXcustomer_document..." />
+            <marker date="1428885964731" expanded="true" signature="10941:11028" placeholder="DELETE FROM ..." />
+          </folding>
         </state>
       </provider>
     </entry>
