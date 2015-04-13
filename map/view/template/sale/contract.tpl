@@ -44,7 +44,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="form-group required">
+                                        <div class="form-group">
                                             <label class="control-label" for="input-customer">ISIN CODE: </label>
                                             <input type="text" name="isin_code" value="<?php echo $isin_code; ?>" placeholder="ISIN CODE" id="input-customer" class="form-control" />
                                             <?php if ($error_isin_code) { ?>

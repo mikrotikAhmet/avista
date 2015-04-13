@@ -253,9 +253,9 @@ class ControllerSaleContract extends Controller {
 			$this->error['issuance_bank'] = 'Required field!';
 		}
 
-		if ((utf8_strlen($this->request->post['isin_code']) < 2) || (utf8_strlen(trim($this->request->post['isin_code'])) > 32)) {
-			$this->error['isin_code'] = 'Required field!';;
-		}
+//		if ((utf8_strlen($this->request->post['isin_code']) < 2) || (utf8_strlen(trim($this->request->post['isin_code'])) > 32)) {
+//			$this->error['isin_code'] = 'Required field!';;
+//		}
 
 		if ((utf8_strlen($this->request->post['face_value']) < 2) || (utf8_strlen(trim($this->request->post['face_value'])) > 9) || !is_numeric($this->request->post['face_value'])) {
 			$this->error['face_value'] = 'Numeric only field!';
