@@ -30,6 +30,7 @@ class Customer {
     private $customer_group_id;
     private $approved;
 	private $twoway;
+	private $certificate;
 
     public function __construct($registry) {
         $this->config = $registry->get('config');
@@ -50,6 +51,7 @@ class Customer {
                 $this->approved = $customer_query->row['approved'];
 	            $this->twoway = $customer_query->row['two_way'];
 	            $this->mobile = $customer_query->row['mobile'];
+	            $this->certificate = $customer_query->row['certificate_id'];
 
 
                 $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer_ip WHERE customer_id = '" . (int)$this->session->data['customer_id'] . "' AND ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "'");
@@ -82,6 +84,7 @@ class Customer {
             $this->approved = $customer_query->row['approved'];
 	        $this->twoway = $customer_query->row['two_way'];
 	        $this->mobile = $customer_query->row['mobile'];
+	        $this->certificate = $customer_query->row['certificate_id'];
 
             $this->db->query("UPDATE " . DB_PREFIX . "customer SET ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "' WHERE customer_id = '" . (int)$this->customer_id . "'");
 
@@ -101,6 +104,10 @@ class Customer {
         $this->email = '';
         $this->customer_group_id = '';
     }
+
+	public function getCertificate(){
+		return $this->certificate;
+	}
 
 	public function getMobile(){
 		return $this->mobile;

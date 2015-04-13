@@ -55,7 +55,7 @@
 <div class="row">
 <div class="col-md-10 col-md-offset-1">
 <div class="container">
-    <button class="btn btn-link pull-right" onclick="myFunction()">Print Invoice <?php echo strtoupper($contract['contract_id'])?></button>
+    <button class="btn btn-link pull-right" onclick="myFunction()">Print Invoice <?php echo strtoupper($order['invoice_no'])?></button>
 <ul style="list-style: none">
     <li>ELECTRONIC INVOICE<li/>
     <li>01. INVOICE TYPE:<b>PROFORMA INVOICE</b><li/>
@@ -67,10 +67,10 @@
     <li>07. BUSINESS AGREEMENT / CONTRACT NUMBER:<b><?php echo strtoupper($order['contract_no'])?></b><li/>
     <li>08. BUSINESS AGREEMENT / CONTRACT ISSUED DATE:<b><?php echo date('d/m/Y',strtotime($contract['date_added']))?></b><li/>
     <li>09. TRANSACTION CODE:<b><?php echo strtoupper($order['order_id'])?></b><li/>
-    <li>10. PAYMENT DESCRIPTION:<b><?php echo $_GET['payment_description']?></b><li/>
-    <li>11. INVOICE TOTAL AMOUNT:<b><?php echo $_GET['total_amount']?></b><li/>
-    <li>12. DOWN PAYMENT AMOUNT:<b><?php echo $_GET['down_payment']?></b><li/>
-    <li>13. REMAINING DUE AMOUNT:<b><?php echo $_GET['due_amount']?></b><li/>
+    <li>10. PAYMENT DESCRIPTION:<b><?php echo strtoupper($order['payment_description'])?></b><li/>
+    <li>11. INVOICE TOTAL AMOUNT:<b><?php echo strtoupper($order['total_amount'])?></b><li/>
+    <li>12. DOWN PAYMENT AMOUNT:<b><?php echo strtoupper($order['down_payment'])?></b><li/>
+    <li>13. REMAINING DUE AMOUNT:<b><?php echo strtoupper($order['due_amount'])?></b><li/>
     <li>14. PAYMENT TO: <b>H.I.F. INVEST HOLDING LTD</b><li/>
     <li>15. SERVICE PROVIDER: <b>AVERSA OOD</b><li/>
     <li>16. BANK: <b>GARANTI</b> <li/>

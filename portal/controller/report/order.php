@@ -163,8 +163,8 @@ class ControllerReportOrder extends Controller {
 				'total'         => $this->currency->format($result['total'], $result['currency_code'], $result['currency_value']),
 				'date_added'    => date($this->language->get('date_format_short'), strtotime($result['date_added'])),
 				'date_modified' => date($this->language->get('date_format_short'), strtotime($result['date_modified'])),
-				'invoice'=>($result['invoice_no'] > 0 ? '<span class="text-success"><a href="'.$this->url->link('account/order/viewInvoice','invoice_id='.$result['invoice_no'],'SSL').'" target="_blank" style="color : #000">Issued</a></span>' : '<span class="text-danger">Not Issued</span>'),
-				'contract'=>($result['contract_no'] > 0 ? '<span class="text-success"><a href="'.$this->url->link('account/order/view','contract_id='.$result['contract_no'],'SSL').'" target="_blank" style="color : #000">Issued</a></span>' : '<span class="text-danger">Not Issued</span>'),
+				'invoice'=>($result['invoice_no'] > 0 ? '<span class="text-success"><a href="'.$this->url->link('report/order/viewInvoice','invoice_id='.$result['invoice_no'],'SSL').'" target="_blank" style="color : #000">Issued</a></span>' : '<span class="text-danger">Not Issued</span>'),
+				'contract'=>($result['contract_no'] > 0 ? '<span class="text-success"><a href="'.$this->url->link('report/order/view','contract_id='.$result['contract_no'],'SSL').'" target="_blank" style="color : #000">Issued</a></span>' : '<span class="text-danger">Not Issued</span>'),
 				'view'          => $this->url->link('account/order/info', '' . '&order_id=' . $result['order_id'] . $url, 'SSL'),
 			);
 		}
@@ -227,11 +227,11 @@ class ControllerReportOrder extends Controller {
 			$url .= '&page=' . $this->request->get['page'];
 		}
 
-		$data['sort_order'] = $this->url->link('account/order', '' . '&sort=o.order_id' . $url, 'SSL');
-		$data['sort_status'] = $this->url->link('account/order', '' . '&sort=status' . $url, 'SSL');
-		$data['sort_total'] = $this->url->link('account/order', '' . '&sort=o.total' . $url, 'SSL');
-		$data['sort_date_added'] = $this->url->link('account/order', '' . '&sort=o.date_added' . $url, 'SSL');
-		$data['sort_date_modified'] = $this->url->link('account/order', '' . '&sort=o.date_modified' . $url, 'SSL');
+		$data['sort_order'] = $this->url->link('report/order', '' . '&sort=o.order_id' . $url, 'SSL');
+		$data['sort_status'] = $this->url->link('report/order', '' . '&sort=status' . $url, 'SSL');
+		$data['sort_total'] = $this->url->link('report/order', '' . '&sort=o.total' . $url, 'SSL');
+		$data['sort_date_added'] = $this->url->link('report/order', '' . '&sort=o.date_added' . $url, 'SSL');
+		$data['sort_date_modified'] = $this->url->link('report/order', '' . '&sort=o.date_modified' . $url, 'SSL');
 
 		$url = '';
 
@@ -267,7 +267,7 @@ class ControllerReportOrder extends Controller {
 		$pagination->total = $order_total;
 		$pagination->page = $page;
 		$pagination->limit = $this->config->get('config_limit');
-		$pagination->url = $this->url->link('account/order', '' . $url . '&page={page}', 'SSL');
+		$pagination->url = $this->url->link('report/order', '' . $url . '&page={page}', 'SSL');
 
 		$data['pagination'] = $pagination->render();
 
