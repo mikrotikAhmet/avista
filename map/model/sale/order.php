@@ -284,11 +284,11 @@ class ModelSaleOrder extends Model {
 		due_amount = '".(int) $data['due_amount']."'
 		WHERE order_id = '".(int) $order_id."'");
 
-		$this->db->query("UPDATE ".DB_PREFIX."order_product SET
-		payment_description = '".$this->db->escape($data['payment_description'])."',
-		price = '".(int) $data['total_amount']."',
-		down = '".(int) $data['down_payment']."'
-		WHERE order_id = '".(int) $order_id."'");
+//		$this->db->query("UPDATE ".DB_PREFIX."order_product SET
+//		description = '".$this->db->escape($data['payment_description'])."',
+//		price = '".(int) $data['total_amount']."',
+//		down = '".(int) $data['down_payment']."'
+//		WHERE order_id = '".(int) $order_id."'");
 
 //		$order_info = $this->getOrder($order_id);
 //

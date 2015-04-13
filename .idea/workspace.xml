@@ -30,24 +30,24 @@
       <file leaf-file-name="order.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/map/model/sale/order.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.54210526" vertical-offset="4071" max-vertical-offset="4665">
-              <caret line="292" column="0" selection-start-line="292" selection-start-column="2" selection-end-line="299" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.38421053" vertical-offset="4071" max-vertical-offset="4665">
+              <caret line="286" column="0" selection-start-line="286" selection-start-column="2" selection-end-line="290" selection-end-column="49" />
               <folding>
-                <marker date="1428911013467" expanded="true" signature="623:835" placeholder="SELECT *, (S..." />
-                <marker date="1428911013467" expanded="true" signature="634:746" placeholder="SELECT CONCA..DB_PREFIXcustomer..." />
-                <marker date="1428911013467" expanded="true" signature="1345:1444" placeholder="SELECT * FRO..DB_PREFIXorder_product..." />
-                <marker date="1428911013467" expanded="true" signature="1486:1574" placeholder="SELECT * FRO..DB_PREFIXbank..." />
-                <marker date="1428911013467" expanded="true" signature="1617:1708" placeholder="SELECT * FRO..DB_PREFIXbank..." />
-                <marker date="1428911013467" expanded="true" signature="4444:4806" placeholder="SELECT o.ord..." />
-                <marker date="1428911013467" expanded="true" signature="4514:4688" placeholder="SELECT os.na..DB_PREFIXorder_status..." />
-                <marker date="1428911013467" expanded="true" signature="6726:6805" placeholder="SELECT * FRO..DB_PREFIXorder_product..." />
-                <marker date="1428911013467" expanded="true" signature="6898:6952" placeholder="SELECT COUNT..." />
-                <marker date="1428911013467" expanded="true" signature="8201:8287" placeholder="SELECT * FRO..DB_PREFIXorder_product..." />
-                <marker date="1428911013467" expanded="true" signature="8502:8865" placeholder="SELECT oh.da..DB_PREFIXorder_history..." />
-                <marker date="1428911013467" expanded="true" signature="8993:9095" placeholder="SELECT COUNT..DB_PREFIXorder_history..." />
-                <marker date="1428911013467" expanded="true" signature="9348:9485" placeholder="INSERT INTO ..." />
-                <marker date="1428911013467" expanded="true" signature="9673:9821" placeholder="SELECT MAX(i..." />
-                <marker date="1428911013467" expanded="true" signature="11000:11290" placeholder="INSERT INTO ..." />
+                <marker date="1428911143391" expanded="true" signature="623:835" placeholder="SELECT *, (S..." />
+                <marker date="1428911143391" expanded="true" signature="634:746" placeholder="SELECT CONCA..DB_PREFIXcustomer..." />
+                <marker date="1428911143391" expanded="true" signature="1345:1444" placeholder="SELECT * FRO..DB_PREFIXorder_product..." />
+                <marker date="1428911143391" expanded="true" signature="1486:1574" placeholder="SELECT * FRO..DB_PREFIXbank..." />
+                <marker date="1428911143391" expanded="true" signature="1617:1708" placeholder="SELECT * FRO..DB_PREFIXbank..." />
+                <marker date="1428911143391" expanded="true" signature="4444:4806" placeholder="SELECT o.ord..." />
+                <marker date="1428911143391" expanded="true" signature="4514:4688" placeholder="SELECT os.na..DB_PREFIXorder_status..." />
+                <marker date="1428911143391" expanded="true" signature="6726:6805" placeholder="SELECT * FRO..DB_PREFIXorder_product..." />
+                <marker date="1428911143391" expanded="true" signature="6898:6952" placeholder="SELECT COUNT..." />
+                <marker date="1428911143391" expanded="true" signature="8201:8287" placeholder="SELECT * FRO..DB_PREFIXorder_product..." />
+                <marker date="1428911143391" expanded="true" signature="8502:8865" placeholder="SELECT oh.da..DB_PREFIXorder_history..." />
+                <marker date="1428911143391" expanded="true" signature="8993:9095" placeholder="SELECT COUNT..DB_PREFIXorder_history..." />
+                <marker date="1428911143391" expanded="true" signature="9348:9485" placeholder="INSERT INTO ..." />
+                <marker date="1428911143391" expanded="true" signature="9673:9821" placeholder="SELECT MAX(i..." />
+                <marker date="1428911143391" expanded="true" signature="11002:11292" placeholder="INSERT INTO ..." />
               </folding>
             </state>
           </provider>
@@ -697,24 +697,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/map/model/sale/order.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54210526" vertical-offset="4071" max-vertical-offset="4665">
-          <caret line="292" column="0" selection-start-line="292" selection-start-column="2" selection-end-line="299" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.38421053" vertical-offset="4071" max-vertical-offset="4665">
+          <caret line="286" column="0" selection-start-line="286" selection-start-column="2" selection-end-line="290" selection-end-column="49" />
           <folding>
-            <marker date="1428911013467" expanded="true" signature="623:835" placeholder="SELECT *, (S..." />
-            <marker date="1428911013467" expanded="true" signature="634:746" placeholder="SELECT CONCA..DB_PREFIXcustomer..." />
-            <marker date="1428911013467" expanded="true" signature="1345:1444" placeholder="SELECT * FRO..DB_PREFIXorder_product..." />
-            <marker date="1428911013467" expanded="true" signature="1486:1574" placeholder="SELECT * FRO..DB_PREFIXbank..." />
-            <marker date="1428911013467" expanded="true" signature="1617:1708" placeholder="SELECT * FRO..DB_PREFIXbank..." />
-            <marker date="1428911013467" expanded="true" signature="4444:4806" placeholder="SELECT o.ord..." />
-            <marker date="1428911013467" expanded="true" signature="4514:4688" placeholder="SELECT os.na..DB_PREFIXorder_status..." />
-            <marker date="1428911013467" expanded="true" signature="6726:6805" placeholder="SELECT * FRO..DB_PREFIXorder_product..." />
-            <marker date="1428911013467" expanded="true" signature="6898:6952" placeholder="SELECT COUNT..." />
-            <marker date="1428911013467" expanded="true" signature="8201:8287" placeholder="SELECT * FRO..DB_PREFIXorder_product..." />
-            <marker date="1428911013467" expanded="true" signature="8502:8865" placeholder="SELECT oh.da..DB_PREFIXorder_history..." />
-            <marker date="1428911013467" expanded="true" signature="8993:9095" placeholder="SELECT COUNT..DB_PREFIXorder_history..." />
-            <marker date="1428911013467" expanded="true" signature="9348:9485" placeholder="INSERT INTO ..." />
-            <marker date="1428911013467" expanded="true" signature="9673:9821" placeholder="SELECT MAX(i..." />
-            <marker date="1428911013467" expanded="true" signature="11000:11290" placeholder="INSERT INTO ..." />
+            <marker date="1428911143391" expanded="true" signature="623:835" placeholder="SELECT *, (S..." />
+            <marker date="1428911143391" expanded="true" signature="634:746" placeholder="SELECT CONCA..DB_PREFIXcustomer..." />
+            <marker date="1428911143391" expanded="true" signature="1345:1444" placeholder="SELECT * FRO..DB_PREFIXorder_product..." />
+            <marker date="1428911143391" expanded="true" signature="1486:1574" placeholder="SELECT * FRO..DB_PREFIXbank..." />
+            <marker date="1428911143391" expanded="true" signature="1617:1708" placeholder="SELECT * FRO..DB_PREFIXbank..." />
+            <marker date="1428911143391" expanded="true" signature="4444:4806" placeholder="SELECT o.ord..." />
+            <marker date="1428911143391" expanded="true" signature="4514:4688" placeholder="SELECT os.na..DB_PREFIXorder_status..." />
+            <marker date="1428911143391" expanded="true" signature="6726:6805" placeholder="SELECT * FRO..DB_PREFIXorder_product..." />
+            <marker date="1428911143391" expanded="true" signature="6898:6952" placeholder="SELECT COUNT..." />
+            <marker date="1428911143391" expanded="true" signature="8201:8287" placeholder="SELECT * FRO..DB_PREFIXorder_product..." />
+            <marker date="1428911143391" expanded="true" signature="8502:8865" placeholder="SELECT oh.da..DB_PREFIXorder_history..." />
+            <marker date="1428911143391" expanded="true" signature="8993:9095" placeholder="SELECT COUNT..DB_PREFIXorder_history..." />
+            <marker date="1428911143391" expanded="true" signature="9348:9485" placeholder="INSERT INTO ..." />
+            <marker date="1428911143391" expanded="true" signature="9673:9821" placeholder="SELECT MAX(i..." />
+            <marker date="1428911143391" expanded="true" signature="11002:11292" placeholder="INSERT INTO ..." />
           </folding>
         </state>
       </provider>
