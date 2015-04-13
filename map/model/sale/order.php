@@ -81,7 +81,11 @@ class ModelSaleOrder extends Model {
 				'issuer_name'           => $order_query->row['issuer_name'],
 				'product_name' => $product_info->row['name'],
 				'bank_pay'=>$bank_info_pay->row['bank'],
-				'bank_sett'=>$bank_info_sett->row['bank']
+				'bank_sett'=>$bank_info_sett->row['bank'],
+				'payment_description'           => $order_query->row['payment_description'],
+				'total_amount' => $order_query->row['total_amount'],
+				'down_payment'=>$order_query->row['down_payment'],
+				'due_amount'=>$order_query->row['due_amount']
 			);
 		} else {
 			return;

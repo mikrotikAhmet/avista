@@ -302,6 +302,26 @@
 
         var invoice_data = $('#invoicecreate').serialize();
 
+        if ($('input[name=\'payment_description\']').val() == ""){
+            alert('Please provide Payment Description!');
+            return false;
+        }
+
+        if ($('input[name=\'total_amount\']').val() == ""){
+            alert('Please provide Total Amount!');
+            return false;
+        }
+
+        if ($('input[name=\'down_payment\']').val() == ""){
+            alert('Please provide Down Payment amount!');
+            return false;
+        }
+
+        if ($('input[name=\'due_amount\']').val() == ""){
+            alert('Please provide Due Amount!');
+            return false;
+        }
+
         $.ajax({
             url : 'index.php?route=sale/order/updateInvoice&token=<?php echo $token?>&order_id=<?php echo $order_id; ?>',
             type: 'post',
@@ -356,7 +376,7 @@
             </form>
             </div>
             <div class="modal-footer">
-                <button type="button" id="button-close" onclick="createInvoice()" class="btn btn-default" data-dismiss="modal">Create</button>
+                <button type="button" id="button-close" onclick="createInvoice()" class="btn btn-default" >Create</button>
             </div>
         </div>
         <!-- /.modal-content -->
