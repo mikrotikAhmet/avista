@@ -53,6 +53,9 @@ class ControllerAccountDashboard extends Controller {
 
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['order'] = $this->load->controller('dashboard/order');
+        $data['contract'] = $this->load->controller('dashboard/contract');
+        $data['invoice'] = $this->load->controller('dashboard/invoice');
+        $data['balance'] = $this->load->controller('dashboard/balance');
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
 

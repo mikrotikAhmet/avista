@@ -16,8 +16,8 @@
         <li><a class="text_grey" href="<?php echo $document?>"><i class="fa fa-fw fa-file"></i> <?php echo $text_document?></a></li>
         <li class="nav-heading">Reports</li>
         <li><a class="text_grey" href="<?php echo $myorder?>"><i class="fa fa-fw fa-list"></i> <?php echo $text_myorder?></a></li>
-        <!--li><a class="text_grey" href="<?php echo $myinvoice?>"><i class="fa fa-fw fa-list"></i> <?php echo $text_myinvoice?></a></li>
-        <li><a class="text_grey" href="<?php echo $mycontract?>"><i class="fa fa-fw fa-list"></i> <?php echo $text_mycontract?></a></li-->
+        <li><a class="text_grey" href="<?php echo $myinvoice?>"><i class="fa fa-fw fa-list"></i> <?php echo $text_myinvoice?></a></li>
+        <li><a class="text_grey" href="<?php echo $mycontract?>"><i class="fa fa-fw fa-list"></i> <?php echo $text_mycontract?></a></li>
         <li class="nav-heading"></li>
         <li><a class="text_grey" href="<?php echo $logout; ?>"><i class="fa fa-fw fa-power-off"></i> <?php echo $text_logout?></a></li>
     </ul>

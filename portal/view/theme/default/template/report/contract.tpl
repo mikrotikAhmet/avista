@@ -90,9 +90,6 @@
                                             <a href="<?php echo $sort_order; ?>"><?php echo $column_order_id; ?></a>
                                             <?php } ?></td>
                                         <td class="text-left">
-                                            Invoice#
-                                        </td>
-                                        <td class="text-left">
                                             Contract#
                                         </td>
                                         <td class="text-left"><?php if ($sort == 'status') { ?>
@@ -123,7 +120,6 @@
                                     <?php foreach ($orders as $order) { ?>
                                     <tr>
                                         <td class="text-right"><?php echo $order['order_id']; ?></td>
-                                        <td class="text-left"><?php echo $order['invoice']; ?></td>
                                         <td class="text-left"><?php echo $order['contract']; ?></td>
                                         <td class="text-left"><?php echo $order['status']; ?></td>
                                         <td class="text-right"><?php echo $order['total']; ?></td>

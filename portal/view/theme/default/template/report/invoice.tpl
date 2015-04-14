@@ -92,9 +92,6 @@
                                         <td class="text-left">
                                             Invoice#
                                         </td>
-                                        <td class="text-left">
-                                            Contract#
-                                        </td>
                                         <td class="text-left"><?php if ($sort == 'status') { ?>
                                             <a href="<?php echo $sort_status; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_status; ?></a>
                                             <?php } else { ?>
@@ -124,7 +121,6 @@
                                     <tr>
                                         <td class="text-right"><?php echo $order['order_id']; ?></td>
                                         <td class="text-left"><?php echo $order['invoice']; ?></td>
-                                        <td class="text-left"><?php echo $order['contract']; ?></td>
                                         <td class="text-left"><?php echo $order['status']; ?></td>
                                         <td class="text-right"><?php echo $order['total']; ?></td>
                                         <td class="text-left"><?php echo $order['date_added']; ?></td>
