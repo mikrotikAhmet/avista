@@ -57,6 +57,8 @@ class ModelContractContract extends Model {
 		date_added = NOW()");
 
 		$this->db->query("UPDATE ".DB_PREFIX."order SET contract_no = '".$this->db->escape($unique_id)."' WHERE order_id = '".(int) $order_id ."'");
+
+        $this->updateOrderStatus($order_id,2);
 	}
 
 	public function updateContract($order_id,$data){
@@ -188,4 +190,14 @@ class ModelContractContract extends Model {
 
 		return $query->row['total'];
 	}
+
+    public function updateOrderStatus($order_id,$status_id){
+
+        $this->db->query("UPDATE ".DB_PREFIX."order SET order_status_id = '".(int) $status_id."' WHERE order_id = '".(int) $order_id."'");
+
+        $this->db->query("INSERT INTO ".DB_PREFIX."order_history SET
+		order_id = '".(int) $order_id."',
+		order_status_id = '".(int) $status_id."',
+		date_added = NOW()");
+    }
 }

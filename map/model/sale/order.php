@@ -280,9 +280,29 @@ class ModelSaleOrder extends Model {
 		$this->db->query("UPDATE ".DB_PREFIX."order SET
 		payment_description = '".$this->db->escape($data['payment_description'])."',
 		total_amount = '".(int) $data['total_amount']."',
+		total = '".(float) $data['total_amount']."',
 		down_payment = '".(int) $data['down_payment']."',
-		due_amount = '".(int) $data['due_amount']."'
+		due_amount = '".(int) $data['due_amount']."',
+		order_status_id = '5'
 		WHERE order_id = '".(int) $order_id."'");
+
+        $this->db->query("INSERT INTO ".DB_PREFIX."order_history SET
+		order_id = '".(int) $order_id."',
+		order_status_id = '5',
+		date_added = NOW()");
+
+        $this->db->query("UPDATE ".DB_PREFIX."order_product SET
+		price = '".(float) $data['total_amount']."',
+		down = '".(int) $data['down_payment']."'
+		WHERE order_id = '".(int) $order_id."'");
+
+        $order_data = $this->getOrder($order_id);
+
+        $this->db->query("INSERT INTO ".DB_PREFIX."customer_transaction SET
+		customer_id = '".(int) $order_data['customer_id']."',
+		order_id = '".(int) $order_id."',
+		description = '".$this->db->escape($data['payment_description'])."',
+		amount = '-".(float) $data['total_amount']."', date_added = NOW()");
 	}
 
 }

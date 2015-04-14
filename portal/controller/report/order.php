@@ -157,14 +157,21 @@ class ControllerReportOrder extends Controller {
 		$results = $this->model_account_order->getOrders($filter_data);
 
 		foreach ($results as $result) {
+
+            if (in_array($result['order_status_id'],$this->config->get('config_complete_status'))){
+                $result['status'] = '<i class="fa fa-check"></i> '.$result['status'];
+            } else {
+                $result['status'] = '<i class="fa fa-exclamation"></i> '.$result['status'];
+            }
+
 			$data['orders'][] = array(
 				'order_id'      => $result['order_id'],
 				'status'        => $result['status'],
 				'total'         => $this->currency->format($result['total'], $result['currency_code'], $result['currency_value']),
 				'date_added'    => date($this->language->get('date_format_short'), strtotime($result['date_added'])),
 				'date_modified' => date($this->language->get('date_format_short'), strtotime($result['date_modified'])),
-				'invoice'=>($result['invoice_no'] > 0 ? '<span class="text-success"><a href="'.$this->url->link('report/order/viewInvoice','invoice_id='.$result['invoice_no'],'SSL').'" target="_blank" style="color : #000">Issued</a></span>' : '<span class="text-danger">Not Issued</span>'),
-				'contract'=>($result['contract_no'] > 0 ? '<span class="text-success"><a href="'.$this->url->link('report/order/view','contract_id='.$result['contract_no'],'SSL').'" target="_blank" style="color : #000">Issued</a></span>' : '<span class="text-danger">Not Issued</span>'),
+				'invoice'=>($result['invoice_no'] > 0 ? '<span class="text-success"><a href="'.$this->url->link('report/order/viewInvoice','invoice_id='.$result['invoice_no'],'SSL').'" target="_blank" >'.$result['invoice_no'].'</a></span>' : '<span class="text-danger">Not Issued</span>'),
+				'contract'=>($result['contract_no'] > 0 ? '<span class="text-success"><a href="'.$this->url->link('report/order/view','contract_id='.$result['contract_no'],'SSL').'" target="_blank" >'.$result['contract_no'].'</a></span>' : '<span class="text-danger">Not Issued</span>'),
 				'view'          => $this->url->link('account/order/info', '' . '&order_id=' . $result['order_id'] . $url, 'SSL'),
 			);
 		}
