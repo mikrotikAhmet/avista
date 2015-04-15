@@ -68,7 +68,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="<?php echo $logout?>"><img src="image/hif_blue.png" style="width: 220px;
+    <a class="navbar-brand" href="<?php echo $home?>"><img src="image/hif_blue.png" style="width: 220px;
   position: relative;
   bottom: 7px;"/></a>
 </div>

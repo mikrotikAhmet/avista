@@ -2,33 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbd0d96c-d439-4391-add6-8ad6ad0b2fa0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/portal/controller/dashboard/balance.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/portal/language/english/dashboard/balance.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/portal/view/theme/default/template/dashboard/balance.tpl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/portal/controller/dashboard/contract.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/portal/language/english/dashboard/contract.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/portal/view/theme/default/template/dashboard/contract.tpl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/portal/controller/dashboard/invoice.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/portal/language/english/dashboard/invoice.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/portal/view/theme/default/template/dashboard/invoice.tpl" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/map/system/cache/cache.application.1429006061" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/map/system/cache/cache.country.1429005407" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/map/system/cache/cache.currency.1429005407" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/map/system/cache/cache.information.1.1429005407" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/map/system/cache/cache.language.1429005407" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/map/system/cache/cache.order_status.1.1429005407" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/map/system/cache/cache.zone.14.1429005407" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/map/system/cache/cache.zone.243.1429006923" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/system/cache/cache.currency.1429006499" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/system/cache/cache.order_status.1.1429005690" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/controller/report/contract.php" afterPath="$PROJECT_DIR$/portal/controller/report/contract.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/view/theme/default/template/report/contract.tpl" afterPath="$PROJECT_DIR$/portal/view/theme/default/template/report/contract.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/controller/account/dashboard.php" afterPath="$PROJECT_DIR$/portal/controller/account/dashboard.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/view/theme/default/template/account/dashboard.tpl" afterPath="$PROJECT_DIR$/portal/view/theme/default/template/account/dashboard.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/controller/report/invoice.php" afterPath="$PROJECT_DIR$/portal/controller/report/invoice.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/view/theme/default/template/report/invoice.tpl" afterPath="$PROJECT_DIR$/portal/view/theme/default/template/report/invoice.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/view/theme/default/template/common/menu.tpl" afterPath="$PROJECT_DIR$/portal/view/theme/default/template/common/menu.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/model/account/order.php" afterPath="$PROJECT_DIR$/portal/model/account/order.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/map/controller/dashboard/chart.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/map/language/english/dashboard/chart.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/map/view/template/dashboard/chart.tpl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/map/model/report/customer.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/map/view/javascript/inputmask/js/inputmask.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/map/view/javascript/inputmask/js/jquery.mask.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/map/controller/dashboard/map.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/map/language/english/dashboard/map.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/map/view/template/dashboard/map.tpl" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/map/language/english/dashboard/approval_request.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/map/system/cache/cache.application.1429021304" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/map/system/cache/cache.country.1429021306" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/map/system/cache/cache.order_status.1.1429020393" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/map/system/cache/cache.zone.243.1429021307" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/map/view/template/dashboard/approval_request.tpl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/system/cache/cache.currency.1429018768" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/portal/system/cache/cache.order_status.1.1429018486" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/map/controller/common/dashboard.php" afterPath="$PROJECT_DIR$/map/controller/common/dashboard.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/map/view/template/common/dashboard.tpl" afterPath="$PROJECT_DIR$/map/view/template/common/dashboard.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/map/view/template/common/header.tpl" afterPath="$PROJECT_DIR$/map/view/template/common/header.tpl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="avista.iws" />
@@ -71,13 +64,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/portal/view/theme/default/template/account/security.tpl" />
-        <option value="$PROJECT_DIR$/portal/controller/account/twoway.php" />
-        <option value="$PROJECT_DIR$/portal/controller/dashboard/order.php" />
-        <option value="$PROJECT_DIR$/map/config.php" />
-        <option value="$PROJECT_DIR$/map/controller/sale/customer.php" />
-        <option value="$PROJECT_DIR$/map/model/setting/setting.php" />
-        <option value="$PROJECT_DIR$/map/model/sale/customer.php" />
         <option value="$PROJECT_DIR$/portal/view/theme/default/css/sb-admin.css" />
         <option value="$PROJECT_DIR$/map/controller/contract/contract.php" />
         <option value="$PROJECT_DIR$/map/view/template/contract/contract_list.tpl" />
@@ -98,8 +84,6 @@
         <option value="$PROJECT_DIR$/portal/controller/report/order.php" />
         <option value="$PROJECT_DIR$/portal/controller/dashboard/sale.php" />
         <option value="$PROJECT_DIR$/map/language/english/dashboard/sale.php" />
-        <option value="$PROJECT_DIR$/map/controller/common/dashboard.php" />
-        <option value="$PROJECT_DIR$/map/view/template/common/dashboard.tpl" />
         <option value="$PROJECT_DIR$/map/view/template/dashboard/sale.tpl" />
         <option value="$PROJECT_DIR$/map/view/template/dashboard/order.tpl" />
         <option value="$PROJECT_DIR$/map/language/english/mail/customer.php" />
@@ -122,6 +106,15 @@
         <option value="$PROJECT_DIR$/portal/controller/dashboard/balance.php" />
         <option value="$PROJECT_DIR$/portal/language/english/dashboard/balance.php" />
         <option value="$PROJECT_DIR$/portal/view/theme/default/template/dashboard/balance.tpl" />
+        <option value="$PROJECT_DIR$/map/language/english/dashboard/chart.php" />
+        <option value="$PROJECT_DIR$/map/model/report/customer.php" />
+        <option value="$PROJECT_DIR$/map/controller/dashboard/map.php" />
+        <option value="$PROJECT_DIR$/map/language/english/dashboard/map.php" />
+        <option value="$PROJECT_DIR$/map/view/template/dashboard/map.tpl" />
+        <option value="$PROJECT_DIR$/map/controller/common/dashboard.php" />
+        <option value="$PROJECT_DIR$/map/view/template/common/dashboard.tpl" />
+        <option value="$PROJECT_DIR$/map/view/template/dashboard/chart.tpl" />
+        <option value="$PROJECT_DIR$/map/view/template/common/header.tpl" />
       </list>
     </option>
   </component>
@@ -157,6 +150,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -177,7 +171,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -188,11 +181,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/map/view/javascript" />
       <recent name="$PROJECT_DIR$/portal/image/catalog" />
       <recent name="$PROJECT_DIR$/portal/view/theme/default/template/account" />
       <recent name="$PROJECT_DIR$/portal/model/account" />
       <recent name="$PROJECT_DIR$/portal/model" />
-      <recent name="$PROJECT_DIR$/map" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/portal/model/tool" />
@@ -287,69 +280,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/map/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8747856" vertical-offset="0" max-vertical-offset="645">
-          <caret line="44" column="29" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/controller/sale/customer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34210527" vertical-offset="12690" max-vertical-offset="24690">
-          <caret line="859" column="0" selection-start-line="859" selection-start-column="0" selection-end-line="859" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/controller/setting/application.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.55263156" vertical-offset="315" max-vertical-offset="12240">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/model/setting/setting.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7631579" vertical-offset="600" max-vertical-offset="1170">
-          <caret line="69" column="152" selection-start-line="69" selection-start-column="152" selection-end-line="69" selection-end-column="152" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/model/setting/application.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.0526316" vertical-offset="1170" max-vertical-offset="2280">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/model/sale/customer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35614035" vertical-offset="592" max-vertical-offset="8535">
-          <caret line="53" column="515" selection-start-line="53" selection-start-column="515" selection-end-line="53" selection-end-column="515" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/view/template/contract/contract_list.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34210527" vertical-offset="1260" max-vertical-offset="2655">
-          <caret line="97" column="101" selection-start-line="97" selection-start-column="101" selection-end-line="97" selection-end-column="101" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/controller/contract/contract.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.2263157" vertical-offset="2601" max-vertical-offset="4680">
-          <caret line="296" column="56" selection-start-line="296" selection-start-column="56" selection-end-line="296" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/view/template/sale/order_list.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.75" vertical-offset="0" max-vertical-offset="4275">
-          <caret line="14" column="246" selection-start-line="14" selection-start-column="246" selection-end-line="14" selection-end-column="246" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/map/view/template/sale/invoice_view.tpl">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.11578947" vertical-offset="921" max-vertical-offset="1575">
@@ -375,7 +305,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.642295" vertical-offset="4427" max-vertical-offset="5880">
           <caret line="20" column="89" selection-start-line="20" selection-start-column="89" selection-end-line="20" selection-end-column="89" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -383,7 +312,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.666667" vertical-offset="15812" max-vertical-offset="16725">
           <caret line="1076" column="28" selection-start-line="1076" selection-start-column="20" selection-end-line="1076" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -391,7 +319,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-30.0" vertical-offset="3105" max-vertical-offset="4260">
           <caret line="255" column="0" selection-start-line="255" selection-start-column="2" selection-end-line="257" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -399,18 +326,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.81707317" vertical-offset="2218" max-vertical-offset="3120">
           <caret line="197" column="40" selection-start-line="197" selection-start-column="40" selection-end-line="197" selection-end-column="40" />
-          <folding>
-            <marker date="1428999920055" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXorder..." />
-            <marker date="1428999920055" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
-            <marker date="1428999920055" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcertificate..." />
-            <marker date="1428999920055" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428999920055" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcontract..." />
-            <marker date="1428999920055" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcontract..." />
-            <marker date="1428999920055" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcontract..." />
-            <marker date="1428999920055" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXcontract..." />
-            <marker date="1428999920055" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428999920055" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -418,24 +333,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8312711" vertical-offset="3821" max-vertical-offset="4710">
           <caret line="304" column="19" selection-start-line="304" selection-start-column="19" selection-end-line="304" selection-end-column="19" />
-          <folding>
-            <marker date="1429000279367" expanded="true" signature="-1:-1" placeholder="SELECT *, (S..." />
-            <marker date="1429000279367" expanded="true" signature="-1:-1" placeholder="SELECT CONCA..DB_PREFIXcustomer..." />
-            <marker date="1429000279367" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXorder_product..." />
-            <marker date="1429000279367" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXbank..." />
-            <marker date="1429000279367" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXbank..." />
-            <marker date="1429000279367" expanded="true" signature="-1:-1" placeholder="SELECT o.ord..." />
-            <marker date="1429000279367" expanded="true" signature="-1:-1" placeholder="SELECT os.na..DB_PREFIXorder_status..." />
-            <marker date="1429000279367" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXorder_product..." />
-            <marker date="1429000279367" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
-            <marker date="1429000279367" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXorder_product..." />
-            <marker date="1429000279367" expanded="true" signature="-1:-1" placeholder="SELECT oh.da..DB_PREFIXorder_history..." />
-            <marker date="1429000279367" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..DB_PREFIXorder_history..." />
-            <marker date="1429000279367" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1429000279367" expanded="true" signature="-1:-1" placeholder="SELECT MAX(i..." />
-            <marker date="1429000279367" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1429000279367" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -443,7 +340,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.5691788" vertical-offset="1395" max-vertical-offset="3900">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -451,9 +347,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.31596452" vertical-offset="0" max-vertical-offset="902">
           <caret line="19" column="37" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
-          <folding>
-            <element signature="e#6#361#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -461,23 +354,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1170">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/controller/common/dashboard.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.86031044" vertical-offset="229" max-vertical-offset="1170">
-          <caret line="67" column="63" selection-start-line="67" selection-start-column="63" selection-end-line="67" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/map/view/template/common/dashboard.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34922394" vertical-offset="0" max-vertical-offset="902">
-          <caret line="21" column="76" selection-start-line="21" selection-start-column="76" selection-end-line="21" selection-end-column="76" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -485,7 +361,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.06651885" vertical-offset="0" max-vertical-offset="902">
           <caret line="4" column="40" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -493,7 +368,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="902">
           <caret line="0" column="30" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -501,7 +375,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.38248336" vertical-offset="0" max-vertical-offset="902">
           <caret line="28" column="164" selection-start-line="28" selection-start-column="164" selection-end-line="28" selection-end-column="164" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -513,9 +386,262 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/portal/view/theme/default/template/account/document.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1290">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/controller/dashboard/order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17849223" vertical-offset="259" max-vertical-offset="1185">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="73" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/view/theme/default/template/dashboard/contract.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06651885" vertical-offset="0" max-vertical-offset="902">
+          <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/controller/common/menu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1065">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/view/theme/default/template/common/menu.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31596452" vertical-offset="0" max-vertical-offset="902">
+          <caret line="19" column="135" selection-start-line="19" selection-start-column="135" selection-end-line="19" selection-end-column="135" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/view/theme/default/template/dashboard/invoice.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06651885" vertical-offset="0" max-vertical-offset="902">
+          <caret line="4" column="43" selection-start-line="4" selection-start-column="43" selection-end-line="4" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/view/theme/default/template/report/invoice.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32058492" vertical-offset="1125" max-vertical-offset="3840">
+          <caret line="94" column="40" selection-start-line="94" selection-start-column="40" selection-end-line="94" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/controller/report/order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.875" vertical-offset="2115" max-vertical-offset="5835">
+          <caret line="160" column="12" selection-start-line="160" selection-start-column="12" selection-end-line="175" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/controller/report/invoice.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.64116985" vertical-offset="2025" max-vertical-offset="5805">
+          <caret line="173" column="14" selection-start-line="173" selection-start-column="14" selection-end-line="173" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/controller/report/contract.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7255343" vertical-offset="1980" max-vertical-offset="5835">
+          <caret line="175" column="14" selection-start-line="175" selection-start-column="14" selection-end-line="175" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/view/theme/default/template/report/contract.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48931384" vertical-offset="1395" max-vertical-offset="3840">
+          <caret line="122" column="0" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/model/account/order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5444319" vertical-offset="3686" max-vertical-offset="7155">
+          <caret line="278" column="0" selection-start-line="278" selection-start-column="0" selection-end-line="278" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/system/library/customer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.9021373" vertical-offset="1691" max-vertical-offset="2580">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/view/theme/default/template/dashboard/order.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="902">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="25" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/controller/account/dashboard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-29.458334" vertical-offset="148" max-vertical-offset="1095">
+          <caret line="57" column="69" selection-start-line="57" selection-start-column="69" selection-end-line="57" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/language/english/dashboard/order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21618626" vertical-offset="0" max-vertical-offset="902">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="22" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/language/english/dashboard/invoice.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09977827" vertical-offset="0" max-vertical-offset="902">
+          <caret line="16" column="38" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/language/english/dashboard/contract.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2660754" vertical-offset="0" max-vertical-offset="902">
+          <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/view/theme/default/template/account/dashboard.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.5" vertical-offset="0" max-vertical-offset="630">
+          <caret line="28" column="14" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/controller/dashboard/contract.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.3333335" vertical-offset="169" max-vertical-offset="1095">
+          <caret line="23" column="49" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/controller/dashboard/invoice.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.7083335" vertical-offset="109" max-vertical-offset="1035">
+          <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/language/english/dashboard/balance.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.875" vertical-offset="0" max-vertical-offset="405">
+          <caret line="19" column="40" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/view/theme/default/template/dashboard/balance.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06651885" vertical-offset="0" max-vertical-offset="902">
+          <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/controller/dashboard/balance.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8481153" vertical-offset="0" max-vertical-offset="1020">
+          <caret line="51" column="44" selection-start-line="51" selection-start-column="44" selection-end-line="51" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/language/english/dashboard/chart.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.0" vertical-offset="0" max-vertical-offset="480">
+          <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+          <folding>
+            <element signature="e#6#361#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/model/report/customer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.5804274" vertical-offset="3826" max-vertical-offset="6225">
+          <caret line="408" column="1" selection-start-line="408" selection-start-column="1" selection-end-line="408" selection-end-column="1" />
+          <folding>
+            <marker date="1429083029840" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1429083029840" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1429083029840" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1429083029840" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1429083029840" expanded="true" signature="-1:-1" placeholder="SELECT c.cus..." />
+            <marker date="1429083029840" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1429083029840" expanded="true" signature="-1:-1" placeholder="SELECT cr.cu..DB_PREFIXcustomer_reward..." />
+            <marker date="1429083029840" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1429083029840" expanded="true" signature="-1:-1" placeholder="SELECT ct.cu..." />
+            <marker date="1429083029840" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1429083029840" expanded="true" signature="-1:-1" placeholder="SELECT co.ip..DB_PREFIXcustomer_online..." />
+            <marker date="1429083029840" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+            <marker date="1429083029840" expanded="true" signature="-1:-1" placeholder="SELECT ca.ac..DB_PREFIXcustomer_activity..." />
+            <marker date="1429083029840" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/view/javascript/inputmask/js/inputmask.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5205">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/controller/dashboard/chart.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.0443459" vertical-offset="271" max-vertical-offset="2220">
+          <caret line="141" column="1" selection-start-line="141" selection-start-column="1" selection-end-line="141" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/language/english/dashboard/map.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31596452" vertical-offset="0" max-vertical-offset="902">
+          <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+          <folding>
+            <element signature="e#6#361#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/view/template/dashboard/map.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.77615297" vertical-offset="0" max-vertical-offset="889">
+          <caret line="46" column="19" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/controller/dashboard/map.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8481153" vertical-offset="0" max-vertical-offset="902">
+          <caret line="51" column="1" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/map/controller/common/dashboard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8802661" vertical-offset="241" max-vertical-offset="1200">
+          <caret line="69" column="61" selection-start-line="69" selection-start-column="61" selection-end-line="69" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/map/model/report/sale.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36774942" vertical-offset="43" max-vertical-offset="6840">
+        <state vertical-scroll-proportion="0.35658044" vertical-offset="43" max-vertical-offset="6840">
           <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
           <folding>
             <marker date="1429003553527" expanded="true" signature="-1:-1" placeholder="SELECT SUM(a..." />
@@ -544,224 +670,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/portal/view/theme/default/template/account/document.tpl">
+    <entry file="file://$PROJECT_DIR$/map/view/template/common/dashboard.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1290">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1428996276066" expanded="false" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/controller/dashboard/order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17849223" vertical-offset="259" max-vertical-offset="1185">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="73" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.96674055" vertical-offset="403" max-vertical-offset="1500">
+          <caret line="85" column="26" selection-start-line="85" selection-start-column="26" selection-end-line="85" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/portal/view/theme/default/template/dashboard/contract.tpl">
+    <entry file="file://$PROJECT_DIR$/map/view/template/dashboard/chart.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.06651885" vertical-offset="0" max-vertical-offset="902">
-          <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.03374578" vertical-offset="0" max-vertical-offset="1365">
+          <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/portal/controller/common/menu.php">
+    <entry file="file://$PROJECT_DIR$/map/view/template/common/header.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1065">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/view/theme/default/template/common/menu.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31596452" vertical-offset="0" max-vertical-offset="902">
-          <caret line="19" column="135" selection-start-line="19" selection-start-column="135" selection-end-line="19" selection-end-column="135" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/view/theme/default/template/dashboard/invoice.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.06651885" vertical-offset="0" max-vertical-offset="902">
-          <caret line="4" column="43" selection-start-line="4" selection-start-column="43" selection-end-line="4" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/view/theme/default/template/report/invoice.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32058492" vertical-offset="1125" max-vertical-offset="3840">
-          <caret line="94" column="40" selection-start-line="94" selection-start-column="40" selection-end-line="94" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/controller/report/order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.875" vertical-offset="2115" max-vertical-offset="5835">
-          <caret line="160" column="12" selection-start-line="160" selection-start-column="12" selection-end-line="175" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/controller/report/invoice.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64116985" vertical-offset="2025" max-vertical-offset="5805">
-          <caret line="173" column="14" selection-start-line="173" selection-start-column="14" selection-end-line="173" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/controller/report/contract.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7255343" vertical-offset="1980" max-vertical-offset="5835">
-          <caret line="175" column="14" selection-start-line="175" selection-start-column="14" selection-end-line="175" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/view/theme/default/template/report/contract.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48931384" vertical-offset="1395" max-vertical-offset="3840">
-          <caret line="122" column="0" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/model/account/order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5444319" vertical-offset="3686" max-vertical-offset="7155">
-          <caret line="278" column="0" selection-start-line="278" selection-start-column="0" selection-end-line="278" selection-end-column="0" />
-          <folding>
-            <marker date="1429016519933" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1429016519933" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1429016519933" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXorder..." />
-            <marker date="1429016519933" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXorder..." />
-            <marker date="1429016519933" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
-            <marker date="1429016519933" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
-            <marker date="1429016519933" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
-            <marker date="1429016519933" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..." />
-            <marker date="1429016519933" expanded="true" signature="-1:-1" placeholder="SELECT o.ord..." />
-            <marker date="1429016519933" expanded="true" signature="-1:-1" placeholder="SELECT os.na..DB_PREFIXorder_status..." />
-            <marker date="1429016519933" expanded="true" signature="-1:-1" placeholder="SELECT o.ord..." />
-            <marker date="1429016519933" expanded="true" signature="-1:-1" placeholder="SELECT os.na..DB_PREFIXorder_status..." />
-            <marker date="1429016519933" expanded="true" signature="-1:-1" placeholder="SELECT o.ord..." />
-            <marker date="1429016519933" expanded="true" signature="-1:-1" placeholder="SELECT os.na..DB_PREFIXorder_status..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/system/library/customer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9021373" vertical-offset="1691" max-vertical-offset="2580">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1428996276036" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
-            <marker date="1428996276036" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustomer_ip..." />
-            <marker date="1428996276036" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428996276036" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
-            <marker date="1428996276036" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..DB_PREFIXcustomer..." />
-            <marker date="1428996276036" expanded="true" signature="-1:-1" placeholder="SELECT SUM(a..DB_PREFIXcustomer_transaction..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/view/theme/default/template/dashboard/order.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="902">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="25" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/controller/account/dashboard.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-29.458334" vertical-offset="148" max-vertical-offset="1095">
-          <caret line="57" column="69" selection-start-line="57" selection-start-column="69" selection-end-line="57" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/language/english/dashboard/order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21618626" vertical-offset="0" max-vertical-offset="902">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="22" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/language/english/dashboard/invoice.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09977827" vertical-offset="0" max-vertical-offset="902">
-          <caret line="16" column="38" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/language/english/dashboard/contract.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2660754" vertical-offset="0" max-vertical-offset="902">
-          <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
-          <folding>
-            <element signature="e#6#361#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/view/theme/default/template/account/dashboard.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.5" vertical-offset="0" max-vertical-offset="630">
-          <caret line="28" column="14" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/controller/dashboard/contract.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.3333335" vertical-offset="169" max-vertical-offset="1095">
-          <caret line="23" column="49" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/controller/dashboard/invoice.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.7083335" vertical-offset="109" max-vertical-offset="1035">
-          <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
-          <folding>
-            <element signature="e#6#361#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/language/english/dashboard/balance.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.875" vertical-offset="0" max-vertical-offset="405">
-          <caret line="19" column="40" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
-          <folding>
-            <element signature="e#6#361#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/view/theme/default/template/dashboard/balance.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.06651885" vertical-offset="0" max-vertical-offset="902">
-          <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/controller/dashboard/balance.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8481153" vertical-offset="0" max-vertical-offset="1020">
-          <caret line="51" column="44" selection-start-line="51" selection-start-column="44" selection-end-line="51" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.5654102" vertical-offset="540" max-vertical-offset="1515">
+          <caret line="70" column="50" selection-start-line="70" selection-start-column="50" selection-end-line="70" selection-end-column="50" />
           <folding />
         </state>
       </provider>
