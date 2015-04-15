@@ -109,7 +109,7 @@
                 <li>3.1.1. INSTRUMENT OF: <b><?php echo strtoupper($contract['instrument'])?></b></li>
                 <li>3.1.2. ISSUANCE BANK:<b><?php echo strtoupper($contract['issuance_bank'])?></b> WITH ISIN CODE:<b><?php echo strtoupper($contract['isin_code'])?></b></li>
                 <li>3.1.3. FACE VALUE OF INSTRUMENT: <b>EURO: <b><?php echo strtoupper($contract['face_value'])?></b></b></li>
-                <li>3.1.4. MATURITY DATE OF INSTRUMENT:<b><?php echo date("d/m/Y",strtotime($contract['maturity_date']))?></b></li>
+                <li>3.1.4. MATURITY DATE OF INSTRUMENT:<b><?php echo $contract['maturity_date']?></b></li>
                 <li>3.1.5. PURCHASE PRICE OF INSTRUMENT: <b>EURO</b> : <b><?php echo strtoupper($contract['price'])?></b></li>
                 <li class="bold">+++ CLAUSE 4 - OBLIGATIONS AND COMMITMENT OF PARTIES</li>
                 <li>4.1. “MERCHANT” COMMITTED AND DECLARES UNDER A PENALTY OF PERJURY ITS FINANCIAL ABILITY AND
